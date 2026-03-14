@@ -7,7 +7,6 @@ var classmtgb_1_1DeleteGameObjectCommand =
     [ "Redo", "classmtgb_1_1DeleteGameObjectCommand.html#a75ca9ed49533a4e30fb3e2fcfc549a22", null ],
     [ "Undo", "classmtgb_1_1DeleteGameObjectCommand.html#ad0147f8ab618630559a820b8ee7bd0e6", null ],
     [ "gameObjectFactory_", "classmtgb_1_1DeleteGameObjectCommand.html#add0e0c36929a6cbaa4ed226b937e5eac", null ],
-    [ "isNotCalledStart_", "classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e", null ],
     [ "layerFlag_", "classmtgb_1_1DeleteGameObjectCommand.html#afb968615ec9eaedeb2fc71e49e7886a3", null ],
     [ "mementos_", "classmtgb_1_1DeleteGameObjectCommand.html#a41239b791a1e462f3ddf2c53753f2b63", null ],
     [ "name_", "classmtgb_1_1DeleteGameObjectCommand.html#a56a88c1d4739693ea8ff735b8d3781f1", null ],

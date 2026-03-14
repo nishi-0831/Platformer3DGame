@@ -2,7 +2,7 @@ var classmtgb_1_1TextCache =
 [
     [ "TextCache", "classmtgb_1_1TextCache.html#aff06551b63ab18c5932a3a6bc2c3048b", null ],
     [ "~TextCache", "classmtgb_1_1TextCache.html#ac8c4b7b9a4e4f595113dc83f51bc189f", null ],
-    [ "GetOrCreateTextFormat", "classmtgb_1_1TextCache.html#ad709520e689e0c43ba49d0f66205bb68", null ],
+    [ "GetOrCreateTextFormat", "classmtgb_1_1TextCache.html#a33edffbc79a979597cfad6344079d73a", null ],
     [ "GetOrCreateTextLayoutHandle", "classmtgb_1_1TextCache.html#a7b22c1317b399874b1f96686ef6b0c12", null ],
     [ "GetOrCreateTextLayoutHandle", "classmtgb_1_1TextCache.html#a5c48ca1328f1dac8ba9fe7c1eb5a1683", null ],
     [ "GetTextLayoutData", "classmtgb_1_1TextCache.html#a3a8893c454763345a6410c39c8f2eebb", null ],
@@ -10,7 +10,7 @@ var classmtgb_1_1TextCache =
     [ "Load", "classmtgb_1_1TextCache.html#a7c1145e35fca17adccc710b91377140e", null ],
     [ "Load", "classmtgb_1_1TextCache.html#a9e1dba95fb6292501e562306d485e0e5", null ],
     [ "Load", "classmtgb_1_1TextCache.html#a971ed779c84c4f4f101d57b257883e24", null ],
-    [ "Release", "classmtgb_1_1TextCache.html#a10ded23ff9327ecddd2e3cf3041a25c2", null ],
+    [ "Release", "classmtgb_1_1TextCache.html#a8d49c3cc6af1e9c46d32fed303f567d1", null ],
     [ "Update", "classmtgb_1_1TextCache.html#a271068f8ff8bb422752d07c5e0952152", null ],
     [ "Draw", "classmtgb_1_1TextCache.html#aa69241f4ae49fee45f9084302f7cea5a", null ],
     [ "currentDefaultFontSize_", "classmtgb_1_1TextCache.html#a1f283b94d8f4f3da30d3b14d367be6f3", null ],

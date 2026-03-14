@@ -65,12 +65,12 @@
 <text text-anchor="start" x="217" y="-404" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(GameObject</text>
 <text text-anchor="start" x="217" y="-393" font-family="Helvetica,sans-Serif" font-size="10.00">Tag _tag)</text>
 <text text-anchor="start" x="217" y="-382" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
-<text text-anchor="start" x="217" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(const</text>
-<text text-anchor="start" x="217" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00"> std::string &amp;_name)</text>
+<text text-anchor="start" x="217" y="-371" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(std</text>
+<text text-anchor="start" x="217" y="-360" font-family="Helvetica,sans-Serif" font-size="10.00">::string_view _name)</text>
 <text text-anchor="start" x="217" y="-349" font-family="Helvetica,sans-Serif" font-size="10.00">+ static void FindGameObjects</text>
-<text text-anchor="start" x="217" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::string &amp;_name,</text>
-<text text-anchor="start" x="217" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject *</text>
-<text text-anchor="start" x="217" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt; *_pFoundGameObjects)</text>
+<text text-anchor="start" x="217" y="-338" font-family="Helvetica,sans-Serif" font-size="10.00">(std::string_view _name,</text>
+<text text-anchor="start" x="217" y="-327" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject</text>
+<text text-anchor="start" x="217" y="-316" font-family="Helvetica,sans-Serif" font-size="10.00"> * &gt; *_pFoundGameObjects)</text>
 <text text-anchor="start" x="217" y="-305" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
 <text text-anchor="start" x="217" y="-294" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(EntityId</text>
 <text text-anchor="start" x="217" y="-283" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
@@ -246,20 +246,20 @@
 <text text-anchor="start" x="714" y="-1108.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform(EntityId</text>
 <text text-anchor="start" x="714" y="-1097.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
 <text text-anchor="start" x="714" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Transform()</text>
-<text text-anchor="start" x="714" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform &amp; operator</text>
-<text text-anchor="start" x="714" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">=(const Transform &amp;_other)</text>
-<text text-anchor="start" x="714" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
-<text text-anchor="start" x="714" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="714" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
+<text text-anchor="start" x="714" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="714" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="714" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
 <text text-anchor="start" x="714" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="714" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
-<text text-anchor="start" x="714" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="714" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
-<text text-anchor="start" x="714" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="714" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
-<text text-anchor="start" x="714" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="714" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
-<text text-anchor="start" x="714" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="714" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 16 件…</text>
+<text text-anchor="start" x="714" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
+<text text-anchor="start" x="714" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="714" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
+<text text-anchor="start" x="714" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="714" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
+<text text-anchor="start" x="714" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="714" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool DecomposeMatrix</text>
+<text text-anchor="start" x="714" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const Matrix4x4 &amp;_matrix)</text>
+<text text-anchor="start" x="714" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 15 件…</text>
 <text text-anchor="start" x="714" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool DecomposeMatrixImpl</text>
 <text text-anchor="start" x="714" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Vector3 *_pPos, Quaternion</text>
 <text text-anchor="start" x="714" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00"> *_pRot, Vector3 *_pScale,</text>

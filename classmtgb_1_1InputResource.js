@@ -1,7 +1,6 @@
 var classmtgb_1_1InputResource =
 [
     [ "InputResource", "classmtgb_1_1InputResource.html#a222fcbcdd894c45cc299e9571b2ec938", null ],
-    [ "~InputResource", "classmtgb_1_1InputResource.html#a0a806a902533238288f4ccf4407295c8", null ],
     [ "InputResource", "classmtgb_1_1InputResource.html#ad8deaa9bc391dcde9e9c00e50df22911", null ],
     [ "GetInput", "classmtgb_1_1InputResource.html#acd031967f72aa9ff2afc11b7dcdbd268", null ],
     [ "GetWindowContext", "classmtgb_1_1InputResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],

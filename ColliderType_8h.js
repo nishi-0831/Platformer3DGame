@@ -7,7 +7,6 @@ var ColliderType_8h =
     ] ],
     [ "ColliderType", "ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395", [
       [ "TYPE_SPHERE", "ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395a330101c0d00efbfb63290030ab95d947", null ],
-      [ "TYPE_CAPSULE", "ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395a379bc40db198d5a77b1dde275375efba", null ],
       [ "TYPE_AABB", "ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395a3c615183c0fa5b744154e3f4866e61d9", null ],
       [ "TYPE_OBB", "ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395a48faf931627ebd7d0b96c02bae4e2fdf", null ]
     ] ]

@@ -9,7 +9,7 @@ var searchData=
   ['targetentityid_5f_6',['targetEntityId_',['../classmtgb_1_1DeleteGameObjectCommand.html#a8d6f21b4d6a93def667fb1b19739b50b',1,'mtgb::DeleteGameObjectCommand::targetEntityId_()'],['../classmtgb_1_1ImGuiShowable.html#a04e42ed23c57183524dc34a01aa2a138',1,'mtgb::ImGuiShowable::targetEntityId_()'],['../classPatrolChargerEnemy.html#aebfb48a828ca4e30f49e14506037d83e',1,'PatrolChargerEnemy::targetEntityId_()']]],
   ['targettag_7',['targetTag',['../structmtgb_1_1DetectorConfigBase.html#a08809870391e0ce795eb81c2138cfb9a',1,'mtgb::DetectorConfigBase']]],
   ['targetvelocitycache_5f_8',['targetVelocityCache_',['../classmtgb_1_1SphericalCamera.html#a63c6f8f51f022678378cbf3cc7f2de40',1,'mtgb::SphericalCamera']]],
-  ['text_9',['text',['../classmtgb_1_1TextRenderer.html#a629667b517366e4187900f981513820d',1,'mtgb::TextRenderer']]],
+  ['text_5f_9',['text_',['../classmtgb_1_1TextRenderer.html#a46bc4cb172c88cd2487ae61356e07c1d',1,'mtgb::TextRenderer']]],
   ['textlayoutdata_5f_10',['textLayoutData_',['../classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f',1,'mtgb::TextCache']]],
   ['textrenderercp_11',['TextRendererCP',['../classmtgb_1_1TextRenderer.html#aee34247f7127fbe46a0b9da0abd5b3b5',1,'mtgb::TextRenderer']]],
   ['texttopoffset_12',['textTopOffset',['../structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c',1,'mtgb::PixelFontMetrics']]],

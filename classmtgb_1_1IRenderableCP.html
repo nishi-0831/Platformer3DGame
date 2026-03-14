@@ -102,7 +102,7 @@ $(document).ready(function(){initNavTree('classmtgb_1_1IRenderableCP.html',''); 
 </div><!--header-->
 <div class="contents">
 
-<p>謠冗判蜃ｦ逅・未騾｣縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ縺ｮ繧ｳ繝ｳ繝昴・繝阪Φ繝医・繝ｼ繝ｫ  
+<p>描画処理関連のコンポーネントプールのインターフェース  
  <a href="classmtgb_1_1IRenderableCP.html#details">[詳解]</a></p>
 
 <p><code>#include &quot;<a class="el" href="IRenderable_8h_source.html">IRenderable.h</a>&quot;</code></p>
@@ -124,14 +124,14 @@ mtgb::IRenderableCP 連携図</div>
 <tr class="memitem:aaf941d71c2eff248acf32f64a7492a22"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IRenderableCP.html#aaf941d71c2eff248acf32f64a7492a22">~IRenderableCP</a> ()=default</td></tr>
 <tr class="separator:aaf941d71c2eff248acf32f64a7492a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a05551c44486d314a20b5f04e436d27"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IRenderableCP.html#a4a05551c44486d314a20b5f04e436d27">RenderAll</a> () const =0</td></tr>
-<tr class="memdesc:a4a05551c44486d314a20b5f04e436d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">蜈ｨ縺ｦ謠冗判  <br /></td></tr>
+<tr class="memdesc:a4a05551c44486d314a20b5f04e436d27"><td class="mdescLeft">&#160;</td><td class="mdescRight">全て描画  <br /></td></tr>
 <tr class="separator:a4a05551c44486d314a20b5f04e436d27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a69c01c8ea6e034a2049d691323cd33af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IRenderableCP.html#a69c01c8ea6e034a2049d691323cd33af">RenderLayer</a> (<a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> _layerFlag) const =0</td></tr>
-<tr class="memdesc:a69c01c8ea6e034a2049d691323cd33af"><td class="mdescLeft">&#160;</td><td class="mdescRight">迚ｹ螳壹・繝ｬ繧､繝､繝ｼ繧呈緒逕ｻ  <br /></td></tr>
+<tr class="memdesc:a69c01c8ea6e034a2049d691323cd33af"><td class="mdescLeft">&#160;</td><td class="mdescRight">特定のレイヤーを描画  <br /></td></tr>
 <tr class="separator:a69c01c8ea6e034a2049d691323cd33af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
-<div class="textblock"><p>謠冗判蜃ｦ逅・未騾｣縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ縺ｮ繧ｳ繝ｳ繝昴・繝阪Φ繝医・繝ｼ繝ｫ </p>
+<div class="textblock"><p>描画処理関連のコンポーネントプールのインターフェース </p>
 
 <p class="definition"> <a class="el" href="IRenderable_8h_source.html">IRenderable.h</a> の <a class="el" href="IRenderable_8h_source.html#l00008">8</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
@@ -184,7 +184,7 @@ mtgb::IRenderableCP 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>蜈ｨ縺ｦ謠冗判 </p>
+<p>全て描画 </p>
 
 <p><a class="el" href="classmtgb_1_1ImageRendererCP.html#a9251ae4c006c21b7c2b4cc705a61288d">mtgb::ImageRendererCP</a>, <a class="el" href="classmtgb_1_1MeshRendererCP.html#a834d5747eae026eb31f4dd8342ee6b73">mtgb::MeshRendererCP</a>, <a class="el" href="classmtgb_1_1TextRendererCP.html#aae556a9b2a5746c552574516306b5459">mtgb::TextRendererCP</a>で実装されています。</p>
 
@@ -214,7 +214,7 @@ mtgb::IRenderableCP 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>迚ｹ螳壹・繝ｬ繧､繝､繝ｼ繧呈緒逕ｻ </p>
+<p>特定のレイヤーを描画 </p>
 
 <p><a class="el" href="classmtgb_1_1ImageRendererCP.html#a08370fdec46d7f335199f202854999b2">mtgb::ImageRendererCP</a>, <a class="el" href="classmtgb_1_1MeshRendererCP.html#ac88207e42310f8f7019be0ec12a354f8">mtgb::MeshRendererCP</a>, <a class="el" href="classmtgb_1_1TextRendererCP.html#ada0c5dbb4071baea183bd8ad0a0b2c90">mtgb::TextRendererCP</a>で実装されています。</p>
 

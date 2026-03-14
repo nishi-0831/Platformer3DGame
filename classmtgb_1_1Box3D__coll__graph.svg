@@ -64,12 +64,12 @@
 <text text-anchor="start" x="180" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(GameObject</text>
 <text text-anchor="start" x="180" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">Tag _tag)</text>
 <text text-anchor="start" x="180" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
-<text text-anchor="start" x="180" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(const</text>
-<text text-anchor="start" x="180" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::string &amp;_name)</text>
+<text text-anchor="start" x="180" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(std</text>
+<text text-anchor="start" x="180" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00">::string_view _name)</text>
 <text text-anchor="start" x="180" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static void FindGameObjects</text>
-<text text-anchor="start" x="180" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::string &amp;_name,</text>
-<text text-anchor="start" x="180" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject *</text>
-<text text-anchor="start" x="180" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt; *_pFoundGameObjects)</text>
+<text text-anchor="start" x="180" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">(std::string_view _name,</text>
+<text text-anchor="start" x="180" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject</text>
+<text text-anchor="start" x="180" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00"> * &gt; *_pFoundGameObjects)</text>
 <text text-anchor="start" x="180" y="-888.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
 <text text-anchor="start" x="180" y="-877.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(EntityId</text>
 <text text-anchor="start" x="180" y="-866.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
@@ -176,46 +176,43 @@
 <g id="node18" class="node">
 <title>Node18</title>
 <g id="a_node18"><a xlink:href="classmtgb_1_1MeshRenderer.html" target="_top" xlink:title="メッシュとマテリアルを管理する描画コンポーネント">
-<polygon fill="white" stroke="#666666" points="1271.5,-892.5 1271.5,-1235.5 1453.5,-1235.5 1453.5,-892.5 1271.5,-892.5"/>
-<text text-anchor="middle" x="1362.5" y="-1223.5" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::MeshRenderer</text>
-<polyline fill="none" stroke="#666666" points="1271.5,-1216.5 1453.5,-1216.5 "/>
-<text text-anchor="start" x="1279.5" y="-1204.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ friend MeshRendererCP</text>
-<text text-anchor="start" x="1279.5" y="-1193.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ std::string meshFileName</text>
-<text text-anchor="start" x="1279.5" y="-1182.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FBXModelHandle meshHandle</text>
-<text text-anchor="start" x="1279.5" y="-1171.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShaderType shaderType</text>
-<text text-anchor="start" x="1279.5" y="-1160.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; int frame_</text>
-<polyline fill="none" stroke="#666666" points="1271.5,-1153.5 1453.5,-1153.5 "/>
-<text text-anchor="start" x="1279.5" y="-1141.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeshRenderer()</text>
-<text text-anchor="start" x="1279.5" y="-1130.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeshRenderer(EntityId</text>
-<text text-anchor="start" x="1279.5" y="-1119.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
-<text text-anchor="start" x="1279.5" y="-1108.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeshRenderer &amp; operator</text>
-<text text-anchor="start" x="1279.5" y="-1097.5" font-family="Helvetica,sans-Serif" font-size="10.00">=(const MeshRenderer &amp;</text>
-<text text-anchor="start" x="1279.5" y="-1086.5" font-family="Helvetica,sans-Serif" font-size="10.00">_other)</text>
-<text text-anchor="start" x="1279.5" y="-1075.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetMesh(FBXModelHandle</text>
-<text text-anchor="start" x="1279.5" y="-1064.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _meshHandle)</text>
-<text text-anchor="start" x="1279.5" y="-1053.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ FBXModelHandle GetMesh</text>
-<text text-anchor="start" x="1279.5" y="-1042.5" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
-<text text-anchor="start" x="1279.5" y="-1031.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShaderType GetShaderType</text>
-<text text-anchor="start" x="1279.5" y="-1020.5" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
-<text text-anchor="start" x="1279.5" y="-1009.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ GameObjectLayerFlag</text>
-<text text-anchor="start" x="1279.5" y="-998.5" font-family="Helvetica,sans-Serif" font-size="10.00"> GetLayer() const override</text>
-<text text-anchor="start" x="1279.5" y="-987.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnChangeMeshFileName()</text>
-<text text-anchor="start" x="1279.5" y="-976.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Render() const</text>
-<text text-anchor="start" x="1279.5" y="-965.5" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
-<text text-anchor="start" x="1279.5" y="-954.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool CanRender() const</text>
-<text text-anchor="start" x="1279.5" y="-943.5" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
-<text text-anchor="start" x="1279.5" y="-932.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetFrame(int </text>
-<text text-anchor="start" x="1279.5" y="-921.5" font-family="Helvetica,sans-Serif" font-size="10.00">_frame)</text>
-<text text-anchor="start" x="1279.5" y="-910.5" font-family="Helvetica,sans-Serif" font-size="10.00"># void OnPostRestore</text>
-<text text-anchor="start" x="1279.5" y="-899.5" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
+<polygon fill="white" stroke="#666666" points="1271.5,-909 1271.5,-1219 1453.5,-1219 1453.5,-909 1271.5,-909"/>
+<text text-anchor="middle" x="1362.5" y="-1207" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::MeshRenderer</text>
+<polyline fill="none" stroke="#666666" points="1271.5,-1200 1453.5,-1200 "/>
+<text text-anchor="start" x="1279.5" y="-1188" font-family="Helvetica,sans-Serif" font-size="10.00">+ friend MeshRendererCP</text>
+<text text-anchor="start" x="1279.5" y="-1177" font-family="Helvetica,sans-Serif" font-size="10.00">+ std::string meshFileName</text>
+<text text-anchor="start" x="1279.5" y="-1166" font-family="Helvetica,sans-Serif" font-size="10.00">+ FBXModelHandle meshHandle</text>
+<text text-anchor="start" x="1279.5" y="-1155" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShaderType shaderType</text>
+<text text-anchor="start" x="1279.5" y="-1144" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; int frame_</text>
+<polyline fill="none" stroke="#666666" points="1271.5,-1137 1453.5,-1137 "/>
+<text text-anchor="start" x="1279.5" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeshRenderer()</text>
+<text text-anchor="start" x="1279.5" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">+ MeshRenderer(EntityId</text>
+<text text-anchor="start" x="1279.5" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
+<text text-anchor="start" x="1279.5" y="-1092" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetMesh(FBXModelHandle</text>
+<text text-anchor="start" x="1279.5" y="-1081" font-family="Helvetica,sans-Serif" font-size="10.00"> _meshHandle)</text>
+<text text-anchor="start" x="1279.5" y="-1070" font-family="Helvetica,sans-Serif" font-size="10.00">+ FBXModelHandle GetMesh</text>
+<text text-anchor="start" x="1279.5" y="-1059" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
+<text text-anchor="start" x="1279.5" y="-1048" font-family="Helvetica,sans-Serif" font-size="10.00">+ ShaderType GetShaderType</text>
+<text text-anchor="start" x="1279.5" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">() const</text>
+<text text-anchor="start" x="1279.5" y="-1026" font-family="Helvetica,sans-Serif" font-size="10.00">+ GameObjectLayerFlag</text>
+<text text-anchor="start" x="1279.5" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00"> GetLayer() const override</text>
+<text text-anchor="start" x="1279.5" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">+ void OnChangeMeshFileName()</text>
+<text text-anchor="start" x="1279.5" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Render() const</text>
+<text text-anchor="start" x="1279.5" y="-982" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
+<text text-anchor="start" x="1279.5" y="-971" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool CanRender() const</text>
+<text text-anchor="start" x="1279.5" y="-960" font-family="Helvetica,sans-Serif" font-size="10.00"> override</text>
+<text text-anchor="start" x="1279.5" y="-949" font-family="Helvetica,sans-Serif" font-size="10.00">+ void SetFrame(int </text>
+<text text-anchor="start" x="1279.5" y="-938" font-family="Helvetica,sans-Serif" font-size="10.00">_frame)</text>
+<text text-anchor="start" x="1279.5" y="-927" font-family="Helvetica,sans-Serif" font-size="10.00"># void OnPostRestore</text>
+<text text-anchor="start" x="1279.5" y="-916" font-family="Helvetica,sans-Serif" font-size="10.00">() override</text>
 </a>
 </g>
 </g>
 <!-- Node5&#45;&gt;Node18 -->
 <g id="edge22" class="edge">
 <title>Node5&#45;&gt;Node18</title>
-<path fill="none" stroke="#404040" d="M818.26,-1742.87C831.94,-1715.04 850.47,-1688.97 875.5,-1671 947.28,-1619.46 1000.69,-1703.06 1073.5,-1653 1209.66,-1559.38 1284.35,-1382.68 1323.49,-1247.33"/>
-<polygon fill="none" stroke="#404040" points="1323.54,-1247.14 1321.33,-1240.28 1326.82,-1235.6 1329.03,-1242.47 1323.54,-1247.14"/>
+<path fill="none" stroke="#404040" d="M818.26,-1742.87C831.94,-1715.04 850.47,-1688.97 875.5,-1671 947.28,-1619.46 1000.69,-1703.06 1073.5,-1653 1215.24,-1555.55 1290.37,-1368.06 1328.12,-1230.91"/>
+<polygon fill="none" stroke="#404040" points="1328.2,-1230.63 1325.9,-1223.79 1331.33,-1219.05 1333.62,-1225.88 1328.2,-1230.63"/>
 <text text-anchor="middle" x="1310" y="-1489.5" font-family="Helvetica,sans-Serif" font-size="10.00"> +layer</text>
 </g>
 <!-- Node6 -->
@@ -303,20 +300,20 @@
 <text text-anchor="start" x="992" y="-1169" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform(EntityId</text>
 <text text-anchor="start" x="992" y="-1158" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
 <text text-anchor="start" x="992" y="-1147" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Transform()</text>
-<text text-anchor="start" x="992" y="-1136" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform &amp; operator</text>
-<text text-anchor="start" x="992" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">=(const Transform &amp;_other)</text>
-<text text-anchor="start" x="992" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
-<text text-anchor="start" x="992" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="992" y="-1136" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
+<text text-anchor="start" x="992" y="-1125" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="992" y="-1114" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="992" y="-1103" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
 <text text-anchor="start" x="992" y="-1092" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="992" y="-1081" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
-<text text-anchor="start" x="992" y="-1070" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="992" y="-1059" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
-<text text-anchor="start" x="992" y="-1048" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="992" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
-<text text-anchor="start" x="992" y="-1026" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="992" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
-<text text-anchor="start" x="992" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="992" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 16 件…</text>
+<text text-anchor="start" x="992" y="-1081" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
+<text text-anchor="start" x="992" y="-1070" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="992" y="-1059" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
+<text text-anchor="start" x="992" y="-1048" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="992" y="-1037" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
+<text text-anchor="start" x="992" y="-1026" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="992" y="-1015" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool DecomposeMatrix</text>
+<text text-anchor="start" x="992" y="-1004" font-family="Helvetica,sans-Serif" font-size="10.00">(const Matrix4x4 &amp;_matrix)</text>
+<text text-anchor="start" x="992" y="-993" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 15 件…</text>
 <text text-anchor="start" x="992" y="-982" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool DecomposeMatrixImpl</text>
 <text text-anchor="start" x="992" y="-971" font-family="Helvetica,sans-Serif" font-size="10.00">(Vector3 *_pPos, Quaternion</text>
 <text text-anchor="start" x="992" y="-960" font-family="Helvetica,sans-Serif" font-size="10.00"> *_pRot, Vector3 *_pScale,</text>
@@ -603,7 +600,7 @@
 <!-- Node11&#45;&gt;Node18 -->
 <g id="edge21" class="edge">
 <title>Node11&#45;&gt;Node18</title>
-<path fill="none" stroke="#63b8ff" d="M1362.5,-1842.59C1362.5,-1730.9 1362.5,-1428.79 1362.5,-1235.7"/>
+<path fill="none" stroke="#63b8ff" d="M1362.5,-1842.64C1362.5,-1727.77 1362.5,-1411.28 1362.5,-1219.31"/>
 <polygon fill="none" stroke="#63b8ff" points="1359,-1842.8 1362.5,-1852.8 1366,-1842.8 1359,-1842.8"/>
 </g>
 <!-- Node11&#45;&gt;Node21 -->
@@ -836,14 +833,14 @@
 <!-- Node18&#45;&gt;Node1 -->
 <g id="edge17" class="edge">
 <title>Node18&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1367.25,-892.3C1371.52,-671.69 1371.81,-300.55 1330.5,-171 1326.51,-158.48 1320.62,-146.03 1313.93,-134.29"/>
+<path fill="none" stroke="#404040" d="M1366.92,-908.96C1371.48,-690.88 1372.87,-303.87 1330.5,-171 1326.51,-158.48 1320.62,-146.03 1313.93,-134.29"/>
 <polygon fill="none" stroke="#404040" points="1313.75,-134 1307.24,-130.91 1307.58,-123.71 1314.09,-126.79 1313.75,-134"/>
 <text text-anchor="middle" x="1414" y="-467" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;pMeshRenderer_</text>
 </g>
 <!-- Node19 -->
 <g id="node19" class="node">
 <title>Node19</title>
-<g id="a_node19"><a xlink:href="classmtgb_1_1IRenderable.html" target="_top" xlink:title="謠冗判蜃ｦ逅・未騾｣縺ｮ繧､繝ｳ繧ｿ繝ｼ繝輔ぉ繝ｼ繧ｹ">
+<g id="a_node19"><a xlink:href="classmtgb_1_1IRenderable.html" target="_top" xlink:title="描画処理関連のインターフェース">
 <polygon fill="white" stroke="#666666" points="1711,-1820 1711,-1954 1882,-1954 1882,-1820 1711,-1820"/>
 <text text-anchor="middle" x="1796.5" y="-1942" font-family="Helvetica,sans-Serif" font-size="10.00">mtgb::IRenderable</text>
 <polyline fill="none" stroke="#666666" points="1711,-1935 1882,-1935 "/>

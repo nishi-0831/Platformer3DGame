@@ -172,10 +172,10 @@ mtgb::TextRendererCP 連携図</div>
 <tr class="memitem:a7f7e28ca16cf4b28c539d7b6e2f86bc2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1TextRendererCP.html#a7f7e28ca16cf4b28c539d7b6e2f86bc2">Update</a> () override</td></tr>
 <tr class="separator:a7f7e28ca16cf4b28c539d7b6e2f86bc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae556a9b2a5746c552574516306b5459"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1TextRendererCP.html#aae556a9b2a5746c552574516306b5459">RenderAll</a> () const override</td></tr>
-<tr class="memdesc:aae556a9b2a5746c552574516306b5459"><td class="mdescLeft">&#160;</td><td class="mdescRight">蜈ｨ縺ｦ謠冗判  <br /></td></tr>
+<tr class="memdesc:aae556a9b2a5746c552574516306b5459"><td class="mdescLeft">&#160;</td><td class="mdescRight">全て描画  <br /></td></tr>
 <tr class="separator:aae556a9b2a5746c552574516306b5459"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada0c5dbb4071baea183bd8ad0a0b2c90"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1TextRendererCP.html#ada0c5dbb4071baea183bd8ad0a0b2c90">RenderLayer</a> (<a class="el" href="namespacemtgb.html#a3d1a42346b617381c1e0e42c73064ba9">GameObjectLayerFlag</a> _layerFlag) const override</td></tr>
-<tr class="memdesc:ada0c5dbb4071baea183bd8ad0a0b2c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">迚ｹ螳壹・繝ｬ繧､繝､繝ｼ繧呈緒逕ｻ  <br /></td></tr>
+<tr class="memdesc:ada0c5dbb4071baea183bd8ad0a0b2c90"><td class="mdescLeft">&#160;</td><td class="mdescRight">特定のレイヤーを描画  <br /></td></tr>
 <tr class="separator:ada0c5dbb4071baea183bd8ad0a0b2c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a228bc6bfb0fd1f8f1e1dd7df86dbd084"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentPool.html#a228bc6bfb0fd1f8f1e1dd7df86dbd084">RegisterComponent</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, int _poolIndex)</td></tr>
 <tr class="memdesc:a228bc6bfb0fd1f8f1e1dd7df86dbd084"><td class="mdescLeft">&#160;</td><td class="mdescRight">エンティティを登録する  <br /></td></tr>
@@ -662,7 +662,7 @@ mtgb::TextRendererCP 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>蜈ｨ縺ｦ謠冗判 </p>
+<p>全て描画 </p>
 
 <p><a class="el" href="classmtgb_1_1IRenderableCP.html#a4a05551c44486d314a20b5f04e436d27">mtgb::IRenderableCP</a>を実装しています。</p>
 
@@ -695,7 +695,7 @@ mtgb::TextRendererCP 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p>迚ｹ螳壹・繝ｬ繧､繝､繝ｼ繧呈緒逕ｻ </p>
+<p>特定のレイヤーを描画 </p>
 
 <p><a class="el" href="classmtgb_1_1IRenderableCP.html#a69c01c8ea6e034a2049d691323cd33af">mtgb::IRenderableCP</a>を実装しています。</p>
 
@@ -703,26 +703,23 @@ mtgb::TextRendererCP 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">    9</span>{</div>
 <div class="line"><span class="lineno">   10</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#acbe279fff909832dd1ee5500b40170e5">poolId_</a>.size(); i++)</div>
 <div class="line"><span class="lineno">   11</span>    {</div>
-<div class="line"><span class="lineno">   12</span>        <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> <span class="keywordtype">id</span> = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#acbe279fff909832dd1ee5500b40170e5">poolId_</a>[i];</div>
-<div class="line"><span class="lineno">   13</span> </div>
-<div class="line"><span class="lineno">   14</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#acbe279fff909832dd1ee5500b40170e5">poolId_</a>[i] == <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>)</div>
-<div class="line"><span class="lineno">   15</span>            <span class="keywordflow">continue</span>;</div>
-<div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1TextRenderer.html">TextRenderer</a>&amp; renderer = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a36d7427458d0bf6da168cd094b9459c9">pool_</a>[i];</div>
-<div class="line"><span class="lineno">   18</span>        <span class="keywordflow">if</span> (renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#a822e29d0bc500245832027c7e7a99f79">CanRender</a>() &amp;&amp; _layerFlag.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#a9779b5fdd82e7392bef127e691b60026">Has</a>(renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#adfee001587a5fccaabe55cf69cf44fd2">GetLayer</a>()))</div>
-<div class="line"><span class="lineno">   19</span>        {</div>
-<div class="line"><span class="lineno">   20</span>            renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25">Render</a>();</div>
-<div class="line"><span class="lineno">   21</span>        }</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
-<div class="line"><span class="lineno">   23</span>}</div>
+<div class="line"><span class="lineno">   12</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#acbe279fff909832dd1ee5500b40170e5">poolId_</a>[i] == <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>)</div>
+<div class="line"><span class="lineno">   13</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>        <span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1TextRenderer.html">TextRenderer</a>&amp; renderer = <a class="code hl_variable" href="classmtgb_1_1ComponentPool.html#a36d7427458d0bf6da168cd094b9459c9">pool_</a>[i];</div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">if</span> (renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#a822e29d0bc500245832027c7e7a99f79">CanRender</a>() &amp;&amp; _layerFlag.<a class="code hl_function" href="classmtbit_1_1BitFlag.html#a9779b5fdd82e7392bef127e691b60026">Has</a>(renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#adfee001587a5fccaabe55cf69cf44fd2">GetLayer</a>()))</div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            renderer.<a class="code hl_function" href="classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25">Render</a>();</div>
+<div class="line"><span class="lineno">   19</span>        }</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="line"><span class="lineno">   21</span>}</div>
 <div class="ttc" id="aclassmtbit_1_1BitFlag_html_a9779b5fdd82e7392bef127e691b60026"><div class="ttname"><a href="classmtbit_1_1BitFlag.html#a9779b5fdd82e7392bef127e691b60026">mtbit::BitFlag::Has</a></div><div class="ttdeci">bool Has(EnumStructT _e) const</div><div class="ttdoc">指定フラグが立っているかどうか</div><div class="ttdef"><b>Definition:</b> <a href="BitFlag_8h_source.html#l00188">BitFlag.h:188</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1TextRenderer_html"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html">mtgb::TextRenderer</a></div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00017">TextRenderer.h:20</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_a7cd4639801f6cfa02d7008ca51a51f25"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25">mtgb::TextRenderer::Render</a></div><div class="ttdeci">void Render() const override</div><div class="ttdoc">謠冗判繧定｡後≧</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8cpp_source.html#l00029">TextRenderer.cpp:29</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_a822e29d0bc500245832027c7e7a99f79"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#a822e29d0bc500245832027c7e7a99f79">mtgb::TextRenderer::CanRender</a></div><div class="ttdeci">bool CanRender() const override</div><div class="ttdoc">謠冗判縺悟庄閭ｽ縺句凄縺・</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8cpp_source.html#l00034">TextRenderer.cpp:34</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_adfee001587a5fccaabe55cf69cf44fd2"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#adfee001587a5fccaabe55cf69cf44fd2">mtgb::TextRenderer::GetLayer</a></div><div class="ttdeci">GameObjectLayerFlag GetLayer() const override</div><div class="ttdoc">繝ｬ繧､繝､繝ｼ繧定ｿ斐☆</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00032">TextRenderer.h:32</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_a7cd4639801f6cfa02d7008ca51a51f25"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25">mtgb::TextRenderer::Render</a></div><div class="ttdeci">void Render() const override</div><div class="ttdoc">描画を行う</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8cpp_source.html#l00015">TextRenderer.cpp:15</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_a822e29d0bc500245832027c7e7a99f79"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#a822e29d0bc500245832027c7e7a99f79">mtgb::TextRenderer::CanRender</a></div><div class="ttdeci">bool CanRender() const override</div><div class="ttdoc">描画が可能か否か</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8cpp_source.html#l00020">TextRenderer.cpp:20</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1TextRenderer_html_adfee001587a5fccaabe55cf69cf44fd2"><div class="ttname"><a href="classmtgb_1_1TextRenderer.html#adfee001587a5fccaabe55cf69cf44fd2">mtgb::TextRenderer::GetLayer</a></div><div class="ttdeci">GameObjectLayerFlag GetLayer() const override</div><div class="ttdoc">レイヤーを返す</div><div class="ttdef"><b>Definition:</b> <a href="TextRenderer_8h_source.html#l00031">TextRenderer.h:31</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="TextRenderer_8cpp_source.html#l00034">mtgb::TextRenderer::CanRender()</a>, <a class="el" href="TextRenderer_8h_source.html#l00032">mtgb::TextRenderer::GetLayer()</a>, <a class="el" href="BitFlag_8h_source.html#l00188">mtbit::BitFlag&lt; EnumStructT &gt;::Has()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="TextRenderer_8cpp_source.html#l00029">mtgb::TextRenderer::Render()</a>.</p>
+<p class="reference">参照先 <a class="el" href="TextRenderer_8cpp_source.html#l00020">mtgb::TextRenderer::CanRender()</a>, <a class="el" href="TextRenderer_8h_source.html#l00031">mtgb::TextRenderer::GetLayer()</a>, <a class="el" href="BitFlag_8h_source.html#l00188">mtbit::BitFlag&lt; EnumStructT &gt;::Has()</a>, <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>, <a class="el" href="TextRenderer_8cpp_source.html#l00015">mtgb::TextRenderer::Render()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

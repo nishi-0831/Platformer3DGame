@@ -6,8 +6,8 @@ var classmtgb_1_1AudioClip =
     [ "GetMemoryStream", "classmtgb_1_1AudioClip.html#af8d1a7ade1cf26621037907f3892c7e9", null ],
     [ "GetTotalTimeSec", "classmtgb_1_1AudioClip.html#a5f43d742191c1e27f9f5e175996ddea3", null ],
     [ "Load", "classmtgb_1_1AudioClip.html#a9c392b692dda12290b772c9b52f228ea", null ],
-    [ "LoadMp3", "classmtgb_1_1AudioClip.html#a4cfa88ac3014ddb68a8695ae1e5d5c19", null ],
-    [ "LoadWave", "classmtgb_1_1AudioClip.html#ac777254052a742f725ca51dc4b5499b4", null ],
+    [ "LoadMp3", "classmtgb_1_1AudioClip.html#a18fd1b7c973921677b1b4dd92c189746", null ],
+    [ "LoadWave", "classmtgb_1_1AudioClip.html#a5cbbc1f7204068aecf24411913d46695", null ],
     [ "Play", "classmtgb_1_1AudioClip.html#abcac2059fa30d8aa5bf5645117849713", null ],
     [ "pSourceVoice_", "classmtgb_1_1AudioClip.html#acbc7353607f28de026241a533dbc7e50", null ],
     [ "pWaveData_", "classmtgb_1_1AudioClip.html#a01cdc411cc1cdc9ac63a2c8202d54ec2", null ]

@@ -228,33 +228,33 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00043">43</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   47</span>        : <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a">notSaveMementos_</a> {<span class="keyword">true</span>}</div>
-<div class="line"><span class="lineno">   48</span>        , <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">createFunc_</a> { std::forward&lt;Func&gt;(_createFunc) }</div>
-<div class="line"><span class="lineno">   49</span>        , <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a> {_srcEntityId}</div>
-<div class="line"><span class="lineno">   50</span>    {</div>
-<div class="line"><span class="lineno">   51</span>        GameObject* src = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a>);</div>
-<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">if</span> (src == <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   53</span>            <span class="keywordflow">return</span>;</div>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>        : <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a">notSaveMementos_</a> { <span class="keyword">true</span> }</div>
+<div class="line"><span class="lineno">   42</span>        , <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a> { _srcEntityId }</div>
+<div class="line"><span class="lineno">   43</span>        , <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">createFunc_</a> { std::forward&lt;Func&gt;(_createFunc) }</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        GameObject* src = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a>);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">if</span> (src == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   47</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a07050d8981d1f176560b9be3e4080336">srcGameObjName_</a>           = src-&gt;GetName();</div>
+<div class="line"><span class="lineno">   50</span>        std::string classTypeName = src-&gt;GetClassTypeName();</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>        std::optional&lt;std::vector&lt;std::type_index&gt;&gt; componentPoolTypes =</div>
+<div class="line"><span class="lineno">   53</span>            Game::System&lt;ComponentRegistry&gt;().GetComponentPoolTypes(<a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a>);</div>
 <div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>        <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a07050d8981d1f176560b9be3e4080336">srcGameObjName_</a>           = src-&gt;GetName();</div>
-<div class="line"><span class="lineno">   56</span>        std::string classTypeName = src-&gt;GetClassTypeName();</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">if</span> (componentPoolTypes.has_value() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   56</span>            <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>        std::optional&lt;std::vector&lt;std::type_index&gt;&gt; componentPoolTypes =</div>
-<div class="line"><span class="lineno">   59</span>            Game::System&lt;ComponentRegistry&gt;().GetComponentPoolTypes(<a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">srcEntityId_</a>);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>        <span class="keywordflow">if</span> (componentPoolTypes.has_value() == <span class="keyword">false</span>)</div>
-<div class="line"><span class="lineno">   62</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   63</span> </div>
-<div class="line"><span class="lineno">   64</span>        <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a8011742db034cd525c1946c847a56892">componentPoolTypes_</a> = std::move(componentPoolTypes.value());</div>
-<div class="line"><span class="lineno">   65</span>    }</div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a07050d8981d1f176560b9be3e4080336"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a07050d8981d1f176560b9be3e4080336">mtgb::DuplicateGameObjectCommand::srcGameObjName_</a></div><div class="ttdeci">std::string srcGameObjName_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00035">DuplicateGameObjectCommand.h:35</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a318d6d472cf6ebe43e3d45f196a2994a"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a">mtgb::DuplicateGameObjectCommand::notSaveMementos_</a></div><div class="ttdeci">bool notSaveMementos_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00031">DuplicateGameObjectCommand.h:31</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a402be72f0933f90beab4246d386031b0"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">mtgb::DuplicateGameObjectCommand::createFunc_</a></div><div class="ttdeci">CreateFunc createFunc_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00037">DuplicateGameObjectCommand.h:37</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a7025bbfbf2c3627bc311075ecd2c674d"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">mtgb::DuplicateGameObjectCommand::srcEntityId_</a></div><div class="ttdeci">EntityId srcEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00033">DuplicateGameObjectCommand.h:33</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a8011742db034cd525c1946c847a56892"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a8011742db034cd525c1946c847a56892">mtgb::DuplicateGameObjectCommand::componentPoolTypes_</a></div><div class="ttdeci">std::vector&lt; std::type_index &gt; componentPoolTypes_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00039">DuplicateGameObjectCommand.h:39</a></div></div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a8011742db034cd525c1946c847a56892">componentPoolTypes_</a> = std::move(componentPoolTypes.value());</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a07050d8981d1f176560b9be3e4080336"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a07050d8981d1f176560b9be3e4080336">mtgb::DuplicateGameObjectCommand::srcGameObjName_</a></div><div class="ttdeci">std::string srcGameObjName_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00032">DuplicateGameObjectCommand.h:32</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a318d6d472cf6ebe43e3d45f196a2994a"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a">mtgb::DuplicateGameObjectCommand::notSaveMementos_</a></div><div class="ttdeci">bool notSaveMementos_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00028">DuplicateGameObjectCommand.h:28</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a402be72f0933f90beab4246d386031b0"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">mtgb::DuplicateGameObjectCommand::createFunc_</a></div><div class="ttdeci">CreateFunc createFunc_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00034">DuplicateGameObjectCommand.h:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a7025bbfbf2c3627bc311075ecd2c674d"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a7025bbfbf2c3627bc311075ecd2c674d">mtgb::DuplicateGameObjectCommand::srcEntityId_</a></div><div class="ttdeci">EntityId srcEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00030">DuplicateGameObjectCommand.h:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a8011742db034cd525c1946c847a56892"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a8011742db034cd525c1946c847a56892">mtgb::DuplicateGameObjectCommand::componentPoolTypes_</a></div><div class="ttdeci">std::vector&lt; std::type_index &gt; componentPoolTypes_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00036">DuplicateGameObjectCommand.h:36</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00039">componentPoolTypes_</a>, <a class="el" href="GameObject_8cpp_source.html#l00106">mtgb::GameObject::GetClassTypeName()</a>, <a class="el" href="GameObject_8h_source.html#l00083">mtgb::GameObject::GetName()</a>, <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00033">srcEntityId_</a>, <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00035">srcGameObjName_</a>.</p>
+<p class="reference">参照先 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00036">componentPoolTypes_</a>, <a class="el" href="GameObject_8cpp_source.html#l00106">mtgb::GameObject::GetClassTypeName()</a>, <a class="el" href="GameObject_8h_source.html#l00083">mtgb::GameObject::GetName()</a>, <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00030">srcEntityId_</a>, <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00032">srcGameObjName_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -287,10 +287,10 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 <div class="line"><span class="lineno">   14</span>    }</div>
 <div class="line"><span class="lineno">   15</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a78f9c75f68f276d70aaac5860da8a5b4"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a78f9c75f68f276d70aaac5860da8a5b4">mtgb::DuplicateGameObjectCommand::mementos_</a></div><div class="ttdeci">std::vector&lt; IComponentMemento * &gt; mementos_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00038">DuplicateGameObjectCommand.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a78f9c75f68f276d70aaac5860da8a5b4"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a78f9c75f68f276d70aaac5860da8a5b4">mtgb::DuplicateGameObjectCommand::mementos_</a></div><div class="ttdeci">std::vector&lt; IComponentMemento * &gt; mementos_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00035">DuplicateGameObjectCommand.h:35</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1IComponentMemento.html">mtgb::IComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00007">IComponentMemento.h:8</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00038">mementos_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
+<p class="reference">参照先 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00035">mementos_</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
 
 </div>
 </div>
@@ -342,8 +342,8 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 <div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a318d6d472cf6ebe43e3d45f196a2994a">notSaveMementos_</a> = <span class="keyword">false</span>;</div>
 <div class="line"><span class="lineno">   35</span>    }</div>
 <div class="line"><span class="lineno">   36</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a1853bcf71548e1fdb366136ee854d059"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a1853bcf71548e1fdb366136ee854d059">mtgb::DuplicateGameObjectCommand::destEntityId_</a></div><div class="ttdeci">EntityId destEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00034">DuplicateGameObjectCommand.h:34</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a5441f9d74fdff67309b88b3a9ac97e0a"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a5441f9d74fdff67309b88b3a9ac97e0a">mtgb::DuplicateGameObjectCommand::destGameObjName_</a></div><div class="ttdeci">std::string destGameObjName_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00036">DuplicateGameObjectCommand.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a1853bcf71548e1fdb366136ee854d059"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a1853bcf71548e1fdb366136ee854d059">mtgb::DuplicateGameObjectCommand::destEntityId_</a></div><div class="ttdeci">EntityId destEntityId_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00031">DuplicateGameObjectCommand.h:31</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_a5441f9d74fdff67309b88b3a9ac97e0a"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#a5441f9d74fdff67309b88b3a9ac97e0a">mtgb::DuplicateGameObjectCommand::destGameObjName_</a></div><div class="ttdeci">std::string destGameObjName_</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8h_source.html#l00033">DuplicateGameObjectCommand.h:33</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1DuplicateGameObjectCommand_html_ae538538b3ee2dc9a1856a7eb5452f6cb"><div class="ttname"><a href="classmtgb_1_1DuplicateGameObjectCommand.html#ae538538b3ee2dc9a1856a7eb5452f6cb">mtgb::DuplicateGameObjectCommand::SaveToMementos</a></div><div class="ttdeci">void SaveToMementos()</div><div class="ttdef"><b>Definition:</b> <a href="DuplicateGameObjectCommand_8cpp_source.html#l00068">DuplicateGameObjectCommand.cpp:68</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Entity_html_a7f534d8f54f1d8bd4e6e0a6902ba7736"><div class="ttname"><a href="classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736">mtgb::Entity::GetEntityId</a></div><div class="ttdeci">const EntityId GetEntityId() const</div><div class="ttdoc">エンティティIdを取得する</div><div class="ttdef"><b>Definition:</b> <a href="Entity_8h_source.html#l00020">Entity.h:20</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00015">GameObject.h:16</a></div></div>
@@ -461,7 +461,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 <div class="fragment"><div class="line"><span class="lineno">   44</span>{</div>
 <div class="line"><span class="lineno">   45</span>    Game::System&lt;EntityManager&gt;().DecrementCounter();</div>
 <div class="line"><span class="lineno">   46</span> </div>
-<div class="line"><span class="lineno">   47</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* dest = <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">createFunc_</a>();</div>
+<div class="line"><span class="lineno">   47</span>    <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a402be72f0933f90beab4246d386031b0">createFunc_</a>();</div>
 <div class="line"><span class="lineno">   48</span> </div>
 <div class="line"><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<a class="code hl_class" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a>* memento : <a class="code hl_variable" href="classmtgb_1_1DuplicateGameObjectCommand.html#a78f9c75f68f276d70aaac5860da8a5b4">mementos_</a>)</div>
 <div class="line"><span class="lineno">   50</span>    {</div>
@@ -588,9 +588,9 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00039">39</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00036">36</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00043">DuplicateGameObjectCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00040">DuplicateGameObjectCommand()</a>.</p>
 
 </div>
 </div>
@@ -614,7 +614,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00034">34</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -638,7 +638,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00034">34</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00031">31</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -662,7 +662,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00036">36</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00033">33</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -686,7 +686,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00035">35</a> 行目に定義があります。</p>
 
 <p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00009">~DuplicateGameObjectCommand()</a>.</p>
 
@@ -712,7 +712,7 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00028">28</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -736,9 +736,9 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00033">33</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00030">30</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00043">DuplicateGameObjectCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00040">DuplicateGameObjectCommand()</a>.</p>
 
 </div>
 </div>
@@ -762,9 +762,9 @@ requires std::is_invocable_r_v&lt;<a class="el" href="classmtgb_1_1GameObject.ht
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00035">35</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="DuplicateGameObjectCommand_8h_source.html">DuplicateGameObjectCommand.h</a> の <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00032">32</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00043">DuplicateGameObjectCommand()</a>.</p>
+<p class="reference">参照元 <a class="el" href="DuplicateGameObjectCommand_8h_source.html#l00040">DuplicateGameObjectCommand()</a>.</p>
 
 </div>
 </div>

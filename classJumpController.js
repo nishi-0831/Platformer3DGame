@@ -8,7 +8,6 @@ var classJumpController =
     [ "holdTime_", "classJumpController.html#a43c85bb14531107775a41b5a3766cd93", null ],
     [ "isHolding_", "classJumpController.html#a99da66e9939a5f548d397d1352806a9f", null ],
     [ "isJumping_", "classJumpController.html#ac39d5dd4f8d7db1cab41000e4a997155", null ],
-    [ "maxHoldTime_", "classJumpController.html#a674af93127eaf55f2df723105866327a", null ],
     [ "onStartJumpVelocity_", "classJumpController.html#a7c6818393d0a99ac56fe0b957324e6d4", null ],
     [ "pTargetRigidBody_", "classJumpController.html#a38be435ce034da2927eed183859531f9", null ],
     [ "pTargetTransform_", "classJumpController.html#a4757e8a2c32c7b3af3e40d85a060caa2", null ]

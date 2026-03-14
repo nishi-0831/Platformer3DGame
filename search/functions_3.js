@@ -75,7 +75,7 @@ var searchData=
   ['createdepthstencilanddepthstencilview_72',['CreateDepthStencilAndDepthStencilView',['../classmtgb_1_1DirectX11Manager.html#ae199d7b534018d01d3be5ee6faff523d',1,'mtgb::DirectX11Manager']]],
   ['createdxgisurface_73',['CreateDXGISurface',['../classmtgb_1_1DirectX11Manager.html#ab568554a58bd8eadc75fb7239e49d873',1,'mtgb::DirectX11Manager']]],
   ['createentity_74',['CreateEntity',['../classmtgb_1_1EntityManager.html#aa77187550ecd10a694d8a7b7ba16c67b',1,'mtgb::EntityManager']]],
-  ['createfontformatdata_75',['CreateFontFormatData',['../classmtgb_1_1DirectWrite.html#a910648513f9eb554aeb44da844eeb5c7',1,'mtgb::DirectWrite']]],
+  ['createfontformatdata_75',['CreateFontFormatData',['../classmtgb_1_1DirectWrite.html#ab411ffd7dc8ab923dab607da307acfed',1,'mtgb::DirectWrite']]],
   ['creategameobject_76',['CreateGameObject',['../classmtgb_1_1GameObjectCreateCommand.html#abab46412421ebb9fd6a4627b03d590f3',1,'mtgb::GameObjectCreateCommand']]],
   ['createkeydevice_77',['CreateKeyDevice',['../classmtgb_1_1Input.html#a1287472e65ae412b6c6235bddc641132',1,'mtgb::Input']]],
   ['createmousedevice_78',['CreateMouseDevice',['../classmtgb_1_1Input.html#a1061a8941d5c4f10fe4b89dd6f840e03',1,'mtgb::Input']]],

@@ -19,10 +19,10 @@ var classmtgb_1_1Draw =
     [ "Image", "classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b", null ],
     [ "Image", "classmtgb_1_1Draw.html#a56542b7bf04bdaf8e71f1b27a61a6095", null ],
     [ "Image", "classmtgb_1_1Draw.html#a4ac31a5fc32739ddaa572642798d3c09", null ],
-    [ "ImmediateText", "classmtgb_1_1Draw.html#a924ac060cf4fa21fbec4cdcd87b0af26", null ],
-    [ "ImmediateText", "classmtgb_1_1Draw.html#a06b662d4502952366c6937014f5f0b93", null ],
-    [ "ImmediateTextW", "classmtgb_1_1Draw.html#ad82ee2710f7acb4e6583d51fddd4f557", null ],
-    [ "ImmediateTextW", "classmtgb_1_1Draw.html#a6372dcb10e82163548cf08816bbde6e3", null ],
+    [ "ImmediateText", "classmtgb_1_1Draw.html#a5925238a9570650be60f2a9591fd8542", null ],
+    [ "ImmediateText", "classmtgb_1_1Draw.html#a2e3a030fee294e80871f396ac4d99e42", null ],
+    [ "ImmediateTextW", "classmtgb_1_1Draw.html#ae276a0bc773656a96857a13de503bfd0", null ],
+    [ "ImmediateTextW", "classmtgb_1_1Draw.html#a9470953a68bb79976afc3b28cd00324f", null ],
     [ "Initialize", "classmtgb_1_1Draw.html#a92138f17b81b467cca7780c3f1d3f56f", null ],
     [ "OBJModel", "classmtgb_1_1Draw.html#a6c13f2b7ea296d14a9314569079dd061", null ],
     [ "Release", "classmtgb_1_1Draw.html#aa2823e5390468dfc47213b845c55d3ac", null ],
@@ -37,7 +37,6 @@ var classmtgb_1_1Draw =
     [ "onceShaderType_", "classmtgb_1_1Draw.html#a20484702d03bbf23edfaad6032aac831", null ],
     [ "pFbxModel_", "classmtgb_1_1Draw.html#a1788891c93c734c617b85c5ab0025f7c", null ],
     [ "pFigure_", "classmtgb_1_1Draw.html#ae19f5010072b57705d3b07010e284d72", null ],
-    [ "pGround_", "classmtgb_1_1Draw.html#a1623c55bbc5647b809bfd0a7ddf14c9a", null ],
     [ "pSeaPlane_", "classmtgb_1_1Draw.html#a612bedd03956982f4a65b0b2f17f4ef0", null ],
     [ "uiDrawCommands_", "classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1", null ]
 ];

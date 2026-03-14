@@ -1,7 +1,6 @@
 var classmtgb_1_1DXGIResource =
 [
     [ "DXGIResource", "classmtgb_1_1DXGIResource.html#a7cc6bc8813f4dc5b7b8a5516266fee07", null ],
-    [ "~DXGIResource", "classmtgb_1_1DXGIResource.html#a49972ddb85c8d224ebe031aefd96fe37", null ],
     [ "DXGIResource", "classmtgb_1_1DXGIResource.html#ac54b1e44c06ea8a50b51a09c7da44108", null ],
     [ "GetAssignedMonitorRect", "classmtgb_1_1DXGIResource.html#af6a3047162fe339a8cd7892f215f90ec", null ],
     [ "GetWindowContext", "classmtgb_1_1DXGIResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],

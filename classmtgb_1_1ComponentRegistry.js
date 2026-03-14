@@ -13,7 +13,7 @@ var classmtgb_1_1ComponentRegistry =
     [ "Initialize", "classmtgb_1_1ComponentRegistry.html#ae7536dff102a4cb7861ad1e4ca50c04a", null ],
     [ "RegisterComponent", "classmtgb_1_1ComponentRegistry.html#a2eb13a1af88eb93d247d3cb4f737b607", null ],
     [ "RegisterComponentIndex", "classmtgb_1_1ComponentRegistry.html#ad824b1c1144fe75039be9f9e8e3dc00c", null ],
-    [ "RegisterComponentKey", "classmtgb_1_1ComponentRegistry.html#a240f3129bfcacc2252c142db1d527d63", null ],
+    [ "RegisterComponentKey", "classmtgb_1_1ComponentRegistry.html#a7f4f2c6487081ec2c93a84b171189c13", null ],
     [ "RegisterComponentPoolType", "classmtgb_1_1ComponentRegistry.html#a4a01e6709f3f6fa84be23cb1cc2683bf", null ],
     [ "Release", "classmtgb_1_1ComponentRegistry.html#aa2823e5390468dfc47213b845c55d3ac", null ],
     [ "UnRegisterComponent", "classmtgb_1_1ComponentRegistry.html#a2d6b55c198f1ab745178dde6bf7f2b57", null ],

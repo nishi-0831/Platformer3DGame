@@ -12,5 +12,5 @@ var structmtgb_1_1ResourceCollection =
     [ "operator[]", "structmtgb_1_1ResourceCollection.html#aa0489fe20315e548b81e8f1dfee7dee6", null ],
     [ "Release", "structmtgb_1_1ResourceCollection.html#a1af8071476cc0164fc4515ae01090549", null ],
     [ "Swap", "structmtgb_1_1ResourceCollection.html#a1b5be1d185c1db86b4b34584f6156d10", null ],
-    [ "resourceCollection_", "structmtgb_1_1ResourceCollection.html#a937d852a677be22dc1a74cb65636bfd2", null ]
+    [ "resourceCollection_", "structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f", null ]
 ];

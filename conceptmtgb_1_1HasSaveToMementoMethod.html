@@ -102,9 +102,9 @@ $(document).ready(function(){initNavTree('conceptmtgb_1_1HasSaveToMementoMethod.
 <p><code>#include &quot;<a class="el" href="ComponentConcept_8h_source.html">ComponentConcept.h</a>&quot;</code></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1HasSaveToMementoMethod.html">mtgb::HasSaveToMementoMethod</a> =  <span class="keyword">requires</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> t) {</div>
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="conceptmtgb_1_1HasSaveToMementoMethod.html">mtgb::HasSaveToMementoMethod</a> =  <span class="keyword">requires</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> _t) {</div>
 <div class="line">        </div>
-<div class="line">        { t.SaveToMemento() };</div>
+<div class="line">        { _t.SaveToMemento() };</div>
 <div class="line">        </div>
 <div class="line">    } &amp;&amp; std::derived_from&lt;std::remove_pointer_t&lt;decltype(std::declval&lt;T&gt;().SaveToMemento())&gt;, IComponentMemento&gt;</div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>

@@ -11,7 +11,6 @@ var classmtgb_1_1TextRenderer =
     [ "Initialize", "classmtgb_1_1TextRenderer.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
     [ "OnPostRestore", "classmtgb_1_1TextRenderer.html#a657030a231a22470b5b09bd6e55a2c0e", null ],
     [ "OnPreSave", "classmtgb_1_1TextRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
-    [ "operator=", "classmtgb_1_1TextRenderer.html#ab1a000a1f275ad459719d7c0c727f22f", null ],
     [ "Render", "classmtgb_1_1TextRenderer.html#a7cd4639801f6cfa02d7008ca51a51f25", null ],
     [ "Reset", "classmtgb_1_1TextRenderer.html#a8f36832efd27d0f5f07f4af41d6a3259", null ],
     [ "Reuse", "classmtgb_1_1TextRenderer.html#a5a43753ff7c3ef1b19dd267096935f8a", null ],
@@ -21,9 +20,9 @@ var classmtgb_1_1TextRenderer =
     [ "ComponentPoolT", "classmtgb_1_1TextRenderer.html#aed716499a289d6dd69c0d40b683142aa", null ],
     [ "enabled_", "classmtgb_1_1TextRenderer.html#a635a1917f3a135b9933041bde5077610", null ],
     [ "entityId_", "classmtgb_1_1TextRenderer.html#a8aa4f5300c39f9f4705a587fd0a72639", null ],
-    [ "fontSize", "classmtgb_1_1TextRenderer.html#a7d96e777def8ba40cfcf21855c5b9c26", null ],
-    [ "params", "classmtgb_1_1TextRenderer.html#a665c885f108e2d973947edc6227664a3", null ],
-    [ "rect", "classmtgb_1_1TextRenderer.html#a93eb150a4a04a067749e7c35280edd05", null ],
-    [ "text", "classmtgb_1_1TextRenderer.html#a629667b517366e4187900f981513820d", null ],
+    [ "fontSize_", "classmtgb_1_1TextRenderer.html#a7a03370c40b5f7fb463805e3f6169788", null ],
+    [ "params_", "classmtgb_1_1TextRenderer.html#a4c494852a800dd0231007a22e2df3184", null ],
+    [ "rect_", "classmtgb_1_1TextRenderer.html#af73fcfed3a7f96d3bf9f07d6a1dc03d5", null ],
+    [ "text_", "classmtgb_1_1TextRenderer.html#a46bc4cb172c88cd2487ae61356e07c1d", null ],
     [ "TextRendererCP", "classmtgb_1_1TextRenderer.html#aee34247f7127fbe46a0b9da0abd5b3b5", null ]
 ];

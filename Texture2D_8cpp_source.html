@@ -260,82 +260,68 @@ $(document).ready(function(){initNavTree('Texture2D_8cpp_source.html',''); initR
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        &amp;&amp; <span class="stringliteral">&quot;2Dテクスチャの作成に失敗 @Texture2D::Load&quot;</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    );</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    D3D11_MAPPED_SUBRESOURCE hMappedSubresource {};</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// hResult = DirectX11Draw::pContext_-&gt;Map(</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">//  pTexture,</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">//  0U,</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="comment">//  D3D11_MAP_WRITE_DISCARD,</span></div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="comment">//  0U,</span></div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="comment">//  &amp;hMappedSubresource);</span></div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="comment">// massert(SUCCEEDED(hResult)  // テクスチャのマップに成功</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    <span class="comment">//  &amp;&amp; &quot;テクスチャのマップに失敗 @Texture2D::Load&quot;);</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keyword">const</span> D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC { .Format        = DXGI_FORMAT_R8G8B8A8_UNORM,</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>                                                                      .ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                                                                      .Texture2D {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                                                                          .MostDetailedMip = 0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                                                                          .MipLevels = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(mipLevels),</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                                                                      } };</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateShaderResourceView(</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        pTexture,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        &amp;SHADER_RESOURCE_VIEW_DESC,</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        pShaderResourceView_.ReleaseAndGetAddressOf()</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    );</div>
 <div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="comment">/*DirectX11Draw::pContext_-&gt;Unmap(pTexture, 0U);*/</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keyword">const</span> D3D11_SHADER_RESOURCE_VIEW_DESC SHADER_RESOURCE_VIEW_DESC { .Format        = DXGI_FORMAT_R8G8B8A8_UNORM,</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                                                                      .ViewDimension = D3D11_SRV_DIMENSION_TEXTURE2D,</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                                                                      .Texture2D {</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                                                                          .MostDetailedMip = 0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                                                                          .MipLevels = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(mipLevels),</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>                                                                      } };</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateShaderResourceView(</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        pTexture,</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        &amp;SHADER_RESOURCE_VIEW_DESC,</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        pShaderResourceView_.ReleaseAndGetAddressOf()</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        SUCCEEDED(hResult) <span class="comment">// テクスチャ用シェーダリソースビューの作成に成功</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        &amp;&amp; <span class="stringliteral">&quot;テクスチャ用シェーダリソースビューの作成に失敗  @Texture2D::Load&quot;</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>    );</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <span class="comment">// CPU側のデータをGPUへ書き込む</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;UpdateSubresource(</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        pTexture,         <span class="comment">// リソース</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        0,                <span class="comment">// サブリソースインデックス（最高解像度ミップ）</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keyword">nullptr</span>,          <span class="comment">// 更新範囲（全体）</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        pixelData.data(), <span class="comment">// ピクセルデータ</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        stride,           <span class="comment">// 行ピッチ</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        0</div>
 <div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    );</div>
 <div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        SUCCEEDED(hResult) <span class="comment">// テクスチャ用シェーダリソースビューの作成に成功</span></div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        &amp;&amp; <span class="stringliteral">&quot;テクスチャ用シェーダリソースビューの作成に失敗  @Texture2D::Load&quot;</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    );</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <span class="comment">// CPU側のデータをGPUへ書き込む</span></div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;UpdateSubresource(</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        pTexture,         <span class="comment">// リソース</span></div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        0,                <span class="comment">// サブリソースインデックス（最高解像度ミップ）</span></div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keyword">nullptr</span>,          <span class="comment">// 更新範囲（全体）</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        pixelData.data(), <span class="comment">// ピクセルデータ</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        stride,           <span class="comment">// 行ピッチ</span></div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        0</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>    );</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="comment">// ミップマップを生成</span></div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;GenerateMips(pShaderResourceView_.Get());</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    <span class="comment">// サンプラーステートの設定(ミップマップ対応に)</span></div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="keyword">const</span> D3D11_SAMPLER_DESC SAMPLER_DESC {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>        <span class="comment">// MEMO: サンプリングするときのフィルタ (かなり種類多い)</span></div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>        <span class="comment">//     : Unityのテクスチャ設定みたいな感じ</span></div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>        <span class="comment">//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/d3d11/ne-d3d11-d3d11_filter</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        <span class="comment">//.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT,</span></div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        .Filter         = D3D11_FILTER_MIN_MAG_MIP_LINEAR,</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>        .AddressU       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>        .AddressV       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>        .AddressW       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>        .MipLODBias     = 0.0f,                    <span class="comment">// ミップマップのLODオフセット</span></div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>        .MaxAnisotropy  = 0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,                      <span class="comment">// 異方性フィルタを使った場合のクランプ値</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>        .ComparisonFunc = D3D11_COMPARISON_ALWAYS, <span class="comment">// TOOD: D3D11_COMPARISON_FUNCについて理解する</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>        .BorderColor    = {},                      <span class="comment">// ボーダの色</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>        .MinLOD         = {},                      <span class="comment">// LODミップマップの最小レベル</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        .MaxLOD         = D3D11_FLOAT32_MAX,       <span class="comment">// LODミップマップの最大レベル</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    };</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="comment">// サンプラーステートを作成</span></div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateSamplerState(&amp;SAMPLER_DESC, pSamplerLinear_.ReleaseAndGetAddressOf());</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;サンプラーステートの作成に失敗 @Texture2D::Load&quot;</span>);</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pTexture);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFormatConverter);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFrame);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pDecoder);</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFactory);</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    CoUninitialize();</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>}</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="comment">// ミップマップを生成</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;GenerateMips(pShaderResourceView_.Get());</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <span class="comment">// サンプラーステートの設定(ミップマップ対応に)</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <span class="keyword">const</span> D3D11_SAMPLER_DESC SAMPLER_DESC {</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="comment">// MEMO: サンプリングするときのフィルタ (かなり種類多い)</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="comment">//     : Unityのテクスチャ設定みたいな感じ</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>        <span class="comment">//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/d3d11/ne-d3d11-d3d11_filter</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="comment">//.Filter = D3D11_FILTER_MIN_MAG_MIP_POINT,</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        .Filter         = D3D11_FILTER_MIN_MAG_MIP_LINEAR,</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        .AddressU       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        .AddressV       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        .AddressW       = D3D11_TEXTURE_ADDRESS_WRAP,</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        .MipLODBias     = 0.0f,                    <span class="comment">// ミップマップのLODオフセット</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        .MaxAnisotropy  = 0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,                      <span class="comment">// 異方性フィルタを使った場合のクランプ値</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        .ComparisonFunc = D3D11_COMPARISON_ALWAYS, <span class="comment">// TOOD: D3D11_COMPARISON_FUNCについて理解する</span></div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        .BorderColor    = {},                      <span class="comment">// ボーダの色</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>        .MinLOD         = {},                      <span class="comment">// LODミップマップの最小レベル</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>        .MaxLOD         = D3D11_FLOAT32_MAX,       <span class="comment">// LODミップマップの最大レベル</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    };</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="comment">// サンプラーステートを作成</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#a5339b5f02833ad0ae154686c4a0ae037">DirectX11Draw::pDevice_</a>-&gt;CreateSamplerState(&amp;SAMPLER_DESC, pSamplerLinear_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;サンプラーステートの作成に失敗 @Texture2D::Load&quot;</span>);</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pTexture);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFormatConverter);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFrame);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pDecoder);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <a class="code hl_define" href="ReleaseUtility_8h.html#a6038f7bdb274c2e159988a57dedbf93d">SAFE_RELEASE</a>(pFactory);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    CoUninitialize();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>}</div>
 <div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
 <div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>

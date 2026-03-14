@@ -11,7 +11,6 @@ var classmtgb_1_1ImageRenderer =
     [ "Initialize", "classmtgb_1_1ImageRenderer.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
     [ "OnPostRestore", "classmtgb_1_1ImageRenderer.html#a657030a231a22470b5b09bd6e55a2c0e", null ],
     [ "OnPreSave", "classmtgb_1_1ImageRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
-    [ "operator=", "classmtgb_1_1ImageRenderer.html#a096b19eeaef3b93a7070b7879442ce9b", null ],
     [ "Render", "classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20", null ],
     [ "Reset", "classmtgb_1_1ImageRenderer.html#a8f36832efd27d0f5f07f4af41d6a3259", null ],
     [ "Reuse", "classmtgb_1_1ImageRenderer.html#a5a43753ff7c3ef1b19dd267096935f8a", null ],

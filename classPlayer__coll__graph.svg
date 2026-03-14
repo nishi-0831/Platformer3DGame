@@ -90,12 +90,12 @@
 <text text-anchor="start" x="149" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(GameObject</text>
 <text text-anchor="start" x="149" y="-618.5" font-family="Helvetica,sans-Serif" font-size="10.00">Tag _tag)</text>
 <text text-anchor="start" x="149" y="-607.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
-<text text-anchor="start" x="149" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(const</text>
-<text text-anchor="start" x="149" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::string &amp;_name)</text>
+<text text-anchor="start" x="149" y="-596.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(std</text>
+<text text-anchor="start" x="149" y="-585.5" font-family="Helvetica,sans-Serif" font-size="10.00">::string_view _name)</text>
 <text text-anchor="start" x="149" y="-574.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static void FindGameObjects</text>
-<text text-anchor="start" x="149" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const std::string &amp;_name,</text>
-<text text-anchor="start" x="149" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject *</text>
-<text text-anchor="start" x="149" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &gt; *_pFoundGameObjects)</text>
+<text text-anchor="start" x="149" y="-563.5" font-family="Helvetica,sans-Serif" font-size="10.00">(std::string_view _name,</text>
+<text text-anchor="start" x="149" y="-552.5" font-family="Helvetica,sans-Serif" font-size="10.00"> std::vector&lt; GameObject</text>
+<text text-anchor="start" x="149" y="-541.5" font-family="Helvetica,sans-Serif" font-size="10.00"> * &gt; *_pFoundGameObjects)</text>
 <text text-anchor="start" x="149" y="-530.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ static GameObject *</text>
 <text text-anchor="start" x="149" y="-519.5" font-family="Helvetica,sans-Serif" font-size="10.00"> FindGameObject(EntityId</text>
 <text text-anchor="start" x="149" y="-508.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
@@ -451,20 +451,20 @@
 <text text-anchor="start" x="1271" y="-1939.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform(EntityId</text>
 <text text-anchor="start" x="1271" y="-1928.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _entityId)</text>
 <text text-anchor="start" x="1271" y="-1917.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~Transform()</text>
-<text text-anchor="start" x="1271" y="-1906.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ Transform &amp; operator</text>
-<text text-anchor="start" x="1271" y="-1895.5" font-family="Helvetica,sans-Serif" font-size="10.00">=(const Transform &amp;_other)</text>
-<text text-anchor="start" x="1271" y="-1884.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
-<text text-anchor="start" x="1271" y="-1873.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="1271" y="-1906.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Compute()</text>
+<text text-anchor="start" x="1271" y="-1895.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateLocalMatrix</text>
+<text text-anchor="start" x="1271" y="-1884.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="1271" y="-1873.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
 <text text-anchor="start" x="1271" y="-1862.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="1271" y="-1851.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldMatrix</text>
-<text text-anchor="start" x="1271" y="-1840.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="1271" y="-1829.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
-<text text-anchor="start" x="1271" y="-1818.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="1271" y="-1807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
-<text text-anchor="start" x="1271" y="-1796.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="1271" y="-1785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
-<text text-anchor="start" x="1271" y="-1774.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
-<text text-anchor="start" x="1271" y="-1763.5" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 16 件…</text>
+<text text-anchor="start" x="1271" y="-1851.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateWorldRotation</text>
+<text text-anchor="start" x="1271" y="-1840.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="1271" y="-1829.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentMatrix</text>
+<text text-anchor="start" x="1271" y="-1818.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="1271" y="-1807.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void GenerateParentRotation</text>
+<text text-anchor="start" x="1271" y="-1796.5" font-family="Helvetica,sans-Serif" font-size="10.00">Matrix(Matrix4x4 *_pMatrix) const</text>
+<text text-anchor="start" x="1271" y="-1785.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ bool DecomposeMatrix</text>
+<text text-anchor="start" x="1271" y="-1774.5" font-family="Helvetica,sans-Serif" font-size="10.00">(const Matrix4x4 &amp;_matrix)</text>
+<text text-anchor="start" x="1271" y="-1763.5" font-family="Helvetica,sans-Serif" font-size="10.00">ほか 15 件…</text>
 <text text-anchor="start" x="1271" y="-1752.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool DecomposeMatrixImpl</text>
 <text text-anchor="start" x="1271" y="-1741.5" font-family="Helvetica,sans-Serif" font-size="10.00">(Vector3 *_pPos, Quaternion</text>
 <text text-anchor="start" x="1271" y="-1730.5" font-family="Helvetica,sans-Serif" font-size="10.00"> *_pRot, Vector3 *_pScale,</text>
@@ -607,30 +607,29 @@
 <g id="node26" class="node">
 <title>Node26</title>
 <g id="a_node26"><a xlink:href="classJumpController.html" target="_top" xlink:title="ジャンプを操作する">
-<polygon fill="white" stroke="#666666" points="1115.5,-622.5 1115.5,-789.5 1267.5,-789.5 1267.5,-622.5 1115.5,-622.5"/>
-<text text-anchor="middle" x="1191.5" y="-777.5" font-family="Helvetica,sans-Serif" font-size="10.00">JumpController</text>
-<polyline fill="none" stroke="#666666" points="1115.5,-770.5 1267.5,-770.5 "/>
-<text text-anchor="start" x="1123.5" y="-758.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isJumping_</text>
-<text text-anchor="start" x="1123.5" y="-747.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isHolding_</text>
-<text text-anchor="start" x="1123.5" y="-736.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float holdTime_</text>
-<text text-anchor="start" x="1123.5" y="-725.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float maxHoldTime_</text>
-<text text-anchor="start" x="1123.5" y="-714.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float onStartJumpVelocity_</text>
-<polyline fill="none" stroke="#666666" points="1115.5,-707.5 1267.5,-707.5 "/>
-<text text-anchor="start" x="1123.5" y="-695.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ JumpController(EntityId</text>
-<text text-anchor="start" x="1123.5" y="-684.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _targetId)</text>
-<text text-anchor="start" x="1123.5" y="-673.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~JumpController()</text>
-<text text-anchor="start" x="1123.5" y="-662.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update()</text>
-<text text-anchor="start" x="1123.5" y="-651.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void StartJump(float</text>
-<text text-anchor="start" x="1123.5" y="-640.5" font-family="Helvetica,sans-Serif" font-size="10.00"> _maxHeight)</text>
-<text text-anchor="start" x="1123.5" y="-629.5" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ReleaseButton()</text>
+<polygon fill="white" stroke="#666666" points="1115.5,-628 1115.5,-784 1267.5,-784 1267.5,-628 1115.5,-628"/>
+<text text-anchor="middle" x="1191.5" y="-772" font-family="Helvetica,sans-Serif" font-size="10.00">JumpController</text>
+<polyline fill="none" stroke="#666666" points="1115.5,-765 1267.5,-765 "/>
+<text text-anchor="start" x="1123.5" y="-753" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isJumping_</text>
+<text text-anchor="start" x="1123.5" y="-742" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; bool isHolding_</text>
+<text text-anchor="start" x="1123.5" y="-731" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float holdTime_</text>
+<text text-anchor="start" x="1123.5" y="-720" font-family="Helvetica,sans-Serif" font-size="10.00">&#45; float onStartJumpVelocity_</text>
+<polyline fill="none" stroke="#666666" points="1115.5,-713 1267.5,-713 "/>
+<text text-anchor="start" x="1123.5" y="-701" font-family="Helvetica,sans-Serif" font-size="10.00">+ JumpController(EntityId</text>
+<text text-anchor="start" x="1123.5" y="-690" font-family="Helvetica,sans-Serif" font-size="10.00"> _targetId)</text>
+<text text-anchor="start" x="1123.5" y="-679" font-family="Helvetica,sans-Serif" font-size="10.00">+ ~JumpController()</text>
+<text text-anchor="start" x="1123.5" y="-668" font-family="Helvetica,sans-Serif" font-size="10.00">+ void Update()</text>
+<text text-anchor="start" x="1123.5" y="-657" font-family="Helvetica,sans-Serif" font-size="10.00">+ void StartJump(float</text>
+<text text-anchor="start" x="1123.5" y="-646" font-family="Helvetica,sans-Serif" font-size="10.00"> _maxHeight)</text>
+<text text-anchor="start" x="1123.5" y="-635" font-family="Helvetica,sans-Serif" font-size="10.00">+ void ReleaseButton()</text>
 </a>
 </g>
 </g>
 <!-- Node12&#45;&gt;Node26 -->
 <g id="edge35" class="edge">
 <title>Node12&#45;&gt;Node26</title>
-<path fill="none" stroke="#404040" d="M1342,-1657.21C1340.8,-1641.25 1339.62,-1625.33 1338.5,-1610 1319.08,-1344.72 1349.45,-1273.67 1296.5,-1013 1281.69,-940.09 1254.09,-860.7 1230.91,-801.07"/>
-<polygon fill="none" stroke="#404040" points="1230.87,-800.96 1224.95,-796.83 1226.49,-789.79 1232.4,-793.91 1230.87,-800.96"/>
+<path fill="none" stroke="#404040" d="M1342,-1657.21C1340.8,-1641.25 1339.62,-1625.33 1338.5,-1610 1319.08,-1344.72 1349.45,-1273.67 1296.5,-1013 1281.22,-937.76 1252.32,-855.63 1228.7,-795.42"/>
+<polygon fill="none" stroke="#404040" points="1228.62,-795.21 1222.7,-791.11 1224.21,-784.06 1230.14,-788.16 1228.62,-795.21"/>
 <text text-anchor="middle" x="1387" y="-1309" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;pTargetTransform_</text>
 </g>
 <!-- Node13 -->
@@ -1091,8 +1090,8 @@
 <!-- Node24&#45;&gt;Node26 -->
 <g id="edge36" class="edge">
 <title>Node24&#45;&gt;Node26</title>
-<path fill="none" stroke="#404040" d="M1171.5,-1123.27C1176.62,-1016.61 1182.82,-887.54 1186.95,-801.68"/>
-<polygon fill="none" stroke="#404040" points="1186.96,-801.58 1183.25,-795.39 1187.53,-789.59 1191.24,-795.78 1186.96,-801.58"/>
+<path fill="none" stroke="#404040" d="M1171.5,-1123.27C1176.73,-1014.3 1183.09,-881.93 1187.22,-796.16"/>
+<polygon fill="none" stroke="#404040" points="1187.22,-796.09 1183.51,-789.91 1187.79,-784.11 1191.5,-790.29 1187.22,-796.09"/>
 <text text-anchor="middle" x="1227.5" y="-981.5" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;pTargetRigidBody_</text>
 </g>
 <!-- Node25&#45;&gt;Node24 -->
@@ -1104,7 +1103,7 @@
 <!-- Node26&#45;&gt;Node1 -->
 <g id="edge34" class="edge">
 <title>Node26&#45;&gt;Node1</title>
-<path fill="none" stroke="#404040" d="M1168.83,-622.26C1153.46,-572.61 1130.64,-509.19 1101.5,-457 1074.34,-408.36 1037.97,-359.35 1003.75,-317.72"/>
+<path fill="none" stroke="#404040" d="M1170.56,-627.9C1155.2,-577.49 1131.76,-511.19 1101.5,-457 1074.34,-408.36 1037.97,-359.35 1003.75,-317.72"/>
 <polygon fill="none" stroke="#404040" points="1003.68,-317.64 996.77,-315.57 996.03,-308.4 1002.93,-310.47 1003.68,-317.64"/>
 <text text-anchor="middle" x="1131" y="-431" font-family="Helvetica,sans-Serif" font-size="10.00"> &#45;jumpController_</text>
 </g>

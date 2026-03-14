@@ -224,10 +224,10 @@ mtgb::EffectData 連携図</div>
 <p>エフェクトの参照を返す </p>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="EffekseerVFX_8cpp_source.html">EffekseerVFX.cpp</a> の <a class="el" href="EffekseerVFX_8cpp_source.html#l00320">320</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  321</span>    {</div>
-<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">effectRef_</a>;</div>
-<div class="line"><span class="lineno">  323</span>    }</div>
+<p class="definition"> <a class="el" href="EffekseerVFX_8cpp_source.html">EffekseerVFX.cpp</a> の <a class="el" href="EffekseerVFX_8cpp_source.html#l00316">316</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  317</span>    {</div>
+<div class="line"><span class="lineno">  318</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">effectRef_</a>;</div>
+<div class="line"><span class="lineno">  319</span>    }</div>
 <div class="ttc" id="aclassmtgb_1_1EffectData_html_ac0f882bb1b38192d161612ceff4b4cf2"><div class="ttname"><a href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">mtgb::EffectData::effectRef_</a></div><div class="ttdeci">Effekseer::EffectRef effectRef_</div><div class="ttdef"><b>Definition:</b> <a href="EffekseerVFX_8h_source.html#l00075">EffekseerVFX.h:75</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="EffekseerVFX_8h_source.html#l00075">effectRef_</a>.</p>
@@ -252,10 +252,10 @@ mtgb::EffectData 連携図</div>
 <p>エフェクトのパスを返す </p>
 <dl class="section return"><dt>戻り値</dt><dd></dd></dl>
 
-<p class="definition"> <a class="el" href="EffekseerVFX_8cpp_source.html">EffekseerVFX.cpp</a> の <a class="el" href="EffekseerVFX_8cpp_source.html#l00315">315</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  316</span>    {</div>
-<div class="line"><span class="lineno">  317</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">filePath_</a>.string();</div>
-<div class="line"><span class="lineno">  318</span>    }</div>
+<p class="definition"> <a class="el" href="EffekseerVFX_8cpp_source.html">EffekseerVFX.cpp</a> の <a class="el" href="EffekseerVFX_8cpp_source.html#l00311">311</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>    {</div>
+<div class="line"><span class="lineno">  313</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">filePath_</a>.string();</div>
+<div class="line"><span class="lineno">  314</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="EffekseerVFX_8h_source.html#l00074">filePath_</a>.</p>
 
@@ -292,11 +292,7 @@ mtgb::EffectData 連携図</div>
 <div class="line"><span class="lineno">  306</span>            fs::path filepath(<a class="code hl_variable" href="classmtgb_1_1EffectData.html#a792208f185817f2df50fe267e1f6bc1e">filePath_</a>);</div>
 <div class="line"><span class="lineno">  307</span>            <a class="code hl_variable" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">effectRef_</a> = Effekseer::Effect::Create(_manager, filepath.u16string().c_str());</div>
 <div class="line"><span class="lineno">  308</span>        }</div>
-<div class="line"><span class="lineno">  309</span>        EffectTerm t = <a class="code hl_variable" href="classmtgb_1_1EffectData.html#ac0f882bb1b38192d161612ceff4b4cf2">effectRef_</a>-&gt;CalculateTerm();</div>
-<div class="line"><span class="lineno">  310</span>        t.TermMax;</div>
-<div class="line"><span class="lineno">  311</span>        t.TermMin;</div>
-<div class="line"><span class="lineno">  312</span>        int32_t i = t.TermMax;</div>
-<div class="line"><span class="lineno">  313</span>    }</div>
+<div class="line"><span class="lineno">  309</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="EffekseerVFX_8h_source.html#l00075">effectRef_</a>, <a class="el" href="EffekseerVFX_8h_source.html#l00074">filePath_</a>.</p>
 
@@ -333,7 +329,7 @@ mtgb::EffectData 連携図</div>
 
 <p class="definition"> <a class="el" href="EffekseerVFX_8h_source.html">EffekseerVFX.h</a> の <a class="el" href="EffekseerVFX_8h_source.html#l00075">75</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EffekseerVFX_8cpp_source.html#l00320">GetEffectRef()</a>, <a class="el" href="EffekseerVFX_8cpp_source.html#l00302">Load()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EffekseerVFX_8cpp_source.html#l00316">GetEffectRef()</a>, <a class="el" href="EffekseerVFX_8cpp_source.html#l00302">Load()</a>.</p>
 
 </div>
 </div>
@@ -359,7 +355,7 @@ mtgb::EffectData 連携図</div>
 
 <p class="definition"> <a class="el" href="EffekseerVFX_8h_source.html">EffekseerVFX.h</a> の <a class="el" href="EffekseerVFX_8h_source.html#l00074">74</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="EffekseerVFX_8cpp_source.html#l00315">GetFilePath()</a>, <a class="el" href="EffekseerVFX_8cpp_source.html#l00302">Load()</a>.</p>
+<p class="reference">参照元 <a class="el" href="EffekseerVFX_8cpp_source.html#l00311">GetFilePath()</a>, <a class="el" href="EffekseerVFX_8cpp_source.html#l00302">Load()</a>.</p>
 
 </div>
 </div>

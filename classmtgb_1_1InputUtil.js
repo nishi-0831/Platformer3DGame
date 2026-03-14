@@ -1,7 +1,7 @@
 var classmtgb_1_1InputUtil =
 [
     [ "GetAxis", "classmtgb_1_1InputUtil.html#a5aaa5b039b8986c6ae02bfb41040da06", null ],
-    [ "GetAxis", "classmtgb_1_1InputUtil.html#abbf47cc46d365bfa3c722ad3c245db4b", null ],
+    [ "GetAxis", "classmtgb_1_1InputUtil.html#a46550302052843b033d28fc1bc89efb6", null ],
     [ "GetGamePad", "classmtgb_1_1InputUtil.html#a48601f1d06fe70d0095873f08460abfb", null ],
     [ "GetGamePad", "classmtgb_1_1InputUtil.html#af20967dc235f91d4031fbd6487f9b704", null ],
     [ "GetGamePadDown", "classmtgb_1_1InputUtil.html#ac07204301c0cf56023bfeb7ad9680f85", null ],
@@ -17,8 +17,8 @@ var classmtgb_1_1InputUtil =
     [ "GetKeyUp", "classmtgb_1_1InputUtil.html#accd84c1c3bc8412d6b38670b1ffd19b1", null ],
     [ "GetMouse", "classmtgb_1_1InputUtil.html#a73a59e120c842ae669557479f4ce0754", null ],
     [ "GetMouseDown", "classmtgb_1_1InputUtil.html#a84c6e93edafa9c5bf83536fcf3792909", null ],
-    [ "GetMouseMove", "classmtgb_1_1InputUtil.html#a2d5fe29fb996947fe06f4b0dd1af5f56", null ],
-    [ "GetMousePosition", "classmtgb_1_1InputUtil.html#a195786a11edede4af011d36a6e30808d", null ],
+    [ "GetMouseMove", "classmtgb_1_1InputUtil.html#afc5ad9bcab455f772f6573b9d3c945f9", null ],
+    [ "GetMousePosition", "classmtgb_1_1InputUtil.html#aeea7b5e9ba265a1f2a1b6b7866d97e80", null ],
     [ "GetMouseUp", "classmtgb_1_1InputUtil.html#ad7079517ebd8b21b00cb5ce9c0f56122", null ],
     [ "GetTrigger", "classmtgb_1_1InputUtil.html#acd19663c6fb4aa605779a898d4b3f745", null ],
     [ "GetTrigger", "classmtgb_1_1InputUtil.html#a742801a05e742842219e62e3d277791a", null ],

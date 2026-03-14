@@ -42,7 +42,7 @@ var searchData=
   ['isloop_39',['isLoop',['../structmtgb_1_1EffectParameters.html#a49626e8014b235e96d63bef206d93eae',1,'mtgb::EffectParameters']]],
   ['islooping_5f_40',['isLooping_',['../classmtgb_1_1FbxAnimationController.html#a7b2769085b472941319dcf9b4b6d3d8f',1,'mtgb::FbxAnimationController']]],
   ['ismultimonitor_5f_41',['isMultiMonitor_',['../classmtgb_1_1DXGIResource.html#a0dfda7b1c1c0bb86d4dca01b39c8dd0c',1,'mtgb::DXGIResource']]],
-  ['isnotcalledstart_5f_42',['isNotCalledStart_',['../classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9',1,'mtgb::GameObject::isNotCalledStart_()'],['../classmtgb_1_1DeleteGameObjectCommand.html#a7ac4e112b769fce2c6c1b4d63fac887e',1,'mtgb::DeleteGameObjectCommand::isNotCalledStart_()']]],
+  ['isnotcalledstart_5f_42',['isNotCalledStart_',['../classmtgb_1_1GameObject.html#aee8629c2c936df1173a2f9efe7747ab9',1,'mtgb::GameObject']]],
   ['isopen_43',['isOpen',['../structmtgb_1_1ImGuiWindowState.html#aefb7b548cde73e6215ee6f4ee2442102',1,'mtgb::ImGuiWindowState']]],
   ['isplaying_5f_44',['isPlaying_',['../classmtgb_1_1FbxAnimationController.html#ab42a85e6d5ceaff9b72786df6b329a07',1,'mtgb::FbxAnimationController']]],
   ['isrequested_45',['isRequested',['../structmtgb_1_1MonitorInfo.html#ac3b235d3fbb0598905a45c36043e2f6e',1,'mtgb::MonitorInfo']]],

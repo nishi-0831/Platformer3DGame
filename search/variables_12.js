@@ -7,7 +7,7 @@ var searchData=
   ['rankinglist_5f_4',['rankingList_',['../classRankingManager.html#a981b0076b2c9ecc277cc45dfb668f4d1',1,'RankingManager']]],
   ['rawdatasize_5',['rawDataSize',['../structdrmp3__metadata.html#a8dae89b690058227b11ecca87aa8689e',1,'drmp3_metadata']]],
   ['raytransform_6',['rayTransform',['../structmtgb_1_1RayDetectorConfig.html#aa8b7cd6d1e826dd77eb4f5cd8622fb13',1,'mtgb::RayDetectorConfig']]],
-  ['rect_7',['rect',['../classmtgb_1_1TextRenderer.html#a93eb150a4a04a067749e7c35280edd05',1,'mtgb::TextRenderer']]],
+  ['rect_5f_7',['rect_',['../classmtgb_1_1TextRenderer.html#af73fcfed3a7f96d3bf9f07d6a1dc03d5',1,'mtgb::TextRenderer']]],
   ['redocounter_5f_8',['redoCounter_',['../classmtgb_1_1GroupCommand.html#aab5700d1b70d0c128e44737995512543',1,'mtgb::GroupCommand']]],
   ['redonames_5f_9',['redoNames_',['../classmtgb_1_1NamedCommandHistory.html#acc87bea50eeab94508c49923cd68a91b',1,'mtgb::NamedCommandHistory']]],
   ['redostack_5f_10',['redoStack_',['../classCommandHistory.html#a2c3a0ee148616a9a1d6cf79535674a8c',1,'CommandHistory']]],
@@ -17,7 +17,7 @@ var searchData=
   ['requestedjoystickdevices_5f_14',['requestedJoystickDevices_',['../classmtgb_1_1Input.html#a730a6161eb8a9de74b45b8e65157508b',1,'mtgb::Input']]],
   ['reserv_15',['reserv',['../structdrmp3dec.html#a81df7d1c59e3ce43b7512fe06f4a7630',1,'drmp3dec']]],
   ['reserv_5fbuf_16',['reserv_buf',['../structdrmp3dec.html#a1f1c567dc65ff34b11d545458c95282d',1,'drmp3dec']]],
-  ['resourcecollection_5f_17',['resourceCollection_',['../structmtgb_1_1ResourceCollection.html#a937d852a677be22dc1a74cb65636bfd2',1,'mtgb::ResourceCollection']]],
+  ['resourcecollection_5f_17',['resourceCollection_',['../structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f',1,'mtgb::ResourceCollection']]],
   ['respawnpointentityid_18',['respawnPointEntityId',['../structPlayerCollideRespawnPointEvent.html#adf069a0a7f665e3b104d48aadaba8900',1,'PlayerCollideRespawnPointEvent']]],
   ['resultscore_5f_19',['resultScore_',['../classRankingManager.html#a76be93bb15425de6a03d7df7c2386743',1,'RankingManager']]],
   ['returncode_20',['returncode',['../classrun-clang-tidy_1_1ClangTidyResult.html#aa55ec93d7cac2474e28a6013aae86bcb',1,'run-clang-tidy::ClangTidyResult']]],
@@ -26,11 +26,10 @@ var searchData=
   ['rgdwpov_23',['rgdwPOV',['../structmtgb_1_1JoystickProxy.html#ae1db7c68b95a6d37163b81524dc9a6d6',1,'mtgb::JoystickProxy']]],
   ['rglslider_24',['rglSlider',['../structmtgb_1_1JoystickProxy.html#a672a2f51dccebe8e50f2bd62a9fb04ea',1,'mtgb::JoystickProxy']]],
   ['rigidbodycp_25',['RigidBodyCP',['../classmtgb_1_1RigidBody.html#af822efbc7db40b265e2f723298b12194',1,'mtgb::RigidBody']]],
-  ['rotate_26',['rotate',['../classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966',1,'mtgb::Transform::rotate()'],['../structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e',1,'TransformState::rotate()'],['../structmtgb_1_1GAME__OBJECT__DESC.html#a7420ea8fa7e5113ad00022dd5c186674',1,'mtgb::GAME_OBJECT_DESC::rotate()']]],
+  ['rotate_26',['rotate',['../structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e',1,'TransformState::rotate()'],['../classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966',1,'mtgb::Transform::rotate()'],['../structmtgb_1_1GAME__OBJECT__DESC.html#a7420ea8fa7e5113ad00022dd5c186674',1,'mtgb::GAME_OBJECT_DESC::rotate()']]],
   ['rotateangledeg_5f_27',['rotateAngleDeg_',['../classmtgb_1_1QuaternionCamera.html#aeb10bec733d29d58abc49dbf3c0b8688',1,'mtgb::QuaternionCamera']]],
   ['rotateanglesec_5f_28',['rotateAngleSec_',['../classmtgb_1_1Saw.html#a693791e517abc5e395b73e0f9ac8174a',1,'mtgb::Saw::rotateAngleSec_()'],['../classmtgb_1_1CircularSaw.html#a951d19f95a32e849f318a0b555351502',1,'mtgb::CircularSaw::rotateAngleSec_()'],['../classmtgb_1_1SkySphere.html#a42a8209bbf948d2f1ea1f7769f75ab97',1,'mtgb::SkySphere::rotateAngleSec_()']]],
-  ['rotateanglesecsaw_5f_29',['rotateAngleSecSaw_',['../classmtgb_1_1CircularSaw.html#a2c05f2dce6b859df66e5a5eaf370827a',1,'mtgb::CircularSaw']]],
-  ['rotatesensitivity_5f_30',['rotateSensitivity_',['../classmtgb_1_1ICamera.html#a07616e4b52954ddec5d480709b45752e',1,'mtgb::ICamera::rotateSensitivity_()'],['../classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e',1,'mtgb::ImGuiEditorCamera::rotateSensitivity_()']]],
-  ['rotationz_5f_31',['rotationZ_',['../classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60',1,'mtgb::ImageRenderer']]],
-  ['row_5fsize_32',['ROW_SIZE',['../structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f',1,'mtgb::Matrix4x4']]]
+  ['rotatesensitivity_5f_29',['rotateSensitivity_',['../classmtgb_1_1ICamera.html#a07616e4b52954ddec5d480709b45752e',1,'mtgb::ICamera::rotateSensitivity_()'],['../classmtgb_1_1ImGuiEditorCamera.html#a4cc558e81c1cc2334baf16f529a78b8e',1,'mtgb::ImGuiEditorCamera::rotateSensitivity_()']]],
+  ['rotationz_5f_30',['rotationZ_',['../classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60',1,'mtgb::ImageRenderer']]],
+  ['row_5fsize_31',['ROW_SIZE',['../structmtgb_1_1Matrix4x4.html#aa6c7530ae3982a4c4005f9200423cb0f',1,'mtgb::Matrix4x4']]]
 ];

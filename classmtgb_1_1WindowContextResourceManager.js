@@ -13,8 +13,8 @@ var classmtgb_1_1WindowContextResourceManager =
     [ "Release", "classmtgb_1_1WindowContextResourceManager.html#a89bedbab9624771ef11113bf28df3539", null ],
     [ "SwapResource", "classmtgb_1_1WindowContextResourceManager.html#aa3dd385cf770b696ff34dd12b0e47bb3", null ],
     [ "Update", "classmtgb_1_1WindowContextResourceManager.html#a2cc644c2bd4bd70d1e2d84fe25138dc7", null ],
-    [ "collectionMap_", "classmtgb_1_1WindowContextResourceManager.html#af48467561ead10f179785d19c73c0a1f", null ],
+    [ "collectionMap_", "classmtgb_1_1WindowContextResourceManager.html#abfaad97a3be37fa7d883eb35d1ea3893", null ],
     [ "currentContext_", "classmtgb_1_1WindowContextResourceManager.html#ac1830fac591e037f46416c88fcd55baa", null ],
-    [ "factoryMap_", "classmtgb_1_1WindowContextResourceManager.html#a86b3d8c3044cf4221e0729f9f3096674", null ],
+    [ "factoryMap_", "classmtgb_1_1WindowContextResourceManager.html#a7d33843cd134221f1a02aead01e2e43b", null ],
     [ "insertionOrder_", "classmtgb_1_1WindowContextResourceManager.html#a60a9414dd3210e36971871dca98e9afe", null ]
 ];

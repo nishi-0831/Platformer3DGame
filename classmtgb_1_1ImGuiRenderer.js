@@ -16,7 +16,7 @@ var classmtgb_1_1ImGuiRenderer =
     [ "GetViewport", "classmtgb_1_1ImGuiRenderer.html#ac2ab8d15428a8eedfe82d7df92a137e6", null ],
     [ "Initialize", "classmtgb_1_1ImGuiRenderer.html#a4db4a95a57f586a5fda30be1957f247a", null ],
     [ "OnResize", "classmtgb_1_1ImGuiRenderer.html#a211643defaba029693f1225c0622d715", null ],
-    [ "Release", "classmtgb_1_1ImGuiRenderer.html#a9ef4f353cce28e09af4b18d95f4a253b", null ],
+    [ "Release", "classmtgb_1_1ImGuiRenderer.html#af87ce21f68c671a40085088db88c305c", null ],
     [ "RenderSceneView", "classmtgb_1_1ImGuiRenderer.html#ab1b0148d8603765edd4109ca24dedf92", null ],
     [ "ResetComPtrs", "classmtgb_1_1ImGuiRenderer.html#a434147aa5ce3fe561ed4760fdd56ec83", null ],
     [ "SetDrawList", "classmtgb_1_1ImGuiRenderer.html#a97281ceb7ce6e422c152575fb26ad8cd", null ],
