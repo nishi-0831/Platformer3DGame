@@ -7,7 +7,7 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, pTargetTransform_ { &Transform::Get(_entityId) }
 	, pTargetRigidBody_ { &RigidBody::Get(_entityId) }
 	, lookAtPositionOffset_ { Vector3 { 0, 2, 0 } }
-	, rotateAngleDeg_ { 30.0f }
+	, rotationSpeedDegPerSec_ { 60.0f }
 	, distance_ { 8.0f }
 	, inputType_ { InputType::JOYPAD }
 	, minPitchAngleDeg_ { -5.0f }
@@ -38,12 +38,12 @@ void mtgb::QuaternionCamera::Update()
 		case InputType::JOYPAD :
 			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
 			movement.x	  = -vec2.y;
-			movement.y	  = -vec2.x;
+			movement.y	  = vec2.x;
 			break;
 	}
 	Quaternion& rotate		= pTransform_->rotate;
 	Quaternion worldRotateY = Quaternion::AngleAxis(
-		DirectX::XMConvertToRadians(rotateAngleDeg_ * Time::DeltaTimeF() * movement.y),
+		DirectX::XMConvertToRadians(rotationSpeedDegPerSec_ * Time::DeltaTimeF() * movement.y),
 		Vector3::Up()
 	);
 	// カメラのローカル座標系でのRight軸
@@ -51,7 +51,7 @@ void mtgb::QuaternionCamera::Update()
 
 	// カメラの右方向を軸に回転
 	Quaternion localRotateX = Quaternion::AngleAxis(
-		DirectX::XMConvertToRadians(rotateAngleDeg_ * Time::DeltaTimeF() * movement.x),
+		DirectX::XMConvertToRadians(rotationSpeedDegPerSec_ * Time::DeltaTimeF() * movement.x),
 		localRight
 	);
 

@@ -5,7 +5,9 @@ ExcludeDirectories:
   - "ImGui" 
   - "packages" 
 MaxDegreeOfParallelism: 4
+OutputDirectory: "Generated"
 CodeGenerationRules:
   -  ClassMetadataType: "MT_COMPONENT"
      MemberMetadataType: "MT_PROPERTY"
      OutputTemplate: "Tools/ClangSourceGenerator/GenerateComponentHeader.sbn"
+     OutputFileName: "{}.generated.h"

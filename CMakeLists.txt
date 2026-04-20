@@ -142,7 +142,6 @@ set(03mtgb
     "mtgb/ReflectionMacro.h"
     "mtgb/stdafx.cpp"
     "mtgb/stdafx.h"
-    "mtgb/Transform.generated.h"
 )
 source_group("03mtgb" FILES ${03mtgb})
 
@@ -660,7 +659,6 @@ set(Unfiltered
     "mtgb/InputPadCode.h"
     "mtgb/InterpolatorCP.cpp"
     "mtgb/InterpolatorCP.h"
-    "mtgb/IOriginalShader.h"
     "mtgb/JsonConverter.cpp"
     "mtgb/MeshRendererCP.cpp"
     "mtgb/MonitorInfo.cpp"
@@ -815,6 +813,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty;"
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
         "${CMAKE_CURRENT_SOURCE_DIR}/mtgb"
+        "${CMAKE_CURRENT_SOURCE_DIR}/Generated"
     )
 endif()
 

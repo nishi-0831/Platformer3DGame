@@ -14,14 +14,21 @@ namespace mtgb
 		Transform* pTransform_;
 		Transform* pTargetTransform_;
 		RigidBody* pTargetRigidBody_;
-		Vector3 lookAtPos_;
-		Vector3 lookAtPositionOffset_;
-		float rotateAngleDeg_;
-		float distance_;
-		InputType inputType_;
-		float minPitchAngleDeg_;
-		float maxPitchAngleDeg_;
 
+		// 被写体の座標
+		Vector3 lookAtPos_;
+		// 被写体の座標とのオフセット。被写体を中心からちょっとずらす
+		Vector3 lookAtPositionOffset_;
+		// 一秒あたりの回転速度(度)
+		float rotationSpeedDegPerSec_;
+		// 被写体との距離
+		float distance_;
+		// カメラを動かす入力機器の種類
+		InputType inputType_;
+		// 上下の角度の最小値
+		float minPitchAngleDeg_;
+		// 上下の角度の最大値
+		float maxPitchAngleDeg_;
 		float currentLerpSpeed_;
 		float lerpSpeedOnJumping_;
 

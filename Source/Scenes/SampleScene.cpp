@@ -19,7 +19,7 @@ SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
 {
-	mtgb::Game::System<ImGuiEditorCamera>().CreateCamera();
+	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
 
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
@@ -46,7 +46,7 @@ void SampleScene::Update()
 {
 	if (mtgb::InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{
-		mtgb::Game::System<SceneSystem>().Move<ResultScene>();
+		mtgb::Game::System<mtgb::SceneSystem>().Move<ResultScene>();
 	}
 }
 

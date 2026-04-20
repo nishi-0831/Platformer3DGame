@@ -12,9 +12,9 @@
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	_pGameObjectRegistrar->Register<MovingFloor>("MovingFloor");
-	_pGameObjectRegistrar->Register<Player>("Player");
+	_pGameObjectRegistrar->Register<Player>("Player", true);
 	_pGameObjectRegistrar->Register<ScoreItem>("ScoreItem");
-	_pGameObjectRegistrar->Register<Goal>("Goal");
+	_pGameObjectRegistrar->Register<Goal>("Goal", true);
 	_pGameObjectRegistrar->Register<GameOverZone>("GameOverZone");
 	_pGameObjectRegistrar->Register<PatrolChargerEnemy>("PatrolChargerEnemy");
 	_pGameObjectRegistrar->Register<SeaPlane>("SeaPlane");
