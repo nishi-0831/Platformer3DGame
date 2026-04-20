@@ -84,8 +84,7 @@ var hierarchy =
         [ "mtgb::QuaternionCamera", "classmtgb_1_1QuaternionCamera.html", null ],
         [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
         [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ],
-        [ "mtgb::SphericalCamera", "classmtgb_1_1SphericalCamera.html", null ],
-        [ "mtgb::TextBox", "classmtgb_1_1TextBox.html", null ]
+        [ "mtgb::SphericalCamera", "classmtgb_1_1SphericalCamera.html", null ]
       ] ]
     ] ],
     [ "Enum_Test", "classEnum__Test.html", null ],
@@ -222,7 +221,6 @@ var hierarchy =
     [ "mtgb::InputUtil", "classmtgb_1_1InputUtil.html", null ],
     [ "InterpolatorState", "structInterpolatorState.html", null ],
     [ "mtgb::Intersection::IntersectInfo", "structmtgb_1_1Intersection_1_1IntersectInfo.html", null ],
-    [ "mtgb::IOriginalShader< EnumStructT, OriginalShaderT >", "classmtgb_1_1IOriginalShader.html", null ],
     [ "mtgb::IProfile< T, ExtendT >", "classmtgb_1_1IProfile.html", null ],
     [ "mtgb::IProfile< int, ProfileInt >", "classmtgb_1_1IProfile.html", [
       [ "mtgb::ProfileInt", "structmtgb_1_1ProfileInt.html", null ]
@@ -255,7 +253,6 @@ var hierarchy =
     ] ],
     [ "ISystem", null, [
       [ "ActorManager", "classActorManager.html", null ],
-      [ "RankingManager", "classRankingManager.html", null ],
       [ "StageManger", "classStageManger.html", null ]
     ] ],
     [ "mtgb::ISystem", "classmtgb_1_1ISystem.html", [

@@ -1,15 +1,5 @@
 var NAVTREEINDEX6 =
 {
-"classHighlightEnemy.html#aec1d6bd2a9c2953d360201599fc31d4a":[5,0,41,2],
-"classHighlightEnemy.html#aed2d88f25ff20bd9f0068b119d867a8e":[5,0,41,21],
-"classHighlightEnemy.html#aee8629c2c936df1173a2f9efe7747ab9":[5,0,41,33],
-"classHighlightEnemy.html#af0b3630f3e49fde5433ef21cc243a235":[5,0,41,27],
-"classHighlightEnemy.html#af7f69a378c89f91950f6356452ce6e72":[5,0,41,20],
-"classHighlightEnemy.html#af889133148e81bfcd2341b8573e5abc6":[5,0,41,34],
-"classHighlightEnemy.html#afaeb72363aa2518190ac01dee5d40c0c":[5,0,41,11],
-"classIActor.html":[5,0,42],
-"classIActor.html#a5490a4b3ad610d8b83b6ef7260691892":[5,0,42,6],
-"classIActor.html#a7083a13a73b79492ab73b2cb11499d2d":[5,0,42,0],
 "classIActor.html#a7571abb01b0c367ed0b321bdf4c392d6":[5,0,42,2],
 "classIActor.html#a788d01e1e3c5042eeeb7d13ba7feeef9":[5,0,42,3],
 "classIActor.html#a845bfb24adda93e04b0b7da351bd857c":[5,0,42,4],
@@ -249,5 +239,15 @@ var NAVTREEINDEX6 =
 "classPlayer.html#ac46e11ad9a17923016a7844308097266":[5,0,59,37],
 "classPlayer.html#ac4f79d210ae0d1388e203d1d1b93ae6c":[5,0,59,54],
 "classPlayer.html#acbb3abfb79e295f7c77ac16e57d0c71b":[5,0,59,49],
-"classPlayer.html#acf7a856cb700f34bd3e7b74ba260a23b":[5,0,59,7]
+"classPlayer.html#acf7a856cb700f34bd3e7b74ba260a23b":[5,0,59,7],
+"classPlayer.html#acff62110b73cdb09dcc0279b8cc2b3eb":[5,0,59,65],
+"classPlayer.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9":[5,0,59,26],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019":[5,0,59,1],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a40222410c7347ec4b6bcaba3bcb21f3b":[5,0,59,1,2],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a479ab1b75080105c17b10096543dc8c5":[5,0,59,1,3],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019a855520d2a5b0b1a64b939e7e30889e2a":[5,0,59,1,1],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019aa5daf7f2ebbba4975d61dab1c40188c7":[5,0,59,1,0],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019abfedf8515782de6fc236141383aeae52":[5,0,59,1,4],
+"classPlayer.html#ad93c54e92318d7c7abb43d424154f019ae0651864a549515538cb104b7b32e75d":[5,0,59,1,5],
+"classPlayer.html#adca80cc33581de34dd622983ac232707":[5,0,59,21]
 };

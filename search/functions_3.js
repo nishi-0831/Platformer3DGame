@@ -68,7 +68,7 @@ var searchData=
   ['contains_65',['Contains',['../structmtgb_1_1RectT.html#a4b12631da53ccbc0f1009d10a211f7eb',1,'mtgb::RectT']]],
   ['converthresulttomessage_66',['ConvertHResultToMessage',['../classmtgb_1_1Input.html#af197d9ef2ea21a22efd61bd67696fc52',1,'mtgb::Input']]],
   ['copy_67',['Copy',['../classmtgb_1_1IComponentPool.html#af31537171d4d3a72f1b245dbe9fb9afb',1,'mtgb::IComponentPool::Copy()'],['../classmtgb_1_1ComponentPool.html#a2d5f2c2667a77d695f478df7f674219a',1,'mtgb::ComponentPool::Copy()']]],
-  ['create_68',['Create',['../classmtgb_1_1IGameObjectCreator.html#a81a0f5e599ca20832a9a5060bfa36e9d',1,'mtgb::IGameObjectCreator::Create()'],['../classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67',1,'mtgb::GameObjectFactory::Create()']]],
+  ['create_68',['Create',['../classmtgb_1_1IGameObjectCreator.html#a81a0f5e599ca20832a9a5060bfa36e9d',1,'mtgb::IGameObjectCreator::Create()'],['../classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78',1,'mtgb::GameObjectFactory::Create()']]],
   ['createcamera_69',['CreateCamera',['../classmtgb_1_1ImGuiEditorCamera.html#a10d58d2fe183f3d12a7274bfcb01c9aa',1,'mtgb::ImGuiEditorCamera']]],
   ['created2drendertarget_70',['CreateD2DRenderTarget',['../classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9',1,'mtgb::Direct2D']]],
   ['created3dresources_71',['CreateD3DResources',['../classmtgb_1_1ImGuiRenderer.html#a5e8eab8d4237edc15d0e30f92b9b75ea',1,'mtgb::ImGuiRenderer']]],

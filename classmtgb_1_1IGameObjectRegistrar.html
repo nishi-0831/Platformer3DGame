@@ -107,13 +107,13 @@ $(document).ready(function(){initNavTree('classmtgb_1_1IGameObjectRegistrar.html
 <div class="dynheader">
 mtgb::IGameObjectRegistrar の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar__inherit__graph.svg" width="250" height="463"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar__inherit__graph.svg" width="250" height="551"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 mtgb::IGameObjectRegistrar 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar__coll__graph.svg" width="250" height="176"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar__coll__graph.svg" width="250" height="206"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -121,14 +121,14 @@ mtgb::IGameObjectRegistrar 連携図</div>
 公開メンバ関数</h2></td></tr>
 <tr class="memitem:a405b20d77b002c0d3d266c083fada192"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a405b20d77b002c0d3d266c083fada192">~IGameObjectRegistrar</a> ()=default</td></tr>
 <tr class="separator:a405b20d77b002c0d3d266c083fada192"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3460475cdecd7f1db0b41a1f936c939d"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
-<tr class="memitem:a3460475cdecd7f1db0b41a1f936c939d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a3460475cdecd7f1db0b41a1f936c939d">Register</a> (const std::string &amp;_typeName)</td></tr>
-<tr class="separator:a3460475cdecd7f1db0b41a1f936c939d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa07373ad437b7d9f59cfba528eb42f00"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa07373ad437b7d9f59cfba528eb42f00"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#aa07373ad437b7d9f59cfba528eb42f00">Register</a> (std::string_view _typeName, bool _isUnique=false)</td></tr>
+<tr class="separator:aa07373ad437b7d9f59cfba528eb42f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 非公開メンバ関数</h2></td></tr>
-<tr class="memitem:a5d6dca238de62bb8b1f8581abec99491"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a5d6dca238de62bb8b1f8581abec99491">RegisterFactory</a> (const std::string &amp;_typeName, const <a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a> &amp;_creator)=0</td></tr>
-<tr class="separator:a5d6dca238de62bb8b1f8581abec99491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbf7ea66261ac91b378528696c892cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">RegisterFactory</a> (std::string_view, const <a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a> &amp;_creator, bool _isUnique)=0</td></tr>
+<tr class="separator:a2dbf7ea66261ac91b378528696c892cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
@@ -160,8 +160,8 @@ mtgb::IGameObjectRegistrar 連携図</div>
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a3460475cdecd7f1db0b41a1f936c939d" name="a3460475cdecd7f1db0b41a1f936c939d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3460475cdecd7f1db0b41a1f936c939d">&#9670;&#160;</a></span>Register()</h2>
+<a id="aa07373ad437b7d9f59cfba528eb42f00" name="aa07373ad437b7d9f59cfba528eb42f00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07373ad437b7d9f59cfba528eb42f00">&#9670;&#160;</a></span>Register()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,9 +174,19 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
         <tr>
           <td class="memname">void mtgb::IGameObjectRegistrar::Register </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>_typeName</em></td><td>)</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>_typeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_isUnique</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -189,37 +199,38 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <p class="definition"> <a class="el" href="IGameObjectRegistrar_8h_source.html">IGameObjectRegistrar.h</a> の <a class="el" href="IGameObjectRegistrar_8h_source.html#l00017">17</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
 <div class="line"><span class="lineno">   19</span>            Game::System&lt;GameObjectTypeRegistry&gt;().Register&lt;<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;(_typeName);</div>
-<div class="line"><span class="lineno">   20</span>            <a class="code hl_function" href="classmtgb_1_1IGameObjectRegistrar.html#a5d6dca238de62bb8b1f8581abec99491">RegisterFactory</a>(</div>
+<div class="line"><span class="lineno">   20</span>            <a class="code hl_function" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">RegisterFactory</a>(</div>
 <div class="line"><span class="lineno">   21</span>                _typeName,</div>
 <div class="line"><span class="lineno">   22</span>                []() -&gt; GameObject*</div>
 <div class="line"><span class="lineno">   23</span>                {</div>
 <div class="line"><span class="lineno">   24</span>                    <span class="keywordflow">return</span> GameObject::Instantiate&lt;T&gt;();</div>
-<div class="line"><span class="lineno">   25</span>                }</div>
-<div class="line"><span class="lineno">   26</span>            );</div>
-<div class="line"><span class="lineno">   27</span>        }</div>
+<div class="line"><span class="lineno">   25</span>                },</div>
+<div class="line"><span class="lineno">   26</span>                _isUnique</div>
+<div class="line"><span class="lineno">   27</span>            );</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
 <div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
-<div class="ttc" id="aclassmtgb_1_1IGameObjectRegistrar_html_a5d6dca238de62bb8b1f8581abec99491"><div class="ttname"><a href="classmtgb_1_1IGameObjectRegistrar.html#a5d6dca238de62bb8b1f8581abec99491">mtgb::IGameObjectRegistrar::RegisterFactory</a></div><div class="ttdeci">virtual void RegisterFactory(const std::string &amp;_typeName, const CreateFunc &amp;_creator)=0</div></div>
+<div class="ttc" id="aclassmtgb_1_1IGameObjectRegistrar_html_a2dbf7ea66261ac91b378528696c892cb"><div class="ttname"><a href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">mtgb::IGameObjectRegistrar::RegisterFactory</a></div><div class="ttdeci">virtual void RegisterFactory(std::string_view, const CreateFunc &amp;_creator, bool _isUnique)=0</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a5d6dca238de62bb8b1f8581abec99491">RegisterFactory()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">RegisterFactory()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="RegisterCommonGameObjectType_8cpp_source.html#l00004">mtgb::RegisterCommonGameObjectType()</a>, <a class="el" href="RegisterGameObjectType_8cpp_source.html#l00012">mtgb::RegisterGameObjectType()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_a3460475cdecd7f1db0b41a1f936c939d_cgraph.svg" width="475" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_aa07373ad437b7d9f59cfba528eb42f00_cgraph.svg" width="475" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_a3460475cdecd7f1db0b41a1f936c939d_icgraph.svg" width="755" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_aa07373ad437b7d9f59cfba528eb42f00_icgraph.svg" width="755" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
 </div>
 </div>
-<a id="a5d6dca238de62bb8b1f8581abec99491" name="a5d6dca238de62bb8b1f8581abec99491"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d6dca238de62bb8b1f8581abec99491">&#9670;&#160;</a></span>RegisterFactory()</h2>
+<a id="a2dbf7ea66261ac91b378528696c892cb" name="a2dbf7ea66261ac91b378528696c892cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dbf7ea66261ac91b378528696c892cb">&#9670;&#160;</a></span>RegisterFactory()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,14 +241,20 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
         <tr>
           <td class="memname">virtual void mtgb::IGameObjectRegistrar::RegisterFactory </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>_typeName</em>, </td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname">, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a> &amp;&#160;</td>
-          <td class="paramname"><em>_creator</em>&#160;</td>
+          <td class="paramname"><em>_creator</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_isUnique</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -252,13 +269,13 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classmtgb_1_1GameObjectFactory.html#a4e3819eb19b02a71f803f4dfc93f1d6b">mtgb::GameObjectFactory</a>で実装されています。</p>
+<p><a class="el" href="classmtgb_1_1GameObjectFactory.html#a33af2c7c13a4e9ef5ecc1f09698e583d">mtgb::GameObjectFactory</a>で実装されています。</p>
 
 <p class="reference">参照元 <a class="el" href="IGameObjectRegistrar_8h_source.html#l00017">Register()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_a5d6dca238de62bb8b1f8581abec99491_icgraph.svg" width="1011" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1IGameObjectRegistrar_a2dbf7ea66261ac91b378528696c892cb_icgraph.svg" width="1011" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 

@@ -110,7 +110,7 @@ $(document).ready(function(){initNavTree('classmtgb_1_1GameObjectGenerator.html'
 <div class="dynheader">
 mtgb::GameObjectGenerator 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObjectGenerator__coll__graph.svg" width="502" height="795"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObjectGenerator__coll__graph.svg" width="502" height="883"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -269,13 +269,13 @@ mtgb::GameObjectGenerator 連携図</div>
 <div class="line"><span class="lineno">   71</span>    DuplicateGameObjectCommand* cmd = <span class="keyword">new</span> DuplicateGameObjectCommand(</div>
 <div class="line"><span class="lineno">   72</span>        [classTypeName]()</div>
 <div class="line"><span class="lineno">   73</span>        {</div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">Create</a>(classTypeName);</div>
+<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(classTypeName);</div>
 <div class="line"><span class="lineno">   75</span>        },</div>
 <div class="line"><span class="lineno">   76</span>        _srcEntityId</div>
 <div class="line"><span class="lineno">   77</span>    );</div>
 <div class="line"><span class="lineno">   78</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
 <div class="line"><span class="lineno">   79</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_abeb1cfedb12a9e72059d992bdc9aaf67"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00006">GameObjectFactory.cpp:6</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_a3fe3d6c4ad51c9390ca118666b8a1b78"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const override</div><div class="ttdoc">型名からゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00004">GameObjectFactory.cpp:4</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00106">GameObject.cpp:106</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8cpp_source.html#l00106">mtgb::GameObject::GetClassTypeName()</a>.</p>
@@ -328,7 +328,7 @@ mtgb::GameObjectGenerator 連携図</div>
 <div class="line"><span class="lineno">   56</span>    GameObjectCreateCommand* cmd = <span class="keyword">new</span> GameObjectCreateCommand(</div>
 <div class="line"><span class="lineno">   57</span>        [_gameObjName]()</div>
 <div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">Create</a>(_gameObjName);</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(_gameObjName);</div>
 <div class="line"><span class="lineno">   60</span>        }</div>
 <div class="line"><span class="lineno">   61</span>    );</div>
 <div class="line"><span class="lineno">   62</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
@@ -391,7 +391,7 @@ mtgb::GameObjectGenerator 連携図</div>
 <div class="line"><span class="lineno">   38</span>        GameObjectCreateCommand* cmd = <span class="keyword">new</span> GameObjectCreateCommand(</div>
 <div class="line"><span class="lineno">   39</span>            [classType]()</div>
 <div class="line"><span class="lineno">   40</span>            {</div>
-<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#abeb1cfedb12a9e72059d992bdc9aaf67">Create</a>(classType);</div>
+<div class="line"><span class="lineno">   41</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(classType);</div>
 <div class="line"><span class="lineno">   42</span>            },</div>
 <div class="line"><span class="lineno">   43</span>            j</div>
 <div class="line"><span class="lineno">   44</span>        );</div>

@@ -47,7 +47,7 @@ var classmtgb_1_1QuaternionCamera =
     [ "pTargetRigidBody_", "classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3", null ],
     [ "pTargetTransform_", "classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b", null ],
     [ "pTransform_", "classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c", null ],
-    [ "rotateAngleDeg_", "classmtgb_1_1QuaternionCamera.html#aeb10bec733d29d58abc49dbf3c0b8688", null ],
+    [ "rotationSpeedDegPerSec_", "classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0", null ],
     [ "status_", "classmtgb_1_1QuaternionCamera.html#acff62110b73cdb09dcc0279b8cc2b3eb", null ],
     [ "tag_", "classmtgb_1_1QuaternionCamera.html#a1b20d5f0ca02075a66c6913af78c48c6", null ]
 ];

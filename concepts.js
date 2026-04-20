@@ -19,7 +19,6 @@ var concepts =
       [ "HasRestoreFromMementoMethod", "conceptmtgb_1_1HasRestoreFromMementoMethod.html", null ],
       [ "DerivedIComponent", "conceptmtgb_1_1DerivedIComponent.html", null ],
       [ "IComponentWithMemento", "conceptmtgb_1_1IComponentWithMemento.html", null ],
-      [ "IsEnumStruct", "conceptmtgb_1_1IsEnumStruct.html", null ],
       [ "Arithmetic", "conceptmtgb_1_1Arithmetic.html", null ]
     ] ],
     [ "mtstat", "namespacemtstat.html", [

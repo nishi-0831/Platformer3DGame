@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('QuaternionCamera_8cpp_source.html','')
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    , pTargetTransform_ { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">Transform::Get</a>(_entityId) }</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    , pTargetRigidBody_ { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">RigidBody::Get</a>(_entityId) }</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    , lookAtPositionOffset_ { <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> { 0, 2, 0 } }</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    , rotateAngleDeg_ { 30.0f }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    , rotationSpeedDegPerSec_ { 60.0f }</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    , distance_ { 8.0f }</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    , inputType_ { <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">InputType::JOYPAD</a> }</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    , minPitchAngleDeg_ { -5.0f }</div>
@@ -138,12 +138,12 @@ $(document).ready(function(){initNavTree('QuaternionCamera_8cpp_source.html','')
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">InputType::JOYPAD</a> :</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a> vec2 = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a5aaa5b039b8986c6ae02bfb41040da06">InputUtil::GetAxis</a>(StickType::RIGHT);</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            movement.x    = -vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            movement.y    = -vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            movement.y    = vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; rotate      = pTransform_-&gt;rotate;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> worldRotateY = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        DirectX::XMConvertToRadians(rotateAngleDeg_ * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.y),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        DirectX::XMConvertToRadians(rotationSpeedDegPerSec_ * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.y),</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_function" href="structmtgb_1_1Vector3.html#afde8104cffdc6b674a721eb24c89e7cc">Vector3::Up</a>()</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    );</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">// カメラのローカル座標系でのRight軸</span></div>
@@ -151,7 +151,7 @@ $(document).ready(function(){initNavTree('QuaternionCamera_8cpp_source.html','')
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">// カメラの右方向を軸に回転</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> localRotateX = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        DirectX::XMConvertToRadians(rotateAngleDeg_ * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.x),</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        DirectX::XMConvertToRadians(rotationSpeedDegPerSec_ * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.x),</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        localRight</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    );</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
