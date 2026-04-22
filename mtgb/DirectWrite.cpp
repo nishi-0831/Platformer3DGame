@@ -16,7 +16,7 @@
 
 namespace
 {
-	constexpr wchar_t* fontFamilyName = L"Noto Sans JP";
+	const wchar_t* fontFamilyName = L"Noto Sans JP";
 } // namespace
 
 ComPtr<IDWriteFactory> mtgb::DirectWrite::pDWriteFactory_ { nullptr };

@@ -1037,6 +1037,15 @@ endif()
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/RunClangTidy.cmake")
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/GeneratePch.cmake")
 
+ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Generated")
+    file(GLOB_RECURSE GENERATED_SOURCE CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/Generated/*.gen.cpp")
+    target_sources(${PROJECT_NAME}
+        PRIVATE ${GENERATED_SOURCE})
+    source_group("Generated" FILES ${GENERATED_SOURCE})
+    target_include_directories(${PROJECT_NAME} PUBLIC
+        "${CMAKE_CURRENT_SOURCE_DIR}/Generated"
+    )
+ endif()
 
 ################################################################################
 # Dependencies (リンク先)

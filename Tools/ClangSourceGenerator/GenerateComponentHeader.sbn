@@ -3,7 +3,6 @@
 
 #include <nlohmann/json.hpp>
 #include "JsonConverter.h"
-#include "MTImGui.h"
 #include <string>
 
 {{ # 名前空間を含む型名を返す }}
@@ -52,55 +51,17 @@ using {{ class_name }}Memento = mtgb::ComponentMemento<{{ fully_qualified_name }
 #define MT_GENERATED_BODY_{{ class_name }}() \
 	public: \
 	using Memento = {{ class_name }}Memento; \
-	{{ class_name }}Memento* SaveToMemento() \
-	{ \
-	OnPreSave(); \
-		{{ class_name }}State state; \
-{{- for member in properties }}
-		state.{{ member.name }} = this->{{ member.name }}; \
-{{- end }}
-		return new Memento(GetEntityId(), state); \
-	} \
+	{{ class_name }}Memento* SaveToMemento(); \
 	\
-	void RestoreFromMemento(const Memento& _memento) \
-	{ \
-		const {{ class_name }}State& state = _memento.GetState(); \
-{{- for member in properties }}
-		this->{{ member.name }} = state.{{ member.name }}; \
-{{- end }}
-		OnPostRestore(); \
-	} \
+	void RestoreFromMemento(const Memento& _memento); \
 	\
 	friend struct {{ class_name }}_Register; \
-	friend void to_json(nlohmann::json& _j,const {{ class_name }}& _target) \
-	{ \
-{{- for member in properties }}
-		_j["{{ member.name }}"] = JsonConverter::Serialize<{{  get_fully_qualified_type(member) }}>(_target.{{ member.name }}); \
-{{- end }}
-	} \
-	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target) \
-	{ \
-{{- for member in properties }}
-		JsonConverter::Deserialize<{{ get_fully_qualified_type(member) }}>(_target.{{ member.name }}, _j,"{{ member.name }}"); \
-{{- end }}
-		_target.OnPostRestore(); \
-	} \
+	friend void to_json(nlohmann::json& _j,const {{ class_name }}& _target); \
+	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target); \
+	\
 	static std::string TypeName(){ return "{{ class_name }}" ;} \
 	/* ImGui表示処理の登録 */ \
-	static void RegisterImGui() \
-	{ \
-		static bool registered = false; \
-		if (registered) return; \
-		registered = true; \
-		\
-		RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name) \
-			{ \
-{{- for member in properties }}
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}"); \
-{{- end }}
-			}); \
-		MTImGui::RegisterComponentViewer<{{ class_name }}>(); \
-	}
+	static void RegisterImGui(); \
 
 #pragma warning(push)
 #pragma warning(disable:4005)

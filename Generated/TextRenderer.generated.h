@@ -3,7 +3,6 @@
 
 #include <nlohmann/json.hpp>
 #include "JsonConverter.h"
-#include "MTImGui.h"
 #include <string>
 
 
@@ -33,40 +32,17 @@ using TextRendererMemento = mtgb::ComponentMemento<mtgb::TextRenderer, TextRende
 #define MT_GENERATED_BODY_TextRenderer() \
 	public: \
 	using Memento = TextRendererMemento; \
-	TextRendererMemento* SaveToMemento() \
-	{ \
-	OnPreSave(); \
-		TextRendererState state; \
-		return new Memento(GetEntityId(), state); \
-	} \
+	TextRendererMemento* SaveToMemento(); \
 	\
-	void RestoreFromMemento(const Memento& _memento) \
-	{ \
-		const TextRendererState& state = _memento.GetState(); \
-		OnPostRestore(); \
-	} \
+	void RestoreFromMemento(const Memento& _memento); \
 	\
 	friend struct TextRenderer_Register; \
-	friend void to_json(nlohmann::json& _j,const TextRenderer& _target) \
-	{ \
-	} \
-	friend void from_json(const nlohmann::json& _j, TextRenderer& _target) \
-	{ \
-		_target.OnPostRestore(); \
-	} \
+	friend void to_json(nlohmann::json& _j,const TextRenderer& _target); \
+	friend void from_json(const nlohmann::json& _j, TextRenderer& _target); \
+	\
 	static std::string TypeName(){ return "TextRenderer" ;} \
 	/* ImGui表示処理の登録 */ \
-	static void RegisterImGui() \
-	{ \
-		static bool registered = false; \
-		if (registered) return; \
-		registered = true; \
-		\
-		RegisterShowFuncHolder::Set<TextRenderer>([]( TextRenderer* _target, const char* _name) \
-			{ \
-			}); \
-		MTImGui::RegisterComponentViewer<TextRenderer>(); \
-	}
+	static void RegisterImGui(); \
 
 #pragma warning(push)
 #pragma warning(disable:4005)

@@ -80,17 +80,16 @@ namespace mtgb
 
 		using AnimationEventCallback = std::function<void(const AnimationEvent&)>;
 
-		template<typename Func>
-		requires std::is_convertible_v<Func,AnimationEventCallback>
-		void SetEventCallback(std::string_view _eventName, Func&& _callback);
+		template <typename Func>
+			requires std::is_convertible_v<Func, AnimationEventCallback>
+		void SetEventCallback(std::string_view _eventName, Func&& _callback)
+		{
+			eventCallbackMap_.emplace(_eventName, std::forward<Func>(_callback));
+		}
 
 	  private:
 		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
-		std::unordered_multimap<
-			std::string,
-			AnimationEventCallback,
-			TransparentStringHash,
-			TransparentStringEq>
+		std::unordered_multimap<std::string, AnimationEventCallback, TransparentStringHash, TransparentStringEq>
 			eventCallbackMap_;
 		FbxAnimationClip* pCurrentClip_; // 現在再生中のクリップ
 		float currentFrame_;			 // 現在のフレーム
@@ -102,10 +101,4 @@ namespace mtgb
 		std::string fileName_;
 		std::vector<AnimationEvent> events_;
 	};
-	template <typename Func>
-		requires std::is_convertible_v<Func, FbxAnimationController::AnimationEventCallback>
-	inline void FbxAnimationController::SetEventCallback(std::string_view _eventName, Func&& _callback)
-	{
-		eventCallbackMap_.emplace(_eventName, std::forward<Func>(_callback));
-	}
 } // namespace mtgb
