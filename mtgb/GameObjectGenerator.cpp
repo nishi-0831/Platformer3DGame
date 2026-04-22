@@ -53,10 +53,11 @@ void mtgb::GameObjectGenerator::GenerateFromJson(const nlohmann::json& _json)
 
 void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 {
+	std::string gameObjName { _gameObjName };
 	GameObjectCreateCommand* cmd = new GameObjectCreateCommand(
-		[_gameObjName]()
+		[gameObjName]()
 		{
-			return GetInstance()->gameObjFactory_.Create(_gameObjName);
+			return GetInstance()->gameObjFactory_.Create(gameObjName);
 		}
 	);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
@@ -82,8 +83,7 @@ void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 {
 	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 
-	DeleteGameObjectCommand* cmd =
-		new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_);
+	DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 

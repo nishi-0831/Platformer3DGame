@@ -10,7 +10,7 @@
 #include "EventManager.h"
 #include "Entity.h"
 #include "GuizmoManipulatedEvent.h"
-
+#include "MTImGui.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 {
 	if (!pTargetTransform_)
