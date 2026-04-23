@@ -189,15 +189,11 @@ void mtgb::Input::UpdateJoystickDevice()
 			UnregisterJoystickGuid(GetDeviceGuid(joystickContext_[currJoystickGuid_].device));
 			return;
 		}
-			/* massert(false
-				&& "デバイスの状態の取得の際にエラーが起こりました @Input::Update");*/
 	}
 }
 
 void mtgb::Input::UpdateGamePadDevice()
 {
-	// TODO: 関数化せよ！
-
 	// アクティブなコントローラがなければ、リターン。
 	{
 		bool IS_GAMEPAD_DETECTED = std::any_of(
@@ -236,7 +232,7 @@ void mtgb::Input::Release()
 	pDirectInput_.Reset();
 }
 
-void mtgb::Input::UpdateMousePositionData(const int32_t _x, const int32_t _y)
+void mtgb::Input::UpdateMousePositionData(int32_t _x, int32_t _y)
 {
 	if (pInputData_)
 	{
@@ -534,7 +530,7 @@ std::string mtgb::Input::GetDeviceProductName(GUID _guid)
 	return "None";
 }
 
-std::string mtgb::Input::ConvertHResultToMessage(HRESULT _hr) const
+std::string_view mtgb::Input::ConvertHResultToMessage(HRESULT _hr) const
 {
 	switch (_hr)
 	{
@@ -613,7 +609,7 @@ int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 	return firstUnknown;
 }
 
-const std::string mtgb::Input::GetJoystickStatusMessage(GUID _guid) const
+std::string_view mtgb::Input::GetJoystickStatusMessage(GUID _guid) const
 {
 	const auto& itr = joystickContext_.find(_guid);
 	if (itr == joystickContext_.end())
@@ -784,6 +780,9 @@ void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, Inpu
 
 mtgb::JoystickContext::JoystickContext()
 	: timerHandle { nullptr }
+	, lastResult { S_OK }
+	, device { nullptr }
+	, deviceType { DeviceType::UNKNOWN }
 {
 }
 

@@ -15,8 +15,7 @@ mtgb::Direct2DResource::Direct2DResource(WindowContext _windowContext)
 	, pD2DBrush_ { nullptr }
 {
 	// DXGI,Direct3Dのリソースを取得
-	DXGIResource& dxgiResource	  = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
-	Direct3DResource& d3dResource = Game::System<WindowContextResourceManager>().Get<Direct3DResource>(_windowContext);
+	DXGIResource& dxgiResource = Game::System<WindowContextResourceManager>().Get<DXGIResource>(_windowContext);
 
 	// Direct2DのComオブジェクト作成に使う
 	Direct2D& direct2D = Game::System<Direct2D>();

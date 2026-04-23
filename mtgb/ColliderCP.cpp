@@ -100,9 +100,10 @@ bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, f
 	if (!TryGet(&colliders, _entityId))
 		return false;
 
-	for (auto& collider : colliders)
+	// WARNING: コライダーが一つしかないと断定している。複数になる場合は追加の処理が必要
+	if (colliders.empty() == false)
 	{
-		return collider->IsHit(_origin, _dir, _dist);
+		return colliders.back()->IsHit(_origin, _dir, _dist);
 	}
 	return false;
 }

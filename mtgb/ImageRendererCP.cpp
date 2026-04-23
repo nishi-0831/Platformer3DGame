@@ -12,8 +12,6 @@ void mtgb::ImageRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 {
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		EntityId id = poolId_[i];
-
 		if (poolId_[i] == INVALID_ENTITY)
 			continue;
 

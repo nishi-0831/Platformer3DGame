@@ -8,11 +8,8 @@
 #include <d3d11.h>
 #include <d2d1.h>
 #include "IncludingWindows.h"
-// #include <dwrite.h>  // direct write のやつ
 
 #pragma comment(lib, "d3d11.lib")
-// #pragma comment(lib,"d3dx11.lib")
-// #pragma comment(lib,"dwrite.lib")
 #pragma comment(lib, "d2d1.lib")
 
 ComPtr<ID2D1Factory> mtgb::Direct2D::pD2DFactory_ { nullptr };

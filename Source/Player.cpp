@@ -77,7 +77,6 @@ void Player::Update()
 		{
 			if (pRigidBody_->isGround_ == true)
 			{
-				// pRigidBody_->velocity_.y += jumpHeight;
 				jumpController_.StartJump(jumpHeight);
 				Game::System<Audio>().Play("Jump");
 

@@ -3,8 +3,7 @@
 #include "FbxAnimationController.h"
 #include "GameTime.h"
 #include "Debug.h"
-#include "EventManager.h"
-#include "Fbx.h"
+
 #include <filesystem>
 #include <fstream>
 mtgb::FbxAnimationController::FbxAnimationController(fbxsdk::FbxScene* _fbxScene, std::string_view _fileName)
@@ -93,7 +92,7 @@ void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, boo
 		return;
 	}
 	pCurrentClip_ = &(itr->second);
-	currentFrame_ = pCurrentClip_->startFrame;
+	currentFrame_ = static_cast<float>(pCurrentClip_->startFrame);
 	isLooping_	  = _isLooping;
 	isPlaying_	  = true;
 	isFinished_	  = false;

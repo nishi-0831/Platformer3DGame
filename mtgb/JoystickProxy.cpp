@@ -1,7 +1,5 @@
-#include <array>
 #include "JoystickProxy.h"
 #include <iterator>
-#include "ImGui/imgui.h"
 #include "Input.h"
 
 mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)
@@ -42,17 +40,3 @@ void mtgb::JoystickProxy::UpdateInputData(const DIJOYSTATE& _js)
 	std::copy(std::begin(_js.rgdwPOV), std::end(_js.rgdwPOV), rgdwPOV);
 	std::copy(std::begin(_js.rgbButtons), std::end(_js.rgbButtons), rgbButtons);
 }
-
-// mtgb::JoystickProxy mtgb::JoystickProxy::operator=(const DIJOYSTATE& js)
-//{
-//     lX = js.lX;
-//     lY = js.lY;
-//     lZ = js.lZ;
-//     lRx = js.lRx;
-//     lRy = js.lRy;
-//     lRz = js.lRz;
-//     std::copy(std::begin(js.rglSlider), std::end(js.rglSlider), rglSlider);
-//     std::copy(std::begin(js.rgdwPOV), std::end(js.rgdwPOV), rgdwPOV);
-//     std::copy(std::begin(js.rgbButtons), std::end(js.rgbButtons), rgbButtons);
-//     return *this;
-// }

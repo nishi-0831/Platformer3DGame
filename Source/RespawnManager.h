@@ -9,7 +9,7 @@ class RespawnManager : public mtgb::GameObject, public mtgb::ImGuiShowable
 	void ShowImGui() override;
 
   private:
-	// 現在のリスポーンポイントに割り当てられている優先度
+	// 迴ｾ蝨ｨ縺ｮ繝ｪ繧ｹ繝昴�ｼ繝ｳ繝昴う繝ｳ繝医↓蜑ｲ繧雁ｽ薙※繧峨ｌ縺ｦ縺�繧句━蜈亥ｺｦ
 	int currentRespawnPointPriority_;
 	EntityId playerEntityId_;
 	EntityId currentRespawnPointEntityId_;
