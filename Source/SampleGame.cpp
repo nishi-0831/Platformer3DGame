@@ -5,11 +5,6 @@
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
-#pragma region ゲーム側で追加
-
-#pragma endregion
-
-#define TO_TEST_SCENE 1
 
 using namespace mtgb;
 
@@ -79,13 +74,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<EffectManager>(SystemUpdateType::FRAME);
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<SceneSystem>(SystemUpdateType::FRAME);
-	// 開始時のシーン
-	// Game::System<SceneSystem>().Move<PlayScene>();
-	// Game::System<SceneSystem>().Move<CheckTutorialScene>();
-#if TO_TEST_SCENE
-	Game::System<SceneSystem>().Move<SampleScene>();
-#else
-#endif
 
-	//_register<MainWindow>(SystemUpdateType::Cycle);
+	Game::System<SceneSystem>().Move<TitleScene>();
 }

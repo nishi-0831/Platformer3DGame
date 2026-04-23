@@ -852,6 +852,10 @@ set(MSVC_COMMON_OPTIONS
     /Zc:__cplusplus;
     /sdl;
     /W4;
+    # 無名共用体/構造体を定義した際の警告を抑制
+    /wd4201;
+    # 認識されない属性を付与した際の警告を抑制
+    /wd5030;
     # 警告をエラーとして扱う
     # /WX;
     /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
