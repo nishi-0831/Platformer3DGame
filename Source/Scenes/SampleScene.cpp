@@ -18,20 +18,14 @@ void SampleScene::Initialize()
 {
 	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
 
-	PropertyDisplayRegistry::Instance();
-	PropertyDisplayRegistry::Instance().Initialize();
-	mtgb::MTImGui::Initialize();
-
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();
 	Instantiate<RespawnManager>();
-	std::optional<nlohmann::json> json = mtgb::Game::System<StageManger>().GetStageJson(stageID_);
+	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
 	if (json.has_value())
 	{
 		mtgb::GameObjectGenerator::GenerateFromJson(json);
-		// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
-		// TODO: マジックナンバーを修正
-		mtgb::Time::WaitFrame(2);
+		mtgb::Time::StabilizeDeltaTime();
 	}
 	else
 	{

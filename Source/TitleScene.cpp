@@ -3,7 +3,7 @@
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
 #include "../Source/SkySphere.h"
-#include "../Source/SeaPlane.h"
+#include "../Source/StageManager.h"
 
 namespace
 {
@@ -12,7 +12,7 @@ namespace
 	ImageHandle hBackgroundImage;
 	FBXModelHandle hModel;
 	RectF draw { 118, 90, 565, 100 };
-	RectF textDrawRect { 118, 300, 565, 100 };
+	RectF textDrawRect { 118, 450, 565, 80 };
 } // namespace
 TitleScene::TitleScene() {}
 
@@ -21,8 +21,8 @@ TitleScene::~TitleScene() {}
 void TitleScene::Initialize()
 {
 	Game::System<ImGuiEditorCamera>().CreateCamera();
-	GameObject* pCamera =
-		new GameObject(GameObjectBuilder().SetPosition({ 0, 50, -80 }).SetName("SceneCamera").Build());
+
+	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("SceneCamera").Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 	hTitleImage		 = Image::Load("Image/TitleImage.png");
 	hBackgroundImage = Image::Load("Image/Black.png");
@@ -30,21 +30,13 @@ void TitleScene::Initialize()
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
-	GameObject* pTitleRuin =
-		new GameObject(GameObjectBuilder()
-						   .SetPosition({ -10, 0, 0 })
-						   .SetRotate(Quaternion::AngleAxis(DirectX::XMConvertToRadians(90), Vector3::Up()))
-						   .SetName("TitleRuin")
-						   .Build());
-	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pTitleRuin);
-	MeshRenderer* pMeshRenderer = pTitleRuin->Component<MeshRenderer>();
-	hModel						= Fbx::Load("Model/TitleRuin2.fbx");
-	pMeshRenderer->SetMesh(hModel);
-
+	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_TITLE_SCENE);
+	if (json.has_value())
+	{
+		mtgb::GameObjectGenerator::GenerateFromJson(json);
+		mtgb::Time::StabilizeDeltaTime();
+	}
 	Instantiate<mtgb::SkySphere>();
-	Transform* pTransform  = Instantiate<SeaPlane>()->Component<Transform>();
-	pTransform->position.y = -70.0f;
-	pTransform->scale	   = Vector3 { 1800, 0, 1800 };
 }
 
 void TitleScene::Update()
@@ -58,7 +50,7 @@ void TitleScene::Update()
 void TitleScene::Draw() const
 {
 	Draw::Image(hTitleImage, draw);
-	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 127));
+	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
 	Draw::ImmediateText("push P Key to start game...", textDrawRect);
 }
 

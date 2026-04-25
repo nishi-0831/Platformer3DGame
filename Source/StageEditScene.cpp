@@ -9,7 +9,7 @@ StageEditScene::~StageEditScene() {}
 void StageEditScene::Initialize()
 {
 	Game::System<ImGuiEditorCamera>().CreateCamera();
-
+	mtgb::GameObjectGenerator::Initialize();
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
 	MTImGui::Initialize();

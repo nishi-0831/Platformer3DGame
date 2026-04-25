@@ -54,10 +54,12 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::S))
 		{
 			SaveMapData();
+			Time::StabilizeDeltaTime();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::O))
 		{
 			LoadMapData();
+			Time::StabilizeDeltaTime();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::D))
 		{
@@ -73,7 +75,6 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	// Game::System<CommandHistoryManager>().DrawImGuiStack();
 	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
 	ShowGenerateGameObjectButton();
 }

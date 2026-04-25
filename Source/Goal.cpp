@@ -82,7 +82,7 @@ void Goal::OnClear()
 		transitionSceneDelay_,
 		[]
 		{
-			Game::System<StageManger>().ClearCurrentStage();
+			Game::System<StageManager>().ClearCurrentStage();
 			Game::System<SceneSystem>().Move<ResultScene>();
 		}
 	);

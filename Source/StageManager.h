@@ -6,7 +6,7 @@
 #include <optional>
 #include "StageID.h"
 #include <nlohmann/json.hpp>
-class StageManger : public ISystem
+class StageManager : public ISystem
 {
   public:
 	void Initialize() override;
