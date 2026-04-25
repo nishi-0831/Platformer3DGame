@@ -69,14 +69,14 @@ namespace mtgb
 
 		std::list<LogEntry> GetLog();
 
-		static constexpr std::string_view GetName()
+		static consteval std::string_view GetName()
 		{
 			return "Log";
 		}
 
 	  private:
-		static constexpr size_t BUFFER_SIZE { 1024 }; // ログ出力時の文字列バッファサイズ
-		static constexpr UINT MAX_LOG_COUNT { 30 };
+		inline static constexpr size_t BUFFER_SIZE { 1024 }; // ログ出力時の文字列バッファサイズ
+		inline static constexpr UINT MAX_LOG_COUNT { 30 };
 
 		LogItr RemoveLog(LogItr _itr);
 

@@ -37,7 +37,7 @@ void mtgb::QuaternionCamera::Update()
 			// ゲームパッド
 		case InputType::JOYPAD :
 			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-			movement.x	  = -vec2.y;
+			movement.x	  = vec2.y;
 			movement.y	  = vec2.x;
 			break;
 	}

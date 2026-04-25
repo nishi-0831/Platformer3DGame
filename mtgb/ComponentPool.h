@@ -11,7 +11,7 @@
 #include "MTAssert.h"
 namespace mtgb
 {
-	static constexpr size_t COMPONENT_CAPACITY { 8192 };
+	inline constexpr size_t COMPONENT_CAPACITY { 8192 };
 
 	namespace detail
 	{

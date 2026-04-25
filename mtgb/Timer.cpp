@@ -18,25 +18,8 @@ TimerHandle mtgb::Timer::AddInterval(const float _time, const std::function<void
 
 void mtgb::Timer::Remove(TimerHandle _hTimer)
 {
-
 	QUEUE_ELEMENT* pElement { reinterpret_cast<QUEUE_ELEMENT*>(_hTimer) };
 	Instance().toErase_.insert(pElement); // 削除予定に追加する
-
-	// if (Instance().pReenqueueElements_.count(pElement) > 0)
-	//{
-	//	Instance().pReenqueueElements_.erase(pElement);
-	// }
-	// for (auto itr = Instance().pTimerQueue_.begin(); itr != Instance().pTimerQueue_.end();)
-	//{
-	//	if ((*itr) == pElement)
-	//	{
-	//		itr = Instance().pTimerQueue_.erase(itr);
-	//	}
-	//	else
-	//	{
-	//		itr++;
-	//	}
-	// }
 }
 
 void mtgb::Timer::Clear()

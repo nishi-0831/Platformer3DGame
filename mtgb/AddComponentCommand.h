@@ -1,10 +1,9 @@
 #pragma once
 #include "Command.h"
 #include "IComponentMemento.h"
-#include "Entity.h"
-#include "ComponentFactory.h"
 #include <typeindex>
 #include <string>
+#include "cmtgb.h"
 namespace mtgb
 {
 	/// <summary>
@@ -18,12 +17,9 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityId">エンティティのID</param>
 		/// <param name="_typeIdx">コンポーネントの型情報</param>
-		/// <param name="_memento"> nullの場合は_entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する/param>
-		AddComponentCommand(
-			EntityId _entityId,
-			std::type_index _typeIdx,
-			IComponentMemento* _pMemento
-		);
+		/// <param name="_memento">
+		/// nullの場合は_entityIdから既存のコンポーネントを取得、なければ新規作成しMementoに保存する/param>
+		AddComponentCommand(EntityId _entityId, std::type_index _typeIdx, IComponentMemento* _pMemento);
 		~AddComponentCommand();
 		void Execute() override;
 		void Undo() override;
