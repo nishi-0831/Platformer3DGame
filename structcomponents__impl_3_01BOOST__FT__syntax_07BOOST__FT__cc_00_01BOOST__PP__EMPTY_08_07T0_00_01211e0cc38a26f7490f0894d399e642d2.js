@@ -1,0 +1,9 @@
+var structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2 =
+[
+    [ "bits", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#a9500012897d4a2f79bf38796f10ac30c", null ],
+    [ "function_arity", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#a3528df925cd45d7a8bddf1d6ec7e3fe5", null ],
+    [ "mask", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#a1aa827701d7959dff870ae7b9a1414d6", null ],
+    [ "tag", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#a990d22f699802f6f1b425c94936e062c", null ],
+    [ "type", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#ae742f8009821222f831b7d89f5ca0b35", null ],
+    [ "types", "structcomponents__impl_3_01BOOST__FT__syntax_07BOOST__FT__cc_00_01BOOST__PP__EMPTY_08_07T0_00_01211e0cc38a26f7490f0894d399e642d2.html#a89b97331e670d52049ae9d16529a55e7", null ]
+];

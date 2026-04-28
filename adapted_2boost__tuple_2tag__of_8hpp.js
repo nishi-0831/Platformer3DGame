@@ -1,0 +1,12 @@
+var adapted_2boost__tuple_2tag__of_8hpp =
+[
+    [ "boost::fusion::traits::tag_of< tuples::tuple< T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 > >", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993.html", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993" ],
+    [ "boost::fusion::traits::tag_of< tuples::cons< Head, Tail > >", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4" ],
+    [ "boost::fusion::traits::tag_of< tuples::null_type >", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4.html", "structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4" ],
+    [ "boost::mpl::sequence_tag< tuples::tuple< T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 > >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147" ],
+    [ "boost::mpl::sequence_tag< tuples::tuple< T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 > const >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55" ],
+    [ "boost::mpl::sequence_tag< tuples::cons< Head, Tail > >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4" ],
+    [ "boost::mpl::sequence_tag< tuples::cons< Head, Tail > const >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4" ],
+    [ "boost::mpl::sequence_tag< tuples::null_type >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4" ],
+    [ "boost::mpl::sequence_tag< tuples::null_type const >", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4.html", "structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4" ]
+];

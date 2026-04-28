@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: mul.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mul_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">mul.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="preprocessor_2config_2config_8hpp_source.html">boost/preprocessor/config/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2arithmetic_2add_8hpp_source.html">boost/preprocessor/arithmetic/add.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="arithmetic_2dec_8hpp_source.html">boost/preprocessor/arithmetic/dec.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iif_8hpp_source.html">boost/preprocessor/control/iif.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="control_2while_8hpp_source.html">boost/preprocessor/control/while.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2facilities_2identity_8hpp_source.html">boost/preprocessor/facilities/identity.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2logical_2bitand_8hpp_source.html">boost/preprocessor/logical/bitand.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2logical_2bool_8hpp_source.html">boost/preprocessor/logical/bool.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="compl_8hpp_source.html">boost/preprocessor/logical/compl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_2elem_8hpp_source.html">boost/preprocessor/tuple/elem.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="rem_8hpp_source.html">boost/preprocessor/tuple/rem.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__minimum__number_8hpp_source.html">boost/preprocessor/arithmetic/detail/is_minimum_number.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__maximum__number_8hpp_source.html">boost/preprocessor/arithmetic/detail/is_maximum_number.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__1__number_8hpp_source.html">boost/preprocessor/arithmetic/detail/is_1_number.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mul.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mul_8hpp__incl.svg" width="3816" height="1151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mul_8hpp__dep__incl.svg" width="144" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mul_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:af70097f92e2c205d76790c8595531d28"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#af70097f92e2c205d76790c8595531d28">BOOST_PP_MUL</a>(x,  y)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__minimum__number_8hpp.html#a05b3255f6aa7ba2efdd76bbf751108ef">BOOST_PP_DETAIL_IS_MINIMUM_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(x,2),<a class="el" href="mul_8hpp.html#ac8038b12e9c23f1b3cfa4b491a1cdb40">BOOST_PP_MUL_CHECK_1X</a>)(x,y)</td></tr>
+<tr class="separator:af70097f92e2c205d76790c8595531d28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8038b12e9c23f1b3cfa4b491a1cdb40"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#ac8038b12e9c23f1b3cfa4b491a1cdb40">BOOST_PP_MUL_CHECK_1X</a>(x,  y)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__1__number_8hpp.html#a967e3b5284158b69557c1d509da4ebe7">BOOST_PP_DETAIL_IS_1_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(y,2),<a class="el" href="mul_8hpp.html#a4431c6b6a71d2946fab131f9ce9aa2a8">BOOST_PP_MUL_DO</a>)(x,y)</td></tr>
+<tr class="separator:ac8038b12e9c23f1b3cfa4b491a1cdb40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4431c6b6a71d2946fab131f9ce9aa2a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#a4431c6b6a71d2946fab131f9ce9aa2a8">BOOST_PP_MUL_DO</a>(x,  y)&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#af7a11f4ff7d1428c64955246f474e93c">BOOST_PP_MUL_I</a>(x, y)</td></tr>
+<tr class="separator:a4431c6b6a71d2946fab131f9ce9aa2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7a11f4ff7d1428c64955246f474e93c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#af7a11f4ff7d1428c64955246f474e93c">BOOST_PP_MUL_I</a>(x,  y)&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, BOOST_PP_WHILE(<a class="el" href="mul_8hpp.html#ac639c6a76611890bc2804c980c97d4c6">BOOST_PP_MUL_P</a>, <a class="el" href="mul_8hpp.html#ad649bc05b045601eb0b4a7dda5c14691">BOOST_PP_MUL_O</a>, (0, x, y)))</td></tr>
+<tr class="separator:af7a11f4ff7d1428c64955246f474e93c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac639c6a76611890bc2804c980c97d4c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#ac639c6a76611890bc2804c980c97d4c6">BOOST_PP_MUL_P</a>(d,  rxy)&#160;&#160;&#160;<a class="el" href="preprocessor_2logical_2bitand_8hpp.html#a97e43b523e7eaad29c29c733e484301f">BOOST_PP_BITAND</a>(<a class="el" href="preprocessor_2logical_2bool_8hpp.html#a2e6c711591f685c8b51466c37ffb3f86">BOOST_PP_BOOL</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 2, rxy)),<a class="el" href="compl_8hpp.html#a4cffb794e381dbd8e975f83c2344ebaa">BOOST_PP_COMPL</a>(<a class="el" href="is__maximum__number_8hpp.html#af6bc3586f2e07995692e3af34dca8faa">BOOST_PP_DETAIL_IS_MAXIMUM_NUMBER</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, rxy))))</td></tr>
+<tr class="separator:ac639c6a76611890bc2804c980c97d4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad649bc05b045601eb0b4a7dda5c14691"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#ad649bc05b045601eb0b4a7dda5c14691">BOOST_PP_MUL_O</a>(d,  rxy)&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#a3b9ca1e3a1213a750a24fc27ef937a10">BOOST_PP_MUL_O_I</a>(d, <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, rxy), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 1, rxy), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 2, rxy))</td></tr>
+<tr class="separator:ad649bc05b045601eb0b4a7dda5c14691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b9ca1e3a1213a750a24fc27ef937a10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#a3b9ca1e3a1213a750a24fc27ef937a10">BOOST_PP_MUL_O_I</a>(d,  r,  x,  y)&#160;&#160;&#160;(<a class="el" href="preprocessor_2arithmetic_2add_8hpp.html#ae57a518172034f07fb1eaea083e8a224">BOOST_PP_ADD_D</a>(d, r, x), x, <a class="el" href="arithmetic_2dec_8hpp.html#a89e7f78cc41437715c6a00585ec4cfa1">BOOST_PP_DEC</a>(y))</td></tr>
+<tr class="separator:a3b9ca1e3a1213a750a24fc27ef937a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1818a70bfb580dcbb71ec87144401a4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#a1818a70bfb580dcbb71ec87144401a4b">BOOST_PP_MUL_D</a>(d,  x,  y)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__minimum__number_8hpp.html#a05b3255f6aa7ba2efdd76bbf751108ef">BOOST_PP_DETAIL_IS_MINIMUM_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(x,3),<a class="el" href="mul_8hpp.html#abaa808d38f18964ed7b5d0a2b582fa55">BOOST_PP_MUL_CHECK_1X_D</a>)(d,x,y)</td></tr>
+<tr class="separator:a1818a70bfb580dcbb71ec87144401a4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa808d38f18964ed7b5d0a2b582fa55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#abaa808d38f18964ed7b5d0a2b582fa55">BOOST_PP_MUL_CHECK_1X_D</a>(d,  x,  y)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__1__number_8hpp.html#a967e3b5284158b69557c1d509da4ebe7">BOOST_PP_DETAIL_IS_1_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(y,3),<a class="el" href="mul_8hpp.html#a7bc510abff401e815d5f52381c3c737c">BOOST_PP_MUL_DO_D</a>)(d,x,y)</td></tr>
+<tr class="separator:abaa808d38f18964ed7b5d0a2b582fa55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bc510abff401e815d5f52381c3c737c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#a7bc510abff401e815d5f52381c3c737c">BOOST_PP_MUL_DO_D</a>(d,  x,  y)&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#a39a9ee4be7193d7a5eb0c01afc5d6866">BOOST_PP_MUL_D_I</a>(d, x, y)</td></tr>
+<tr class="separator:a7bc510abff401e815d5f52381c3c737c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39a9ee4be7193d7a5eb0c01afc5d6866"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mul_8hpp.html#a39a9ee4be7193d7a5eb0c01afc5d6866">BOOST_PP_MUL_D_I</a>(d,  x,  y)&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, BOOST_PP_WHILE_ ## d(<a class="el" href="mul_8hpp.html#ac639c6a76611890bc2804c980c97d4c6">BOOST_PP_MUL_P</a>, <a class="el" href="mul_8hpp.html#ad649bc05b045601eb0b4a7dda5c14691">BOOST_PP_MUL_O</a>, (0, x, y)))</td></tr>
+<tr class="separator:a39a9ee4be7193d7a5eb0c01afc5d6866"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="af70097f92e2c205d76790c8595531d28" name="af70097f92e2c205d76790c8595531d28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af70097f92e2c205d76790c8595531d28">&#9670;&#160;</a></span>BOOST_PP_MUL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__minimum__number_8hpp.html#a05b3255f6aa7ba2efdd76bbf751108ef">BOOST_PP_DETAIL_IS_MINIMUM_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(x,2),<a class="el" href="mul_8hpp.html#ac8038b12e9c23f1b3cfa4b491a1cdb40">BOOST_PP_MUL_CHECK_1X</a>)(x,y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac8038b12e9c23f1b3cfa4b491a1cdb40" name="ac8038b12e9c23f1b3cfa4b491a1cdb40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8038b12e9c23f1b3cfa4b491a1cdb40">&#9670;&#160;</a></span>BOOST_PP_MUL_CHECK_1X</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_CHECK_1X</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__1__number_8hpp.html#a967e3b5284158b69557c1d509da4ebe7">BOOST_PP_DETAIL_IS_1_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(y,2),<a class="el" href="mul_8hpp.html#a4431c6b6a71d2946fab131f9ce9aa2a8">BOOST_PP_MUL_DO</a>)(x,y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abaa808d38f18964ed7b5d0a2b582fa55" name="abaa808d38f18964ed7b5d0a2b582fa55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaa808d38f18964ed7b5d0a2b582fa55">&#9670;&#160;</a></span>BOOST_PP_MUL_CHECK_1X_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_CHECK_1X_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__1__number_8hpp.html#a967e3b5284158b69557c1d509da4ebe7">BOOST_PP_DETAIL_IS_1_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(y,3),<a class="el" href="mul_8hpp.html#a7bc510abff401e815d5f52381c3c737c">BOOST_PP_MUL_DO_D</a>)(d,x,y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00101">101</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1818a70bfb580dcbb71ec87144401a4b" name="a1818a70bfb580dcbb71ec87144401a4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1818a70bfb580dcbb71ec87144401a4b">&#9670;&#160;</a></span>BOOST_PP_MUL_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="is__minimum__number_8hpp.html#a05b3255f6aa7ba2efdd76bbf751108ef">BOOST_PP_DETAIL_IS_MINIMUM_NUMBER</a>(x),<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(x,3),<a class="el" href="mul_8hpp.html#abaa808d38f18964ed7b5d0a2b582fa55">BOOST_PP_MUL_CHECK_1X_D</a>)(d,x,y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00099">99</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a39a9ee4be7193d7a5eb0c01afc5d6866" name="a39a9ee4be7193d7a5eb0c01afc5d6866"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39a9ee4be7193d7a5eb0c01afc5d6866">&#9670;&#160;</a></span>BOOST_PP_MUL_D_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_D_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, BOOST_PP_WHILE_ ## d(<a class="el" href="mul_8hpp.html#ac639c6a76611890bc2804c980c97d4c6">BOOST_PP_MUL_P</a>, <a class="el" href="mul_8hpp.html#ad649bc05b045601eb0b4a7dda5c14691">BOOST_PP_MUL_O</a>, (0, x, y)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4431c6b6a71d2946fab131f9ce9aa2a8" name="a4431c6b6a71d2946fab131f9ce9aa2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4431c6b6a71d2946fab131f9ce9aa2a8">&#9670;&#160;</a></span>BOOST_PP_MUL_DO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_DO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#af7a11f4ff7d1428c64955246f474e93c">BOOST_PP_MUL_I</a>(x, y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7bc510abff401e815d5f52381c3c737c" name="a7bc510abff401e815d5f52381c3c737c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bc510abff401e815d5f52381c3c737c">&#9670;&#160;</a></span>BOOST_PP_MUL_DO_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_DO_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#a39a9ee4be7193d7a5eb0c01afc5d6866">BOOST_PP_MUL_D_I</a>(d, x, y)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00106">106</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af7a11f4ff7d1428c64955246f474e93c" name="af7a11f4ff7d1428c64955246f474e93c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7a11f4ff7d1428c64955246f474e93c">&#9670;&#160;</a></span>BOOST_PP_MUL_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, BOOST_PP_WHILE(<a class="el" href="mul_8hpp.html#ac639c6a76611890bc2804c980c97d4c6">BOOST_PP_MUL_P</a>, <a class="el" href="mul_8hpp.html#ad649bc05b045601eb0b4a7dda5c14691">BOOST_PP_MUL_O</a>, (0, x, y)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad649bc05b045601eb0b4a7dda5c14691" name="ad649bc05b045601eb0b4a7dda5c14691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad649bc05b045601eb0b4a7dda5c14691">&#9670;&#160;</a></span>BOOST_PP_MUL_O</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_O</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rxy&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="mul_8hpp.html#a3b9ca1e3a1213a750a24fc27ef937a10">BOOST_PP_MUL_O_I</a>(d, <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, rxy), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 1, rxy), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 2, rxy))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3b9ca1e3a1213a750a24fc27ef937a10" name="a3b9ca1e3a1213a750a24fc27ef937a10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b9ca1e3a1213a750a24fc27ef937a10">&#9670;&#160;</a></span>BOOST_PP_MUL_O_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_O_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="preprocessor_2arithmetic_2add_8hpp.html#ae57a518172034f07fb1eaea083e8a224">BOOST_PP_ADD_D</a>(d, r, x), x, <a class="el" href="arithmetic_2dec_8hpp.html#a89e7f78cc41437715c6a00585ec4cfa1">BOOST_PP_DEC</a>(y))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac639c6a76611890bc2804c980c97d4c6" name="ac639c6a76611890bc2804c980c97d4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac639c6a76611890bc2804c980c97d4c6">&#9670;&#160;</a></span>BOOST_PP_MUL_P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_MUL_P</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rxy&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2logical_2bitand_8hpp.html#a97e43b523e7eaad29c29c733e484301f">BOOST_PP_BITAND</a>(<a class="el" href="preprocessor_2logical_2bool_8hpp.html#a2e6c711591f685c8b51466c37ffb3f86">BOOST_PP_BOOL</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 2, rxy)),<a class="el" href="compl_8hpp.html#a4cffb794e381dbd8e975f83c2344ebaa">BOOST_PP_COMPL</a>(<a class="el" href="is__maximum__number_8hpp.html#af6bc3586f2e07995692e3af34dca8faa">BOOST_PP_DETAIL_IS_MAXIMUM_NUMBER</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(3, 0, rxy))))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mul_8hpp_source.html">mul.hpp</a> の <a class="el" href="mul_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f59814f4c9a8c50c3d3ea0e21fb94ec2.html">preprocessor</a></li><li class="navelem"><a class="el" href="dir_d27fc95b402706a51a309cc03cf226b6.html">arithmetic</a></li><li class="navelem"><a class="el" href="mul_8hpp.html">mul.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

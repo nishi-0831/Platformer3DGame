@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1minimum__traversal__category__in__iterator__list_3_01List_3_01Iterators_8_8_8_01_4_01_4 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1minimum__traversal__category__in__iterator__list_3_01List_3_01Iterators_8_8_8_01_4_01_4.html#a625ad5b002eed59c20bc6d45a95ccb20", null ]
+];

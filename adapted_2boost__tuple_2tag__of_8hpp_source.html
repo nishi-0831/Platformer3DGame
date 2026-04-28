@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: tag_of.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('adapted_2boost__tuple_2tag__of_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adapted/boost_tuple/tag_of.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adapted_2boost__tuple_2tag__of_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#if !defined(BOOST_FUSION_TAG_OF_09262006_1900)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define BOOST_FUSION_TAG_OF_09262006_1900</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="support_2tag__of__fwd_8hpp.html">boost/fusion/support/tag_of_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>tuples</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">struct </span>null_type;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">class </span>T0, <span class="keyword">class </span>T1, <span class="keyword">class </span>T2, <span class="keyword">class </span>T3, <span class="keyword">class </span>T4, </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">class </span>T5, <span class="keyword">class </span>T6, <span class="keyword">class </span>T7, <span class="keyword">class </span>T8, <span class="keyword">class </span>T9</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    &gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">class </span>tuple;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Head, <span class="keyword">class</span> Tail&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">struct </span>cons;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">struct </span>boost_tuple_tag;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">struct </span>fusion_sequence_tag;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">namespace </span>traits</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            <span class="keyword">class </span>T0, <span class="keyword">class </span>T1, <span class="keyword">class </span>T2, <span class="keyword">class </span>T3, <span class="keyword">class </span>T4, </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <span class="keyword">class </span>T5, <span class="keyword">class </span>T6, <span class="keyword">class </span>T7, <span class="keyword">class </span>T8, <span class="keyword">class </span>T9</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        &gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#if defined(BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS)</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">struct </span>tag_of&lt;tuples::tuple&lt;T0, T1, T2, T3, T4, T5, T6, T7, T8, T9&gt;, void &gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993.html">   41</a></span>        struct <a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1tag__of.html">tag_of</a>&lt;tuples::tuple&lt;T0, T1, T2, T3, T4, T5, T6, T7, T8, T9&gt; &gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993.html#a8ad4507fde4aaf15aa9ceeb41837fe8c">   44</a></span>            <span class="keyword">typedef</span> boost_tuple_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993.html#a8ad4507fde4aaf15aa9ceeb41837fe8c">type</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <span class="keyword">template</span> &lt;<span class="keyword">class</span> Head, <span class="keyword">class</span> Tail&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#if defined(BOOST_NO_PARTIAL_SPECIALIZATION_IMPLICIT_DEFAULT_ARGS)</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1tag__of.html">tag_of</a>&lt;tuples::<a class="code hl_struct" href="structboost_1_1fusion_1_1cons.html">cons</a>&lt;Head, Tail&gt;, void &gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html">   51</a></span>        struct <a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1tag__of.html">tag_of</a>&lt;tuples::cons&lt;Head, Tail&gt; &gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        {</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ac129bfc2f2fc1d4c361bd3d6e8445519">   54</a></span>            <span class="keyword">typedef</span> boost_tuple_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ac129bfc2f2fc1d4c361bd3d6e8445519">type</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4.html">   58</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1tag__of.html">tag_of</a>&lt;tuples::null_type&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4.html#a0afc8efb0952b4c4668c86adf9859660">   60</a></span>            <span class="keyword">typedef</span> boost_tuple_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4.html#a0afc8efb0952b4c4668c86adf9859660">type</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        };   </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span>&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">struct </span>sequence_tag;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="keyword">class </span>T0, <span class="keyword">class </span>T1, <span class="keyword">class </span>T2, <span class="keyword">class </span>T3, <span class="keyword">class </span>T4,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">class </span>T5, <span class="keyword">class </span>T6, <span class="keyword">class </span>T7, <span class="keyword">class </span>T8, <span class="keyword">class </span>T9</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    &gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147.html">   74</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;tuples::<a class="code hl_class" href="classboost_1_1tuples_1_1tuple.html">tuple</a>&lt;T0, T1, T2, T3, T4, T5, T6, T7, T8, T9&gt; &gt;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147.html#a4f1ce35b54b9d34e02ec63d6c4c87851">   76</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147.html#a4f1ce35b54b9d34e02ec63d6c4c87851">type</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    };</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">template</span> &lt;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">class </span>T0, <span class="keyword">class </span>T1, <span class="keyword">class </span>T2, <span class="keyword">class </span>T3, <span class="keyword">class </span>T4,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">class </span>T5, <span class="keyword">class </span>T6, <span class="keyword">class </span>T7, <span class="keyword">class </span>T8, <span class="keyword">class </span>T9</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    &gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55.html">   83</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        tuples::<a class="code hl_class" href="classboost_1_1tuples_1_1tuple.html">tuple</a>&lt;T0, T1, T2, T3, T4, T5, T6, T7, T8, T9&gt; const</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    &gt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55.html#a41e1d0922c9deaf3b122cb1c9ee78ccd">   87</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55.html#a41e1d0922c9deaf3b122cb1c9ee78ccd">type</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    };</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Head, <span class="keyword">class</span> Tail&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html">   91</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;tuples::cons&lt;Head, Tail&gt; &gt;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ab170f4b6816cc67ba80fdf6b012580f6">   93</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ab170f4b6816cc67ba80fdf6b012580f6">type</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Head, <span class="keyword">class</span> Tail&gt;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4.html">   97</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;tuples::cons&lt;Head, Tail&gt; const&gt;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    {</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4.html#a42e13a8bec92672d3437fcdf9c9421e5">   99</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4.html#a42e13a8bec92672d3437fcdf9c9421e5">type</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    };</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4.html">  103</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;tuples::null_type&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4.html#aad4fee3d1a2b7162d789235b7d7446a4">  105</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4.html#aad4fee3d1a2b7162d789235b7d7446a4">type</a>;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    };</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4.html">  109</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1sequence__tag.html">sequence_tag</a>&lt;tuples::null_type const&gt;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4.html#a466d9734f389b9ecc5f862c9a8e08e7b">  111</a></span>        <span class="keyword">typedef</span> fusion::fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4.html#a466d9734f389b9ecc5f862c9a8e08e7b">type</a>;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    };</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}}</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassboost_1_1tuples_1_1tuple_html"><div class="ttname"><a href="classboost_1_1tuples_1_1tuple.html">boost::tuples::tuple</a></div><div class="ttdef"><b>Definition:</b> <a href="tuple__basic_8hpp_source.html#l00479">tuple_basic.hpp:481</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_html"><div class="ttname"><a href="namespaceboost_1_1mpl.html">boost::mpl</a></div><div class="ttdef"><b>Definition:</b> <a href="components__as__mpl__sequence_8hpp_source.html#l00024">components_as_mpl_sequence.hpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1cons_html"><div class="ttname"><a href="structboost_1_1fusion_1_1cons.html">boost::fusion::cons</a></div><div class="ttdef"><b>Definition:</b> <a href="container_2list_2cons_8hpp_source.html#l00044">container/list/cons.hpp:45</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4_html_ac129bfc2f2fc1d4c361bd3d6e8445519"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ac129bfc2f2fc1d4c361bd3d6e8445519">boost::fusion::traits::tag_of&lt; tuples::cons&lt; Head, Tail &gt; &gt;::type</a></div><div class="ttdeci">boost_tuple_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00054">adapted/boost_tuple/tag_of.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4_html_a0afc8efb0952b4c4668c86adf9859660"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1null__type_01_4.html#a0afc8efb0952b4c4668c86adf9859660">boost::fusion::traits::tag_of&lt; tuples::null_type &gt;::type</a></div><div class="ttdeci">boost_tuple_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00060">adapted/boost_tuple/tag_of.hpp:60</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993_html_a8ad4507fde4aaf15aa9ceeb41837fe8c"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1tag__of_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_003c13858ccd21eee8d2c7d894329e1993.html#a8ad4507fde4aaf15aa9ceeb41837fe8c">boost::fusion::traits::tag_of&lt; tuples::tuple&lt; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 &gt; &gt;::type</a></div><div class="ttdeci">boost_tuple_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00044">adapted/boost_tuple/tag_of.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1tag__of_html"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1tag__of.html">boost::fusion::traits::tag_of</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2tag__of_8hpp_source.html#l00076">support/tag_of.hpp:78</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4_html_ab170f4b6816cc67ba80fdf6b012580f6"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01_4.html#ab170f4b6816cc67ba80fdf6b012580f6">boost::mpl::sequence_tag&lt; tuples::cons&lt; Head, Tail &gt; &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00093">adapted/boost_tuple/tag_of.hpp:93</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4_html_a42e13a8bec92672d3437fcdf9c9421e5"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1cons_3_01Head_00_01Tail_01_4_01const_01_4.html#a42e13a8bec92672d3437fcdf9c9421e5">boost::mpl::sequence_tag&lt; tuples::cons&lt; Head, Tail &gt; const &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00099">adapted/boost_tuple/tag_of.hpp:99</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4_html_aad4fee3d1a2b7162d789235b7d7446a4"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01_4.html#aad4fee3d1a2b7162d789235b7d7446a4">boost::mpl::sequence_tag&lt; tuples::null_type &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00105">adapted/boost_tuple/tag_of.hpp:105</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4_html_a466d9734f389b9ecc5f862c9a8e08e7b"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1null__type_01const_01_4.html#a466d9734f389b9ecc5f862c9a8e08e7b">boost::mpl::sequence_tag&lt; tuples::null_type const &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00111">adapted/boost_tuple/tag_of.hpp:111</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147_html_a4f1ce35b54b9d34e02ec63d6c4c87851"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_05bb949c895d16ba44282f88ac5941147.html#a4f1ce35b54b9d34e02ec63d6c4c87851">boost::mpl::sequence_tag&lt; tuples::tuple&lt; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 &gt; &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00076">adapted/boost_tuple/tag_of.hpp:76</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55_html_a41e1d0922c9deaf3b122cb1c9ee78ccd"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag_3_01tuples_1_1tuple_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_0c9690493245b57ed48f904c416741f55.html#a41e1d0922c9deaf3b122cb1c9ee78ccd">boost::mpl::sequence_tag&lt; tuples::tuple&lt; T0, T1, T2, T3, T4, T5, T6, T7, T8, T9 &gt; const &gt;::type</a></div><div class="ttdeci">fusion::fusion_sequence_tag type</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2boost__tuple_2tag__of_8hpp_source.html#l00087">adapted/boost_tuple/tag_of.hpp:87</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1sequence__tag_html"><div class="ttname"><a href="structboost_1_1mpl_1_1sequence__tag.html">boost::mpl::sequence_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="sequence__tag_8hpp_source.html#l00110">sequence_tag.hpp:115</a></div></div>
+<div class="ttc" id="asupport_2tag__of__fwd_8hpp_html"><div class="ttname"><a href="support_2tag__of__fwd_8hpp.html">tag_of_fwd.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_704380e7be6172efd7d56f111ddb259e.html">adapted</a></li><li class="navelem"><a class="el" href="dir_fcb6c915a798878861b6f0edded6aae0.html">boost_tuple</a></li><li class="navelem"><a class="el" href="adapted_2boost__tuple_2tag__of_8hpp.html">tag_of.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,970 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__inherit__graph.svg" width="266" height="1124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__coll__graph.svg" width="802" height="2474"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a774ef7d92dff159627aa83e620577779"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a774ef7d92dff159627aa83e620577779">random_access_index_loader</a> (const Allocator &amp;al_, <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#ab9bc8e445ccfe76ee9cfdfa33823d453">ptr_array</a> &amp;ptrs_)</td></tr>
+<tr class="separator:a774ef7d92dff159627aa83e620577779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15bfe5102196c1c3c87bc257806aab72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a15bfe5102196c1c3c87bc257806aab72">rearrange</a> (Node *position_, Node *x)</td></tr>
+<tr class="separator:a15bfe5102196c1c3c87bc257806aab72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a402653a318b8fe94aa87baf1b517be67"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">random_access_index_loader_base</a>&lt; Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a402653a318b8fe94aa87baf1b517be67">super</a></td></tr>
+<tr class="separator:a402653a318b8fe94aa87baf1b517be67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8240af49e0e9ec645afeb67c206c3373"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">super::node_impl_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a></td></tr>
+<tr class="separator:a8240af49e0e9ec645afeb67c206c3373"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9bc8e445ccfe76ee9cfdfa33823d453"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ad2fc44b873e2e8e0d1bf9621a3c5c73a">super::ptr_array</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#ab9bc8e445ccfe76ee9cfdfa33823d453">ptr_array</a></td></tr>
+<tr class="separator:ab9bc8e445ccfe76ee9cfdfa33823d453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6d8db10c1c058211e3b0f1156ad102f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1random__access__index__node__impl.html">random_access_index_node_impl</a>&lt; typename <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, char &gt;::type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ad6d8db10c1c058211e3b0f1156ad102f">node_impl_type</a></td></tr>
+<tr class="separator:ad6d8db10c1c058211e3b0f1156ad102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe413f8c650be39dbc41bcaf0edfa162"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt; Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#afe413f8c650be39dbc41bcaf0edfa162">alloc_traits</a></td></tr>
+<tr class="separator:afe413f8c650be39dbc41bcaf0edfa162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb7aa9574d40c8272ba4aadceb391ad"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a></td></tr>
+<tr class="separator:aacb7aa9574d40c8272ba4aadceb391ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1359f1cb7b2a35b2d3d1b6b556d7fa21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a1359f1cb7b2a35b2d3d1b6b556d7fa21">rearrange</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> position_, <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> x)</td></tr>
+<tr class="separator:a1359f1cb7b2a35b2d3d1b6b556d7fa21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19665d9245ef4551d2a039a5093845fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a19665d9245ef4551d2a039a5093845fd">preprocess</a> ()</td></tr>
+<tr class="separator:a19665d9245ef4551d2a039a5093845fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada1149788a05e4b6342fb2cf3e317895"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ada1149788a05e4b6342fb2cf3e317895">position</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> x) const</td></tr>
+<tr class="separator:ada1149788a05e4b6342fb2cf3e317895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f1fa336ec9b6940e16927700a09b216"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a8f1fa336ec9b6940e16927700a09b216">next_at</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a> n) const</td></tr>
+<tr class="separator:a8f1fa336ec9b6940e16927700a09b216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fbe6f56b62a729c2c75c870c3c2722"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a21fbe6f56b62a729c2c75c870c3c2722">prev_at</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a> n) const</td></tr>
+<tr class="separator:a21fbe6f56b62a729c2c75c870c3c2722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44919914501dc5f65c0be86cad59440b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> x) const</td></tr>
+<tr class="separator:a44919914501dc5f65c0be86cad59440b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5868c59f6697e6db292d4919981b73be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> x) const</td></tr>
+<tr class="separator:a5868c59f6697e6db292d4919981b73be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a5257061ea931f971734d3f3d5a336969"><td class="memItemLeft" align="right" valign="top">Allocator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5257061ea931f971734d3f3d5a336969">al</a></td></tr>
+<tr class="separator:a5257061ea931f971734d3f3d5a336969"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0304bf1f9c11b28ba5b9d60b81d04152"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#ab9bc8e445ccfe76ee9cfdfa33823d453">ptr_array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a></td></tr>
+<tr class="separator:a0304bf1f9c11b28ba5b9d60b81d04152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90ead0ccae9d9c8a74b9c7ee2a1c959e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a90ead0ccae9d9c8a74b9c7ee2a1c959e">header</a></td></tr>
+<tr class="separator:a90ead0ccae9d9c8a74b9c7ee2a1c959e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a279961b5f4d34633b4b9165643056de2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a>, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a279961b5f4d34633b4b9165643056de2">prev_spc</a></td></tr>
+<tr class="separator:a279961b5f4d34633b4b9165643056de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bac61f2c20fb4ac4da40631598c724"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a45bac61f2c20fb4ac4da40631598c724">preprocessed</a></td></tr>
+<tr class="separator:a45bac61f2c20fb4ac4da40631598c724"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Node, typename Allocator&gt;<br />
+class boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt;</div>
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00150">150</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="afe413f8c650be39dbc41bcaf0edfa162" name="afe413f8c650be39dbc41bcaf0edfa162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe413f8c650be39dbc41bcaf0edfa162">&#9670;&#160;</a></span>alloc_traits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt;Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::alloc_traits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8240af49e0e9ec645afeb67c206c3373" name="a8240af49e0e9ec645afeb67c206c3373"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8240af49e0e9ec645afeb67c206c3373">&#9670;&#160;</a></span>node_impl_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">super::node_impl_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">boost::multi_index::detail::random_access_index_loader</a>&lt; Node, Allocator &gt;::node_impl_pointer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00154">154</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad6d8db10c1c058211e3b0f1156ad102f" name="ad6d8db10c1c058211e3b0f1156ad102f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6d8db10c1c058211e3b0f1156ad102f">&#9670;&#160;</a></span>node_impl_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1random__access__index__node__impl.html">random_access_index_node_impl</a>&lt; typename <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, char &gt;::type &gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::node_impl_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab9bc8e445ccfe76ee9cfdfa33823d453" name="ab9bc8e445ccfe76ee9cfdfa33823d453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9bc8e445ccfe76ee9cfdfa33823d453">&#9670;&#160;</a></span>ptr_array</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ad2fc44b873e2e8e0d1bf9621a3c5c73a">super::ptr_array</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">boost::multi_index::detail::random_access_index_loader</a>&lt; Node, Allocator &gt;::ptr_array</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00155">155</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aacb7aa9574d40c8272ba4aadceb391ad" name="aacb7aa9574d40c8272ba4aadceb391ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aacb7aa9574d40c8272ba4aadceb391ad">&#9670;&#160;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::size_type <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::size_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00097">97</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a402653a318b8fe94aa87baf1b517be67" name="a402653a318b8fe94aa87baf1b517be67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a402653a318b8fe94aa87baf1b517be67">&#9670;&#160;</a></span>super</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">random_access_index_loader_base</a>&lt;Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">boost::multi_index::detail::random_access_index_loader</a>&lt; Node, Allocator &gt;::super</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00153">153</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a774ef7d92dff159627aa83e620577779" name="a774ef7d92dff159627aa83e620577779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774ef7d92dff159627aa83e620577779">&#9670;&#160;</a></span>random_access_index_loader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">boost::multi_index::detail::random_access_index_loader</a>&lt; Node, Allocator &gt;::random_access_index_loader </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>al_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#ab9bc8e445ccfe76ee9cfdfa33823d453">ptr_array</a> &amp;&#160;</td>
+          <td class="paramname"><em>ptrs_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00158">158</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  158</span>                                                                   :</div>
+<div class="line"><span class="lineno">  159</span>    <a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a402653a318b8fe94aa87baf1b517be67">super</a>(al_,ptrs_)</div>
+<div class="line"><span class="lineno">  160</span>  {}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader_html_a402653a318b8fe94aa87baf1b517be67"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a402653a318b8fe94aa87baf1b517be67">boost::multi_index::detail::random_access_index_loader::super</a></div><div class="ttdeci">random_access_index_loader_base&lt; Allocator &gt; super</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00153">rnd_index_loader.hpp:153</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a44919914501dc5f65c0be86cad59440b" name="a44919914501dc5f65c0be86cad59440b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44919914501dc5f65c0be86cad59440b">&#9670;&#160;</a></span>next()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::next </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00132">132</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>  {</div>
+<div class="line"><span class="lineno">  134</span>    <span class="keywordflow">return</span> *(x-&gt;up());</div>
+<div class="line"><span class="lineno">  135</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::rearrange()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a44919914501dc5f65c0be86cad59440b_icgraph.svg" width="702" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8f1fa336ec9b6940e16927700a09b216" name="a8f1fa336ec9b6940e16927700a09b216"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f1fa336ec9b6940e16927700a09b216">&#9670;&#160;</a></span>next_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::next_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>  {</div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> *<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#a873d1401d01af0b7f4883a9f9cb683da">at</a>(n);</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a0304bf1f9c11b28ba5b9d60b81d04152"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">boost::multi_index::detail::random_access_index_loader_base::ptrs</a></div><div class="ttdeci">ptr_array &amp; ptrs</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00143">rnd_index_loader.hpp:143</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array_html_a873d1401d01af0b7f4883a9f9cb683da"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#a873d1401d01af0b7f4883a9f9cb683da">boost::multi_index::detail::random_access_index_ptr_array::at</a></div><div class="ttdeci">pointer at(size_type n) const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__ptr__array_8hpp_source.html#l00082">rnd_index_ptr_array.hpp:82</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__ptr__array_8hpp_source.html#l00082">boost::multi_index::detail::random_access_index_ptr_array&lt; Allocator &gt;::at()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00143">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::ptrs</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a8f1fa336ec9b6940e16927700a09b216_cgraph.svg" width="902" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a8f1fa336ec9b6940e16927700a09b216_icgraph.svg" width="487" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ada1149788a05e4b6342fb2cf3e317895" name="ada1149788a05e4b6342fb2cf3e317895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada1149788a05e4b6342fb2cf3e317895">&#9670;&#160;</a></span>position()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::position </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00117">117</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  118</span>  {</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">return</span> (<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a>)(x-&gt;up()-<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ad47718c732a1c0622f20d1f23f3018ac">begin</a>());</div>
+<div class="line"><span class="lineno">  120</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_aacb7aa9574d40c8272ba4aadceb391ad"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">boost::multi_index::detail::random_access_index_loader_base::size_type</a></div><div class="ttdeci">alloc_traits::size_type size_type</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00097">rnd_index_loader.hpp:97</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array_html_ad47718c732a1c0622f20d1f23f3018ac"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ad47718c732a1c0622f20d1f23f3018ac">boost::multi_index::detail::random_access_index_ptr_array::begin</a></div><div class="ttdeci">pointer begin() const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__ptr__array_8hpp_source.html#l00080">rnd_index_ptr_array.hpp:80</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__ptr__array_8hpp_source.html#l00080">boost::multi_index::detail::random_access_index_ptr_array&lt; Allocator &gt;::begin()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00143">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::ptrs</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00137">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_ada1149788a05e4b6342fb2cf3e317895_cgraph.svg" width="904" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_ada1149788a05e4b6342fb2cf3e317895_icgraph.svg" width="960" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a19665d9245ef4551d2a039a5093845fd" name="a19665d9245ef4551d2a039a5093845fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19665d9245ef4551d2a039a5093845fd">&#9670;&#160;</a></span>preprocess()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::preprocess </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">99</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>  {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a45bac61f2c20fb4ac4da40631598c724">preprocessed</a>){</div>
+<div class="line"><span class="lineno">  102</span>      <span class="comment">/* get space for the auxiliary prev array */</span></div>
+<div class="line"><span class="lineno">  103</span>      auto_space&lt;node_impl_pointer,Allocator&gt; tmp(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5257061ea931f971734d3f3d5a336969">al</a>,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ab3ee240584a3d090de83491609532588">size</a>()+1);</div>
+<div class="line"><span class="lineno">  104</span>      <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a279961b5f4d34633b4b9165643056de2">prev_spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ab66bbc2786a7094c28f6cefbf6c0ab10">swap</a>(tmp);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>      <span class="comment">/* prev_spc elements point to the prev nodes */</span></div>
+<div class="line"><span class="lineno">  107</span>      std::rotate_copy(</div>
+<div class="line"><span class="lineno">  108</span>        &amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ad47718c732a1c0622f20d1f23f3018ac">begin</a>(),&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#afdd19ebb8178ffc9f55359a82ab1f627">end</a>(),&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#afdd19ebb8178ffc9f55359a82ab1f627">end</a>()+1,&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a279961b5f4d34633b4b9165643056de2">prev_spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">data</a>());</div>
+<div class="line"><span class="lineno">  109</span> </div>
+<div class="line"><span class="lineno">  110</span>      <span class="comment">/* ptrs elements point to the next nodes */</span></div>
+<div class="line"><span class="lineno">  111</span>      std::rotate(&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ad47718c732a1c0622f20d1f23f3018ac">begin</a>(),&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ad47718c732a1c0622f20d1f23f3018ac">begin</a>()+1,&amp;*<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a0304bf1f9c11b28ba5b9d60b81d04152">ptrs</a>.<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#afdd19ebb8178ffc9f55359a82ab1f627">end</a>()+1);</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>      <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a45bac61f2c20fb4ac4da40631598c724">preprocessed</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  114</span>    }</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a279961b5f4d34633b4b9165643056de2"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a279961b5f4d34633b4b9165643056de2">boost::multi_index::detail::random_access_index_loader_base::prev_spc</a></div><div class="ttdeci">auto_space&lt; node_impl_pointer, Allocator &gt; prev_spc</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00145">rnd_index_loader.hpp:145</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a45bac61f2c20fb4ac4da40631598c724"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a45bac61f2c20fb4ac4da40631598c724">boost::multi_index::detail::random_access_index_loader_base::preprocessed</a></div><div class="ttdeci">bool preprocessed</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00146">rnd_index_loader.hpp:146</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a5257061ea931f971734d3f3d5a336969"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5257061ea931f971734d3f3d5a336969">boost::multi_index::detail::random_access_index_loader_base::al</a></div><div class="ttdeci">Allocator al</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00142">rnd_index_loader.hpp:142</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array_html_ab3ee240584a3d090de83491609532588"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#ab3ee240584a3d090de83491609532588">boost::multi_index::detail::random_access_index_ptr_array::size</a></div><div class="ttdeci">size_type size() const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__ptr__array_8hpp_source.html#l00060">rnd_index_ptr_array.hpp:60</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array_html_afdd19ebb8178ffc9f55359a82ab1f627"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__ptr__array.html#afdd19ebb8178ffc9f55359a82ab1f627">boost::multi_index::detail::random_access_index_ptr_array::end</a></div><div class="ttdeci">pointer end() const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__ptr__array_8hpp_source.html#l00081">rnd_index_ptr_array.hpp:81</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html_aaa30af0a9d3a5f2155ab80e3e89adfd4"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">boost::multi_index::detail::auto_space::data</a></div><div class="ttdeci">pointer data() const</div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00064">auto_space.hpp:64</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html_ab66bbc2786a7094c28f6cefbf6c0ab10"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ab66bbc2786a7094c28f6cefbf6c0ab10">boost::multi_index::detail::auto_space::swap</a></div><div class="ttdeci">void swap(auto_space &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00066">auto_space.hpp:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__loader_8hpp_source.html#l00142">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::al</a>, <a class="el" href="rnd__index__ptr__array_8hpp_source.html#l00080">boost::multi_index::detail::random_access_index_ptr_array&lt; Allocator &gt;::begin()</a>, <a class="el" href="auto__space_8hpp_source.html#l00064">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::data()</a>, <a class="el" href="rnd__index__ptr__array_8hpp_source.html#l00081">boost::multi_index::detail::random_access_index_ptr_array&lt; Allocator &gt;::end()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00146">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocessed</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00145">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev_spc</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00143">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::ptrs</a>, <a class="el" href="rnd__index__ptr__array_8hpp_source.html#l00060">boost::multi_index::detail::random_access_index_ptr_array&lt; Allocator &gt;::size()</a>, <a class="el" href="auto__space_8hpp_source.html#l00066">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::swap()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::rearrange()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a19665d9245ef4551d2a039a5093845fd_cgraph.svg" width="939" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a19665d9245ef4551d2a039a5093845fd_icgraph.svg" width="744" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5868c59f6697e6db292d4919981b73be" name="a5868c59f6697e6db292d4919981b73be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5868c59f6697e6db292d4919981b73be">&#9670;&#160;</a></span>prev()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::prev </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>  {</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a21fbe6f56b62a729c2c75c870c3c2722">prev_at</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ada1149788a05e4b6342fb2cf3e317895">position</a>(x));</div>
+<div class="line"><span class="lineno">  140</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a21fbe6f56b62a729c2c75c870c3c2722"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a21fbe6f56b62a729c2c75c870c3c2722">boost::multi_index::detail::random_access_index_loader_base::prev_at</a></div><div class="ttdeci">node_impl_pointer &amp; prev_at(size_type n) const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00127">rnd_index_loader.hpp:127</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_ada1149788a05e4b6342fb2cf3e317895"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#ada1149788a05e4b6342fb2cf3e317895">boost::multi_index::detail::random_access_index_loader_base::position</a></div><div class="ttdeci">size_type position(node_impl_pointer x) const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00117">rnd_index_loader.hpp:117</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__loader_8hpp_source.html#l00117">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::position()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00127">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev_at()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::rearrange()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a5868c59f6697e6db292d4919981b73be_cgraph.svg" width="1172" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a5868c59f6697e6db292d4919981b73be_icgraph.svg" width="702" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a21fbe6f56b62a729c2c75c870c3c2722" name="a21fbe6f56b62a729c2c75c870c3c2722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fbe6f56b62a729c2c75c870c3c2722">&#9670;&#160;</a></span>prev_at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::prev_at </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#aacb7aa9574d40c8272ba4aadceb391ad">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  128</span>  {</div>
+<div class="line"><span class="lineno">  129</span>    <span class="keywordflow">return</span> *(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a279961b5f4d34633b4b9165643056de2">prev_spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">data</a>()+n);</div>
+<div class="line"><span class="lineno">  130</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="auto__space_8hpp_source.html#l00064">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::data()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00145">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev_spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00137">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a21fbe6f56b62a729c2c75c870c3c2722_cgraph.svg" width="454" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a21fbe6f56b62a729c2c75c870c3c2722_icgraph.svg" width="958" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a15bfe5102196c1c3c87bc257806aab72" name="a15bfe5102196c1c3c87bc257806aab72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15bfe5102196c1c3c87bc257806aab72">&#9670;&#160;</a></span>rearrange() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">boost::multi_index::detail::random_access_index_loader</a>&lt; Node, Allocator &gt;::rearrange </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>position_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00162">162</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  163</span>  {</div>
+<div class="line"><span class="lineno">  164</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a1359f1cb7b2a35b2d3d1b6b556d7fa21">super::rearrange</a>(</div>
+<div class="line"><span class="lineno">  165</span>      position_?position_-&gt;impl():<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a>(0),x-&gt;impl());</div>
+<div class="line"><span class="lineno">  166</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a1359f1cb7b2a35b2d3d1b6b556d7fa21"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a1359f1cb7b2a35b2d3d1b6b556d7fa21">boost::multi_index::detail::random_access_index_loader_base::rearrange</a></div><div class="ttdeci">void rearrange(node_impl_pointer position_, node_impl_pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00084">rnd_index_loader.hpp:84</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader_html_a8240af49e0e9ec645afeb67c206c3373"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">boost::multi_index::detail::random_access_index_loader::node_impl_pointer</a></div><div class="ttdeci">super::node_impl_pointer node_impl_pointer</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00154">rnd_index_loader.hpp:154</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::rearrange()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader_a15bfe5102196c1c3c87bc257806aab72_cgraph.svg" width="1710" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a1359f1cb7b2a35b2d3d1b6b556d7fa21" name="a1359f1cb7b2a35b2d3d1b6b556d7fa21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1359f1cb7b2a35b2d3d1b6b556d7fa21">&#9670;&#160;</a></span>rearrange() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::rearrange </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>&#160;</td>
+          <td class="paramname"><em>position_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a19665d9245ef4551d2a039a5093845fd">preprocess</a>(); <span class="comment">/* only incur this penalty if rearrange() is ever called */</span></div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span>(position_==<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">node_impl_pointer</a>(0))position_=<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a90ead0ccae9d9c8a74b9c7ee2a1c959e">header</a>;</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(x))=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(x);</div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(x))=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(x);</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(x)=position_;</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(x)=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(position_);</div>
+<div class="line"><span class="lineno">   92</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(x))=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">prev</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">next</a>(x))=x;</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a19665d9245ef4551d2a039a5093845fd"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a19665d9245ef4551d2a039a5093845fd">boost::multi_index::detail::random_access_index_loader_base::preprocess</a></div><div class="ttdeci">void preprocess()</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00099">rnd_index_loader.hpp:99</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a44919914501dc5f65c0be86cad59440b"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a44919914501dc5f65c0be86cad59440b">boost::multi_index::detail::random_access_index_loader_base::next</a></div><div class="ttdeci">node_impl_pointer &amp; next(node_impl_pointer x) const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00132">rnd_index_loader.hpp:132</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a5868c59f6697e6db292d4919981b73be"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a5868c59f6697e6db292d4919981b73be">boost::multi_index::detail::random_access_index_loader_base::prev</a></div><div class="ttdeci">node_impl_pointer &amp; prev(node_impl_pointer x) const</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00137">rnd_index_loader.hpp:137</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_a90ead0ccae9d9c8a74b9c7ee2a1c959e"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#a90ead0ccae9d9c8a74b9c7ee2a1c959e">boost::multi_index::detail::random_access_index_loader_base::header</a></div><div class="ttdeci">node_impl_pointer header</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00144">rnd_index_loader.hpp:144</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_html_abed5ac1c5ff0f58822b73b1cc87569d9"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html#abed5ac1c5ff0f58822b73b1cc87569d9">boost::multi_index::detail::random_access_index_loader_base::node_impl_pointer</a></div><div class="ttdeci">node_impl_type::pointer node_impl_pointer</div><div class="ttdef"><b>Definition:</b> <a href="rnd__index__loader_8hpp_source.html#l00052">rnd_index_loader.hpp:52</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="rnd__index__loader_8hpp_source.html#l00144">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::header</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00132">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::next()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocess()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00137">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00162">boost::multi_index::detail::random_access_index_loader&lt; Node, Allocator &gt;::rearrange()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a1359f1cb7b2a35b2d3d1b6b556d7fa21_cgraph.svg" width="1478" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base_a1359f1cb7b2a35b2d3d1b6b556d7fa21_icgraph.svg" width="466" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5257061ea931f971734d3f3d5a336969" name="a5257061ea931f971734d3f3d5a336969"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5257061ea931f971734d3f3d5a336969">&#9670;&#160;</a></span>al</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Allocator <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::al</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00142">142</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocess()</a>.</p>
+
+</div>
+</div>
+<a id="a90ead0ccae9d9c8a74b9c7ee2a1c959e" name="a90ead0ccae9d9c8a74b9c7ee2a1c959e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90ead0ccae9d9c8a74b9c7ee2a1c959e">&#9670;&#160;</a></span>header</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::header</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00144">144</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00084">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::rearrange()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+
+</div>
+</div>
+<a id="a45bac61f2c20fb4ac4da40631598c724" name="a45bac61f2c20fb4ac4da40631598c724"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bac61f2c20fb4ac4da40631598c724">&#9670;&#160;</a></span>preprocessed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::preprocessed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00146">146</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocess()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+
+</div>
+</div>
+<a id="a279961b5f4d34633b4b9165643056de2" name="a279961b5f4d34633b4b9165643056de2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a279961b5f4d34633b4b9165643056de2">&#9670;&#160;</a></span>prev_spc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt;<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#a8240af49e0e9ec645afeb67c206c3373">node_impl_pointer</a>,Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::prev_spc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00145">145</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocess()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00127">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::prev_at()</a>.</p>
+
+</div>
+</div>
+<a id="a0304bf1f9c11b28ba5b9d60b81d04152" name="a0304bf1f9c11b28ba5b9d60b81d04152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0304bf1f9c11b28ba5b9d60b81d04152">&#9670;&#160;</a></span>ptrs</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html#ab9bc8e445ccfe76ee9cfdfa33823d453">ptr_array</a>&amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader__base.html">boost::multi_index::detail::random_access_index_loader_base</a>&lt; Allocator &gt;::ptrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a> の <a class="el" href="rnd__index__loader_8hpp_source.html#l00143">143</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="rnd__index__loader_8hpp_source.html#l00122">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::next_at()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00117">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::position()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00099">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::preprocess()</a>, <a class="el" href="rnd__index__loader_8hpp_source.html#l00063">boost::multi_index::detail::random_access_index_loader_base&lt; Allocator &gt;::~random_access_index_loader_base()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="rnd__index__loader_8hpp_source.html">rnd_index_loader.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__index__loader.html">random_access_index_loader</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -10,6 +10,7 @@ var classmtgb_1_1Time =
     [ "WaitFrame", "classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53", null ],
     [ "current_", "classmtgb_1_1Time.html#a59e9912dc7cc58bf9118b1cde5d79ed9", null ],
     [ "deltaTime_", "classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d", null ],
+    [ "MAX_DELTA_TIME", "classmtgb_1_1Time.html#a5d97d2b091d8e12f7e16b7b4b1d1cfe4", null ],
     [ "MICRO_TO_SEC", "classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9", null ],
     [ "previous_", "classmtgb_1_1Time.html#a1a7fe1d2d9ac74d160e2193fd1c74d38", null ],
     [ "SEC_TO_MICRO", "classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646", null ],

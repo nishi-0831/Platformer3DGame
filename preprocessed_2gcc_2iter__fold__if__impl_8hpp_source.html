@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: iter_fold_if_impl.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">preprocessed/gcc/iter_fold_if_impl.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Copyright Aleksey Gurtovoy 2001-2004</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Copyright David Abrahams 2001-2002</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Distributed under the Boost Software License, Version 1.0. </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// (See accompanying file LICENSE_1_0.txt or copy at </span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// Preprocessed version of &quot;boost/mpl/aux_/iter_fold_if_impl.hpp&quot; header</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// -- DO NOT modify by hand!</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a> { <span class="keyword">namespace </span>aux {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator, <span class="keyword">typename</span> State &gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">struct </span>iter_fold_if_null_step</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#a3c5ea772308e2c7bf87aed45b2f3d9ca">   18</a></span>    <span class="keyword">typedef</span> State <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#a3c5ea772308e2c7bf87aed45b2f3d9ca">state</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#ada266e78022498578a875f28b4a13550">   19</a></span>    <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#ada266e78022498578a875f28b4a13550">iterator</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">template</span>&lt; <span class="keywordtype">bool</span> &gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl.html">iter_fold_if_step_impl</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>          <span class="keyword">typename</span> Iterator</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        , <span class="keyword">typename</span> State</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        , <span class="keyword">typename</span> StateOp</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        , <span class="keyword">typename</span> IteratorOp</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        &gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">struct </span>result_</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#ad24956abf476398d91d20eb74604c9ed">   33</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1apply2.html#a8e7d966b3125a5c9f52e9a3af1dc928e">apply2&lt; StateOp,State,Iterator &gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#ad24956abf476398d91d20eb74604c9ed">state</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#a449d2f132d80d054dfd70ca0c6e23795">   34</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> IteratorOp::type <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#a449d2f132d80d054dfd70ca0c6e23795">iterator</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl.html">iter_fold_if_step_impl</a>&lt;false&gt;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>{</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>          <span class="keyword">typename</span> Iterator</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        , <span class="keyword">typename</span> State</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        , <span class="keyword">typename</span> StateOp</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        , <span class="keyword">typename</span> IteratorOp</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        &gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keyword">struct </span>result_</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#aa73572f9ae5171156f90904f82dcf0f2">   49</a></span>        <span class="keyword">typedef</span> State <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#aa73572f9ae5171156f90904f82dcf0f2">state</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#a735904aed6284cba5bd9dfbccf612a2a">   50</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#a735904aed6284cba5bd9dfbccf612a2a">iterator</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    };</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>};</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keyword">typename</span> Iterator</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    , <span class="keyword">typename</span> State</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    , <span class="keyword">typename</span> ForwardOp</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    , <span class="keyword">typename</span> Predicate</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    &gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">iter_fold_if_forward_step</a></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>{</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#abbfccf7c28507a79c6090acdbac60923">   62</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1apply2.html#a8e7d966b3125a5c9f52e9a3af1dc928e">apply2&lt; Predicate,State,Iterator &gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#abbfccf7c28507a79c6090acdbac60923">not_last</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl.html">iter_fold_if_step_impl</a>&lt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          <a class="code hl_define" href="value__wknd_8hpp.html#a8359f5aa83f729f7c4d7a8edc2ee6fe3">BOOST_MPL_AUX_MSVC_VALUE_WKND</a>(<a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#abbfccf7c28507a79c6090acdbac60923">not_last</a>)::value</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1478ac57ae801e67a132b02fa5e40286">   65</a></span>        &gt;::template result_&lt; Iterator,State,ForwardOp, <a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a>::<a class="code hl_struct" href="structboost_1_1mpl_1_1next.html">next</a>&lt;Iterator&gt; &gt; <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1478ac57ae801e67a132b02fa5e40286">impl_</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1c947814135281d08e164efee9ff32f7">   67</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> impl_::state <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1c947814135281d08e164efee9ff32f7">state</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a79a4cca583f081e53e3b77e814e7c352">   68</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> impl_::iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a79a4cca583f081e53e3b77e814e7c352">iterator</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keyword">typename</span> Iterator</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    , <span class="keyword">typename</span> State</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    , <span class="keyword">typename</span> BackwardOp</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    , <span class="keyword">typename</span> Predicate</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    &gt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">iter_fold_if_backward_step</a></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#ac45770e1ce8547a9c624a112fff8b66f">   79</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1apply2.html#a8e7d966b3125a5c9f52e9a3af1dc928e">apply2&lt; Predicate,State,Iterator &gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#ac45770e1ce8547a9c624a112fff8b66f">not_last</a>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl.html">iter_fold_if_step_impl</a>&lt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>          <a class="code hl_define" href="value__wknd_8hpp.html#a8359f5aa83f729f7c4d7a8edc2ee6fe3">BOOST_MPL_AUX_MSVC_VALUE_WKND</a>(<a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#ac45770e1ce8547a9c624a112fff8b66f">not_last</a>)::value</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a9dc23fa59c5f85c5ffcf16c99faff803">   82</a></span>        &gt;::template result_&lt; Iterator,State,BackwardOp, <a class="code hl_struct" href="structboost_1_1mpl_1_1identity.html">identity</a>&lt;Iterator&gt; &gt; <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a9dc23fa59c5f85c5ffcf16c99faff803">impl_</a>;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a870d93f8203fe6895cffc2a77db20684">   84</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> impl_::state <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a870d93f8203fe6895cffc2a77db20684">state</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a6438569cc2d77374874d959ee808518f">   85</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> impl_::iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a6438569cc2d77374874d959ee808518f">iterator</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keyword">typename</span> Iterator</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    , <span class="keyword">typename</span> State</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    , <span class="keyword">typename</span> ForwardOp</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    , <span class="keyword">typename</span> ForwardPredicate</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    , <span class="keyword">typename</span> BackwardOp</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    , <span class="keyword">typename</span> BackwardPredicate</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    &gt;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html">iter_fold_if_impl</a></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a67593e870907efb2bace0669b193de34">   99</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html">iter_fold_if_null_step&lt; Iterator,State &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a67593e870907efb2bace0669b193de34">forward_step0</a>;</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a7b07f562cd6016a698a1efb5a51eb107">  100</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">iter_fold_if_forward_step&lt; typename forward_step0::iterator, typename forward_step0::state, ForwardOp, ForwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a7b07f562cd6016a698a1efb5a51eb107">forward_step1</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a51880c72741d76ae6b1b1f381d027d8f">  101</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">iter_fold_if_forward_step&lt; typename forward_step1::iterator, typename forward_step1::state, ForwardOp, ForwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a51880c72741d76ae6b1b1f381d027d8f">forward_step2</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af2d99f929d9175d8875f5e9eb6e295f4">  102</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">iter_fold_if_forward_step&lt; typename forward_step2::iterator, typename forward_step2::state, ForwardOp, ForwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af2d99f929d9175d8875f5e9eb6e295f4">forward_step3</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a22238b4c1ef1f87e59355e180d3a1761">  103</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">iter_fold_if_forward_step&lt; typename forward_step3::iterator, typename forward_step3::state, ForwardOp, ForwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a22238b4c1ef1f87e59355e180d3a1761">forward_step4</a>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1if__.html">if_</a>&lt;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>          <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#abbfccf7c28507a79c6090acdbac60923">forward_step4::not_last</a></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        , <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html">iter_fold_if_impl</a>&lt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>              <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a79a4cca583f081e53e3b77e814e7c352">forward_step4::iterator</a></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            , <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1c947814135281d08e164efee9ff32f7">forward_step4::state</a></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            , ForwardOp</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>            , ForwardPredicate</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>            , BackwardOp</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            , BackwardPredicate</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            &gt;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        , <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html">iter_fold_if_null_step</a>&lt;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>              <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a79a4cca583f081e53e3b77e814e7c352">forward_step4::iterator</a></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            , <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1c947814135281d08e164efee9ff32f7">forward_step4::state</a></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            &gt;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a1a40551403767f4921588c611e435f8f">  120</a></span>        &gt;::type <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a1a40551403767f4921588c611e435f8f">backward_step4</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a4f824cae1fbec2d6f139ef6ff4b7446f">  122</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">iter_fold_if_backward_step&lt; typename forward_step3::iterator, typename backward_step4::state, BackwardOp, BackwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a4f824cae1fbec2d6f139ef6ff4b7446f">backward_step3</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a9145ec3c51e5edfaf90ff5898261efc3">  123</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">iter_fold_if_backward_step&lt; typename forward_step2::iterator, typename backward_step3::state, BackwardOp, BackwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a9145ec3c51e5edfaf90ff5898261efc3">backward_step2</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a2a1537c8e6907d6e0ec4048fdc9a637a">  124</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">iter_fold_if_backward_step&lt; typename forward_step1::iterator, typename backward_step2::state, BackwardOp, BackwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a2a1537c8e6907d6e0ec4048fdc9a637a">backward_step1</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af7362c32dc526d10e32d38432f2ddd26">  125</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">iter_fold_if_backward_step&lt; typename forward_step0::iterator, typename backward_step1::state, BackwardOp, BackwardPredicate &gt;</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af7362c32dc526d10e32d38432f2ddd26">backward_step0</a>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a0e1969fa658dcd7a1751177574f6d4d1">  129</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a870d93f8203fe6895cffc2a77db20684">backward_step0::state</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a0e1969fa658dcd7a1751177574f6d4d1">state</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a3d7fa87b84a4b4ade864281722bfccf7">  130</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> backward_step4::iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a3d7fa87b84a4b4ade864281722bfccf7">iterator</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}}}</div>
+<div class="ttc" id="anamespaceboost_1_1mpl_html"><div class="ttname"><a href="namespaceboost_1_1mpl.html">boost::mpl</a></div><div class="ttdef"><b>Definition:</b> <a href="components__as__mpl__sequence_8hpp_source.html#l00024">components_as_mpl_sequence.hpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1apply2_html_a8e7d966b3125a5c9f52e9a3af1dc928e"><div class="ttname"><a href="structboost_1_1mpl_1_1apply2.html#a8e7d966b3125a5c9f52e9a3af1dc928e">boost::mpl::apply2::type</a></div><div class="ttdeci">apply_wrap2&lt; typenamelambda&lt; F &gt;::type, T1, T2 &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="mpl_2aux___2preprocessed_2msvc60_2apply_8hpp_source.html#l00073">mpl/aux_/preprocessed/msvc60/apply.hpp:73</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html">boost::mpl::aux::iter_fold_if_backward_step</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00077">preprocessed/bcc/iter_fold_if_impl.hpp:78</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step_html_a6438569cc2d77374874d959ee808518f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a6438569cc2d77374874d959ee808518f">boost::mpl::aux::iter_fold_if_backward_step::iterator</a></div><div class="ttdeci">impl_::iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00085">preprocessed/gcc/iter_fold_if_impl.hpp:85</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step_html_a870d93f8203fe6895cffc2a77db20684"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a870d93f8203fe6895cffc2a77db20684">boost::mpl::aux::iter_fold_if_backward_step::state</a></div><div class="ttdeci">impl_::state state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00084">preprocessed/gcc/iter_fold_if_impl.hpp:84</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step_html_a9dc23fa59c5f85c5ffcf16c99faff803"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#a9dc23fa59c5f85c5ffcf16c99faff803">boost::mpl::aux::iter_fold_if_backward_step::impl_</a></div><div class="ttdeci">iter_fold_if_step_impl&lt; BOOST_MPL_AUX_MSVC_VALUE_WKND(not_last)::value &gt;::template result_&lt; Iterator, State, BackwardOp, identity&lt; Iterator &gt; &gt; impl_</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00082">preprocessed/bcc/iter_fold_if_impl.hpp:82</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step_html_ac45770e1ce8547a9c624a112fff8b66f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__backward__step.html#ac45770e1ce8547a9c624a112fff8b66f">boost::mpl::aux::iter_fold_if_backward_step::not_last</a></div><div class="ttdeci">apply2&lt; Predicate, State, Iterator &gt;::type not_last</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00079">preprocessed/gcc/iter_fold_if_impl.hpp:79</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html">boost::mpl::aux::iter_fold_if_forward_step</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00060">preprocessed/bcc/iter_fold_if_impl.hpp:61</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step_html_a1478ac57ae801e67a132b02fa5e40286"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1478ac57ae801e67a132b02fa5e40286">boost::mpl::aux::iter_fold_if_forward_step::impl_</a></div><div class="ttdeci">iter_fold_if_step_impl&lt; BOOST_MPL_AUX_MSVC_VALUE_WKND(not_last)::value &gt;::template result_&lt; Iterator, State, ForwardOp, mpl::next&lt; Iterator &gt; &gt; impl_</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00065">preprocessed/bcc/iter_fold_if_impl.hpp:65</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step_html_a1c947814135281d08e164efee9ff32f7"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a1c947814135281d08e164efee9ff32f7">boost::mpl::aux::iter_fold_if_forward_step::state</a></div><div class="ttdeci">impl_::state state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00067">preprocessed/gcc/iter_fold_if_impl.hpp:67</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step_html_a79a4cca583f081e53e3b77e814e7c352"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#a79a4cca583f081e53e3b77e814e7c352">boost::mpl::aux::iter_fold_if_forward_step::iterator</a></div><div class="ttdeci">impl_::iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00068">preprocessed/gcc/iter_fold_if_impl.hpp:68</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step_html_abbfccf7c28507a79c6090acdbac60923"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__forward__step.html#abbfccf7c28507a79c6090acdbac60923">boost::mpl::aux::iter_fold_if_forward_step::not_last</a></div><div class="ttdeci">apply2&lt; Predicate, State, Iterator &gt;::type not_last</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00062">preprocessed/gcc/iter_fold_if_impl.hpp:62</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html">boost::mpl::aux::iter_fold_if_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00096">preprocessed/bcc/iter_fold_if_impl.hpp:97</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a0e1969fa658dcd7a1751177574f6d4d1"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a0e1969fa658dcd7a1751177574f6d4d1">boost::mpl::aux::iter_fold_if_impl::state</a></div><div class="ttdeci">backward_step0::state state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00129">preprocessed/gcc/iter_fold_if_impl.hpp:129</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a1a40551403767f4921588c611e435f8f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a1a40551403767f4921588c611e435f8f">boost::mpl::aux::iter_fold_if_impl::backward_step4</a></div><div class="ttdeci">if_&lt; typenameforward_step4::not_last, iter_fold_if_impl&lt; typenameforward_step4::iterator, typenameforward_step4::state, ForwardOp, ForwardPredicate, BackwardOp, BackwardPredicate &gt;, iter_fold_if_null_step&lt; typenameforward_step4::iterator, typenameforward_step4::state &gt; &gt;::type backward_step4</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00120">preprocessed/gcc/iter_fold_if_impl.hpp:120</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a22238b4c1ef1f87e59355e180d3a1761"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a22238b4c1ef1f87e59355e180d3a1761">boost::mpl::aux::iter_fold_if_impl::forward_step4</a></div><div class="ttdeci">iter_fold_if_forward_step&lt; typename forward_step3::iterator, typename forward_step3::state, ForwardOp, ForwardPredicate &gt; forward_step4</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00103">preprocessed/gcc/iter_fold_if_impl.hpp:103</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a2a1537c8e6907d6e0ec4048fdc9a637a"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a2a1537c8e6907d6e0ec4048fdc9a637a">boost::mpl::aux::iter_fold_if_impl::backward_step1</a></div><div class="ttdeci">iter_fold_if_backward_step&lt; typename forward_step1::iterator, typename backward_step2::state, BackwardOp, BackwardPredicate &gt; backward_step1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00124">preprocessed/gcc/iter_fold_if_impl.hpp:124</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a3d7fa87b84a4b4ade864281722bfccf7"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a3d7fa87b84a4b4ade864281722bfccf7">boost::mpl::aux::iter_fold_if_impl::iterator</a></div><div class="ttdeci">backward_step4::iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00130">preprocessed/gcc/iter_fold_if_impl.hpp:130</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a4f824cae1fbec2d6f139ef6ff4b7446f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a4f824cae1fbec2d6f139ef6ff4b7446f">boost::mpl::aux::iter_fold_if_impl::backward_step3</a></div><div class="ttdeci">iter_fold_if_backward_step&lt; typename forward_step3::iterator, typename backward_step4::state, BackwardOp, BackwardPredicate &gt; backward_step3</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00122">preprocessed/gcc/iter_fold_if_impl.hpp:122</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a51880c72741d76ae6b1b1f381d027d8f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a51880c72741d76ae6b1b1f381d027d8f">boost::mpl::aux::iter_fold_if_impl::forward_step2</a></div><div class="ttdeci">iter_fold_if_forward_step&lt; typename forward_step1::iterator, typename forward_step1::state, ForwardOp, ForwardPredicate &gt; forward_step2</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00101">preprocessed/gcc/iter_fold_if_impl.hpp:101</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a67593e870907efb2bace0669b193de34"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a67593e870907efb2bace0669b193de34">boost::mpl::aux::iter_fold_if_impl::forward_step0</a></div><div class="ttdeci">iter_fold_if_null_step&lt; Iterator, State &gt; forward_step0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00099">preprocessed/gcc/iter_fold_if_impl.hpp:99</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a7b07f562cd6016a698a1efb5a51eb107"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a7b07f562cd6016a698a1efb5a51eb107">boost::mpl::aux::iter_fold_if_impl::forward_step1</a></div><div class="ttdeci">iter_fold_if_forward_step&lt; typename forward_step0::iterator, typename forward_step0::state, ForwardOp, ForwardPredicate &gt; forward_step1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00100">preprocessed/gcc/iter_fold_if_impl.hpp:100</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_a9145ec3c51e5edfaf90ff5898261efc3"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#a9145ec3c51e5edfaf90ff5898261efc3">boost::mpl::aux::iter_fold_if_impl::backward_step2</a></div><div class="ttdeci">iter_fold_if_backward_step&lt; typename forward_step2::iterator, typename backward_step3::state, BackwardOp, BackwardPredicate &gt; backward_step2</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00123">preprocessed/gcc/iter_fold_if_impl.hpp:123</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_af2d99f929d9175d8875f5e9eb6e295f4"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af2d99f929d9175d8875f5e9eb6e295f4">boost::mpl::aux::iter_fold_if_impl::forward_step3</a></div><div class="ttdeci">iter_fold_if_forward_step&lt; typename forward_step2::iterator, typename forward_step2::state, ForwardOp, ForwardPredicate &gt; forward_step3</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00102">preprocessed/gcc/iter_fold_if_impl.hpp:102</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__impl_html_af7362c32dc526d10e32d38432f2ddd26"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__impl.html#af7362c32dc526d10e32d38432f2ddd26">boost::mpl::aux::iter_fold_if_impl::backward_step0</a></div><div class="ttdeci">iter_fold_if_backward_step&lt; typename forward_step0::iterator, typename backward_step1::state, BackwardOp, BackwardPredicate &gt; backward_step0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00125">preprocessed/gcc/iter_fold_if_impl.hpp:125</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html">boost::mpl::aux::iter_fold_if_null_step</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00016">preprocessed/bcc/iter_fold_if_impl.hpp:17</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step_html_a3c5ea772308e2c7bf87aed45b2f3d9ca"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#a3c5ea772308e2c7bf87aed45b2f3d9ca">boost::mpl::aux::iter_fold_if_null_step::state</a></div><div class="ttdeci">State state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00018">preprocessed/gcc/iter_fold_if_impl.hpp:18</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step_html_ada266e78022498578a875f28b4a13550"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__null__step.html#ada266e78022498578a875f28b4a13550">boost::mpl::aux::iter_fold_if_null_step::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00019">preprocessed/gcc/iter_fold_if_impl.hpp:19</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result___html_a449d2f132d80d054dfd70ca0c6e23795"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#a449d2f132d80d054dfd70ca0c6e23795">boost::mpl::aux::iter_fold_if_step_impl::result_::iterator</a></div><div class="ttdeci">IteratorOp::type iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00034">preprocessed/gcc/iter_fold_if_impl.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result___html_ad24956abf476398d91d20eb74604c9ed"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_1_1result__.html#ad24956abf476398d91d20eb74604c9ed">boost::mpl::aux::iter_fold_if_step_impl::result_::state</a></div><div class="ttdeci">apply2&lt; StateOp, State, Iterator &gt;::type state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00033">preprocessed/gcc/iter_fold_if_impl.hpp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result___html_a735904aed6284cba5bd9dfbccf612a2a"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#a735904aed6284cba5bd9dfbccf612a2a">boost::mpl::aux::iter_fold_if_step_impl&lt; false &gt;::result_::iterator</a></div><div class="ttdeci">Iterator iterator</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00050">preprocessed/gcc/iter_fold_if_impl.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result___html_aa73572f9ae5171156f90904f82dcf0f2"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_3_01false_01_4_1_1result__.html#aa73572f9ae5171156f90904f82dcf0f2">boost::mpl::aux::iter_fold_if_step_impl&lt; false &gt;::result_::state</a></div><div class="ttdeci">State state</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2gcc_2iter__fold__if__impl_8hpp_source.html#l00049">preprocessed/gcc/iter_fold_if_impl.hpp:49</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1iter__fold__if__step__impl.html">boost::mpl::aux::iter_fold_if_step_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2iter__fold__if__impl_8hpp_source.html#l00023">preprocessed/bcc/iter_fold_if_impl.hpp:24</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1identity_html"><div class="ttname"><a href="structboost_1_1mpl_1_1identity.html">boost::mpl::identity</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2identity_8hpp_source.html#l00025">mpl/identity.hpp:26</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1if___html"><div class="ttname"><a href="structboost_1_1mpl_1_1if__.html">boost::mpl::if_</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2if_8hpp_source.html#l00055">mpl/if.hpp:56</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1next_html"><div class="ttname"><a href="structboost_1_1mpl_1_1next.html">boost::mpl::next</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2next__prior_8hpp_source.html#l00029">mpl/next_prior.hpp:30</a></div></div>
+<div class="ttc" id="avalue__wknd_8hpp_html_a8359f5aa83f729f7c4d7a8edc2ee6fe3"><div class="ttname"><a href="value__wknd_8hpp.html#a8359f5aa83f729f7c4d7a8edc2ee6fe3">BOOST_MPL_AUX_MSVC_VALUE_WKND</a></div><div class="ttdeci">#define BOOST_MPL_AUX_MSVC_VALUE_WKND(C)</div><div class="ttdef"><b>Definition:</b> <a href="value__wknd_8hpp_source.html#l00058">value_wknd.hpp:58</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="dir_1f1b666f95cbf3a5023467b539a5c08a.html">aux_</a></li><li class="navelem"><a class="el" href="dir_9959c44446486c3f5378347b962ffd6c.html">preprocessed</a></li><li class="navelem"><a class="el" href="dir_b37eb47a9da21ddc4c129f277b575a3c.html">gcc</a></li><li class="navelem"><a class="el" href="preprocessed_2gcc_2iter__fold__if__impl_8hpp.html">iter_fold_if_impl.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

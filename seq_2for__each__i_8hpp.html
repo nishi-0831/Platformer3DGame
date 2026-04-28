@@ -1,0 +1,884 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: for_each_i.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('seq_2for__each__i_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">seq/for_each_i.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="arithmetic_2dec_8hpp_source.html">boost/preprocessor/arithmetic/dec.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="arithmetic_2inc_8hpp_source.html">boost/preprocessor/arithmetic/inc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2config_2config_8hpp_source.html">boost/preprocessor/config/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2control_2if_8hpp_source.html">boost/preprocessor/control/if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iif_8hpp_source.html">boost/preprocessor/control/iif.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="repetition_2for_8hpp_source.html">boost/preprocessor/repetition/for.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="seq_2seq_8hpp_source.html">boost/preprocessor/seq/seq.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2seq_2size_8hpp_source.html">boost/preprocessor/seq/size.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2seq_2detail_2is__empty_8hpp_source.html">boost/preprocessor/seq/detail/is_empty.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_2elem_8hpp_source.html">boost/preprocessor/tuple/elem.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="rem_8hpp_source.html">boost/preprocessor/tuple/rem.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+seq/for_each_i.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="seq_2for__each__i_8hpp__incl.svg" width="2778" height="667"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="seq_2for__each__i_8hpp__dep__incl.svg" width="2208" height="579"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="seq_2for__each__i_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:aad3d7ed95ba609bd4efdc7e0ad9d7665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#aad3d7ed95ba609bd4efdc7e0ad9d7665">BOOST_PP_SEQ_FOR_EACH_I</a>(macro,  data,  seq)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a989ca7c52b3dba360b07fa5aa97e32c6">BOOST_PP_SEQ_FOR_EACH_I_I</a>(macro, data, seq)</td></tr>
+<tr class="separator:aad3d7ed95ba609bd4efdc7e0ad9d7665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a989ca7c52b3dba360b07fa5aa97e32c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a989ca7c52b3dba360b07fa5aa97e32c6">BOOST_PP_SEQ_FOR_EACH_I_I</a>(macro,  data,  seq)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#ac35794e111cd5358742b1823a371936c">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK</a>(macro, data, seq)</td></tr>
+<tr class="separator:a989ca7c52b3dba360b07fa5aa97e32c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248c2446977f7869920836ada7a5c526"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a248c2446977f7869920836ada7a5c526">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC</a>(macro,  data,  seq)&#160;&#160;&#160;BOOST_PP_FOR((macro, data, seq, 0, <a class="el" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(seq)), <a class="el" href="seq_2for__each__i_8hpp.html#ab513a4eaa6d168cb680c2570b25b5e5d">BOOST_PP_SEQ_FOR_EACH_I_P</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a0487af5f7b68df9ab8e4c1a9069b830a">BOOST_PP_SEQ_FOR_EACH_I_O</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a5f1a9f97351afc8786e314330ecaca53">BOOST_PP_SEQ_FOR_EACH_I_M</a>)</td></tr>
+<tr class="separator:a248c2446977f7869920836ada7a5c526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0b03edafd5fcd6853733cc2cd823caa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#ae0b03edafd5fcd6853733cc2cd823caa">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY</a>(macro,  data,  seq)</td></tr>
+<tr class="separator:ae0b03edafd5fcd6853733cc2cd823caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35794e111cd5358742b1823a371936c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#ac35794e111cd5358742b1823a371936c">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK</a>(macro,  data,  seq)</td></tr>
+<tr class="separator:ac35794e111cd5358742b1823a371936c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab513a4eaa6d168cb680c2570b25b5e5d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#ab513a4eaa6d168cb680c2570b25b5e5d">BOOST_PP_SEQ_FOR_EACH_I_P</a>(r,  x)&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x)</td></tr>
+<tr class="separator:ab513a4eaa6d168cb680c2570b25b5e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0487af5f7b68df9ab8e4c1a9069b830a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a0487af5f7b68df9ab8e4c1a9069b830a">BOOST_PP_SEQ_FOR_EACH_I_O</a>(r,  x)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a3f6d6632095c5a03a79e64f3bb903e0b">BOOST_PP_SEQ_FOR_EACH_I_O_I</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 0, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 1, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 2, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 3, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x))</td></tr>
+<tr class="separator:a0487af5f7b68df9ab8e4c1a9069b830a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f6d6632095c5a03a79e64f3bb903e0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a3f6d6632095c5a03a79e64f3bb903e0b">BOOST_PP_SEQ_FOR_EACH_I_O_I</a>(macro,  data,  seq,  i,  sz)&#160;&#160;&#160;    <a class="el" href="seq_2for__each__i_8hpp.html#a75566f2432b1376954c36af296299ad9">BOOST_PP_SEQ_FOR_EACH_I_O_I_DEC</a>(macro, data, seq, i, <a class="el" href="arithmetic_2dec_8hpp.html#a89e7f78cc41437715c6a00585ec4cfa1">BOOST_PP_DEC</a>(sz)) \</td></tr>
+<tr class="separator:a3f6d6632095c5a03a79e64f3bb903e0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75566f2432b1376954c36af296299ad9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a75566f2432b1376954c36af296299ad9">BOOST_PP_SEQ_FOR_EACH_I_O_I_DEC</a>(macro,  data,  seq,  i,  sz)</td></tr>
+<tr class="separator:a75566f2432b1376954c36af296299ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85f7dfcf0252480a9cc6ac6389379daf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a85f7dfcf0252480a9cc6ac6389379daf">BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL</a>(seq)&#160;&#160;&#160;<a class="el" href="seq_2seq_8hpp.html#a096ba1bb3216425e70f85235aac210e7">BOOST_PP_SEQ_TAIL</a>(seq)</td></tr>
+<tr class="separator:a85f7dfcf0252480a9cc6ac6389379daf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad57c86d86050d8783071cec68c2528bc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#ad57c86d86050d8783071cec68c2528bc">BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL</a>(seq)&#160;&#160;&#160;BOOST_PP_NIL</td></tr>
+<tr class="separator:ad57c86d86050d8783071cec68c2528bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f1a9f97351afc8786e314330ecaca53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a5f1a9f97351afc8786e314330ecaca53">BOOST_PP_SEQ_FOR_EACH_I_M</a>(r,  x)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a2849188194ad2f63aec78b31d62bdf65">BOOST_PP_SEQ_FOR_EACH_I_M_I</a>(r, <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 0, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 1, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 2, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 3, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x))</td></tr>
+<tr class="separator:a5f1a9f97351afc8786e314330ecaca53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2849188194ad2f63aec78b31d62bdf65"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a2849188194ad2f63aec78b31d62bdf65">BOOST_PP_SEQ_FOR_EACH_I_M_I</a>(r,  macro,  data,  seq,  i,  sz)&#160;&#160;&#160;macro(r, data, i, <a class="el" href="seq_2seq_8hpp.html#a689fdfa06d15e2fcd18b95455f81a214">BOOST_PP_SEQ_HEAD</a>(seq))</td></tr>
+<tr class="separator:a2849188194ad2f63aec78b31d62bdf65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a124e0b907174d6a132e20058c61bdeb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a124e0b907174d6a132e20058c61bdeb8">BOOST_PP_SEQ_FOR_EACH_I_R</a>(r,  macro,  data,  seq)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#abb9e13aa5e272edc8d9beeb4cc362945">BOOST_PP_SEQ_FOR_EACH_I_R_I</a>(r, macro, data, seq)</td></tr>
+<tr class="separator:a124e0b907174d6a132e20058c61bdeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb9e13aa5e272edc8d9beeb4cc362945"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#abb9e13aa5e272edc8d9beeb4cc362945">BOOST_PP_SEQ_FOR_EACH_I_R_I</a>(r,  macro,  data,  seq)&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a61b70a628457e8776051b87d8fc05981">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK</a>(r, macro, data, seq)</td></tr>
+<tr class="separator:abb9e13aa5e272edc8d9beeb4cc362945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a650066ef95313a9a4df004b9b9eeb357"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a650066ef95313a9a4df004b9b9eeb357">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC</a>(r,  macro,  data,  seq)&#160;&#160;&#160;BOOST_PP_FOR_ ## r((macro, data, seq, 0, <a class="el" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(seq)), <a class="el" href="seq_2for__each__i_8hpp.html#ab513a4eaa6d168cb680c2570b25b5e5d">BOOST_PP_SEQ_FOR_EACH_I_P</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a0487af5f7b68df9ab8e4c1a9069b830a">BOOST_PP_SEQ_FOR_EACH_I_O</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a5f1a9f97351afc8786e314330ecaca53">BOOST_PP_SEQ_FOR_EACH_I_M</a>)</td></tr>
+<tr class="separator:a650066ef95313a9a4df004b9b9eeb357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeae02f9b4e81077509638b8f624dde04"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#aeae02f9b4e81077509638b8f624dde04">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY</a>(r,  macro,  data,  seq)</td></tr>
+<tr class="separator:aeae02f9b4e81077509638b8f624dde04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b70a628457e8776051b87d8fc05981"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2for__each__i_8hpp.html#a61b70a628457e8776051b87d8fc05981">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK</a>(r,  macro,  data,  seq)</td></tr>
+<tr class="separator:a61b70a628457e8776051b87d8fc05981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="aad3d7ed95ba609bd4efdc7e0ad9d7665" name="aad3d7ed95ba609bd4efdc7e0ad9d7665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3d7ed95ba609bd4efdc7e0ad9d7665">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a989ca7c52b3dba360b07fa5aa97e32c6">BOOST_PP_SEQ_FOR_EACH_I_I</a>(macro, data, seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac35794e111cd5358742b1823a371936c" name="ac35794e111cd5358742b1823a371936c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35794e111cd5358742b1823a371936c">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a> \</div>
+<div class="line">            ( \</div>
+<div class="line">            BOOST_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \</div>
+<div class="line">            <a class="code hl_define" href="seq_2for__each__i_8hpp.html#a248c2446977f7869920836ada7a5c526">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC</a>, \</div>
+<div class="line">            <a class="code hl_define" href="seq_2for__each__i_8hpp.html#ae0b03edafd5fcd6853733cc2cd823caa">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY</a> \</div>
+<div class="line">            ) \</div>
+<div class="line">        (macro, data, seq) \</div>
+<div class="ttc" id="aiif_8hpp_html_adf26de1282939d1dbca6fdf095b10fcf"><div class="ttname"><a href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a></div><div class="ttdeci">#define BOOST_PP_IIF(bit, t, f)</div><div class="ttdef"><b>Definition:</b> <a href="iif_8hpp_source.html#l00020">iif.hpp:20</a></div></div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_a248c2446977f7869920836ada7a5c526"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#a248c2446977f7869920836ada7a5c526">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC(macro, data, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00036">seq/for_each_i.hpp:36</a></div></div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_ae0b03edafd5fcd6853733cc2cd823caa"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#ae0b03edafd5fcd6853733cc2cd823caa">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY(macro, data, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00037">seq/for_each_i.hpp:37</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae0b03edafd5fcd6853733cc2cd823caa" name="ae0b03edafd5fcd6853733cc2cd823caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0b03edafd5fcd6853733cc2cd823caa">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EMPTY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a248c2446977f7869920836ada7a5c526" name="a248c2446977f7869920836ada7a5c526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248c2446977f7869920836ada7a5c526">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK_EXEC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;BOOST_PP_FOR((macro, data, seq, 0, <a class="el" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(seq)), <a class="el" href="seq_2for__each__i_8hpp.html#ab513a4eaa6d168cb680c2570b25b5e5d">BOOST_PP_SEQ_FOR_EACH_I_P</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a0487af5f7b68df9ab8e4c1a9069b830a">BOOST_PP_SEQ_FOR_EACH_I_O</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a5f1a9f97351afc8786e314330ecaca53">BOOST_PP_SEQ_FOR_EACH_I_M</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a989ca7c52b3dba360b07fa5aa97e32c6" name="a989ca7c52b3dba360b07fa5aa97e32c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a989ca7c52b3dba360b07fa5aa97e32c6">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#ac35794e111cd5358742b1823a371936c">BOOST_PP_SEQ_FOR_EACH_I_DETAIL_CHECK</a>(macro, data, seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5f1a9f97351afc8786e314330ecaca53" name="a5f1a9f97351afc8786e314330ecaca53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f1a9f97351afc8786e314330ecaca53">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_M</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_M</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a2849188194ad2f63aec78b31d62bdf65">BOOST_PP_SEQ_FOR_EACH_I_M_I</a>(r, <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 0, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 1, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 2, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 3, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2849188194ad2f63aec78b31d62bdf65" name="a2849188194ad2f63aec78b31d62bdf65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2849188194ad2f63aec78b31d62bdf65">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_M_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_M_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sz&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;macro(r, data, i, <a class="el" href="seq_2seq_8hpp.html#a689fdfa06d15e2fcd18b95455f81a214">BOOST_PP_SEQ_HEAD</a>(seq))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00085">85</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0487af5f7b68df9ab8e4c1a9069b830a" name="a0487af5f7b68df9ab8e4c1a9069b830a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0487af5f7b68df9ab8e4c1a9069b830a">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_O</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_O</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a3f6d6632095c5a03a79e64f3bb903e0b">BOOST_PP_SEQ_FOR_EACH_I_O_I</a>(<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 0, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 1, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 2, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 3, x), <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3f6d6632095c5a03a79e64f3bb903e0b" name="a3f6d6632095c5a03a79e64f3bb903e0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f6d6632095c5a03a79e64f3bb903e0b">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_O_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_O_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sz&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="seq_2for__each__i_8hpp.html#a75566f2432b1376954c36af296299ad9">BOOST_PP_SEQ_FOR_EACH_I_O_I_DEC</a>(macro, data, seq, i, <a class="el" href="arithmetic_2dec_8hpp.html#a89e7f78cc41437715c6a00585ec4cfa1">BOOST_PP_DEC</a>(sz)) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a75566f2432b1376954c36af296299ad9" name="a75566f2432b1376954c36af296299ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75566f2432b1376954c36af296299ad9">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_O_I_DEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_O_I_DEC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">i, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">sz&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    ( \</div>
+<div class="line">    macro, \</div>
+<div class="line">    data, \</div>
+<div class="line">    <a class="code hl_define" href="preprocessor_2control_2if_8hpp.html#a8592f04e66f708c176115ace04529d47">BOOST_PP_IF</a> \</div>
+<div class="line">        ( \</div>
+<div class="line">        sz, \</div>
+<div class="line">        <a class="code hl_define" href="seq_2for__each__i_8hpp.html#a85f7dfcf0252480a9cc6ac6389379daf">BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL</a>, \</div>
+<div class="line">        <a class="code hl_define" href="seq_2for__each__i_8hpp.html#ad57c86d86050d8783071cec68c2528bc">BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL</a> \</div>
+<div class="line">        ) \</div>
+<div class="line">    (seq), \</div>
+<div class="line">    BOOST_PP_INC(i), \</div>
+<div class="line">    sz \</div>
+<div class="line">    ) \</div>
+<div class="ttc" id="apreprocessor_2control_2if_8hpp_html_a8592f04e66f708c176115ace04529d47"><div class="ttname"><a href="preprocessor_2control_2if_8hpp.html#a8592f04e66f708c176115ace04529d47">BOOST_PP_IF</a></div><div class="ttdeci">#define BOOST_PP_IF(cond, t, f)</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2control_2if_8hpp_source.html#l00026">preprocessor/control/if.hpp:26</a></div></div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_a85f7dfcf0252480a9cc6ac6389379daf"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#a85f7dfcf0252480a9cc6ac6389379daf">BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL(seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00075">seq/for_each_i.hpp:75</a></div></div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_ad57c86d86050d8783071cec68c2528bc"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#ad57c86d86050d8783071cec68c2528bc">BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL(seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00076">seq/for_each_i.hpp:76</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad57c86d86050d8783071cec68c2528bc" name="ad57c86d86050d8783071cec68c2528bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57c86d86050d8783071cec68c2528bc">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_O_I_NIL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq</td><td>)</td>
+          <td>&#160;&#160;&#160;BOOST_PP_NIL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a85f7dfcf0252480a9cc6ac6389379daf" name="a85f7dfcf0252480a9cc6ac6389379daf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85f7dfcf0252480a9cc6ac6389379daf">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_O_I_TAIL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="seq_2seq_8hpp.html#a096ba1bb3216425e70f85235aac210e7">BOOST_PP_SEQ_TAIL</a>(seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab513a4eaa6d168cb680c2570b25b5e5d" name="ab513a4eaa6d168cb680c2570b25b5e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab513a4eaa6d168cb680c2570b25b5e5d">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_P</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(5, 4, x)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a124e0b907174d6a132e20058c61bdeb8" name="a124e0b907174d6a132e20058c61bdeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a124e0b907174d6a132e20058c61bdeb8">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_R</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_R</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#abb9e13aa5e272edc8d9beeb4cc362945">BOOST_PP_SEQ_FOR_EACH_I_R_I</a>(r, macro, data, seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a61b70a628457e8776051b87d8fc05981" name="a61b70a628457e8776051b87d8fc05981"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61b70a628457e8776051b87d8fc05981">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a> \</div>
+<div class="line">            ( \</div>
+<div class="line">            BOOST_PP_SEQ_DETAIL_IS_NOT_EMPTY(seq), \</div>
+<div class="line">            <a class="code hl_define" href="seq_2for__each__i_8hpp.html#a650066ef95313a9a4df004b9b9eeb357">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC</a>, \</div>
+<div class="line">            <a class="code hl_define" href="seq_2for__each__i_8hpp.html#aeae02f9b4e81077509638b8f624dde04">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY</a> \</div>
+<div class="line">            ) \</div>
+<div class="line">        (r, macro, data, seq) \</div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_a650066ef95313a9a4df004b9b9eeb357"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#a650066ef95313a9a4df004b9b9eeb357">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC(r, macro, data, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00096">seq/for_each_i.hpp:96</a></div></div>
+<div class="ttc" id="aseq_2for__each__i_8hpp_html_aeae02f9b4e81077509638b8f624dde04"><div class="ttname"><a href="seq_2for__each__i_8hpp.html#aeae02f9b4e81077509638b8f624dde04">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY</a></div><div class="ttdeci">#define BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY(r, macro, data, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2for__each__i_8hpp_source.html#l00097">seq/for_each_i.hpp:97</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00099">99</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aeae02f9b4e81077509638b8f624dde04" name="aeae02f9b4e81077509638b8f624dde04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeae02f9b4e81077509638b8f624dde04">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EMPTY</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00097">97</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a650066ef95313a9a4df004b9b9eeb357" name="a650066ef95313a9a4df004b9b9eeb357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a650066ef95313a9a4df004b9b9eeb357">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK_EXEC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;BOOST_PP_FOR_ ## r((macro, data, seq, 0, <a class="el" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(seq)), <a class="el" href="seq_2for__each__i_8hpp.html#ab513a4eaa6d168cb680c2570b25b5e5d">BOOST_PP_SEQ_FOR_EACH_I_P</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a0487af5f7b68df9ab8e4c1a9069b830a">BOOST_PP_SEQ_FOR_EACH_I_O</a>, <a class="el" href="seq_2for__each__i_8hpp.html#a5f1a9f97351afc8786e314330ecaca53">BOOST_PP_SEQ_FOR_EACH_I_M</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abb9e13aa5e272edc8d9beeb4cc362945" name="abb9e13aa5e272edc8d9beeb4cc362945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb9e13aa5e272edc8d9beeb4cc362945">&#9670;&#160;</a></span>BOOST_PP_SEQ_FOR_EACH_I_R_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_FOR_EACH_I_R_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2for__each__i_8hpp.html#a61b70a628457e8776051b87d8fc05981">BOOST_PP_SEQ_FOR_EACH_I_R_DETAIL_CHECK</a>(r, macro, data, seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2for__each__i_8hpp_source.html">seq/for_each_i.hpp</a> の <a class="el" href="seq_2for__each__i_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f59814f4c9a8c50c3d3ea0e21fb94ec2.html">preprocessor</a></li><li class="navelem"><a class="el" href="dir_a937e92cfa2eced3acab5fd651c3818a.html">seq</a></li><li class="navelem"><a class="el" href="seq_2for__each__i_8hpp.html">for_each_i.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

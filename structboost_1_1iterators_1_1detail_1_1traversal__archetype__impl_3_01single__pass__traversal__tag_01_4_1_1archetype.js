@@ -1,0 +1,6 @@
+var structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01single__pass__traversal__tag_01_4_1_1archetype =
+[
+    [ "base", "structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01single__pass__traversal__tag_01_4_1_1archetype.html#ad8710eb2f6f94905e3c8d7aaeecd82d7", null ],
+    [ "difference_type", "structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01single__pass__traversal__tag_01_4_1_1archetype.html#aba666b45dece7a72da150fbce602a85c", null ],
+    [ "archetype", "structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01single__pass__traversal__tag_01_4_1_1archetype.html#aa6628e5fd68c8627e9294c5f2f71e40f", null ]
+];

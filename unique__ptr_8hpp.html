@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: unique_ptr.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('unique__ptr_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">unique_ptr.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config__begin_8hpp_source.html">boost/move/detail/config_begin.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="move_2detail_2workaround_8hpp_source.html">boost/move/detail/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="unique__ptr__meta__utils_8hpp_source.html">boost/move/detail/unique_ptr_meta_utils.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="default__delete_8hpp_source.html">boost/move/default_delete.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="utility__core_8hpp_source.html">boost/move/utility_core.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adl__move__swap_8hpp_source.html">boost/move/adl_move_swap.hpp</a>&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;<a class="el" href="config__end_8hpp_source.html">boost/move/detail/config_end.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+unique_ptr.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="unique__ptr_8hpp__incl.svg" width="1606" height="726"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="unique__ptr_8hpp__dep__incl.svg" width="148" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="unique__ptr_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr&lt; T, D &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1movelib"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html">boost::movelib</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a4e29651a635d463442463cd5dac70d80"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a4e29651a635d463442463cd5dac70d80"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a4e29651a635d463442463cd5dac70d80">boost::movelib::swap</a> (unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;y) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a4e29651a635d463442463cd5dac70d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0823826cacb5a394616f2762a50cb19d"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:a0823826cacb5a394616f2762a50cb19d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a0823826cacb5a394616f2762a50cb19d">boost::movelib::operator==</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:a0823826cacb5a394616f2762a50cb19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a034c9e5d69293cf93a9074e50eefdafc"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:a034c9e5d69293cf93a9074e50eefdafc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a034c9e5d69293cf93a9074e50eefdafc">boost::movelib::operator!=</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:a034c9e5d69293cf93a9074e50eefdafc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dbc0b8d82718d0d444258a4ff088aa3"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:a2dbc0b8d82718d0d444258a4ff088aa3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a2dbc0b8d82718d0d444258a4ff088aa3">boost::movelib::operator&lt;</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:a2dbc0b8d82718d0d444258a4ff088aa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8daaec565fdaef0b4b00ec48dbe9b594"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:a8daaec565fdaef0b4b00ec48dbe9b594"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a8daaec565fdaef0b4b00ec48dbe9b594">boost::movelib::operator&lt;=</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:a8daaec565fdaef0b4b00ec48dbe9b594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ba889b402d0cf357c8c711b5a531c8"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:ac7ba889b402d0cf357c8c711b5a531c8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#ac7ba889b402d0cf357c8c711b5a531c8">boost::movelib::operator&gt;</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:ac7ba889b402d0cf357c8c711b5a531c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1f954f6073a8c640dec86992960af2"><td class="memTemplParams" colspan="2">template&lt;class T1 , class D1 , class T2 , class D2 &gt; </td></tr>
+<tr class="memitem:aff1f954f6073a8c640dec86992960af2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#aff1f954f6073a8c640dec86992960af2">boost::movelib::operator&gt;=</a> (const unique_ptr&lt; T1, D1 &gt; &amp;x, const unique_ptr&lt; T2, D2 &gt; &amp;y)</td></tr>
+<tr class="separator:aff1f954f6073a8c640dec86992960af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e7ceba8a4f16ce6038223a389db20bc"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a0e7ceba8a4f16ce6038223a389db20bc"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a0e7ceba8a4f16ce6038223a389db20bc">boost::movelib::operator==</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a0e7ceba8a4f16ce6038223a389db20bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395d4da7376b33ecac5cbb80c22f85c8"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a395d4da7376b33ecac5cbb80c22f85c8"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a395d4da7376b33ecac5cbb80c22f85c8">boost::movelib::operator==</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a395d4da7376b33ecac5cbb80c22f85c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4adc0c5accfce0d1df9a0cf90eb05261"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a4adc0c5accfce0d1df9a0cf90eb05261"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a4adc0c5accfce0d1df9a0cf90eb05261">boost::movelib::operator!=</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a4adc0c5accfce0d1df9a0cf90eb05261"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a08777703e3fcc9e5a5150cbed54a9c"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a4a08777703e3fcc9e5a5150cbed54a9c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a4a08777703e3fcc9e5a5150cbed54a9c">boost::movelib::operator!=</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a4a08777703e3fcc9e5a5150cbed54a9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea556c86b5bddb591a320a6409f0dd9c"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:aea556c86b5bddb591a320a6409f0dd9c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#aea556c86b5bddb591a320a6409f0dd9c">boost::movelib::operator&lt;</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type))</td></tr>
+<tr class="separator:aea556c86b5bddb591a320a6409f0dd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d96ffc05d9364b7dc09cd38f6d0564"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a45d96ffc05d9364b7dc09cd38f6d0564"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a45d96ffc05d9364b7dc09cd38f6d0564">boost::movelib::operator&lt;</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x)</td></tr>
+<tr class="separator:a45d96ffc05d9364b7dc09cd38f6d0564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c4f547aed6f322b83bc7738d72394dd"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a4c4f547aed6f322b83bc7738d72394dd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a4c4f547aed6f322b83bc7738d72394dd">boost::movelib::operator&gt;</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type))</td></tr>
+<tr class="separator:a4c4f547aed6f322b83bc7738d72394dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b2ee310e0af9dc97b75052ee0e948ce"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a6b2ee310e0af9dc97b75052ee0e948ce"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a6b2ee310e0af9dc97b75052ee0e948ce">boost::movelib::operator&gt;</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x)</td></tr>
+<tr class="separator:a6b2ee310e0af9dc97b75052ee0e948ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28ae94f94d20c433b5a1d105130ab4e0"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a28ae94f94d20c433b5a1d105130ab4e0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a28ae94f94d20c433b5a1d105130ab4e0">boost::movelib::operator&lt;=</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type))</td></tr>
+<tr class="separator:a28ae94f94d20c433b5a1d105130ab4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d577644c8e1e17233b62f3f07c0182f"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a5d577644c8e1e17233b62f3f07c0182f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a5d577644c8e1e17233b62f3f07c0182f">boost::movelib::operator&lt;=</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x)</td></tr>
+<tr class="separator:a5d577644c8e1e17233b62f3f07c0182f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e202c6bb7a586c1d800c8c381e5204"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a40e202c6bb7a586c1d800c8c381e5204"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a40e202c6bb7a586c1d800c8c381e5204">boost::movelib::operator&gt;=</a> (const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x, <a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type))</td></tr>
+<tr class="separator:a40e202c6bb7a586c1d800c8c381e5204"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764f63194b007ce368a52ffa7cc8eccf"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a764f63194b007ce368a52ffa7cc8eccf"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html#a764f63194b007ce368a52ffa7cc8eccf">boost::movelib::operator&gt;=</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), const unique_ptr&lt; T, <a class="el" href="classD.html">D</a> &gt; &amp;x)</td></tr>
+<tr class="separator:a764f63194b007ce368a52ffa7cc8eccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>Describes the smart pointer unique_ptr, a drop-in replacement for std::unique_ptr, usable also from C++03 compilers.</p>
+<p>Main differences from std::unique_ptr to avoid heavy dependencies, specially in C++03 compilers:</p><ul>
+<li><code>operator &lt; </code> uses pointer <code>operator &lt; </code>instead of <code>std::less&lt;common_type&gt;</code>. This avoids dependencies on <code>std::common_type</code> and <code>std::less</code> (<code>&lt;type_traits&gt;/&lt;functional&gt;</code> headers). In C++03 this avoid pulling Boost.Typeof and other cascading dependencies. As in all Boost platforms <code>operator &lt;</code> on raw pointers and other smart pointers provides strict weak ordering in practice this should not be a problem for users.</li>
+<li>assignable from literal 0 for compilers without nullptr</li>
+<li><code>unique_ptr&lt;T[]&gt;</code> is constructible and assignable from <code>unique_ptr&lt;U[]&gt;</code> if cv-less T and cv-less U are the same type and T is more CV qualified than U. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> に定義があります。</p>
+</div></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_bd26f2a9b666a6a4c805ff0dd2b8a2e0.html">move</a></li><li class="navelem"><a class="el" href="unique__ptr_8hpp.html">unique_ptr.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

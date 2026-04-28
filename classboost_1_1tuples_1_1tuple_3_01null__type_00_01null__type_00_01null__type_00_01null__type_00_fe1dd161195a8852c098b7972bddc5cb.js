@@ -1,0 +1,4 @@
+var classboost_1_1tuples_1_1tuple_3_01null__type_00_01null__type_00_01null__type_00_01null__type_00_fe1dd161195a8852c098b7972bddc5cb =
+[
+    [ "inherited", "classboost_1_1tuples_1_1tuple_3_01null__type_00_01null__type_00_01null__type_00_01null__type_00_fe1dd161195a8852c098b7972bddc5cb.html#a5b3a5403fdd072a79c65dd5403439006", null ]
+];

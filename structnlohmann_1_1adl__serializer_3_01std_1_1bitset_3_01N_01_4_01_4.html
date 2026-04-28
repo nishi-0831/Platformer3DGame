@@ -112,9 +112,9 @@ nlohmann::adl_serializer&lt; std::bitset&lt; N &gt; &gt; 連携図</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 静的公開メンバ関数</h2></td></tr>
-<tr class="memitem:a12c2f75bad2d4874122d9f95ad3494e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a12c2f75bad2d4874122d9f95ad3494e4">to_json</a> (json &amp;_j, const std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &amp;_bitset)</td></tr>
+<tr class="memitem:a12c2f75bad2d4874122d9f95ad3494e4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a12c2f75bad2d4874122d9f95ad3494e4">to_json</a> (<a class="el" href="json__fwd_8hpp.html#ae6eede511f01c9f33342044d36a388fa">json</a> &amp;_j, const std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &amp;_bitset)</td></tr>
 <tr class="separator:a12c2f75bad2d4874122d9f95ad3494e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d83b5c39fb21c28be6271dda6ceff73"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a4d83b5c39fb21c28be6271dda6ceff73">from_json</a> (const json &amp;_j, std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &amp;_bitset)</td></tr>
+<tr class="memitem:a4d83b5c39fb21c28be6271dda6ceff73"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4.html#a4d83b5c39fb21c28be6271dda6ceff73">from_json</a> (const <a class="el" href="json__fwd_8hpp.html#ae6eede511f01c9f33342044d36a388fa">json</a> &amp;_j, std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &amp;_bitset)</td></tr>
 <tr class="separator:a4d83b5c39fb21c28be6271dda6ceff73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
@@ -134,15 +134,15 @@ template&lt;std::size_t N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void nlohmann::adl_serializer&lt; std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &gt;::from_json </td>
+          <td class="memname">static void nlohmann::adl_serializer&lt; std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &gt;::from_json </td>
           <td>(</td>
-          <td class="paramtype">const json &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="json__fwd_8hpp.html#ae6eede511f01c9f33342044d36a388fa">json</a> &amp;&#160;</td>
           <td class="paramname"><em>_j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>_bitset</em>&#160;</td>
         </tr>
         <tr>
@@ -160,14 +160,14 @@ template&lt;std::size_t N&gt; </div>
 
 <p class="definition"> <a class="el" href="JsonADLSerializers_8h_source.html">JsonADLSerializers.h</a> の <a class="el" href="JsonADLSerializers_8h_source.html#l00017">17</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
-<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">if</span> (_j.is_number_unsigned() == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   19</span>            <span class="keywordflow">if</span> (_j.<a class="code hl_function" href="classbasic__json.html#a4de72635745144ee519157d23fe7189a">is_number_unsigned</a>() == <span class="keyword">false</span>)</div>
 <div class="line"><span class="lineno">   20</span>                <span class="keywordflow">return</span>;</div>
 <div class="line"><span class="lineno">   21</span> </div>
 <div class="line"><span class="lineno">   22</span>            _bitset.reset();</div>
 <div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> v = _j.get&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&gt;();</div>
+<div class="line"><span class="lineno">   24</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span> v = _j.<a class="code hl_function" href="classbasic__json.html#a0ab31c7fdbab38898070bca01637f886">get</a>&lt;<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>&gt;();</div>
 <div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &amp;&amp; (i &lt; 64); i++)</div>
+<div class="line"><span class="lineno">   26</span>            <span class="keywordflow">for</span> (std::size_t i = 0; i &lt; <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &amp;&amp; (i &lt; 64); i++)</div>
 <div class="line"><span class="lineno">   27</span>            {</div>
 <div class="line"><span class="lineno">   28</span>                <span class="keywordflow">if</span> (v &amp; (1ull &lt;&lt; i))</div>
 <div class="line"><span class="lineno">   29</span>                {</div>
@@ -175,9 +175,17 @@ template&lt;std::size_t N&gt; </div>
 <div class="line"><span class="lineno">   31</span>                }</div>
 <div class="line"><span class="lineno">   32</span>            }</div>
 <div class="line"><span class="lineno">   33</span>        }</div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">KeyCode::N</a></div><div class="ttdeci">@ N</div></div>
+<div class="ttc" id="aclassbasic__json_html_a0ab31c7fdbab38898070bca01637f886"><div class="ttname"><a href="classbasic__json.html#a0ab31c7fdbab38898070bca01637f886">basic_json::get</a></div><div class="ttdeci">auto get() const noexcept(noexcept(std::declval&lt; const basic_json_t &amp; &gt;().template get_impl&lt; ValueType &gt;(detail::priority_tag&lt; 4 &gt; {}))) -&gt; decltype(std::declval&lt; const basic_json_t &amp; &gt;().template get_impl&lt; ValueType &gt;(detail::priority_tag&lt; 4 &gt; {}))</div><div class="ttdoc">get a (pointer) value (explicit)</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01771">json.hpp:1771</a></div></div>
+<div class="ttc" id="aclassbasic__json_html_a4de72635745144ee519157d23fe7189a"><div class="ttname"><a href="classbasic__json.html#a4de72635745144ee519157d23fe7189a">basic_json::is_number_unsigned</a></div><div class="ttdeci">constexpr bool is_number_unsigned() const noexcept</div><div class="ttdoc">return whether value is an unsigned integer number</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l01370">json.hpp:1370</a></div></div>
+<div class="ttc" id="aforward__adapter_8hpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00227">forward_adapter.hpp:227</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a>.</p>
+<p class="reference">参照先 <a class="el" href="json_8hpp_source.html#l01771">basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType, CustomBaseClass &gt;::get()</a>, <a class="el" href="json_8hpp_source.html#l01370">basic_json&lt; ObjectType, ArrayType, StringType, BooleanType, NumberIntegerType, NumberUnsignedType, NumberFloatType, AllocatorType, JSONSerializer, BinaryType, CustomBaseClass &gt;::is_number_unsigned()</a>, <a class="el" href="forward__adapter_8hpp_source.html#l00227">N</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structnlohmann_1_1adl__serializer_3_01std_1_1bitset_3_01N_01_4_01_4_a4d83b5c39fb21c28be6271dda6ceff73_cgraph.svg" width="456" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>
@@ -193,15 +201,15 @@ template&lt;std::size_t N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void nlohmann::adl_serializer&lt; std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &gt;::to_json </td>
+          <td class="memname">static void nlohmann::adl_serializer&lt; std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &gt;::to_json </td>
           <td>(</td>
-          <td class="paramtype">json &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="json__fwd_8hpp.html#ae6eede511f01c9f33342044d36a388fa">json</a> &amp;&#160;</td>
           <td class="paramname"><em>_j</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::bitset&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a8d9c307cb7f3c4a32822a51922d1ceaa">N</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::bitset&lt; <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>_bitset</em>&#160;</td>
         </tr>
         <tr>

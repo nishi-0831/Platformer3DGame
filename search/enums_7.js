@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['inputtype_0',['InputType',['../namespacemtgb.html#a849b27857061661deeb701b23f338eca',1,'mtgb']]]
+  ['gameobjectlayer_0',['GameObjectLayer',['../namespacemtgb.html#a768ec2ef24bbb7a474d0e57f2f5d975c',1,'mtgb']]],
+  ['gameobjecttag_1',['GameObjectTag',['../namespacemtgb.html#ade7a99556f0dbf2962a72d966b7d5ce6',1,'mtgb']]],
+  ['globenum_2',['GlobEnum',['../autolink_8cpp.html#a656d63cf384d2a6f23c2c18523a7bc5e',1,'autolink.cpp']]]
 ];

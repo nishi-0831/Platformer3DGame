@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['strip_5fexample_0',['strip_example',['../namespacestrip__example.html',1,'']]]
+  ['n1_0',['N1',['../namespaceN1.html',1,'']]],
+  ['nlohmann_1',['nlohmann',['../namespacenlohmann.html',1,'']]]
 ];

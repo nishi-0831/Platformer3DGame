@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: is_copy_assignable.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('is__copy__assignable_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">is_copy_assignable.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="is__copy__assignable_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright Ion Gaztanaga 2014.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  Use, modification and distribution are subject to the Boost Software License,</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt).</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  See http://www.boost.org/libs/type_traits for most recent version including documentation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef BOOST_TT_IS_COPY_ASSIGNABLE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define BOOST_TT_IS_COPY_ASSIGNABLE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="yes__no__type_8hpp.html">boost/type_traits/detail/yes_no_type.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="is__noncopyable_8hpp.html">boost/type_traits/is_noncopyable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if !defined(BOOST_NO_CXX11_DELETED_FUNCTIONS) &amp;&amp; !defined(BOOST_NO_CXX11_DECLTYPE) \</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">   &amp;&amp; !defined(BOOST_INTEL_CXX_VERSION) &amp;&amp; \</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">      !(defined(BOOST_MSVC) &amp;&amp; _MSC_VER == 1800)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="is__copy__assignable_8hpp.html#a52bc185fff8b6724bc2ae5374b358e3a">   19</a></span><span class="preprocessor">#define BOOST_TT_CXX11_IS_COPY_ASSIGNABLE</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2declval_8hpp.html">boost/type_traits/declval.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>   <span class="comment">//For compilers without decltype</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">   #include &lt;<a class="code" href="is__const_8hpp.html">boost/type_traits/is_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">   #include &lt;<a class="code" href="is__array_8hpp.html">boost/type_traits/is_array.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">   #include &lt;<a class="code" href="add__reference_8hpp.html">boost/type_traits/add_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">   #include &lt;<a class="code" href="remove__reference_8hpp.html">boost/type_traits/remove_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> DerivedFromNoncopyable, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">is_copy_assignable_impl2</a> {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// Intel compiler has problems with SFINAE for copy constructors and deleted functions:</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment">//</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// error: function *function_name* cannot be referenced -- it is a deleted function</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">// static boost::type_traits::yes_type test(T1&amp;, decltype(T1(boost::declval&lt;T1&amp;&gt;()))* = 0);</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//                                                        ^ </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">//</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">// MSVC 12.0 (Visual 2013) has problems when the copy constructor has been deleted. See:</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment">// https://connect.microsoft.com/VisualStudio/feedback/details/800328/std-is-copy-constructible-is-broken</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(BOOST_TT_CXX11_IS_COPY_ASSIGNABLE)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a9f79db33e89c94efd20333f7d8a8057a">   45</a></span>    <span class="keyword">typedef</span> <a class="code hl_typedef" href="namespaceboost_1_1type__traits.html#a850acc71129a7511eaf8eb81bc235a6a">boost::type_traits::yes_type</a> <a class="code hl_typedef" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a9f79db33e89c94efd20333f7d8a8057a">yes_type</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#adca61c86a8865d340e11b12dfcbf8b23">   46</a></span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1type__traits_1_1no__type.html">boost::type_traits::no_type</a>  <a class="code hl_typedef" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#adca61c86a8865d340e11b12dfcbf8b23">no_type</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">   49</a></span>    <span class="keyword">static</span> <span class="keyword">decltype</span>(::boost::declval&lt;U&amp;&gt;() = ::boost::declval&lt;const U&amp;&gt;(), <a class="code hl_typedef" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a9f79db33e89c94efd20333f7d8a8057a">yes_type</a>() ) <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">test</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span>&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a221e7f8bce67a48319847e9418bd0de1">   52</a></span>    <span class="keyword">static</span> <a class="code hl_struct" href="structboost_1_1type__traits_1_1no__type.html">no_type</a> <a class="code hl_function" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a221e7f8bce67a48319847e9418bd0de1">test</a>(...);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#ab9f91f9d11a285025fd3b32681274b94">   54</a></span>    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#ab9f91f9d11a285025fd3b32681274b94">value</a> = <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structboost_1_1detail_1_1test.html">test&lt;T&gt;</a>(0)) == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a9f79db33e89c94efd20333f7d8a8057a">yes_type</a>);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">static</span> <a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> <a class="code hl_typedef" href="structboost_1_1add__reference.html#abc8e203dfbe0cd0b36874e31c3af2771">boost::add_reference&lt;T&gt;::type</a> produce();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T1&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">static</span> <a class="code hl_struct" href="structboost_1_1type__traits_1_1no__type.html">boost::type_traits::no_type</a> <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">test</a>(T1&amp;, <span class="keyword">typename</span> T1::boost_move_no_copy_constructor_or_assign* = 0);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">static</span> <a class="code hl_typedef" href="namespaceboost_1_1type__traits.html#a850acc71129a7511eaf8eb81bc235a6a">boost::type_traits::yes_type</a> <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">test</a>(...);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// If you see errors like this:</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">//      `&#39;T::operator=(const T&amp;)&#39; is private`</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">//      `boost/type_traits/is_copy_assignable.hpp:NN:M: error: within this context`</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="comment">// then you are trying to call that macro for a structure defined like that:</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">//      struct T {</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">//      private:</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">//          T &amp; operator=(const T &amp;);</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">//      };</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// To fix that you must modify your structure:</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">//      // C++03 and C++11 version</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">//      struct T: private boost::noncopyable {</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="comment">//      private:</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="comment">//          T &amp; operator=(const T &amp;);</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">//      };</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="comment">//</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="comment">//      // C++11 version</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">//      struct T {</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="comment">//      private:</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">//          T&amp; operator=(const T &amp;) = delete;</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">//          ...</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="comment">//      };</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_define" href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#ab9f91f9d11a285025fd3b32681274b94">value</a> = (</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            <span class="keyword">sizeof</span>(<a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">test</a>(produce())) == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="namespaceboost_1_1type__traits.html#a850acc71129a7511eaf8eb81bc235a6a">boost::type_traits::yes_type</a>)</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    ));</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">   #endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>};</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2_3_01true_00_01T_01_4.html">  101</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">is_copy_assignable_impl2</a>&lt;true, T&gt; {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl2_3_01true_00_01T_01_4.html#a030325dd59e626c1bde40cd2e0538ca1">  102</a></span>    <a class="code hl_function" href="structboost_1_1detail_1_1is__copy__assignable__impl2_3_01true_00_01T_01_4.html#a030325dd59e626c1bde40cd2e0538ca1">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, <a class="code hl_variable" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#ab9f91f9d11a285025fd3b32681274b94">value</a> = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>};</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl.html">  106</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__copy__assignable__impl.html">is_copy_assignable_impl</a> {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#if !defined(BOOST_TT_CXX11_IS_COPY_ASSIGNABLE)</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">//For compilers without decltype, at least return false on const types, arrays</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">//types derived from boost::noncopyable and types defined as BOOST_MOVEABLE_BUT_NOT_COPYABLE</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">typedef</span> <a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> <a class="code hl_typedef" href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">boost::remove_reference&lt;T&gt;::type</a> unreferenced_t;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <a class="code hl_define" href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, value = (</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_struct" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">boost::detail::is_copy_assignable_impl2</a>&lt;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_struct" href="structboost_1_1is__noncopyable.html">boost::is_noncopyable&lt;T&gt;::value</a></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            || <a class="code hl_struct" href="structboost_1_1is__const.html">boost::is_const&lt;unreferenced_t&gt;::value</a> || <a class="code hl_struct" href="structboost_1_1is__array.html">boost::is_array&lt;unreferenced_t&gt;::value</a></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            ,T</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        &gt;::value</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    ));</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">    #else</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__copy__assignable__impl.html#ac27003080fa1da08d1f3b1517d5e4c97">  120</a></span>    <a class="code hl_function" href="structboost_1_1detail_1_1is__copy__assignable__impl.html#ac27003080fa1da08d1f3b1517d5e4c97">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, value = (</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <a class="code hl_struct" href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">boost::detail::is_copy_assignable_impl2</a>&lt;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <a class="code hl_struct" href="structboost_1_1is__noncopyable.html">boost::is_noncopyable&lt;T&gt;::value</a>,T</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        &gt;::value</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    ));</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">    #endif</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structboost_1_1is__copy__assignable.html">  130</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__copy__assignable.html">is_copy_assignable</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">integral_constant</a>&lt;bool, ::boost::detail::is_copy_assignable_impl&lt;T&gt;::value&gt;{};</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="structboost_1_1is__copy__assignable_3_01void_01_4.html">  131</a></span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__copy__assignable.html">is_copy_assignable</a>&lt;void&gt; : <span class="keyword">public</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">false_type</a>{};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#ifndef BOOST_NO_CV_VOID_SPECIALIZATIONS</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="structboost_1_1is__copy__assignable_3_01void_01const_01_4.html">  133</a></span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__copy__assignable.html">is_copy_assignable</a>&lt;void const&gt; : <span class="keyword">public</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">false_type</a>{};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="structboost_1_1is__copy__assignable_3_01void_01const_01volatile_01_4.html">  134</a></span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__copy__assignable.html">is_copy_assignable</a>&lt;void const volatile&gt; : <span class="keyword">public</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">false_type</a>{};</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="structboost_1_1is__copy__assignable_3_01void_01volatile_01_4.html">  135</a></span><span class="keyword">template</span> &lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__copy__assignable.html">is_copy_assignable</a>&lt;void volatile&gt; : <span class="keyword">public</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">false_type</a>{};</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_TT_IS_COPY_ASSIGNABLE_HPP_INCLUDED</span></div>
+<div class="ttc" id="aadd__reference_8hpp_html"><div class="ttname"><a href="add__reference_8hpp.html">add_reference.hpp</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="ais__array_8hpp_html"><div class="ttname"><a href="is__array_8hpp.html">is_array.hpp</a></div></div>
+<div class="ttc" id="ais__const_8hpp_html"><div class="ttname"><a href="is__const_8hpp.html">is_const.hpp</a></div></div>
+<div class="ttc" id="ais__noncopyable_8hpp_html"><div class="ttname"><a href="is__noncopyable_8hpp.html">is_noncopyable.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1type__traits_html_a850acc71129a7511eaf8eb81bc235a6a"><div class="ttname"><a href="namespaceboost_1_1type__traits.html#a850acc71129a7511eaf8eb81bc235a6a">boost::type_traits::yes_type</a></div><div class="ttdeci">char yes_type</div><div class="ttdef"><b>Definition:</b> <a href="yes__no__type_8hpp_source.html#l00017">yes_no_type.hpp:17</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="aremove__reference_8hpp_html"><div class="ttname"><a href="remove__reference_8hpp.html">remove_reference.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1add__reference_html_abc8e203dfbe0cd0b36874e31c3af2771"><div class="ttname"><a href="structboost_1_1add__reference.html#abc8e203dfbe0cd0b36874e31c3af2771">boost::add_reference::type</a></div><div class="ttdeci">boost::detail::add_reference_impl&lt; T &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="add__reference_8hpp_source.html#l00042">add_reference.hpp:42</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_3_01true_00_01T_01_4_html_a030325dd59e626c1bde40cd2e0538ca1"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2_3_01true_00_01T_01_4.html#a030325dd59e626c1bde40cd2e0538ca1">boost::detail::is_copy_assignable_impl2&lt; true, T &gt;::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=false)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html">boost::detail::is_copy_assignable_impl2</a></div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00034">is_copy_assignable.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html_a221e7f8bce67a48319847e9418bd0de1"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a221e7f8bce67a48319847e9418bd0de1">boost::detail::is_copy_assignable_impl2::test</a></div><div class="ttdeci">static no_type test(...)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html_a4d9e91a1801be683405061aa999c1175"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175">boost::detail::is_copy_assignable_impl2::test</a></div><div class="ttdeci">static decltype(::boost::declval&lt; U &amp; &gt;()=::boost::declval&lt; const U &amp; &gt;(), yes_type()) test(int)</div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00049">is_copy_assignable.hpp:49</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html_a9f79db33e89c94efd20333f7d8a8057a"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#a9f79db33e89c94efd20333f7d8a8057a">boost::detail::is_copy_assignable_impl2::yes_type</a></div><div class="ttdeci">boost::type_traits::yes_type yes_type</div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00045">is_copy_assignable.hpp:45</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html_ab9f91f9d11a285025fd3b32681274b94"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#ab9f91f9d11a285025fd3b32681274b94">boost::detail::is_copy_assignable_impl2::value</a></div><div class="ttdeci">static const bool value</div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00054">is_copy_assignable.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl2_html_adca61c86a8865d340e11b12dfcbf8b23"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl2.html#adca61c86a8865d340e11b12dfcbf8b23">boost::detail::is_copy_assignable_impl2::no_type</a></div><div class="ttdeci">boost::type_traits::no_type no_type</div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00046">is_copy_assignable.hpp:46</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl.html">boost::detail::is_copy_assignable_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00106">is_copy_assignable.hpp:106</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__copy__assignable__impl_html_ac27003080fa1da08d1f3b1517d5e4c97"><div class="ttname"><a href="structboost_1_1detail_1_1is__copy__assignable__impl.html#ac27003080fa1da08d1f3b1517d5e4c97">boost::detail::is_copy_assignable_impl::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=(boost::detail::is_copy_assignable_impl2&lt; boost::is_noncopyable&lt; T &gt;::value, T &gt;::value))</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1test_html"><div class="ttname"><a href="structboost_1_1detail_1_1test.html">boost::detail::test</a></div><div class="ttdef"><b>Definition:</b> <a href="has__new__operator_8hpp_source.html#l00031">has_new_operator.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1integral__constant_html"><div class="ttname"><a href="structboost_1_1integral__constant.html">boost::integral_constant</a></div><div class="ttdef"><b>Definition:</b> <a href="integral__constant_8hpp_source.html#l00053">integral_constant.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1is__array_html"><div class="ttname"><a href="structboost_1_1is__array.html">boost::is_array</a></div><div class="ttdef"><b>Definition:</b> <a href="is__array_8hpp_source.html#l00025">is_array.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1is__const_html"><div class="ttname"><a href="structboost_1_1is__const.html">boost::is_const</a></div><div class="ttdef"><b>Definition:</b> <a href="is__const_8hpp_source.html#l00037">is_const.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1is__copy__assignable_html"><div class="ttname"><a href="structboost_1_1is__copy__assignable.html">boost::is_copy_assignable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__copy__assignable_8hpp_source.html#l00130">is_copy_assignable.hpp:130</a></div></div>
+<div class="ttc" id="astructboost_1_1is__noncopyable_html"><div class="ttname"><a href="structboost_1_1is__noncopyable.html">boost::is_noncopyable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__noncopyable_8hpp_source.html#l00033">is_noncopyable.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1remove__reference_html_a00b79ae7d1eea1480973d3b2f3695493"><div class="ttname"><a href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">boost::remove_reference::type</a></div><div class="ttdeci">boost::detail::remove_rvalue_ref&lt; T &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="remove__reference_8hpp_source.html#l00038">remove_reference.hpp:38</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits_1_1no__type_html"><div class="ttname"><a href="structboost_1_1type__traits_1_1no__type.html">boost::type_traits::no_type</a></div><div class="ttdef"><b>Definition:</b> <a href="yes__no__type_8hpp_source.html#l00018">yes_no_type.hpp:19</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a347deb9f70eeef37f8c718d30c9c98b6"><div class="ttname"><a href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">#define BOOST_STATIC_CONSTANT(type, assignment)</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l00410">suffix.hpp:410</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a781d435c439be5109e8442d58a52d0a2"><div class="ttname"><a href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a></div><div class="ttdeci">#define BOOST_DEDUCED_TYPENAME</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l00483">suffix.hpp:483</a></div></div>
+<div class="ttc" id="atype__traits_2declval_8hpp_html"><div class="ttname"><a href="type__traits_2declval_8hpp.html">declval.hpp</a></div></div>
+<div class="ttc" id="ayes__no__type_8hpp_html"><div class="ttname"><a href="yes__no__type_8hpp.html">yes_no_type.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_58e84a66c35a87b44d1654fe688cf24e.html">type_traits</a></li><li class="navelem"><a class="el" href="is__copy__assignable_8hpp.html">is_copy_assignable.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

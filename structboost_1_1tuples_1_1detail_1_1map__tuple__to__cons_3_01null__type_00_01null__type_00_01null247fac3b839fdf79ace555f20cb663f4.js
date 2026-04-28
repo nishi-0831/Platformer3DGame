@@ -1,0 +1,4 @@
+var structboost_1_1tuples_1_1detail_1_1map__tuple__to__cons_3_01null__type_00_01null__type_00_01null247fac3b839fdf79ace555f20cb663f4 =
+[
+    [ "type", "structboost_1_1tuples_1_1detail_1_1map__tuple__to__cons_3_01null__type_00_01null__type_00_01null247fac3b839fdf79ace555f20cb663f4.html#ab63fcbd197d4ed96b69a682ec11ab8ba", null ]
+];

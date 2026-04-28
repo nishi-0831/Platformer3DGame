@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1result__of_1_1make__deque_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T2d69e02b25de717db80cbb473cffe8da =
+[
+    [ "type", "structboost_1_1fusion_1_1result__of_1_1make__deque_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T2d69e02b25de717db80cbb473cffe8da.html#aff5bff7da871c6149c68dba8175e2d8d", null ]
+];

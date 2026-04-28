@@ -397,8 +397,8 @@ mtgb::OBJ 連携図</div>
 <p class="definition"> <a class="el" href="OBJ_8cpp_source.html">OBJ.cpp</a> の <a class="el" href="OBJ_8cpp_source.html#l00202">202</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  203</span>{</div>
 <div class="line"><span class="lineno">  204</span>    <span class="keywordtype">float</span> x, y, z;</div>
-<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">int</span> v1 = 0, v2 = 0, v3 = 0;</div>
-<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">char</span> key[190] = { 0 };</div>
+<div class="line"><span class="lineno">  205</span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="namespaceboost_1_1hash__detail.html#a586d09931002455071d139c927bfbbe0">v1</a> = 0, v2 = 0, v3 = 0;</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keywordtype">char</span> <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a>[190] = { 0 };</div>
 <div class="line"><span class="lineno">  207</span> </div>
 <div class="line"><span class="lineno">  208</span>    <span class="comment">// ファイルを開いて内容を読み込む</span></div>
 <div class="line"><span class="lineno">  209</span>    FILE* fp = NULL;</div>
@@ -457,7 +457,7 @@ mtgb::OBJ 連携図</div>
 <div class="line"><span class="lineno">  262</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a>(key, <span class="stringliteral">&quot;f&quot;</span>) == 0)</div>
 <div class="line"><span class="lineno">  263</span>        {</div>
 <div class="line"><span class="lineno">  264</span>            fscanf_s(fp, <span class="stringliteral">&quot;%d %d %d&quot;</span>, &amp;v1, &amp;v2, &amp;v3);</div>
-<div class="line"><span class="lineno">  265</span>            pIndexBuffer[faceCount * 3]     = v1 - 1;</div>
+<div class="line"><span class="lineno">  265</span>            pIndexBuffer[faceCount * 3]     = <a class="code hl_variable" href="namespaceboost_1_1hash__detail.html#a586d09931002455071d139c927bfbbe0">v1</a> - 1;</div>
 <div class="line"><span class="lineno">  266</span>            pIndexBuffer[faceCount * 3 + 1] = v2 - 1;</div>
 <div class="line"><span class="lineno">  267</span>            pIndexBuffer[faceCount * 3 + 2] = v3 - 1;</div>
 <div class="line"><span class="lineno">  268</span>            faceCount++;</div>
@@ -497,6 +497,8 @@ mtgb::OBJ 連携図</div>
 <div class="line"><span class="lineno">  302</span>    <span class="keyword">delete</span>[] pVertexBuffer;</div>
 <div class="line"><span class="lineno">  303</span>    <span class="keyword">delete</span>[] pIndexBuffer;</div>
 <div class="line"><span class="lineno">  304</span>}</div>
+<div class="ttc" id="anamespaceboost_1_1hash__detail_html_a586d09931002455071d139c927bfbbe0"><div class="ttname"><a href="namespaceboost_1_1hash__detail.html#a586d09931002455071d139c927bfbbe0">boost::hash_detail::v1</a></div><div class="ttdeci">std::uint32_t v1</div><div class="ttdef"><b>Definition:</b> <a href="hash__range_8hpp_source.html#l00160">hash_range.hpp:160</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">detail::parse_event_t::key</a></div><div class="ttdeci">@ key</div><div class="ttdoc">the parser read a key of a value in an object</div></div>
 <div class="ttc" id="arelates_8cpp_html_a7ceb7d379a52f7e26418e7a446b4a41a"><div class="ttname"><a href="relates_8cpp.html#a7ceb7d379a52f7e26418e7a446b4a41a">strcmp</a></div><div class="ttdeci">int strcmp(const String &amp;s1, const String &amp;s2)</div><div class="ttdef"><b>Definition:</b> <a href="relates_8cpp_source.html#l00014">relates.cpp:14</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="OBJ_8h_source.html#l00034">mtgb::SimpleMesh::numFace</a>, <a class="el" href="OBJ_8h_source.html#l00033">mtgb::SimpleMesh::numVert</a>, <a class="el" href="DirectX11Draw_8h_source.html#l00120">mtgb::DirectX11Draw::pDevice_</a>, <a class="el" href="OBJ_8h_source.html#l00036">mtgb::SimpleMesh::pIndexBuffer</a>, <a class="el" href="OBJ_8h_source.html#l00023">mtgb::SimpleVertex::pos</a>, <a class="el" href="OBJ_8h_source.html#l00035">mtgb::SimpleMesh::pVertexBuffer</a>, <a class="el" href="relates_8cpp_source.html#l00014">strcmp()</a>.</p>

@@ -1,0 +1,904 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::detail::lsp_ms_deleter&lt; T, A &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1detail_1_1lsp__ms__deleter.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1detail_1_1lsp__ms__deleter-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::detail::lsp_ms_deleter&lt; T, A &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::detail::lsp_ms_deleter&lt; T, A &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1lsp__ms__deleter__inherit__graph.svg" width="247" height="970"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::detail::lsp_ms_deleter&lt; T, A &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1lsp__ms__deleter__coll__graph.svg" width="807" height="1887"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a569d1ff85377c7540c9ecc7c07134657"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a569d1ff85377c7540c9ecc7c07134657">lsp_ms_deleter</a> (<a class="el" href="classA.html">A</a> const &amp;a) noexcept</td></tr>
+<tr class="separator:a569d1ff85377c7540c9ecc7c07134657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac416204473fadd47d3e3a663d9f251c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#ac416204473fadd47d3e3a663d9f251c6">lsp_ms_deleter</a> (<a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">lsp_ms_deleter</a> const &amp;r) noexcept</td></tr>
+<tr class="separator:ac416204473fadd47d3e3a663d9f251c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d539551be94fea920bc04601c5da93b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a0d539551be94fea920bc04601c5da93b">~lsp_ms_deleter</a> () noexcept</td></tr>
+<tr class="separator:a0d539551be94fea920bc04601c5da93b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7763409f6c10796c54c8574a055aa568"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a7763409f6c10796c54c8574a055aa568">operator()</a> (T *) noexcept</td></tr>
+<tr class="separator:a7763409f6c10796c54c8574a055aa568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44d5ceec115bc3c5e600048ee7298bf8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a44d5ceec115bc3c5e600048ee7298bf8">address</a> () noexcept</td></tr>
+<tr class="separator:a44d5ceec115bc3c5e600048ee7298bf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e88079376160cc7f184e0a2fde73228"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a9e88079376160cc7f184e0a2fde73228">set_initialized</a> () noexcept</td></tr>
+<tr class="separator:a9e88079376160cc7f184e0a2fde73228"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a530369c9262dfde110abf53a4715beca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__impl__em.html#a530369c9262dfde110abf53a4715beca">local_cb_destroy</a> () noexcept override</td></tr>
+<tr class="separator:a530369c9262dfde110abf53a4715beca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36b62f7a0ba4cc61d061d5170a55bfeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1shared__count.html">boost::detail::shared_count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__impl__em.html#a36b62f7a0ba4cc61d061d5170a55bfeb">local_cb_get_shared_count</a> () const noexcept override</td></tr>
+<tr class="separator:a36b62f7a0ba4cc61d061d5170a55bfeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a805adca453d7de0a89004e5535f8d5cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a805adca453d7de0a89004e5535f8d5cd">add_ref</a> () noexcept</td></tr>
+<tr class="separator:a805adca453d7de0a89004e5535f8d5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9471fa40e75151f58e0093cfbd57570"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#ad9471fa40e75151f58e0093cfbd57570">release</a> () noexcept</td></tr>
+<tr class="separator:ad9471fa40e75151f58e0093cfbd57570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328ddce860432ce9d7d7d0c7edd9af2d"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a328ddce860432ce9d7d7d0c7edd9af2d">local_use_count</a> () const noexcept</td></tr>
+<tr class="separator:a328ddce860432ce9d7d7d0c7edd9af2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5e4bac9d47b32d4134f3f76aab1925dd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a5e4bac9d47b32d4134f3f76aab1925dd">operator_fn</a> (T *) noexcept</td></tr>
+<tr class="separator:a5e4bac9d47b32d4134f3f76aab1925dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a32f7bb22c961329514c67985d6ae0a6c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1shared__count.html">shared_count</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__impl__em.html#a32f7bb22c961329514c67985d6ae0a6c">pn_</a></td></tr>
+<tr class="separator:a32f7bb22c961329514c67985d6ae0a6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a94715f878b5125eeb01756d13b5b4023"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1detail_1_1sp__aligned__storage.html">sp_aligned_storage</a>&lt; sizeof(T), std::alignment_of&lt; T &gt;::value &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94715f878b5125eeb01756d13b5b4023">storage_type</a></td></tr>
+<tr class="separator:a94715f878b5125eeb01756d13b5b4023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6260f5edf23c0b8a744fe5c17062bd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">count_type</a> { <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6">min_</a> = 0
+, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d">initial_</a> = 1
+, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8">max_</a> = 2147483647
+ }</td></tr>
+<tr class="separator:a0c6260f5edf23c0b8a744fe5c17062bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a82f2967dd2a5c45e1b889922ec655068"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a82f2967dd2a5c45e1b889922ec655068">destroy</a> () noexcept</td></tr>
+<tr class="separator:a82f2967dd2a5c45e1b889922ec655068"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a611420a0a0741f14cbf12d26606741f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94715f878b5125eeb01756d13b5b4023">storage_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a611420a0a0741f14cbf12d26606741f9">storage_</a></td></tr>
+<tr class="separator:a611420a0a0741f14cbf12d26606741f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f2090e3ae1d2204c79e3fe9a8a8988"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classA.html">A</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94f2090e3ae1d2204c79e3fe9a8a8988">a_</a></td></tr>
+<tr class="separator:a94f2090e3ae1d2204c79e3fe9a8a8988"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1413327c0cc37ad877c466f722b15fc7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a></td></tr>
+<tr class="separator:a1413327c0cc37ad877c466f722b15fc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa836c6928c2b85169ba944bda4d59fdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">count_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a></td></tr>
+<tr class="separator:aa836c6928c2b85169ba944bda4d59fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class <a class="el" href="classA.html">A</a>&gt;<br />
+class boost::detail::lsp_ms_deleter&lt; T, A &gt;</div>
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a94715f878b5125eeb01756d13b5b4023" name="a94715f878b5125eeb01756d13b5b4023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94715f878b5125eeb01756d13b5b4023">&#9670;&#160;</a></span>storage_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1detail_1_1sp__aligned__storage.html">sp_aligned_storage</a>&lt;sizeof(T),std::alignment_of&lt;T&gt;::value&gt;::type <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::storage_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">列挙型メンバ詳解</h2>
+<a id="a0c6260f5edf23c0b8a744fe5c17062bd" name="a0c6260f5edf23c0b8a744fe5c17062bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6260f5edf23c0b8a744fe5c17062bd">&#9670;&#160;</a></span>count_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">boost::detail::local_counted_base::count_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6" name="a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6"></a>min_&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d" name="a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d"></a>initial_&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8" name="a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8"></a>max_&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <a class="code hl_enumvalue" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6">min_</a> = 0, <a class="code hl_enumvalue" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d">initial_</a> = 1, <a class="code hl_enumvalue" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8">max_</a> = 2147483647 };</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda155990beac945709021dc2fd71e462a6">boost::detail::local_counted_base::min_</a></div><div class="ttdeci">@ min_</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00039">local_counted_base.hpp:39</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bda57a069bd3e5a6821410032ff3ac8a23d">boost::detail::local_counted_base::initial_</a></div><div class="ttdeci">@ initial_</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00039">local_counted_base.hpp:39</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bdae3d49dc45e6c9199af0d4011d453f5e8">boost::detail::local_counted_base::max_</a></div><div class="ttdeci">@ max_</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00039">local_counted_base.hpp:39</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a569d1ff85377c7540c9ecc7c07134657" name="a569d1ff85377c7540c9ecc7c07134657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a569d1ff85377c7540c9ecc7c07134657">&#9670;&#160;</a></span>lsp_ms_deleter() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::lsp_ms_deleter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classA.html">A</a> const &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00070">70</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>                                                    : <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94f2090e3ae1d2204c79e3fe9a8a8988">a_</a>( a ), <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a>( <span class="keyword">false</span> )</div>
+<div class="line"><span class="lineno">   71</span>    {</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1lsp__ms__deleter_html_a1413327c0cc37ad877c466f722b15fc7"><div class="ttname"><a href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">boost::detail::lsp_ms_deleter::initialized_</a></div><div class="ttdeci">bool initialized_</div><div class="ttdef"><b>Definition:</b> <a href="make__local__shared__object_8hpp_source.html#l00052">make_local_shared_object.hpp:52</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1lsp__ms__deleter_html_a94f2090e3ae1d2204c79e3fe9a8a8988"><div class="ttname"><a href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94f2090e3ae1d2204c79e3fe9a8a8988">boost::detail::lsp_ms_deleter::a_</a></div><div class="ttdeci">A a_</div><div class="ttdef"><b>Definition:</b> <a href="make__local__shared__object_8hpp_source.html#l00051">make_local_shared_object.hpp:51</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac416204473fadd47d3e3a663d9f251c6" name="ac416204473fadd47d3e3a663d9f251c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac416204473fadd47d3e3a663d9f251c6">&#9670;&#160;</a></span>lsp_ms_deleter() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::lsp_ms_deleter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00075">75</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                        : <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94f2090e3ae1d2204c79e3fe9a8a8988">a_</a>( r.a_), <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a>( <span class="keyword">false</span> )</div>
+<div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0d539551be94fea920bc04601c5da93b" name="a0d539551be94fea920bc04601c5da93b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d539551be94fea920bc04601c5da93b">&#9670;&#160;</a></span>~lsp_ms_deleter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::~<a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">lsp_ms_deleter</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>        <a class="code hl_function" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a82f2967dd2a5c45e1b889922ec655068">destroy</a>();</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1lsp__ms__deleter_html_a82f2967dd2a5c45e1b889922ec655068"><div class="ttname"><a href="classboost_1_1detail_1_1lsp__ms__deleter.html#a82f2967dd2a5c45e1b889922ec655068">boost::detail::lsp_ms_deleter::destroy</a></div><div class="ttdeci">void destroy() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="make__local__shared__object_8hpp_source.html#l00056">make_local_shared_object.hpp:56</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">boost::detail::lsp_ms_deleter&lt; T, A &gt;::destroy()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1lsp__ms__deleter_a0d539551be94fea920bc04601c5da93b_cgraph.svg" width="384" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a805adca453d7de0a89004e5535f8d5cd" name="a805adca453d7de0a89004e5535f8d5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a805adca453d7de0a89004e5535f8d5cd">&#9670;&#160;</a></span>add_ref()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::detail::local_counted_base::add_ref </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00061">61</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>    {</div>
+<div class="line"><span class="lineno">   63</span><span class="preprocessor">#if !defined(__NVCC__)</span></div>
+<div class="line"><span class="lineno">   64</span><span class="preprocessor">#if defined( __has_builtin )</span></div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor"># if __has_builtin( __builtin_assume )</span></div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        __builtin_assume( <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> &gt;= 1 );</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span><span class="preprocessor"># endif</span></div>
+<div class="line"><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">count_type</a><span class="keyword">&gt;</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> + 1 );</div>
+<div class="line"><span class="lineno">   74</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a0c6260f5edf23c0b8a744fe5c17062bd"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">boost::detail::local_counted_base::count_type</a></div><div class="ttdeci">count_type</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00039">local_counted_base.hpp:39</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_aa836c6928c2b85169ba944bda4d59fdf"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">boost::detail::local_counted_base::local_use_count_</a></div><div class="ttdeci">count_type local_use_count_</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00041">local_counted_base.hpp:41</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00231">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1local__counted__base_a805adca453d7de0a89004e5535f8d5cd_icgraph.svg" width="398" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a44d5ceec115bc3c5e600048ee7298bf8" name="a44d5ceec115bc3c5e600048ee7298bf8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44d5ceec115bc3c5e600048ee7298bf8">&#9670;&#160;</a></span>address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void * <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::address </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a611420a0a0741f14cbf12d26606741f9">storage_</a>.data_;</div>
+<div class="line"><span class="lineno">   96</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1lsp__ms__deleter_html_a611420a0a0741f14cbf12d26606741f9"><div class="ttname"><a href="classboost_1_1detail_1_1lsp__ms__deleter.html#a611420a0a0741f14cbf12d26606741f9">boost::detail::lsp_ms_deleter::storage_</a></div><div class="ttdeci">storage_type storage_</div><div class="ttdef"><b>Definition:</b> <a href="make__local__shared__object_8hpp_source.html#l00050">make_local_shared_object.hpp:50</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="make__local__shared__object_8hpp_source.html#l00050">boost::detail::lsp_ms_deleter&lt; T, A &gt;::storage_</a>.</p>
+
+</div>
+</div>
+<a id="a82f2967dd2a5c45e1b889922ec655068" name="a82f2967dd2a5c45e1b889922ec655068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82f2967dd2a5c45e1b889922ec655068">&#9670;&#160;</a></span>destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a> )</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a> * p = <span class="keyword">reinterpret_cast&lt;</span> <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>* <span class="keyword">&gt;</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a611420a0a0741f14cbf12d26606741f9">storage_</a>.data_ );</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>            std::allocator_traits&lt;A&gt;::destroy( <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94f2090e3ae1d2204c79e3fe9a8a8988">a_</a>, p );</div>
+<div class="line"><span class="lineno">   63</span> </div>
+<div class="line"><span class="lineno">   64</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   65</span>        }</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="make__local__shared__object_8hpp_source.html#l00051">boost::detail::lsp_ms_deleter&lt; T, A &gt;::a_</a>, <a class="el" href="make__local__shared__object_8hpp_source.html#l00052">boost::detail::lsp_ms_deleter&lt; T, A &gt;::initialized_</a>, <a class="el" href="make__local__shared__object_8hpp_source.html#l00050">boost::detail::lsp_ms_deleter&lt; T, A &gt;::storage_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="make__local__shared__object_8hpp_source.html#l00084">boost::detail::lsp_ms_deleter&lt; T, A &gt;::operator()()</a>, <a class="el" href="make__local__shared__object_8hpp_source.html#l00079">boost::detail::lsp_ms_deleter&lt; T, A &gt;::~lsp_ms_deleter()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1lsp__ms__deleter_a82f2967dd2a5c45e1b889922ec655068_icgraph.svg" width="392" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a530369c9262dfde110abf53a4715beca" name="a530369c9262dfde110abf53a4715beca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a530369c9262dfde110abf53a4715beca">&#9670;&#160;</a></span>local_cb_destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::detail::local_counted_impl_em::local_cb_destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#af0fbeb13d9d57f98179f33047c1dcb4b">boost::detail::local_counted_base</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>        shared_count().swap( <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__impl__em.html#a32f7bb22c961329514c67985d6ae0a6c">pn_</a> );</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__impl__em_html_a32f7bb22c961329514c67985d6ae0a6c"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__impl__em.html#a32f7bb22c961329514c67985d6ae0a6c">boost::detail::local_counted_impl_em::pn_</a></div><div class="ttdeci">shared_count pn_</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00127">local_counted_base.hpp:127</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="shared__count_8hpp_source.html#l00432">boost::detail::shared_count::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1local__counted__impl__em_a530369c9262dfde110abf53a4715beca_cgraph.svg" width="398" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a36b62f7a0ba4cc61d061d5170a55bfeb" name="a36b62f7a0ba4cc61d061d5170a55bfeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b62f7a0ba4cc61d061d5170a55bfeb">&#9670;&#160;</a></span>local_cb_get_shared_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1shared__count.html">boost::detail::shared_count</a> boost::detail::local_counted_impl_em::local_cb_get_shared_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">boost::detail::local_counted_base</a>を実装しています。</p>
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00134">134</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>    {</div>
+<div class="line"><span class="lineno">  136</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__impl__em.html#a32f7bb22c961329514c67985d6ae0a6c">pn_</a>;</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a328ddce860432ce9d7d7d0c7edd9af2d" name="a328ddce860432ce9d7d7d0c7edd9af2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328ddce860432ce9d7d7d0c7edd9af2d">&#9670;&#160;</a></span>local_use_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::local_counted_base::local_use_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>    {</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a>;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00396">boost::local_shared_ptr&lt; T &gt;::local_use_count()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1local__counted__base_a328ddce860432ce9d7d7d0c7edd9af2d_icgraph.svg" width="376" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7763409f6c10796c54c8574a055aa568" name="a7763409f6c10796c54c8574a055aa568"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7763409f6c10796c54c8574a055aa568">&#9670;&#160;</a></span>operator()()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_function" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a82f2967dd2a5c45e1b889922ec655068">destroy</a>();</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">boost::detail::lsp_ms_deleter&lt; T, A &gt;::destroy()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1lsp__ms__deleter_a7763409f6c10796c54c8574a055aa568_cgraph.svg" width="392" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5e4bac9d47b32d4134f3f76aab1925dd" name="a5e4bac9d47b32d4134f3f76aab1925dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e4bac9d47b32d4134f3f76aab1925dd">&#9670;&#160;</a></span>operator_fn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::operator_fn </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad9471fa40e75151f58e0093cfbd57570" name="ad9471fa40e75151f58e0093cfbd57570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9471fa40e75151f58e0093cfbd57570">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::detail::local_counted_base::release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> = <span class="keyword">static_cast&lt;</span><a class="code hl_enumeration" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">count_type</a><span class="keyword">&gt;</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> - 1 );</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1local__counted__base.html#aa836c6928c2b85169ba944bda4d59fdf">local_use_count_</a> == 0 )</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            <a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#af0fbeb13d9d57f98179f33047c1dcb4b">local_cb_destroy</a>();</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_af0fbeb13d9d57f98179f33047c1dcb4b"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#af0fbeb13d9d57f98179f33047c1dcb4b">boost::detail::local_counted_base::local_cb_destroy</a></div><div class="ttdeci">virtual void local_cb_destroy() noexcept=0</div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00131">boost::local_shared_ptr&lt; T &gt;::~local_shared_ptr()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1local__counted__base_ad9471fa40e75151f58e0093cfbd57570_icgraph.svg" width="407" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9e88079376160cc7f184e0a2fde73228" name="a9e88079376160cc7f184e0a2fde73228"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e88079376160cc7f184e0a2fde73228">&#9670;&#160;</a></span>set_initialized()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::set_initialized </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00098">98</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>    {</div>
+<div class="line"><span class="lineno">  100</span>        <a class="code hl_variable" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a1413327c0cc37ad877c466f722b15fc7">initialized_</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  101</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="make__local__shared__object_8hpp_source.html#l00052">boost::detail::lsp_ms_deleter&lt; T, A &gt;::initialized_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a94f2090e3ae1d2204c79e3fe9a8a8988" name="a94f2090e3ae1d2204c79e3fe9a8a8988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f2090e3ae1d2204c79e3fe9a8a8988">&#9670;&#160;</a></span>a_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classA.html">A</a> <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::a_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">boost::detail::lsp_ms_deleter&lt; T, A &gt;::destroy()</a>.</p>
+
+</div>
+</div>
+<a id="a1413327c0cc37ad877c466f722b15fc7" name="a1413327c0cc37ad877c466f722b15fc7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1413327c0cc37ad877c466f722b15fc7">&#9670;&#160;</a></span>initialized_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::initialized_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">boost::detail::lsp_ms_deleter&lt; T, A &gt;::destroy()</a>, <a class="el" href="make__local__shared__object_8hpp_source.html#l00098">boost::detail::lsp_ms_deleter&lt; T, A &gt;::set_initialized()</a>.</p>
+
+</div>
+</div>
+<a id="aa836c6928c2b85169ba944bda4d59fdf" name="aa836c6928c2b85169ba944bda4d59fdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa836c6928c2b85169ba944bda4d59fdf">&#9670;&#160;</a></span>local_use_count_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a0c6260f5edf23c0b8a744fe5c17062bd">count_type</a> boost::detail::local_counted_base::local_use_count_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a32f7bb22c961329514c67985d6ae0a6c" name="a32f7bb22c961329514c67985d6ae0a6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f7bb22c961329514c67985d6ae0a6c">&#9670;&#160;</a></span>pn_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1shared__count.html">shared_count</a> boost::detail::local_counted_impl_em::pn_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__counted__base_8hpp_source.html">local_counted_base.hpp</a> の <a class="el" href="local__counted__base_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a611420a0a0741f14cbf12d26606741f9" name="a611420a0a0741f14cbf12d26606741f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a611420a0a0741f14cbf12d26606741f9">&#9670;&#160;</a></span>storage_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html#a94715f878b5125eeb01756d13b5b4023">storage_type</a> <a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">boost::detail::lsp_ms_deleter</a>&lt; T, <a class="el" href="classA.html">A</a> &gt;::storage_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a> の <a class="el" href="make__local__shared__object_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="make__local__shared__object_8hpp_source.html#l00093">boost::detail::lsp_ms_deleter&lt; T, A &gt;::address()</a>, <a class="el" href="make__local__shared__object_8hpp_source.html#l00056">boost::detail::lsp_ms_deleter&lt; T, A &gt;::destroy()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="make__local__shared__object_8hpp_source.html">make_local_shared_object.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1detail_1_1lsp__ms__deleter.html">lsp_ms_deleter</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -416,7 +416,7 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">   91</span>        stride = <span class="keyword">sizeof</span>(VertexT);</div>
 <div class="line"><span class="lineno">   92</span>        offset = 0;</div>
 <div class="line"><span class="lineno">   93</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;IASetVertexBuffers(</div>
-<div class="line"><span class="lineno">   94</span>            0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,</div>
+<div class="line"><span class="lineno">   94</span>            0U,</div>
 <div class="line"><span class="lineno">   95</span>            1U,</div>
 <div class="line"><span class="lineno">   96</span>            <a class="code hl_variable" href="classmtgb_1_1IShader.html#a1ca0458701c1f244741b2eec2035e529">pVertexBuffer_</a>.GetAddressOf(),</div>
 <div class="line"><span class="lineno">   97</span>            &amp;stride,</div>
@@ -598,7 +598,7 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  161</span>        stride = <span class="keyword">sizeof</span>(VertexT);</div>
 <div class="line"><span class="lineno">  162</span>        offset = 0;</div>
 <div class="line"><span class="lineno">  163</span>        <a class="code hl_variable" href="classmtgb_1_1DirectX11Draw.html#acad8126bc4c4a3ab9b2c871cf5dc94d1">DirectX11Draw::pContext_</a>-&gt;IASetVertexBuffers(</div>
-<div class="line"><span class="lineno">  164</span>            0<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>,</div>
+<div class="line"><span class="lineno">  164</span>            0U,</div>
 <div class="line"><span class="lineno">  165</span>            1U,</div>
 <div class="line"><span class="lineno">  166</span>            <a class="code hl_variable" href="classmtgb_1_1IShader.html#a1ca0458701c1f244741b2eec2035e529">pVertexBuffer_</a>.Get(),</div>
 <div class="line"><span class="lineno">  167</span>            &amp;stride,</div>
@@ -1058,7 +1058,7 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxParts_a76ca4751bdeb002e74dd3d5d2a4d671b_icgraph.svg" width="884" height="720"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxParts_a76ca4751bdeb002e74dd3d5d2a4d671b_icgraph.svg" width="884" height="819"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1175,10 +1175,10 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  412</span>    <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a6310fa605dfc98c1e456c2759fb1dd6b">ppIndexBuffer_</a>.resize(<a class="code hl_variable" href="classmtgb_1_1FbxParts.html#abcbd5a3443c9c5ef018f6cf7ce02347f">materialCount_</a>);</div>
 <div class="line"><span class="lineno">  413</span>    <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#ae188d66fcf074b27f05b84ba55c1b939">ppIndexData_</a> = <span class="keyword">new</span> DWORD*[<a class="code hl_variable" href="classmtgb_1_1FbxParts.html#abcbd5a3443c9c5ef018f6cf7ce02347f">materialCount_</a>];</div>
 <div class="line"><span class="lineno">  414</span> </div>
-<div class="line"><span class="lineno">  415</span>    <span class="keywordtype">int</span> count { 0 };</div>
+<div class="line"><span class="lineno">  415</span>    <span class="keywordtype">int</span> <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a> { 0 };</div>
 <div class="line"><span class="lineno">  416</span>    <span class="keywordflow">for</span> (DWORD i = 0; i &lt; <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#abcbd5a3443c9c5ef018f6cf7ce02347f">materialCount_</a>; i++)</div>
 <div class="line"><span class="lineno">  417</span>    {</div>
-<div class="line"><span class="lineno">  418</span>        count = 0;</div>
+<div class="line"><span class="lineno">  418</span>        <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a> = 0;</div>
 <div class="line"><span class="lineno">  419</span>        DWORD* pIndex { <span class="keyword">new</span> DWORD[<a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a17a0286089f99a3e93d35c9c8a76f46b">polygonCount_</a> * 3] {} };</div>
 <div class="line"><span class="lineno">  420</span>        <span class="keywordflow">for</span> (DWORD j = 0; j &lt; <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a17a0286089f99a3e93d35c9c8a76f46b">polygonCount_</a>; j++)</div>
 <div class="line"><span class="lineno">  421</span>        {</div>
@@ -1188,15 +1188,15 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  425</span>            {</div>
 <div class="line"><span class="lineno">  426</span>                <span class="keywordflow">for</span> (DWORD k = 0; k &lt; 3; k++)</div>
 <div class="line"><span class="lineno">  427</span>                {</div>
-<div class="line"><span class="lineno">  428</span>                    pIndex[count + k] = <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a94ed272da66b6ea91f7130d3a0743f21">pMesh_</a>-&gt;GetPolygonVertex(j, k);</div>
+<div class="line"><span class="lineno">  428</span>                    pIndex[<a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a> + k] = <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a94ed272da66b6ea91f7130d3a0743f21">pMesh_</a>-&gt;GetPolygonVertex(j, k);</div>
 <div class="line"><span class="lineno">  429</span>                }</div>
-<div class="line"><span class="lineno">  430</span>                count += 3;</div>
+<div class="line"><span class="lineno">  430</span>                <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a> += 3;</div>
 <div class="line"><span class="lineno">  431</span>            }</div>
 <div class="line"><span class="lineno">  432</span>        }</div>
 <div class="line"><span class="lineno">  433</span> </div>
 <div class="line"><span class="lineno">  434</span>        <span class="comment">// バッファの設定</span></div>
 <div class="line"><span class="lineno">  435</span>        <span class="keyword">const</span> D3D11_BUFFER_DESC BUFFER_DESC {</div>
-<div class="line"><span class="lineno">  436</span>            .ByteWidth           = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(DWORD) * count),</div>
+<div class="line"><span class="lineno">  436</span>            .ByteWidth           = <span class="keyword">static_cast&lt;</span>UINT<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(DWORD) * <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>),</div>
 <div class="line"><span class="lineno">  437</span>            .Usage               = D3D11_USAGE_DEFAULT, <span class="comment">// MEMO: 途中で書き換えないため DEFAULT</span></div>
 <div class="line"><span class="lineno">  438</span>            .BindFlags           = D3D11_BIND_INDEX_BUFFER,</div>
 <div class="line"><span class="lineno">  439</span>            .CPUAccessFlags      = 0,</div>
@@ -1216,16 +1216,17 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  453</span> </div>
 <div class="line"><span class="lineno">  454</span>        <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;インデックスバッファの作成に失敗&quot;</span>);</div>
 <div class="line"><span class="lineno">  455</span> </div>
-<div class="line"><span class="lineno">  456</span>        <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a49119504bc235a618cf7c102db8844bb">pMaterial_</a>[i].<a class="code hl_variable" href="structmtgb_1_1FbxParts_1_1Material.html#abdad0dc6f2f73f86c3ba7d2b74345fb0">polygonCount</a> = count / 3;</div>
-<div class="line"><span class="lineno">  457</span>        <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#ae188d66fcf074b27f05b84ba55c1b939">ppIndexData_</a>[i]            = <span class="keyword">new</span> DWORD[count];</div>
-<div class="line"><span class="lineno">  458</span>        memcpy(<a class="code hl_variable" href="classmtgb_1_1FbxParts.html#ae188d66fcf074b27f05b84ba55c1b939">ppIndexData_</a>[i], pIndex, <span class="keyword">sizeof</span>(DWORD) * count);</div>
+<div class="line"><span class="lineno">  456</span>        <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#a49119504bc235a618cf7c102db8844bb">pMaterial_</a>[i].<a class="code hl_variable" href="structmtgb_1_1FbxParts_1_1Material.html#abdad0dc6f2f73f86c3ba7d2b74345fb0">polygonCount</a> = <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a> / 3;</div>
+<div class="line"><span class="lineno">  457</span>        <a class="code hl_variable" href="classmtgb_1_1FbxParts.html#ae188d66fcf074b27f05b84ba55c1b939">ppIndexData_</a>[i]            = <span class="keyword">new</span> DWORD[<a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>];</div>
+<div class="line"><span class="lineno">  458</span>        memcpy(<a class="code hl_variable" href="classmtgb_1_1FbxParts.html#ae188d66fcf074b27f05b84ba55c1b939">ppIndexData_</a>[i], pIndex, <span class="keyword">sizeof</span>(DWORD) * <a class="code hl_define" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>);</div>
 <div class="line"><span class="lineno">  459</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a506b3685b3eb05aac751f9e14cbed93b">SAFE_DELETE_ARRAY</a>(pIndex);</div>
 <div class="line"><span class="lineno">  460</span>    }</div>
 <div class="line"><span class="lineno">  461</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a506b3685b3eb05aac751f9e14cbed93b"><div class="ttname"><a href="ReleaseUtility_8h.html#a506b3685b3eb05aac751f9e14cbed93b">SAFE_DELETE_ARRAY</a></div><div class="ttdeci">#define SAFE_DELETE_ARRAY(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00012">ReleaseUtility.h:12</a></div></div>
+<div class="ttc" id="aforward__adapter_8hpp_html_ac74ae34e9c58234aacabb6867b245c58"><div class="ttname"><a href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a></div><div class="ttdeci">#define count</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00208">forward_adapter.hpp:208</a></div></div>
 <div class="ttc" id="astructmtgb_1_1FbxParts_1_1Material_html_abdad0dc6f2f73f86c3ba7d2b74345fb0"><div class="ttname"><a href="structmtgb_1_1FbxParts_1_1Material.html#abdad0dc6f2f73f86c3ba7d2b74345fb0">mtgb::FbxParts::Material::polygonCount</a></div><div class="ttdeci">uint32_t polygonCount</div><div class="ttdef"><b>Definition:</b> <a href="FbxParts_8h_source.html#l00065">FbxParts.h:65</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00012">SAFE_DELETE_ARRAY</a>.</p>
+<p class="reference">参照先 <a class="el" href="forward__adapter_8hpp_source.html#l00208">count</a>, <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="ReleaseUtility_8h_source.html#l00012">SAFE_DELETE_ARRAY</a>.</p>
 
 </div>
 </div>
@@ -1453,8 +1454,8 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  700</span>                <span class="keywordflow">if</span> (vertex.boneWeight[i] &lt; vertex.boneWeight[j])</div>
 <div class="line"><span class="lineno">  701</span>                {</div>
 <div class="line"><span class="lineno">  702</span>                    <span class="comment">// ボーンのウェイトとインデックスをスワップ</span></div>
-<div class="line"><span class="lineno">  703</span>                    std::swap(vertex.boneWeight[i], vertex.boneWeight[j]);</div>
-<div class="line"><span class="lineno">  704</span>                    std::swap(vertex.boneIndex[i], vertex.boneIndex[j]);</div>
+<div class="line"><span class="lineno">  703</span>                    <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(vertex.boneWeight[i], vertex.boneWeight[j]);</div>
+<div class="line"><span class="lineno">  704</span>                    <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(vertex.boneIndex[i], vertex.boneIndex[j]);</div>
 <div class="line"><span class="lineno">  705</span>                }</div>
 <div class="line"><span class="lineno">  706</span>            }</div>
 <div class="line"><span class="lineno">  707</span>        }</div>
@@ -1489,10 +1490,17 @@ template&lt;typename ConstantBufferT , typename VertexT &gt; </div>
 <div class="line"><span class="lineno">  736</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1FbxParts_html_a07aea4871d45bf9e23f9d65a5011e7f1"><div class="ttname"><a href="classmtgb_1_1FbxParts.html#a07aea4871d45bf9e23f9d65a5011e7f1">mtgb::FbxParts::boneNamePair_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, Bone *, TransparentStringHash, TransparentStringEq &gt; boneNamePair_</div><div class="ttdef"><b>Definition:</b> <a href="FbxParts_8h_source.html#l00194">FbxParts.h:194</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1FbxParts_html_a97b6ac2916c9bbb93dc80f8682ed94f7"><div class="ttname"><a href="classmtgb_1_1FbxParts.html#a97b6ac2916c9bbb93dc80f8682ed94f7">mtgb::FbxParts::bones_</a></div><div class="ttdeci">std::vector&lt; Bone &gt; bones_</div><div class="ttdef"><b>Definition:</b> <a href="FbxParts_8h_source.html#l00192">FbxParts.h:192</a></div></div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
 <div class="ttc" id="astructmtgb_1_1FbxParts_1_1Vertex_html_afa2c975f3d9b8fb6178cc40b92b01a94"><div class="ttname"><a href="structmtgb_1_1FbxParts_1_1Vertex.html#afa2c975f3d9b8fb6178cc40b92b01a94">mtgb::FbxParts::Vertex::boneWeight</a></div><div class="ttdeci">std::array&lt; float, 4 &gt; boneWeight</div><div class="ttdef"><b>Definition:</b> <a href="FbxParts_8h_source.html#l00040">FbxParts.h:40</a></div></div>
 <div class="ttc" id="astructmtgb_1_1FbxParts_1_1Vertex_html_afab19d637f7851c6af4a11c8882df005"><div class="ttname"><a href="structmtgb_1_1FbxParts_1_1Vertex.html#afab19d637f7851c6af4a11c8882df005">mtgb::FbxParts::Vertex::boneIndex</a></div><div class="ttdeci">std::array&lt; uint32_t, 4 &gt; boneIndex</div><div class="ttdef"><b>Definition:</b> <a href="FbxParts_8h_source.html#l00039">FbxParts.h:39</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="FbxParts_8h_source.html#l00039">mtgb::FbxParts::Vertex::boneIndex</a>, <a class="el" href="FbxParts_8h_source.html#l00040">mtgb::FbxParts::Vertex::boneWeight</a>.</p>
+<p class="reference">参照先 <a class="el" href="FbxParts_8h_source.html#l00039">mtgb::FbxParts::Vertex::boneIndex</a>, <a class="el" href="FbxParts_8h_source.html#l00040">mtgb::FbxParts::Vertex::boneWeight</a>, <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1FbxParts_a3a025121b0ca47b981432824825652e3_cgraph.svg" width="327" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

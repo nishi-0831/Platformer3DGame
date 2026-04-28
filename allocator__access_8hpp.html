@@ -1,0 +1,332 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: allocator_access.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('allocator__access_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">allocator_access.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="pointer__traits_8hpp_source.html">boost/core/pointer_traits.hpp</a>&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+allocator_access.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="allocator__access_8hpp__incl.svg" width="835" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="allocator__access_8hpp__dep__incl.svg" width="684" height="564"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="allocator__access_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__value__type.html">boost::allocator_value_type&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__ptr.html">boost::detail::alloc_ptr&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__void.html">boost::detail::alloc_void&lt; class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__ptr_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1pointer_01_4_1_1type_01_4.html">boost::detail::alloc_ptr&lt; A, typename alloc_void&lt; typename A::pointer &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__pointer.html">boost::allocator_pointer&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__const__ptr.html">boost::detail::alloc_const_ptr&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__const__ptr_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_7504a89f40656082d97ba5f2660d34b0.html">boost::detail::alloc_const_ptr&lt; A, typename alloc_void&lt; typename A::const_pointer &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__const__pointer.html">boost::allocator_const_pointer&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__to.html">boost::detail::alloc_to&lt; class, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__to_3_01A_3_01U_00_01V_8_8_8_01_4_00_01T_01_4.html">boost::detail::alloc_to&lt; A&lt; U, V... &gt;, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__rebind.html">boost::detail::alloc_rebind&lt; A, T, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__rebind_3_01A_00_01T_00_01typename_01alloc__void_3_01typename_01Ad3c82dc426f5f0fb0da42370b00fd94e.html">boost::detail::alloc_rebind&lt; A, T, typename alloc_void&lt; typename A::template rebind&lt; T &gt;::other &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__rebind.html">boost::allocator_rebind&lt; A, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__void__ptr.html">boost::detail::alloc_void_ptr&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__void__ptr_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1void__pointer_01_4_1_1type_01_4.html">boost::detail::alloc_void_ptr&lt; A, typename alloc_void&lt; typename A::void_pointer &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__void__pointer.html">boost::allocator_void_pointer&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__const__void__ptr.html">boost::detail::alloc_const_void_ptr&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__const__void__ptr_3_01A_00_01typename_01alloc__void_3_01typename_e509d7e1a32dc4667cf4aaf6269c1c51.html">boost::detail::alloc_const_void_ptr&lt; A, typename alloc_void&lt; typename A::const_void_pointer &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__const__void__pointer.html">boost::allocator_const_void_pointer&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__diff__type.html">boost::detail::alloc_diff_type&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__diff__type_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_6e5cb267791aeb5cbbfff0f21e138838.html">boost::detail::alloc_diff_type&lt; A, typename alloc_void&lt; typename A::difference_type &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__difference__type.html">boost::allocator_difference_type&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__size__type.html">boost::detail::alloc_size_type&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__size__type_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1size__type_01_4_1_1type_01_4.html">boost::detail::alloc_size_type&lt; A, typename alloc_void&lt; typename A::size_type &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__size__type.html">boost::allocator_size_type&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocca.html">boost::detail::alloc_pocca&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocca_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1prop9e6eb63f6dae489428b73356948bc4fb.html">boost::detail::alloc_pocca&lt; A, typename alloc_void&lt; typename A::propagate_on_container_copy_assignment &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__propagate__on__container__copy__assignment.html">boost::allocator_propagate_on_container_copy_assignment&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocma.html">boost::detail::alloc_pocma&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocma_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1propebeac70b970302c02485b7afd9797b55.html">boost::detail::alloc_pocma&lt; A, typename alloc_void&lt; typename A::propagate_on_container_move_assignment &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__propagate__on__container__move__assignment.html">boost::allocator_propagate_on_container_move_assignment&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocs.html">boost::detail::alloc_pocs&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__pocs_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1propab1170c9427974284991fb4fc711b80bf.html">boost::detail::alloc_pocs&lt; A, typename alloc_void&lt; typename A::propagate_on_container_swap &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__propagate__on__container__swap.html">boost::allocator_propagate_on_container_swap&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__equal.html">boost::detail::alloc_equal&lt; A, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__equal_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1is__always__equal_01_4_1_1type_01_4.html">boost::detail::alloc_equal&lt; A, typename alloc_void&lt; typename A::is_always_equal &gt;::type &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1allocator__is__always__equal.html">boost::allocator_is_always_equal&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__no.html">boost::detail::alloc_no&lt; class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__has__allocate.html">boost::detail::alloc_has_allocate&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__has__construct.html">boost::detail::alloc_has_construct&lt; A, T, Args &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__if.html">boost::detail::alloc_if&lt; bool, class &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1alloc__if_3_01true_00_01T_01_4.html">boost::detail::alloc_if&lt; true, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__has__destroy.html">boost::detail::alloc_has_destroy&lt; A, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__has__max__size.html">boost::detail::alloc_has_max_size&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__has__soccc.html">boost::detail::alloc_has_soccc&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1alloc__destroyer.html">boost::detail::alloc_destroyer&lt; A, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a1044306dd388530edd628a747d3f8591"><td class="memItemLeft" align="right" valign="top">typedef std::false_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a1044306dd388530edd628a747d3f8591">boost::detail::alloc_false</a></td></tr>
+<tr class="separator:a1044306dd388530edd628a747d3f8591"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb97c49d696cee7fba7b34ec062a4741"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:afb97c49d696cee7fba7b34ec062a4741"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#afb97c49d696cee7fba7b34ec062a4741">boost::allocator_value_type_t</a> = typename allocator_value_type&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:afb97c49d696cee7fba7b34ec062a4741"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d6472f08b08deab951e8a2551873a49"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a0d6472f08b08deab951e8a2551873a49"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a0d6472f08b08deab951e8a2551873a49">boost::allocator_pointer_t</a> = typename allocator_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a0d6472f08b08deab951e8a2551873a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415c753267d892bf34eef3a47b7d629f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a415c753267d892bf34eef3a47b7d629f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a415c753267d892bf34eef3a47b7d629f">boost::allocator_const_pointer_t</a> = typename allocator_const_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a415c753267d892bf34eef3a47b7d629f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b16a45462d5f0d40be239975cd71b61"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a9b16a45462d5f0d40be239975cd71b61"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a9b16a45462d5f0d40be239975cd71b61">boost::allocator_void_pointer_t</a> = typename allocator_void_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a9b16a45462d5f0d40be239975cd71b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a029f370f773ec119873e6eda73b425e5"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a029f370f773ec119873e6eda73b425e5"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a029f370f773ec119873e6eda73b425e5">boost::allocator_const_void_pointer_t</a> = typename allocator_const_void_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a029f370f773ec119873e6eda73b425e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a47f4db79cfc7c27b7d342b164299a3c3"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a47f4db79cfc7c27b7d342b164299a3c3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a47f4db79cfc7c27b7d342b164299a3c3">boost::allocator_difference_type_t</a> = typename allocator_difference_type&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a47f4db79cfc7c27b7d342b164299a3c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca03f40b5460388975b74c1b2cb9d02b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:aca03f40b5460388975b74c1b2cb9d02b"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aca03f40b5460388975b74c1b2cb9d02b">boost::allocator_size_type_t</a> = typename allocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:aca03f40b5460388975b74c1b2cb9d02b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5654e7ffcdebfe627c684495e2c0936"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:ae5654e7ffcdebfe627c684495e2c0936"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ae5654e7ffcdebfe627c684495e2c0936">boost::allocator_propagate_on_container_copy_assignment_t</a> = typename allocator_propagate_on_container_copy_assignment&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:ae5654e7ffcdebfe627c684495e2c0936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e93aeb6a238015290d32a8244bc528f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a4e93aeb6a238015290d32a8244bc528f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a4e93aeb6a238015290d32a8244bc528f">boost::allocator_propagate_on_container_move_assignment_t</a> = typename allocator_propagate_on_container_move_assignment&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a4e93aeb6a238015290d32a8244bc528f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27b136611caf2ff8a076a235fd64895a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a27b136611caf2ff8a076a235fd64895a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a27b136611caf2ff8a076a235fd64895a">boost::allocator_propagate_on_container_swap_t</a> = typename allocator_propagate_on_container_swap&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:a27b136611caf2ff8a076a235fd64895a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a8ab4fc31b813ecfdd1d04076d9958"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:ad3a8ab4fc31b813ecfdd1d04076d9958"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ad3a8ab4fc31b813ecfdd1d04076d9958">boost::allocator_is_always_equal_t</a> = typename allocator_is_always_equal&lt; <a class="el" href="classA.html">A</a> &gt;::type</td></tr>
+<tr class="separator:ad3a8ab4fc31b813ecfdd1d04076d9958"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39062381f011aa30191a5695e48ffa93"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:a39062381f011aa30191a5695e48ffa93"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a39062381f011aa30191a5695e48ffa93">boost::allocator_rebind_t</a> = typename allocator_rebind&lt; <a class="el" href="classA.html">A</a>, T &gt;::type</td></tr>
+<tr class="separator:a39062381f011aa30191a5695e48ffa93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a3fc98b426ce525a8c8fa412baea2862e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a3fc98b426ce525a8c8fa412baea2862e"><td class="memTemplItemLeft" align="right" valign="top">allocator_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a3fc98b426ce525a8c8fa412baea2862e">boost::allocator_allocate</a> (<a class="el" href="classA.html">A</a> &amp;a, typename allocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type n)</td></tr>
+<tr class="separator:a3fc98b426ce525a8c8fa412baea2862e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450d6e7f218cbcd4f130b8737f3fc85a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a450d6e7f218cbcd4f130b8737f3fc85a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a450d6e7f218cbcd4f130b8737f3fc85a">boost::allocator_deallocate</a> (<a class="el" href="classA.html">A</a> &amp;a, typename allocator_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type p, typename allocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type n)</td></tr>
+<tr class="separator:a450d6e7f218cbcd4f130b8737f3fc85a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eede03db9e7eb98d0d1e53f06959925"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a8eede03db9e7eb98d0d1e53f06959925"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::alloc_has_allocate&lt; <a class="el" href="classA.html">A</a> &gt;::value, typenameallocator_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a8eede03db9e7eb98d0d1e53f06959925">boost::allocator_allocate</a> (<a class="el" href="classA.html">A</a> &amp;a, typename allocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type n, typename allocator_const_void_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type h)</td></tr>
+<tr class="separator:a8eede03db9e7eb98d0d1e53f06959925"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8ea119dae42de62403f3b8f55a8571"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a1c8ea119dae42de62403f3b8f55a8571"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!detail::alloc_has_allocate&lt; <a class="el" href="classA.html">A</a> &gt;::value, typenameallocator_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a1c8ea119dae42de62403f3b8f55a8571">boost::allocator_allocate</a> (<a class="el" href="classA.html">A</a> &amp;a, typename allocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type n, typename allocator_const_void_pointer&lt; <a class="el" href="classA.html">A</a> &gt;::type)</td></tr>
+<tr class="separator:a1c8ea119dae42de62403f3b8f55a8571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2925261847ea4344c77da6ed5298bce7"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T , class... Args&gt; </td></tr>
+<tr class="memitem:a2925261847ea4344c77da6ed5298bce7"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::alloc_has_construct&lt; <a class="el" href="classA.html">A</a>, T, Args... &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a2925261847ea4344c77da6ed5298bce7">boost::allocator_construct</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:a2925261847ea4344c77da6ed5298bce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbdb5bbc1dd322df5dfc1a43a77b101d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T , class... Args&gt; </td></tr>
+<tr class="memitem:abbdb5bbc1dd322df5dfc1a43a77b101d"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!detail::alloc_has_construct&lt; <a class="el" href="classA.html">A</a>, T, Args... &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#abbdb5bbc1dd322df5dfc1a43a77b101d">boost::allocator_construct</a> (<a class="el" href="classA.html">A</a> &amp;, T *p, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:abbdb5bbc1dd322df5dfc1a43a77b101d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08ebf04791fad343af6be9435aee722e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:a08ebf04791fad343af6be9435aee722e"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt; detail::alloc_has_destroy&lt; <a class="el" href="classA.html">A</a>, T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a08ebf04791fad343af6be9435aee722e">boost::allocator_destroy</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p)</td></tr>
+<tr class="separator:a08ebf04791fad343af6be9435aee722e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50cbcd5cecc85c62629438fbc88c1776"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:a50cbcd5cecc85c62629438fbc88c1776"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt;!detail::alloc_has_destroy&lt; <a class="el" href="classA.html">A</a>, T &gt;::value &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a50cbcd5cecc85c62629438fbc88c1776">boost::allocator_destroy</a> (<a class="el" href="classA.html">A</a> &amp;, T *p)</td></tr>
+<tr class="separator:a50cbcd5cecc85c62629438fbc88c1776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f653f2f15ce60357cca14a8057baa9"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a04f653f2f15ce60357cca14a8057baa9"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt; detail::alloc_has_max_size&lt; <a class="el" href="classA.html">A</a> &gt;::value, typenameallocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a04f653f2f15ce60357cca14a8057baa9">boost::allocator_max_size</a> (const <a class="el" href="classA.html">A</a> &amp;a) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a04f653f2f15ce60357cca14a8057baa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a208095a327d545dceaa8ba0008e06f95"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a208095a327d545dceaa8ba0008e06f95"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt;!detail::alloc_has_max_size&lt; <a class="el" href="classA.html">A</a> &gt;::value, typenameallocator_size_type&lt; <a class="el" href="classA.html">A</a> &gt;::type &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a208095a327d545dceaa8ba0008e06f95">boost::allocator_max_size</a> (const <a class="el" href="classA.html">A</a> &amp;) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a208095a327d545dceaa8ba0008e06f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04f7c8dbe17424dc574a5de24e7345d1"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a04f7c8dbe17424dc574a5de24e7345d1"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt; detail::alloc_has_soccc&lt; <a class="el" href="classA.html">A</a> &gt;::value, <a class="el" href="classA.html">A</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a04f7c8dbe17424dc574a5de24e7345d1">boost::allocator_select_on_container_copy_construction</a> (const <a class="el" href="classA.html">A</a> &amp;a)</td></tr>
+<tr class="separator:a04f7c8dbe17424dc574a5de24e7345d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c71d92af53b0172fb20191ce0bba08"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:ac7c71d92af53b0172fb20191ce0bba08"><td class="memTemplItemLeft" align="right" valign="top">detail::alloc_if&lt;!detail::alloc_has_soccc&lt; <a class="el" href="classA.html">A</a> &gt;::value, <a class="el" href="classA.html">A</a> &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ac7c71d92af53b0172fb20191ce0bba08">boost::allocator_select_on_container_copy_construction</a> (const <a class="el" href="classA.html">A</a> &amp;a)</td></tr>
+<tr class="separator:ac7c71d92af53b0172fb20191ce0bba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0895d100a81643e4a69b4af106d823"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:a7b0895d100a81643e4a69b4af106d823"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a7b0895d100a81643e4a69b4af106d823">boost::allocator_destroy_n</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p, std::size_t n)</td></tr>
+<tr class="separator:a7b0895d100a81643e4a69b4af106d823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab54ac00496acd41a7a9136dd38aceb91"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:ab54ac00496acd41a7a9136dd38aceb91"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab54ac00496acd41a7a9136dd38aceb91">boost::allocator_construct_n</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p, std::size_t n)</td></tr>
+<tr class="separator:ab54ac00496acd41a7a9136dd38aceb91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ff8f77e65850a327e2d6f338402fd5a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T &gt; </td></tr>
+<tr class="memitem:a7ff8f77e65850a327e2d6f338402fd5a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a7ff8f77e65850a327e2d6f338402fd5a">boost::allocator_construct_n</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p, std::size_t n, const T *l, std::size_t m)</td></tr>
+<tr class="separator:a7ff8f77e65850a327e2d6f338402fd5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32cc1473ec02049a6cb5d749459fcc65"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classA.html">A</a> , class T , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a> &gt; </td></tr>
+<tr class="memitem:a32cc1473ec02049a6cb5d749459fcc65"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a32cc1473ec02049a6cb5d749459fcc65">boost::allocator_construct_n</a> (<a class="el" href="classA.html">A</a> &amp;a, T *p, std::size_t n, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a> b)</td></tr>
+<tr class="separator:a32cc1473ec02049a6cb5d749459fcc65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_3d8842992ca4653e6f2b7f6848ba9a43.html">core</a></li><li class="navelem"><a class="el" href="allocator__access_8hpp.html">allocator_access.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

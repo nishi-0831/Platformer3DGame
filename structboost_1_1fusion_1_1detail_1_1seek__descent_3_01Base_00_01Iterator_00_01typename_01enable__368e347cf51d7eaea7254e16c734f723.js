@@ -1,0 +1,5 @@
+var structboost_1_1fusion_1_1detail_1_1seek__descent_3_01Base_00_01Iterator_00_01typename_01enable__368e347cf51d7eaea7254e16c734f723 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1seek__descent_3_01Base_00_01Iterator_00_01typename_01enable__368e347cf51d7eaea7254e16c734f723.html#ace4beb1d69acd0eaff2aa9eb7814f7e4", null ],
+    [ "apply", "structboost_1_1fusion_1_1detail_1_1seek__descent_3_01Base_00_01Iterator_00_01typename_01enable__368e347cf51d7eaea7254e16c734f723.html#aa553137f5e995a1df6547f1d4ff9e37d", null ]
+];

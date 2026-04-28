@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: enable_shared_from_raw.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('enable__shared__from__raw_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">enable_shared_from_raw.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="enable__shared__from__raw_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOOST_ENABLE_SHARED_FROM_RAW_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOST_ENABLE_SHARED_FROM_RAW_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  enable_shared_from_raw.hpp</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  Copyright 2002, 2009, 2014 Peter Dimov</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  Copyright 2008-2009 Frank Mori Hess</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="shared__ptr_8hpp.html">boost/shared_ptr.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="weak__ptr_8hpp.html">boost/weak_ptr.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="assert_8hpp.html">boost/assert.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="config_2workaround_8hpp.html">boost/config/workaround.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;T&gt;</a> <a class="code hl_function" href="namespaceboost.html#aa334d57597d5abb5827325a9cda90390">shared_from_raw</a>(T *);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr&lt;T&gt;</a> <a class="code hl_function" href="namespaceboost.html#a6e88ab5b56c7c8bcd8a9d7d007500909">weak_from_raw</a>(T *);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">template</span>&lt; <span class="keyword">class</span> X, <span class="keyword">class</span> Y &gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceboost_1_1detail.html#a19a2dddf21c603de551c8472912ea5d2">sp_enable_shared_from_this</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;X&gt;</a> * ppx, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> <span class="keyword">const</span> * py, <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">boost::enable_shared_from_raw</a> <span class="keyword">const</span> * pe );</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html">   32</a></span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a57c9d7ec46afb0c18e774dbb326c346a">   36</a></span>    <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a57c9d7ec46afb0c18e774dbb326c346a">enable_shared_from_raw</a>()</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#ab97a0a75ede72197a41b812de11e36a3">   40</a></span>    <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#ab97a0a75ede72197a41b812de11e36a3">enable_shared_from_raw</a>( <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a> <span class="keyword">const</span> &amp; )</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a1d32433d1f330915f6b3161414948575">   44</a></span>    <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a> &amp; <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a1d32433d1f330915f6b3161414948575">operator=</a>( <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a> <span class="keyword">const</span> &amp; )</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a60c7354571650560d47ff4c195a926cc">   49</a></span>    <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a60c7354571650560d47ff4c195a926cc">~enable_shared_from_raw</a>()</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>.<a class="code hl_function" href="classboost_1_1shared__ptr.html#af8635f472678f49e52f47a45a04f83e0">use_count</a>() &lt;= 1 ); <span class="comment">// make sure no dangling shared_ptr objects exist</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a751fdb9de3276dd3c62910dfc992bc1f">   56</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a751fdb9de3276dd3c62910dfc992bc1f">init_if_expired</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a>.<a class="code hl_function" href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">expired</a>() )</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>.<a class="code hl_function" href="classboost_1_1shared__ptr.html#a0aadaf19aa728089cd8ebd360840a2fc">reset</a>( <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(0), <a class="code hl_class" href="classboost_1_1detail_1_1esft2__deleter__wrapper.html">detail::esft2_deleter_wrapper</a>() );</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a> = <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a61348e02b126594a009e4e9771ecb702">   65</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a61348e02b126594a009e4e9771ecb702">init_if_empty</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a>.<a class="code hl_function" href="classboost_1_1weak__ptr.html#afdb607454ea148316e7d321b29dd3007">_empty</a>() )</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>.<a class="code hl_function" href="classboost_1_1shared__ptr.html#a0aadaf19aa728089cd8ebd360840a2fc">reset</a>( <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(0), <a class="code hl_class" href="classboost_1_1detail_1_1esft2__deleter__wrapper.html">detail::esft2_deleter_wrapper</a>() );</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a> = <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#ab2104fa6e839672da3c30400e8325e52">   76</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">friend</span> <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;T&gt;</a> <a class="code hl_friend" href="classboost_1_1enable__shared__from__raw.html#a90b78aae5c96f32f5e6437f5c2cc416c">shared_from_raw</a>(T *);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt; <span class="keyword">friend</span> <a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr&lt;T&gt;</a> <a class="code hl_friend" href="classboost_1_1enable__shared__from__raw.html#ae2e85b41bb611ff0cc9b37df902a1c81">weak_from_raw</a>(T *);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#af779ab27534d93ea86a7e2ab895b86c3">   79</a></span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> X, <span class="keyword">class</span> Y &gt; <span class="keyword">friend</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceboost_1_1detail.html#a19a2dddf21c603de551c8472912ea5d2">detail::sp_enable_shared_from_this</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;X&gt;</a> * ppx, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> <span class="keyword">const</span> * py, <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">boost::enable_shared_from_raw</a> <span class="keyword">const</span> * pe );</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a7809c7888163724c6b94d6a45b9d5f26">   81</a></span>    <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;void const volatile&gt;</a> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a7809c7888163724c6b94d6a45b9d5f26">shared_from_this</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a751fdb9de3276dd3c62910dfc992bc1f">init_if_expired</a>();</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;void const volatile&gt;</a>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a> );</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a987ee2d8673c3053f7d2870186858f57">   87</a></span>    <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;void const volatile&gt;</a> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a987ee2d8673c3053f7d2870186858f57">shared_from_this</a>()<span class="keyword"> const volatile</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span> <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a> <span class="keyword">const </span>* <span class="keyword">&gt;</span>( this )-&gt;<a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a7809c7888163724c6b94d6a45b9d5f26">shared_from_this</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#ac37cec6d1d75551c82c944acea75bd41">   92</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;void const volatile&gt;</a> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#ac37cec6d1d75551c82c944acea75bd41">weak_from_this</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a61348e02b126594a009e4e9771ecb702">init_if_empty</a>();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a743c0ec19a186b6ea7c08d9d3e254286">   98</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;void const volatile&gt;</a> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a743c0ec19a186b6ea7c08d9d3e254286">weak_from_this</a>()<span class="keyword"> const volatile</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span> <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">enable_shared_from_raw</a> <span class="keyword">const </span>* <span class="keyword">&gt;</span>( this )-&gt;<a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#ac37cec6d1d75551c82c944acea75bd41">weak_from_this</a>();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    }</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// Note: invoked automatically by shared_ptr; do not call</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a836bc682df11920717194a19fb341b04">  104</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> X, <span class="keyword">class</span> Y&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a836bc682df11920717194a19fb341b04">_internal_accept_owner</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;X&gt;</a> * ppx, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> * )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( ppx != 0 );</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a>.<a class="code hl_function" href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">expired</a>() )</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a> = *ppx;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>.<a class="code hl_function" href="classboost_1_1shared__ptr.html#af8635f472678f49e52f47a45a04f83e0">use_count</a>() != 0 )</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>            <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( ppx-&gt;unique() ); <span class="comment">// no weak_ptrs should exist either, but there&#39;s no way to check that</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <a class="code hl_class" href="classboost_1_1detail_1_1esft2__deleter__wrapper.html">detail::esft2_deleter_wrapper</a> * pd = boost::get_deleter&lt;detail::esft2_deleter_wrapper&gt;( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a> );</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>            <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( pd != 0 );</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            pd-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1esft2__deleter__wrapper.html#a669cf324dc21d81e24ac789fbea586a3">set_deleter</a>( *ppx );</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            ppx-&gt;reset( <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>, ppx-&gt;get() );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>.<a class="code hl_function" href="classboost_1_1shared__ptr.html#a0aadaf19aa728089cd8ebd360840a2fc">reset</a>();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">  126</a></span>    <span class="keyword">mutable</span> <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;void const volatile&gt;</a> <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">weak_this_</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">  130</a></span>    <span class="keyword">mutable</span> <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;void const volatile&gt;</a> <a class="code hl_variable" href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">shared_this_</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>};</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#a90b78aae5c96f32f5e6437f5c2cc416c">  134</a></span><a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;T&gt;</a> <a class="code hl_function" href="namespaceboost.html#aa334d57597d5abb5827325a9cda90390">shared_from_raw</a>(T *p)</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>{</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>(p != 0);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;T&gt;</a>(p-&gt;enable_shared_from_raw::shared_from_this(), p);</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>}</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="classboost_1_1enable__shared__from__raw.html#ae2e85b41bb611ff0cc9b37df902a1c81">  141</a></span><a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr&lt;T&gt;</a> <a class="code hl_function" href="namespaceboost.html#a6e88ab5b56c7c8bcd8a9d7d007500909">weak_from_raw</a>(T *p)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>{</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>(p != 0);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr&lt;T&gt;</a> result(p-&gt;enable_shared_from_raw::weak_from_this(), p);</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>}</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>{</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail.html#a19a2dddf21c603de551c8472912ea5d2">  150</a></span>    <span class="keyword">template</span>&lt; <span class="keyword">class</span> X, <span class="keyword">class</span> Y &gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceboost_1_1detail.html#a19a2dddf21c603de551c8472912ea5d2">sp_enable_shared_from_this</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">boost::shared_ptr&lt;X&gt;</a> * ppx, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> <span class="keyword">const</span> * py, <a class="code hl_class" href="classboost_1_1enable__shared__from__raw.html">boost::enable_shared_from_raw</a> <span class="keyword">const</span> * pe )</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        <span class="keywordflow">if</span>( pe != 0 )</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            pe-&gt;<a class="code hl_function" href="classboost_1_1enable__shared__from__raw.html#a836bc682df11920717194a19fb341b04">_internal_accept_owner</a>( ppx, <span class="keyword">const_cast&lt;</span> <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>* <span class="keyword">&gt;</span>( py ) );</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>} <span class="comment">// namepsace detail</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef BOOST_ENABLE_SHARED_FROM_RAW_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">KeyCode::Y</a></div><div class="ttdeci">@ Y</div></div>
+<div class="ttc" id="aassert_8hpp_html"><div class="ttname"><a href="assert_8hpp.html">assert.hpp</a></div></div>
+<div class="ttc" id="aassert_8hpp_html_af7c4c2fca8dd235a0eaadd7570181c13"><div class="ttname"><a href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a></div><div class="ttdeci">#define BOOST_ASSERT(expr)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8hpp_source.html#l00066">assert.hpp:66</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1esft2__deleter__wrapper_html"><div class="ttname"><a href="classboost_1_1detail_1_1esft2__deleter__wrapper.html">boost::detail::esft2_deleter_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00797">smart_ptr/shared_ptr.hpp:798</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1esft2__deleter__wrapper_html_a669cf324dc21d81e24ac789fbea586a3"><div class="ttname"><a href="classboost_1_1detail_1_1esft2__deleter__wrapper.html#a669cf324dc21d81e24ac789fbea586a3">boost::detail::esft2_deleter_wrapper::set_deleter</a></div><div class="ttdeci">void set_deleter(shared_ptr&lt; T &gt; const &amp;deleter) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00809">smart_ptr/shared_ptr.hpp:809</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html">boost::enable_shared_from_raw</a></div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00032">enable_shared_from_raw.hpp:33</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a03921ef1f7b3aac09e144a9b56948e08"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a03921ef1f7b3aac09e144a9b56948e08">boost::enable_shared_from_raw::shared_this_</a></div><div class="ttdeci">shared_ptr&lt; void const volatile &gt; shared_this_</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00130">enable_shared_from_raw.hpp:130</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a1d32433d1f330915f6b3161414948575"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a1d32433d1f330915f6b3161414948575">boost::enable_shared_from_raw::operator=</a></div><div class="ttdeci">enable_shared_from_raw &amp; operator=(enable_shared_from_raw const &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00044">enable_shared_from_raw.hpp:44</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a57c9d7ec46afb0c18e774dbb326c346a"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a57c9d7ec46afb0c18e774dbb326c346a">boost::enable_shared_from_raw::enable_shared_from_raw</a></div><div class="ttdeci">enable_shared_from_raw()</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00036">enable_shared_from_raw.hpp:36</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a60c7354571650560d47ff4c195a926cc"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a60c7354571650560d47ff4c195a926cc">boost::enable_shared_from_raw::~enable_shared_from_raw</a></div><div class="ttdeci">~enable_shared_from_raw()</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00049">enable_shared_from_raw.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a61348e02b126594a009e4e9771ecb702"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a61348e02b126594a009e4e9771ecb702">boost::enable_shared_from_raw::init_if_empty</a></div><div class="ttdeci">void init_if_empty() const</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00065">enable_shared_from_raw.hpp:65</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a743c0ec19a186b6ea7c08d9d3e254286"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a743c0ec19a186b6ea7c08d9d3e254286">boost::enable_shared_from_raw::weak_from_this</a></div><div class="ttdeci">weak_ptr&lt; void const volatile &gt; weak_from_this() const volatile</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00098">enable_shared_from_raw.hpp:98</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a751fdb9de3276dd3c62910dfc992bc1f"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a751fdb9de3276dd3c62910dfc992bc1f">boost::enable_shared_from_raw::init_if_expired</a></div><div class="ttdeci">void init_if_expired() const</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00056">enable_shared_from_raw.hpp:56</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a7809c7888163724c6b94d6a45b9d5f26"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a7809c7888163724c6b94d6a45b9d5f26">boost::enable_shared_from_raw::shared_from_this</a></div><div class="ttdeci">shared_ptr&lt; void const volatile &gt; shared_from_this() const</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00081">enable_shared_from_raw.hpp:81</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a836bc682df11920717194a19fb341b04"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a836bc682df11920717194a19fb341b04">boost::enable_shared_from_raw::_internal_accept_owner</a></div><div class="ttdeci">void _internal_accept_owner(shared_ptr&lt; X &gt; *ppx, Y *) const</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00104">enable_shared_from_raw.hpp:104</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a90b78aae5c96f32f5e6437f5c2cc416c"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a90b78aae5c96f32f5e6437f5c2cc416c">boost::enable_shared_from_raw::shared_from_raw</a></div><div class="ttdeci">friend boost::shared_ptr&lt; T &gt; shared_from_raw(T *)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00134">enable_shared_from_raw.hpp:134</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_a987ee2d8673c3053f7d2870186858f57"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#a987ee2d8673c3053f7d2870186858f57">boost::enable_shared_from_raw::shared_from_this</a></div><div class="ttdeci">shared_ptr&lt; void const volatile &gt; shared_from_this() const volatile</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00087">enable_shared_from_raw.hpp:87</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_ab97a0a75ede72197a41b812de11e36a3"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#ab97a0a75ede72197a41b812de11e36a3">boost::enable_shared_from_raw::enable_shared_from_raw</a></div><div class="ttdeci">enable_shared_from_raw(enable_shared_from_raw const &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00040">enable_shared_from_raw.hpp:40</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_ac37cec6d1d75551c82c944acea75bd41"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#ac37cec6d1d75551c82c944acea75bd41">boost::enable_shared_from_raw::weak_from_this</a></div><div class="ttdeci">weak_ptr&lt; void const volatile &gt; weak_from_this() const</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00092">enable_shared_from_raw.hpp:92</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_ac51912361f9e70fba05ec021a3b6dff2"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#ac51912361f9e70fba05ec021a3b6dff2">boost::enable_shared_from_raw::weak_this_</a></div><div class="ttdeci">weak_ptr&lt; void const volatile &gt; weak_this_</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00126">enable_shared_from_raw.hpp:126</a></div></div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__raw_html_ae2e85b41bb611ff0cc9b37df902a1c81"><div class="ttname"><a href="classboost_1_1enable__shared__from__raw.html#ae2e85b41bb611ff0cc9b37df902a1c81">boost::enable_shared_from_raw::weak_from_raw</a></div><div class="ttdeci">friend boost::weak_ptr&lt; T &gt; weak_from_raw(T *)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00141">enable_shared_from_raw.hpp:141</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html"><div class="ttname"><a href="classboost_1_1shared__ptr.html">boost::shared_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00253">smart_ptr/shared_ptr.hpp:254</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html_a0aadaf19aa728089cd8ebd360840a2fc"><div class="ttname"><a href="classboost_1_1shared__ptr.html#a0aadaf19aa728089cd8ebd360840a2fc">boost::shared_ptr::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00511">smart_ptr/shared_ptr.hpp:511</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html_af8635f472678f49e52f47a45a04f83e0"><div class="ttname"><a href="classboost_1_1shared__ptr.html#af8635f472678f49e52f47a45a04f83e0">boost::shared_ptr::use_count</a></div><div class="ttdeci">long use_count() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00577">smart_ptr/shared_ptr.hpp:577</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html"><div class="ttname"><a href="classboost_1_1weak__ptr.html">boost::weak_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00024">smart_ptr/weak_ptr.hpp:25</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_acef4526b695b19a409ed38c5fd729e79"><div class="ttname"><a href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">boost::weak_ptr::expired</a></div><div class="ttdeci">bool expired() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00159">smart_ptr/weak_ptr.hpp:159</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_afdb607454ea148316e7d321b29dd3007"><div class="ttname"><a href="classboost_1_1weak__ptr.html#afdb607454ea148316e7d321b29dd3007">boost::weak_ptr::_empty</a></div><div class="ttdeci">bool _empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00164">smart_ptr/weak_ptr.hpp:164</a></div></div>
+<div class="ttc" id="aconfig_2workaround_8hpp_html"><div class="ttname"><a href="config_2workaround_8hpp.html">workaround.hpp</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_a19a2dddf21c603de551c8472912ea5d2"><div class="ttname"><a href="namespaceboost_1_1detail.html#a19a2dddf21c603de551c8472912ea5d2">boost::detail::sp_enable_shared_from_this</a></div><div class="ttdeci">void sp_enable_shared_from_this(boost::shared_ptr&lt; X &gt; *ppx, Y const *py, boost::enable_shared_from_raw const *pe)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00150">enable_shared_from_raw.hpp:150</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a6e88ab5b56c7c8bcd8a9d7d007500909"><div class="ttname"><a href="namespaceboost.html#a6e88ab5b56c7c8bcd8a9d7d007500909">boost::weak_from_raw</a></div><div class="ttdeci">boost::weak_ptr&lt; T &gt; weak_from_raw(T *)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00141">enable_shared_from_raw.hpp:141</a></div></div>
+<div class="ttc" id="anamespaceboost_html_aa334d57597d5abb5827325a9cda90390"><div class="ttname"><a href="namespaceboost.html#aa334d57597d5abb5827325a9cda90390">boost::shared_from_raw</a></div><div class="ttdeci">boost::shared_ptr&lt; T &gt; shared_from_raw(T *)</div><div class="ttdef"><b>Definition:</b> <a href="enable__shared__from__raw_8hpp_source.html#l00134">enable_shared_from_raw.hpp:134</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="ashared__ptr_8hpp_html"><div class="ttname"><a href="shared__ptr_8hpp.html">shared_ptr.hpp</a></div></div>
+<div class="ttc" id="aweak__ptr_8hpp_html"><div class="ttname"><a href="weak__ptr_8hpp.html">weak_ptr.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_dce58d0d071335e7b898537fe26149d3.html">smart_ptr</a></li><li class="navelem"><a class="el" href="enable__shared__from__raw_8hpp.html">enable_shared_from_raw.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -117,7 +117,7 @@ mtgb::TextCache の継承関係図</div>
 <div class="dynheader">
 mtgb::TextCache 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1TextCache__coll__graph.svg" width="271" height="771"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1TextCache__coll__graph.svg" width="950" height="2131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -273,7 +273,7 @@ mtgb::TextCache 連携図</div>
 
 <p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00180">180</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
-<div class="line"><span class="lineno">  182</span>    <span class="keyword">auto</span>&amp; size_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;get&lt;font_size_order&gt;();</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keyword">auto</span>&amp; size_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a12e5cb405d5661ec34e4dc4fe0659782">fontFormatData_</a>-&gt;<a class="code hl_function" href="classboost_1_1multi__index_1_1multi__index__container.html#ac2557ba1395af0d5e44ca49e40aa32e5">get</a>&lt;font_size_order&gt;();</div>
 <div class="line"><span class="lineno">  183</span>    <span class="keyword">auto</span> it          = size_index.find(_size);</div>
 <div class="line"><span class="lineno">  184</span> </div>
 <div class="line"><span class="lineno">  185</span>    <span class="keywordflow">if</span> (it != size_index.end())</div>
@@ -290,6 +290,7 @@ mtgb::TextCache 連携図</div>
 <div class="line"><span class="lineno">  196</span> </div>
 <div class="line"><span class="lineno">  197</span>    <span class="keywordflow">return</span> fontFormatData;</div>
 <div class="line"><span class="lineno">  198</span>}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1multi__index__container_html_ac2557ba1395af0d5e44ca49e40aa32e5"><div class="ttname"><a href="classboost_1_1multi__index_1_1multi__index__container.html#ac2557ba1395af0d5e44ca49e40aa32e5">boost::multi_index::multi_index_container::get</a></div><div class="ttdeci">nth_index&lt; N &gt;::type &amp; get() BOOST_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="multi__index__container_8hpp_source.html#l00427">multi_index_container.hpp:427</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1TextCache_html_aebb8e848564761ecfe2d2e9d175b8c01"><div class="ttname"><a href="classmtgb_1_1TextCache.html#aebb8e848564761ecfe2d2e9d175b8c01">mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME</a></div><div class="ttdeci">static const wchar_t * DEFAULT_FONT_FAMILY_NAME</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8h_source.html#l00138">TextCache.h:138</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="DirectWrite_8h_source.html#l00042">mtgb::FontFormatData::pixelFontMetrics</a>.</p>
@@ -398,15 +399,15 @@ mtgb::TextCache 連携図</div>
 <p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00142">142</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
 <div class="line"><span class="lineno">  144</span>    <span class="comment">// text + size の範囲を取得</span></div>
-<div class="line"><span class="lineno">  145</span>    <span class="keyword">auto</span>&amp; text_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;text_layout_order&gt;();</div>
+<div class="line"><span class="lineno">  145</span>    <span class="keyword">auto</span>&amp; text_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;<a class="code hl_function" href="classboost_1_1multi__index_1_1multi__index__container.html#ac2557ba1395af0d5e44ca49e40aa32e5">get</a>&lt;text_layout_order&gt;();</div>
 <div class="line"><span class="lineno">  146</span>    <span class="keyword">auto</span> range       = text_index.equal_range(std::make_tuple(_text, _size));</div>
 <div class="line"><span class="lineno">  147</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = range.first; it != range.second; ++it)</div>
 <div class="line"><span class="lineno">  148</span>    {</div>
 <div class="line"><span class="lineno">  149</span>        <span class="comment">// width / height も一致するものを探す</span></div>
-<div class="line"><span class="lineno">  150</span>        TextLayoutData* data = *it;</div>
-<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (data-&gt;width == _width &amp;&amp; data-&gt;height == _height)</div>
+<div class="line"><span class="lineno">  150</span>        TextLayoutData* <a class="code hl_function" href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">data</a> = *it;</div>
+<div class="line"><span class="lineno">  151</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">data</a>-&gt;width == _width &amp;&amp; <a class="code hl_function" href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">data</a>-&gt;height == _height)</div>
 <div class="line"><span class="lineno">  152</span>        {</div>
-<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">return</span> data-&gt;handle; <span class="comment">// 完全一致があれば再利用</span></div>
+<div class="line"><span class="lineno">  153</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">data</a>-&gt;handle; <span class="comment">// 完全一致があれば再利用</span></div>
 <div class="line"><span class="lineno">  154</span>        }</div>
 <div class="line"><span class="lineno">  155</span>    }</div>
 <div class="line"><span class="lineno">  156</span> </div>
@@ -422,8 +423,9 @@ mtgb::TextCache 連携図</div>
 <div class="line"><span class="lineno">  166</span>    <span class="keywordflow">return</span> handle;</div>
 <div class="line"><span class="lineno">  167</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1TextCache_html_a33edffbc79a979597cfad6344079d73a"><div class="ttname"><a href="classmtgb_1_1TextCache.html#a33edffbc79a979597cfad6344079d73a">mtgb::TextCache::GetOrCreateTextFormat</a></div><div class="ttdeci">FontFormatData * GetOrCreateTextFormat(int _size)</div><div class="ttdoc">指定サイズのIDWriteTextFormatを取得または作成</div><div class="ttdef"><b>Definition:</b> <a href="TextCache_8cpp_source.html#l00180">TextCache.cpp:180</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a772d6ff19b503d16e8e5d907a6a9a893"><div class="ttname"><a href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">boost::data</a></div><div class="ttdeci">constexpr auto data(C &amp;c) noexcept(noexcept(c.data())) -&gt; decltype(c.data())</div><div class="ttdef"><b>Definition:</b> <a href="core_2data_8hpp_source.html#l00018">core/data.hpp:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="DirectWrite_8h_source.html#l00057">mtgb::TextLayoutData::handle</a>, <a class="el" href="DirectWrite_8h_source.html#l00054">mtgb::TextLayoutData::height</a>, <a class="el" href="DirectWrite_8h_source.html#l00054">mtgb::TextLayoutData::width</a>.</p>
+<p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>.</p>
 
 </div>
 </div>
@@ -453,7 +455,7 @@ mtgb::TextCache 連携図</div>
 
 <p class="definition"> <a class="el" href="TextCache_8cpp_source.html">TextCache.cpp</a> の <a class="el" href="TextCache_8cpp_source.html#l00169">169</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  170</span>{</div>
-<div class="line"><span class="lineno">  171</span>    <span class="keyword">auto</span>&amp; handle_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;get&lt;handle_order&gt;();</div>
+<div class="line"><span class="lineno">  171</span>    <span class="keyword">auto</span>&amp; handle_index = <a class="code hl_variable" href="classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f">textLayoutData_</a>-&gt;<a class="code hl_function" href="classboost_1_1multi__index_1_1multi__index__container.html#ac2557ba1395af0d5e44ca49e40aa32e5">get</a>&lt;handle_order&gt;();</div>
 <div class="line"><span class="lineno">  172</span>    <span class="keyword">auto</span> it            = handle_index.find(_handle);</div>
 <div class="line"><span class="lineno">  173</span> </div>
 <div class="line"><span class="lineno">  174</span>    <span class="keywordflow">if</span> (it == handle_index.end())</div>

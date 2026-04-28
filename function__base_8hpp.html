@@ -1,0 +1,307 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: function_base.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('function__base_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">function_base.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="function__fwd_8hpp_source.html">boost/function/function_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="function__equal_8hpp_source.html">boost/function_equal.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="typeinfo_8hpp_source.html">boost/core/typeinfo.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2ref_8hpp_source.html">boost/core/ref.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="assert_8hpp_source.html">boost/assert.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_2workaround_8hpp_source.html">boost/config/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;new&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+function_base.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="function__base_8hpp__incl.svg" width="1696" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="function__base_8hpp__dep__incl.svg" width="1659" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="function__base_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionboost_1_1detail_1_1function_1_1function__buffer__members.html">boost::detail::function::function_buffer_members</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__buffer__members_1_1type__t.html">boost::detail::function::function_buffer_members::type_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__buffer__members_1_1bound__memfunc__ptr__t.html">boost::detail::function::function_buffer_members::bound_memfunc_ptr_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__buffer__members_1_1obj__ref__t.html">boost::detail::function::function_buffer_members::obj_ref_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionboost_1_1detail_1_1function_1_1function__buffer.html">boost::detail::function::function_buffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__ptr__tag.html">boost::detail::function::function_ptr_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__obj__tag.html">boost::detail::function::function_obj_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1member__ptr__tag.html">boost::detail::function::member_ptr_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__obj__ref__tag.html">boost::detail::function::function_obj_ref_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1function_1_1get__function__tag.html">boost::detail::function::get_function_tag&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1reference__manager.html">boost::detail::function::reference_manager&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1function__allows__small__object__optimization.html">boost::detail::function::function_allows_small_object_optimization&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1functor__wrapper.html">boost::detail::function::functor_wrapper&lt; F, A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1functor__manager__common.html">boost::detail::function::functor_manager_common&lt; Functor &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1functor__manager.html">boost::detail::function::functor_manager&lt; Functor &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1functor__manager__a.html">boost::detail::function::functor_manager_a&lt; Functor, Allocator &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1useless__clear__type.html">boost::detail::function::useless_clear_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1function_1_1vtable__base.html">boost::detail::function::vtable_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1function__base.html">boost::function_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1bad__function__call.html">boost::bad_function_call</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail_1_1function"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail_1_1function.html">boost::detail::function</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a506532b51e5479fc5e013a684847c7af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function__base_8hpp.html#a506532b51e5479fc5e013a684847c7af">BOOST_FUNCTION_TARGET_FIX</a>(x)</td></tr>
+<tr class="separator:a506532b51e5479fc5e013a684847c7af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14388767b26770033ecba39f4452edeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="function__base_8hpp.html#a14388767b26770033ecba39f4452edeb">BOOST_FUNCTION_ENABLE_IF_NOT_INTEGRAL</a>(Functor,  Type)&#160;&#160;&#160;  typename std::enable_if&lt; !std::is_integral&lt;Functor&gt;::value, Type&gt;::type</td></tr>
+<tr class="separator:a14388767b26770033ecba39f4452edeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a8561af24ad2ba6abe3c7b86e705e3c70"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70">boost::detail::function::functor_manager_operation_type</a> { <br />
+&#160;&#160;<a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70a93ef5fd91b4f40f1209b35ccdfc361b6">boost::detail::function::clone_functor_tag</a>
+, <a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70a3e29813d3d5cbcd880e564bb3ec5e4ef">boost::detail::function::move_functor_tag</a>
+, <a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70a5aa0e33b2afd4d2d8159944f8cbb0444">boost::detail::function::destroy_functor_tag</a>
+, <a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70a74081394d5613cbf74f89e5dc92d368d">boost::detail::function::check_functor_type_tag</a>
+, <br />
+&#160;&#160;<a class="el" href="namespaceboost_1_1detail_1_1function.html#a8561af24ad2ba6abe3c7b86e705e3c70ab7ba0c64e45de8b182dfbb1646f5e936">boost::detail::function::get_functor_type_tag</a>
+<br />
+ }</td></tr>
+<tr class="separator:a8561af24ad2ba6abe3c7b86e705e3c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a7a6d8b67fe7b64a7305781ca172e7157"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a7a6d8b67fe7b64a7305781ca172e7157">boost::operator==</a> (const function_base &amp;f, detail::function::useless_clear_type *)</td></tr>
+<tr class="separator:a7a6d8b67fe7b64a7305781ca172e7157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64829f73e553dc3636a45b118a0672f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab64829f73e553dc3636a45b118a0672f">boost::operator!=</a> (const function_base &amp;f, detail::function::useless_clear_type *)</td></tr>
+<tr class="separator:ab64829f73e553dc3636a45b118a0672f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf86982e0c6c6493e798b40451db59dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html#abf86982e0c6c6493e798b40451db59dc">boost::operator==</a> (detail::function::useless_clear_type *, const function_base &amp;f)</td></tr>
+<tr class="separator:abf86982e0c6c6493e798b40451db59dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a791478070b25a9994b7e4d75e462626b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a791478070b25a9994b7e4d75e462626b">boost::operator!=</a> (detail::function::useless_clear_type *, const function_base &amp;f)</td></tr>
+<tr class="separator:a791478070b25a9994b7e4d75e462626b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff54097408023021a0128478d68cd32d"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:aff54097408023021a0128478d68cd32d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aff54097408023021a0128478d68cd32d">boost::operator==</a> (const function_base &amp;f, Functor g)</td></tr>
+<tr class="separator:aff54097408023021a0128478d68cd32d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac044cc14d4ee3da63e8a134cefe30c32"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:ac044cc14d4ee3da63e8a134cefe30c32"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ac044cc14d4ee3da63e8a134cefe30c32">boost::operator==</a> (Functor g, const function_base &amp;f)</td></tr>
+<tr class="separator:ac044cc14d4ee3da63e8a134cefe30c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e7d2bcaea24e9073325daccb45e1fbd"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:a7e7d2bcaea24e9073325daccb45e1fbd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a7e7d2bcaea24e9073325daccb45e1fbd">boost::operator!=</a> (const function_base &amp;f, Functor g)</td></tr>
+<tr class="separator:a7e7d2bcaea24e9073325daccb45e1fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af23d58c8d844a60847f4b3fb16498ee3"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:af23d58c8d844a60847f4b3fb16498ee3"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#af23d58c8d844a60847f4b3fb16498ee3">boost::operator!=</a> (Functor g, const function_base &amp;f)</td></tr>
+<tr class="separator:af23d58c8d844a60847f4b3fb16498ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab226eb1ef6163a095dd8c73d8d81287"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:aab226eb1ef6163a095dd8c73d8d81287"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aab226eb1ef6163a095dd8c73d8d81287">boost::operator==</a> (const function_base &amp;f, reference_wrapper&lt; Functor &gt; g)</td></tr>
+<tr class="separator:aab226eb1ef6163a095dd8c73d8d81287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0c8b3f41243e1dcfe5f6a459c2af356"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:ab0c8b3f41243e1dcfe5f6a459c2af356"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab0c8b3f41243e1dcfe5f6a459c2af356">boost::operator==</a> (reference_wrapper&lt; Functor &gt; g, const function_base &amp;f)</td></tr>
+<tr class="separator:ab0c8b3f41243e1dcfe5f6a459c2af356"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af76adf3517655b972a27b43af6027a7a"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:af76adf3517655b972a27b43af6027a7a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#af76adf3517655b972a27b43af6027a7a">boost::operator!=</a> (const function_base &amp;f, reference_wrapper&lt; Functor &gt; g)</td></tr>
+<tr class="separator:af76adf3517655b972a27b43af6027a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a312a17ca88d3ec0ef071ad4e154ea283"><td class="memTemplParams" colspan="2">template&lt;typename Functor &gt; </td></tr>
+<tr class="memitem:a312a17ca88d3ec0ef071ad4e154ea283"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a312a17ca88d3ec0ef071ad4e154ea283">boost::operator!=</a> (reference_wrapper&lt; Functor &gt; g, const function_base &amp;f)</td></tr>
+<tr class="separator:a312a17ca88d3ec0ef071ad4e154ea283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab522f1653edaa871b84d746d715c41e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail_1_1function.html#ab522f1653edaa871b84d746d715c41e0">boost::detail::function::has_empty_target</a> (const function_base *f)</td></tr>
+<tr class="separator:ab522f1653edaa871b84d746d715c41e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66cd25f79111552c2d4dd0976001767"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail_1_1function.html#ae66cd25f79111552c2d4dd0976001767">boost::detail::function::has_empty_target</a> (...)</td></tr>
+<tr class="separator:ae66cd25f79111552c2d4dd0976001767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a14388767b26770033ecba39f4452edeb" name="a14388767b26770033ecba39f4452edeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14388767b26770033ecba39f4452edeb">&#9670;&#160;</a></span>BOOST_FUNCTION_ENABLE_IF_NOT_INTEGRAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTION_ENABLE_IF_NOT_INTEGRAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Functor, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  typename std::enable_if&lt; !std::is_integral&lt;Functor&gt;::value, Type&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="function__base_8hpp_source.html">function_base.hpp</a> の <a class="el" href="function__base_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a506532b51e5479fc5e013a684847c7af" name="a506532b51e5479fc5e013a684847c7af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a506532b51e5479fc5e013a684847c7af">&#9670;&#160;</a></span>BOOST_FUNCTION_TARGET_FIX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTION_TARGET_FIX</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="function__base_8hpp_source.html">function_base.hpp</a> の <a class="el" href="function__base_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_647771aba6ac2cfbcbc0a3f4538f203e.html">function</a></li><li class="navelem"><a class="el" href="function__base_8hpp.html">function_base.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

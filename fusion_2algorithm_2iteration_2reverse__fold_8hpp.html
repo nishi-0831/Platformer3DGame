@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: reverse_fold.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('fusion_2algorithm_2iteration_2reverse__fold_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">fusion/algorithm/iteration/reverse_fold.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="fusion_2support_2config_8hpp_source.html">boost/fusion/support/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="reverse__fold__fwd_8hpp_source.html">boost/fusion/algorithm/iteration/reverse_fold_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html">boost/fusion/sequence/intrinsic/end.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2sequence_2intrinsic_2size_8hpp_source.html">boost/fusion/sequence/intrinsic/size.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="support_2is__segmented_8hpp_source.html">boost/fusion/support/is_segmented.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2support_2is__sequence_8hpp_source.html">boost/fusion/support/is_sequence.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2iterator_2deref_8hpp_source.html">boost/fusion/iterator/deref.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iterator_2value__of_8hpp_source.html">boost/fusion/iterator/value_of.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2iterator_2prior_8hpp_source.html">boost/fusion/iterator/prior.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="result__of_8hpp_source.html">boost/utility/result_of.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2enable__if_8hpp_source.html">boost/core/enable_if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="add__reference_8hpp_source.html">boost/type_traits/add_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2algorithm_2iteration_2detail_2preprocessed_2reverse__fold_8hpp_source.html">boost/fusion/algorithm/iteration/detail/preprocessed/reverse_fold.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+fusion/algorithm/iteration/reverse_fold.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="fusion_2algorithm_2iteration_2reverse__fold_8hpp__incl.svg" width="3991" height="1122"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="fusion_2algorithm_2iteration_2reverse__fold_8hpp__dep__incl.svg" width="342" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="fusion_2algorithm_2iteration_2reverse__fold_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ae9f4e689119c34e371958e61323b43ce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2reverse__fold_8hpp.html#ae9f4e689119c34e371958e61323b43ce">BOOST_FUSION_REVERSE_FOLD</a></td></tr>
+<tr class="separator:ae9f4e689119c34e371958e61323b43ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ae9f4e689119c34e371958e61323b43ce" name="ae9f4e689119c34e371958e61323b43ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9f4e689119c34e371958e61323b43ce">&#9670;&#160;</a></span>BOOST_FUSION_REVERSE_FOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_REVERSE_FOLD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2reverse__fold_8hpp_source.html">fusion/algorithm/iteration/reverse_fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2reverse__fold_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_7dd17c6ed4a0bbe9f73acb7dfec1be90.html">algorithm</a></li><li class="navelem"><a class="el" href="dir_9efa65075e2dbc7104bb3389990cde05.html">iteration</a></li><li class="navelem"><a class="el" href="fusion_2algorithm_2iteration_2reverse__fold_8hpp.html">reverse_fold.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

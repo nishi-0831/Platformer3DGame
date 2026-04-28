@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['n1_0',['N1',['../namespaceN1.html',1,'']]],
-  ['nlohmann_1',['nlohmann',['../namespacenlohmann.html',1,'']]]
+  ['detail_0',['detail',['../namespaceJsonConverter_1_1detail.html',1,'JsonConverter']]],
+  ['jsonconverter_1',['JsonConverter',['../namespaceJsonConverter.html',1,'']]]
 ];

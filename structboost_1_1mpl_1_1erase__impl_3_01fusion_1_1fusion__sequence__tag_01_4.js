@@ -1,0 +1,4 @@
+var structboost_1_1mpl_1_1erase__impl_3_01fusion_1_1fusion__sequence__tag_01_4 =
+[
+    [ "apply", "structboost_1_1mpl_1_1erase__impl_3_01fusion_1_1fusion__sequence__tag_01_4_1_1apply.html", "structboost_1_1mpl_1_1erase__impl_3_01fusion_1_1fusion__sequence__tag_01_4_1_1apply" ]
+];

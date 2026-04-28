@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('WindowContextResourceManager_8cpp_sour
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">for</span> (std::type_index typeIdx : insertionOrder_)</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    {</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keyword">auto</span> itr = factoryMap_.find(typeIdx);</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        assert(itr != factoryMap_.end() &amp;&amp; <span class="stringliteral">&quot;指定されたtype_indexのファクトリ関数が見つかりません&quot;</span>);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_struct" href="structassert.html">assert</a>(itr != factoryMap_.end() &amp;&amp; <span class="stringliteral">&quot;指定されたtype_indexのファクトリ関数が見つかりません&quot;</span>);</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// ファクトリ関数でリソース作成</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <a class="code hl_class" href="classmtgb_1_1WindowContextResource.html">WindowContextResource</a>* pResource = itr-&gt;second(_windowContext);</div>
@@ -144,7 +144,7 @@ $(document).ready(function(){initNavTree('WindowContextResourceManager_8cpp_sour
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowContextResourceManager.html#a2b9174c6df3ead03636be4f49c368f0a">   44</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowContextResourceManager.html#a2b9174c6df3ead03636be4f49c368f0a">mtgb::WindowContextResourceManager::ChangeActiveResource</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext)</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">auto</span> itr = collectionMap_.find(_windowContext);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    assert(itr != collectionMap_.end() &amp;&amp; <span class="stringliteral">&quot;指定されたWindowContextのリソースが見つかりません&quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_struct" href="structassert.html">assert</a>(itr != collectionMap_.end() &amp;&amp; <span class="stringliteral">&quot;指定されたWindowContextのリソースが見つかりません&quot;</span>);</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; collection : itr-&gt;second)</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    {</div>
@@ -156,26 +156,25 @@ $(document).ready(function(){initNavTree('WindowContextResourceManager_8cpp_sour
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classmtgb_1_1WindowContextResourceManager.html#a09dd7fcc8d31fe892d5d1ab776c90e99">   57</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1WindowContextResourceManager.html#a09dd7fcc8d31fe892d5d1ab776c90e99">mtgb::WindowContextResourceManager::OnResizeAll</a>(<a class="code hl_enumeration" href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">WindowContext</a> _windowContext, UINT _width, UINT _height)</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">auto</span> itr = collectionMap_.find(_windowContext);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (itr == collectionMap_.end())</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// サイズ変更対象のウィンドウのリソース群を取得</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <a class="code hl_struct" href="structmtgb_1_1ResourceCollection.html">ResourceCollection</a>&amp; resourceCollection = collectionMap_[_windowContext];</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="comment">// リソース登録時とは逆順で、サイズ変更のために解放処理を行う</span></div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = insertionOrder_.rbegin(); itr != insertionOrder_.rend(); itr++)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    {</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        std::type_index typeIdx = *itr;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        resourceCollection[typeIdx]-&gt;Reset();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// リソース登録時と同じ順番で、サイズ変更後の処理を行う</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">for</span> (std::type_index typeIdx : insertionOrder_)</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        resourceCollection[typeIdx]-&gt;OnResize(_width, _height);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (collectionMap_.contains(_windowContext) == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// サイズ変更対象のウィンドウのリソース群を取得</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <a class="code hl_struct" href="structmtgb_1_1ResourceCollection.html">ResourceCollection</a>&amp; resourceCollection = collectionMap_[_windowContext];</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// リソース登録時とは逆順で、サイズ変更のために解放処理を行う</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = insertionOrder_.rbegin(); itr != insertionOrder_.rend(); itr++)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        std::type_index typeIdx = *itr;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        resourceCollection[typeIdx]-&gt;Reset();</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// リソース登録時と同じ順番で、サイズ変更後の処理を行う</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">for</span> (std::type_index typeIdx : insertionOrder_)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        resourceCollection[typeIdx]-&gt;OnResize(_width, _height);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
 <div class="ttc" id="aWindowContextResourceManager_8h_html"><div class="ttname"><a href="WindowContextResourceManager_8h.html">WindowContextResourceManager.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1WindowContextResourceManager_html_a09dd7fcc8d31fe892d5d1ab776c90e99"><div class="ttname"><a href="classmtgb_1_1WindowContextResourceManager.html#a09dd7fcc8d31fe892d5d1ab776c90e99">mtgb::WindowContextResourceManager::OnResizeAll</a></div><div class="ttdeci">void OnResizeAll(WindowContext _windowContext, UINT _width, UINT _height)</div><div class="ttdoc">全リソースのOnResizeを呼びだす</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResourceManager_8cpp_source.html#l00057">WindowContextResourceManager.cpp:57</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1WindowContextResourceManager_html_a27644c7d8079ccb270de99469c506306"><div class="ttname"><a href="classmtgb_1_1WindowContextResourceManager.html#a27644c7d8079ccb270de99469c506306">mtgb::WindowContextResourceManager::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResourceManager_8cpp_source.html#l00010">WindowContextResourceManager.cpp:10</a></div></div>
@@ -188,6 +187,7 @@ $(document).ready(function(){initNavTree('WindowContextResourceManager_8cpp_sour
 <div class="ttc" id="aclassmtgb_1_1WindowContextResource_html"><div class="ttname"><a href="classmtgb_1_1WindowContextResource.html">mtgb::WindowContextResource</a></div><div class="ttdoc">ウィンドウごとに固有のリソースのインターフェース</div><div class="ttdef"><b>Definition:</b> <a href="WindowContextResource_8h_source.html#l00018">WindowContextResource.h:19</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1">mtgb::WindowContext</a></div><div class="ttdeci">WindowContext</div><div class="ttdef"><b>Definition:</b> <a href="WindowContext_8h_source.html#l00007">WindowContext.h:8</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade"><div class="ttname"><a href="namespacemtgb.html#afbc0a192349d5f51b057a44665cf10b1a2c2624a5059934a947d6e25fe8332ade">mtgb::WindowContext::FIRST</a></div><div class="ttdeci">@ FIRST</div></div>
+<div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ResourceCollection_html"><div class="ttname"><a href="structmtgb_1_1ResourceCollection.html">mtgb::ResourceCollection</a></div><div class="ttdoc">リソースを一纏めにした構造体</div><div class="ttdef"><b>Definition:</b> <a href="ResourceCollection_8h_source.html#l00014">ResourceCollection.h:15</a></div></div>
 <div class="ttc" id="astructmtgb_1_1ResourceCollection_html_a66e5c06f5d0f63400cad2f3cde381b3e"><div class="ttname"><a href="structmtgb_1_1ResourceCollection.html#a66e5c06f5d0f63400cad2f3cde381b3e">mtgb::ResourceCollection::Insert</a></div><div class="ttdeci">void Insert(const std::type_index &amp;_key, WindowContextResource *_pResource)</div><div class="ttdef"><b>Definition:</b> <a href="ResourceCollection_8cpp_source.html#l00009">ResourceCollection.cpp:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

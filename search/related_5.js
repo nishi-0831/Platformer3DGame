@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['rendersystem_0',['RenderSystem',['../classmtgb_1_1Draw.html#a06b786d8e0847dfe9cc15e1dea308fcd',1,'mtgb::Draw::RenderSystem()'],['../classmtgb_1_1GameScene.html#a06b786d8e0847dfe9cc15e1dea308fcd',1,'mtgb::GameScene::RenderSystem()']]]
+  ['game_0',['Game',['../classmtgb_1_1GameScene.html#aa2fab026580d6f14280c2ffb8063a314',1,'mtgb::GameScene']]]
 ];

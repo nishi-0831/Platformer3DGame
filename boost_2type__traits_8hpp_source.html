@@ -1,0 +1,417 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: type_traits.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('boost_2type__traits_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">boost/type_traits.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="boost_2type__traits_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright John Maddock 2000.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Use, modification and distribution are subject to the Boost Software License,</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt).</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  See http://www.boost.org/libs/type_traits for most recent version including documentation.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  See boost/type_traits/*.hpp for full copyright notices.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#ifndef BOOST_TYPE_TRAITS_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#define BOOST_TYPE_TRAITS_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="add__const_8hpp.html">boost/type_traits/add_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="add__cv_8hpp.html">boost/type_traits/add_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="add__lvalue__reference_8hpp.html">boost/type_traits/add_lvalue_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="add__pointer_8hpp.html">boost/type_traits/add_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="add__reference_8hpp.html">boost/type_traits/add_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="add__rvalue__reference_8hpp.html">boost/type_traits/add_rvalue_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="add__volatile_8hpp.html">boost/type_traits/add_volatile.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2aligned__storage_8hpp.html">boost/type_traits/aligned_storage.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="alignment__of_8hpp.html">boost/type_traits/alignment_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="common__type_8hpp.html">boost/type_traits/common_type.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="conditional_8hpp.html">boost/type_traits/conditional.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2conjunction_8hpp.html">boost/type_traits/conjunction.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;<a class="code" href="copy__cv_8hpp.html">boost/type_traits/copy_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;<a class="code" href="copy__cv__ref_8hpp.html">boost/type_traits/copy_cv_ref.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;<a class="code" href="copy__reference_8hpp.html">boost/type_traits/copy_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;<a class="code" href="decay_8hpp.html">boost/type_traits/decay.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2declval_8hpp.html">boost/type_traits/declval.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2disjunction_8hpp.html">boost/type_traits/disjunction.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2enable__if_8hpp.html">boost/type_traits/enable_if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &lt;<a class="code" href="extent_8hpp.html">boost/type_traits/extent.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &lt;<a class="code" href="floating__point__promotion_8hpp.html">boost/type_traits/floating_point_promotion.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &lt;<a class="code" href="function__traits_8hpp.html">boost/type_traits/function_traits.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__and_8hpp.html">boost/type_traits/has_bit_and.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__and__assign_8hpp.html">boost/type_traits/has_bit_and_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__or_8hpp.html">boost/type_traits/has_bit_or.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__or__assign_8hpp.html">boost/type_traits/has_bit_or_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__xor_8hpp.html">boost/type_traits/has_bit_xor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#include &lt;<a class="code" href="has__bit__xor__assign_8hpp.html">boost/type_traits/has_bit_xor_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#include &lt;<a class="code" href="has__complement_8hpp.html">boost/type_traits/has_complement.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#include &lt;<a class="code" href="has__dereference_8hpp.html">boost/type_traits/has_dereference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#include &lt;<a class="code" href="has__divides_8hpp.html">boost/type_traits/has_divides.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#include &lt;<a class="code" href="has__divides__assign_8hpp.html">boost/type_traits/has_divides_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#include &lt;<a class="code" href="has__equal__to_8hpp.html">boost/type_traits/has_equal_to.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#include &lt;<a class="code" href="has__greater_8hpp.html">boost/type_traits/has_greater.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#include &lt;<a class="code" href="has__greater__equal_8hpp.html">boost/type_traits/has_greater_equal.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">#include &lt;<a class="code" href="has__left__shift_8hpp.html">boost/type_traits/has_left_shift.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#include &lt;<a class="code" href="has__left__shift__assign_8hpp.html">boost/type_traits/has_left_shift_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#include &lt;<a class="code" href="has__less_8hpp.html">boost/type_traits/has_less.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#include &lt;<a class="code" href="has__less__equal_8hpp.html">boost/type_traits/has_less_equal.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#include &lt;<a class="code" href="has__logical__and_8hpp.html">boost/type_traits/has_logical_and.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#include &lt;<a class="code" href="has__logical__not_8hpp.html">boost/type_traits/has_logical_not.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#include &lt;<a class="code" href="has__logical__or_8hpp.html">boost/type_traits/has_logical_or.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &lt;<a class="code" href="has__minus_8hpp.html">boost/type_traits/has_minus.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#include &lt;<a class="code" href="has__minus__assign_8hpp.html">boost/type_traits/has_minus_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &lt;<a class="code" href="has__modulus_8hpp.html">boost/type_traits/has_modulus.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &lt;<a class="code" href="has__modulus__assign_8hpp.html">boost/type_traits/has_modulus_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &lt;<a class="code" href="has__multiplies_8hpp.html">boost/type_traits/has_multiplies.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#include &lt;<a class="code" href="has__multiplies__assign_8hpp.html">boost/type_traits/has_multiplies_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#include &lt;<a class="code" href="has__negate_8hpp.html">boost/type_traits/has_negate.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#if !defined(BOOST_BORLANDC) &amp;&amp; (!(defined(__CUDACC__) &amp;&amp; (__CUDACC_VER_MAJOR__ &lt; 11)) || defined(__CUDA__))</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#include &lt;<a class="code" href="has__new__operator_8hpp.html">boost/type_traits/has_new_operator.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#include &lt;<a class="code" href="has__not__equal__to_8hpp.html">boost/type_traits/has_not_equal_to.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#include &lt;<a class="code" href="has__nothrow__assign_8hpp.html">boost/type_traits/has_nothrow_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#include &lt;<a class="code" href="has__nothrow__constructor_8hpp.html">boost/type_traits/has_nothrow_constructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#include &lt;<a class="code" href="has__nothrow__copy_8hpp.html">boost/type_traits/has_nothrow_copy.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#include &lt;<a class="code" href="has__nothrow__destructor_8hpp.html">boost/type_traits/has_nothrow_destructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#include &lt;<a class="code" href="has__plus_8hpp.html">boost/type_traits/has_plus.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#include &lt;<a class="code" href="has__plus__assign_8hpp.html">boost/type_traits/has_plus_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#include &lt;<a class="code" href="has__post__decrement_8hpp.html">boost/type_traits/has_post_decrement.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#include &lt;<a class="code" href="has__post__increment_8hpp.html">boost/type_traits/has_post_increment.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#include &lt;<a class="code" href="has__pre__decrement_8hpp.html">boost/type_traits/has_pre_decrement.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#include &lt;<a class="code" href="has__pre__increment_8hpp.html">boost/type_traits/has_pre_increment.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#include &lt;<a class="code" href="has__right__shift_8hpp.html">boost/type_traits/has_right_shift.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#include &lt;<a class="code" href="has__right__shift__assign_8hpp.html">boost/type_traits/has_right_shift_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__assign_8hpp.html">boost/type_traits/has_trivial_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__constructor_8hpp.html">boost/type_traits/has_trivial_constructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__copy_8hpp.html">boost/type_traits/has_trivial_copy.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__destructor_8hpp.html">boost/type_traits/has_trivial_destructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__move__assign_8hpp.html">boost/type_traits/has_trivial_move_assign.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#include &lt;<a class="code" href="has__trivial__move__constructor_8hpp.html">boost/type_traits/has_trivial_move_constructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#include &lt;<a class="code" href="has__unary__minus_8hpp.html">boost/type_traits/has_unary_minus.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#include &lt;<a class="code" href="has__unary__plus_8hpp.html">boost/type_traits/has_unary_plus.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#include &lt;<a class="code" href="has__virtual__destructor_8hpp.html">boost/type_traits/has_virtual_destructor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#include &lt;<a class="code" href="integral__constant_8hpp.html">boost/type_traits/integral_constant.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#include &lt;<a class="code" href="is__abstract_8hpp.html">boost/type_traits/is_abstract.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#include &lt;<a class="code" href="is__arithmetic_8hpp.html">boost/type_traits/is_arithmetic.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#include &lt;<a class="code" href="is__array_8hpp.html">boost/type_traits/is_array.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#include &lt;<a class="code" href="is__assignable_8hpp.html">boost/type_traits/is_assignable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#include &lt;<a class="code" href="is__base__and__derived_8hpp.html">boost/type_traits/is_base_and_derived.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#include &lt;<a class="code" href="is__base__of_8hpp.html">boost/type_traits/is_base_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#include &lt;<a class="code" href="is__class_8hpp.html">boost/type_traits/is_class.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#include &lt;<a class="code" href="is__complex_8hpp.html">boost/type_traits/is_complex.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#include &lt;<a class="code" href="is__compound_8hpp.html">boost/type_traits/is_compound.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#include &lt;<a class="code" href="is__const_8hpp.html">boost/type_traits/is_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#include &lt;<a class="code" href="is__constructible_8hpp.html">boost/type_traits/is_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#include &lt;<a class="code" href="is__convertible_8hpp.html">boost/type_traits/is_convertible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#include &lt;<a class="code" href="is__copy__assignable_8hpp.html">boost/type_traits/is_copy_assignable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#include &lt;<a class="code" href="is__copy__constructible_8hpp.html">boost/type_traits/is_copy_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#include &lt;<a class="code" href="is__default__constructible_8hpp.html">boost/type_traits/is_default_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#include &lt;<a class="code" href="is__destructible_8hpp.html">boost/type_traits/is_destructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__empty_8hpp.html">boost/type_traits/is_empty.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#include &lt;<a class="code" href="is__enum_8hpp.html">boost/type_traits/is_enum.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#include &lt;<a class="code" href="is__final_8hpp.html">boost/type_traits/is_final.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#include &lt;<a class="code" href="is__float_8hpp.html">boost/type_traits/is_float.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#include &lt;<a class="code" href="is__floating__point_8hpp.html">boost/type_traits/is_floating_point.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__function_8hpp.html">boost/type_traits/is_function.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#include &lt;<a class="code" href="is__fundamental_8hpp.html">boost/type_traits/is_fundamental.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#include &lt;<a class="code" href="is__integral_8hpp.html">boost/type_traits/is_integral.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#include &lt;<a class="code" href="is__list__constructible_8hpp.html">boost/type_traits/is_list_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="preprocessor">#include &lt;<a class="code" href="is__lvalue__reference_8hpp.html">boost/type_traits/is_lvalue_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__member__function__pointer_8hpp.html">boost/type_traits/is_member_function_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__member__object__pointer_8hpp.html">boost/type_traits/is_member_object_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__member__pointer_8hpp.html">boost/type_traits/is_member_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#include &lt;<a class="code" href="is__nothrow__move__assignable_8hpp.html">boost/type_traits/is_nothrow_move_assignable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#include &lt;<a class="code" href="is__nothrow__move__constructible_8hpp.html">boost/type_traits/is_nothrow_move_constructible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#include &lt;<a class="code" href="is__nothrow__swappable_8hpp.html">boost/type_traits/is_nothrow_swappable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#include &lt;<a class="code" href="is__object_8hpp.html">boost/type_traits/is_object.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#include &lt;<a class="code" href="is__pod_8hpp.html">boost/type_traits/is_pod.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#include &lt;<a class="code" href="is__pointer_8hpp.html">boost/type_traits/is_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#include &lt;<a class="code" href="is__polymorphic_8hpp.html">boost/type_traits/is_polymorphic.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#include &lt;<a class="code" href="is__reference_8hpp.html">boost/type_traits/is_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#include &lt;<a class="code" href="is__rvalue__reference_8hpp.html">boost/type_traits/is_rvalue_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__same_8hpp.html">boost/type_traits/is_same.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#include &lt;<a class="code" href="is__scalar_8hpp.html">boost/type_traits/is_scalar.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#include &lt;<a class="code" href="is__scoped__enum_8hpp.html">boost/type_traits/is_scoped_enum.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#include &lt;<a class="code" href="is__signed_8hpp.html">boost/type_traits/is_signed.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#include &lt;<a class="code" href="is__stateless_8hpp.html">boost/type_traits/is_stateless.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#include &lt;<a class="code" href="is__swappable_8hpp.html">boost/type_traits/is_swappable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#include &lt;<a class="code" href="is__trivially__copyable_8hpp.html">boost/type_traits/is_trivially_copyable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#include &lt;<a class="code" href="is__union_8hpp.html">boost/type_traits/is_union.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#include &lt;<a class="code" href="is__unscoped__enum_8hpp.html">boost/type_traits/is_unscoped_enum.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#include &lt;<a class="code" href="is__unsigned_8hpp.html">boost/type_traits/is_unsigned.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#include &lt;<a class="code" href="is__virtual__base__of_8hpp.html">boost/type_traits/is_virtual_base_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#include &lt;<a class="code" href="is__void_8hpp.html">boost/type_traits/is_void.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#include &lt;<a class="code" href="is__volatile_8hpp.html">boost/type_traits/is_volatile.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#include &lt;<a class="code" href="make__signed_8hpp.html">boost/type_traits/make_signed.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#include &lt;<a class="code" href="make__unsigned_8hpp.html">boost/type_traits/make_unsigned.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#include &lt;<a class="code" href="make__void_8hpp.html">boost/type_traits/make_void.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2negation_8hpp.html">boost/type_traits/negation.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#include &lt;<a class="code" href="rank_8hpp.html">boost/type_traits/rank.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#include &lt;<a class="code" href="remove__all__extents_8hpp.html">boost/type_traits/remove_all_extents.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#include &lt;<a class="code" href="remove__bounds_8hpp.html">boost/type_traits/remove_bounds.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span><span class="preprocessor">#include &lt;<a class="code" href="remove__const_8hpp.html">boost/type_traits/remove_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#include &lt;<a class="code" href="remove__cv_8hpp.html">boost/type_traits/remove_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#include &lt;<a class="code" href="remove__cv__ref_8hpp.html">boost/type_traits/remove_cv_ref.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">#include &lt;<a class="code" href="remove__extent_8hpp.html">boost/type_traits/remove_extent.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#include &lt;<a class="code" href="remove__pointer_8hpp.html">boost/type_traits/remove_pointer.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#include &lt;<a class="code" href="remove__reference_8hpp.html">boost/type_traits/remove_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#include &lt;<a class="code" href="remove__volatile_8hpp.html">boost/type_traits/remove_volatile.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2type__identity_8hpp.html">boost/type_traits/type_identity.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#include &lt;<a class="code" href="type__with__alignment_8hpp.html">boost/type_traits/type_with_alignment.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#if !(defined(__sgi) &amp;&amp; defined(__EDG_VERSION__) &amp;&amp; (__EDG_VERSION__ == 238))</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#include &lt;<a class="code" href="integral__promotion_8hpp.html">boost/type_traits/integral_promotion.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#include &lt;<a class="code" href="promote_8hpp.html">boost/type_traits/promote.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_TYPE_TRAITS_HPP</span></div>
+<div class="ttc" id="aadd__const_8hpp_html"><div class="ttname"><a href="add__const_8hpp.html">add_const.hpp</a></div></div>
+<div class="ttc" id="aadd__cv_8hpp_html"><div class="ttname"><a href="add__cv_8hpp.html">add_cv.hpp</a></div></div>
+<div class="ttc" id="aadd__lvalue__reference_8hpp_html"><div class="ttname"><a href="add__lvalue__reference_8hpp.html">add_lvalue_reference.hpp</a></div></div>
+<div class="ttc" id="aadd__pointer_8hpp_html"><div class="ttname"><a href="add__pointer_8hpp.html">add_pointer.hpp</a></div></div>
+<div class="ttc" id="aadd__reference_8hpp_html"><div class="ttname"><a href="add__reference_8hpp.html">add_reference.hpp</a></div></div>
+<div class="ttc" id="aadd__rvalue__reference_8hpp_html"><div class="ttname"><a href="add__rvalue__reference_8hpp.html">add_rvalue_reference.hpp</a></div></div>
+<div class="ttc" id="aadd__volatile_8hpp_html"><div class="ttname"><a href="add__volatile_8hpp.html">add_volatile.hpp</a></div></div>
+<div class="ttc" id="aalignment__of_8hpp_html"><div class="ttname"><a href="alignment__of_8hpp.html">alignment_of.hpp</a></div></div>
+<div class="ttc" id="acommon__type_8hpp_html"><div class="ttname"><a href="common__type_8hpp.html">common_type.hpp</a></div></div>
+<div class="ttc" id="aconditional_8hpp_html"><div class="ttname"><a href="conditional_8hpp.html">conditional.hpp</a></div></div>
+<div class="ttc" id="acopy__cv_8hpp_html"><div class="ttname"><a href="copy__cv_8hpp.html">copy_cv.hpp</a></div></div>
+<div class="ttc" id="acopy__cv__ref_8hpp_html"><div class="ttname"><a href="copy__cv__ref_8hpp.html">copy_cv_ref.hpp</a></div></div>
+<div class="ttc" id="acopy__reference_8hpp_html"><div class="ttname"><a href="copy__reference_8hpp.html">copy_reference.hpp</a></div></div>
+<div class="ttc" id="adecay_8hpp_html"><div class="ttname"><a href="decay_8hpp.html">decay.hpp</a></div></div>
+<div class="ttc" id="aextent_8hpp_html"><div class="ttname"><a href="extent_8hpp.html">extent.hpp</a></div></div>
+<div class="ttc" id="afloating__point__promotion_8hpp_html"><div class="ttname"><a href="floating__point__promotion_8hpp.html">floating_point_promotion.hpp</a></div></div>
+<div class="ttc" id="afunction__traits_8hpp_html"><div class="ttname"><a href="function__traits_8hpp.html">function_traits.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__and_8hpp_html"><div class="ttname"><a href="has__bit__and_8hpp.html">has_bit_and.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__and__assign_8hpp_html"><div class="ttname"><a href="has__bit__and__assign_8hpp.html">has_bit_and_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__or_8hpp_html"><div class="ttname"><a href="has__bit__or_8hpp.html">has_bit_or.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__or__assign_8hpp_html"><div class="ttname"><a href="has__bit__or__assign_8hpp.html">has_bit_or_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__xor_8hpp_html"><div class="ttname"><a href="has__bit__xor_8hpp.html">has_bit_xor.hpp</a></div></div>
+<div class="ttc" id="ahas__bit__xor__assign_8hpp_html"><div class="ttname"><a href="has__bit__xor__assign_8hpp.html">has_bit_xor_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__complement_8hpp_html"><div class="ttname"><a href="has__complement_8hpp.html">has_complement.hpp</a></div></div>
+<div class="ttc" id="ahas__dereference_8hpp_html"><div class="ttname"><a href="has__dereference_8hpp.html">has_dereference.hpp</a></div></div>
+<div class="ttc" id="ahas__divides_8hpp_html"><div class="ttname"><a href="has__divides_8hpp.html">has_divides.hpp</a></div></div>
+<div class="ttc" id="ahas__divides__assign_8hpp_html"><div class="ttname"><a href="has__divides__assign_8hpp.html">has_divides_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__equal__to_8hpp_html"><div class="ttname"><a href="has__equal__to_8hpp.html">has_equal_to.hpp</a></div></div>
+<div class="ttc" id="ahas__greater_8hpp_html"><div class="ttname"><a href="has__greater_8hpp.html">has_greater.hpp</a></div></div>
+<div class="ttc" id="ahas__greater__equal_8hpp_html"><div class="ttname"><a href="has__greater__equal_8hpp.html">has_greater_equal.hpp</a></div></div>
+<div class="ttc" id="ahas__left__shift_8hpp_html"><div class="ttname"><a href="has__left__shift_8hpp.html">has_left_shift.hpp</a></div></div>
+<div class="ttc" id="ahas__left__shift__assign_8hpp_html"><div class="ttname"><a href="has__left__shift__assign_8hpp.html">has_left_shift_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__less_8hpp_html"><div class="ttname"><a href="has__less_8hpp.html">has_less.hpp</a></div></div>
+<div class="ttc" id="ahas__less__equal_8hpp_html"><div class="ttname"><a href="has__less__equal_8hpp.html">has_less_equal.hpp</a></div></div>
+<div class="ttc" id="ahas__logical__and_8hpp_html"><div class="ttname"><a href="has__logical__and_8hpp.html">has_logical_and.hpp</a></div></div>
+<div class="ttc" id="ahas__logical__not_8hpp_html"><div class="ttname"><a href="has__logical__not_8hpp.html">has_logical_not.hpp</a></div></div>
+<div class="ttc" id="ahas__logical__or_8hpp_html"><div class="ttname"><a href="has__logical__or_8hpp.html">has_logical_or.hpp</a></div></div>
+<div class="ttc" id="ahas__minus_8hpp_html"><div class="ttname"><a href="has__minus_8hpp.html">has_minus.hpp</a></div></div>
+<div class="ttc" id="ahas__minus__assign_8hpp_html"><div class="ttname"><a href="has__minus__assign_8hpp.html">has_minus_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__modulus_8hpp_html"><div class="ttname"><a href="has__modulus_8hpp.html">has_modulus.hpp</a></div></div>
+<div class="ttc" id="ahas__modulus__assign_8hpp_html"><div class="ttname"><a href="has__modulus__assign_8hpp.html">has_modulus_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__multiplies_8hpp_html"><div class="ttname"><a href="has__multiplies_8hpp.html">has_multiplies.hpp</a></div></div>
+<div class="ttc" id="ahas__multiplies__assign_8hpp_html"><div class="ttname"><a href="has__multiplies__assign_8hpp.html">has_multiplies_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__negate_8hpp_html"><div class="ttname"><a href="has__negate_8hpp.html">has_negate.hpp</a></div></div>
+<div class="ttc" id="ahas__new__operator_8hpp_html"><div class="ttname"><a href="has__new__operator_8hpp.html">has_new_operator.hpp</a></div></div>
+<div class="ttc" id="ahas__not__equal__to_8hpp_html"><div class="ttname"><a href="has__not__equal__to_8hpp.html">has_not_equal_to.hpp</a></div></div>
+<div class="ttc" id="ahas__nothrow__assign_8hpp_html"><div class="ttname"><a href="has__nothrow__assign_8hpp.html">has_nothrow_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__nothrow__constructor_8hpp_html"><div class="ttname"><a href="has__nothrow__constructor_8hpp.html">has_nothrow_constructor.hpp</a></div></div>
+<div class="ttc" id="ahas__nothrow__copy_8hpp_html"><div class="ttname"><a href="has__nothrow__copy_8hpp.html">has_nothrow_copy.hpp</a></div></div>
+<div class="ttc" id="ahas__nothrow__destructor_8hpp_html"><div class="ttname"><a href="has__nothrow__destructor_8hpp.html">has_nothrow_destructor.hpp</a></div></div>
+<div class="ttc" id="ahas__plus_8hpp_html"><div class="ttname"><a href="has__plus_8hpp.html">has_plus.hpp</a></div></div>
+<div class="ttc" id="ahas__plus__assign_8hpp_html"><div class="ttname"><a href="has__plus__assign_8hpp.html">has_plus_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__post__decrement_8hpp_html"><div class="ttname"><a href="has__post__decrement_8hpp.html">has_post_decrement.hpp</a></div></div>
+<div class="ttc" id="ahas__post__increment_8hpp_html"><div class="ttname"><a href="has__post__increment_8hpp.html">has_post_increment.hpp</a></div></div>
+<div class="ttc" id="ahas__pre__decrement_8hpp_html"><div class="ttname"><a href="has__pre__decrement_8hpp.html">has_pre_decrement.hpp</a></div></div>
+<div class="ttc" id="ahas__pre__increment_8hpp_html"><div class="ttname"><a href="has__pre__increment_8hpp.html">has_pre_increment.hpp</a></div></div>
+<div class="ttc" id="ahas__right__shift_8hpp_html"><div class="ttname"><a href="has__right__shift_8hpp.html">has_right_shift.hpp</a></div></div>
+<div class="ttc" id="ahas__right__shift__assign_8hpp_html"><div class="ttname"><a href="has__right__shift__assign_8hpp.html">has_right_shift_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__assign_8hpp_html"><div class="ttname"><a href="has__trivial__assign_8hpp.html">has_trivial_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__constructor_8hpp_html"><div class="ttname"><a href="has__trivial__constructor_8hpp.html">has_trivial_constructor.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__copy_8hpp_html"><div class="ttname"><a href="has__trivial__copy_8hpp.html">has_trivial_copy.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__destructor_8hpp_html"><div class="ttname"><a href="has__trivial__destructor_8hpp.html">has_trivial_destructor.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__move__assign_8hpp_html"><div class="ttname"><a href="has__trivial__move__assign_8hpp.html">has_trivial_move_assign.hpp</a></div></div>
+<div class="ttc" id="ahas__trivial__move__constructor_8hpp_html"><div class="ttname"><a href="has__trivial__move__constructor_8hpp.html">has_trivial_move_constructor.hpp</a></div></div>
+<div class="ttc" id="ahas__unary__minus_8hpp_html"><div class="ttname"><a href="has__unary__minus_8hpp.html">has_unary_minus.hpp</a></div></div>
+<div class="ttc" id="ahas__unary__plus_8hpp_html"><div class="ttname"><a href="has__unary__plus_8hpp.html">has_unary_plus.hpp</a></div></div>
+<div class="ttc" id="ahas__virtual__destructor_8hpp_html"><div class="ttname"><a href="has__virtual__destructor_8hpp.html">has_virtual_destructor.hpp</a></div></div>
+<div class="ttc" id="aintegral__constant_8hpp_html"><div class="ttname"><a href="integral__constant_8hpp.html">integral_constant.hpp</a></div></div>
+<div class="ttc" id="aintegral__promotion_8hpp_html"><div class="ttname"><a href="integral__promotion_8hpp.html">integral_promotion.hpp</a></div></div>
+<div class="ttc" id="ais__abstract_8hpp_html"><div class="ttname"><a href="is__abstract_8hpp.html">is_abstract.hpp</a></div></div>
+<div class="ttc" id="ais__arithmetic_8hpp_html"><div class="ttname"><a href="is__arithmetic_8hpp.html">is_arithmetic.hpp</a></div></div>
+<div class="ttc" id="ais__array_8hpp_html"><div class="ttname"><a href="is__array_8hpp.html">is_array.hpp</a></div></div>
+<div class="ttc" id="ais__assignable_8hpp_html"><div class="ttname"><a href="is__assignable_8hpp.html">is_assignable.hpp</a></div></div>
+<div class="ttc" id="ais__base__and__derived_8hpp_html"><div class="ttname"><a href="is__base__and__derived_8hpp.html">is_base_and_derived.hpp</a></div></div>
+<div class="ttc" id="ais__base__of_8hpp_html"><div class="ttname"><a href="is__base__of_8hpp.html">is_base_of.hpp</a></div></div>
+<div class="ttc" id="ais__class_8hpp_html"><div class="ttname"><a href="is__class_8hpp.html">is_class.hpp</a></div></div>
+<div class="ttc" id="ais__complex_8hpp_html"><div class="ttname"><a href="is__complex_8hpp.html">is_complex.hpp</a></div></div>
+<div class="ttc" id="ais__compound_8hpp_html"><div class="ttname"><a href="is__compound_8hpp.html">is_compound.hpp</a></div></div>
+<div class="ttc" id="ais__const_8hpp_html"><div class="ttname"><a href="is__const_8hpp.html">is_const.hpp</a></div></div>
+<div class="ttc" id="ais__constructible_8hpp_html"><div class="ttname"><a href="is__constructible_8hpp.html">is_constructible.hpp</a></div></div>
+<div class="ttc" id="ais__convertible_8hpp_html"><div class="ttname"><a href="is__convertible_8hpp.html">is_convertible.hpp</a></div></div>
+<div class="ttc" id="ais__copy__assignable_8hpp_html"><div class="ttname"><a href="is__copy__assignable_8hpp.html">is_copy_assignable.hpp</a></div></div>
+<div class="ttc" id="ais__copy__constructible_8hpp_html"><div class="ttname"><a href="is__copy__constructible_8hpp.html">is_copy_constructible.hpp</a></div></div>
+<div class="ttc" id="ais__default__constructible_8hpp_html"><div class="ttname"><a href="is__default__constructible_8hpp.html">is_default_constructible.hpp</a></div></div>
+<div class="ttc" id="ais__destructible_8hpp_html"><div class="ttname"><a href="is__destructible_8hpp.html">is_destructible.hpp</a></div></div>
+<div class="ttc" id="ais__enum_8hpp_html"><div class="ttname"><a href="is__enum_8hpp.html">is_enum.hpp</a></div></div>
+<div class="ttc" id="ais__final_8hpp_html"><div class="ttname"><a href="is__final_8hpp.html">is_final.hpp</a></div></div>
+<div class="ttc" id="ais__float_8hpp_html"><div class="ttname"><a href="is__float_8hpp.html">is_float.hpp</a></div></div>
+<div class="ttc" id="ais__floating__point_8hpp_html"><div class="ttname"><a href="is__floating__point_8hpp.html">is_floating_point.hpp</a></div></div>
+<div class="ttc" id="ais__fundamental_8hpp_html"><div class="ttname"><a href="is__fundamental_8hpp.html">is_fundamental.hpp</a></div></div>
+<div class="ttc" id="ais__integral_8hpp_html"><div class="ttname"><a href="is__integral_8hpp.html">is_integral.hpp</a></div></div>
+<div class="ttc" id="ais__list__constructible_8hpp_html"><div class="ttname"><a href="is__list__constructible_8hpp.html">is_list_constructible.hpp</a></div></div>
+<div class="ttc" id="ais__lvalue__reference_8hpp_html"><div class="ttname"><a href="is__lvalue__reference_8hpp.html">is_lvalue_reference.hpp</a></div></div>
+<div class="ttc" id="ais__nothrow__move__assignable_8hpp_html"><div class="ttname"><a href="is__nothrow__move__assignable_8hpp.html">is_nothrow_move_assignable.hpp</a></div></div>
+<div class="ttc" id="ais__nothrow__move__constructible_8hpp_html"><div class="ttname"><a href="is__nothrow__move__constructible_8hpp.html">is_nothrow_move_constructible.hpp</a></div></div>
+<div class="ttc" id="ais__nothrow__swappable_8hpp_html"><div class="ttname"><a href="is__nothrow__swappable_8hpp.html">is_nothrow_swappable.hpp</a></div></div>
+<div class="ttc" id="ais__object_8hpp_html"><div class="ttname"><a href="is__object_8hpp.html">is_object.hpp</a></div></div>
+<div class="ttc" id="ais__pod_8hpp_html"><div class="ttname"><a href="is__pod_8hpp.html">is_pod.hpp</a></div></div>
+<div class="ttc" id="ais__pointer_8hpp_html"><div class="ttname"><a href="is__pointer_8hpp.html">is_pointer.hpp</a></div></div>
+<div class="ttc" id="ais__polymorphic_8hpp_html"><div class="ttname"><a href="is__polymorphic_8hpp.html">is_polymorphic.hpp</a></div></div>
+<div class="ttc" id="ais__reference_8hpp_html"><div class="ttname"><a href="is__reference_8hpp.html">is_reference.hpp</a></div></div>
+<div class="ttc" id="ais__rvalue__reference_8hpp_html"><div class="ttname"><a href="is__rvalue__reference_8hpp.html">is_rvalue_reference.hpp</a></div></div>
+<div class="ttc" id="ais__scalar_8hpp_html"><div class="ttname"><a href="is__scalar_8hpp.html">is_scalar.hpp</a></div></div>
+<div class="ttc" id="ais__scoped__enum_8hpp_html"><div class="ttname"><a href="is__scoped__enum_8hpp.html">is_scoped_enum.hpp</a></div></div>
+<div class="ttc" id="ais__signed_8hpp_html"><div class="ttname"><a href="is__signed_8hpp.html">is_signed.hpp</a></div></div>
+<div class="ttc" id="ais__stateless_8hpp_html"><div class="ttname"><a href="is__stateless_8hpp.html">is_stateless.hpp</a></div></div>
+<div class="ttc" id="ais__swappable_8hpp_html"><div class="ttname"><a href="is__swappable_8hpp.html">is_swappable.hpp</a></div></div>
+<div class="ttc" id="ais__trivially__copyable_8hpp_html"><div class="ttname"><a href="is__trivially__copyable_8hpp.html">is_trivially_copyable.hpp</a></div></div>
+<div class="ttc" id="ais__union_8hpp_html"><div class="ttname"><a href="is__union_8hpp.html">is_union.hpp</a></div></div>
+<div class="ttc" id="ais__unscoped__enum_8hpp_html"><div class="ttname"><a href="is__unscoped__enum_8hpp.html">is_unscoped_enum.hpp</a></div></div>
+<div class="ttc" id="ais__unsigned_8hpp_html"><div class="ttname"><a href="is__unsigned_8hpp.html">is_unsigned.hpp</a></div></div>
+<div class="ttc" id="ais__virtual__base__of_8hpp_html"><div class="ttname"><a href="is__virtual__base__of_8hpp.html">is_virtual_base_of.hpp</a></div></div>
+<div class="ttc" id="ais__void_8hpp_html"><div class="ttname"><a href="is__void_8hpp.html">is_void.hpp</a></div></div>
+<div class="ttc" id="ais__volatile_8hpp_html"><div class="ttname"><a href="is__volatile_8hpp.html">is_volatile.hpp</a></div></div>
+<div class="ttc" id="amake__signed_8hpp_html"><div class="ttname"><a href="make__signed_8hpp.html">make_signed.hpp</a></div></div>
+<div class="ttc" id="amake__unsigned_8hpp_html"><div class="ttname"><a href="make__unsigned_8hpp.html">make_unsigned.hpp</a></div></div>
+<div class="ttc" id="amake__void_8hpp_html"><div class="ttname"><a href="make__void_8hpp.html">make_void.hpp</a></div></div>
+<div class="ttc" id="apromote_8hpp_html"><div class="ttname"><a href="promote_8hpp.html">promote.hpp</a></div></div>
+<div class="ttc" id="arank_8hpp_html"><div class="ttname"><a href="rank_8hpp.html">rank.hpp</a></div></div>
+<div class="ttc" id="aremove__all__extents_8hpp_html"><div class="ttname"><a href="remove__all__extents_8hpp.html">remove_all_extents.hpp</a></div></div>
+<div class="ttc" id="aremove__bounds_8hpp_html"><div class="ttname"><a href="remove__bounds_8hpp.html">remove_bounds.hpp</a></div></div>
+<div class="ttc" id="aremove__const_8hpp_html"><div class="ttname"><a href="remove__const_8hpp.html">remove_const.hpp</a></div></div>
+<div class="ttc" id="aremove__cv_8hpp_html"><div class="ttname"><a href="remove__cv_8hpp.html">remove_cv.hpp</a></div></div>
+<div class="ttc" id="aremove__cv__ref_8hpp_html"><div class="ttname"><a href="remove__cv__ref_8hpp.html">remove_cv_ref.hpp</a></div></div>
+<div class="ttc" id="aremove__extent_8hpp_html"><div class="ttname"><a href="remove__extent_8hpp.html">remove_extent.hpp</a></div></div>
+<div class="ttc" id="aremove__pointer_8hpp_html"><div class="ttname"><a href="remove__pointer_8hpp.html">remove_pointer.hpp</a></div></div>
+<div class="ttc" id="aremove__reference_8hpp_html"><div class="ttname"><a href="remove__reference_8hpp.html">remove_reference.hpp</a></div></div>
+<div class="ttc" id="aremove__volatile_8hpp_html"><div class="ttname"><a href="remove__volatile_8hpp.html">remove_volatile.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2aligned__storage_8hpp_html"><div class="ttname"><a href="type__traits_2aligned__storage_8hpp.html">aligned_storage.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2conjunction_8hpp_html"><div class="ttname"><a href="type__traits_2conjunction_8hpp.html">conjunction.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2declval_8hpp_html"><div class="ttname"><a href="type__traits_2declval_8hpp.html">declval.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2disjunction_8hpp_html"><div class="ttname"><a href="type__traits_2disjunction_8hpp.html">disjunction.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2enable__if_8hpp_html"><div class="ttname"><a href="type__traits_2enable__if_8hpp.html">enable_if.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__empty_8hpp_html"><div class="ttname"><a href="type__traits_2is__empty_8hpp.html">is_empty.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__function_8hpp_html"><div class="ttname"><a href="type__traits_2is__function_8hpp.html">is_function.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__member__function__pointer_8hpp_html"><div class="ttname"><a href="type__traits_2is__member__function__pointer_8hpp.html">is_member_function_pointer.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__member__object__pointer_8hpp_html"><div class="ttname"><a href="type__traits_2is__member__object__pointer_8hpp.html">is_member_object_pointer.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__member__pointer_8hpp_html"><div class="ttname"><a href="type__traits_2is__member__pointer_8hpp.html">is_member_pointer.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__same_8hpp_html"><div class="ttname"><a href="type__traits_2is__same_8hpp.html">is_same.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2negation_8hpp_html"><div class="ttname"><a href="type__traits_2negation_8hpp.html">negation.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2type__identity_8hpp_html"><div class="ttname"><a href="type__traits_2type__identity_8hpp.html">type_identity.hpp</a></div></div>
+<div class="ttc" id="atype__with__alignment_8hpp_html"><div class="ttname"><a href="type__with__alignment_8hpp.html">type_with_alignment.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="boost_2type__traits_8hpp.html">type_traits.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

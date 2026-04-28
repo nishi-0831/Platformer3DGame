@@ -1,0 +1,301 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: composite_pointer_type.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('composite__pointer__type_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">composite_pointer_type.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="composite__pointer__type_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOOST_TYPE_TRAITS_DETAIL_COMPOSITE_POINTER_TYPE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOST_TYPE_TRAITS_DETAIL_COMPOSITE_POINTER_TYPE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  Copyright 2015 Peter Dimov</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="copy__cv_8hpp.html">boost/type_traits/copy_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="remove__cv_8hpp.html">boost/type_traits/remove_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__same_8hpp.html">boost/type_traits/is_same.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="is__void_8hpp.html">boost/type_traits/is_void.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="is__base__of_8hpp.html">boost/type_traits/is_base_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span>type_traits_detail</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">   26</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">// same type</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01T_01_5_01_4.html">   30</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;T*, T*&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01T_01_5_01_4.html#aa55ea297f5f778e0bee3a648a679c569">   32</a></span>    <span class="keyword">typedef</span> T* <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01T_01_5_01_4.html#aa55ea297f5f778e0bee3a648a679c569">type</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// nullptr_t</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#if !defined( BOOST_NO_CXX11_NULLPTR )</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#if !defined( BOOST_NO_CXX11_DECLTYPE ) &amp;&amp; ( ( defined( __clang__ ) &amp;&amp; !defined( _LIBCPP_VERSION ) ) || defined( __INTEL_COMPILER ) )</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;T*, <span class="keyword">decltype</span>(<span class="keyword">nullptr</span>)&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>{</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">typedef</span> T* <a class="code hl_struct" href="structboost_1_1type.html">type</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span>composite_pointer_type&lt;decltype(nullptr), T*&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>{</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">typedef</span> T* <a class="code hl_struct" href="structboost_1_1type.html">type</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span>composite_pointer_type&lt;decltype(nullptr), decltype(nullptr)&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>{</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">typedef</span> <span class="keyword">decltype</span>(<span class="keyword">nullptr</span>) type;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01std_1_1nullptr__t_01_4.html">   58</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;T*, std::nullptr_t&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01std_1_1nullptr__t_01_4.html#a1b0c5bebddaa74e45a8059cd573268c1">   60</a></span>    <span class="keyword">typedef</span> T* <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01std_1_1nullptr__t_01_4.html#a1b0c5bebddaa74e45a8059cd573268c1">type</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01T_01_5_01_4.html">   63</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::nullptr_t, T*&gt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01T_01_5_01_4.html#ab3e4d848ba7e097b191c916fc5e66371">   65</a></span>    <span class="keyword">typedef</span> T* <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01T_01_5_01_4.html#ab3e4d848ba7e097b191c916fc5e66371">type</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4.html">   68</a></span><span class="keyword">template</span>&lt;&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;<a class="code hl_namespace" href="namespacestd.html">std</a>::nullptr_t, std::nullptr_t&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4.html#ac9a910eeafacd23cd8c63d2b405c36bb">   70</a></span>    <span class="keyword">typedef</span> std::nullptr_t <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4.html#ac9a910eeafacd23cd8c63d2b405c36bb">type</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// !defined( BOOST_NO_CXX11_NULLPTR )</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="namespaceboost_1_1type__traits__detail_1_1detail.html">   77</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>{</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html">   80</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html">has_common_pointee</a></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a3f0b787e937ca8c1c1aa10db00721682">   84</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;T&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a3f0b787e937ca8c1c1aa10db00721682">T2</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a20d2f93bdd3c729db7944bc3c2c7de97">   85</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;U&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a20d2f93bdd3c729db7944bc3c2c7de97">U2</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#adaff5f40d47fd69cfb231508daaecb5d">   89</a></span>    <a class="code hl_function" href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#adaff5f40d47fd69cfb231508daaecb5d">BOOST_STATIC_CONSTANT</a>( <span class="keywordtype">bool</span>, value =</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        (<a class="code hl_struct" href="structboost_1_1is__same.html">boost::is_same&lt;T2, U2&gt;::value</a>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        || <a class="code hl_struct" href="structboost_1_1is__void.html">boost::is_void&lt;T2&gt;::value</a></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        || <a class="code hl_struct" href="structboost_1_1is__void.html">boost::is_void&lt;U2&gt;::value</a></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        || (<a class="code hl_struct" href="structboost_1_1is__base__of.html">boost::is_base_of&lt;T2, U2&gt;::value</a>)</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        || (<a class="code hl_struct" href="structboost_1_1is__base__of.html">boost::is_base_of&lt;U2, T2&gt;::value</a>) );</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html">   97</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html">common_pointee</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a9bdb3936fbbaec2f90576d5a710f781e">  101</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;T&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a9bdb3936fbbaec2f90576d5a710f781e">T2</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#ae4b97adc57290198c499db1a1685e09b">  102</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;U&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#ae4b97adc57290198c499db1a1685e09b">U2</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">boost::conditional</a>&lt;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        <a class="code hl_struct" href="structboost_1_1is__same.html">boost::is_same&lt;T2, U2&gt;::value</a> || <a class="code hl_struct" href="structboost_1_1is__void.html">boost::is_void&lt;T2&gt;::value</a> || <a class="code hl_struct" href="structboost_1_1is__base__of.html">boost::is_base_of&lt;T2, U2&gt;::value</a>,</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conjunction.html">boost::copy_cv&lt;T, U&gt;::type</a>,</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conjunction.html">boost::copy_cv&lt;U, T&gt;::type</a></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a0b599e3d546d209383d451fe257ac805">  112</a></span>    &gt;<a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a0b599e3d546d209383d451fe257ac805">::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a0b599e3d546d209383d451fe257ac805">type</a>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html">  115</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html">composite_pointer_impl</a></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>{</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#a992cf17d458044297701c280507d6f04">  119</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;T&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#a992cf17d458044297701c280507d6f04">T2</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#adf538aecd67df84bf08bfe67b77c398d">  120</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;U&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#adf538aecd67df84bf08bfe67b77c398d">U2</a>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#ae5363a84026f259051263bad77424798">  124</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1copy__cv.html">boost::copy_cv&lt;typename boost::copy_cv&lt;typename composite_pointer_type&lt;T2, U2&gt;::type</a> <span class="keyword">const</span>, T&gt;<a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#ae5363a84026f259051263bad77424798">::type</a>, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>&gt;<a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#ae5363a84026f259051263bad77424798">::type</a> <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#ae5363a84026f259051263bad77424798">type</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="comment">//Old compilers like MSVC-7.1 have problems using boost::conditional in</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="comment">//composite_pointer_type. Partially specializing on has_common_pointee&lt;T, U&gt;::value</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">//seems to make their life easier</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>template&lt;class T, class U, bool = has_common_pointee&lt;T, U&gt;::value &gt;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch.html">  131</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch.html">composite_pointer_type_dispatch</a></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>   : <a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html">common_pointee</a>&lt;T, U&gt;</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>{};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch_3_01T_00_01U_00_01false_01_4.html">  136</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch.html">composite_pointer_type_dispatch</a>&lt;T, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>, false&gt;</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>   : <a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html">composite_pointer_impl</a>&lt;T, U&gt;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>{};</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>} <span class="comment">// detail</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01U_01_5_01_4.html">  144</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">composite_pointer_type</a>&lt;T*, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>*&gt;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>{</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01U_01_5_01_4.html#ac442c3805e80e6dd42b553b89431ee44">  146</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conjunction.html">detail::composite_pointer_type_dispatch&lt;T, U&gt;::type</a>* <a class="code hl_typedef" href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01U_01_5_01_4.html#ac442c3805e80e6dd42b553b89431ee44">type</a>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>};</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>} <span class="comment">// namespace type_traits_detail</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#endif </span><span class="comment">// #ifndef BOOST_TYPE_TRAITS_DETAIL_COMPOSITE_POINTER_TYPE_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="acopy__cv_8hpp_html"><div class="ttname"><a href="copy__cv_8hpp.html">copy_cv.hpp</a></div></div>
+<div class="ttc" id="ais__base__of_8hpp_html"><div class="ttname"><a href="is__base__of_8hpp.html">is_base_of.hpp</a></div></div>
+<div class="ttc" id="ais__void_8hpp_html"><div class="ttname"><a href="is__void_8hpp.html">is_void.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="move_2make__unique_8hpp_source.html#l00046">move/make_unique.hpp:46</a></div></div>
+<div class="ttc" id="aremove__cv_8hpp_html"><div class="ttname"><a href="remove__cv_8hpp.html">remove_cv.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1conditional_html"><div class="ttname"><a href="structboost_1_1conditional.html">boost::conditional</a></div><div class="ttdef"><b>Definition:</b> <a href="conditional_8hpp_source.html#l00016">conditional.hpp:16</a></div></div>
+<div class="ttc" id="astructboost_1_1conjunction_html"><div class="ttname"><a href="structboost_1_1conjunction.html">boost::conjunction</a></div><div class="ttdef"><b>Definition:</b> <a href="type__traits_2conjunction_8hpp_source.html#l00022">type_traits/conjunction.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1copy__cv_html"><div class="ttname"><a href="structboost_1_1copy__cv.html">boost::copy_cv</a></div><div class="ttdef"><b>Definition:</b> <a href="copy__cv_8hpp_source.html#l00021">copy_cv.hpp:22</a></div></div>
+<div class="ttc" id="astructboost_1_1is__base__of_html"><div class="ttname"><a href="structboost_1_1is__base__of.html">boost::is_base_of</a></div><div class="ttdef"><b>Definition:</b> <a href="is__base__of_8hpp_source.html#l00030">is_base_of.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1is__same_html"><div class="ttname"><a href="structboost_1_1is__same.html">boost::is_same</a></div><div class="ttdef"><b>Definition:</b> <a href="type__traits_2is__same_8hpp_source.html#l00029">type_traits/is_same.hpp:29</a></div></div>
+<div class="ttc" id="astructboost_1_1is__void_html"><div class="ttname"><a href="structboost_1_1is__void.html">boost::is_void</a></div><div class="ttdef"><b>Definition:</b> <a href="is__void_8hpp_source.html#l00017">is_void.hpp:17</a></div></div>
+<div class="ttc" id="astructboost_1_1remove__cv_html_a783448ede77b7efd6c66581a9b03312d"><div class="ttname"><a href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="remove__cv_8hpp_source.html#l00021">remove_cv.hpp:21</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01T_01_5_01_4_html_aa55ea297f5f778e0bee3a648a679c569"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01T_01_5_01_4.html#aa55ea297f5f778e0bee3a648a679c569">boost::type_traits_detail::composite_pointer_type&lt; T *, T * &gt;::type</a></div><div class="ttdeci">T * type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00032">composite_pointer_type.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01U_01_5_01_4_html_ac442c3805e80e6dd42b553b89431ee44"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01U_01_5_01_4.html#ac442c3805e80e6dd42b553b89431ee44">boost::type_traits_detail::composite_pointer_type&lt; T *, U * &gt;::type</a></div><div class="ttdeci">detail::composite_pointer_type_dispatch&lt; T, U &gt;::type * type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00146">composite_pointer_type.hpp:146</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01std_1_1nullptr__t_01_4_html_a1b0c5bebddaa74e45a8059cd573268c1"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01T_01_5_00_01std_1_1nullptr__t_01_4.html#a1b0c5bebddaa74e45a8059cd573268c1">boost::type_traits_detail::composite_pointer_type&lt; T *, std::nullptr_t &gt;::type</a></div><div class="ttdeci">T * type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00060">composite_pointer_type.hpp:60</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01T_01_5_01_4_html_ab3e4d848ba7e097b191c916fc5e66371"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01T_01_5_01_4.html#ab3e4d848ba7e097b191c916fc5e66371">boost::type_traits_detail::composite_pointer_type&lt; std::nullptr_t, T * &gt;::type</a></div><div class="ttdeci">T * type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00065">composite_pointer_type.hpp:65</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4_html_ac9a910eeafacd23cd8c63d2b405c36bb"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4.html#ac9a910eeafacd23cd8c63d2b405c36bb">boost::type_traits_detail::composite_pointer_type&lt; std::nullptr_t, std::nullptr_t &gt;::type</a></div><div class="ttdeci">std::nullptr_t type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00070">composite_pointer_type.hpp:70</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1composite__pointer__type_html"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1composite__pointer__type.html">boost::type_traits_detail::composite_pointer_type</a></div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00026">composite_pointer_type.hpp:26</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1common__pointee_html"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html">boost::type_traits_detail::detail::common_pointee</a></div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00097">composite_pointer_type.hpp:98</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1common__pointee_html_a0b599e3d546d209383d451fe257ac805"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a0b599e3d546d209383d451fe257ac805">boost::type_traits_detail::detail::common_pointee::type</a></div><div class="ttdeci">boost::conditional&lt; boost::is_same&lt; T2, U2 &gt;::value||boost::is_void&lt; T2 &gt;::value||boost::is_base_of&lt; T2, U2 &gt;::value, typenameboost::copy_cv&lt; T, U &gt;::type, typenameboost::copy_cv&lt; U, T &gt;::type &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00112">composite_pointer_type.hpp:112</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1common__pointee_html_a9bdb3936fbbaec2f90576d5a710f781e"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#a9bdb3936fbbaec2f90576d5a710f781e">boost::type_traits_detail::detail::common_pointee::T2</a></div><div class="ttdeci">boost::remove_cv&lt; T &gt;::type T2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00101">composite_pointer_type.hpp:101</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1common__pointee_html_ae4b97adc57290198c499db1a1685e09b"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1common__pointee.html#ae4b97adc57290198c499db1a1685e09b">boost::type_traits_detail::detail::common_pointee::U2</a></div><div class="ttdeci">boost::remove_cv&lt; U &gt;::type U2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00102">composite_pointer_type.hpp:102</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl_html"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html">boost::type_traits_detail::detail::composite_pointer_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00115">composite_pointer_type.hpp:116</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl_html_a992cf17d458044297701c280507d6f04"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#a992cf17d458044297701c280507d6f04">boost::type_traits_detail::detail::composite_pointer_impl::T2</a></div><div class="ttdeci">boost::remove_cv&lt; T &gt;::type T2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00119">composite_pointer_type.hpp:119</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl_html_adf538aecd67df84bf08bfe67b77c398d"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#adf538aecd67df84bf08bfe67b77c398d">boost::type_traits_detail::detail::composite_pointer_impl::U2</a></div><div class="ttdeci">boost::remove_cv&lt; U &gt;::type U2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00120">composite_pointer_type.hpp:120</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl_html_ae5363a84026f259051263bad77424798"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__impl.html#ae5363a84026f259051263bad77424798">boost::type_traits_detail::detail::composite_pointer_impl::type</a></div><div class="ttdeci">boost::copy_cv&lt; typenameboost::copy_cv&lt; typenamecomposite_pointer_type&lt; T2, U2 &gt;::typeconst, T &gt;::type, U &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00124">composite_pointer_type.hpp:124</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch_html"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1composite__pointer__type__dispatch.html">boost::type_traits_detail::detail::composite_pointer_type_dispatch</a></div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00131">composite_pointer_type.hpp:133</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee_html"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html">boost::type_traits_detail::detail::has_common_pointee</a></div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00080">composite_pointer_type.hpp:81</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee_html_a20d2f93bdd3c729db7944bc3c2c7de97"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a20d2f93bdd3c729db7944bc3c2c7de97">boost::type_traits_detail::detail::has_common_pointee::U2</a></div><div class="ttdeci">boost::remove_cv&lt; U &gt;::type U2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00085">composite_pointer_type.hpp:85</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee_html_a3f0b787e937ca8c1c1aa10db00721682"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#a3f0b787e937ca8c1c1aa10db00721682">boost::type_traits_detail::detail::has_common_pointee::T2</a></div><div class="ttdeci">boost::remove_cv&lt; T &gt;::type T2</div><div class="ttdef"><b>Definition:</b> <a href="composite__pointer__type_8hpp_source.html#l00084">composite_pointer_type.hpp:84</a></div></div>
+<div class="ttc" id="astructboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee_html_adaff5f40d47fd69cfb231508daaecb5d"><div class="ttname"><a href="structboost_1_1type__traits__detail_1_1detail_1_1has__common__pointee.html#adaff5f40d47fd69cfb231508daaecb5d">boost::type_traits_detail::detail::has_common_pointee::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=(boost::is_same&lt; T2, U2 &gt;::value)||boost::is_void&lt; T2 &gt;::value||boost::is_void&lt; U2 &gt;::value||(boost::is_base_of&lt; T2, U2 &gt;::value)||(boost::is_base_of&lt; U2, T2 &gt;::value))</div></div>
+<div class="ttc" id="astructboost_1_1type_html"><div class="ttname"><a href="structboost_1_1type.html">boost::type</a></div><div class="ttdef"><b>Definition:</b> <a href="type_8hpp_source.html#l00014">type.hpp:14</a></div></div>
+<div class="ttc" id="atype__traits_2is__same_8hpp_html"><div class="ttname"><a href="type__traits_2is__same_8hpp.html">is_same.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_58e84a66c35a87b44d1654fe688cf24e.html">type_traits</a></li><li class="navelem"><a class="el" href="dir_fa81cdd1c7ed274f4777b66f14e2bed6.html">detail</a></li><li class="navelem"><a class="el" href="composite__pointer__type_8hpp.html">composite_pointer_type.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

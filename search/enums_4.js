@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['enumtype_0',['EnumType',['../classAfterdoc__Test.html#adab0cd7ad3b4875e245ca8f6238a388a',1,'Afterdoc_Test']]],
-  ['etype_1',['EType',['../classAutolink__Test.html#aeb611627c332d067bded1806b1bb45c2',1,'Autolink_Test']]],
-  ['eventscope_2',['EventScope',['../namespacemtgb.html#acd206f28363bccdce4c5fc97d67cf9eb',1,'mtgb']]]
+  ['devicetype_0',['DeviceType',['../namespacemtgb.html#a919a09feaf3649c048364fffc3053d97',1,'mtgb']]],
+  ['drmp3_5fmetadata_5ftype_1',['drmp3_metadata_type',['../dr__mp3_8h.html#a65f139d4bec1e0395093497f44bdce46',1,'dr_mp3.h']]],
+  ['drmp3_5fseek_5forigin_2',['drmp3_seek_origin',['../dr__mp3_8h.html#a09c24b549f31048ce551a25ee2418550',1,'dr_mp3.h']]]
 ];

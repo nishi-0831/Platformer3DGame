@@ -1,0 +1,279 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: make_unsigned.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('make__unsigned_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">make_unsigned.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="make__unsigned_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  (C) Copyright John Maddock 2007.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  Use, modification and distribution are subject to the Boost Software License,</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt).</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  See http://www.boost.org/libs/type_traits for most recent version including documentation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef BOOST_TT_MAKE_UNSIGNED_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define BOOST_TT_MAKE_UNSIGNED_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="conditional_8hpp.html">boost/type_traits/conditional.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="is__integral_8hpp.html">boost/type_traits/is_integral.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="is__signed_8hpp.html">boost/type_traits/is_signed.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="is__unsigned_8hpp.html">boost/type_traits/is_unsigned.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="is__enum_8hpp.html">boost/type_traits/is_enum.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__same_8hpp.html">boost/type_traits/is_same.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="remove__cv_8hpp.html">boost/type_traits/remove_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="is__const_8hpp.html">boost/type_traits/is_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="is__volatile_8hpp.html">boost/type_traits/is_volatile.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="add__const_8hpp.html">boost/type_traits/add_const.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="add__volatile_8hpp.html">boost/type_traits/add_volatile.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="static__assert_8hpp.html">boost/static_assert.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html">   28</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1make__unsigned.html">make_unsigned</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#aaadf3a184b0ff185a7caed8e273d4e7b">   31</a></span>   <a class="code hl_function" href="structboost_1_1make__unsigned.html#aaadf3a184b0ff185a7caed8e273d4e7b">BOOST_STATIC_ASSERT_MSG</a>((<a class="code hl_struct" href="structboost_1_1is__integral.html">::boost::is_integral&lt;T&gt;::value</a> || <a class="code hl_struct" href="structboost_1_1is__enum.html">::boost::is_enum&lt;T&gt;::value</a>), <span class="stringliteral">&quot;The template argument to make_unsigned must be an integer or enum type.&quot;</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#a399ee96c229b30e4616b672eb212d940">   32</a></span>   <a class="code hl_function" href="structboost_1_1make__unsigned.html#a399ee96c229b30e4616b672eb212d940">BOOST_STATIC_ASSERT_MSG</a>((! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same</a>&lt;<span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">remove_cv&lt;T&gt;::type</a>, <span class="keywordtype">bool</span>&gt;::value), <span class="stringliteral">&quot;The template argument to make_unsigned must not be the type bool&quot;</span>);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">   34</a></span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">remove_cv&lt;T&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      (<a class="code hl_struct" href="structboost_1_1is__unsigned.html">::boost::is_unsigned&lt;T&gt;::value</a> &amp;&amp; <a class="code hl_struct" href="structboost_1_1is__integral.html">::boost::is_integral&lt;T&gt;::value</a> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, char&gt;::value</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, wchar_t&gt;::value</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, bool&gt;::value</a>),</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      T,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>         (<a class="code hl_struct" href="structboost_1_1is__integral.html">::boost::is_integral&lt;T&gt;::value</a> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>         &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, char&gt;::value</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>         &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, wchar_t&gt;::value</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>         &amp;&amp; ! <a class="code hl_struct" href="structboost_1_1is__same.html">::boost::is_same&lt;t_no_cv, bool&gt;::value</a>),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>         <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;t_no_cv, signed char&gt;::value</a>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            <span class="keywordtype">unsigned</span> char,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>               <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;t_no_cv, short&gt;::value</a>,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>               <span class="keywordtype">unsigned</span> short,</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>               <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                  <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;t_no_cv, int&gt;::value</a>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                  <span class="keywordtype">unsigned</span> int,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                  <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                     <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;t_no_cv, long&gt;::value</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                     <span class="keywordtype">unsigned</span> long,</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#if defined(BOOST_HAS_LONG_LONG)</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#ifdef BOOST_HAS_INT128</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                     <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                        <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(boost::ulong_long_type), </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                        boost::ulong_long_type, </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                        boost::uint128_type</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                     &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                     boost::ulong_long_type</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="preprocessor">#elif defined(BOOST_HAS_MS_INT64)</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                     <span class="keywordtype">unsigned</span> __int64</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                  &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>               &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>         &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a>,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>         <span class="comment">// Not a regular integer type:</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>         <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>),</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            <span class="keywordtype">unsigned</span> char,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>               <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span>),</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>               <span class="keywordtype">unsigned</span> short,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>               <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                  <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>),</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                  <span class="keywordtype">unsigned</span> int,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                  <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                     <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>),</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                     <span class="keywordtype">unsigned</span> long,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#if defined(BOOST_HAS_LONG_LONG)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#ifdef BOOST_HAS_INT128</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                     <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                        <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">t_no_cv</a>) == <span class="keyword">sizeof</span>(boost::ulong_long_type), </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        boost::ulong_long_type, </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                        boost::uint128_type</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                     &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                     boost::ulong_long_type</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#elif defined(BOOST_HAS_MS_INT64)</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>                     <span class="keywordtype">unsigned</span> __int64</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>                     <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                  &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>               &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>         &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#a8fb4474f9d3478099d55eb8f990a7dbc">  110</a></span>   &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a> <a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a8fb4474f9d3478099d55eb8f990a7dbc">base_integer_type</a>;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>   </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>   <span class="comment">// Add back any const qualifier:</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <a class="code hl_struct" href="structboost_1_1is__const.html">is_const&lt;T&gt;::value</a>,</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>      <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1add__const.html#ab859d8b5c6e51671b0bc7151da7b2d5c">add_const&lt;base_integer_type&gt;::type</a>,</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <a class="code hl_struct" href="structboost_1_1conjunction.html">base_integer_type</a></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#af33db4953a0bfbd5b1ad6a4addecc798">  117</a></span>   &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a> <a class="code hl_typedef" href="structboost_1_1make__unsigned.html#af33db4953a0bfbd5b1ad6a4addecc798">const_base_integer_type</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>   <span class="comment">// Add back any volatile qualifier:</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conditional.html">conditional</a>&lt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>      <a class="code hl_struct" href="structboost_1_1is__volatile.html">is_volatile&lt;T&gt;::value</a>,</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1add__volatile.html#a3599586cb7c361c49dcfffea868e8939">add_volatile&lt;const_base_integer_type&gt;::type</a>,</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      <a class="code hl_struct" href="structboost_1_1conjunction.html">const_base_integer_type</a></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">  124</a></span>   &gt;<a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">::type</a> <a class="code hl_typedef" href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">type</a>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if !defined(BOOST_NO_CXX11_TEMPLATE_ALIASES)</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="namespaceboost.html#a76e92ac87072f84ec118af1697658be5">  129</a></span>   <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost.html#a76e92ac87072f84ec118af1697658be5">make_unsigned_t</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1conjunction.html">make_unsigned&lt;T&gt;::type</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_TT_ADD_REFERENCE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="ttc" id="aadd__const_8hpp_html"><div class="ttname"><a href="add__const_8hpp.html">add_const.hpp</a></div></div>
+<div class="ttc" id="aadd__volatile_8hpp_html"><div class="ttname"><a href="add__volatile_8hpp.html">add_volatile.hpp</a></div></div>
+<div class="ttc" id="aconditional_8hpp_html"><div class="ttname"><a href="conditional_8hpp.html">conditional.hpp</a></div></div>
+<div class="ttc" id="ais__const_8hpp_html"><div class="ttname"><a href="is__const_8hpp.html">is_const.hpp</a></div></div>
+<div class="ttc" id="ais__enum_8hpp_html"><div class="ttname"><a href="is__enum_8hpp.html">is_enum.hpp</a></div></div>
+<div class="ttc" id="ais__integral_8hpp_html"><div class="ttname"><a href="is__integral_8hpp.html">is_integral.hpp</a></div></div>
+<div class="ttc" id="ais__signed_8hpp_html"><div class="ttname"><a href="is__signed_8hpp.html">is_signed.hpp</a></div></div>
+<div class="ttc" id="ais__unsigned_8hpp_html"><div class="ttname"><a href="is__unsigned_8hpp.html">is_unsigned.hpp</a></div></div>
+<div class="ttc" id="ais__volatile_8hpp_html"><div class="ttname"><a href="is__volatile_8hpp.html">is_volatile.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a76e92ac87072f84ec118af1697658be5"><div class="ttname"><a href="namespaceboost.html#a76e92ac87072f84ec118af1697658be5">boost::make_unsigned_t</a></div><div class="ttdeci">typename make_unsigned&lt; T &gt;::type make_unsigned_t</div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00129">make_unsigned.hpp:129</a></div></div>
+<div class="ttc" id="aremove__cv_8hpp_html"><div class="ttname"><a href="remove__cv_8hpp.html">remove_cv.hpp</a></div></div>
+<div class="ttc" id="astatic__assert_8hpp_html"><div class="ttname"><a href="static__assert_8hpp.html">static_assert.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1add__const_html_ab859d8b5c6e51671b0bc7151da7b2d5c"><div class="ttname"><a href="structboost_1_1add__const.html#ab859d8b5c6e51671b0bc7151da7b2d5c">boost::add_const::type</a></div><div class="ttdeci">T const type</div><div class="ttdef"><b>Definition:</b> <a href="add__const_8hpp_source.html#l00032">add_const.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1add__volatile_html_a3599586cb7c361c49dcfffea868e8939"><div class="ttname"><a href="structboost_1_1add__volatile.html#a3599586cb7c361c49dcfffea868e8939">boost::add_volatile::type</a></div><div class="ttdeci">T volatile type</div><div class="ttdef"><b>Definition:</b> <a href="add__volatile_8hpp_source.html#l00030">add_volatile.hpp:30</a></div></div>
+<div class="ttc" id="astructboost_1_1conditional_html"><div class="ttname"><a href="structboost_1_1conditional.html">boost::conditional</a></div><div class="ttdef"><b>Definition:</b> <a href="conditional_8hpp_source.html#l00016">conditional.hpp:16</a></div></div>
+<div class="ttc" id="astructboost_1_1conjunction_html"><div class="ttname"><a href="structboost_1_1conjunction.html">boost::conjunction</a></div><div class="ttdef"><b>Definition:</b> <a href="type__traits_2conjunction_8hpp_source.html#l00022">type_traits/conjunction.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1is__const_html"><div class="ttname"><a href="structboost_1_1is__const.html">boost::is_const</a></div><div class="ttdef"><b>Definition:</b> <a href="is__const_8hpp_source.html#l00037">is_const.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1is__enum_html"><div class="ttname"><a href="structboost_1_1is__enum.html">boost::is_enum</a></div><div class="ttdef"><b>Definition:</b> <a href="is__enum_8hpp_source.html#l00148">is_enum.hpp:148</a></div></div>
+<div class="ttc" id="astructboost_1_1is__integral_html"><div class="ttname"><a href="structboost_1_1is__integral.html">boost::is_integral</a></div><div class="ttdef"><b>Definition:</b> <a href="is__integral_8hpp_source.html#l00022">is_integral.hpp:22</a></div></div>
+<div class="ttc" id="astructboost_1_1is__same_html"><div class="ttname"><a href="structboost_1_1is__same.html">boost::is_same</a></div><div class="ttdef"><b>Definition:</b> <a href="type__traits_2is__same_8hpp_source.html#l00029">type_traits/is_same.hpp:29</a></div></div>
+<div class="ttc" id="astructboost_1_1is__unsigned_html"><div class="ttname"><a href="structboost_1_1is__unsigned.html">boost::is_unsigned</a></div><div class="ttdef"><b>Definition:</b> <a href="is__unsigned_8hpp_source.html#l00079">is_unsigned.hpp:79</a></div></div>
+<div class="ttc" id="astructboost_1_1is__volatile_html"><div class="ttname"><a href="structboost_1_1is__volatile.html">boost::is_volatile</a></div><div class="ttdef"><b>Definition:</b> <a href="is__volatile_8hpp_source.html#l00037">is_volatile.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html"><div class="ttname"><a href="structboost_1_1make__unsigned.html">boost::make_unsigned</a></div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00028">make_unsigned.hpp:29</a></div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_a399ee96c229b30e4616b672eb212d940"><div class="ttname"><a href="structboost_1_1make__unsigned.html#a399ee96c229b30e4616b672eb212d940">boost::make_unsigned::BOOST_STATIC_ASSERT_MSG</a></div><div class="ttdeci">BOOST_STATIC_ASSERT_MSG((! ::boost::is_same&lt; typename remove_cv&lt; T &gt;::type, bool &gt;::value), &quot;The template argument to make_unsigned must not be the type bool&quot;)</div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_a45b450e0620abbe493ccc74d1de2fbdd"><div class="ttname"><a href="structboost_1_1make__unsigned.html#a45b450e0620abbe493ccc74d1de2fbdd">boost::make_unsigned::t_no_cv</a></div><div class="ttdeci">remove_cv&lt; T &gt;::type t_no_cv</div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00034">make_unsigned.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_a81bc631a2cfa7dd787523166badd5913"><div class="ttname"><a href="structboost_1_1make__unsigned.html#a81bc631a2cfa7dd787523166badd5913">boost::make_unsigned::type</a></div><div class="ttdeci">conditional&lt; is_volatile&lt; T &gt;::value, typenameadd_volatile&lt; const_base_integer_type &gt;::type, const_base_integer_type &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00124">make_unsigned.hpp:124</a></div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_a8fb4474f9d3478099d55eb8f990a7dbc"><div class="ttname"><a href="structboost_1_1make__unsigned.html#a8fb4474f9d3478099d55eb8f990a7dbc">boost::make_unsigned::base_integer_type</a></div><div class="ttdeci">conditional&lt;(::boost::is_unsigned&lt; T &gt;::value &amp;&amp;::boost::is_integral&lt; T &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, char &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, wchar_t &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, bool &gt;::value), T, typenameconditional&lt;(::boost::is_integral&lt; T &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, char &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, wchar_t &gt;::value &amp;&amp;!::boost::is_same&lt; t_no_cv, bool &gt;::value), typenameconditional&lt; is_same&lt; t_no_cv, signedchar &gt;::value, unsignedchar, typenameconditional&lt; is_same&lt; t_no_cv, short &gt;::value, unsignedshort, typenameconditional&lt; is_same&lt; t_no_cv, int &gt;::value, unsignedint, typenameconditional&lt; is_same&lt; t_no_cv, long &gt;::value, unsignedlong, unsignedlong &gt;::type &gt;::type &gt;::type &gt;::type, typenameconditional&lt; sizeof(t_no_cv)==sizeof(unsignedchar), unsignedchar, typenameconditional&lt; sizeof(t_no_cv)==sizeof(unsignedshort), unsignedshort, typenameconditional&lt; sizeof(t_no_cv)==sizeof(unsignedint), unsignedint, typenameconditional&lt; sizeof(t_no_cv)==sizeof(unsignedlong), unsignedlong, unsignedlong &gt;::type &gt;::type &gt;::type &gt;::type &gt;::type &gt;::type base_integer_type</div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00110">make_unsigned.hpp:110</a></div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_aaadf3a184b0ff185a7caed8e273d4e7b"><div class="ttname"><a href="structboost_1_1make__unsigned.html#aaadf3a184b0ff185a7caed8e273d4e7b">boost::make_unsigned::BOOST_STATIC_ASSERT_MSG</a></div><div class="ttdeci">BOOST_STATIC_ASSERT_MSG((::boost::is_integral&lt; T &gt;::value||::boost::is_enum&lt; T &gt;::value), &quot;The template argument to make_unsigned must be an integer or enum type.&quot;)</div></div>
+<div class="ttc" id="astructboost_1_1make__unsigned_html_af33db4953a0bfbd5b1ad6a4addecc798"><div class="ttname"><a href="structboost_1_1make__unsigned.html#af33db4953a0bfbd5b1ad6a4addecc798">boost::make_unsigned::const_base_integer_type</a></div><div class="ttdeci">conditional&lt; is_const&lt; T &gt;::value, typenameadd_const&lt; base_integer_type &gt;::type, base_integer_type &gt;::type const_base_integer_type</div><div class="ttdef"><b>Definition:</b> <a href="make__unsigned_8hpp_source.html#l00117">make_unsigned.hpp:117</a></div></div>
+<div class="ttc" id="astructboost_1_1remove__cv_html_a783448ede77b7efd6c66581a9b03312d"><div class="ttname"><a href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="remove__cv_8hpp_source.html#l00021">remove_cv.hpp:21</a></div></div>
+<div class="ttc" id="atype__traits_2is__same_8hpp_html"><div class="ttname"><a href="type__traits_2is__same_8hpp.html">is_same.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_58e84a66c35a87b44d1654fe688cf24e.html">type_traits</a></li><li class="navelem"><a class="el" href="make__unsigned_8hpp.html">make_unsigned.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

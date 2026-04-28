@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: int_iterator.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('int__iterator_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">int_iterator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="int__iterator_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright Jeremy Siek 1999.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Distributed under the Boost Software License, Version 1.0. (See</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef BOOST_INT_ITERATOR_H</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define BOOST_INT_ITERATOR_H</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#if !defined BOOST_MSVC</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="operators_8hpp.html">boost/operators.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//using namespace std;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#ifndef BOOST_NO_OPERATORS_IN_NAMESPACE</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span>iterators {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// this should use random_access_iterator_helper but I&#39;ve had</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// VC++ portablility problems with that. -JGS</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> IntT&gt;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html">   25</a></span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">int_iterator</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#aab18f0d1ccfe90b8a03f34272c584e52">   27</a></span>  <span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">int_iterator</a> <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#aab18f0d1ccfe90b8a03f34272c584e52">self</a>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a6fb8260c7c3e47d03070836c4891760e">   29</a></span>  <span class="keyword">typedef</span> std::random_access_iterator_tag <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#a6fb8260c7c3e47d03070836c4891760e">iterator_category</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a4c5dbee1efe5b4cb8d957f5e29f1abcd">   30</a></span>  <span class="keyword">typedef</span> IntT <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#a4c5dbee1efe5b4cb8d957f5e29f1abcd">value_type</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#acc30dce5c2f16819b1bc66ea19cc2fea">   31</a></span>  <span class="keyword">typedef</span> IntT&amp; <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#acc30dce5c2f16819b1bc66ea19cc2fea">reference</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ad294cf61ae42350a10cca1f2183e8a7b">   32</a></span>  <span class="keyword">typedef</span> IntT* <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#ad294cf61ae42350a10cca1f2183e8a7b">pointer</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ae32b7293aa360c1f2ff15ee727c6c4c9">   33</a></span>  <span class="keyword">typedef</span> std::ptrdiff_t <a class="code hl_typedef" href="classboost_1_1iterators_1_1int__iterator.html#ae32b7293aa360c1f2ff15ee727c6c4c9">difference_type</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ae4667ccc8b6c6415554077ab2b24c26a">   35</a></span>  <span class="keyword">inline</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#ae4667ccc8b6c6415554077ab2b24c26a">int_iterator</a>() : <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>(0) { }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a007a06dc373ae03de155f2dcbb1654e5">   36</a></span>  <span class="keyword">inline</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a007a06dc373ae03de155f2dcbb1654e5">int_iterator</a>(IntT i) : <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>(i) { }</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a977abf79dca51a58ac735eceaea03017">   37</a></span>  <span class="keyword">inline</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a977abf79dca51a58ac735eceaea03017">int_iterator</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x) : <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>(x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>) { }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a872d642dc30608d9b4df1ce9c51990a3">   38</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a872d642dc30608d9b4df1ce9c51990a3">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x) { <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> = x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#afcf7fedd74fa412418fbb28b5272ed60">   39</a></span>  <span class="keyword">inline</span> IntT <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#afcf7fedd74fa412418fbb28b5272ed60">operator*</a>() { <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a61c1689592c5ba1dbe58f80bdcffc9a8">   40</a></span>  <span class="keyword">inline</span> IntT <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a61c1689592c5ba1dbe58f80bdcffc9a8">operator[]</a>(IntT n) { <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> + n; }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a6d2ef2819c36e9de8b395aaece1d7320">   41</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a6d2ef2819c36e9de8b395aaece1d7320">operator++</a>() { ++<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a40e4a59e3d8de3799148cde88166c1af">   42</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a40e4a59e3d8de3799148cde88166c1af">operator++</a>(<span class="keywordtype">int</span>) { <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> t = *<span class="keyword">this</span>; ++<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; <span class="keywordflow">return</span> t; }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a11f85ff8f9fc5e86d99ee1bb929f10ad">   43</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a11f85ff8f9fc5e86d99ee1bb929f10ad">operator+=</a>(IntT n) { <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> += n; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a04a75ba5834171173209cd1cf2a36d81">   44</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a04a75ba5834171173209cd1cf2a36d81">operator+</a>(IntT n) { <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> t = *<span class="keyword">this</span>; t += n; <span class="keywordflow">return</span> t; }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a1fb5b10e604fff69bcd07b4cd4f78ab1">   45</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a1fb5b10e604fff69bcd07b4cd4f78ab1">operator--</a>() { --<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a0249c5e41348a02ee987acca7860c489">   46</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a0249c5e41348a02ee987acca7860c489">operator--</a>(<span class="keywordtype">int</span>) { <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a> t = *<span class="keyword">this</span>; --<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; <span class="keywordflow">return</span> t; }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a7efc031861808983381084b97eac2e75">   47</a></span>  <span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a7efc031861808983381084b97eac2e75">operator-=</a>(IntT n) { <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> -= n; <span class="keywordflow">return</span> *<span class="keyword">this</span>; }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ad18d7eeae440482ff0138a963017dc2f">   48</a></span>  <span class="keyword">inline</span> IntT <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#ad18d7eeae440482ff0138a963017dc2f">operator-</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> - x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a33c4d59e840b450ff151eb1bced08172">   49</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a33c4d59e840b450ff151eb1bced08172">operator==</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> == x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// vc++ had a problem finding != in random_access_iterator_helper</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// need to look into this... for now implementing everything here -JGS</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a9a3d4c22ef6a634262e6fe7c5c9810ed">   52</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a9a3d4c22ef6a634262e6fe7c5c9810ed">operator!=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> != x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ac3ef05462336130b775b4e83ac6730b9">   53</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#ac3ef05462336130b775b4e83ac6730b9">operator&lt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> &lt; x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#ac1dee65db594f751db4630eb1929a0f2">   54</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#ac1dee65db594f751db4630eb1929a0f2">operator&lt;=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> &lt;= x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a09558e3bec73ed08d0bcb0355d45553c">   55</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#a09558e3bec73ed08d0bcb0355d45553c">operator&gt;</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> &gt; x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#af68a1b539663dbd51116f2df2a8b89b4">   56</a></span>  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1iterators_1_1int__iterator.html#af68a1b539663dbd51116f2df2a8b89b4">operator&gt;=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">self</a>&amp; x)<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a> &gt;= x.<a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>; }</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">   58</a></span>  IntT <a class="code hl_variable" href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">_i</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> IntT&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">int_iterator&lt;IntT&gt;</a></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="namespaceboost_1_1iterators.html#adad0c1c7edd334d0b2d4a2e58526c582">   63</a></span><a class="code hl_function" href="namespaceboost_1_1iterators.html#adad0c1c7edd334d0b2d4a2e58526c582">operator+</a>(IntT n, <a class="code hl_class" href="classboost_1_1iterators_1_1int__iterator.html">int_iterator&lt;IntT&gt;</a> t) { t += n; <span class="keywordflow">return</span> t; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#ifndef BOOST_NO_OPERATORS_IN_NAMESPACE</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>} <span class="comment">/* namespace iterators */</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword">using </span>iterators::int_iterator;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>} <span class="comment">/* namespace boost */</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#ifdef BOOST_NO_OPERATORS_IN_NAMESPACE</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>using ::int_iterator;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">namespace </span>iterators {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>using ::int_iterator;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>}}</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">/* BOOST_INT_ITERATOR_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html">boost::iterators::int_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00025">int_iterator.hpp:26</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a007a06dc373ae03de155f2dcbb1654e5"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a007a06dc373ae03de155f2dcbb1654e5">boost::iterators::int_iterator::int_iterator</a></div><div class="ttdeci">int_iterator(IntT i)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00036">int_iterator.hpp:36</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a0249c5e41348a02ee987acca7860c489"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a0249c5e41348a02ee987acca7860c489">boost::iterators::int_iterator::operator--</a></div><div class="ttdeci">self operator--(int)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00046">int_iterator.hpp:46</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a04a75ba5834171173209cd1cf2a36d81"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a04a75ba5834171173209cd1cf2a36d81">boost::iterators::int_iterator::operator+</a></div><div class="ttdeci">self operator+(IntT n)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00044">int_iterator.hpp:44</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a09558e3bec73ed08d0bcb0355d45553c"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a09558e3bec73ed08d0bcb0355d45553c">boost::iterators::int_iterator::operator&gt;</a></div><div class="ttdeci">bool operator&gt;(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00055">int_iterator.hpp:55</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a11f85ff8f9fc5e86d99ee1bb929f10ad"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a11f85ff8f9fc5e86d99ee1bb929f10ad">boost::iterators::int_iterator::operator+=</a></div><div class="ttdeci">self &amp; operator+=(IntT n)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00043">int_iterator.hpp:43</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a1fb5b10e604fff69bcd07b4cd4f78ab1"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a1fb5b10e604fff69bcd07b4cd4f78ab1">boost::iterators::int_iterator::operator--</a></div><div class="ttdeci">self &amp; operator--()</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00045">int_iterator.hpp:45</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a33c4d59e840b450ff151eb1bced08172"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a33c4d59e840b450ff151eb1bced08172">boost::iterators::int_iterator::operator==</a></div><div class="ttdeci">bool operator==(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00049">int_iterator.hpp:49</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a40e4a59e3d8de3799148cde88166c1af"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a40e4a59e3d8de3799148cde88166c1af">boost::iterators::int_iterator::operator++</a></div><div class="ttdeci">self operator++(int)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00042">int_iterator.hpp:42</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a4c5dbee1efe5b4cb8d957f5e29f1abcd"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a4c5dbee1efe5b4cb8d957f5e29f1abcd">boost::iterators::int_iterator::value_type</a></div><div class="ttdeci">IntT value_type</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00030">int_iterator.hpp:30</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a576bca2fda1bea0bac6af5c13e01f4fd"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a576bca2fda1bea0bac6af5c13e01f4fd">boost::iterators::int_iterator::_i</a></div><div class="ttdeci">IntT _i</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00058">int_iterator.hpp:58</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a61c1689592c5ba1dbe58f80bdcffc9a8"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a61c1689592c5ba1dbe58f80bdcffc9a8">boost::iterators::int_iterator::operator[]</a></div><div class="ttdeci">IntT operator[](IntT n)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00040">int_iterator.hpp:40</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a6d2ef2819c36e9de8b395aaece1d7320"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a6d2ef2819c36e9de8b395aaece1d7320">boost::iterators::int_iterator::operator++</a></div><div class="ttdeci">self &amp; operator++()</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00041">int_iterator.hpp:41</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a6fb8260c7c3e47d03070836c4891760e"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a6fb8260c7c3e47d03070836c4891760e">boost::iterators::int_iterator::iterator_category</a></div><div class="ttdeci">std::random_access_iterator_tag iterator_category</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00029">int_iterator.hpp:29</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a7efc031861808983381084b97eac2e75"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a7efc031861808983381084b97eac2e75">boost::iterators::int_iterator::operator-=</a></div><div class="ttdeci">self &amp; operator-=(IntT n)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00047">int_iterator.hpp:47</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a872d642dc30608d9b4df1ce9c51990a3"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a872d642dc30608d9b4df1ce9c51990a3">boost::iterators::int_iterator::operator=</a></div><div class="ttdeci">self &amp; operator=(const self &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00038">int_iterator.hpp:38</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a977abf79dca51a58ac735eceaea03017"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a977abf79dca51a58ac735eceaea03017">boost::iterators::int_iterator::int_iterator</a></div><div class="ttdeci">int_iterator(const self &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00037">int_iterator.hpp:37</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_a9a3d4c22ef6a634262e6fe7c5c9810ed"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#a9a3d4c22ef6a634262e6fe7c5c9810ed">boost::iterators::int_iterator::operator!=</a></div><div class="ttdeci">bool operator!=(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00052">int_iterator.hpp:52</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_aab18f0d1ccfe90b8a03f34272c584e52"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#aab18f0d1ccfe90b8a03f34272c584e52">boost::iterators::int_iterator::self</a></div><div class="ttdeci">int_iterator self</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00027">int_iterator.hpp:27</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ac1dee65db594f751db4630eb1929a0f2"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ac1dee65db594f751db4630eb1929a0f2">boost::iterators::int_iterator::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00054">int_iterator.hpp:54</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ac3ef05462336130b775b4e83ac6730b9"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ac3ef05462336130b775b4e83ac6730b9">boost::iterators::int_iterator::operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00053">int_iterator.hpp:53</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_acc30dce5c2f16819b1bc66ea19cc2fea"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#acc30dce5c2f16819b1bc66ea19cc2fea">boost::iterators::int_iterator::reference</a></div><div class="ttdeci">IntT &amp; reference</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00031">int_iterator.hpp:31</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ad18d7eeae440482ff0138a963017dc2f"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ad18d7eeae440482ff0138a963017dc2f">boost::iterators::int_iterator::operator-</a></div><div class="ttdeci">IntT operator-(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00048">int_iterator.hpp:48</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ad294cf61ae42350a10cca1f2183e8a7b"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ad294cf61ae42350a10cca1f2183e8a7b">boost::iterators::int_iterator::pointer</a></div><div class="ttdeci">IntT * pointer</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00032">int_iterator.hpp:32</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ae32b7293aa360c1f2ff15ee727c6c4c9"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ae32b7293aa360c1f2ff15ee727c6c4c9">boost::iterators::int_iterator::difference_type</a></div><div class="ttdeci">std::ptrdiff_t difference_type</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00033">int_iterator.hpp:33</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_ae4667ccc8b6c6415554077ab2b24c26a"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#ae4667ccc8b6c6415554077ab2b24c26a">boost::iterators::int_iterator::int_iterator</a></div><div class="ttdeci">int_iterator()</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00035">int_iterator.hpp:35</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_af68a1b539663dbd51116f2df2a8b89b4"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#af68a1b539663dbd51116f2df2a8b89b4">boost::iterators::int_iterator::operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(const self &amp;x) const</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00056">int_iterator.hpp:56</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1int__iterator_html_afcf7fedd74fa412418fbb28b5272ed60"><div class="ttname"><a href="classboost_1_1iterators_1_1int__iterator.html#afcf7fedd74fa412418fbb28b5272ed60">boost::iterators::int_iterator::operator*</a></div><div class="ttdeci">IntT operator*()</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00039">int_iterator.hpp:39</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1iterators_html_adad0c1c7edd334d0b2d4a2e58526c582"><div class="ttname"><a href="namespaceboost_1_1iterators.html#adad0c1c7edd334d0b2d4a2e58526c582">boost::iterators::operator+</a></div><div class="ttdeci">int_iterator&lt; IntT &gt; operator+(IntT n, int_iterator&lt; IntT &gt; t)</div><div class="ttdef"><b>Definition:</b> <a href="int__iterator_8hpp_source.html#l00063">int_iterator.hpp:63</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="aoperators_8hpp_html"><div class="ttname"><a href="operators_8hpp.html">operators.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_b00d2d57d61d62196877ce0b25ab6125.html">pending</a></li><li class="navelem"><a class="el" href="dir_cb01f7663d212b7369be57894857d222.html">detail</a></li><li class="navelem"><a class="el" href="int__iterator_8hpp.html">int_iterator.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

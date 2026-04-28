@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: transform_view_iterator.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('transform__view__iterator_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">transform_view_iterator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="transform__view__iterator_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#if !defined(FUSION_TRANSFORM_VIEW_ITERATOR_07162005_1033)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define FUSION_TRANSFORM_VIEW_ITERATOR_07162005_1033</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="support_2iterator__base_8hpp.html">boost/fusion/support/iterator_base.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="support_2category__of_8hpp.html">boost/fusion/support/category_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="convert__iterator_8hpp.html">boost/fusion/iterator/mpl/convert_iterator.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="mpl__iterator_8hpp.html">boost/fusion/adapted/mpl/mpl_iterator.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2deref__impl_8hpp.html">boost/fusion/view/transform_view/detail/deref_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2next__impl_8hpp.html">boost/fusion/view/transform_view/detail/next_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2prior__impl_8hpp.html">boost/fusion/view/transform_view/detail/prior_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2value__of__impl_8hpp.html">boost/fusion/view/transform_view/detail/value_of_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2advance__impl_8hpp.html">boost/fusion/view/transform_view/detail/advance_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2distance__impl_8hpp.html">boost/fusion/view/transform_view/detail/distance_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2equal__to__impl_8hpp.html">boost/fusion/view/transform_view/detail/equal_to_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2key__of__impl_8hpp.html">boost/fusion/view/transform_view/detail/key_of_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2value__of__data__impl_8hpp.html">boost/fusion/view/transform_view/detail/value_of_data_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="view_2transform__view_2detail_2deref__data__impl_8hpp.html">boost/fusion/view/transform_view/detail/deref_data_impl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#  pragma warning(push)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#  pragma warning(disable: 4512) </span><span class="comment">// assignment operator could not be generated.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Unary Version</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">struct </span>transform_view_iterator_tag;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> First, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html">   37</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1transform__view__iterator.html">transform_view_iterator</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        : <a class="code hl_struct" href="structboost_1_1fusion_1_1iterator__base.html">iterator_base</a>&lt;transform_view_iterator&lt;First, F&gt; &gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#aba4e772bf9cf2ca0a8193ee47c2200eb">   40</a></span>        <span class="keyword">typedef</span> transform_view_iterator_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#aba4e772bf9cf2ca0a8193ee47c2200eb">fusion_tag</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a0d2ac6c4c95ab5a4680ae1f0a1155df5">   41</a></span>        <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1convert__iterator.html">convert_iterator&lt;First&gt;</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#a0d2ac6c4c95ab5a4680ae1f0a1155df5">converter</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a002ce536997e7b680501e2673e99e3d3">   42</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">converter::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#a002ce536997e7b680501e2673e99e3d3">first_type</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a924a01b8927549604c0ccb5f8118cadf">   43</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1category__of.html">traits::category_of&lt;first_type&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#a924a01b8927549604c0ccb5f8118cadf">category</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#aa05d213a5aec2c5c3d8e29437ba434e7">   44</a></span>        <span class="keyword">typedef</span> F <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#aa05d213a5aec2c5c3d8e29437ba434e7">transform_type</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a7beb2cd6b92898023270a86789fb95af">   47</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1transform__view__iterator.html#a7beb2cd6b92898023270a86789fb95af">transform_view_iterator</a>(First <span class="keyword">const</span>&amp; in_first, F <span class="keyword">const</span>&amp; in_f)</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            : <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2b2939d45b25503ebe3ee2e118c7ea03">first</a>(<a class="code hl_class" href="structboost_1_1fusion_1_1convert__iterator.html">converter</a>::call(in_first)), <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2336b2843d7610486ad904cbd3764445">f</a>(in_f) {}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2b2939d45b25503ebe3ee2e118c7ea03">   50</a></span>        <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">first_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2b2939d45b25503ebe3ee2e118c7ea03">first</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2336b2843d7610486ad904cbd3764445">   51</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator.html#aa05d213a5aec2c5c3d8e29437ba434e7">transform_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator.html#a2336b2843d7610486ad904cbd3764445">f</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// Binary Version</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">struct </span>transform_view_iterator2_tag;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> First1, <span class="keyword">typename</span> First2, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html">   58</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1transform__view__iterator2.html">transform_view_iterator2</a></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        : <a class="code hl_struct" href="structboost_1_1fusion_1_1iterator__base.html">iterator_base</a>&lt;transform_view_iterator2&lt;First1, First2, F&gt; &gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a3052c43361f7b4f6c038b989268fd85e">   61</a></span>        <span class="keyword">typedef</span> transform_view_iterator2_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a3052c43361f7b4f6c038b989268fd85e">fusion_tag</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a29cd66ad6700b768e162e531660c0c02">   62</a></span>        <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1convert__iterator.html">convert_iterator&lt;First1&gt;</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a29cd66ad6700b768e162e531660c0c02">converter1</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a811a8eac114a63de9004cca793bbbaf0">   63</a></span>        <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1convert__iterator.html">convert_iterator&lt;First2&gt;</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a811a8eac114a63de9004cca793bbbaf0">converter2</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a4c2cfb0178e34f96913c60c045fdb25f">   64</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">converter1::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a4c2cfb0178e34f96913c60c045fdb25f">first1_type</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a990423837d3ebb446621acb8dd7f068d">   65</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">converter2::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a990423837d3ebb446621acb8dd7f068d">first2_type</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ab0ca69c5baa3505de63f3d4cea812ead">   66</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1category__of.html">traits::category_of&lt;first1_type&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ab0ca69c5baa3505de63f3d4cea812ead">category</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a7e82582a76ff1c1b8127e066f86c0548">   67</a></span>        <span class="keyword">typedef</span> F <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a7e82582a76ff1c1b8127e066f86c0548">transform_type</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ae3d12914a8695400a4af300a44b71e48">   70</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ae3d12914a8695400a4af300a44b71e48">transform_view_iterator2</a>(First1 <span class="keyword">const</span>&amp; in_first1, First2 <span class="keyword">const</span>&amp; in_first2, F <span class="keyword">const</span>&amp; in_f)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            : <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a5507ef411a6c0e2610b081c8cdd8dc8e">first1</a>(<a class="code hl_struct" href="structboost_1_1fusion_1_1convert__iterator.html">converter1</a>::call(in_first1)), <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#abf4dbe1eb53fa3ec1e9f8afbacff90e6">first2</a>(<a class="code hl_struct" href="structboost_1_1fusion_1_1convert__iterator.html">converter2</a>::call(in_first2)), <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ad9b790ed43a853a5330c2275c4788ace">f</a>(in_f) {}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a5507ef411a6c0e2610b081c8cdd8dc8e">   73</a></span>        <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">first1_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a5507ef411a6c0e2610b081c8cdd8dc8e">first1</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#abf4dbe1eb53fa3ec1e9f8afbacff90e6">   74</a></span>        <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">first2_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#abf4dbe1eb53fa3ec1e9f8afbacff90e6">first2</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ad9b790ed43a853a5330c2275c4788ace">   75</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1transform__view__iterator2.html#a7e82582a76ff1c1b8127e066f86c0548">transform_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1transform__view__iterator2.html#ad9b790ed43a853a5330c2275c4788ace">f</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">#  pragma warning(pop)</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#ifdef BOOST_FUSION_WORKAROUND_FOR_LWG_2408</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> First, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keyword">struct </span>iterator_traits&lt; ::<a class="code hl_struct" href="structboost_1_1fusion_1_1transform__view__iterator.html">boost::fusion::transform_view_iterator</a>&lt;First, F&gt; &gt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    { };</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> First1, <span class="keyword">typename</span> First2, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keyword">struct </span>iterator_traits&lt; ::<a class="code hl_struct" href="structboost_1_1fusion_1_1transform__view__iterator2.html">boost::fusion::transform_view_iterator2</a>&lt;First1, First2, F&gt; &gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    { };</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="ttc" id="aconvert__iterator_8hpp_html"><div class="ttname"><a href="convert__iterator_8hpp.html">convert_iterator.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="ampl__iterator_8hpp_html"><div class="ttname"><a href="mpl__iterator_8hpp.html">mpl_iterator.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="move_2make__unique_8hpp_source.html#l00046">move/make_unique.hpp:46</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1convert__iterator_html"><div class="ttname"><a href="structboost_1_1fusion_1_1convert__iterator.html">boost::fusion::convert_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="convert__iterator_8hpp_source.html#l00024">convert_iterator.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1iterator__base_html"><div class="ttname"><a href="structboost_1_1fusion_1_1iterator__base.html">boost::fusion::iterator_base</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2iterator__base_8hpp_source.html#l00018">support/iterator_base.hpp:19</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1category__of_html"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1category__of.html">boost::fusion::traits::category_of</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2category__of_8hpp_source.html#l00068">support/category_of.hpp:71</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html">boost::fusion::transform_view_iterator2</a></div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00058">transform_view_iterator.hpp:60</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a29cd66ad6700b768e162e531660c0c02"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a29cd66ad6700b768e162e531660c0c02">boost::fusion::transform_view_iterator2::converter1</a></div><div class="ttdeci">convert_iterator&lt; First1 &gt; converter1</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00062">transform_view_iterator.hpp:62</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a3052c43361f7b4f6c038b989268fd85e"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a3052c43361f7b4f6c038b989268fd85e">boost::fusion::transform_view_iterator2::fusion_tag</a></div><div class="ttdeci">transform_view_iterator2_tag fusion_tag</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00061">transform_view_iterator.hpp:61</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a4c2cfb0178e34f96913c60c045fdb25f"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a4c2cfb0178e34f96913c60c045fdb25f">boost::fusion::transform_view_iterator2::first1_type</a></div><div class="ttdeci">converter1::type first1_type</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00064">transform_view_iterator.hpp:64</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a5507ef411a6c0e2610b081c8cdd8dc8e"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a5507ef411a6c0e2610b081c8cdd8dc8e">boost::fusion::transform_view_iterator2::first1</a></div><div class="ttdeci">first1_type first1</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00073">transform_view_iterator.hpp:73</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a7e82582a76ff1c1b8127e066f86c0548"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a7e82582a76ff1c1b8127e066f86c0548">boost::fusion::transform_view_iterator2::transform_type</a></div><div class="ttdeci">F transform_type</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00067">transform_view_iterator.hpp:67</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a811a8eac114a63de9004cca793bbbaf0"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a811a8eac114a63de9004cca793bbbaf0">boost::fusion::transform_view_iterator2::converter2</a></div><div class="ttdeci">convert_iterator&lt; First2 &gt; converter2</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00063">transform_view_iterator.hpp:63</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_a990423837d3ebb446621acb8dd7f068d"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#a990423837d3ebb446621acb8dd7f068d">boost::fusion::transform_view_iterator2::first2_type</a></div><div class="ttdeci">converter2::type first2_type</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00065">transform_view_iterator.hpp:65</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_ab0ca69c5baa3505de63f3d4cea812ead"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#ab0ca69c5baa3505de63f3d4cea812ead">boost::fusion::transform_view_iterator2::category</a></div><div class="ttdeci">traits::category_of&lt; first1_type &gt;::type category</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00066">transform_view_iterator.hpp:66</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_abf4dbe1eb53fa3ec1e9f8afbacff90e6"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#abf4dbe1eb53fa3ec1e9f8afbacff90e6">boost::fusion::transform_view_iterator2::first2</a></div><div class="ttdeci">first2_type first2</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00074">transform_view_iterator.hpp:74</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_ad9b790ed43a853a5330c2275c4788ace"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#ad9b790ed43a853a5330c2275c4788ace">boost::fusion::transform_view_iterator2::f</a></div><div class="ttdeci">transform_type f</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00075">transform_view_iterator.hpp:75</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator2_html_ae3d12914a8695400a4af300a44b71e48"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator2.html#ae3d12914a8695400a4af300a44b71e48">boost::fusion::transform_view_iterator2::transform_view_iterator2</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED transform_view_iterator2(First1 const &amp;in_first1, First2 const &amp;in_first2, F const &amp;in_f)</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00070">transform_view_iterator.hpp:70</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html">boost::fusion::transform_view_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00037">transform_view_iterator.hpp:39</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a002ce536997e7b680501e2673e99e3d3"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a002ce536997e7b680501e2673e99e3d3">boost::fusion::transform_view_iterator::first_type</a></div><div class="ttdeci">converter::type first_type</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00042">transform_view_iterator.hpp:42</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a0d2ac6c4c95ab5a4680ae1f0a1155df5"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a0d2ac6c4c95ab5a4680ae1f0a1155df5">boost::fusion::transform_view_iterator::converter</a></div><div class="ttdeci">convert_iterator&lt; First &gt; converter</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00041">transform_view_iterator.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a2336b2843d7610486ad904cbd3764445"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a2336b2843d7610486ad904cbd3764445">boost::fusion::transform_view_iterator::f</a></div><div class="ttdeci">transform_type f</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00051">transform_view_iterator.hpp:51</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a2b2939d45b25503ebe3ee2e118c7ea03"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a2b2939d45b25503ebe3ee2e118c7ea03">boost::fusion::transform_view_iterator::first</a></div><div class="ttdeci">first_type first</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00050">transform_view_iterator.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a7beb2cd6b92898023270a86789fb95af"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a7beb2cd6b92898023270a86789fb95af">boost::fusion::transform_view_iterator::transform_view_iterator</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED transform_view_iterator(First const &amp;in_first, F const &amp;in_f)</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00047">transform_view_iterator.hpp:47</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_a924a01b8927549604c0ccb5f8118cadf"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#a924a01b8927549604c0ccb5f8118cadf">boost::fusion::transform_view_iterator::category</a></div><div class="ttdeci">traits::category_of&lt; first_type &gt;::type category</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00043">transform_view_iterator.hpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_aa05d213a5aec2c5c3d8e29437ba434e7"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#aa05d213a5aec2c5c3d8e29437ba434e7">boost::fusion::transform_view_iterator::transform_type</a></div><div class="ttdeci">F transform_type</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00044">transform_view_iterator.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1transform__view__iterator_html_aba4e772bf9cf2ca0a8193ee47c2200eb"><div class="ttname"><a href="structboost_1_1fusion_1_1transform__view__iterator.html#aba4e772bf9cf2ca0a8193ee47c2200eb">boost::fusion::transform_view_iterator::fusion_tag</a></div><div class="ttdeci">transform_view_iterator_tag fusion_tag</div><div class="ttdef"><b>Definition:</b> <a href="transform__view__iterator_8hpp_source.html#l00040">transform_view_iterator.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1cast2nd__impl_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1cast2nd__impl.html">boost::mpl::aux::cast2nd_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="numeric__cast__utils_8hpp_source.html#l00054">numeric_cast_utils.hpp:55</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_aa02e911ac6c4e5abc85276284b9801aa"><div class="ttname"><a href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01043">suffix.hpp:1043</a></div></div>
+<div class="ttc" id="asupport_2category__of_8hpp_html"><div class="ttname"><a href="support_2category__of_8hpp.html">category_of.hpp</a></div></div>
+<div class="ttc" id="asupport_2iterator__base_8hpp_html"><div class="ttname"><a href="support_2iterator__base_8hpp.html">iterator_base.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2advance__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2advance__impl_8hpp.html">advance_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2deref__data__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2deref__data__impl_8hpp.html">deref_data_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2deref__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2deref__impl_8hpp.html">deref_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2distance__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2distance__impl_8hpp.html">distance_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2equal__to__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2equal__to__impl_8hpp.html">equal_to_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2key__of__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2key__of__impl_8hpp.html">key_of_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2next__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2next__impl_8hpp.html">next_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2prior__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2prior__impl_8hpp.html">prior_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2value__of__data__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2value__of__data__impl_8hpp.html">value_of_data_impl.hpp</a></div></div>
+<div class="ttc" id="aview_2transform__view_2detail_2value__of__impl_8hpp_html"><div class="ttname"><a href="view_2transform__view_2detail_2value__of__impl_8hpp.html">value_of_impl.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_ba32822e37d317bbec069ec2fa1baf76.html">view</a></li><li class="navelem"><a class="el" href="dir_bb38af9e15efea82a4fbabb779a21e0b.html">transform_view</a></li><li class="navelem"><a class="el" href="transform__view__iterator_8hpp.html">transform_view_iterator.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

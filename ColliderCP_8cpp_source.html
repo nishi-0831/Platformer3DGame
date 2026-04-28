@@ -200,25 +200,26 @@ $(document).ready(function(){initNavTree('ColliderCP_8cpp_source.html',''); init
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">if</span> (!TryGet(&amp;colliders, _entityId))</div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; collider : colliders)</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    {</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <span class="keywordflow">return</span> collider-&gt;IsHit(_origin, _dir, _dist);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    }</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">  110</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">mtgb::ColliderCP::IsHitAll</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _center, <span class="keywordtype">float</span> _radius, std::vector&lt;EntityId&gt;* _entityIds)</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>{</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    _entityIds-&gt;clear();</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; collider : pool_)</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">if</span> (collider.IsHit(_center, _radius))</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            _entityIds-&gt;push_back(collider.GetEntityId());</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        }</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="comment">// WARNING: コライダーが一つしかないと断定している。複数になる場合は追加の処理が必要</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (colliders.empty() == <span class="keyword">false</span>)</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        <span class="keywordflow">return</span> colliders.back()-&gt;IsHit(_origin, _dir, _dist);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">  111</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">mtgb::ColliderCP::IsHitAll</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a>&amp; _center, <span class="keywordtype">float</span> _radius, std::vector&lt;EntityId&gt;* _entityIds)</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    _entityIds-&gt;clear();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; collider : pool_)</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keywordflow">if</span> (collider.IsHit(_center, _radius))</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            _entityIds-&gt;push_back(collider.GetEntityId());</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
 <div class="ttc" id="aColliderCP_8h_html"><div class="ttname"><a href="ColliderCP_8h.html">ColliderCP.h</a></div></div>
 <div class="ttc" id="aFbx_8h_html"><div class="ttname"><a href="Fbx_8h.html">Fbx.h</a></div></div>
 <div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
@@ -229,7 +230,7 @@ $(document).ready(function(){initNavTree('ColliderCP_8cpp_source.html',''); init
 <div class="ttc" id="aclassmtgb_1_1ColliderCP_html_a4767a39564fe9a093889f0611261ce8c"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#a4767a39564fe9a093889f0611261ce8c">mtgb::ColliderCP::~ColliderCP</a></div><div class="ttdeci">~ColliderCP()</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00008">ColliderCP.cpp:8</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ColliderCP_html_a4efce876b843c2f381cff7b6854e9988"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#a4efce876b843c2f381cff7b6854e9988">mtgb::ColliderCP::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00019">ColliderCP.cpp:19</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ColliderCP_html_a570afd5d8ff99105e39c1c399687ae2a"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#a570afd5d8ff99105e39c1c399687ae2a">mtgb::ColliderCP::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00010">ColliderCP.cpp:10</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ColliderCP_html_ac350bcabc48cda29ce797380cc727243"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">mtgb::ColliderCP::IsHitAll</a></div><div class="ttdeci">void IsHitAll(const Vector3 &amp;_center, float _radius, std::vector&lt; EntityId &gt; *_entityIds)</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00110">ColliderCP.cpp:110</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ColliderCP_html_ac350bcabc48cda29ce797380cc727243"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243">mtgb::ColliderCP::IsHitAll</a></div><div class="ttdeci">void IsHitAll(const Vector3 &amp;_center, float _radius, std::vector&lt; EntityId &gt; *_entityIds)</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00111">ColliderCP.cpp:111</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ColliderCP_html_adaff30b59f72e58050b1b3f10af75944"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#adaff30b59f72e58050b1b3f10af75944">mtgb::ColliderCP::RayCastHit</a></div><div class="ttdeci">bool RayCastHit(const Vector3 &amp;_origin, const Vector3 &amp;_dir, float *_dist, EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00097">ColliderCP.cpp:97</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ColliderCP_html_ae488e4a30067a68576be38fa47bbf353"><div class="ttname"><a href="classmtgb_1_1ColliderCP.html#ae488e4a30067a68576be38fa47bbf353">mtgb::ColliderCP::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdef"><b>Definition:</b> <a href="ColliderCP_8cpp_source.html#l00062">ColliderCP.cpp:62</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html"><div class="ttname"><a href="classmtgb_1_1Collider.html">mtgb::Collider</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00021">Collider.h:22</a></div></div>

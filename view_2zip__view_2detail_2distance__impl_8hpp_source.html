@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: distance_impl.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('view_2zip__view_2detail_2distance__impl_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">view/zip_view/detail/distance_impl.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="view_2zip__view_2detail_2distance__impl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    Copyright (c) 2006 Dan Marsden</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if !defined(FUSION_DISTANCE_IMPL_20060124_2033)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define FUSION_DISTANCE_IMPL_20060124_2033</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="eval__if_8hpp.html">boost/mpl/eval_if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2placeholders_8hpp.html">boost/mpl/placeholders.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2assert_8hpp.html">boost/mpl/assert.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2iterator_2distance_8hpp.html">boost/fusion/iterator/distance.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="support_2category__of_8hpp.html">boost/fusion/support/category_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2algorithm_2query_2find__if_8hpp.html">boost/fusion/algorithm/query/find_if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="boost_2fusion_2sequence_2intrinsic_2end_8hpp.html">boost/fusion/sequence/intrinsic/end.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="sequence_2intrinsic_2value__at_8hpp.html">boost/fusion/sequence/intrinsic/value_at.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2is__same_8hpp.html">boost/type_traits/is_same.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">struct </span>zip_view_iterator_tag;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">struct </span>random_access_iterator_tag;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> FoundIt, <span class="keyword">typename</span> SearchIt&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1best__distance.html">   31</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1best__distance.html">best_distance</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1find__if.html">result_of::find_if</a>&lt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#afe7551d046834a9412c135d19ba7dd86">   34</a></span>                <span class="keyword">typename</span> SearchIt::iterators, <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;traits::category_of&lt;mpl::_&gt;</a>, random_access_iterator_tag&gt; &gt; <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#afe7551d046834a9412c135d19ba7dd86">finder</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#af29cb3454d6ce3b98e89bd829e697829">   36</a></span>            <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#af29cb3454d6ce3b98e89bd829e697829">BOOST_MPL_ASSERT_NOT</a>((<a class="code hl_struct" href="structboost_1_1is__same.html">is_same</a>&lt;<span class="keyword">typename</span> finder::type, <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1end.html">result_of::end&lt;typename SearchIt::iterators&gt;</a> &gt;));</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#a2b4bda1835e574866a17d40232282ee7">   38</a></span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1distance.html">result_of::distance&lt;FoundIt, typename finder::type&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1best__distance.html#a2b4bda1835e574866a17d40232282ee7">type</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> It1, <span class="keyword">typename</span> It2&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1default__distance.html">   42</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1default__distance.html">default_distance</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>            : <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1distance.html">result_of::distance</a>&lt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            typename result_of::value_at_c&lt;typename It1::iterators, 0&gt;::type,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            typename result_of::value_at_c&lt;typename It2::iterators, 0&gt;::type&gt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        {};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> It1, <span class="keyword">typename</span> It2&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html">   49</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html">zip_view_iterator_distance</a></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1find__if.html">result_of::find_if</a>&lt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a30a63e4da82c32a241c730e152ba2f32">   52</a></span>                <span class="keyword">typename</span> It1::iterators, <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;traits::category_of&lt;mpl::_&gt;</a>, random_access_iterator_tag&gt; &gt; <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a30a63e4da82c32a241c730e152ba2f32">finder</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>                </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1eval__if.html">mpl::eval_if</a>&lt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <a class="code hl_struct" href="structboost_1_1is__same.html">is_same&lt;typename finder::type, typename result_of::end&lt;typename It1::iterators&gt;::type</a>&gt;,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1default__distance.html">detail::default_distance&lt;It1, It2&gt;</a> ,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">   57</a></span>                <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1best__distance.html">detail::best_distance&lt;typename finder::type, It2&gt;</a> &gt;<a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">type</a>;               </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">namespace </span>extension</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tag&gt;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keyword">struct </span>distance_impl;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4.html">   67</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1extension_1_1distance__impl.html">distance_impl</a>&lt;zip_view_iterator_tag&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> It1, <span class="keyword">typename</span> It2&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4_1_1apply.html">   70</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                : <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html">detail::zip_view_iterator_distance</a>&lt;It1, It2&gt;::type</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="keyword">static</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">detail::zip_view_iterator_distance&lt;It1, It2&gt;::type</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4_1_1apply.html#a1846d77f61ebfa4bff9aa1b81d57a2ce">   75</a></span>                <a class="code hl_function" href="structboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4_1_1apply.html#a1846d77f61ebfa4bff9aa1b81d57a2ce">call</a>(It1 <span class="keyword">const</span>&amp; <span class="comment">/*it1*/</span>, It2 <span class="keyword">const</span>&amp; <span class="comment">/*it2*/</span>)</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                    <span class="keywordflow">return</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">detail::zip_view_iterator_distance&lt;It1, It2&gt;::type</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                }                </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            };</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        };</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}}</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aboost_2fusion_2sequence_2intrinsic_2end_8hpp_html"><div class="ttname"><a href="boost_2fusion_2sequence_2intrinsic_2end_8hpp.html">end.hpp</a></div></div>
+<div class="ttc" id="aeval__if_8hpp_html"><div class="ttname"><a href="eval__if_8hpp.html">eval_if.hpp</a></div></div>
+<div class="ttc" id="afusion_2algorithm_2query_2find__if_8hpp_html"><div class="ttname"><a href="fusion_2algorithm_2query_2find__if_8hpp.html">find_if.hpp</a></div></div>
+<div class="ttc" id="afusion_2iterator_2distance_8hpp_html"><div class="ttname"><a href="fusion_2iterator_2distance_8hpp.html">distance.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="ampl_2assert_8hpp_html"><div class="ttname"><a href="mpl_2assert_8hpp.html">assert.hpp</a></div></div>
+<div class="ttc" id="ampl_2placeholders_8hpp_html"><div class="ttname"><a href="mpl_2placeholders_8hpp.html">placeholders.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="asequence_2intrinsic_2value__at_8hpp_html"><div class="ttname"><a href="sequence_2intrinsic_2value__at_8hpp.html">value_at.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1apply_html"><div class="ttname"><a href="structboost_1_1apply.html">boost::apply</a></div><div class="ttdef"><b>Definition:</b> <a href="bind_2apply_8hpp_source.html#l00017">bind/apply.hpp:18</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1best__distance_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1best__distance.html">boost::fusion::detail::best_distance</a></div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00031">view/zip_view/detail/distance_impl.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1best__distance_html_a2b4bda1835e574866a17d40232282ee7"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1best__distance.html#a2b4bda1835e574866a17d40232282ee7">boost::fusion::detail::best_distance::type</a></div><div class="ttdeci">result_of::distance&lt; FoundIt, typenamefinder::type &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00038">view/zip_view/detail/distance_impl.hpp:38</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1best__distance_html_af29cb3454d6ce3b98e89bd829e697829"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1best__distance.html#af29cb3454d6ce3b98e89bd829e697829">boost::fusion::detail::best_distance::BOOST_MPL_ASSERT_NOT</a></div><div class="ttdeci">BOOST_MPL_ASSERT_NOT((is_same&lt; typename finder::type, result_of::end&lt; typename SearchIt::iterators &gt; &gt;))</div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1best__distance_html_afe7551d046834a9412c135d19ba7dd86"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1best__distance.html#afe7551d046834a9412c135d19ba7dd86">boost::fusion::detail::best_distance::finder</a></div><div class="ttdeci">result_of::find_if&lt; typename SearchIt::iterators, is_same&lt; traits::category_of&lt; mpl::_ &gt;, random_access_iterator_tag &gt; &gt; finder</div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00034">view/zip_view/detail/distance_impl.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1default__distance_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1default__distance.html">boost::fusion::detail::default_distance</a></div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00042">view/zip_view/detail/distance_impl.hpp:46</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html">boost::fusion::detail::zip_view_iterator_distance</a></div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00049">view/zip_view/detail/distance_impl.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance_html_a30a63e4da82c32a241c730e152ba2f32"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a30a63e4da82c32a241c730e152ba2f32">boost::fusion::detail::zip_view_iterator_distance::finder</a></div><div class="ttdeci">result_of::find_if&lt; typename It1::iterators, is_same&lt; traits::category_of&lt; mpl::_ &gt;, random_access_iterator_tag &gt; &gt; finder</div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00052">view/zip_view/detail/distance_impl.hpp:52</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance_html_a3bbd09c3652f4df8d3c0ec9dfd6360fc"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1zip__view__iterator__distance.html#a3bbd09c3652f4df8d3c0ec9dfd6360fc">boost::fusion::detail::zip_view_iterator_distance::type</a></div><div class="ttdeci">mpl::eval_if&lt; is_same&lt; typenamefinder::type, typenameresult_of::end&lt; typenameIt1::iterators &gt;::type &gt;, detail::default_distance&lt; It1, It2 &gt;, detail::best_distance&lt; typenamefinder::type, It2 &gt; &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00057">view/zip_view/detail/distance_impl.hpp:57</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4_1_1apply_html_a1846d77f61ebfa4bff9aa1b81d57a2ce"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1distance__impl_3_01zip__view__iterator__tag_01_4_1_1apply.html#a1846d77f61ebfa4bff9aa1b81d57a2ce">boost::fusion::extension::distance_impl&lt; zip_view_iterator_tag &gt;::apply::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED detail::zip_view_iterator_distance&lt; It1, It2 &gt;::type call(It1 const &amp;, It2 const &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="view_2zip__view_2detail_2distance__impl_8hpp_source.html#l00075">view/zip_view/detail/distance_impl.hpp:75</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1distance__impl_html"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1distance__impl.html">boost::fusion::extension::distance_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2distance_8hpp_source.html#l00033">fusion/iterator/distance.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1distance_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1distance.html">boost::fusion::result_of::distance</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2distance_8hpp_source.html#l00061">fusion/iterator/distance.hpp:64</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1end_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1end.html">boost::fusion::result_of::end</a></div><div class="ttdef"><b>Definition:</b> <a href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00067">boost/fusion/sequence/intrinsic/end.hpp:70</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1find__if_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1find__if.html">boost::fusion::result_of::find_if</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2query_2find__if_8hpp_source.html#l00029">fusion/algorithm/query/find_if.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1is__same_html"><div class="ttname"><a href="structboost_1_1is__same.html">boost::is_same</a></div><div class="ttdef"><b>Definition:</b> <a href="type__traits_2is__same_8hpp_source.html#l00029">type_traits/is_same.hpp:29</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1eval__if_html"><div class="ttname"><a href="structboost_1_1mpl_1_1eval__if.html">boost::mpl::eval_if</a></div><div class="ttdef"><b>Definition:</b> <a href="eval__if_8hpp_source.html#l00031">eval_if.hpp:41</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_aa02e911ac6c4e5abc85276284b9801aa"><div class="ttname"><a href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01043">suffix.hpp:1043</a></div></div>
+<div class="ttc" id="asupport_2category__of_8hpp_html"><div class="ttname"><a href="support_2category__of_8hpp.html">category_of.hpp</a></div></div>
+<div class="ttc" id="atype__traits_2is__same_8hpp_html"><div class="ttname"><a href="type__traits_2is__same_8hpp.html">is_same.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_ba32822e37d317bbec069ec2fa1baf76.html">view</a></li><li class="navelem"><a class="el" href="dir_b72aea66effd0436c69277eb2d4f56ed.html">zip_view</a></li><li class="navelem"><a class="el" href="dir_ed2fcca66c271d86fa05b3022874a18f.html">detail</a></li><li class="navelem"><a class="el" href="view_2zip__view_2detail_2distance__impl_8hpp.html">distance_impl.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1alloc__equal_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1is__always__equal_01_4_1_1type_01_4 =
+[
+    [ "type", "structboost_1_1detail_1_1alloc__equal_3_01A_00_01typename_01alloc__void_3_01typename_01A_1_1is__always__equal_01_4_1_1type_01_4.html#a944604d63ebd73c9d1a570db1af80f6d", null ]
+];

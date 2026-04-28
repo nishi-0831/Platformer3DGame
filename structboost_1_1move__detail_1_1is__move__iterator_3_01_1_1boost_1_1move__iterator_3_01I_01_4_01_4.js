@@ -1,0 +1,4 @@
+var structboost_1_1move__detail_1_1is__move__iterator_3_01_1_1boost_1_1move__iterator_3_01I_01_4_01_4 =
+[
+    [ "value", "structboost_1_1move__detail_1_1is__move__iterator_3_01_1_1boost_1_1move__iterator_3_01I_01_4_01_4.html#adb08c71e22ca43897cd7614a96e92d8d", null ]
+];

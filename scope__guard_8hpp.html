@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: scope_guard.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('scope__guard_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">scope_guard.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="core_2no__exceptions__support_8hpp_source.html">boost/core/no_exceptions_support.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2if_8hpp_source.html">boost/mpl/if.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+scope_guard.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="scope__guard_8hpp__incl.svg" width="3314" height="1048"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="scope__guard_8hpp__dep__incl.svg" width="3582" height="564"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="scope__guard_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">boost::multi_index::detail::scope_guard_impl_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1null__guard.html">boost::multi_index::detail::null_guard</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1null__guard__return.html">boost::multi_index::detail::null_guard_return&lt; cond, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl0.html">boost::multi_index::detail::scope_guard_impl0&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl1.html">boost::multi_index::detail::scope_guard_impl1&lt; F, P1 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl2.html">boost::multi_index::detail::scope_guard_impl2&lt; F, P1, P2 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl3.html">boost::multi_index::detail::scope_guard_impl3&lt; F, P1, P2, P3 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl4.html">boost::multi_index::detail::scope_guard_impl4&lt; F, P1, P2, P3, P4 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1obj__scope__guard__impl0.html">boost::multi_index::detail::obj_scope_guard_impl0&lt; Obj, MemFun &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1obj__scope__guard__impl1.html">boost::multi_index::detail::obj_scope_guard_impl1&lt; Obj, MemFun, P1 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1obj__scope__guard__impl2.html">boost::multi_index::detail::obj_scope_guard_impl2&lt; Obj, MemFun, P1, P2 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1obj__scope__guard__impl3.html">boost::multi_index::detail::obj_scope_guard_impl3&lt; Obj, MemFun, P1, P2, P3 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1multi__index"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html">boost::multi_index</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1multi__index_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">boost::multi_index::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a9b45983f2bd163bc5b80fd5e669d3f17"><td class="memItemLeft" align="right" valign="top">typedef const scope_guard_impl_base &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a9b45983f2bd163bc5b80fd5e669d3f17">boost::multi_index::detail::scope_guard</a></td></tr>
+<tr class="separator:a9b45983f2bd163bc5b80fd5e669d3f17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:af0956721eb860af66a1d67e93be604c8"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:af0956721eb860af66a1d67e93be604c8"><td class="memTemplItemLeft" align="right" valign="top">scope_guard_impl0&lt; F &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#af0956721eb860af66a1d67e93be604c8">boost::multi_index::detail::make_guard</a> (F fun)</td></tr>
+<tr class="separator:af0956721eb860af66a1d67e93be604c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0af447f9a34f2e297fc5e3453dabc834"><td class="memTemplParams" colspan="2">template&lt;bool cond, typename F &gt; </td></tr>
+<tr class="memitem:a0af447f9a34f2e297fc5e3453dabc834"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, scope_guard_impl0&lt; F &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a0af447f9a34f2e297fc5e3453dabc834">boost::multi_index::detail::make_guard_if_c</a> (F fun)</td></tr>
+<tr class="separator:a0af447f9a34f2e297fc5e3453dabc834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed6bf1fd5ac7aa7146c2596c8e7f508b"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , typename F &gt; </td></tr>
+<tr class="memitem:aed6bf1fd5ac7aa7146c2596c8e7f508b"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, scope_guard_impl0&lt; F &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#aed6bf1fd5ac7aa7146c2596c8e7f508b">boost::multi_index::detail::make_guard_if</a> (F fun)</td></tr>
+<tr class="separator:aed6bf1fd5ac7aa7146c2596c8e7f508b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57df00521b41bbca608c57491ee27ebc"><td class="memTemplParams" colspan="2">template&lt;typename F , typename P1 &gt; </td></tr>
+<tr class="memitem:a57df00521b41bbca608c57491ee27ebc"><td class="memTemplItemLeft" align="right" valign="top">scope_guard_impl1&lt; F, P1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a57df00521b41bbca608c57491ee27ebc">boost::multi_index::detail::make_guard</a> (F fun, P1 p1)</td></tr>
+<tr class="separator:a57df00521b41bbca608c57491ee27ebc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b52f3d6e57214f45eac68f821a05d6"><td class="memTemplParams" colspan="2">template&lt;bool cond, typename F , typename P1 &gt; </td></tr>
+<tr class="memitem:ae7b52f3d6e57214f45eac68f821a05d6"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, scope_guard_impl1&lt; F, P1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ae7b52f3d6e57214f45eac68f821a05d6">boost::multi_index::detail::make_guard_if_c</a> (F fun, P1 p1)</td></tr>
+<tr class="separator:ae7b52f3d6e57214f45eac68f821a05d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d56d29a45f992aec685273b27ff067b"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , typename F , typename P1 &gt; </td></tr>
+<tr class="memitem:a8d56d29a45f992aec685273b27ff067b"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, scope_guard_impl1&lt; F, P1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a8d56d29a45f992aec685273b27ff067b">boost::multi_index::detail::make_guard_if</a> (F fun, P1 p1)</td></tr>
+<tr class="separator:a8d56d29a45f992aec685273b27ff067b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d4383b4572f4aca1e17a6047221077"><td class="memTemplParams" colspan="2">template&lt;typename F , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:a04d4383b4572f4aca1e17a6047221077"><td class="memTemplItemLeft" align="right" valign="top">scope_guard_impl2&lt; F, P1, P2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a04d4383b4572f4aca1e17a6047221077">boost::multi_index::detail::make_guard</a> (F fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:a04d4383b4572f4aca1e17a6047221077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e50daa89458306d2bedd7730cac6bcc"><td class="memTemplParams" colspan="2">template&lt;bool cond, typename F , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:a2e50daa89458306d2bedd7730cac6bcc"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, scope_guard_impl2&lt; F, P1, P2 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a2e50daa89458306d2bedd7730cac6bcc">boost::multi_index::detail::make_guard_if_c</a> (F fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:a2e50daa89458306d2bedd7730cac6bcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2302df8d334542d43617f963794437e"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , typename F , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:aa2302df8d334542d43617f963794437e"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, scope_guard_impl2&lt; F, P1, P2 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#aa2302df8d334542d43617f963794437e">boost::multi_index::detail::make_guard_if</a> (F fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:aa2302df8d334542d43617f963794437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab39f8ee0e9b00860db83420e778b0bb3"><td class="memTemplParams" colspan="2">template&lt;typename F , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:ab39f8ee0e9b00860db83420e778b0bb3"><td class="memTemplItemLeft" align="right" valign="top">scope_guard_impl3&lt; F, P1, P2, P3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ab39f8ee0e9b00860db83420e778b0bb3">boost::multi_index::detail::make_guard</a> (F fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:ab39f8ee0e9b00860db83420e778b0bb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad71a52c2f8ad248dfb486da0ad8eb88"><td class="memTemplParams" colspan="2">template&lt;bool cond, typename F , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:aad71a52c2f8ad248dfb486da0ad8eb88"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, scope_guard_impl3&lt; F, P1, P2, P3 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#aad71a52c2f8ad248dfb486da0ad8eb88">boost::multi_index::detail::make_guard_if_c</a> (F fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:aad71a52c2f8ad248dfb486da0ad8eb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4f55304e040fa8323270e339aabba03"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , typename F , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:ad4f55304e040fa8323270e339aabba03"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, scope_guard_impl3&lt; F, P1, P2, P3 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ad4f55304e040fa8323270e339aabba03">boost::multi_index::detail::make_guard_if</a> (F fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:ad4f55304e040fa8323270e339aabba03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a1dade45e84dbb73ac431662672485b"><td class="memTemplParams" colspan="2">template&lt;typename F , typename P1 , typename P2 , typename P3 , typename P4 &gt; </td></tr>
+<tr class="memitem:a1a1dade45e84dbb73ac431662672485b"><td class="memTemplItemLeft" align="right" valign="top">scope_guard_impl4&lt; F, P1, P2, P3, P4 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a1a1dade45e84dbb73ac431662672485b">boost::multi_index::detail::make_guard</a> (F fun, P1 p1, P2 p2, P3 p3, P4 p4)</td></tr>
+<tr class="separator:a1a1dade45e84dbb73ac431662672485b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8513d603149b0843ed5748e93549d3fc"><td class="memTemplParams" colspan="2">template&lt;bool cond, typename F , typename P1 , typename P2 , typename P3 , typename P4 &gt; </td></tr>
+<tr class="memitem:a8513d603149b0843ed5748e93549d3fc"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, scope_guard_impl4&lt; F, P1, P2, P3, P4 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a8513d603149b0843ed5748e93549d3fc">boost::multi_index::detail::make_guard_if_c</a> (F fun, P1 p1, P2 p2, P3 p3, P4 p4)</td></tr>
+<tr class="separator:a8513d603149b0843ed5748e93549d3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21d8e75ea5d0c17d4ae7653b743e250f"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , typename F , typename P1 , typename P2 , typename P3 , typename P4 &gt; </td></tr>
+<tr class="memitem:a21d8e75ea5d0c17d4ae7653b743e250f"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, scope_guard_impl4&lt; F, P1, P2, P3, P4 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a21d8e75ea5d0c17d4ae7653b743e250f">boost::multi_index::detail::make_guard_if</a> (F fun, P1 p1, P2 p2, P3 p3, P4 p4)</td></tr>
+<tr class="separator:a21d8e75ea5d0c17d4ae7653b743e250f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97660e90c41dd5ca577b3eb2f6c1975d"><td class="memTemplParams" colspan="2">template&lt;class Obj , typename MemFun &gt; </td></tr>
+<tr class="memitem:a97660e90c41dd5ca577b3eb2f6c1975d"><td class="memTemplItemLeft" align="right" valign="top">obj_scope_guard_impl0&lt; Obj, MemFun &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a97660e90c41dd5ca577b3eb2f6c1975d">boost::multi_index::detail::make_obj_guard</a> (Obj &amp;obj, MemFun mem_fun)</td></tr>
+<tr class="separator:a97660e90c41dd5ca577b3eb2f6c1975d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b151bacc9fe07a594cab08a6afa80e8"><td class="memTemplParams" colspan="2">template&lt;bool cond, class Obj , typename MemFun &gt; </td></tr>
+<tr class="memitem:a2b151bacc9fe07a594cab08a6afa80e8"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, obj_scope_guard_impl0&lt; Obj, MemFun &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a2b151bacc9fe07a594cab08a6afa80e8">boost::multi_index::detail::make_obj_guard_if_c</a> (Obj &amp;obj, MemFun mem_fun)</td></tr>
+<tr class="separator:a2b151bacc9fe07a594cab08a6afa80e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0534d84e946a79147d4fd2152409e1"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , class Obj , typename MemFun &gt; </td></tr>
+<tr class="memitem:aec0534d84e946a79147d4fd2152409e1"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, obj_scope_guard_impl0&lt; Obj, MemFun &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#aec0534d84e946a79147d4fd2152409e1">boost::multi_index::detail::make_obj_guard_if</a> (Obj &amp;obj, MemFun mem_fun)</td></tr>
+<tr class="separator:aec0534d84e946a79147d4fd2152409e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9dc987038690b62f3d567f8cd6edc57"><td class="memTemplParams" colspan="2">template&lt;class Obj , typename MemFun , typename P1 &gt; </td></tr>
+<tr class="memitem:ac9dc987038690b62f3d567f8cd6edc57"><td class="memTemplItemLeft" align="right" valign="top">obj_scope_guard_impl1&lt; Obj, MemFun, P1 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ac9dc987038690b62f3d567f8cd6edc57">boost::multi_index::detail::make_obj_guard</a> (Obj &amp;obj, MemFun mem_fun, P1 p1)</td></tr>
+<tr class="separator:ac9dc987038690b62f3d567f8cd6edc57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8ee6ae0a18ad3cca9c64792f57c5390"><td class="memTemplParams" colspan="2">template&lt;bool cond, class Obj , typename MemFun , typename P1 &gt; </td></tr>
+<tr class="memitem:ad8ee6ae0a18ad3cca9c64792f57c5390"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, obj_scope_guard_impl1&lt; Obj, MemFun, P1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ad8ee6ae0a18ad3cca9c64792f57c5390">boost::multi_index::detail::make_obj_guard_if_c</a> (Obj &amp;obj, MemFun mem_fun, P1 p1)</td></tr>
+<tr class="separator:ad8ee6ae0a18ad3cca9c64792f57c5390"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af33deea089ade6975c9d1d491dbb3a63"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , class Obj , typename MemFun , typename P1 &gt; </td></tr>
+<tr class="memitem:af33deea089ade6975c9d1d491dbb3a63"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, obj_scope_guard_impl1&lt; Obj, MemFun, P1 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#af33deea089ade6975c9d1d491dbb3a63">boost::multi_index::detail::make_obj_guard_if</a> (Obj &amp;obj, MemFun mem_fun, P1 p1)</td></tr>
+<tr class="separator:af33deea089ade6975c9d1d491dbb3a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a56e0de6867110e08740161e4b6d8e"><td class="memTemplParams" colspan="2">template&lt;class Obj , typename MemFun , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:ad5a56e0de6867110e08740161e4b6d8e"><td class="memTemplItemLeft" align="right" valign="top">obj_scope_guard_impl2&lt; Obj, MemFun, P1, P2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ad5a56e0de6867110e08740161e4b6d8e">boost::multi_index::detail::make_obj_guard</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:ad5a56e0de6867110e08740161e4b6d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a831ace7551ab4b7a37b2bbabc4592de3"><td class="memTemplParams" colspan="2">template&lt;bool cond, class Obj , typename MemFun , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:a831ace7551ab4b7a37b2bbabc4592de3"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, obj_scope_guard_impl2&lt; Obj, MemFun, P1, P2 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a831ace7551ab4b7a37b2bbabc4592de3">boost::multi_index::detail::make_obj_guard_if_c</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:a831ace7551ab4b7a37b2bbabc4592de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87dfe2444eedb8802b2178c126a76dac"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , class Obj , typename MemFun , typename P1 , typename P2 &gt; </td></tr>
+<tr class="memitem:a87dfe2444eedb8802b2178c126a76dac"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, obj_scope_guard_impl2&lt; Obj, MemFun, P1, P2 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a87dfe2444eedb8802b2178c126a76dac">boost::multi_index::detail::make_obj_guard_if</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2)</td></tr>
+<tr class="separator:a87dfe2444eedb8802b2178c126a76dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42a8eb44fd93a3f51087a1935c605bf"><td class="memTemplParams" colspan="2">template&lt;class Obj , typename MemFun , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:ad42a8eb44fd93a3f51087a1935c605bf"><td class="memTemplItemLeft" align="right" valign="top">obj_scope_guard_impl3&lt; Obj, MemFun, P1, P2, P3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ad42a8eb44fd93a3f51087a1935c605bf">boost::multi_index::detail::make_obj_guard</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:ad42a8eb44fd93a3f51087a1935c605bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0195e35845f5ab9bea0e60344822c5"><td class="memTemplParams" colspan="2">template&lt;bool cond, class Obj , typename MemFun , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:a0d0195e35845f5ab9bea0e60344822c5"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; cond, obj_scope_guard_impl3&lt; Obj, MemFun, P1, P2, P3 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a0d0195e35845f5ab9bea0e60344822c5">boost::multi_index::detail::make_obj_guard_if_c</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:a0d0195e35845f5ab9bea0e60344822c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad315172644709d21ce786f9d74a0ae26"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classC.html">C</a> , class Obj , typename MemFun , typename P1 , typename P2 , typename P3 &gt; </td></tr>
+<tr class="memitem:ad315172644709d21ce786f9d74a0ae26"><td class="memTemplItemLeft" align="right" valign="top">null_guard_return&lt; C::value, obj_scope_guard_impl3&lt; Obj, MemFun, P1, P2, P3 &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#ad315172644709d21ce786f9d74a0ae26">boost::multi_index::detail::make_obj_guard_if</a> (Obj &amp;obj, MemFun mem_fun, P1 p1, P2 p2, P3 p3)</td></tr>
+<tr class="separator:ad315172644709d21ce786f9d74a0ae26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_33344a8c4622a0ed72c2f532985429f7.html">multi_index</a></li><li class="navelem"><a class="el" href="dir_4ae83286c6065fe423b4c7db3ae1343c.html">detail</a></li><li class="navelem"><a class="el" href="scope__guard_8hpp.html">scope_guard.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

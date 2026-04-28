@@ -1,0 +1,2164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::detail::atomic_count クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1detail_1_1atomic__count.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1detail_1_1atomic__count-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::detail::atomic_count クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::detail::atomic_count 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1atomic__count__coll__graph.svg" width="218" height="690"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count_1_1scoped__lock.html">scoped_lock</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c03e3bfc99caa5672cd351586050a2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a25c03e3bfc99caa5672cd351586050a2">~atomic_count</a> ()</td></tr>
+<tr class="separator:a25c03e3bfc99caa5672cd351586050a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a0ebc64503be2b04ac7e083a13fe5273b">atomic_count</a> (long v)</td></tr>
+<tr class="separator:a0ebc64503be2b04ac7e083a13fe5273b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035dbc17854baab1ab725369028a7f3c"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a035dbc17854baab1ab725369028a7f3c">operator++</a> ()</td></tr>
+<tr class="separator:a035dbc17854baab1ab725369028a7f3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af388206287f8822434ad8779bb15b59a"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#af388206287f8822434ad8779bb15b59a">operator--</a> ()</td></tr>
+<tr class="separator:af388206287f8822434ad8779bb15b59a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04ac81b70c28b291bf5db5b24741034"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ab04ac81b70c28b291bf5db5b24741034">operator long</a> () const</td></tr>
+<tr class="separator:ab04ac81b70c28b291bf5db5b24741034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ab0da99f289871b8a3ae722f80a1022"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a2ab0da99f289871b8a3ae722f80a1022">atomic_count</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a2ab0da99f289871b8a3ae722f80a1022"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21894b5e4862922455ab2808b10aa594"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a21894b5e4862922455ab2808b10aa594">operator=</a> (<a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;)</td></tr>
+<tr class="separator:a21894b5e4862922455ab2808b10aa594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a382e73e93506f6369ca05931a2472534"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a382e73e93506f6369ca05931a2472534">atomic_exchange_and_add</a> (int *pw, int dv)</td></tr>
+<tr class="separator:a382e73e93506f6369ca05931a2472534"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ad727842e7931a075e9647c9e9f250c3e"><td class="memItemLeft" align="right" valign="top">_Atomic_word&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a></td></tr>
+<tr class="separator:ad727842e7931a075e9647c9e9f250c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0756d5cf6618b281bcac46014f8ce07"><td class="memItemLeft" align="right" valign="top">boost::int_least32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ad0756d5cf6618b281bcac46014f8ce07">value_</a></td></tr>
+<tr class="separator:ad0756d5cf6618b281bcac46014f8ce07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb48414d11c77490ba9d01d48056ae6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#aafb48414d11c77490ba9d01d48056ae6">value_</a></td></tr>
+<tr class="separator:aafb48414d11c77490ba9d01d48056ae6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad727842e7931a075e9647c9e9f250c3e"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a></td></tr>
+<tr class="separator:ad727842e7931a075e9647c9e9f250c3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5507edb135fb6d365da32d175e53023c"><td class="memItemLeft" align="right" valign="top">pthread_mutex_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a></td></tr>
+<tr class="separator:a5507edb135fb6d365da32d175e53023c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0cab4b30a8f2f1ca4a1c1af78340def"><td class="memItemLeft" align="right" valign="top">std::atomic_int_least32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1atomic__count.html#ac0cab4b30a8f2f1ca4a1c1af78340def">value_</a></td></tr>
+<tr class="separator:ac0cab4b30a8f2f1ca4a1c1af78340def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[1/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>: <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( v ) {}</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1atomic__count_html_ad727842e7931a075e9647c9e9f250c3e"><div class="ttname"><a href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">boost::detail::atomic_count::value_</a></div><div class="ttdeci">_Atomic_word value_</div><div class="ttdef"><b>Definition:</b> <a href="atomic__count__gcc_8hpp_source.html#l00072">atomic_count_gcc.hpp:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[2/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[3/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a> の <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( <span class="keyword">static_cast&lt;</span> boost::int_least32_t <span class="keyword">&gt;</span>( v ) )</div>
+<div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[4/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[5/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>: <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( <span class="keyword">static_cast&lt;</span> <span class="keywordtype">int</span> <span class="keyword">&gt;</span>( v ) ) {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[6/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[7/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a> の <a class="el" href="atomic__count__nt_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( v )</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[8/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[9/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                 : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>(v)</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_define" href="assert_8hpp.html#aeb7a8c6dba122a3f21c5f20f6af2ce0f">BOOST_VERIFY</a>( pthread_mutex_init( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a>, 0 ) == 0 );</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
+<div class="ttc" id="aassert_8hpp_html_aeb7a8c6dba122a3f21c5f20f6af2ce0f"><div class="ttname"><a href="assert_8hpp.html#aeb7a8c6dba122a3f21c5f20f6af2ce0f">BOOST_VERIFY</a></div><div class="ttdeci">#define BOOST_VERIFY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8hpp_source.html#l00088">assert.hpp:88</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1atomic__count_html_a5507edb135fb6d365da32d175e53023c"><div class="ttname"><a href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">boost::detail::atomic_count::mutex_</a></div><div class="ttdeci">pthread_mutex_t mutex_</div><div class="ttdef"><b>Definition:</b> <a href="atomic__count__pt_8hpp_source.html#l00096">atomic_count_pt.hpp:96</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00088">BOOST_VERIFY</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">mutex_</a>.</p>
+
+</div>
+</div>
+<a id="a25c03e3bfc99caa5672cd351586050a2" name="a25c03e3bfc99caa5672cd351586050a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25c03e3bfc99caa5672cd351586050a2">&#9670;&#160;</a></span>~atomic_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::~atomic_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>    {</div>
+<div class="line"><span class="lineno">   70</span>        <a class="code hl_define" href="assert_8hpp.html#aeb7a8c6dba122a3f21c5f20f6af2ce0f">BOOST_VERIFY</a>( pthread_mutex_destroy( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a> ) == 0 );</div>
+<div class="line"><span class="lineno">   71</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00088">BOOST_VERIFY</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">mutex_</a>.</p>
+
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[10/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[11/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__spin_8hpp_source.html">atomic_count_spin.hpp</a> の <a class="el" href="atomic__count__spin_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( v )</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[12/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[13/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a> の <a class="el" href="atomic__count__std__atomic_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( <span class="keyword">static_cast&lt;</span> std::int_least32_t <span class="keyword">&gt;</span>( v ) )</div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[14/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[15/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__sync_8hpp_source.html">atomic_count_sync.hpp</a> の <a class="el" href="atomic__count__sync_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( <span class="keyword">static_cast&lt;</span> boost::int_least32_t <span class="keyword">&gt;</span>( v ) )</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[16/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0ebc64503be2b04ac7e083a13fe5273b" name="a0ebc64503be2b04ac7e083a13fe5273b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ebc64503be2b04ac7e083a13fe5273b">&#9670;&#160;</a></span>atomic_count() <span class="overload">[17/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__win32_8hpp_source.html">atomic_count_win32.hpp</a> の <a class="el" href="atomic__count__win32_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                   : <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>( v )</div>
+<div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ab0da99f289871b8a3ae722f80a1022" name="a2ab0da99f289871b8a3ae722f80a1022"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ab0da99f289871b8a3ae722f80a1022">&#9670;&#160;</a></span>atomic_count() <span class="overload">[18/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::atomic_count </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a382e73e93506f6369ca05931a2472534" name="a382e73e93506f6369ca05931a2472534"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382e73e93506f6369ca05931a2472534">&#9670;&#160;</a></span>atomic_exchange_and_add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int boost::detail::atomic_count::atomic_exchange_and_add </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>pw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <span class="comment">// int r = *pw;</span></div>
+<div class="line"><span class="lineno">   66</span>        <span class="comment">// *pw += dv;</span></div>
+<div class="line"><span class="lineno">   67</span>        <span class="comment">// return r;</span></div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>        <span class="keywordtype">int</span> r;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>        __asm__ <a class="code hl_define" href="linux_8hpp.html#a64fa3037957156c60db536aad57ae07e">__volatile__</a></div>
+<div class="line"><span class="lineno">   72</span>        (</div>
+<div class="line"><span class="lineno">   73</span>            <span class="stringliteral">&quot;lock\n\t&quot;</span></div>
+<div class="line"><span class="lineno">   74</span>            <span class="stringliteral">&quot;xadd %1, %0&quot;</span>:</div>
+<div class="line"><span class="lineno">   75</span>            <span class="stringliteral">&quot;+m&quot;</span>( *pw ), <span class="stringliteral">&quot;=r&quot;</span>( r ): <span class="comment">// outputs (%0, %1)</span></div>
+<div class="line"><span class="lineno">   76</span>            <span class="stringliteral">&quot;1&quot;</span>( dv ): <span class="comment">// inputs (%2 == %1)</span></div>
+<div class="line"><span class="lineno">   77</span>            <span class="stringliteral">&quot;memory&quot;</span>, <span class="stringliteral">&quot;cc&quot;</span> <span class="comment">// clobbers</span></div>
+<div class="line"><span class="lineno">   78</span>        );</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">return</span> r;</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="ttc" id="alinux_8hpp_html_a64fa3037957156c60db536aad57ae07e"><div class="ttname"><a href="linux_8hpp.html#a64fa3037957156c60db536aad57ae07e">__volatile__</a></div><div class="ttdeci">#define __volatile__</div><div class="ttdef"><b>Definition:</b> <a href="linux_8hpp_source.html#l00093">linux.hpp:93</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="linux_8hpp_source.html#l00093">__volatile__</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        <span class="keywordflow">return</span> __exchange_and_add( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, 0 );</div>
+<div class="line"><span class="lineno">   65</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a> の <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span> __atomic_load_n( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, <a class="code hl_define" href="compiler_2cray_8hpp.html#a72e3c30a05bd2bb63d76550e451a438e">__ATOMIC_ACQUIRE</a> );</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="ttc" id="acompiler_2cray_8hpp_html_a72e3c30a05bd2bb63d76550e451a438e"><div class="ttname"><a href="compiler_2cray_8hpp.html#a72e3c30a05bd2bb63d76550e451a438e">__ATOMIC_ACQUIRE</a></div><div class="ttdeci">#define __ATOMIC_ACQUIRE</div><div class="ttdef"><b>Definition:</b> <a href="compiler_2cray_8hpp_source.html#l00248">compiler/cray.hpp:248</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="compiler_2cray_8hpp_source.html#l00248">__ATOMIC_ACQUIRE</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1detail_1_1atomic__count.html#a382e73e93506f6369ca05931a2472534">atomic_exchange_and_add</a>( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, 0 );</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1atomic__count_html_a382e73e93506f6369ca05931a2472534"><div class="ttname"><a href="classboost_1_1detail_1_1atomic__count.html#a382e73e93506f6369ca05931a2472534">boost::detail::atomic_count::atomic_exchange_and_add</a></div><div class="ttdeci">static int atomic_exchange_and_add(int *pw, int dv)</div><div class="ttdef"><b>Definition:</b> <a href="atomic__count__gcc__x86_8hpp_source.html#l00063">atomic_count_gcc_x86.hpp:63</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="sp__counted__base__gcc__x86_8hpp_source.html#l00046">boost::detail::atomic_exchange_and_add()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1atomic__count_ab04ac81b70c28b291bf5db5b24741034_cgraph.svg" width="375" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a> の <a class="el" href="atomic__count__nt_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   52</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00085">85</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>    {</div>
+<div class="line"><span class="lineno">   87</span>        scoped_lock lock(<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a>);</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   89</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">mutex_</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__spin_8hpp_source.html">atomic_count_spin.hpp</a> の <a class="el" href="atomic__count__spin_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        spinlock_pool&lt;0&gt;::scoped_lock lock( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a> の <a class="el" href="atomic__count__std__atomic_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>.load( std::memory_order_acquire );</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__sync_8hpp_source.html">atomic_count_sync.hpp</a> の <a class="el" href="atomic__count__sync_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> __sync_fetch_and_add( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, 0 );</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="ab04ac81b70c28b291bf5db5b24741034" name="ab04ac81b70c28b291bf5db5b24741034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04ac81b70c28b291bf5db5b24741034">&#9670;&#160;</a></span>operator long() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::atomic_count::operator long </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__win32_8hpp_source.html">atomic_count_win32.hpp</a> の <a class="el" href="atomic__count__win32_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span> <span class="keyword">const </span><span class="keyword">volatile </span>&amp;<span class="keyword">&gt;</span>( <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   56</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>    {</div>
+<div class="line"><span class="lineno">   54</span>        <span class="keywordflow">return</span> __exchange_and_add( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, +1 ) + 1;</div>
+<div class="line"><span class="lineno">   55</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a> の <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">return</span> __atomic_add_fetch( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, +1, <a class="code hl_define" href="compiler_2cray_8hpp.html#acdfdd67de0664b690c42bba327cf7da1">__ATOMIC_ACQ_REL</a> );</div>
+<div class="line"><span class="lineno">   39</span>    }</div>
+<div class="ttc" id="acompiler_2cray_8hpp_html_acdfdd67de0664b690c42bba327cf7da1"><div class="ttname"><a href="compiler_2cray_8hpp.html#acdfdd67de0664b690c42bba327cf7da1">__ATOMIC_ACQ_REL</a></div><div class="ttdeci">#define __ATOMIC_ACQ_REL</div><div class="ttdef"><b>Definition:</b> <a href="compiler_2cray_8hpp_source.html#l00250">compiler/cray.hpp:250</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="compiler_2cray_8hpp_source.html#l00250">__ATOMIC_ACQ_REL</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1detail_1_1atomic__count.html#a382e73e93506f6369ca05931a2472534">atomic_exchange_and_add</a>( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, +1 ) + 1;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="sp__counted__base__gcc__x86_8hpp_source.html#l00046">boost::detail::atomic_exchange_and_add()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1atomic__count_a035dbc17854baab1ab725369028a7f3c_cgraph.svg" width="371" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a> の <a class="el" href="atomic__count__nt_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <span class="keywordflow">return</span> ++<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        scoped_lock lock(<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a>);</div>
+<div class="line"><span class="lineno">   76</span>        <span class="keywordflow">return</span> ++<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   77</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">mutex_</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__spin_8hpp_source.html">atomic_count_spin.hpp</a> の <a class="el" href="atomic__count__spin_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        spinlock_pool&lt;0&gt;::scoped_lock lock( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> ++<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a> の <a class="el" href="atomic__count__std__atomic_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>.fetch_add( 1, std::memory_order_acq_rel ) + 1;</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__sync_8hpp_source.html">atomic_count_sync.hpp</a> の <a class="el" href="atomic__count__sync_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> __sync_add_and_fetch( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, 1 );</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a035dbc17854baab1ab725369028a7f3c" name="a035dbc17854baab1ab725369028a7f3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035dbc17854baab1ab725369028a7f3c">&#9670;&#160;</a></span>operator++() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__win32_8hpp_source.html">atomic_count_win32.hpp</a> の <a class="el" href="atomic__count__win32_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        <span class="keywordflow">return</span> BOOST_SP_INTERLOCKED_INCREMENT( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> __exchange_and_add( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, -1 ) - 1;</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a> の <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        <span class="keywordflow">return</span> __atomic_add_fetch( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, -1, <a class="code hl_define" href="compiler_2cray_8hpp.html#acdfdd67de0664b690c42bba327cf7da1">__ATOMIC_ACQ_REL</a> );</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="compiler_2cray_8hpp_source.html#l00250">__ATOMIC_ACQ_REL</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1detail_1_1atomic__count.html#a382e73e93506f6369ca05931a2472534">atomic_exchange_and_add</a>( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, -1 ) - 1;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="sp__counted__base__gcc__x86_8hpp_source.html#l00046">boost::detail::atomic_exchange_and_add()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1atomic__count_af388206287f8822434ad8779bb15b59a_cgraph.svg" width="371" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a> の <a class="el" href="atomic__count__nt_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   45</span>    {</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> --<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>        scoped_lock lock(<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#a5507edb135fb6d365da32d175e53023c">mutex_</a>);</div>
+<div class="line"><span class="lineno">   82</span>        <span class="keywordflow">return</span> --<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   83</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">mutex_</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__spin_8hpp_source.html">atomic_count_spin.hpp</a> の <a class="el" href="atomic__count__spin_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        spinlock_pool&lt;0&gt;::scoped_lock lock( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   48</span>        <span class="keywordflow">return</span> --<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>;</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a> の <a class="el" href="atomic__count__std__atomic_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>.fetch_sub( 1, std::memory_order_acq_rel ) - 1;</div>
+<div class="line"><span class="lineno">   48</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__sync_8hpp_source.html">atomic_count_sync.hpp</a> の <a class="el" href="atomic__count__sync_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordflow">return</span> __sync_add_and_fetch( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a>, -1 );</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="af388206287f8822434ad8779bb15b59a" name="af388206287f8822434ad8779bb15b59a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af388206287f8822434ad8779bb15b59a">&#9670;&#160;</a></span>operator--() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__win32_8hpp_source.html">atomic_count_win32.hpp</a> の <a class="el" href="atomic__count__win32_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>    {</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> BOOST_SP_INTERLOCKED_DECREMENT( &amp;<a class="code hl_variable" href="classboost_1_1detail_1_1atomic__count.html#ad727842e7931a075e9647c9e9f250c3e">value_</a> );</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">value_</a>.</p>
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a21894b5e4862922455ab2808b10aa594" name="a21894b5e4862922455ab2808b10aa594"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21894b5e4862922455ab2808b10aa594">&#9670;&#160;</a></span>operator=() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> &amp; boost::detail::atomic_count::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5507edb135fb6d365da32d175e53023c" name="a5507edb135fb6d365da32d175e53023c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5507edb135fb6d365da32d175e53023c">&#9670;&#160;</a></span>mutex_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">pthread_mutex_t boost::detail::atomic_count::mutex_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a> の <a class="el" href="atomic__count__pt_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="atomic__count__pt_8hpp_source.html#l00063">atomic_count()</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00085">operator long()</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00073">operator++()</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00079">operator--()</a>, <a class="el" href="atomic__count__pt_8hpp_source.html#l00068">~atomic_count()</a>.</p>
+
+</div>
+</div>
+<a id="ad727842e7931a075e9647c9e9f250c3e" name="ad727842e7931a075e9647c9e9f250c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad727842e7931a075e9647c9e9f250c3e">&#9670;&#160;</a></span>value_ <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a> の <a class="el" href="atomic__count__gcc_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="atomic__count__gcc_8hpp_source.html#l00062">operator long()</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00052">operator++()</a>, <a class="el" href="atomic__count__gcc_8hpp_source.html#l00057">operator--()</a>.</p>
+
+</div>
+</div>
+<a id="ad0756d5cf6618b281bcac46014f8ce07" name="ad0756d5cf6618b281bcac46014f8ce07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0756d5cf6618b281bcac46014f8ce07">&#9670;&#160;</a></span>value_ <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::int_least32_t boost::detail::atomic_count::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a> の <a class="el" href="atomic__count__gcc__atomic_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aafb48414d11c77490ba9d01d48056ae6" name="aafb48414d11c77490ba9d01d48056ae6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb48414d11c77490ba9d01d48056ae6">&#9670;&#160;</a></span>value_ <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int boost::detail::atomic_count::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a> の <a class="el" href="atomic__count__gcc__x86_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad727842e7931a075e9647c9e9f250c3e" name="ad727842e7931a075e9647c9e9f250c3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad727842e7931a075e9647c9e9f250c3e">&#9670;&#160;</a></span>value_ <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long boost::detail::atomic_count::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a> の <a class="el" href="atomic__count__nt_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac0cab4b30a8f2f1ca4a1c1af78340def" name="ac0cab4b30a8f2f1ca4a1c1af78340def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0cab4b30a8f2f1ca4a1c1af78340def">&#9670;&#160;</a></span>value_ <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::atomic_int_least32_t boost::detail::atomic_count::value_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a> の <a class="el" href="atomic__count__std__atomic_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="atomic__count__gcc_8hpp_source.html">atomic_count_gcc.hpp</a></li>
+<li><a class="el" href="atomic__count__gcc__atomic_8hpp_source.html">atomic_count_gcc_atomic.hpp</a></li>
+<li><a class="el" href="atomic__count__gcc__x86_8hpp_source.html">atomic_count_gcc_x86.hpp</a></li>
+<li><a class="el" href="atomic__count__nt_8hpp_source.html">atomic_count_nt.hpp</a></li>
+<li><a class="el" href="atomic__count__pt_8hpp_source.html">atomic_count_pt.hpp</a></li>
+<li><a class="el" href="atomic__count__spin_8hpp_source.html">atomic_count_spin.hpp</a></li>
+<li><a class="el" href="atomic__count__std__atomic_8hpp_source.html">atomic_count_std_atomic.hpp</a></li>
+<li><a class="el" href="atomic__count__sync_8hpp_source.html">atomic_count_sync.hpp</a></li>
+<li><a class="el" href="atomic__count__win32_8hpp_source.html">atomic_count_win32.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1detail_1_1atomic__count.html">atomic_count</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

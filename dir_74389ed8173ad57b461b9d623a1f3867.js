@@ -35,7 +35,7 @@ var dir_74389ed8173ad57b461b9d623a1f3867 =
     [ "RespawnManager.h", "RespawnManager_8h.html", "RespawnManager_8h" ],
     [ "ResultScene.cpp", "ResultScene_8cpp.html", null ],
     [ "ResultScene.h", "ResultScene_8h.html", "ResultScene_8h" ],
-    [ "SampleGame.cpp", "SampleGame_8cpp.html", "SampleGame_8cpp" ],
+    [ "SampleGame.cpp", "SampleGame_8cpp.html", null ],
     [ "SampleGame.h", "SampleGame_8h.html", "SampleGame_8h" ],
     [ "ScoreItem.cpp", "ScoreItem_8cpp.html", null ],
     [ "ScoreItem.h", "ScoreItem_8h.html", "ScoreItem_8h" ],

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['blendmode_0',['BlendMode',['../namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748',1,'mtgb']]]
+  ['anotherenum_0',['AnotherEnum',['../classEnum__Test.html#a633286511e19b996e97699d7dd2cd2a0',1,'Enum_Test']]],
+  ['axis_1',['Axis',['../namespacemtgb.html#ad8e6de006fc9434a3c3d40499268cf8a',1,'mtgb']]]
 ];

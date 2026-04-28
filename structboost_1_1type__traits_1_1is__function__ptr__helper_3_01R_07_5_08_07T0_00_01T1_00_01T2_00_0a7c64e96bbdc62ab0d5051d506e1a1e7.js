@@ -1,0 +1,4 @@
+var structboost_1_1type__traits_1_1is__function__ptr__helper_3_01R_07_5_08_07T0_00_01T1_00_01T2_00_0a7c64e96bbdc62ab0d5051d506e1a1e7 =
+[
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1type__traits_1_1is__function__ptr__helper_3_01R_07_5_08_07T0_00_01T1_00_01T2_00_0a7c64e96bbdc62ab0d5051d506e1a1e7.html#a86d5d11569d1963fed910e76f73d27f7", null ]
+];

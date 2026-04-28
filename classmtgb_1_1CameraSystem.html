@@ -694,7 +694,7 @@ mtgb::CameraSystem 連携図</div>
 <div class="line"><span class="lineno">  206</span>    <span class="comment">// 新しく作成</span></div>
 <div class="line"><span class="lineno">  207</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#aae992695cbad0efd7c50043a4811b714">worldToScreenDatas_</a>.end())</div>
 <div class="line"><span class="lineno">  208</span>    {</div>
-<div class="line"><span class="lineno">  209</span>        WorldToScreenData data;</div>
+<div class="line"><span class="lineno">  209</span>        WorldToScreenData <a class="code hl_function" href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">data</a>;</div>
 <div class="line"><span class="lineno">  210</span>        <a class="code hl_function" href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">CalculateWorldToScreenData</a>(&amp;data, _context);</div>
 <div class="line"><span class="lineno">  211</span>        <span class="comment">// 作成したものを返す</span></div>
 <div class="line"><span class="lineno">  212</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1CameraSystem.html#aae992695cbad0efd7c50043a4811b714">worldToScreenDatas_</a>.insert(std::make_pair(_context, data)).first-&gt;second;</div>
@@ -708,6 +708,7 @@ mtgb::CameraSystem 連携図</div>
 <div class="line"><span class="lineno">  220</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html_a4fa44a7bd621f09e8bc2d80ba0e363e1"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#a4fa44a7bd621f09e8bc2d80ba0e363e1">mtgb::CameraSystem::CalculateWorldToScreenData</a></div><div class="ttdeci">void CalculateWorldToScreenData(WorldToScreenData *_data, WindowContext _context)</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8cpp_source.html#l00222">CameraSystem.cpp:222</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1CameraSystem_html_aae992695cbad0efd7c50043a4811b714"><div class="ttname"><a href="classmtgb_1_1CameraSystem.html#aae992695cbad0efd7c50043a4811b714">mtgb::CameraSystem::worldToScreenDatas_</a></div><div class="ttdeci">std::unordered_map&lt; WindowContext, WorldToScreenData &gt; worldToScreenDatas_</div><div class="ttdef"><b>Definition:</b> <a href="CameraSystem_8h_source.html#l00083">CameraSystem.h:83</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a772d6ff19b503d16e8e5d907a6a9a893"><div class="ttname"><a href="namespaceboost.html#a772d6ff19b503d16e8e5d907a6a9a893">boost::data</a></div><div class="ttdeci">constexpr auto data(C &amp;c) noexcept(noexcept(c.data())) -&gt; decltype(c.data())</div><div class="ttdef"><b>Definition:</b> <a href="core_2data_8hpp_source.html#l00018">core/data.hpp:18</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="Intersection_8cpp_source.html#l00024">mtgb::Intersection::RectContainsImpl()</a>.</p>
 <div class="dynheader">

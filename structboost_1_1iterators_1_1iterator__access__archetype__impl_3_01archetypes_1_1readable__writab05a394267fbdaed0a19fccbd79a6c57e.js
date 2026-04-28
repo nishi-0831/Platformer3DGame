@@ -1,0 +1,5 @@
+var structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1readable__writab05a394267fbdaed0a19fccbd79a6c57e =
+[
+    [ "reference", "structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1readable__writab05a394267fbdaed0a19fccbd79a6c57e.html#ae58f9f3d9237446a2c6dd09ccdfeac2e", null ],
+    [ "operator*", "structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1readable__writab05a394267fbdaed0a19fccbd79a6c57e.html#a36355cf54943aed68c4d17ce2d766a9a", null ]
+];

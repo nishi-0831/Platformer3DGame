@@ -1,0 +1,1229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: pp_round.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('pp__round_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">pp_round.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="fusion_2support_2config_8hpp_source.html">boost/fusion/support/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2comparison_2less_8hpp_source.html">boost/preprocessor/comparison/less.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2control_2if_8hpp_source.html">boost/preprocessor/control/if.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+pp_round.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pp__round_8hpp__incl.svg" width="4442" height="960"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="pp__round_8hpp__dep__incl.svg" width="1803" height="696"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="pp__round_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ac4cfbc5c5626f7edf66edde78768fc5c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ac4cfbc5c5626f7edf66edde78768fc5c">BOOST_FUSION_PP_ROUND_UP</a>(<a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>)&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(BOOST_FUSION_PP_DO_ROUND_UP_, <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>)()                          \</td></tr>
+<tr class="separator:ac4cfbc5c5626f7edf66edde78768fc5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c958616850bd758a717361f816916c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a5c958616850bd758a717361f816916c9">BOOST_FUSION_PP_DO_ROUND_UP_0</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a5c958616850bd758a717361f816916c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4afb9597437f38e7626a3500a41d4f54"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a4afb9597437f38e7626a3500a41d4f54">BOOST_FUSION_PP_DO_ROUND_UP_1</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a4afb9597437f38e7626a3500a41d4f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa5a98ee87b9b47993fb74a937ea3adf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#aaa5a98ee87b9b47993fb74a937ea3adf">BOOST_FUSION_PP_DO_ROUND_UP_2</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:aaa5a98ee87b9b47993fb74a937ea3adf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bb9258e4a21468447d51055521356a3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a6bb9258e4a21468447d51055521356a3">BOOST_FUSION_PP_DO_ROUND_UP_3</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a6bb9258e4a21468447d51055521356a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9bca8787b732f404cf38578e422a8be"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#aa9bca8787b732f404cf38578e422a8be">BOOST_FUSION_PP_DO_ROUND_UP_4</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:aa9bca8787b732f404cf38578e422a8be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35d9fcf9d5efa8d4491e70fd70b0fb69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a35d9fcf9d5efa8d4491e70fd70b0fb69">BOOST_FUSION_PP_DO_ROUND_UP_5</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a35d9fcf9d5efa8d4491e70fd70b0fb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc84a7d5318eb192317dc5a20b7218c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a0dc84a7d5318eb192317dc5a20b7218c">BOOST_FUSION_PP_DO_ROUND_UP_6</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a0dc84a7d5318eb192317dc5a20b7218c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa460dcbf751c63d6da205719b9e2bb5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#afa460dcbf751c63d6da205719b9e2bb5">BOOST_FUSION_PP_DO_ROUND_UP_7</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:afa460dcbf751c63d6da205719b9e2bb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c2b85b8442de8e0e2c1cede4170e52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a23c2b85b8442de8e0e2c1cede4170e52">BOOST_FUSION_PP_DO_ROUND_UP_8</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a23c2b85b8442de8e0e2c1cede4170e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29491955aad4c853815b2ceee2e274f3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a29491955aad4c853815b2ceee2e274f3">BOOST_FUSION_PP_DO_ROUND_UP_9</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a29491955aad4c853815b2ceee2e274f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e1d279db780d90732fb5a5c5cbfa8c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a8e1d279db780d90732fb5a5c5cbfa8c0">BOOST_FUSION_PP_DO_ROUND_UP_10</a>()&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a8e1d279db780d90732fb5a5c5cbfa8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52da60c5504778c2e71917032214f80"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ac52da60c5504778c2e71917032214f80">BOOST_FUSION_PP_DO_ROUND_UP_11</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:ac52da60c5504778c2e71917032214f80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc12a335131e6e0fbebcf2783f99ed90"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#acc12a335131e6e0fbebcf2783f99ed90">BOOST_FUSION_PP_DO_ROUND_UP_12</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:acc12a335131e6e0fbebcf2783f99ed90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21fa9dded25b60f41f3383e19e83cd77"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a21fa9dded25b60f41f3383e19e83cd77">BOOST_FUSION_PP_DO_ROUND_UP_13</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a21fa9dded25b60f41f3383e19e83cd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5149c81c62c69dde81e8cc9a2970a15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ac5149c81c62c69dde81e8cc9a2970a15">BOOST_FUSION_PP_DO_ROUND_UP_14</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:ac5149c81c62c69dde81e8cc9a2970a15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13a442bdf1c0292325bcf525fc953779"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a13a442bdf1c0292325bcf525fc953779">BOOST_FUSION_PP_DO_ROUND_UP_15</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a13a442bdf1c0292325bcf525fc953779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc718b3ad236b86e6147ef986b4e6ff6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#adc718b3ad236b86e6147ef986b4e6ff6">BOOST_FUSION_PP_DO_ROUND_UP_16</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:adc718b3ad236b86e6147ef986b4e6ff6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783b98f1acb4764becc32c45ce6e04d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a783b98f1acb4764becc32c45ce6e04d8">BOOST_FUSION_PP_DO_ROUND_UP_17</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a783b98f1acb4764becc32c45ce6e04d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac270b4e4029f050c884a9b8f5b431076"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ac270b4e4029f050c884a9b8f5b431076">BOOST_FUSION_PP_DO_ROUND_UP_18</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:ac270b4e4029f050c884a9b8f5b431076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43b5a0f25f6471c9830e86ced8b3722"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ac43b5a0f25f6471c9830e86ced8b3722">BOOST_FUSION_PP_DO_ROUND_UP_19</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:ac43b5a0f25f6471c9830e86ced8b3722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d9d12c1de971da452b3e00418c6975f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a7d9d12c1de971da452b3e00418c6975f">BOOST_FUSION_PP_DO_ROUND_UP_20</a>()&#160;&#160;&#160;20</td></tr>
+<tr class="separator:a7d9d12c1de971da452b3e00418c6975f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7694f1d593a25a373ad004ce064fe8c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a7694f1d593a25a373ad004ce064fe8c2">BOOST_FUSION_PP_DO_ROUND_UP_21</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a7694f1d593a25a373ad004ce064fe8c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6addda00831334859d2b9fda2b1283cc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a6addda00831334859d2b9fda2b1283cc">BOOST_FUSION_PP_DO_ROUND_UP_22</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a6addda00831334859d2b9fda2b1283cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab30dfa2b3cd3787b1cd670a007f1ab20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ab30dfa2b3cd3787b1cd670a007f1ab20">BOOST_FUSION_PP_DO_ROUND_UP_23</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:ab30dfa2b3cd3787b1cd670a007f1ab20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb25c1b30b37714e9cc10eda9c02171b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#aeb25c1b30b37714e9cc10eda9c02171b">BOOST_FUSION_PP_DO_ROUND_UP_24</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:aeb25c1b30b37714e9cc10eda9c02171b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f384def4610e4163078de94538a0ef7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a0f384def4610e4163078de94538a0ef7">BOOST_FUSION_PP_DO_ROUND_UP_25</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a0f384def4610e4163078de94538a0ef7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad04ba2f96cae89e54e30b1132757fc53"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ad04ba2f96cae89e54e30b1132757fc53">BOOST_FUSION_PP_DO_ROUND_UP_26</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:ad04ba2f96cae89e54e30b1132757fc53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fc49fc8c049cc4b80510b672441fb7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a0fc49fc8c049cc4b80510b672441fb7a">BOOST_FUSION_PP_DO_ROUND_UP_27</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a0fc49fc8c049cc4b80510b672441fb7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25218331e373d60b10209aff01eb54e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a25218331e373d60b10209aff01eb54e7">BOOST_FUSION_PP_DO_ROUND_UP_28</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a25218331e373d60b10209aff01eb54e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdea3f264d975a6a4e1976d816201da3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#afdea3f264d975a6a4e1976d816201da3">BOOST_FUSION_PP_DO_ROUND_UP_29</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:afdea3f264d975a6a4e1976d816201da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1299dd1397904cde7188b33658579a7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a1299dd1397904cde7188b33658579a7d">BOOST_FUSION_PP_DO_ROUND_UP_30</a>()&#160;&#160;&#160;30</td></tr>
+<tr class="separator:a1299dd1397904cde7188b33658579a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90dece3f8f0e25ab21d855f16e02b8d0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a90dece3f8f0e25ab21d855f16e02b8d0">BOOST_FUSION_PP_DO_ROUND_UP_31</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a90dece3f8f0e25ab21d855f16e02b8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaad58426f28ad75de4132e78e245c4ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#aaad58426f28ad75de4132e78e245c4ee">BOOST_FUSION_PP_DO_ROUND_UP_32</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:aaad58426f28ad75de4132e78e245c4ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af27b77b12ec714ad914ff96b5c365559"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#af27b77b12ec714ad914ff96b5c365559">BOOST_FUSION_PP_DO_ROUND_UP_33</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:af27b77b12ec714ad914ff96b5c365559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40606a9b7588b883f3e5645a6f2bc2c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a40606a9b7588b883f3e5645a6f2bc2c7">BOOST_FUSION_PP_DO_ROUND_UP_34</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a40606a9b7588b883f3e5645a6f2bc2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbf09ac15ea85d36462ef5f867583c22"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#adbf09ac15ea85d36462ef5f867583c22">BOOST_FUSION_PP_DO_ROUND_UP_35</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:adbf09ac15ea85d36462ef5f867583c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afee47ade300f568d4c5698abc8203686"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#afee47ade300f568d4c5698abc8203686">BOOST_FUSION_PP_DO_ROUND_UP_36</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:afee47ade300f568d4c5698abc8203686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e198a292dc07ff57ed51ab3a05ef93"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ae5e198a292dc07ff57ed51ab3a05ef93">BOOST_FUSION_PP_DO_ROUND_UP_37</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:ae5e198a292dc07ff57ed51ab3a05ef93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6158e532c20d20a0064f07a4c7ea04e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a6158e532c20d20a0064f07a4c7ea04e2">BOOST_FUSION_PP_DO_ROUND_UP_38</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a6158e532c20d20a0064f07a4c7ea04e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0f357b856bb9c90d5d22bb44dde118"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a9e0f357b856bb9c90d5d22bb44dde118">BOOST_FUSION_PP_DO_ROUND_UP_39</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a9e0f357b856bb9c90d5d22bb44dde118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b4b52fdc09ce804ce2a62cc426b06ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a3b4b52fdc09ce804ce2a62cc426b06ea">BOOST_FUSION_PP_DO_ROUND_UP_40</a>()&#160;&#160;&#160;40</td></tr>
+<tr class="separator:a3b4b52fdc09ce804ce2a62cc426b06ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bda4054d413d2554682b7837ca66f98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a6bda4054d413d2554682b7837ca66f98">BOOST_FUSION_PP_DO_ROUND_UP_41</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a6bda4054d413d2554682b7837ca66f98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1692c1f72b3215f5a272474830a8b74e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a1692c1f72b3215f5a272474830a8b74e">BOOST_FUSION_PP_DO_ROUND_UP_42</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a1692c1f72b3215f5a272474830a8b74e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afce00b737ec9c469955da7a19b72c4ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#afce00b737ec9c469955da7a19b72c4ac">BOOST_FUSION_PP_DO_ROUND_UP_43</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:afce00b737ec9c469955da7a19b72c4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b4995c59026989e2a49a7302e163a87"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a2b4995c59026989e2a49a7302e163a87">BOOST_FUSION_PP_DO_ROUND_UP_44</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a2b4995c59026989e2a49a7302e163a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45661342299dd5fec9368cb239d21623"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a45661342299dd5fec9368cb239d21623">BOOST_FUSION_PP_DO_ROUND_UP_45</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a45661342299dd5fec9368cb239d21623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab915ba12b22cd0595b6d31a9da5a13bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ab915ba12b22cd0595b6d31a9da5a13bd">BOOST_FUSION_PP_DO_ROUND_UP_46</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:ab915ba12b22cd0595b6d31a9da5a13bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbd13a2f898839f6a8b8eaccc4fca9a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#abbd13a2f898839f6a8b8eaccc4fca9a7">BOOST_FUSION_PP_DO_ROUND_UP_47</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:abbd13a2f898839f6a8b8eaccc4fca9a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d8bbcc299892834fa381849ca7e5beb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#a4d8bbcc299892834fa381849ca7e5beb">BOOST_FUSION_PP_DO_ROUND_UP_48</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:a4d8bbcc299892834fa381849ca7e5beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbeb77b28c2dfd47ee04379233a0ea55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#adbeb77b28c2dfd47ee04379233a0ea55">BOOST_FUSION_PP_DO_ROUND_UP_49</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:adbeb77b28c2dfd47ee04379233a0ea55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3bf00ff45dafb0cb32cc3043acc32b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pp__round_8hpp.html#ae3bf00ff45dafb0cb32cc3043acc32b5">BOOST_FUSION_PP_DO_ROUND_UP_50</a>()&#160;&#160;&#160;50</td></tr>
+<tr class="separator:ae3bf00ff45dafb0cb32cc3043acc32b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a5c958616850bd758a717361f816916c9" name="a5c958616850bd758a717361f816916c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c958616850bd758a717361f816916c9">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_0</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00020">20</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4afb9597437f38e7626a3500a41d4f54" name="a4afb9597437f38e7626a3500a41d4f54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4afb9597437f38e7626a3500a41d4f54">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_1</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00021">21</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8e1d279db780d90732fb5a5c5cbfa8c0" name="a8e1d279db780d90732fb5a5c5cbfa8c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e1d279db780d90732fb5a5c5cbfa8c0">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_10</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_10</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac52da60c5504778c2e71917032214f80" name="ac52da60c5504778c2e71917032214f80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52da60c5504778c2e71917032214f80">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_11</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acc12a335131e6e0fbebcf2783f99ed90" name="acc12a335131e6e0fbebcf2783f99ed90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc12a335131e6e0fbebcf2783f99ed90">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_12</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_12</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a21fa9dded25b60f41f3383e19e83cd77" name="a21fa9dded25b60f41f3383e19e83cd77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21fa9dded25b60f41f3383e19e83cd77">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_13</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_13</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac5149c81c62c69dde81e8cc9a2970a15" name="ac5149c81c62c69dde81e8cc9a2970a15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5149c81c62c69dde81e8cc9a2970a15">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_14</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_14</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a13a442bdf1c0292325bcf525fc953779" name="a13a442bdf1c0292325bcf525fc953779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13a442bdf1c0292325bcf525fc953779">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_15</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_15</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adc718b3ad236b86e6147ef986b4e6ff6" name="adc718b3ad236b86e6147ef986b4e6ff6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc718b3ad236b86e6147ef986b4e6ff6">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_16</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a783b98f1acb4764becc32c45ce6e04d8" name="a783b98f1acb4764becc32c45ce6e04d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783b98f1acb4764becc32c45ce6e04d8">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_17</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_17</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac270b4e4029f050c884a9b8f5b431076" name="ac270b4e4029f050c884a9b8f5b431076"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac270b4e4029f050c884a9b8f5b431076">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_18</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_18</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac43b5a0f25f6471c9830e86ced8b3722" name="ac43b5a0f25f6471c9830e86ced8b3722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac43b5a0f25f6471c9830e86ced8b3722">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_19</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_19</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaa5a98ee87b9b47993fb74a937ea3adf" name="aaa5a98ee87b9b47993fb74a937ea3adf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa5a98ee87b9b47993fb74a937ea3adf">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_2</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7d9d12c1de971da452b3e00418c6975f" name="a7d9d12c1de971da452b3e00418c6975f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d9d12c1de971da452b3e00418c6975f">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_20</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_20</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7694f1d593a25a373ad004ce064fe8c2" name="a7694f1d593a25a373ad004ce064fe8c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7694f1d593a25a373ad004ce064fe8c2">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_21</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_21</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6addda00831334859d2b9fda2b1283cc" name="a6addda00831334859d2b9fda2b1283cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6addda00831334859d2b9fda2b1283cc">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_22</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_22</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab30dfa2b3cd3787b1cd670a007f1ab20" name="ab30dfa2b3cd3787b1cd670a007f1ab20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab30dfa2b3cd3787b1cd670a007f1ab20">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_23</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_23</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aeb25c1b30b37714e9cc10eda9c02171b" name="aeb25c1b30b37714e9cc10eda9c02171b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb25c1b30b37714e9cc10eda9c02171b">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_24</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_24</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0f384def4610e4163078de94538a0ef7" name="a0f384def4610e4163078de94538a0ef7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f384def4610e4163078de94538a0ef7">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_25</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_25</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad04ba2f96cae89e54e30b1132757fc53" name="ad04ba2f96cae89e54e30b1132757fc53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad04ba2f96cae89e54e30b1132757fc53">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_26</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_26</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0fc49fc8c049cc4b80510b672441fb7a" name="a0fc49fc8c049cc4b80510b672441fb7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fc49fc8c049cc4b80510b672441fb7a">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_27</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_27</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a25218331e373d60b10209aff01eb54e7" name="a25218331e373d60b10209aff01eb54e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25218331e373d60b10209aff01eb54e7">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_28</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_28</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afdea3f264d975a6a4e1976d816201da3" name="afdea3f264d975a6a4e1976d816201da3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdea3f264d975a6a4e1976d816201da3">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_29</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_29</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6bb9258e4a21468447d51055521356a3" name="a6bb9258e4a21468447d51055521356a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bb9258e4a21468447d51055521356a3">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_3</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1299dd1397904cde7188b33658579a7d" name="a1299dd1397904cde7188b33658579a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1299dd1397904cde7188b33658579a7d">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_30</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_30</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;30</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a90dece3f8f0e25ab21d855f16e02b8d0" name="a90dece3f8f0e25ab21d855f16e02b8d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90dece3f8f0e25ab21d855f16e02b8d0">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_31</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_31</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaad58426f28ad75de4132e78e245c4ee" name="aaad58426f28ad75de4132e78e245c4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaad58426f28ad75de4132e78e245c4ee">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_32</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_32</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af27b77b12ec714ad914ff96b5c365559" name="af27b77b12ec714ad914ff96b5c365559"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af27b77b12ec714ad914ff96b5c365559">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_33</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_33</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a40606a9b7588b883f3e5645a6f2bc2c7" name="a40606a9b7588b883f3e5645a6f2bc2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40606a9b7588b883f3e5645a6f2bc2c7">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_34</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_34</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adbf09ac15ea85d36462ef5f867583c22" name="adbf09ac15ea85d36462ef5f867583c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbf09ac15ea85d36462ef5f867583c22">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_35</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_35</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afee47ade300f568d4c5698abc8203686" name="afee47ade300f568d4c5698abc8203686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afee47ade300f568d4c5698abc8203686">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_36</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_36</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae5e198a292dc07ff57ed51ab3a05ef93" name="ae5e198a292dc07ff57ed51ab3a05ef93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e198a292dc07ff57ed51ab3a05ef93">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_37</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_37</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6158e532c20d20a0064f07a4c7ea04e2" name="a6158e532c20d20a0064f07a4c7ea04e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6158e532c20d20a0064f07a4c7ea04e2">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_38</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_38</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9e0f357b856bb9c90d5d22bb44dde118" name="a9e0f357b856bb9c90d5d22bb44dde118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e0f357b856bb9c90d5d22bb44dde118">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_39</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_39</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa9bca8787b732f404cf38578e422a8be" name="aa9bca8787b732f404cf38578e422a8be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9bca8787b732f404cf38578e422a8be">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_4</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00024">24</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3b4b52fdc09ce804ce2a62cc426b06ea" name="a3b4b52fdc09ce804ce2a62cc426b06ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b4b52fdc09ce804ce2a62cc426b06ea">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_40</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_40</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;40</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6bda4054d413d2554682b7837ca66f98" name="a6bda4054d413d2554682b7837ca66f98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bda4054d413d2554682b7837ca66f98">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_41</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_41</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00061">61</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1692c1f72b3215f5a272474830a8b74e" name="a1692c1f72b3215f5a272474830a8b74e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1692c1f72b3215f5a272474830a8b74e">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_42</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_42</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afce00b737ec9c469955da7a19b72c4ac" name="afce00b737ec9c469955da7a19b72c4ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afce00b737ec9c469955da7a19b72c4ac">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_43</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_43</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2b4995c59026989e2a49a7302e163a87" name="a2b4995c59026989e2a49a7302e163a87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b4995c59026989e2a49a7302e163a87">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_44</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_44</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a45661342299dd5fec9368cb239d21623" name="a45661342299dd5fec9368cb239d21623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45661342299dd5fec9368cb239d21623">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_45</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_45</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab915ba12b22cd0595b6d31a9da5a13bd" name="ab915ba12b22cd0595b6d31a9da5a13bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab915ba12b22cd0595b6d31a9da5a13bd">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_46</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_46</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abbd13a2f898839f6a8b8eaccc4fca9a7" name="abbd13a2f898839f6a8b8eaccc4fca9a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbd13a2f898839f6a8b8eaccc4fca9a7">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_47</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_47</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4d8bbcc299892834fa381849ca7e5beb" name="a4d8bbcc299892834fa381849ca7e5beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d8bbcc299892834fa381849ca7e5beb">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_48</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_48</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adbeb77b28c2dfd47ee04379233a0ea55" name="adbeb77b28c2dfd47ee04379233a0ea55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbeb77b28c2dfd47ee04379233a0ea55">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_49</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_49</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a35d9fcf9d5efa8d4491e70fd70b0fb69" name="a35d9fcf9d5efa8d4491e70fd70b0fb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35d9fcf9d5efa8d4491e70fd70b0fb69">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_5</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_5</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae3bf00ff45dafb0cb32cc3043acc32b5" name="ae3bf00ff45dafb0cb32cc3043acc32b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3bf00ff45dafb0cb32cc3043acc32b5">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_50</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_50</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;50</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00070">70</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0dc84a7d5318eb192317dc5a20b7218c" name="a0dc84a7d5318eb192317dc5a20b7218c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc84a7d5318eb192317dc5a20b7218c">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_6</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_6</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00026">26</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afa460dcbf751c63d6da205719b9e2bb5" name="afa460dcbf751c63d6da205719b9e2bb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa460dcbf751c63d6da205719b9e2bb5">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_7</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_7</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a23c2b85b8442de8e0e2c1cede4170e52" name="a23c2b85b8442de8e0e2c1cede4170e52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23c2b85b8442de8e0e2c1cede4170e52">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_8</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a29491955aad4c853815b2ceee2e274f3" name="a29491955aad4c853815b2ceee2e274f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29491955aad4c853815b2ceee2e274f3">&#9670;&#160;</a></span>BOOST_FUSION_PP_DO_ROUND_UP_9</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_DO_ROUND_UP_9</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00029">29</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac4cfbc5c5626f7edf66edde78768fc5c" name="ac4cfbc5c5626f7edf66edde78768fc5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4cfbc5c5626f7edf66edde78768fc5c">&#9670;&#160;</a></span>BOOST_FUSION_PP_ROUND_UP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_PP_ROUND_UP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></td><td>)</td>
+          <td>&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(BOOST_FUSION_PP_DO_ROUND_UP_, <a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>)()                          \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="pp__round_8hpp_source.html">pp_round.hpp</a> の <a class="el" href="pp__round_8hpp_source.html#l00016">16</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_06645061f9e3fcb048ec29a4c23c59f6.html">support</a></li><li class="navelem"><a class="el" href="dir_05c5fdb896e82f6c8b878c6d6cb3bca6.html">detail</a></li><li class="navelem"><a class="el" href="pp__round_8hpp.html">pp_round.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

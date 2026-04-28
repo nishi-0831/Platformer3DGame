@@ -108,21 +108,21 @@ $(document).ready(function(){initNavTree('TextCache_8h.html',''); initResizable(
 <code>#include &quot;<a class="el" href="DirectWrite_8h_source.html">DirectWrite.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TextAlignment_8h_source.html">TextAlignment.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Vector2F_8h_source.html">Vector2F.h</a>&quot;</code><br />
-<code>#include &lt;boost/multi_index_container.hpp&gt;</code><br />
-<code>#include &lt;boost/multi_index/ordered_index.hpp&gt;</code><br />
-<code>#include &lt;boost/multi_index/random_access_index.hpp&gt;</code><br />
-<code>#include &lt;boost/multi_index/member.hpp&gt;</code><br />
-<code>#include &lt;boost/multi_index/composite_key.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="multi__index__container_8hpp_source.html">boost/multi_index_container.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ordered__index_8hpp_source.html">boost/multi_index/ordered_index.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="random__access__index_8hpp_source.html">boost/multi_index/random_access_index.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="member_8hpp_source.html">boost/multi_index/member.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="composite__key_8hpp_source.html">boost/multi_index/composite_key.hpp</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 TextCache.h の依存先関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="TextCache_8h__incl.svg" width="2372" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="TextCache_8h__incl.svg" width="5850" height="447"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 被依存関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="TextCache_8h__dep__incl.svg" width="4368" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="TextCache_8h__dep__incl.svg" width="4275" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -150,9 +150,9 @@ TextCache.h の依存先関係図:</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 型定義</h2></td></tr>
-<tr class="memitem:a5a7e24bab9f019b2c04e470598857c15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a5a7e24bab9f019b2c04e470598857c15">mtgb::TextLayoutContainer</a> = multi_index_container&lt; TextLayoutData *, indexed_by&lt; ordered_non_unique&lt; tag&lt; text_layout_order &gt;, composite_key&lt; TextLayoutData, member&lt; TextLayoutData, std::wstring, &amp;TextLayoutData::str &gt;, member&lt; TextLayoutData, int, &amp;TextLayoutData::fontSize &gt; &gt; &gt;, ordered_non_unique&lt; tag&lt; layout_box_size_order &gt;, composite_key&lt; TextLayoutData, member&lt; TextLayoutData, float, &amp;TextLayoutData::width &gt;, member&lt; TextLayoutData, float, &amp;TextLayoutData::height &gt; &gt; &gt;, ordered_unique&lt; tag&lt; handle_order &gt;, member&lt; TextLayoutData, int, &amp;TextLayoutData::handle &gt; &gt;, random_access&lt; tag&lt; random &gt; &gt; &gt; &gt;</td></tr>
+<tr class="memitem:a5a7e24bab9f019b2c04e470598857c15"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#a5a7e24bab9f019b2c04e470598857c15">mtgb::TextLayoutContainer</a> = <a class="el" href="classboost_1_1multi__index_1_1multi__index__container.html">multi_index_container</a>&lt; TextLayoutData *, <a class="el" href="structboost_1_1multi__index_1_1indexed__by.html">indexed_by</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1ordered__non__unique.html">ordered_non_unique</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1tag.html">tag</a>&lt; text_layout_order &gt;, <a class="el" href="structboost_1_1multi__index_1_1composite__key.html">composite_key</a>&lt; TextLayoutData, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; TextLayoutData, std::wstring, &amp;TextLayoutData::str &gt;, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; TextLayoutData, int, &amp;TextLayoutData::fontSize &gt; &gt; &gt;, <a class="el" href="structboost_1_1multi__index_1_1ordered__non__unique.html">ordered_non_unique</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1tag.html">tag</a>&lt; layout_box_size_order &gt;, <a class="el" href="structboost_1_1multi__index_1_1composite__key.html">composite_key</a>&lt; TextLayoutData, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; TextLayoutData, float, &amp;TextLayoutData::width &gt;, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; TextLayoutData, float, &amp;TextLayoutData::height &gt; &gt; &gt;, <a class="el" href="structboost_1_1multi__index_1_1ordered__unique.html">ordered_unique</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1tag.html">tag</a>&lt; handle_order &gt;, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; TextLayoutData, int, &amp;TextLayoutData::handle &gt; &gt;, <a class="el" href="structboost_1_1multi__index_1_1random__access.html">random_access</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1tag.html">tag</a>&lt; random &gt; &gt; &gt; &gt;</td></tr>
 <tr class="separator:a5a7e24bab9f019b2c04e470598857c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9742457ae6d050bc36259ec732e6445"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#ac9742457ae6d050bc36259ec732e6445">mtgb::FontFormatContainer</a> = multi_index_container&lt; FontFormatData *, indexed_by&lt; ordered_unique&lt; tag&lt; font_size_order &gt;, member&lt; FontFormatData, int, &amp;FontFormatData::fontSize &gt; &gt; &gt; &gt;</td></tr>
+<tr class="memitem:ac9742457ae6d050bc36259ec732e6445"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemtgb.html#ac9742457ae6d050bc36259ec732e6445">mtgb::FontFormatContainer</a> = <a class="el" href="classboost_1_1multi__index_1_1multi__index__container.html">multi_index_container</a>&lt; FontFormatData *, <a class="el" href="structboost_1_1multi__index_1_1indexed__by.html">indexed_by</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1ordered__unique.html">ordered_unique</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1tag.html">tag</a>&lt; font_size_order &gt;, <a class="el" href="structboost_1_1multi__index_1_1member.html">member</a>&lt; FontFormatData, int, &amp;FontFormatData::fontSize &gt; &gt; &gt; &gt;</td></tr>
 <tr class="separator:ac9742457ae6d050bc36259ec732e6445"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->

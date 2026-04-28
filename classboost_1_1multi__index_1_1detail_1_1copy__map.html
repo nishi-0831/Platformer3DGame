@@ -1,0 +1,1038 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::copy_map&lt; Node, Allocator &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1copy__map.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1copy__map-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::copy_map&lt; Node, Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map__inherit__graph.svg" width="266" height="867"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::copy_map&lt; Node, Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map__coll__graph.svg" width="858" height="1800"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a382eb0eb2c16f2c6a500632661984465"><td class="memItemLeft" align="right" valign="top">typedef const <a class="el" href="structboost_1_1multi__index_1_1detail_1_1copy__map__entry.html">copy_map_entry</a>&lt; Node &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a382eb0eb2c16f2c6a500632661984465">const_iterator</a></td></tr>
+<tr class="separator:a382eb0eb2c16f2c6a500632661984465"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7426aae800c4e4234d4ab004d1e3094"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::size_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a></td></tr>
+<tr class="separator:ab7426aae800c4e4234d4ab004d1e3094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a396f088fe09c5cf3cc42babb967d288f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a396f088fe09c5cf3cc42babb967d288f">copy_map</a> (const Allocator &amp;al, <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a> <a class="el" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>, Node *header_org, Node *header_cpy)</td></tr>
+<tr class="separator:a396f088fe09c5cf3cc42babb967d288f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4a5ed607ab5ee78bef6b6b4b2cd173e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ae4a5ed607ab5ee78bef6b6b4b2cd173e">~copy_map</a> ()</td></tr>
+<tr class="separator:ae4a5ed607ab5ee78bef6b6b4b2cd173e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f55d92a8a653290401d6face5c8c684"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a382eb0eb2c16f2c6a500632661984465">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0f55d92a8a653290401d6face5c8c684">begin</a> () const</td></tr>
+<tr class="separator:a0f55d92a8a653290401d6face5c8c684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e8847fcd007cf44b15a4b5c6c78d599"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a382eb0eb2c16f2c6a500632661984465">const_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0e8847fcd007cf44b15a4b5c6c78d599">end</a> () const</td></tr>
+<tr class="separator:a0e8847fcd007cf44b15a4b5c6c78d599"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83de7cd9ed1b4a743d9a3d6fcd920475"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a83de7cd9ed1b4a743d9a3d6fcd920475">copy_clone</a> (Node *node)</td></tr>
+<tr class="separator:a83de7cd9ed1b4a743d9a3d6fcd920475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55ee857def02242c964263597b1b1218"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a55ee857def02242c964263597b1b1218">move_clone</a> (Node *node)</td></tr>
+<tr class="separator:a55ee857def02242c964263597b1b1218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3d3de02dd95040d4a936a9278a12ac9"><td class="memItemLeft" align="right" valign="top">Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#af3d3de02dd95040d4a936a9278a12ac9">find</a> (Node *node) const</td></tr>
+<tr class="separator:af3d3de02dd95040d4a936a9278a12ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64f34b1feb59bff1639758034f9aece4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a64f34b1feb59bff1639758034f9aece4">release</a> ()</td></tr>
+<tr class="separator:a64f34b1feb59bff1639758034f9aece4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:ac960f055eb08b27fef4aa1a3a396bb48"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, Node &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ac960f055eb08b27fef4aa1a3a396bb48">allocator_type</a></td></tr>
+<tr class="separator:ac960f055eb08b27fef4aa1a3a396bb48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af31e1be2aad6c4308f74fa6d23e5612f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ac960f055eb08b27fef4aa1a3a396bb48">allocator_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#af31e1be2aad6c4308f74fa6d23e5612f">alloc_traits</a></td></tr>
+<tr class="separator:af31e1be2aad6c4308f74fa6d23e5612f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6fae114e19f6a30d5dff725c9a24ca0e"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6fae114e19f6a30d5dff725c9a24ca0e">pointer</a></td></tr>
+<tr class="separator:a6fae114e19f6a30d5dff725c9a24ca0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3d7569ccaa85a6c9d4b9fdbc505db950"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6fae114e19f6a30d5dff725c9a24ca0e">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a3d7569ccaa85a6c9d4b9fdbc505db950">allocate</a> ()</td></tr>
+<tr class="separator:a3d7569ccaa85a6c9d4b9fdbc505db950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35f48fbc26c783cc731aacb0b2855903"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a35f48fbc26c783cc731aacb0b2855903">deallocate</a> (Node *node)</td></tr>
+<tr class="separator:a35f48fbc26c783cc731aacb0b2855903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4744e9e913154d0a53e76fa00aee2c29"><td class="memTemplParams" colspan="2">template&lt;typename ValueAccess &gt; </td></tr>
+<tr class="memitem:a4744e9e913154d0a53e76fa00aee2c29"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4744e9e913154d0a53e76fa00aee2c29">clone</a> (Node *node, ValueAccess access)</td></tr>
+<tr class="separator:a4744e9e913154d0a53e76fa00aee2c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a8ffff6f8c6943db889504a70eb710f61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ac960f055eb08b27fef4aa1a3a396bb48">allocator_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a></td></tr>
+<tr class="separator:a8ffff6f8c6943db889504a70eb710f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b49a63d03637dec64dabd04acb4cd54"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">size_</a></td></tr>
+<tr class="separator:a8b49a63d03637dec64dabd04acb4cd54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4192167c3c21d996422a74b936c1e70d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1copy__map__entry.html">copy_map_entry</a>&lt; Node &gt;, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a></td></tr>
+<tr class="separator:a4192167c3c21d996422a74b936c1e70d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6dd7eda52e8928d13ba3e1f4ce4c4203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a></td></tr>
+<tr class="separator:a6dd7eda52e8928d13ba3e1f4ce4c4203"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff7e9a20641117d32282b19a5026c863"><td class="memItemLeft" align="right" valign="top">Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#aff7e9a20641117d32282b19a5026c863">header_org_</a></td></tr>
+<tr class="separator:aff7e9a20641117d32282b19a5026c863"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5fe5d055181fc36d52d3122fecd767c"><td class="memItemLeft" align="right" valign="top">Node *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab5fe5d055181fc36d52d3122fecd767c">header_cpy_</a></td></tr>
+<tr class="separator:ab5fe5d055181fc36d52d3122fecd767c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbdedb027905a7279264004c5083d093"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#adbdedb027905a7279264004c5083d093">released</a></td></tr>
+<tr class="separator:adbdedb027905a7279264004c5083d093"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Node, typename Allocator&gt;<br />
+class boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;</div>
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="af31e1be2aad6c4308f74fa6d23e5612f" name="af31e1be2aad6c4308f74fa6d23e5612f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af31e1be2aad6c4308f74fa6d23e5612f">&#9670;&#160;</a></span>alloc_traits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt;<a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ac960f055eb08b27fef4aa1a3a396bb48">allocator_type</a>&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::alloc_traits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac960f055eb08b27fef4aa1a3a396bb48" name="ac960f055eb08b27fef4aa1a3a396bb48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac960f055eb08b27fef4aa1a3a396bb48">&#9670;&#160;</a></span>allocator_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt;Allocator,Node&gt;::type <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::allocator_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a382eb0eb2c16f2c6a500632661984465" name="a382eb0eb2c16f2c6a500632661984465"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a382eb0eb2c16f2c6a500632661984465">&#9670;&#160;</a></span>const_iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef const <a class="el" href="structboost_1_1multi__index_1_1detail_1_1copy__map__entry.html">copy_map_entry</a>&lt;Node&gt;* <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::const_iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6fae114e19f6a30d5dff725c9a24ca0e" name="a6fae114e19f6a30d5dff725c9a24ca0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6fae114e19f6a30d5dff725c9a24ca0e">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::pointer <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::pointer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab7426aae800c4e4234d4ab004d1e3094" name="ab7426aae800c4e4234d4ab004d1e3094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7426aae800c4e4234d4ab004d1e3094">&#9670;&#160;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::size_type <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::size_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a396f088fe09c5cf3cc42babb967d288f" name="a396f088fe09c5cf3cc42babb967d288f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396f088fe09c5cf3cc42babb967d288f">&#9670;&#160;</a></span>copy_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::copy_map </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>al</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a>&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>header_org</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>header_cpy</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00085">85</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                                         :</div>
+<div class="line"><span class="lineno">   87</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>(al),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">size_</a>(<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">size_</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>(0),</div>
+<div class="line"><span class="lineno">   88</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#aff7e9a20641117d32282b19a5026c863">header_org_</a>(header_org),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab5fe5d055181fc36d52d3122fecd767c">header_cpy_</a>(header_cpy),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#adbdedb027905a7279264004c5083d093">released</a>(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   89</span>  {}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a4192167c3c21d996422a74b936c1e70d"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">boost::multi_index::detail::copy_map::spc</a></div><div class="ttdeci">auto_space&lt; copy_map_entry&lt; Node &gt;, Allocator &gt; spc</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00123">copy_map.hpp:123</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a6dd7eda52e8928d13ba3e1f4ce4c4203"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">boost::multi_index::detail::copy_map::n</a></div><div class="ttdeci">size_type n</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00124">copy_map.hpp:124</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a8b49a63d03637dec64dabd04acb4cd54"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">boost::multi_index::detail::copy_map::size_</a></div><div class="ttdeci">size_type size_</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00122">copy_map.hpp:122</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a8ffff6f8c6943db889504a70eb710f61"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">boost::multi_index::detail::copy_map::al_</a></div><div class="ttdeci">allocator_type al_</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00121">copy_map.hpp:121</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_ab5fe5d055181fc36d52d3122fecd767c"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab5fe5d055181fc36d52d3122fecd767c">boost::multi_index::detail::copy_map::header_cpy_</a></div><div class="ttdeci">Node * header_cpy_</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00126">copy_map.hpp:126</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_adbdedb027905a7279264004c5083d093"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#adbdedb027905a7279264004c5083d093">boost::multi_index::detail::copy_map::released</a></div><div class="ttdeci">bool released</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00127">copy_map.hpp:127</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_aff7e9a20641117d32282b19a5026c863"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#aff7e9a20641117d32282b19a5026c863">boost::multi_index::detail::copy_map::header_org_</a></div><div class="ttdeci">Node * header_org_</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00125">copy_map.hpp:125</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a6fba56e63fab408320679073cd64ce9d"><div class="ttname"><a href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">boost::size</a></div><div class="ttdeci">constexpr auto size(const C &amp;c) noexcept(noexcept(c.size())) -&gt; decltype(c.size())</div><div class="ttdef"><b>Definition:</b> <a href="core_2size_8hpp_source.html#l00017">core/size.hpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae4a5ed607ab5ee78bef6b6b4b2cd173e" name="ae4a5ed607ab5ee78bef6b6b4b2cd173e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4a5ed607ab5ee78bef6b6b4b2cd173e">&#9670;&#160;</a></span>~copy_map()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::~<a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">copy_map</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   92</span>  {</div>
+<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#adbdedb027905a7279264004c5083d093">released</a>){</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">for</span>(<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a> i=0;i&lt;<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>;++i){</div>
+<div class="line"><span class="lineno">   95</span>        alloc_traits::destroy(</div>
+<div class="line"><span class="lineno">   96</span>          <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>,<a class="code hl_function" href="namespaceboost.html#ab3707fedb900d3798ffa473cf16c4c74">boost::addressof</a>((<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+i)-&gt;second-&gt;value()));</div>
+<div class="line"><span class="lineno">   97</span>        <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a35f48fbc26c783cc731aacb0b2855903">deallocate</a>((<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+i)-&gt;second);</div>
+<div class="line"><span class="lineno">   98</span>      }</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="line"><span class="lineno">  100</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a35f48fbc26c783cc731aacb0b2855903"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a35f48fbc26c783cc731aacb0b2855903">boost::multi_index::detail::copy_map::deallocate</a></div><div class="ttdeci">void deallocate(Node *node)</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00134">copy_map.hpp:134</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_ab7426aae800c4e4234d4ab004d1e3094"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">boost::multi_index::detail::copy_map::size_type</a></div><div class="ttdeci">alloc_traits::size_type size_type</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00083">copy_map.hpp:83</a></div></div>
+<div class="ttc" id="anamespaceboost_html_ab3707fedb900d3798ffa473cf16c4c74"><div class="ttname"><a href="namespaceboost.html#ab3707fedb900d3798ffa473cf16c4c74">boost::addressof</a></div><div class="ttdeci">constexpr BOOST_FORCEINLINE T * addressof(T &amp;o) BOOST_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="core_2addressof_8hpp_source.html#l00255">core/addressof.hpp:255</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="core_2addressof_8hpp_source.html#l00255">boost::addressof()</a>, <a class="el" href="copy__map_8hpp_source.html#l00121">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::al_</a>, <a class="el" href="copy__map_8hpp_source.html#l00134">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::deallocate()</a>, <a class="el" href="copy__map_8hpp_source.html#l00124">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::n</a>, <a class="el" href="copy__map_8hpp_source.html#l00127">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::released</a>, <a class="el" href="copy__map_8hpp_source.html#l00123">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::spc</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_ae4a5ed607ab5ee78bef6b6b4b2cd173e_cgraph.svg" width="812" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3d7569ccaa85a6c9d4b9fdbc505db950" name="a3d7569ccaa85a6c9d4b9fdbc505db950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d7569ccaa85a6c9d4b9fdbc505db950">&#9670;&#160;</a></span>allocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6fae114e19f6a30d5dff725c9a24ca0e">pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::allocate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">return</span> alloc_traits::allocate(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>,1);</div>
+<div class="line"><span class="lineno">  132</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00121">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::al_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a3d7569ccaa85a6c9d4b9fdbc505db950_icgraph.svg" width="594" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0f55d92a8a653290401d6face5c8c684" name="a0f55d92a8a653290401d6face5c8c684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f55d92a8a653290401d6face5c8c684">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a382eb0eb2c16f2c6a500632661984465">const_iterator</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00102">102</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>{<span class="keywordflow">return</span> raw_ptr&lt;const_iterator&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data());}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00123">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00108">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::find()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a0f55d92a8a653290401d6face5c8c684_icgraph.svg" width="420" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4744e9e913154d0a53e76fa00aee2c29" name="a4744e9e913154d0a53e76fa00aee2c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4744e9e913154d0a53e76fa00aee2c29">&#9670;&#160;</a></span>clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;typename ValueAccess &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::clone </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ValueAccess&#160;</td>
+          <td class="paramname"><em>access</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00140">140</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>  {</div>
+<div class="line"><span class="lineno">  142</span>    (<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>)-&gt;first=node;</div>
+<div class="line"><span class="lineno">  143</span>    (<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>)-&gt;second=raw_ptr&lt;Node*&gt;(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a3d7569ccaa85a6c9d4b9fdbc505db950">allocate</a>());</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a42e8c335be0add08138e06271e9dbdab">BOOST_TRY</a>{</div>
+<div class="line"><span class="lineno">  145</span>      alloc_traits::construct(</div>
+<div class="line"><span class="lineno">  146</span>        <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>,<a class="code hl_function" href="namespaceboost.html#ab3707fedb900d3798ffa473cf16c4c74">boost::addressof</a>((<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>)-&gt;second-&gt;value()),</div>
+<div class="line"><span class="lineno">  147</span>        access(node-&gt;value()));</div>
+<div class="line"><span class="lineno">  148</span>    }</div>
+<div class="line"><span class="lineno">  149</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a1526a9264a34938307510dc0f0553806">BOOST_CATCH</a>(...){</div>
+<div class="line"><span class="lineno">  150</span>      <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a35f48fbc26c783cc731aacb0b2855903">deallocate</a>((<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>)-&gt;second);</div>
+<div class="line"><span class="lineno">  151</span>      <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a357a3978a463577d21e62106ed5d2b21">BOOST_RETHROW</a>;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a3f65b89d68c413cd045f332643e4798d">BOOST_CATCH_END</a></div>
+<div class="line"><span class="lineno">  154</span>    ++<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>==<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">size_</a>){</div>
+<div class="line"><span class="lineno">  157</span>      std::sort(</div>
+<div class="line"><span class="lineno">  158</span>        <a class="code hl_function" href="namespaceboost_1_1multi__index_1_1detail.html#ab9e61f2452d90e9ac7f8a8ee2d83bf2b">raw_ptr</a>&lt;copy_map_entry&lt;Node&gt;*&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()),</div>
+<div class="line"><span class="lineno">  159</span>        <a class="code hl_function" href="namespaceboost_1_1multi__index_1_1detail.html#ab9e61f2452d90e9ac7f8a8ee2d83bf2b">raw_ptr</a>&lt;copy_map_entry&lt;Node&gt;*&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data())+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8b49a63d03637dec64dabd04acb4cd54">size_</a>);</div>
+<div class="line"><span class="lineno">  160</span>    }</div>
+<div class="line"><span class="lineno">  161</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a3d7569ccaa85a6c9d4b9fdbc505db950"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a3d7569ccaa85a6c9d4b9fdbc505db950">boost::multi_index::detail::copy_map::allocate</a></div><div class="ttdeci">pointer allocate()</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00129">copy_map.hpp:129</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a1526a9264a34938307510dc0f0553806"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a1526a9264a34938307510dc0f0553806">BOOST_CATCH</a></div><div class="ttdeci">#define BOOST_CATCH(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00028">core/no_exceptions_support.hpp:28</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a357a3978a463577d21e62106ed5d2b21"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a357a3978a463577d21e62106ed5d2b21">BOOST_RETHROW</a></div><div class="ttdeci">#define BOOST_RETHROW</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00029">core/no_exceptions_support.hpp:29</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a3f65b89d68c413cd045f332643e4798d"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a3f65b89d68c413cd045f332643e4798d">BOOST_CATCH_END</a></div><div class="ttdeci">#define BOOST_CATCH_END</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00030">core/no_exceptions_support.hpp:30</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a42e8c335be0add08138e06271e9dbdab"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a42e8c335be0add08138e06271e9dbdab">BOOST_TRY</a></div><div class="ttdeci">#define BOOST_TRY</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00027">core/no_exceptions_support.hpp:27</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1multi__index_1_1detail_html_ab9e61f2452d90e9ac7f8a8ee2d83bf2b"><div class="ttname"><a href="namespaceboost_1_1multi__index_1_1detail.html#ab9e61f2452d90e9ac7f8a8ee2d83bf2b">boost::multi_index::detail::raw_ptr</a></div><div class="ttdeci">RawPointer raw_ptr(RawPointer const &amp;p, mpl::true_)</div><div class="ttdef"><b>Definition:</b> <a href="raw__ptr_8hpp_source.html#l00029">raw_ptr.hpp:29</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="core_2addressof_8hpp_source.html#l00255">boost::addressof()</a>, <a class="el" href="copy__map_8hpp_source.html#l00121">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::al_</a>, <a class="el" href="copy__map_8hpp_source.html#l00129">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::allocate()</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00028">BOOST_CATCH</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00030">BOOST_CATCH_END</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00029">BOOST_RETHROW</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00027">BOOST_TRY</a>, <a class="el" href="copy__map_8hpp_source.html#l00134">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::deallocate()</a>, <a class="el" href="copy__map_8hpp_source.html#l00124">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::n</a>, <a class="el" href="raw__ptr_8hpp_source.html#l00029">boost::multi_index::detail::raw_ptr()</a>, <a class="el" href="copy__map_8hpp_source.html#l00122">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::size_</a>, <a class="el" href="copy__map_8hpp_source.html#l00123">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00105">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::copy_clone()</a>, <a class="el" href="copy__map_8hpp_source.html#l00106">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::move_clone()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a4744e9e913154d0a53e76fa00aee2c29_cgraph.svg" width="847" height="259"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a4744e9e913154d0a53e76fa00aee2c29_icgraph.svg" width="395" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a83de7cd9ed1b4a743d9a3d6fcd920475" name="a83de7cd9ed1b4a743d9a3d6fcd920475"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83de7cd9ed1b4a743d9a3d6fcd920475">&#9670;&#160;</a></span>copy_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::copy_clone </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00105">105</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>{<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4744e9e913154d0a53e76fa00aee2c29">clone</a>(node,copy_map_value_copier());}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a4744e9e913154d0a53e76fa00aee2c29"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4744e9e913154d0a53e76fa00aee2c29">boost::multi_index::detail::copy_map::clone</a></div><div class="ttdeci">void clone(Node *node, ValueAccess access)</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00140">copy_map.hpp:140</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a83de7cd9ed1b4a743d9a3d6fcd920475_cgraph.svg" width="1046" height="259"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a35f48fbc26c783cc731aacb0b2855903" name="a35f48fbc26c783cc731aacb0b2855903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35f48fbc26c783cc731aacb0b2855903">&#9670;&#160;</a></span>deallocate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::deallocate </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00134">134</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>  {</div>
+<div class="line"><span class="lineno">  136</span>    alloc_traits::deallocate(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a8ffff6f8c6943db889504a70eb710f61">al_</a>,<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6fae114e19f6a30d5dff725c9a24ca0e">pointer</a><span class="keyword">&gt;</span>(node),1);</div>
+<div class="line"><span class="lineno">  137</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a6fae114e19f6a30d5dff725c9a24ca0e"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6fae114e19f6a30d5dff725c9a24ca0e">boost::multi_index::detail::copy_map::pointer</a></div><div class="ttdeci">alloc_traits::pointer pointer</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00079">copy_map.hpp:79</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00121">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::al_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>, <a class="el" href="copy__map_8hpp_source.html#l00091">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::~copy_map()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a35f48fbc26c783cc731aacb0b2855903_icgraph.svg" width="594" height="178"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0e8847fcd007cf44b15a4b5c6c78d599" name="a0e8847fcd007cf44b15a4b5c6c78d599"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e8847fcd007cf44b15a4b5c6c78d599">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a382eb0eb2c16f2c6a500632661984465">const_iterator</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00103">103</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>{<span class="keywordflow">return</span> raw_ptr&lt;const_iterator&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4192167c3c21d996422a74b936c1e70d">spc</a>.data()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a6dd7eda52e8928d13ba3e1f4ce4c4203">n</a>);}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00124">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::n</a>, <a class="el" href="copy__map_8hpp_source.html#l00123">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00108">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::find()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a0e8847fcd007cf44b15a4b5c6c78d599_icgraph.svg" width="408" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af3d3de02dd95040d4a936a9278a12ac9" name="af3d3de02dd95040d4a936a9278a12ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3d3de02dd95040d4a936a9278a12ac9">&#9670;&#160;</a></span>find()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node * <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::find </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>  {</div>
+<div class="line"><span class="lineno">  110</span>    <span class="keywordflow">if</span>(node==<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#aff7e9a20641117d32282b19a5026c863">header_org_</a>)<span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab5fe5d055181fc36d52d3122fecd767c">header_cpy_</a>;</div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> std::lower_bound(</div>
+<div class="line"><span class="lineno">  112</span>      <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0f55d92a8a653290401d6face5c8c684">begin</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0e8847fcd007cf44b15a4b5c6c78d599">end</a>(),copy_map_entry&lt;Node&gt;(node,0))-&gt;second;</div>
+<div class="line"><span class="lineno">  113</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a0e8847fcd007cf44b15a4b5c6c78d599"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0e8847fcd007cf44b15a4b5c6c78d599">boost::multi_index::detail::copy_map::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00103">copy_map.hpp:103</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1copy__map_html_a0f55d92a8a653290401d6face5c8c684"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a0f55d92a8a653290401d6face5c8c684">boost::multi_index::detail::copy_map::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdef"><b>Definition:</b> <a href="copy__map_8hpp_source.html#l00102">copy_map.hpp:102</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00102">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::begin()</a>, <a class="el" href="copy__map_8hpp_source.html#l00103">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::end()</a>, <a class="el" href="copy__map_8hpp_source.html#l00126">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::header_cpy_</a>, <a class="el" href="copy__map_8hpp_source.html#l00125">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::header_org_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_af3d3de02dd95040d4a936a9278a12ac9_cgraph.svg" width="420" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a55ee857def02242c964263597b1b1218" name="a55ee857def02242c964263597b1b1218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55ee857def02242c964263597b1b1218">&#9670;&#160;</a></span>move_clone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::move_clone </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00106">106</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>{<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#a4744e9e913154d0a53e76fa00aee2c29">clone</a>(node,copy_map_value_mover());}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1copy__map_a55ee857def02242c964263597b1b1218_cgraph.svg" width="1046" height="259"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a64f34b1feb59bff1639758034f9aece4" name="a64f34b1feb59bff1639758034f9aece4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64f34b1feb59bff1639758034f9aece4">&#9670;&#160;</a></span>release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00115">115</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  116</span>  {</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#adbdedb027905a7279264004c5083d093">released</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  118</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="copy__map_8hpp_source.html#l00127">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::released</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a8ffff6f8c6943db889504a70eb710f61" name="a8ffff6f8c6943db889504a70eb710f61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ffff6f8c6943db889504a70eb710f61">&#9670;&#160;</a></span>al_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ac960f055eb08b27fef4aa1a3a396bb48">allocator_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::al_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00121">121</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00129">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::allocate()</a>, <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>, <a class="el" href="copy__map_8hpp_source.html#l00134">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::deallocate()</a>, <a class="el" href="copy__map_8hpp_source.html#l00091">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::~copy_map()</a>.</p>
+
+</div>
+</div>
+<a id="ab5fe5d055181fc36d52d3122fecd767c" name="ab5fe5d055181fc36d52d3122fecd767c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5fe5d055181fc36d52d3122fecd767c">&#9670;&#160;</a></span>header_cpy_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node* <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::header_cpy_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00126">126</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00108">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::find()</a>.</p>
+
+</div>
+</div>
+<a id="aff7e9a20641117d32282b19a5026c863" name="aff7e9a20641117d32282b19a5026c863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff7e9a20641117d32282b19a5026c863">&#9670;&#160;</a></span>header_org_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node* <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::header_org_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00125">125</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00108">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::find()</a>.</p>
+
+</div>
+</div>
+<a id="a6dd7eda52e8928d13ba3e1f4ce4c4203" name="a6dd7eda52e8928d13ba3e1f4ce4c4203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dd7eda52e8928d13ba3e1f4ce4c4203">&#9670;&#160;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::n</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00124">124</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>, <a class="el" href="copy__map_8hpp_source.html#l00103">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::end()</a>, <a class="el" href="copy__map_8hpp_source.html#l00091">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::~copy_map()</a>.</p>
+
+</div>
+</div>
+<a id="adbdedb027905a7279264004c5083d093" name="adbdedb027905a7279264004c5083d093"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbdedb027905a7279264004c5083d093">&#9670;&#160;</a></span>released</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::released</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00115">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::release()</a>, <a class="el" href="copy__map_8hpp_source.html#l00091">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::~copy_map()</a>.</p>
+
+</div>
+</div>
+<a id="a8b49a63d03637dec64dabd04acb4cd54" name="a8b49a63d03637dec64dabd04acb4cd54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b49a63d03637dec64dabd04acb4cd54">&#9670;&#160;</a></span>size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html#ab7426aae800c4e4234d4ab004d1e3094">size_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>.</p>
+
+</div>
+</div>
+<a id="a4192167c3c21d996422a74b936c1e70d" name="a4192167c3c21d996422a74b936c1e70d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4192167c3c21d996422a74b936c1e70d">&#9670;&#160;</a></span>spc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt;<a class="el" href="structboost_1_1multi__index_1_1detail_1_1copy__map__entry.html">copy_map_entry</a>&lt;Node&gt;,Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">boost::multi_index::detail::copy_map</a>&lt; Node, Allocator &gt;::spc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a> の <a class="el" href="copy__map_8hpp_source.html#l00123">123</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="copy__map_8hpp_source.html#l00102">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::begin()</a>, <a class="el" href="copy__map_8hpp_source.html#l00140">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::clone()</a>, <a class="el" href="copy__map_8hpp_source.html#l00103">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::end()</a>, <a class="el" href="copy__map_8hpp_source.html#l00091">boost::multi_index::detail::copy_map&lt; Node, Allocator &gt;::~copy_map()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="copy__map_8hpp_source.html">copy_map.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1copy__map.html">copy_map</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: advance_forward.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('preprocessed_2bcc551_2advance__forward_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">preprocessed/bcc551/advance_forward.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="preprocessed_2bcc551_2advance__forward_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Copyright Aleksey Gurtovoy 2000-2004</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Distributed under the Boost Software License, Version 1.0. </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// (See accompanying file LICENSE_1_0.txt or copy at </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// Preprocessed version of &quot;boost/mpl/aux_/advance_forward.hpp&quot; header</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// -- DO NOT modify by hand!</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a> { <span class="keyword">namespace </span>aux {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">template</span>&lt; <span class="keywordtype">long</span> N &gt; <span class="keyword">struct </span>advance_forward;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">struct </span>advance_forward&lt;0&gt;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span>apply</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a0cb991818828a7f89c6061e723afa1e3">   20</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a0cb991818828a7f89c6061e723afa1e3">iter0</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a54d8b0852160f73916ae82605a67f815">   21</a></span>        <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a0cb991818828a7f89c6061e723afa1e3">iter0</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a54d8b0852160f73916ae82605a67f815">type</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    };</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a>&lt;1&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ab76ea442b03cf3de1dae192f436ad1d4">   30</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ab76ea442b03cf3de1dae192f436ad1d4">iter0</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#a06d44ec89abbf259962333658158c23b">   31</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter0&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#a06d44ec89abbf259962333658158c23b">iter1</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ad97cd96d80ac0c9ba4620e0bef331084">   32</a></span>        <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#a06d44ec89abbf259962333658158c23b">iter1</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ad97cd96d80ac0c9ba4620e0bef331084">type</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a>&lt;2&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab9f2e2847ea1ddfc1ccd501d69d1d163">   41</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab9f2e2847ea1ddfc1ccd501d69d1d163">iter0</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#a8ca73599cb609f919660107e1ec6982a">   42</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter0&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#a8ca73599cb609f919660107e1ec6982a">iter1</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#add5651f35b5bd176f2c340284d08153b">   43</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter1&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#add5651f35b5bd176f2c340284d08153b">iter2</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab96098a8b19db7e8b1e12c596be10610">   44</a></span>        <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#add5651f35b5bd176f2c340284d08153b">iter2</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab96098a8b19db7e8b1e12c596be10610">type</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>};</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a>&lt;3&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>{</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#abb862febfe5ef0333bce514725fc4af2">   53</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#abb862febfe5ef0333bce514725fc4af2">iter0</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a6e8ff0cb5eb0589fd4e35e133eea6704">   54</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter0&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a6e8ff0cb5eb0589fd4e35e133eea6704">iter1</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a07f20f9d7678c0cfdee9d82e4cc300fa">   55</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter1&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a07f20f9d7678c0cfdee9d82e4cc300fa">iter2</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ab1aee1afa000582d7d375e8b17bac5ef">   56</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter2&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ab1aee1afa000582d7d375e8b17bac5ef">iter3</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ae14a9cdd44dc52cb1d4ac429daac460b">   57</a></span>        <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ab1aee1afa000582d7d375e8b17bac5ef">iter3</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ae14a9cdd44dc52cb1d4ac429daac460b">type</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    };</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a>&lt;4&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>{</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a195283989fc00fc990a1eeb34fe0e477">   66</a></span>        <span class="keyword">typedef</span> Iterator <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a195283989fc00fc990a1eeb34fe0e477">iter0</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#aa99dce15bbe724870214fae4a23befd7">   67</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter0&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#aa99dce15bbe724870214fae4a23befd7">iter1</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a5819b9b518f924094457a82b13409947">   68</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter1&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a5819b9b518f924094457a82b13409947">iter2</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a4c50a1febd5290f753b00b3b9bd3cd26">   69</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter2&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a4c50a1febd5290f753b00b3b9bd3cd26">iter3</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a9680314e8da7351582fd9b1c196e0985">   70</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">next&lt;iter3&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a9680314e8da7351582fd9b1c196e0985">iter4</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#abf99bd08351101d2cf181138230f39bb">   71</a></span>        <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a9680314e8da7351582fd9b1c196e0985">iter4</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#abf99bd08351101d2cf181138230f39bb">type</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    };</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">template</span>&lt; <span class="keywordtype">long</span> N &gt;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iterator &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1apply__wrap1.html">apply_wrap1</a>&lt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>              <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward&lt;4&gt;</a></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            , Iterator</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a4ca0173db3a26e2e81031155d7e1ab0d">   83</a></span>            &gt;<a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a711479844d22412c0afa256619c57c4a">::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a4ca0173db3a26e2e81031155d7e1ab0d">chunk_result_</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1apply__wrap1.html">apply_wrap1</a>&lt;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>              <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">advance_forward</a>&lt;(</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                (<a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> - 4) &lt; 0</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                    ? 0</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                    : <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> - 4</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                    )&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            , <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a4ca0173db3a26e2e81031155d7e1ab0d">chunk_result_</a></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a711479844d22412c0afa256619c57c4a">   92</a></span>            &gt;<a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a711479844d22412c0afa256619c57c4a">::type</a> <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a711479844d22412c0afa256619c57c4a">type</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    };</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}}}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="ttc" id="aforward__adapter_8hpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00227">forward_adapter.hpp:227</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_html"><div class="ttname"><a href="namespaceboost_1_1mpl.html">boost::mpl</a></div><div class="ttdef"><b>Definition:</b> <a href="components__as__mpl__sequence_8hpp_source.html#l00024">components_as_mpl_sequence.hpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1apply__wrap1_html"><div class="ttname"><a href="structboost_1_1mpl_1_1apply__wrap1.html">boost::mpl::apply_wrap1</a></div><div class="ttdef"><b>Definition:</b> <a href="aux___2preprocessed_2bcc_2apply__wrap_8hpp_source.html#l00218">aux_/preprocessed/bcc/apply_wrap.hpp:224</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1apply_html"><div class="ttname"><a href="structboost_1_1mpl_1_1apply.html">boost::mpl::apply</a></div><div class="ttdoc">primary template (not a specialization!)</div><div class="ttdef"><b>Definition:</b> <a href="mpl_2aux___2preprocessed_2bcc_2apply_8hpp_source.html#l00163">mpl/aux_/preprocessed/bcc/apply.hpp:165</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply_html_a4ca0173db3a26e2e81031155d7e1ab0d"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a4ca0173db3a26e2e81031155d7e1ab0d">boost::mpl::aux::advance_forward::apply::chunk_result_</a></div><div class="ttdeci">apply_wrap1&lt; advance_forward&lt; 4 &gt;, Iterator &gt;::type chunk_result_</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00083">preprocessed/bcc551/advance_forward.hpp:83</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply_html_a711479844d22412c0afa256619c57c4a"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_1_1apply.html#a711479844d22412c0afa256619c57c4a">boost::mpl::aux::advance_forward::apply::type</a></div><div class="ttdeci">apply_wrap1&lt; advance_forward&lt;((N-4)&lt; 0?0:N-4)&gt;, chunk_result_ &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc_2advance__forward_8hpp_source.html#l00092">preprocessed/bcc/advance_forward.hpp:92</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply_html_a0cb991818828a7f89c6061e723afa1e3"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a0cb991818828a7f89c6061e723afa1e3">boost::mpl::aux::advance_forward&lt; 0 &gt;::apply::iter0</a></div><div class="ttdeci">Iterator iter0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00020">preprocessed/bcc551/advance_forward.hpp:20</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply_html_a54d8b0852160f73916ae82605a67f815"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_010_01_4_1_1apply.html#a54d8b0852160f73916ae82605a67f815">boost::mpl::aux::advance_forward&lt; 0 &gt;::apply::type</a></div><div class="ttdeci">iter0 type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00021">preprocessed/bcc551/advance_forward.hpp:21</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply_html_a06d44ec89abbf259962333658158c23b"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#a06d44ec89abbf259962333658158c23b">boost::mpl::aux::advance_forward&lt; 1 &gt;::apply::iter1</a></div><div class="ttdeci">next&lt; iter0 &gt;::type iter1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00031">preprocessed/bcc551/advance_forward.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply_html_ab76ea442b03cf3de1dae192f436ad1d4"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ab76ea442b03cf3de1dae192f436ad1d4">boost::mpl::aux::advance_forward&lt; 1 &gt;::apply::iter0</a></div><div class="ttdeci">Iterator iter0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00030">preprocessed/bcc551/advance_forward.hpp:30</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply_html_ad97cd96d80ac0c9ba4620e0bef331084"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_011_01_4_1_1apply.html#ad97cd96d80ac0c9ba4620e0bef331084">boost::mpl::aux::advance_forward&lt; 1 &gt;::apply::type</a></div><div class="ttdeci">iter1 type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00032">preprocessed/bcc551/advance_forward.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply_html_a8ca73599cb609f919660107e1ec6982a"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#a8ca73599cb609f919660107e1ec6982a">boost::mpl::aux::advance_forward&lt; 2 &gt;::apply::iter1</a></div><div class="ttdeci">next&lt; iter0 &gt;::type iter1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00042">preprocessed/bcc551/advance_forward.hpp:42</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply_html_ab96098a8b19db7e8b1e12c596be10610"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab96098a8b19db7e8b1e12c596be10610">boost::mpl::aux::advance_forward&lt; 2 &gt;::apply::type</a></div><div class="ttdeci">iter2 type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00044">preprocessed/bcc551/advance_forward.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply_html_ab9f2e2847ea1ddfc1ccd501d69d1d163"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#ab9f2e2847ea1ddfc1ccd501d69d1d163">boost::mpl::aux::advance_forward&lt; 2 &gt;::apply::iter0</a></div><div class="ttdeci">Iterator iter0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00041">preprocessed/bcc551/advance_forward.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply_html_add5651f35b5bd176f2c340284d08153b"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_012_01_4_1_1apply.html#add5651f35b5bd176f2c340284d08153b">boost::mpl::aux::advance_forward&lt; 2 &gt;::apply::iter2</a></div><div class="ttdeci">next&lt; iter1 &gt;::type iter2</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00043">preprocessed/bcc551/advance_forward.hpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply_html_a07f20f9d7678c0cfdee9d82e4cc300fa"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a07f20f9d7678c0cfdee9d82e4cc300fa">boost::mpl::aux::advance_forward&lt; 3 &gt;::apply::iter2</a></div><div class="ttdeci">next&lt; iter1 &gt;::type iter2</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00055">preprocessed/bcc551/advance_forward.hpp:55</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply_html_a6e8ff0cb5eb0589fd4e35e133eea6704"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#a6e8ff0cb5eb0589fd4e35e133eea6704">boost::mpl::aux::advance_forward&lt; 3 &gt;::apply::iter1</a></div><div class="ttdeci">next&lt; iter0 &gt;::type iter1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00054">preprocessed/bcc551/advance_forward.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply_html_ab1aee1afa000582d7d375e8b17bac5ef"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ab1aee1afa000582d7d375e8b17bac5ef">boost::mpl::aux::advance_forward&lt; 3 &gt;::apply::iter3</a></div><div class="ttdeci">next&lt; iter2 &gt;::type iter3</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00056">preprocessed/bcc551/advance_forward.hpp:56</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply_html_abb862febfe5ef0333bce514725fc4af2"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#abb862febfe5ef0333bce514725fc4af2">boost::mpl::aux::advance_forward&lt; 3 &gt;::apply::iter0</a></div><div class="ttdeci">Iterator iter0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00053">preprocessed/bcc551/advance_forward.hpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply_html_ae14a9cdd44dc52cb1d4ac429daac460b"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_013_01_4_1_1apply.html#ae14a9cdd44dc52cb1d4ac429daac460b">boost::mpl::aux::advance_forward&lt; 3 &gt;::apply::type</a></div><div class="ttdeci">iter3 type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00057">preprocessed/bcc551/advance_forward.hpp:57</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_a195283989fc00fc990a1eeb34fe0e477"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a195283989fc00fc990a1eeb34fe0e477">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::iter0</a></div><div class="ttdeci">Iterator iter0</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00066">preprocessed/bcc551/advance_forward.hpp:66</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_a4c50a1febd5290f753b00b3b9bd3cd26"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a4c50a1febd5290f753b00b3b9bd3cd26">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::iter3</a></div><div class="ttdeci">next&lt; iter2 &gt;::type iter3</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00069">preprocessed/bcc551/advance_forward.hpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_a5819b9b518f924094457a82b13409947"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a5819b9b518f924094457a82b13409947">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::iter2</a></div><div class="ttdeci">next&lt; iter1 &gt;::type iter2</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00068">preprocessed/bcc551/advance_forward.hpp:68</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_a9680314e8da7351582fd9b1c196e0985"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#a9680314e8da7351582fd9b1c196e0985">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::iter4</a></div><div class="ttdeci">next&lt; iter3 &gt;::type iter4</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00070">preprocessed/bcc551/advance_forward.hpp:70</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_aa99dce15bbe724870214fae4a23befd7"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#aa99dce15bbe724870214fae4a23befd7">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::iter1</a></div><div class="ttdeci">next&lt; iter0 &gt;::type iter1</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00067">preprocessed/bcc551/advance_forward.hpp:67</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply_html_abf99bd08351101d2cf181138230f39bb"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward_3_014_01_4_1_1apply.html#abf99bd08351101d2cf181138230f39bb">boost::mpl::aux::advance_forward&lt; 4 &gt;::apply::type</a></div><div class="ttdeci">iter4 type</div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2bcc551_2advance__forward_8hpp_source.html#l00071">preprocessed/bcc551/advance_forward.hpp:71</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1advance__forward_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1advance__forward.html">boost::mpl::aux::advance_forward</a></div><div class="ttdef"><b>Definition:</b> <a href="preprocessed_2plain_2advance__forward_8hpp_source.html#l00076">preprocessed/plain/advance_forward.hpp:77</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1next_html_a473a10fec2cc4b1c8376278e677498ca"><div class="ttname"><a href="structboost_1_1mpl_1_1next.html#a473a10fec2cc4b1c8376278e677498ca">boost::mpl::next::type</a></div><div class="ttdeci">T::next type</div><div class="ttdef"><b>Definition:</b> <a href="mpl_2next__prior_8hpp_source.html#l00031">mpl/next_prior.hpp:31</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="dir_1f1b666f95cbf3a5023467b539a5c08a.html">aux_</a></li><li class="navelem"><a class="el" href="dir_9959c44446486c3f5378347b962ffd6c.html">preprocessed</a></li><li class="navelem"><a class="el" href="dir_cb72bc33c0b349d3c78620d215446f92.html">bcc551</a></li><li class="navelem"><a class="el" href="preprocessed_2bcc551_2advance__forward_8hpp.html">advance_forward.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var structboost_1_1hash__detail_1_1hash__integral__impl_3_01T_00_01false_00_01is__unsigned_00_01size__t__bits_00_01type__bits_01_4 =
+[
+    [ "fn", "structboost_1_1hash__detail_1_1hash__integral__impl_3_01T_00_01false_00_01is__unsigned_00_01size__t__bits_00_01type__bits_01_4.html#ae3b75abbed7f49db3507361c6d9c9d12", null ]
+];

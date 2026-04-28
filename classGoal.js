@@ -23,7 +23,7 @@ var classGoal =
     [ "Initialize", "classGoal.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classGoal.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classGoal.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classGoal.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classGoal.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classGoal.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "OnClear", "classGoal.html#acd66daf86518b8b8ce105e578af16d32", null ],
     [ "Serialize", "classGoal.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],

@@ -1,0 +1,629 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::scoped_array&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1scoped__array.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1scoped__array-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::scoped_array&lt; T &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">scoped_array.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::scoped_array&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1scoped__array__coll__graph.svg" width="223" height="411"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a3878d757bc79e8b4913703886cded93e"><td class="memItemLeft" align="right" valign="top">typedef T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a3878d757bc79e8b4913703886cded93e">element_type</a></td></tr>
+<tr class="separator:a3878d757bc79e8b4913703886cded93e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a44acb91337709b1cfc2defec660b4f39"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a44acb91337709b1cfc2defec660b4f39">scoped_array</a> (T *p=0) noexcept</td></tr>
+<tr class="separator:a44acb91337709b1cfc2defec660b4f39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7969964483401b5ff684dd3c25b78c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a7969964483401b5ff684dd3c25b78c7c">~scoped_array</a> () noexcept</td></tr>
+<tr class="separator:a7969964483401b5ff684dd3c25b78c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82dcc107674d128aef60b2f884833414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a82dcc107674d128aef60b2f884833414">reset</a> (T *p=0) <a class="el" href="sp__noexcept_8hpp.html#ad3bdfbbf987c9667a981c5276293cfce">BOOST_SP_NOEXCEPT_WITH_ASSERT</a></td></tr>
+<tr class="separator:a82dcc107674d128aef60b2f884833414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2f6d1ab463fd26df5dcb5599dd4ef80"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#af2f6d1ab463fd26df5dcb5599dd4ef80">operator[]</a> (std::ptrdiff_t i) const <a class="el" href="sp__noexcept_8hpp.html#ad3bdfbbf987c9667a981c5276293cfce">BOOST_SP_NOEXCEPT_WITH_ASSERT</a></td></tr>
+<tr class="separator:af2f6d1ab463fd26df5dcb5599dd4ef80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a858ac1cea7e65c923c5f55d7b2f9bc6d"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a858ac1cea7e65c923c5f55d7b2f9bc6d">get</a> () const noexcept</td></tr>
+<tr class="separator:a858ac1cea7e65c923c5f55d7b2f9bc6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeebf0cf86657d6a83e274dc5991bc0d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#aeebf0cf86657d6a83e274dc5991bc0d9">operator bool</a> () const noexcept</td></tr>
+<tr class="separator:aeebf0cf86657d6a83e274dc5991bc0d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6161d112e3dc9b46daaa2cf267f0290"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#ae6161d112e3dc9b46daaa2cf267f0290">swap</a> (<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ae6161d112e3dc9b46daaa2cf267f0290"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a919e705e83ad86a6ded42cdd6d529cec"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a919e705e83ad86a6ded42cdd6d529cec">this_type</a></td></tr>
+<tr class="separator:a919e705e83ad86a6ded42cdd6d529cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a942d46235f361dd63721b71719b6c0e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a942d46235f361dd63721b71719b6c0e3">scoped_array</a> (<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> const &amp;)</td></tr>
+<tr class="separator:a942d46235f361dd63721b71719b6c0e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53d0654d7b83877021907a0d000fdc56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a53d0654d7b83877021907a0d000fdc56">operator=</a> (<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> const &amp;)</td></tr>
+<tr class="separator:a53d0654d7b83877021907a0d000fdc56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d13ab04623831c0683ab1c1bc52dfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#aa1d13ab04623831c0683ab1c1bc52dfe">operator==</a> (<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> const &amp;) const</td></tr>
+<tr class="separator:aa1d13ab04623831c0683ab1c1bc52dfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af28b95b007c698a1bccd53c576a4115a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#af28b95b007c698a1bccd53c576a4115a">operator!=</a> (<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> const &amp;) const</td></tr>
+<tr class="separator:af28b95b007c698a1bccd53c576a4115a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a390ad31c35891451c38d3b4a6f51a099"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a></td></tr>
+<tr class="separator:a390ad31c35891451c38d3b4a6f51a099"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class boost::scoped_array&lt; T &gt;</div>
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a3878d757bc79e8b4913703886cded93e" name="a3878d757bc79e8b4913703886cded93e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3878d757bc79e8b4913703886cded93e">&#9670;&#160;</a></span>element_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef T <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::element_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a919e705e83ad86a6ded42cdd6d529cec" name="a919e705e83ad86a6ded42cdd6d529cec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a919e705e83ad86a6ded42cdd6d529cec">&#9670;&#160;</a></span>this_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt;T&gt; <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::this_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a942d46235f361dd63721b71719b6c0e3" name="a942d46235f361dd63721b71719b6c0e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942d46235f361dd63721b71719b6c0e3">&#9670;&#160;</a></span>scoped_array() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::scoped_array </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a44acb91337709b1cfc2defec660b4f39" name="a44acb91337709b1cfc2defec660b4f39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44acb91337709b1cfc2defec660b4f39">&#9670;&#160;</a></span>scoped_array() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::scoped_array </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>p</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>                                                : <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a>( p )</div>
+<div class="line"><span class="lineno">   57</span>    {</div>
+<div class="line"><span class="lineno">   58</span><span class="preprocessor">#if defined(BOOST_SP_ENABLE_DEBUG_HOOKS)</span></div>
+<div class="line"><span class="lineno">   59</span>        boost::sp_array_constructor_hook( <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> );</div>
+<div class="line"><span class="lineno">   60</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   61</span>    }</div>
+<div class="ttc" id="aclassboost_1_1scoped__array_html_a390ad31c35891451c38d3b4a6f51a099"><div class="ttname"><a href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">boost::scoped_array::px</a></div><div class="ttdeci">T * px</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2scoped__array_8hpp_source.html#l00042">smart_ptr/scoped_array.hpp:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a7969964483401b5ff684dd3c25b78c7c" name="a7969964483401b5ff684dd3c25b78c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7969964483401b5ff684dd3c25b78c7c">&#9670;&#160;</a></span>~scoped_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::~<a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span><span class="preprocessor">#if defined(BOOST_SP_ENABLE_DEBUG_HOOKS)</span></div>
+<div class="line"><span class="lineno">   66</span>        boost::sp_array_destructor_hook( <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> );</div>
+<div class="line"><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">   68</span>        <a class="code hl_function" href="namespaceboost.html#a9be1f4f60be55d2da1d5dc0a11a9456b">boost::checked_array_delete</a>( <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> );</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="ttc" id="anamespaceboost_html_a9be1f4f60be55d2da1d5dc0a11a9456b"><div class="ttname"><a href="namespaceboost.html#a9be1f4f60be55d2da1d5dc0a11a9456b">boost::checked_array_delete</a></div><div class="ttdeci">void checked_array_delete(T *x) BOOST_NOEXCEPT</div><div class="ttdef"><b>Definition:</b> <a href="core_2checked__delete_8hpp_source.html#l00047">core/checked_delete.hpp:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="core_2checked__delete_8hpp_source.html#l00047">boost::checked_array_delete()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1scoped__array_a7969964483401b5ff684dd3c25b78c7c_cgraph.svg" width="372" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a858ac1cea7e65c923c5f55d7b2f9bc6d" name="a858ac1cea7e65c923c5f55d7b2f9bc6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a858ac1cea7e65c923c5f55d7b2f9bc6d">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T * <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>    {</div>
+<div class="line"><span class="lineno">   86</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a>;</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="aeebf0cf86657d6a83e274dc5991bc0d9" name="aeebf0cf86657d6a83e274dc5991bc0d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeebf0cf86657d6a83e274dc5991bc0d9">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> != 0;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="af28b95b007c698a1bccd53c576a4115a" name="af28b95b007c698a1bccd53c576a4115a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af28b95b007c698a1bccd53c576a4115a">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53d0654d7b83877021907a0d000fdc56" name="a53d0654d7b83877021907a0d000fdc56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53d0654d7b83877021907a0d000fdc56">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a> &amp; <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa1d13ab04623831c0683ab1c1bc52dfe" name="aa1d13ab04623831c0683ab1c1bc52dfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d13ab04623831c0683ab1c1bc52dfe">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2f6d1ab463fd26df5dcb5599dd4ef80" name="af2f6d1ab463fd26df5dcb5599dd4ef80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2f6d1ab463fd26df5dcb5599dd4ef80">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T &amp; <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">std::ptrdiff_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> != 0 );</div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( i &gt;= 0 );</div>
+<div class="line"><span class="lineno">   81</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a>[i];</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="ttc" id="aassert_8hpp_html_af7c4c2fca8dd235a0eaadd7570181c13"><div class="ttname"><a href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a></div><div class="ttdeci">#define BOOST_ASSERT(expr)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8hpp_source.html#l00066">assert.hpp:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00066">BOOST_ASSERT</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a82dcc107674d128aef60b2f884833414" name="a82dcc107674d128aef60b2f884833414"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82dcc107674d128aef60b2f884833414">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"><em>p</em> = <code>0</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>    {</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( p == 0 || p != <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> ); <span class="comment">// catch self-reset errors</span></div>
+<div class="line"><span class="lineno">   74</span>        <a class="code hl_typedef" href="classboost_1_1scoped__array.html#a919e705e83ad86a6ded42cdd6d529cec">this_type</a>(p).swap(*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   75</span>    }</div>
+<div class="ttc" id="aclassboost_1_1scoped__array_html_a919e705e83ad86a6ded42cdd6d529cec"><div class="ttname"><a href="classboost_1_1scoped__array.html#a919e705e83ad86a6ded42cdd6d529cec">boost::scoped_array::this_type</a></div><div class="ttdeci">scoped_array&lt; T &gt; this_type</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2scoped__array_8hpp_source.html#l00047">smart_ptr/scoped_array.hpp:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00066">BOOST_ASSERT</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="ae6161d112e3dc9b46daaa2cf267f0290" name="ae6161d112e3dc9b46daaa2cf267f0290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6161d112e3dc9b46daaa2cf267f0290">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>    {</div>
+<div class="line"><span class="lineno">   96</span>        <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a> * tmp = b.px;</div>
+<div class="line"><span class="lineno">   97</span>        b.px = <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a>;</div>
+<div class="line"><span class="lineno">   98</span>        <a class="code hl_variable" href="classboost_1_1scoped__array.html#a390ad31c35891451c38d3b4a6f51a099">px</a> = tmp;</div>
+<div class="line"><span class="lineno">   99</span>    }</div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">boost::scoped_array&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a390ad31c35891451c38d3b4a6f51a099" name="a390ad31c35891451c38d3b4a6f51a099"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390ad31c35891451c38d3b4a6f51a099">&#9670;&#160;</a></span>px</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="classboost_1_1scoped__array.html">boost::scoped_array</a>&lt; T &gt;::px</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a> の <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00084">boost::scoped_array&lt; T &gt;::get()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00089">boost::scoped_array&lt; T &gt;::operator bool()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00077">boost::scoped_array&lt; T &gt;::operator[]()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00071">boost::scoped_array&lt; T &gt;::reset()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00056">boost::scoped_array&lt; T &gt;::scoped_array()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00094">boost::scoped_array&lt; T &gt;::swap()</a>, <a class="el" href="smart__ptr_2scoped__array_8hpp_source.html#l00063">boost::scoped_array&lt; T &gt;::~scoped_array()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="smart__ptr_2scoped__array_8hpp_source.html">smart_ptr/scoped_array.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="classboost_1_1scoped__array.html">scoped_array</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

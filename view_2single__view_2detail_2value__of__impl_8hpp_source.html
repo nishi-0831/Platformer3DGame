@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: value_of_impl.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('view_2single__view_2detail_2value__of__impl_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">view/single_view/detail/value_of_impl.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="view_2single__view_2detail_2value__of__impl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    Copyright (c) 2011 Eric Niebler</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying </span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if !defined(BOOST_FUSION_SINGLE_VIEW_VALUE_OF_IMPL_05052005_0324)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define BOOST_FUSION_SINGLE_VIEW_VALUE_OF_IMPL_05052005_0324</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="int_8hpp.html">boost/mpl/int.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2assert_8hpp.html">boost/mpl/assert.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2equal__to_8hpp.html">boost/mpl/equal_to.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">struct </span>single_view_iterator_tag;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">namespace </span>extension</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Tag&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">struct </span>value_of_impl;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4.html">   26</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1extension_1_1value__of__impl.html">value_of_impl</a>&lt;single_view_iterator_tag&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html">   29</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a49017bb01520d81a891f4fae66062876">   31</a></span>                <a class="code hl_function" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a49017bb01520d81a891f4fae66062876">BOOST_MPL_ASSERT</a>((<a class="code hl_struct" href="structboost_1_1mpl_1_1equal__to.html">mpl::equal_to</a>&lt;<span class="keyword">typename</span> Iterator::position, mpl::int_&lt;0&gt; &gt;));</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a24438cb4a48dfe339dab42d7d20703ba">   32</a></span>                <span class="keyword">typedef</span> <span class="keyword">typename</span> Iterator::value_type <a class="code hl_typedef" href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a24438cb4a48dfe339dab42d7d20703ba">type</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            };</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}}</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="aint_8hpp_html"><div class="ttname"><a href="int_8hpp.html">int.hpp</a></div></div>
+<div class="ttc" id="ampl_2assert_8hpp_html"><div class="ttname"><a href="mpl_2assert_8hpp.html">assert.hpp</a></div></div>
+<div class="ttc" id="ampl_2equal__to_8hpp_html"><div class="ttname"><a href="mpl_2equal__to_8hpp.html">equal_to.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1apply_html"><div class="ttname"><a href="structboost_1_1apply.html">boost::apply</a></div><div class="ttdef"><b>Definition:</b> <a href="bind_2apply_8hpp_source.html#l00017">bind/apply.hpp:18</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply_html_a24438cb4a48dfe339dab42d7d20703ba"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a24438cb4a48dfe339dab42d7d20703ba">boost::fusion::extension::value_of_impl&lt; single_view_iterator_tag &gt;::apply::type</a></div><div class="ttdeci">Iterator::value_type type</div><div class="ttdef"><b>Definition:</b> <a href="view_2single__view_2detail_2value__of__impl_8hpp_source.html#l00032">view/single_view/detail/value_of_impl.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply_html_a49017bb01520d81a891f4fae66062876"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1value__of__impl_3_01single__view__iterator__tag_01_4_1_1apply.html#a49017bb01520d81a891f4fae66062876">boost::fusion::extension::value_of_impl&lt; single_view_iterator_tag &gt;::apply::BOOST_MPL_ASSERT</a></div><div class="ttdeci">BOOST_MPL_ASSERT((mpl::equal_to&lt; typename Iterator::position, mpl::int_&lt; 0 &gt; &gt;))</div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1value__of__impl_html"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1value__of__impl.html">boost::fusion::extension::value_of_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator_2value__of_8hpp_source.html#l00025">iterator/value_of.hpp:26</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1equal__to_html"><div class="ttname"><a href="structboost_1_1mpl_1_1equal__to.html">boost::mpl::equal_to</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2aux___2preprocessed_2bcc_2equal__to_8hpp_source.html#l00067">mpl/aux_/preprocessed/bcc/equal_to.hpp:73</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_ba32822e37d317bbec069ec2fa1baf76.html">view</a></li><li class="navelem"><a class="el" href="dir_768a422674f496e5a29f50b38ebec693.html">single_view</a></li><li class="navelem"><a class="el" href="dir_09988ed66f28ee8f6a0969b48a44d224.html">detail</a></li><li class="navelem"><a class="el" href="view_2single__view_2detail_2value__of__impl_8hpp.html">value_of_impl.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

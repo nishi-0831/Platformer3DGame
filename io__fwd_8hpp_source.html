@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: io_fwd.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('io__fwd_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">io_fwd.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="io__fwd_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">Copyright 2002 Daryle Walker</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">(http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef BOOST_IO_FWD_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define BOOST_IO_FWD_HPP</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iosfwd&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>io {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">class </span>ios_flags_saver;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span>ios_precision_saver;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span>ios_width_saver;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span>ios_base_all_saver;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span>basic_ios_iostate_saver;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">class </span>basic_ios_exception_saver;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">class </span>basic_ios_tie_saver;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">class </span>basic_ios_rdbuf_saver;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">class </span>basic_ios_fill_saver;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">class </span>basic_ios_locale_saver;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> Ch, <span class="keyword">class</span> Tr = std::<span class="keywordtype">char</span>_traits&lt;Ch&gt; &gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">class </span>basic_ios_all_saver;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#aa8ad514c91e72c37ca0d754014641e9d">   41</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__iostate__saver.html">basic_ios_iostate_saver&lt;char&gt;</a>      <a class="code hl_typedef" href="namespaceboost_1_1io.html#aa8ad514c91e72c37ca0d754014641e9d">ios_iostate_saver</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#aa079cf461c67d778c690a6ad3ee6e550">   42</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__iostate__saver.html">basic_ios_iostate_saver&lt;wchar_t&gt;</a>   <a class="code hl_typedef" href="namespaceboost_1_1io.html#aa079cf461c67d778c690a6ad3ee6e550">wios_iostate_saver</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a14482d5da7b42938be6adadaf85656f9">   43</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__exception__saver.html">basic_ios_exception_saver&lt;char&gt;</a>    <a class="code hl_typedef" href="namespaceboost_1_1io.html#a14482d5da7b42938be6adadaf85656f9">ios_exception_saver</a>;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#afca464cb6fce9c86a200d6e9369138d6">   44</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__exception__saver.html">basic_ios_exception_saver&lt;wchar_t&gt;</a> <a class="code hl_typedef" href="namespaceboost_1_1io.html#afca464cb6fce9c86a200d6e9369138d6">wios_exception_saver</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a06e6c81de10c85c9f8e21175b0834011">   45</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__tie__saver.html">basic_ios_tie_saver&lt;char&gt;</a>          <a class="code hl_typedef" href="namespaceboost_1_1io.html#a06e6c81de10c85c9f8e21175b0834011">ios_tie_saver</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a35204b02ee14a7bcf85b8a96200fb1df">   46</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__tie__saver.html">basic_ios_tie_saver&lt;wchar_t&gt;</a>       <a class="code hl_typedef" href="namespaceboost_1_1io.html#a35204b02ee14a7bcf85b8a96200fb1df">wios_tie_saver</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a4adca7b11c7c7a96391e32a057663ecb">   47</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__rdbuf__saver.html">basic_ios_rdbuf_saver&lt;char&gt;</a>        <a class="code hl_typedef" href="namespaceboost_1_1io.html#a4adca7b11c7c7a96391e32a057663ecb">ios_rdbuf_saver</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a3e6b4390ab77bedce24d4f688e270fdb">   48</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__rdbuf__saver.html">basic_ios_rdbuf_saver&lt;wchar_t&gt;</a>     <a class="code hl_typedef" href="namespaceboost_1_1io.html#a3e6b4390ab77bedce24d4f688e270fdb">wios_rdbuf_saver</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a6baf483cb36d8ba39a3b806f62da8e5b">   49</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__fill__saver.html">basic_ios_fill_saver&lt;char&gt;</a>         <a class="code hl_typedef" href="namespaceboost_1_1io.html#a6baf483cb36d8ba39a3b806f62da8e5b">ios_fill_saver</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#afdb14f1a50096c9abc3717129b3d1fdf">   50</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__fill__saver.html">basic_ios_fill_saver&lt;wchar_t&gt;</a>      <a class="code hl_typedef" href="namespaceboost_1_1io.html#afdb14f1a50096c9abc3717129b3d1fdf">wios_fill_saver</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a74d3f4ec932f2c3504c4b5af09b4b565">   51</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__locale__saver.html">basic_ios_locale_saver&lt;char&gt;</a>       <a class="code hl_typedef" href="namespaceboost_1_1io.html#a74d3f4ec932f2c3504c4b5af09b4b565">ios_locale_saver</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a1e5b0a8b9aebc46166821ec0460b2d64">   52</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__locale__saver.html">basic_ios_locale_saver&lt;wchar_t&gt;</a>    <a class="code hl_typedef" href="namespaceboost_1_1io.html#a1e5b0a8b9aebc46166821ec0460b2d64">wios_locale_saver</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#afe61d22b4180deed28b6da85364ca087">   53</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__all__saver.html">basic_ios_all_saver&lt;char&gt;</a>          <a class="code hl_typedef" href="namespaceboost_1_1io.html#afe61d22b4180deed28b6da85364ca087">ios_all_saver</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceboost_1_1io.html#a8c38a8dcfe892f9ef52abd5efa6c24da">   54</a></span><span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1io_1_1basic__ios__all__saver.html">basic_ios_all_saver&lt;wchar_t&gt;</a>       <a class="code hl_typedef" href="namespaceboost_1_1io.html#a8c38a8dcfe892f9ef52abd5efa6c24da">wios_all_saver</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1io_1_1ios__iword__saver.html">ios_iword_saver</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1io_1_1ios__pword__saver.html">ios_pword_saver</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1io_1_1ios__all__word__saver.html">ios_all_word_saver</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <span class="comment">/* io */</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>} <span class="comment">/* boost */</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__all__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__all__saver.html">boost::io::basic_ios_all_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00397">ios_state.hpp:397</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__exception__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__exception__saver.html">boost::io::basic_ios_exception_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00143">ios_state.hpp:143</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__fill__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__fill__saver.html">boost::io::basic_ios_fill_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00235">ios_state.hpp:235</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__iostate__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__iostate__saver.html">boost::io::basic_ios_iostate_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00111">ios_state.hpp:111</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__locale__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__locale__saver.html">boost::io::basic_ios_locale_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00266">ios_state.hpp:266</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__rdbuf__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__rdbuf__saver.html">boost::io::basic_ios_rdbuf_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00205">ios_state.hpp:205</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1basic__ios__tie__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1basic__ios__tie__saver.html">boost::io::basic_ios_tie_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00175">ios_state.hpp:175</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1ios__all__word__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1ios__all__word__saver.html">boost::io::ios_all_word_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00452">ios_state.hpp:452</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1ios__iword__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1ios__iword__saver.html">boost::io::ios_iword_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00296">ios_state.hpp:296</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1ios__pword__saver_html"><div class="ttname"><a href="classboost_1_1io_1_1ios__pword__saver.html">boost::io::ios_pword_saver</a></div><div class="ttdef"><b>Definition:</b> <a href="ios__state_8hpp_source.html#l00331">ios_state.hpp:331</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a06e6c81de10c85c9f8e21175b0834011"><div class="ttname"><a href="namespaceboost_1_1io.html#a06e6c81de10c85c9f8e21175b0834011">boost::io::ios_tie_saver</a></div><div class="ttdeci">basic_ios_tie_saver&lt; char &gt; ios_tie_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00045">io_fwd.hpp:45</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a14482d5da7b42938be6adadaf85656f9"><div class="ttname"><a href="namespaceboost_1_1io.html#a14482d5da7b42938be6adadaf85656f9">boost::io::ios_exception_saver</a></div><div class="ttdeci">basic_ios_exception_saver&lt; char &gt; ios_exception_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00043">io_fwd.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a1e5b0a8b9aebc46166821ec0460b2d64"><div class="ttname"><a href="namespaceboost_1_1io.html#a1e5b0a8b9aebc46166821ec0460b2d64">boost::io::wios_locale_saver</a></div><div class="ttdeci">basic_ios_locale_saver&lt; wchar_t &gt; wios_locale_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00052">io_fwd.hpp:52</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a35204b02ee14a7bcf85b8a96200fb1df"><div class="ttname"><a href="namespaceboost_1_1io.html#a35204b02ee14a7bcf85b8a96200fb1df">boost::io::wios_tie_saver</a></div><div class="ttdeci">basic_ios_tie_saver&lt; wchar_t &gt; wios_tie_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00046">io_fwd.hpp:46</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a3e6b4390ab77bedce24d4f688e270fdb"><div class="ttname"><a href="namespaceboost_1_1io.html#a3e6b4390ab77bedce24d4f688e270fdb">boost::io::wios_rdbuf_saver</a></div><div class="ttdeci">basic_ios_rdbuf_saver&lt; wchar_t &gt; wios_rdbuf_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00048">io_fwd.hpp:48</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a4adca7b11c7c7a96391e32a057663ecb"><div class="ttname"><a href="namespaceboost_1_1io.html#a4adca7b11c7c7a96391e32a057663ecb">boost::io::ios_rdbuf_saver</a></div><div class="ttdeci">basic_ios_rdbuf_saver&lt; char &gt; ios_rdbuf_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00047">io_fwd.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a6baf483cb36d8ba39a3b806f62da8e5b"><div class="ttname"><a href="namespaceboost_1_1io.html#a6baf483cb36d8ba39a3b806f62da8e5b">boost::io::ios_fill_saver</a></div><div class="ttdeci">basic_ios_fill_saver&lt; char &gt; ios_fill_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00049">io_fwd.hpp:49</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a74d3f4ec932f2c3504c4b5af09b4b565"><div class="ttname"><a href="namespaceboost_1_1io.html#a74d3f4ec932f2c3504c4b5af09b4b565">boost::io::ios_locale_saver</a></div><div class="ttdeci">basic_ios_locale_saver&lt; char &gt; ios_locale_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00051">io_fwd.hpp:51</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_a8c38a8dcfe892f9ef52abd5efa6c24da"><div class="ttname"><a href="namespaceboost_1_1io.html#a8c38a8dcfe892f9ef52abd5efa6c24da">boost::io::wios_all_saver</a></div><div class="ttdeci">basic_ios_all_saver&lt; wchar_t &gt; wios_all_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00054">io_fwd.hpp:54</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_aa079cf461c67d778c690a6ad3ee6e550"><div class="ttname"><a href="namespaceboost_1_1io.html#aa079cf461c67d778c690a6ad3ee6e550">boost::io::wios_iostate_saver</a></div><div class="ttdeci">basic_ios_iostate_saver&lt; wchar_t &gt; wios_iostate_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00042">io_fwd.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_aa8ad514c91e72c37ca0d754014641e9d"><div class="ttname"><a href="namespaceboost_1_1io.html#aa8ad514c91e72c37ca0d754014641e9d">boost::io::ios_iostate_saver</a></div><div class="ttdeci">basic_ios_iostate_saver&lt; char &gt; ios_iostate_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00041">io_fwd.hpp:41</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_afca464cb6fce9c86a200d6e9369138d6"><div class="ttname"><a href="namespaceboost_1_1io.html#afca464cb6fce9c86a200d6e9369138d6">boost::io::wios_exception_saver</a></div><div class="ttdeci">basic_ios_exception_saver&lt; wchar_t &gt; wios_exception_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00044">io_fwd.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_afdb14f1a50096c9abc3717129b3d1fdf"><div class="ttname"><a href="namespaceboost_1_1io.html#afdb14f1a50096c9abc3717129b3d1fdf">boost::io::wios_fill_saver</a></div><div class="ttdeci">basic_ios_fill_saver&lt; wchar_t &gt; wios_fill_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00050">io_fwd.hpp:50</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_html_afe61d22b4180deed28b6da85364ca087"><div class="ttname"><a href="namespaceboost_1_1io.html#afe61d22b4180deed28b6da85364ca087">boost::io::ios_all_saver</a></div><div class="ttdeci">basic_ios_all_saver&lt; char &gt; ios_all_saver</div><div class="ttdef"><b>Definition:</b> <a href="io__fwd_8hpp_source.html#l00053">io_fwd.hpp:53</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="io__fwd_8hpp.html">io_fwd.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

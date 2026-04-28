@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::enable_shared_from_this&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1enable__shared__from__this.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1enable__shared__from__this-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::enable_shared_from_this&lt; T &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">enable_shared_from_this.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::enable_shared_from_this&lt; T &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1enable__shared__from__this__inherit__graph.svg" width="286" height="1162"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::enable_shared_from_this&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1enable__shared__from__this__coll__graph.svg" width="224" height="470"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa5fdd9169e92ad5cd2019b247a9ec320"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#aa5fdd9169e92ad5cd2019b247a9ec320">shared_from_this</a> ()</td></tr>
+<tr class="separator:aa5fdd9169e92ad5cd2019b247a9ec320"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ceee1a29a1406c34a2ac3297a6c29a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#aa6ceee1a29a1406c34a2ac3297a6c29a">shared_from_this</a> () const</td></tr>
+<tr class="separator:aa6ceee1a29a1406c34a2ac3297a6c29a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79135ad64ce1d6efe676d2b5e3b9bfd5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a79135ad64ce1d6efe676d2b5e3b9bfd5">weak_from_this</a> () noexcept</td></tr>
+<tr class="separator:a79135ad64ce1d6efe676d2b5e3b9bfd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a251b04d556d6c439a9194a5036859c97"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; T const &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a251b04d556d6c439a9194a5036859c97">weak_from_this</a> () const noexcept</td></tr>
+<tr class="separator:a251b04d556d6c439a9194a5036859c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3dfe1e34d3e238f837386cb9c5fc18"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a7b3dfe1e34d3e238f837386cb9c5fc18"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a7b3dfe1e34d3e238f837386cb9c5fc18">_internal_accept_owner</a> (<a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a> &gt; const *ppx, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *py) const noexcept</td></tr>
+<tr class="separator:a7b3dfe1e34d3e238f837386cb9c5fc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1f3bbf06edf489844fd297213a265445"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a1f3bbf06edf489844fd297213a265445">enable_shared_from_this</a> () noexcept</td></tr>
+<tr class="separator:a1f3bbf06edf489844fd297213a265445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfab1dab2f93ce2860ae210a7e321d7b"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#acfab1dab2f93ce2860ae210a7e321d7b">enable_shared_from_this</a> (<a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a> const &amp;) noexcept</td></tr>
+<tr class="separator:acfab1dab2f93ce2860ae210a7e321d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d644dcb2a26b102f947c3f4253d4918"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a2d644dcb2a26b102f947c3f4253d4918">operator=</a> (<a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a> const &amp;) noexcept</td></tr>
+<tr class="separator:a2d644dcb2a26b102f947c3f4253d4918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be397850ead774dae5514ec2d8b1a92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a6be397850ead774dae5514ec2d8b1a92">~enable_shared_from_this</a> () noexcept</td></tr>
+<tr class="separator:a6be397850ead774dae5514ec2d8b1a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a0d047b80e6e398de0bff0906a69358b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a></td></tr>
+<tr class="separator:a0d047b80e6e398de0bff0906a69358b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class boost::enable_shared_from_this&lt; T &gt;</div>
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00023">23</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a1f3bbf06edf489844fd297213a265445" name="a1f3bbf06edf489844fd297213a265445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f3bbf06edf489844fd297213a265445">&#9670;&#160;</a></span>enable_shared_from_this() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::enable_shared_from_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   28</span>    {</div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acfab1dab2f93ce2860ae210a7e321d7b" name="acfab1dab2f93ce2860ae210a7e321d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfab1dab2f93ce2860ae210a7e321d7b">&#9670;&#160;</a></span>enable_shared_from_this() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::enable_shared_from_this </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6be397850ead774dae5514ec2d8b1a92" name="a6be397850ead774dae5514ec2d8b1a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6be397850ead774dae5514ec2d8b1a92">&#9670;&#160;</a></span>~enable_shared_from_this()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::~<a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>    {</div>
+<div class="line"><span class="lineno">   42</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7b3dfe1e34d3e238f837386cb9c5fc18" name="a7b3dfe1e34d3e238f837386cb9c5fc18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b3dfe1e34d3e238f837386cb9c5fc18">&#9670;&#160;</a></span>_internal_accept_owner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::_internal_accept_owner </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a> &gt; const *&#160;</td>
+          <td class="paramname"><em>ppx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>py</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>    {</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a>.expired() )</div>
+<div class="line"><span class="lineno">   76</span>        {</div>
+<div class="line"><span class="lineno">   77</span>            <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a> = shared_ptr&lt;T&gt;( *ppx, py );</div>
+<div class="line"><span class="lineno">   78</span>        }</div>
+<div class="line"><span class="lineno">   79</span>    }</div>
+<div class="ttc" id="aclassboost_1_1enable__shared__from__this_html_a0d047b80e6e398de0bff0906a69358b5"><div class="ttname"><a href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">boost::enable_shared_from_this::weak_this_</a></div><div class="ttdeci">weak_ptr&lt; T &gt; weak_this_</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">smart_ptr/enable_shared_from_this.hpp:83</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">boost::enable_shared_from_this&lt; T &gt;::weak_this_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00163">boost::detail::sp_enable_shared_from_this()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1enable__shared__from__this_a7b3dfe1e34d3e238f837386cb9c5fc18_icgraph.svg" width="398" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2d644dcb2a26b102f947c3f4253d4918" name="a2d644dcb2a26b102f947c3f4253d4918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d644dcb2a26b102f947c3f4253d4918">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a> &amp; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa5fdd9169e92ad5cd2019b247a9ec320" name="aa5fdd9169e92ad5cd2019b247a9ec320"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5fdd9169e92ad5cd2019b247a9ec320">&#9670;&#160;</a></span>shared_from_this() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; T &gt; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::shared_from_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>        shared_ptr&lt;T&gt; p( <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a> );</div>
+<div class="line"><span class="lineno">   49</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( p.get() == <span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">   50</span>        <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
+<div class="ttc" id="aassert_8hpp_html_af7c4c2fca8dd235a0eaadd7570181c13"><div class="ttname"><a href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a></div><div class="ttdeci">#define BOOST_ASSERT(expr)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8hpp_source.html#l00066">assert.hpp:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00066">BOOST_ASSERT</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00562">boost::shared_ptr&lt; T &gt;::get()</a>, <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">boost::enable_shared_from_this&lt; T &gt;::weak_this_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1enable__shared__from__this_aa5fdd9169e92ad5cd2019b247a9ec320_cgraph.svg" width="435" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa6ceee1a29a1406c34a2ac3297a6c29a" name="aa6ceee1a29a1406c34a2ac3297a6c29a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ceee1a29a1406c34a2ac3297a6c29a">&#9670;&#160;</a></span>shared_from_this() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; T const  &gt; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::shared_from_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>    {</div>
+<div class="line"><span class="lineno">   55</span>        shared_ptr&lt;T const&gt; p( <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a> );</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( p.get() == <span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">return</span> p;</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00066">BOOST_ASSERT</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00562">boost::shared_ptr&lt; T &gt;::get()</a>, <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">boost::enable_shared_from_this&lt; T &gt;::weak_this_</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1enable__shared__from__this_aa6ceee1a29a1406c34a2ac3297a6c29a_cgraph.svg" width="435" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a251b04d556d6c439a9194a5036859c97" name="a251b04d556d6c439a9194a5036859c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a251b04d556d6c439a9194a5036859c97">&#9670;&#160;</a></span>weak_from_this() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; T const  &gt; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::weak_from_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>    {</div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a>;</div>
+<div class="line"><span class="lineno">   68</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">boost::enable_shared_from_this&lt; T &gt;::weak_this_</a>.</p>
+
+</div>
+</div>
+<a id="a79135ad64ce1d6efe676d2b5e3b9bfd5" name="a79135ad64ce1d6efe676d2b5e3b9bfd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79135ad64ce1d6efe676d2b5e3b9bfd5">&#9670;&#160;</a></span>weak_from_this() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; T &gt; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::weak_from_this </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1enable__shared__from__this.html#a0d047b80e6e398de0bff0906a69358b5">weak_this_</a>;</div>
+<div class="line"><span class="lineno">   63</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">boost::enable_shared_from_this&lt; T &gt;::weak_this_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0d047b80e6e398de0bff0906a69358b5" name="a0d047b80e6e398de0bff0906a69358b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d047b80e6e398de0bff0906a69358b5">&#9670;&#160;</a></span>weak_this_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt;T&gt; <a class="el" href="classboost_1_1enable__shared__from__this.html">boost::enable_shared_from_this</a>&lt; T &gt;::weak_this_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a> の <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00073">boost::enable_shared_from_this&lt; T &gt;::_internal_accept_owner()</a>, <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00046">boost::enable_shared_from_this&lt; T &gt;::shared_from_this()</a>, <a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html#l00060">boost::enable_shared_from_this&lt; T &gt;::weak_from_this()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="smart__ptr_2enable__shared__from__this_8hpp_source.html">smart_ptr/enable_shared_from_this.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="classboost_1_1enable__shared__from__this.html">enable_shared_from_this</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

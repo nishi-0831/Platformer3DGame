@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: advance.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('fusion_2iterator_2detail_2advance_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">fusion/iterator/detail/advance.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="fusion_2iterator_2detail_2advance_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#if !defined(FUSION_ADVANCE_09172005_1149)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define FUSION_ADVANCE_09172005_1149</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="int_8hpp.html">boost/mpl/int.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2if_8hpp.html">boost/mpl/if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="eval__if_8hpp.html">boost/mpl/eval_if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2identity_8hpp.html">boost/mpl/identity.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2iterator_2next_8hpp.html">boost/fusion/iterator/next.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2iterator_2prior_8hpp.html">boost/fusion/iterator/prior.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="namespaceboost_1_1fusion_1_1advance__detail.html">   18</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion { <span class="keyword">namespace </span>advance_detail</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>{</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// Default advance implementation, perform next(i)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// or prior(i) N times.</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html">forward</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html">   27</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html">next_forward</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html">forward</a>&lt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>                <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1next.html">result_of::next&lt;Iterator&gt;::type</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>              , <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>-1</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            &gt;<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html#a07935dfa7fff743b509901218d8d6a6c">::type</a></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html#a07935dfa7fff743b509901218d8d6a6c">   34</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html#a07935dfa7fff743b509901218d8d6a6c">type</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html">   38</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html">forward</a></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            <a class="code hl_struct" href="structboost_1_1mpl_1_1eval__if__c.html">mpl::eval_if_c</a>&lt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                (<a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> == 0)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>              , <a class="code hl_struct" href="structboost_1_1mpl_1_1identity.html">mpl::identity&lt;Iterator&gt;</a></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>              , <a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html">next_forward&lt;Iterator, N&gt;</a></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            &gt;<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">::type</a></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">   46</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">type</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">type</a> <span class="keyword">const</span>&amp;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a1aa1df189243661f6a37d03ca0568714">   50</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a1aa1df189243661f6a37d03ca0568714">call</a>(<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">type</a> <span class="keyword">const</span>&amp; i)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>            <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> I&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <span class="keyword">static</span> <a class="code hl_struct" href="structboost_1_1type.html">type</a></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a034755f4829d90ce1e23e49a8c6a4250">   58</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a034755f4829d90ce1e23e49a8c6a4250">call</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a> <span class="keyword">const</span>&amp; i)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a1aa1df189243661f6a37d03ca0568714">call</a>(<a class="code hl_function" href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">fusion::next</a>(i));</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">struct </span>backward;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html">   68</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html">next_backward</a></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            <a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html">backward</a>&lt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1prior.html">result_of::prior&lt;Iterator&gt;::type</a></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>              , <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>+1</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            &gt;<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html#abaf9e8c40c07c3169760baf6954a1275">::type</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html#abaf9e8c40c07c3169760baf6954a1275">   75</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html#abaf9e8c40c07c3169760baf6954a1275">type</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    };</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Iterator, <span class="keywordtype">int</span> N&gt;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html">   79</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html">backward</a></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keyword">typedef</span> <span class="keyword">typename</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            <a class="code hl_struct" href="structboost_1_1mpl_1_1eval__if__c.html">mpl::eval_if_c</a>&lt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                (<a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> == 0)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>              , <a class="code hl_struct" href="structboost_1_1mpl_1_1identity.html">mpl::identity&lt;Iterator&gt;</a></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>              , <a class="code hl_struct" href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html">next_backward&lt;Iterator, N&gt;</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            &gt;<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">::type</a></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">   87</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">type</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">static</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">type</a> <span class="keyword">const</span>&amp;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a84b9ca029f02471fc74d8aef9fca561a">   91</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a84b9ca029f02471fc74d8aef9fca561a">call</a>(<a class="code hl_typedef" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">type</a> <span class="keyword">const</span>&amp; i)</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            <span class="keywordflow">return</span> i;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> I&gt;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keyword">static</span> <a class="code hl_struct" href="structboost_1_1type.html">type</a></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a50f7bdb4640013444808df6fdcd932e0">   99</a></span>        <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a50f7bdb4640013444808df6fdcd932e0">call</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a> <span class="keyword">const</span>&amp; i)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a84b9ca029f02471fc74d8aef9fca561a">call</a>(<a class="code hl_function" href="namespaceboost_1_1fusion.html#a8e62762a8d0f989b025ddc57d5b37a57">fusion::prior</a>(i));</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    };</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}}}</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">KeyCode::I</a></div><div class="ttdeci">@ I</div></div>
+<div class="ttc" id="aeval__if_8hpp_html"><div class="ttname"><a href="eval__if_8hpp.html">eval_if.hpp</a></div></div>
+<div class="ttc" id="aforward__adapter_8hpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00227">forward_adapter.hpp:227</a></div></div>
+<div class="ttc" id="afusion_2iterator_2next_8hpp_html"><div class="ttname"><a href="fusion_2iterator_2next_8hpp.html">next.hpp</a></div></div>
+<div class="ttc" id="afusion_2iterator_2prior_8hpp_html"><div class="ttname"><a href="fusion_2iterator_2prior_8hpp.html">prior.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="aint_8hpp_html"><div class="ttname"><a href="int_8hpp.html">int.hpp</a></div></div>
+<div class="ttc" id="ampl_2identity_8hpp_html"><div class="ttname"><a href="mpl_2identity_8hpp.html">identity.hpp</a></div></div>
+<div class="ttc" id="ampl_2if_8hpp_html"><div class="ttname"><a href="mpl_2if_8hpp.html">if.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a812fa52b7ea9f7aab4ce02e4f6b61c76"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">boost::fusion::next</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED result_of::next&lt; Iterator &gt;::type const next(Iterator const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2next_8hpp_source.html#l00059">fusion/iterator/next.hpp:59</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a8e62762a8d0f989b025ddc57d5b37a57"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a8e62762a8d0f989b025ddc57d5b37a57">boost::fusion::prior</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED result_of::prior&lt; Iterator &gt;::type const prior(Iterator const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2prior_8hpp_source.html#l00059">fusion/iterator/prior.hpp:59</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1backward_html"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1backward.html">boost::fusion::advance_detail::backward</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00079">fusion/iterator/detail/advance.hpp:80</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1backward_html_a50f7bdb4640013444808df6fdcd932e0"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a50f7bdb4640013444808df6fdcd932e0">boost::fusion::advance_detail::backward::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(I const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00099">fusion/iterator/detail/advance.hpp:99</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1backward_html_a73ff4f2e252ead9511f2ac73cc3b1a9b"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a73ff4f2e252ead9511f2ac73cc3b1a9b">boost::fusion::advance_detail::backward::type</a></div><div class="ttdeci">mpl::eval_if_c&lt;(N==0), mpl::identity&lt; Iterator &gt;, next_backward&lt; Iterator, N &gt; &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00087">fusion/iterator/detail/advance.hpp:87</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1backward_html_a84b9ca029f02471fc74d8aef9fca561a"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1backward.html#a84b9ca029f02471fc74d8aef9fca561a">boost::fusion::advance_detail::backward::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type const &amp; call(type const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00091">fusion/iterator/detail/advance.hpp:91</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1forward_html"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1forward.html">boost::fusion::advance_detail::forward</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00038">fusion/iterator/detail/advance.hpp:39</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1forward_html_a034755f4829d90ce1e23e49a8c6a4250"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a034755f4829d90ce1e23e49a8c6a4250">boost::fusion::advance_detail::forward::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(I const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00058">fusion/iterator/detail/advance.hpp:58</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1forward_html_a1aa1df189243661f6a37d03ca0568714"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#a1aa1df189243661f6a37d03ca0568714">boost::fusion::advance_detail::forward::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type const &amp; call(type const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00050">fusion/iterator/detail/advance.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1forward_html_ad71cf9188d460fdb88264294dda1f9ce"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1forward.html#ad71cf9188d460fdb88264294dda1f9ce">boost::fusion::advance_detail::forward::type</a></div><div class="ttdeci">mpl::eval_if_c&lt;(N==0), mpl::identity&lt; Iterator &gt;, next_forward&lt; Iterator, N &gt; &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00046">fusion/iterator/detail/advance.hpp:46</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1next__backward_html"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html">boost::fusion::advance_detail::next_backward</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00068">fusion/iterator/detail/advance.hpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1next__backward_html_abaf9e8c40c07c3169760baf6954a1275"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1next__backward.html#abaf9e8c40c07c3169760baf6954a1275">boost::fusion::advance_detail::next_backward::type</a></div><div class="ttdeci">backward&lt; typenameresult_of::prior&lt; Iterator &gt;::type, N+1 &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00075">fusion/iterator/detail/advance.hpp:75</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1next__forward_html"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html">boost::fusion::advance_detail::next_forward</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00027">fusion/iterator/detail/advance.hpp:28</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1advance__detail_1_1next__forward_html_a07935dfa7fff743b509901218d8d6a6c"><div class="ttname"><a href="structboost_1_1fusion_1_1advance__detail_1_1next__forward.html#a07935dfa7fff743b509901218d8d6a6c">boost::fusion::advance_detail::next_forward::type</a></div><div class="ttdeci">forward&lt; typenameresult_of::next&lt; Iterator &gt;::type, N-1 &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2detail_2advance_8hpp_source.html#l00034">fusion/iterator/detail/advance.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1next_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1next.html">boost::fusion::result_of::next</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2next_8hpp_source.html#l00050">fusion/iterator/next.hpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1prior_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1prior.html">boost::fusion::result_of::prior</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2prior_8hpp_source.html#l00050">fusion/iterator/prior.hpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1eval__if__c_html"><div class="ttname"><a href="structboost_1_1mpl_1_1eval__if__c.html">boost::mpl::eval_if_c</a></div><div class="ttdef"><b>Definition:</b> <a href="eval__if_8hpp_source.html#l00053">eval_if.hpp:63</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1identity_html"><div class="ttname"><a href="structboost_1_1mpl_1_1identity.html">boost::mpl::identity</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2identity_8hpp_source.html#l00025">mpl/identity.hpp:26</a></div></div>
+<div class="ttc" id="astructboost_1_1type_html"><div class="ttname"><a href="structboost_1_1type.html">boost::type</a></div><div class="ttdef"><b>Definition:</b> <a href="type_8hpp_source.html#l00014">type.hpp:14</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_aa02e911ac6c4e5abc85276284b9801aa"><div class="ttname"><a href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01043">suffix.hpp:1043</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_f3971e55d1c55e78d48dc5197610c0ff.html">iterator</a></li><li class="navelem"><a class="el" href="dir_9e51917c5611b8d7d14e629b855f32cf.html">detail</a></li><li class="navelem"><a class="el" href="fusion_2iterator_2detail_2advance_8hpp.html">advance.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

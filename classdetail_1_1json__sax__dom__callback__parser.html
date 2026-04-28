@@ -1,0 +1,1693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classdetail_1_1json__sax__dom__callback__parser.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classdetail_1_1json__sax__dom__callback__parser-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a>&quot;</code></p>
+<div class="dynheader">
+detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1json__sax__dom__callback__parser__coll__graph.svg" width="576" height="2410"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aaf43b0c28113b75250b3343d492f07d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aaf43b0c28113b75250b3343d492f07d7">number_integer_t</a> = typename BasicJsonType::number_integer_t</td></tr>
+<tr class="separator:aaf43b0c28113b75250b3343d492f07d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9df296675283fef45bc7c54b505ab31"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aa9df296675283fef45bc7c54b505ab31">number_unsigned_t</a> = typename BasicJsonType::number_unsigned_t</td></tr>
+<tr class="separator:aa9df296675283fef45bc7c54b505ab31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32dedae939d11669f09a1fb455406f65"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a32dedae939d11669f09a1fb455406f65">number_float_t</a> = typename BasicJsonType::number_float_t</td></tr>
+<tr class="separator:a32dedae939d11669f09a1fb455406f65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86fd5b8047ede75a52de60de482f37d7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> = typename BasicJsonType::string_t</td></tr>
+<tr class="separator:a86fd5b8047ede75a52de60de482f37d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab60e8bd31a0b03ca649c46981cdbb848"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ab60e8bd31a0b03ca649c46981cdbb848">binary_t</a> = typename BasicJsonType::binary_t</td></tr>
+<tr class="separator:ab60e8bd31a0b03ca649c46981cdbb848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bac3ce0e3bcbf348e5355187e01e452"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0bac3ce0e3bcbf348e5355187e01e452">parser_callback_t</a> = typename BasicJsonType::parser_callback_t</td></tr>
+<tr class="separator:a0bac3ce0e3bcbf348e5355187e01e452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a185d2480fbb323a81b6231d320965820"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a185d2480fbb323a81b6231d320965820">parse_event_t</a> = typename BasicJsonType::parse_event_t</td></tr>
+<tr class="separator:a185d2480fbb323a81b6231d320965820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ed0f512fbc461d4a82b4bc8f49422d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a46ed0f512fbc461d4a82b4bc8f49422d">lexer_t</a> = <a class="el" href="classdetail_1_1lexer.html">lexer</a>&lt; BasicJsonType, InputAdapterType &gt;</td></tr>
+<tr class="separator:a46ed0f512fbc461d4a82b4bc8f49422d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7e08879d8e71f5179e3e523ab00eb68b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a7e08879d8e71f5179e3e523ab00eb68b">json_sax_dom_callback_parser</a> (BasicJsonType &amp;r, <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0bac3ce0e3bcbf348e5355187e01e452">parser_callback_t</a> cb, const bool allow_exceptions_=true, <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a46ed0f512fbc461d4a82b4bc8f49422d">lexer_t</a> *lexer_=nullptr)</td></tr>
+<tr class="separator:a7e08879d8e71f5179e3e523ab00eb68b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79e253ca1bd71e338c1133df724c5cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#af79e253ca1bd71e338c1133df724c5cd">json_sax_dom_callback_parser</a> (const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;)=delete</td></tr>
+<tr class="separator:af79e253ca1bd71e338c1133df724c5cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5c06f02f3e6e948dd8434c1d3a7d489"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aa5c06f02f3e6e948dd8434c1d3a7d489">json_sax_dom_callback_parser</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:aa5c06f02f3e6e948dd8434c1d3a7d489"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428cb1aa4e5d6cc9cf2a2cd979128b03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a428cb1aa4e5d6cc9cf2a2cd979128b03">operator=</a> (const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;)=delete</td></tr>
+<tr class="separator:a428cb1aa4e5d6cc9cf2a2cd979128b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223c33bf5837fd19bac3e80956c4c786"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a223c33bf5837fd19bac3e80956c4c786">operator=</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp;&amp;)=default</td></tr>
+<tr class="separator:a223c33bf5837fd19bac3e80956c4c786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad663bab6d68ffa6d26fa46f47276efe5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ad663bab6d68ffa6d26fa46f47276efe5">~json_sax_dom_callback_parser</a> ()=default</td></tr>
+<tr class="separator:ad663bab6d68ffa6d26fa46f47276efe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c396a991b15eb72a982f7b2440f2569"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0c396a991b15eb72a982f7b2440f2569">null</a> ()</td></tr>
+<tr class="separator:a0c396a991b15eb72a982f7b2440f2569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87616b2e5af4f42fb52091a7cc489105"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a87616b2e5af4f42fb52091a7cc489105">boolean</a> (bool val)</td></tr>
+<tr class="separator:a87616b2e5af4f42fb52091a7cc489105"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23351396c272ce69df73441b1e38125c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a23351396c272ce69df73441b1e38125c">number_integer</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aaf43b0c28113b75250b3343d492f07d7">number_integer_t</a> val)</td></tr>
+<tr class="separator:a23351396c272ce69df73441b1e38125c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec7b81d99ac32bc44c131456e8e1275"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ec7b81d99ac32bc44c131456e8e1275">number_unsigned</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aa9df296675283fef45bc7c54b505ab31">number_unsigned_t</a> val)</td></tr>
+<tr class="separator:a5ec7b81d99ac32bc44c131456e8e1275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64ea974618344a7bd15a4cb49adaa477"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a64ea974618344a7bd15a4cb49adaa477">number_float</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a32dedae939d11669f09a1fb455406f65">number_float_t</a> val, const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;)</td></tr>
+<tr class="separator:a64ea974618344a7bd15a4cb49adaa477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c0b8ffe276c280cf0679fd2cd44aaa2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a9c0b8ffe276c280cf0679fd2cd44aaa2">string</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;val)</td></tr>
+<tr class="separator:a9c0b8ffe276c280cf0679fd2cd44aaa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81ab279d4b529acb6e4529fd5f22a3a6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a81ab279d4b529acb6e4529fd5f22a3a6">binary</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ab60e8bd31a0b03ca649c46981cdbb848">binary_t</a> &amp;val)</td></tr>
+<tr class="separator:a81ab279d4b529acb6e4529fd5f22a3a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6016c3811e0c22532a589caf470a21e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ae6016c3811e0c22532a589caf470a21e">start_object</a> (std::size_t len)</td></tr>
+<tr class="separator:ae6016c3811e0c22532a589caf470a21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88845dd64b87c9e6f38a7ef8653d9237"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a88845dd64b87c9e6f38a7ef8653d9237">key</a> (<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;val)</td></tr>
+<tr class="separator:a88845dd64b87c9e6f38a7ef8653d9237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49b0f4295d0e08251f208a04a43ec400"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a49b0f4295d0e08251f208a04a43ec400">end_object</a> ()</td></tr>
+<tr class="separator:a49b0f4295d0e08251f208a04a43ec400"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a003acf2b06ffaf639bb6d34f5eb1695a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a003acf2b06ffaf639bb6d34f5eb1695a">start_array</a> (std::size_t len)</td></tr>
+<tr class="separator:a003acf2b06ffaf639bb6d34f5eb1695a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0b4cce9bb89fe07e2ff537046c4015"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#add0b4cce9bb89fe07e2ff537046c4015">end_array</a> ()</td></tr>
+<tr class="separator:add0b4cce9bb89fe07e2ff537046c4015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d8cede1155ef900a1064d23cb645b7"><td class="memTemplParams" colspan="2">template&lt;class Exception &gt; </td></tr>
+<tr class="memitem:a28d8cede1155ef900a1064d23cb645b7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a28d8cede1155ef900a1064d23cb645b7">parse_error</a> (std::size_t, const std::string &amp;, const Exception &amp;ex)</td></tr>
+<tr class="separator:a28d8cede1155ef900a1064d23cb645b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79ff296775dd21254de386fadee906a0"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a79ff296775dd21254de386fadee906a0">is_errored</a> () const</td></tr>
+<tr class="separator:a79ff296775dd21254de386fadee906a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:af35ac658ce00587d94975a7f6ddb24bb"><td class="memTemplParams" colspan="2">template&lt;typename Value &gt; </td></tr>
+<tr class="memitem:af35ac658ce00587d94975a7f6ddb24bb"><td class="memTemplItemLeft" align="right" valign="top">std::pair&lt; bool, BasicJsonType * &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a> (Value &amp;&amp;v, const bool skip_callback=false)</td></tr>
+<tr class="separator:af35ac658ce00587d94975a7f6ddb24bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aa65d15134090033b962a6e3bcc8433ea"><td class="memItemLeft" align="right" valign="top">BasicJsonType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aa65d15134090033b962a6e3bcc8433ea">root</a></td></tr>
+<tr class="memdesc:aa65d15134090033b962a6e3bcc8433ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">the parsed JSON value  <br /></td></tr>
+<tr class="separator:aa65d15134090033b962a6e3bcc8433ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17be107cfad9b502a580268b6fe289c9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; BasicJsonType * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a> {}</td></tr>
+<tr class="memdesc:a17be107cfad9b502a580268b6fe289c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack to model hierarchy of values  <br /></td></tr>
+<tr class="separator:a17be107cfad9b502a580268b6fe289c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af86f268bb1ad50a3437e113f57e8eeb8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a> {}</td></tr>
+<tr class="memdesc:af86f268bb1ad50a3437e113f57e8eeb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack to manage which values to keep  <br /></td></tr>
+<tr class="separator:af86f268bb1ad50a3437e113f57e8eeb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b2eab2715a47c979944899f73d7015"><td class="memItemLeft" align="right" valign="top">std::vector&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">key_keep_stack</a> {}</td></tr>
+<tr class="memdesc:a84b2eab2715a47c979944899f73d7015"><td class="mdescLeft">&#160;</td><td class="mdescRight">stack to manage which object keys to keep  <br /></td></tr>
+<tr class="separator:a84b2eab2715a47c979944899f73d7015"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62da9b31a560a257c47a321e3c484c7c"><td class="memItemLeft" align="right" valign="top">BasicJsonType *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">object_element</a> = nullptr</td></tr>
+<tr class="memdesc:a62da9b31a560a257c47a321e3c484c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper to hold the reference for the next object element  <br /></td></tr>
+<tr class="separator:a62da9b31a560a257c47a321e3c484c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab63ef895124a07599ff59dfa25ef5e85"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ab63ef895124a07599ff59dfa25ef5e85">errored</a> = false</td></tr>
+<tr class="memdesc:ab63ef895124a07599ff59dfa25ef5e85"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether a syntax error occurred  <br /></td></tr>
+<tr class="separator:ab63ef895124a07599ff59dfa25ef5e85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ae2a61a6608491c32c0a73924c39f6a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0bac3ce0e3bcbf348e5355187e01e452">parser_callback_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a> = nullptr</td></tr>
+<tr class="memdesc:a5ae2a61a6608491c32c0a73924c39f6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function  <br /></td></tr>
+<tr class="separator:a5ae2a61a6608491c32c0a73924c39f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6843cd1bbf8efd3f37884d9fa586c72a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a6843cd1bbf8efd3f37884d9fa586c72a">allow_exceptions</a> = true</td></tr>
+<tr class="memdesc:a6843cd1bbf8efd3f37884d9fa586c72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to throw exceptions in case of errors  <br /></td></tr>
+<tr class="separator:a6843cd1bbf8efd3f37884d9fa586c72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38d7ff58d77d91ec66a8fd65b154341d"><td class="memItemLeft" align="right" valign="top">BasicJsonType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a> = BasicJsonType::value_t::discarded</td></tr>
+<tr class="memdesc:a38d7ff58d77d91ec66a8fd65b154341d"><td class="mdescLeft">&#160;</td><td class="mdescRight">a discarded value for the callback  <br /></td></tr>
+<tr class="separator:a38d7ff58d77d91ec66a8fd65b154341d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a904fd58d05d5a7624120bc8565777"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a46ed0f512fbc461d4a82b4bc8f49422d">lexer_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a> = nullptr</td></tr>
+<tr class="memdesc:ab8a904fd58d05d5a7624120bc8565777"><td class="mdescLeft">&#160;</td><td class="mdescRight">the lexer reference to obtain the current position  <br /></td></tr>
+<tr class="separator:ab8a904fd58d05d5a7624120bc8565777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename BasicJsonType, typename InputAdapterType&gt;<br />
+class detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt;</div>
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00473">473</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="ab60e8bd31a0b03ca649c46981cdbb848" name="ab60e8bd31a0b03ca649c46981cdbb848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab60e8bd31a0b03ca649c46981cdbb848">&#9670;&#160;</a></span>binary_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::binary_t =  typename BasicJsonType::binary_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00480">480</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a46ed0f512fbc461d4a82b4bc8f49422d" name="a46ed0f512fbc461d4a82b4bc8f49422d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ed0f512fbc461d4a82b4bc8f49422d">&#9670;&#160;</a></span>lexer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::lexer_t =  <a class="el" href="classdetail_1_1lexer.html">lexer</a>&lt;BasicJsonType, InputAdapterType&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00483">483</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a32dedae939d11669f09a1fb455406f65" name="a32dedae939d11669f09a1fb455406f65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32dedae939d11669f09a1fb455406f65">&#9670;&#160;</a></span>number_float_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_float_t =  typename BasicJsonType::number_float_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00478">478</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaf43b0c28113b75250b3343d492f07d7" name="aaf43b0c28113b75250b3343d492f07d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf43b0c28113b75250b3343d492f07d7">&#9670;&#160;</a></span>number_integer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_integer_t =  typename BasicJsonType::number_integer_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00476">476</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa9df296675283fef45bc7c54b505ab31" name="aa9df296675283fef45bc7c54b505ab31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9df296675283fef45bc7c54b505ab31">&#9670;&#160;</a></span>number_unsigned_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_unsigned_t =  typename BasicJsonType::number_unsigned_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00477">477</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a185d2480fbb323a81b6231d320965820" name="a185d2480fbb323a81b6231d320965820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a185d2480fbb323a81b6231d320965820">&#9670;&#160;</a></span>parse_event_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::parse_event_t =  typename BasicJsonType::parse_event_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00482">482</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0bac3ce0e3bcbf348e5355187e01e452" name="a0bac3ce0e3bcbf348e5355187e01e452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bac3ce0e3bcbf348e5355187e01e452">&#9670;&#160;</a></span>parser_callback_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::parser_callback_t =  typename BasicJsonType::parser_callback_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00481">481</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a86fd5b8047ede75a52de60de482f37d7" name="a86fd5b8047ede75a52de60de482f37d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86fd5b8047ede75a52de60de482f37d7">&#9670;&#160;</a></span>string_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::string_t =  typename BasicJsonType::string_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00479">479</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a7e08879d8e71f5179e3e523ab00eb68b" name="a7e08879d8e71f5179e3e523ab00eb68b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e08879d8e71f5179e3e523ab00eb68b">&#9670;&#160;</a></span>json_sax_dom_callback_parser() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::json_sax_dom_callback_parser </td>
+          <td>(</td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0bac3ce0e3bcbf348e5355187e01e452">parser_callback_t</a>&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>allow_exceptions_</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a46ed0f512fbc461d4a82b4bc8f49422d">lexer_t</a> *&#160;</td>
+          <td class="paramname"><em>lexer_</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00485">485</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  489</span>        : <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#aa65d15134090033b962a6e3bcc8433ea">root</a>(r), <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(std::move(cb)), <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a6843cd1bbf8efd3f37884d9fa586c72a">allow_exceptions</a>(allow_exceptions_), <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>(lexer_)</div>
+<div class="line"><span class="lineno">  490</span>    {</div>
+<div class="line"><span class="lineno">  491</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.push_back(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  492</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a5ae2a61a6608491c32c0a73924c39f6a"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">detail::json_sax_dom_callback_parser::callback</a></div><div class="ttdeci">const parser_callback_t callback</div><div class="ttdoc">callback function</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00900">json_sax.hpp:900</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a6843cd1bbf8efd3f37884d9fa586c72a"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a6843cd1bbf8efd3f37884d9fa586c72a">detail::json_sax_dom_callback_parser::allow_exceptions</a></div><div class="ttdeci">const bool allow_exceptions</div><div class="ttdoc">whether to throw exceptions in case of errors</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00902">json_sax.hpp:902</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_aa65d15134090033b962a6e3bcc8433ea"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#aa65d15134090033b962a6e3bcc8433ea">detail::json_sax_dom_callback_parser::root</a></div><div class="ttdeci">BasicJsonType &amp; root</div><div class="ttdoc">the parsed JSON value</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00888">json_sax.hpp:888</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_ab8a904fd58d05d5a7624120bc8565777"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">detail::json_sax_dom_callback_parser::m_lexer_ref</a></div><div class="ttdeci">lexer_t * m_lexer_ref</div><div class="ttdoc">the lexer reference to obtain the current position</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00906">json_sax.hpp:906</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_af86f268bb1ad50a3437e113f57e8eeb8"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">detail::json_sax_dom_callback_parser::keep_stack</a></div><div class="ttdeci">std::vector&lt; bool &gt; keep_stack</div><div class="ttdoc">stack to manage which values to keep</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00892">json_sax.hpp:892</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af79e253ca1bd71e338c1133df724c5cd" name="af79e253ca1bd71e338c1133df724c5cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79e253ca1bd71e338c1133df724c5cd">&#9670;&#160;</a></span>json_sax_dom_callback_parser() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::json_sax_dom_callback_parser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa5c06f02f3e6e948dd8434c1d3a7d489" name="aa5c06f02f3e6e948dd8434c1d3a7d489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5c06f02f3e6e948dd8434c1d3a7d489">&#9670;&#160;</a></span>json_sax_dom_callback_parser() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::json_sax_dom_callback_parser </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad663bab6d68ffa6d26fa46f47276efe5" name="ad663bab6d68ffa6d26fa46f47276efe5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad663bab6d68ffa6d26fa46f47276efe5">&#9670;&#160;</a></span>~json_sax_dom_callback_parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::~<a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a81ab279d4b529acb6e4529fd5f22a3a6" name="a81ab279d4b529acb6e4529fd5f22a3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81ab279d4b529acb6e4529fd5f22a3a6">&#9670;&#160;</a></span>binary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::binary </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ab60e8bd31a0b03ca649c46981cdbb848">binary_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00537">537</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  538</span>    {</div>
+<div class="line"><span class="lineno">  539</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(std::move(val));</div>
+<div class="line"><span class="lineno">  540</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  541</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_af35ac658ce00587d94975a7f6ddb24bb"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">detail::json_sax_dom_callback_parser::handle_value</a></div><div class="ttdeci">std::pair&lt; bool, BasicJsonType * &gt; handle_value(Value &amp;&amp;v, const bool skip_callback=false)</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00820">json_sax.hpp:820</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a87616b2e5af4f42fb52091a7cc489105" name="a87616b2e5af4f42fb52091a7cc489105"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87616b2e5af4f42fb52091a7cc489105">&#9670;&#160;</a></span>boolean()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::boolean </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00507">507</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  508</span>    {</div>
+<div class="line"><span class="lineno">  509</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(val);</div>
+<div class="line"><span class="lineno">  510</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  511</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="add0b4cce9bb89fe07e2ff537046c4015" name="add0b4cce9bb89fe07e2ff537046c4015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add0b4cce9bb89fe07e2ff537046c4015">&#9670;&#160;</a></span>end_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::end_array </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00674">674</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  675</span>    {</div>
+<div class="line"><span class="lineno">  676</span>        <span class="keywordtype">bool</span> keep = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  677</span> </div>
+<div class="line"><span class="lineno">  678</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  679</span>        {</div>
+<div class="line"><span class="lineno">  680</span>            keep = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()) - 1, <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa49642fb732aa2e112188fba1f9d3ef7f">parse_event_t::array_end</a>, *<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back());</div>
+<div class="line"><span class="lineno">  681</span>            <span class="keywordflow">if</span> (keep)</div>
+<div class="line"><span class="lineno">  682</span>            {</div>
+<div class="line"><span class="lineno">  683</span> </div>
+<div class="line"><span class="lineno">  684</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  685</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>)</div>
+<div class="line"><span class="lineno">  686</span>                {</div>
+<div class="line"><span class="lineno">  687</span>                    <span class="comment">// Lexer&#39;s position is past the closing bracket, so set that as the end position.</span></div>
+<div class="line"><span class="lineno">  688</span>                    <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;end_position = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>-&gt;<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>();</div>
+<div class="line"><span class="lineno">  689</span>                }</div>
+<div class="line"><span class="lineno">  690</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  691</span> </div>
+<div class="line"><span class="lineno">  692</span>                <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;set_parents();</div>
+<div class="line"><span class="lineno">  693</span>            }</div>
+<div class="line"><span class="lineno">  694</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  695</span>            {</div>
+<div class="line"><span class="lineno">  696</span>                <span class="comment">// discard array</span></div>
+<div class="line"><span class="lineno">  697</span>                *<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back() = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a>;</div>
+<div class="line"><span class="lineno">  698</span> </div>
+<div class="line"><span class="lineno">  699</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  700</span>                <span class="comment">// Set start/end positions for discarded array.</span></div>
+<div class="line"><span class="lineno">  701</span>                handle_diagnostic_positions_for_json_value(*<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back());</div>
+<div class="line"><span class="lineno">  702</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  703</span>            }</div>
+<div class="line"><span class="lineno">  704</span>        }</div>
+<div class="line"><span class="lineno">  705</span> </div>
+<div class="line"><span class="lineno">  706</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  707</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  708</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.pop_back();</div>
+<div class="line"><span class="lineno">  709</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.pop_back();</div>
+<div class="line"><span class="lineno">  710</span> </div>
+<div class="line"><span class="lineno">  711</span>        <span class="comment">// remove discarded value</span></div>
+<div class="line"><span class="lineno">  712</span>        <span class="keywordflow">if</span> (!keep &amp;&amp; !<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.empty() &amp;&amp; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_array())</div>
+<div class="line"><span class="lineno">  713</span>        {</div>
+<div class="line"><span class="lineno">  714</span>            <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;m_data.m_value.array-&gt;pop_back();</div>
+<div class="line"><span class="lineno">  715</span>        }</div>
+<div class="line"><span class="lineno">  716</span> </div>
+<div class="line"><span class="lineno">  717</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  718</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a17be107cfad9b502a580268b6fe289c9"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">detail::json_sax_dom_callback_parser::ref_stack</a></div><div class="ttdeci">std::vector&lt; BasicJsonType * &gt; ref_stack</div><div class="ttdoc">stack to model hierarchy of values</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00890">json_sax.hpp:890</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a38d7ff58d77d91ec66a8fd65b154341d"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">detail::json_sax_dom_callback_parser::discarded</a></div><div class="ttdeci">BasicJsonType discarded</div><div class="ttdoc">a discarded value for the callback</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00904">json_sax.hpp:904</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a569266654a88a2dc6f0e9a587067fc9d"><div class="ttname"><a href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">detail::lexer::get_position</a></div><div class="ttdeci">constexpr position_t get_position() const noexcept</div><div class="ttdoc">return position of last read token</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01449">lexer.hpp:1449</a></div></div>
+<div class="ttc" id="amacro__scope_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="macro__scope_8hpp_source.html#l00205">macro_scope.hpp:205</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa49642fb732aa2e112188fba1f9d3ef7f"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa49642fb732aa2e112188fba1f9d3ef7f">detail::parse_event_t::array_end</a></div><div class="ttdeci">@ array_end</div><div class="ttdoc">the parser read ] and finished processing a JSON array</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a49b0f4295d0e08251f208a04a43ec400" name="a49b0f4295d0e08251f208a04a43ec400"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49b0f4295d0e08251f208a04a43ec400">&#9670;&#160;</a></span>end_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::end_object </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00592">592</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  593</span>    {</div>
+<div class="line"><span class="lineno">  594</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  595</span>        {</div>
+<div class="line"><span class="lineno">  596</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()) - 1, <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efaf63e2a2468a37aa4f394fcc3bcb8249c">parse_event_t::object_end</a>, *<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()))</div>
+<div class="line"><span class="lineno">  597</span>            {</div>
+<div class="line"><span class="lineno">  598</span>                <span class="comment">// discard object</span></div>
+<div class="line"><span class="lineno">  599</span>                *<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back() = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a>;</div>
+<div class="line"><span class="lineno">  600</span> </div>
+<div class="line"><span class="lineno">  601</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  602</span>                <span class="comment">// Set start/end positions for discarded object.</span></div>
+<div class="line"><span class="lineno">  603</span>                handle_diagnostic_positions_for_json_value(*<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back());</div>
+<div class="line"><span class="lineno">  604</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  605</span>            }</div>
+<div class="line"><span class="lineno">  606</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  607</span>            {</div>
+<div class="line"><span class="lineno">  608</span> </div>
+<div class="line"><span class="lineno">  609</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  610</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>)</div>
+<div class="line"><span class="lineno">  611</span>                {</div>
+<div class="line"><span class="lineno">  612</span>                    <span class="comment">// Lexer&#39;s position is past the closing brace, so set that as the end position.</span></div>
+<div class="line"><span class="lineno">  613</span>                    <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;end_position = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>-&gt;<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>();</div>
+<div class="line"><span class="lineno">  614</span>                }</div>
+<div class="line"><span class="lineno">  615</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  616</span> </div>
+<div class="line"><span class="lineno">  617</span>                <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;set_parents();</div>
+<div class="line"><span class="lineno">  618</span>            }</div>
+<div class="line"><span class="lineno">  619</span>        }</div>
+<div class="line"><span class="lineno">  620</span> </div>
+<div class="line"><span class="lineno">  621</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  622</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  623</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.pop_back();</div>
+<div class="line"><span class="lineno">  624</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.pop_back();</div>
+<div class="line"><span class="lineno">  625</span> </div>
+<div class="line"><span class="lineno">  626</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.empty() &amp;&amp; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back() &amp;&amp; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_structured())</div>
+<div class="line"><span class="lineno">  627</span>        {</div>
+<div class="line"><span class="lineno">  628</span>            <span class="comment">// remove discarded value</span></div>
+<div class="line"><span class="lineno">  629</span>            <span class="keywordflow">for</span> (<span class="keyword">auto</span> it = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;begin(); it != <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;end(); ++it)</div>
+<div class="line"><span class="lineno">  630</span>            {</div>
+<div class="line"><span class="lineno">  631</span>                <span class="keywordflow">if</span> (it-&gt;is_discarded())</div>
+<div class="line"><span class="lineno">  632</span>                {</div>
+<div class="line"><span class="lineno">  633</span>                    <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;erase(it);</div>
+<div class="line"><span class="lineno">  634</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  635</span>                }</div>
+<div class="line"><span class="lineno">  636</span>            }</div>
+<div class="line"><span class="lineno">  637</span>        }</div>
+<div class="line"><span class="lineno">  638</span> </div>
+<div class="line"><span class="lineno">  639</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  640</span>    }</div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efaf63e2a2468a37aa4f394fcc3bcb8249c"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efaf63e2a2468a37aa4f394fcc3bcb8249c">detail::parse_event_t::object_end</a></div><div class="ttdeci">@ object_end</div><div class="ttdoc">the parser read } and finished processing a JSON object</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="af35ac658ce00587d94975a7f6ddb24bb" name="af35ac658ce00587d94975a7f6ddb24bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35ac658ce00587d94975a7f6ddb24bb">&#9670;&#160;</a></span>handle_value()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<div class="memtemplate">
+template&lt;typename Value &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; bool, BasicJsonType * &gt; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::handle_value </td>
+          <td>(</td>
+          <td class="paramtype">Value &amp;&amp;&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>skip_callback</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>value to add to the JSON value we build during parsing </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">skip_callback</td><td>whether we should skip calling the callback function; this is required after <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a003acf2b06ffaf639bb6d34f5eb1695a">start_array()</a> and <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#ae6016c3811e0c22532a589caf470a21e">start_object()</a> SAX events, because otherwise we would call the callback function with an empty array or object, respectively.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section invariant"><dt>不変</dt><dd>If the ref stack is empty, then the passed value will be the new root. </dd>
+<dd>
+If the ref stack contains a value, then it is an array or an object to which we can add elements</dd></dl>
+<dl class="section return"><dt>戻り値</dt><dd>pair of boolean (whether value should be kept) and pointer (to the passed value in the ref_stack hierarchy; nullptr if not kept) </dd></dl>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00820">820</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  821</span>    {</div>
+<div class="line"><span class="lineno">  822</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  823</span> </div>
+<div class="line"><span class="lineno">  824</span>        <span class="comment">// do not handle this value if we know it would be added to a discarded</span></div>
+<div class="line"><span class="lineno">  825</span>        <span class="comment">// container</span></div>
+<div class="line"><span class="lineno">  826</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.back())</div>
+<div class="line"><span class="lineno">  827</span>        {</div>
+<div class="line"><span class="lineno">  828</span>            <span class="keywordflow">return</span> {<span class="keyword">false</span>, <span class="keyword">nullptr</span>};</div>
+<div class="line"><span class="lineno">  829</span>        }</div>
+<div class="line"><span class="lineno">  830</span> </div>
+<div class="line"><span class="lineno">  831</span>        <span class="comment">// create value</span></div>
+<div class="line"><span class="lineno">  832</span>        <span class="keyword">auto</span> <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a> = BasicJsonType(std::forward&lt;Value&gt;(v));</div>
+<div class="line"><span class="lineno">  833</span> </div>
+<div class="line"><span class="lineno">  834</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  835</span>        handle_diagnostic_positions_for_json_value(<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>);</div>
+<div class="line"><span class="lineno">  836</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  837</span> </div>
+<div class="line"><span class="lineno">  838</span>        <span class="comment">// check callback</span></div>
+<div class="line"><span class="lineno">  839</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> keep = skip_callback || <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()), <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">parse_event_t::value</a>, <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>);</div>
+<div class="line"><span class="lineno">  840</span> </div>
+<div class="line"><span class="lineno">  841</span>        <span class="comment">// do not handle this value if we just learnt it shall be discarded</span></div>
+<div class="line"><span class="lineno">  842</span>        <span class="keywordflow">if</span> (!keep)</div>
+<div class="line"><span class="lineno">  843</span>        {</div>
+<div class="line"><span class="lineno">  844</span>            <span class="keywordflow">return</span> {<span class="keyword">false</span>, <span class="keyword">nullptr</span>};</div>
+<div class="line"><span class="lineno">  845</span>        }</div>
+<div class="line"><span class="lineno">  846</span> </div>
+<div class="line"><span class="lineno">  847</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.empty())</div>
+<div class="line"><span class="lineno">  848</span>        {</div>
+<div class="line"><span class="lineno">  849</span>            <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#aa65d15134090033b962a6e3bcc8433ea">root</a> = std::move(<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>);</div>
+<div class="line"><span class="lineno">  850</span>            <span class="keywordflow">return</span> {<span class="keyword">true</span>, &amp; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#aa65d15134090033b962a6e3bcc8433ea">root</a>};</div>
+<div class="line"><span class="lineno">  851</span>        }</div>
+<div class="line"><span class="lineno">  852</span> </div>
+<div class="line"><span class="lineno">  853</span>        <span class="comment">// skip this value if we already decided to skip the parent</span></div>
+<div class="line"><span class="lineno">  854</span>        <span class="comment">// (https://github.com/nlohmann/json/issues/971#issuecomment-413678360)</span></div>
+<div class="line"><span class="lineno">  855</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  856</span>        {</div>
+<div class="line"><span class="lineno">  857</span>            <span class="keywordflow">return</span> {<span class="keyword">false</span>, <span class="keyword">nullptr</span>};</div>
+<div class="line"><span class="lineno">  858</span>        }</div>
+<div class="line"><span class="lineno">  859</span> </div>
+<div class="line"><span class="lineno">  860</span>        <span class="comment">// we now only expect arrays and objects</span></div>
+<div class="line"><span class="lineno">  861</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_array() || <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_object());</div>
+<div class="line"><span class="lineno">  862</span> </div>
+<div class="line"><span class="lineno">  863</span>        <span class="comment">// array</span></div>
+<div class="line"><span class="lineno">  864</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_array())</div>
+<div class="line"><span class="lineno">  865</span>        {</div>
+<div class="line"><span class="lineno">  866</span>            <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;m_data.m_value.array-&gt;emplace_back(std::move(<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>));</div>
+<div class="line"><span class="lineno">  867</span>            <span class="keywordflow">return</span> {<span class="keyword">true</span>, &amp; (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;m_data.m_value.array-&gt;back())};</div>
+<div class="line"><span class="lineno">  868</span>        }</div>
+<div class="line"><span class="lineno">  869</span> </div>
+<div class="line"><span class="lineno">  870</span>        <span class="comment">// object</span></div>
+<div class="line"><span class="lineno">  871</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;is_object());</div>
+<div class="line"><span class="lineno">  872</span>        <span class="comment">// check if we should store an element for the current key</span></div>
+<div class="line"><span class="lineno">  873</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">key_keep_stack</a>.empty());</div>
+<div class="line"><span class="lineno">  874</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> store_element = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">key_keep_stack</a>.back();</div>
+<div class="line"><span class="lineno">  875</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">key_keep_stack</a>.pop_back();</div>
+<div class="line"><span class="lineno">  876</span> </div>
+<div class="line"><span class="lineno">  877</span>        <span class="keywordflow">if</span> (!store_element)</div>
+<div class="line"><span class="lineno">  878</span>        {</div>
+<div class="line"><span class="lineno">  879</span>            <span class="keywordflow">return</span> {<span class="keyword">false</span>, <span class="keyword">nullptr</span>};</div>
+<div class="line"><span class="lineno">  880</span>        }</div>
+<div class="line"><span class="lineno">  881</span> </div>
+<div class="line"><span class="lineno">  882</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">object_element</a>);</div>
+<div class="line"><span class="lineno">  883</span>        *<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">object_element</a> = std::move(<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>);</div>
+<div class="line"><span class="lineno">  884</span>        <span class="keywordflow">return</span> {<span class="keyword">true</span>, <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">object_element</a>};</div>
+<div class="line"><span class="lineno">  885</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a62da9b31a560a257c47a321e3c484c7c"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">detail::json_sax_dom_callback_parser::object_element</a></div><div class="ttdeci">BasicJsonType * object_element</div><div class="ttdoc">helper to hold the reference for the next object element</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00896">json_sax.hpp:896</a></div></div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_a84b2eab2715a47c979944899f73d7015"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">detail::json_sax_dom_callback_parser::key_keep_stack</a></div><div class="ttdeci">std::vector&lt; bool &gt; key_keep_stack</div><div class="ttdoc">stack to manage which object keys to keep</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00894">json_sax.hpp:894</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">detail::parse_event_t::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">the parser finished reading a JSON value</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">detail::value</a>.</p>
+
+</div>
+</div>
+<a id="a79ff296775dd21254de386fadee906a0" name="a79ff296775dd21254de386fadee906a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79ff296775dd21254de386fadee906a0">&#9670;&#160;</a></span>is_errored()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::is_errored </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00733">733</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  734</span>    {</div>
+<div class="line"><span class="lineno">  735</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab63ef895124a07599ff59dfa25ef5e85">errored</a>;</div>
+<div class="line"><span class="lineno">  736</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1json__sax__dom__callback__parser_html_ab63ef895124a07599ff59dfa25ef5e85"><div class="ttname"><a href="classdetail_1_1json__sax__dom__callback__parser.html#ab63ef895124a07599ff59dfa25ef5e85">detail::json_sax_dom_callback_parser::errored</a></div><div class="ttdeci">bool errored</div><div class="ttdoc">whether a syntax error occurred</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00898">json_sax.hpp:898</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1json__sax__dom__callback__parser_a79ff296775dd21254de386fadee906a0_icgraph.svg" width="371" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a88845dd64b87c9e6f38a7ef8653d9237" name="a88845dd64b87c9e6f38a7ef8653d9237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88845dd64b87c9e6f38a7ef8653d9237">&#9670;&#160;</a></span>key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::key </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00575">575</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  576</span>    {</div>
+<div class="line"><span class="lineno">  577</span>        BasicJsonType k = BasicJsonType(val);</div>
+<div class="line"><span class="lineno">  578</span> </div>
+<div class="line"><span class="lineno">  579</span>        <span class="comment">// check callback for key</span></div>
+<div class="line"><span class="lineno">  580</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> keep = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()), <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">parse_event_t::key</a>, k);</div>
+<div class="line"><span class="lineno">  581</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a84b2eab2715a47c979944899f73d7015">key_keep_stack</a>.push_back(keep);</div>
+<div class="line"><span class="lineno">  582</span> </div>
+<div class="line"><span class="lineno">  583</span>        <span class="comment">// add discarded value at given key and store the reference for later</span></div>
+<div class="line"><span class="lineno">  584</span>        <span class="keywordflow">if</span> (keep &amp;&amp; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  585</span>        {</div>
+<div class="line"><span class="lineno">  586</span>            <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a62da9b31a560a257c47a321e3c484c7c">object_element</a> = &amp;(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;m_data.m_value.object-&gt;operator[](val) = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a>);</div>
+<div class="line"><span class="lineno">  587</span>        }</div>
+<div class="line"><span class="lineno">  588</span> </div>
+<div class="line"><span class="lineno">  589</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  590</span>    }</div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">detail::parse_event_t::key</a></div><div class="ttdeci">@ key</div><div class="ttdoc">the parser read a key of a value in an object</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>.</p>
+
+</div>
+</div>
+<a id="a0c396a991b15eb72a982f7b2440f2569" name="a0c396a991b15eb72a982f7b2440f2569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c396a991b15eb72a982f7b2440f2569">&#9670;&#160;</a></span>null()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::null </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00501">501</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  502</span>    {</div>
+<div class="line"><span class="lineno">  503</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(<span class="keyword">nullptr</span>);</div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  505</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a64ea974618344a7bd15a4cb49adaa477" name="a64ea974618344a7bd15a4cb49adaa477"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64ea974618344a7bd15a4cb49adaa477">&#9670;&#160;</a></span>number_float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_float </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a32dedae939d11669f09a1fb455406f65">number_float_t</a>&#160;</td>
+          <td class="paramname"><em>val</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00525">525</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  526</span>    {</div>
+<div class="line"><span class="lineno">  527</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(val);</div>
+<div class="line"><span class="lineno">  528</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  529</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a23351396c272ce69df73441b1e38125c" name="a23351396c272ce69df73441b1e38125c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23351396c272ce69df73441b1e38125c">&#9670;&#160;</a></span>number_integer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_integer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aaf43b0c28113b75250b3343d492f07d7">number_integer_t</a>&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00513">513</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  514</span>    {</div>
+<div class="line"><span class="lineno">  515</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(val);</div>
+<div class="line"><span class="lineno">  516</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  517</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5ec7b81d99ac32bc44c131456e8e1275" name="a5ec7b81d99ac32bc44c131456e8e1275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec7b81d99ac32bc44c131456e8e1275">&#9670;&#160;</a></span>number_unsigned()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_unsigned </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#aa9df296675283fef45bc7c54b505ab31">number_unsigned_t</a>&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00519">519</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  520</span>    {</div>
+<div class="line"><span class="lineno">  521</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(val);</div>
+<div class="line"><span class="lineno">  522</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  523</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a428cb1aa4e5d6cc9cf2a2cd979128b03" name="a428cb1aa4e5d6cc9cf2a2cd979128b03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a428cb1aa4e5d6cc9cf2a2cd979128b03">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a223c33bf5837fd19bac3e80956c4c786" name="a223c33bf5837fd19bac3e80956c4c786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a223c33bf5837fd19bac3e80956c4c786">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a> &amp; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28d8cede1155ef900a1064d23cb645b7" name="a28d8cede1155ef900a1064d23cb645b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d8cede1155ef900a1064d23cb645b7">&#9670;&#160;</a></span>parse_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<div class="memtemplate">
+template&lt;class Exception &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::parse_error </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Exception &amp;&#160;</td>
+          <td class="paramname"><em>ex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00721">721</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  723</span>    {</div>
+<div class="line"><span class="lineno">  724</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab63ef895124a07599ff59dfa25ef5e85">errored</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  725</span>        <span class="keyword">static_cast&lt;</span><span class="keywordtype">void</span><span class="keyword">&gt;</span>(ex);</div>
+<div class="line"><span class="lineno">  726</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a6843cd1bbf8efd3f37884d9fa586c72a">allow_exceptions</a>)</div>
+<div class="line"><span class="lineno">  727</span>        {</div>
+<div class="line"><span class="lineno">  728</span>            <a class="code hl_define" href="macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(ex);</div>
+<div class="line"><span class="lineno">  729</span>        }</div>
+<div class="line"><span class="lineno">  730</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  731</span>    }</div>
+<div class="ttc" id="amacro__scope_8hpp_html_a6c274f6db2e65c1b66c7d41b06ad690f"><div class="ttname"><a href="macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a></div><div class="ttdeci">#define JSON_THROW(exception)</div><div class="ttdef"><b>Definition:</b> <a href="macro__scope_8hpp_source.html#l00176">macro_scope.hpp:176</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="macro__scope_8hpp_source.html#l00176">JSON_THROW</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1json__sax__dom__callback__parser_a28d8cede1155ef900a1064d23cb645b7_icgraph.svg" width="424" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a003acf2b06ffaf639bb6d34f5eb1695a" name="a003acf2b06ffaf639bb6d34f5eb1695a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a003acf2b06ffaf639bb6d34f5eb1695a">&#9670;&#160;</a></span>start_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::start_array </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00642">642</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  643</span>    {</div>
+<div class="line"><span class="lineno">  644</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> keep = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()), <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efaa4388a3d92419edbb1c6efd4d52461f3">parse_event_t::array_start</a>, <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a>);</div>
+<div class="line"><span class="lineno">  645</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.push_back(keep);</div>
+<div class="line"><span class="lineno">  646</span> </div>
+<div class="line"><span class="lineno">  647</span>        <span class="keyword">auto</span> val = <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(BasicJsonType::value_t::array, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  648</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.push_back(val.second);</div>
+<div class="line"><span class="lineno">  649</span> </div>
+<div class="line"><span class="lineno">  650</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  651</span>        {</div>
+<div class="line"><span class="lineno">  652</span> </div>
+<div class="line"><span class="lineno">  653</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  654</span>            <span class="comment">// Manually set the start position of the array here.</span></div>
+<div class="line"><span class="lineno">  655</span>            <span class="comment">// Ensure this is after the call to handle_value to ensure correct start position.</span></div>
+<div class="line"><span class="lineno">  656</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>)</div>
+<div class="line"><span class="lineno">  657</span>            {</div>
+<div class="line"><span class="lineno">  658</span>                <span class="comment">// Lexer has read the first character of the array, so</span></div>
+<div class="line"><span class="lineno">  659</span>                <span class="comment">// subtract 1 from the position to get the correct start position.</span></div>
+<div class="line"><span class="lineno">  660</span>                <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;start_position = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>-&gt;<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>() - 1;</div>
+<div class="line"><span class="lineno">  661</span>            }</div>
+<div class="line"><span class="lineno">  662</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  663</span> </div>
+<div class="line"><span class="lineno">  664</span>            <span class="comment">// check array limit</span></div>
+<div class="line"><span class="lineno">  665</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(len != <a class="code hl_function" href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a>() &amp;&amp; len &gt; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;max_size()))</div>
+<div class="line"><span class="lineno">  666</span>            {</div>
+<div class="line"><span class="lineno">  667</span>                <a class="code hl_define" href="macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code hl_function" href="classdetail_1_1out__of__range.html#a79ea0d3ec02a853629dc827e045ecff5">out_of_range::create</a>(408, <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;excessive array size: &quot;</span>, std::to_string(len)), <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()));</div>
+<div class="line"><span class="lineno">  668</span>            }</div>
+<div class="line"><span class="lineno">  669</span>        }</div>
+<div class="line"><span class="lineno">  670</span> </div>
+<div class="line"><span class="lineno">  671</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  672</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1out__of__range_html_a79ea0d3ec02a853629dc827e045ecff5"><div class="ttname"><a href="classdetail_1_1out__of__range.html#a79ea0d3ec02a853629dc827e045ecff5">detail::out_of_range::create</a></div><div class="ttdeci">static out_of_range create(int id_, const std::string &amp;what_arg, BasicJsonContext context)</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8hpp_source.html#l00258">exceptions.hpp:258</a></div></div>
+<div class="ttc" id="ahedley_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="hedley_8hpp_source.html#l01396">hedley.hpp:1396</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a266fb3d4bf633ad6c506434cc91164da"><div class="ttname"><a href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">detail::concat</a></div><div class="ttdeci">OutStringType concat(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="string__concat_8hpp_source.html#l00137">string_concat.hpp:137</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efaa4388a3d92419edbb1c6efd4d52461f3"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efaa4388a3d92419edbb1c6efd4d52461f3">detail::parse_event_t::array_start</a></div><div class="ttdeci">@ array_start</div><div class="ttdoc">the parser read [ and started to process a JSON array</div></div>
+<div class="ttc" id="anamespacedetail_html_a93d9378fbe8786072ec07745cbb4cc0b"><div class="ttname"><a href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a></div><div class="ttdeci">constexpr std::size_t unknown_size()</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00148">json_sax.hpp:148</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="string__concat_8hpp_source.html#l00137">detail::concat()</a>, <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>, <a class="el" href="hedley_8hpp_source.html#l01396">JSON_HEDLEY_UNLIKELY</a>, <a class="el" href="macro__scope_8hpp_source.html#l00176">JSON_THROW</a>, <a class="el" href="json__sax_8hpp_source.html#l00148">detail::unknown_size()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1json__sax__dom__callback__parser_a003acf2b06ffaf639bb6d34f5eb1695a_cgraph.svg" width="635" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae6016c3811e0c22532a589caf470a21e" name="ae6016c3811e0c22532a589caf470a21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6016c3811e0c22532a589caf470a21e">&#9670;&#160;</a></span>start_object()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::start_object </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00543">543</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  544</span>    {</div>
+<div class="line"><span class="lineno">  545</span>        <span class="comment">// check callback for object start</span></div>
+<div class="line"><span class="lineno">  546</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> keep = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a5ae2a61a6608491c32c0a73924c39f6a">callback</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.size()), <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efae73f17027cb0acbb537f29d0a6944b26">parse_event_t::object_start</a>, <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a38d7ff58d77d91ec66a8fd65b154341d">discarded</a>);</div>
+<div class="line"><span class="lineno">  547</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#af86f268bb1ad50a3437e113f57e8eeb8">keep_stack</a>.push_back(keep);</div>
+<div class="line"><span class="lineno">  548</span> </div>
+<div class="line"><span class="lineno">  549</span>        <span class="keyword">auto</span> val = <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(BasicJsonType::value_t::object, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  550</span>        <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.push_back(val.second);</div>
+<div class="line"><span class="lineno">  551</span> </div>
+<div class="line"><span class="lineno">  552</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back())</div>
+<div class="line"><span class="lineno">  553</span>        {</div>
+<div class="line"><span class="lineno">  554</span> </div>
+<div class="line"><span class="lineno">  555</span><span class="preprocessor">#if JSON_DIAGNOSTIC_POSITIONS</span></div>
+<div class="line"><span class="lineno">  556</span>            <span class="comment">// Manually set the start position of the object here.</span></div>
+<div class="line"><span class="lineno">  557</span>            <span class="comment">// Ensure this is after the call to handle_value to ensure correct start position.</span></div>
+<div class="line"><span class="lineno">  558</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>)</div>
+<div class="line"><span class="lineno">  559</span>            {</div>
+<div class="line"><span class="lineno">  560</span>                <span class="comment">// Lexer has read the first character of the object, so</span></div>
+<div class="line"><span class="lineno">  561</span>                <span class="comment">// subtract 1 from the position to get the correct start position.</span></div>
+<div class="line"><span class="lineno">  562</span>                <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;start_position = <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#ab8a904fd58d05d5a7624120bc8565777">m_lexer_ref</a>-&gt;<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>() - 1;</div>
+<div class="line"><span class="lineno">  563</span>            }</div>
+<div class="line"><span class="lineno">  564</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  565</span> </div>
+<div class="line"><span class="lineno">  566</span>            <span class="comment">// check object limit</span></div>
+<div class="line"><span class="lineno">  567</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(len != <a class="code hl_function" href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a>() &amp;&amp; len &gt; <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()-&gt;max_size()))</div>
+<div class="line"><span class="lineno">  568</span>            {</div>
+<div class="line"><span class="lineno">  569</span>                <a class="code hl_define" href="macro__scope_8hpp.html#a6c274f6db2e65c1b66c7d41b06ad690f">JSON_THROW</a>(<a class="code hl_function" href="classdetail_1_1out__of__range.html#a79ea0d3ec02a853629dc827e045ecff5">out_of_range::create</a>(408, <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;excessive object size: &quot;</span>, std::to_string(len)), <a class="code hl_variable" href="classdetail_1_1json__sax__dom__callback__parser.html#a17be107cfad9b502a580268b6fe289c9">ref_stack</a>.back()));</div>
+<div class="line"><span class="lineno">  570</span>            }</div>
+<div class="line"><span class="lineno">  571</span>        }</div>
+<div class="line"><span class="lineno">  572</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  573</span>    }</div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efae73f17027cb0acbb537f29d0a6944b26"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efae73f17027cb0acbb537f29d0a6944b26">detail::parse_event_t::object_start</a></div><div class="ttdeci">@ object_start</div><div class="ttdoc">the parser read { and started to process a JSON object</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="string__concat_8hpp_source.html#l00137">detail::concat()</a>, <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>, <a class="el" href="hedley_8hpp_source.html#l01396">JSON_HEDLEY_UNLIKELY</a>, <a class="el" href="macro__scope_8hpp_source.html#l00176">JSON_THROW</a>, <a class="el" href="json__sax_8hpp_source.html#l00148">detail::unknown_size()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1json__sax__dom__callback__parser_ae6016c3811e0c22532a589caf470a21e_cgraph.svg" width="594" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9c0b8ffe276c280cf0679fd2cd44aaa2" name="a9c0b8ffe276c280cf0679fd2cd44aaa2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c0b8ffe276c280cf0679fd2cd44aaa2">&#9670;&#160;</a></span>string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a86fd5b8047ede75a52de60de482f37d7">string_t</a> &amp;&#160;</td>
+          <td class="paramname"><em>val</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00531">531</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  532</span>    {</div>
+<div class="line"><span class="lineno">  533</span>        <a class="code hl_function" href="classdetail_1_1json__sax__dom__callback__parser.html#af35ac658ce00587d94975a7f6ddb24bb">handle_value</a>(val);</div>
+<div class="line"><span class="lineno">  534</span>        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  535</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a6843cd1bbf8efd3f37884d9fa586c72a" name="a6843cd1bbf8efd3f37884d9fa586c72a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6843cd1bbf8efd3f37884d9fa586c72a">&#9670;&#160;</a></span>allow_exceptions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::allow_exceptions = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether to throw exceptions in case of errors </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00902">902</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5ae2a61a6608491c32c0a73924c39f6a" name="a5ae2a61a6608491c32c0a73924c39f6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ae2a61a6608491c32c0a73924c39f6a">&#9670;&#160;</a></span>callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a0bac3ce0e3bcbf348e5355187e01e452">parser_callback_t</a> <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::callback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>callback function </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00900">900</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a38d7ff58d77d91ec66a8fd65b154341d" name="a38d7ff58d77d91ec66a8fd65b154341d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38d7ff58d77d91ec66a8fd65b154341d">&#9670;&#160;</a></span>discarded</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::discarded = BasicJsonType::value_t::discarded</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a discarded value for the callback </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00904">904</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab63ef895124a07599ff59dfa25ef5e85" name="ab63ef895124a07599ff59dfa25ef5e85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab63ef895124a07599ff59dfa25ef5e85">&#9670;&#160;</a></span>errored</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::errored = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether a syntax error occurred </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00898">898</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af86f268bb1ad50a3437e113f57e8eeb8" name="af86f268bb1ad50a3437e113f57e8eeb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af86f268bb1ad50a3437e113f57e8eeb8">&#9670;&#160;</a></span>keep_stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::keep_stack {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>stack to manage which values to keep </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00892">892</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a84b2eab2715a47c979944899f73d7015" name="a84b2eab2715a47c979944899f73d7015"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a84b2eab2715a47c979944899f73d7015">&#9670;&#160;</a></span>key_keep_stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;bool&gt; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::key_keep_stack {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>stack to manage which object keys to keep </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00894">894</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab8a904fd58d05d5a7624120bc8565777" name="ab8a904fd58d05d5a7624120bc8565777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8a904fd58d05d5a7624120bc8565777">&#9670;&#160;</a></span>m_lexer_ref</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html#a46ed0f512fbc461d4a82b4bc8f49422d">lexer_t</a>* <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::m_lexer_ref = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the lexer reference to obtain the current position </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00906">906</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a62da9b31a560a257c47a321e3c484c7c" name="a62da9b31a560a257c47a321e3c484c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62da9b31a560a257c47a321e3c484c7c">&#9670;&#160;</a></span>object_element</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType* <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::object_element = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>helper to hold the reference for the next object element </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00896">896</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a17be107cfad9b502a580268b6fe289c9" name="a17be107cfad9b502a580268b6fe289c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17be107cfad9b502a580268b6fe289c9">&#9670;&#160;</a></span>ref_stack</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;BasicJsonType*&gt; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::ref_stack {}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>stack to model hierarchy of values </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00890">890</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa65d15134090033b962a6e3bcc8433ea" name="aa65d15134090033b962a6e3bcc8433ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa65d15134090033b962a6e3bcc8433ea">&#9670;&#160;</a></span>root</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">BasicJsonType&amp; <a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">detail::json_sax_dom_callback_parser</a>&lt; BasicJsonType, InputAdapterType &gt;::root</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the parsed JSON value </p>
+
+<p class="definition"> <a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a> の <a class="el" href="json__sax_8hpp_source.html#l00888">888</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="json__sax_8hpp_source.html">json_sax.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedetail.html">detail</a></li><li class="navelem"><a class="el" href="classdetail_1_1json__sax__dom__callback__parser.html">json_sax_dom_callback_parser</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

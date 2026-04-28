@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1result__of__it__reverse__fold_3_010_00_01It_00_01State_00_01F22552669c57b23039854e09674230c44 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1result__of__it__reverse__fold_3_010_00_01It_00_01State_00_01F22552669c57b23039854e09674230c44.html#a6becd1a60e9b02a9b44c3acaf80545dd", null ]
+];

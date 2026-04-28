@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1span__has__size_3_01R_00_01typename_01std_1_1enable__if_3_01std_1_1is__a32be8b72b19d878cf40ea3740e6b9e5 =
+[
+    [ "value", "structboost_1_1detail_1_1span__has__size_3_01R_00_01typename_01std_1_1enable__if_3_01std_1_1is__a32be8b72b19d878cf40ea3740e6b9e5.html#a38391e8c761996a43b6656768e1ab431", null ]
+];

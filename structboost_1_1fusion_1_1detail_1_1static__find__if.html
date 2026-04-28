@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structboost_1_1fusion_1_1detail_1_1static__find__if.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="structboost_1_1fusion_1_1detail_1_1static__find__if-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">find_if.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if__coll__graph.svg" width="246" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a96ec107dbe55b5489f57c54ad13c7c66"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1choose__find__if.html">choose_find_if</a>&lt; First, Last, Pred, <a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt; First &gt;::value &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a></td></tr>
+<tr class="separator:a96ec107dbe55b5489f57c54ad13c7c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:adfa2cbbd4c5962ddff69cda4b2c5ba46"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:adfa2cbbd4c5962ddff69cda4b2c5ba46"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#adfa2cbbd4c5962ddff69cda4b2c5ba46">recursive_call</a> (Iterator const &amp;iter, mpl::true_)</td></tr>
+<tr class="separator:adfa2cbbd4c5962ddff69cda4b2c5ba46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26d89e8b06b2cdfba84a0dfd9376e9ee"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a26d89e8b06b2cdfba84a0dfd9376e9ee"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a26d89e8b06b2cdfba84a0dfd9376e9ee">recursive_call</a> (Iterator const &amp;iter, mpl::false_)</td></tr>
+<tr class="separator:a26d89e8b06b2cdfba84a0dfd9376e9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f54310737c8f4e317a1a554eed7590f"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a8f54310737c8f4e317a1a554eed7590f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a8f54310737c8f4e317a1a554eed7590f">recursive_call</a> (Iterator const &amp;iter)</td></tr>
+<tr class="separator:a8f54310737c8f4e317a1a554eed7590f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07000a9ec4a4382d9827ec22103eb954"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a07000a9ec4a4382d9827ec22103eb954"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1disable__if.html">boost::disable_if</a>&lt; <a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt; Iterator &gt;, <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">::type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a07000a9ec4a4382d9827ec22103eb954">iter_call</a> (Iterator const &amp;iter)</td></tr>
+<tr class="separator:a07000a9ec4a4382d9827ec22103eb954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae97194caac2d3b2d195035f2a0d2879f"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:ae97194caac2d3b2d195035f2a0d2879f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1enable__if.html">boost::enable_if</a>&lt; <a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt; Iterator &gt;, <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">::type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#ae97194caac2d3b2d195035f2a0d2879f">iter_call</a> (Iterator const &amp;iter)</td></tr>
+<tr class="separator:ae97194caac2d3b2d195035f2a0d2879f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ece0dbea9d705017d1481ef368046b8"><td class="memTemplParams" colspan="2">template&lt;typename Sequence &gt; </td></tr>
+<tr class="memitem:a7ece0dbea9d705017d1481ef368046b8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a7ece0dbea9d705017d1481ef368046b8">call</a> (Sequence &amp;seq)</td></tr>
+<tr class="separator:a7ece0dbea9d705017d1481ef368046b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename First, typename Last, typename Pred&gt;<br />
+struct boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;</div>
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00174">174</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a96ec107dbe55b5489f57c54ad13c7c66" name="a96ec107dbe55b5489f57c54ad13c7c66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ec107dbe55b5489f57c54ad13c7c66">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1choose__find__if.html">choose_find_if</a>&lt;First,Last,Pred,<a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt;First&gt;::value&gt;::type <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00183">183</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a7ece0dbea9d705017d1481ef368046b8" name="a7ece0dbea9d705017d1481ef368046b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ece0dbea9d705017d1481ef368046b8">&#9670;&#160;</a></span>call()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Sequence &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::call </td>
+          <td>(</td>
+          <td class="paramtype">Sequence &amp;&#160;</td>
+          <td class="paramname"><em>seq</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00230">230</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>        {</div>
+<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a07000a9ec4a4382d9827ec22103eb954">iter_call</a>(<a class="code hl_function" href="namespaceboost_1_1fusion.html#a08fe8171e5977ee28b5615030e0e9023">fusion::begin</a>(seq));</div>
+<div class="line"><span class="lineno">  233</span>        }</div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a08fe8171e5977ee28b5615030e0e9023"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a08fe8171e5977ee28b5615030e0e9023">boost::fusion::begin</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED lazy_enable_if&lt; traits::is_sequence&lt; Sequence &gt;, result_of::begin&lt; Sequence &gt; &gt;::type const begin(Sequence &amp;seq)</div><div class="ttdef"><b>Definition:</b> <a href="boost_2fusion_2sequence_2intrinsic_2begin_8hpp_source.html#l00080">boost/fusion/sequence/intrinsic/begin.hpp:80</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1static__find__if_html_a07000a9ec4a4382d9827ec22103eb954"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a07000a9ec4a4382d9827ec22103eb954">boost::fusion::detail::static_find_if::iter_call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED boost::disable_if&lt; traits::is_random_access&lt; Iterator &gt;, type &gt;::type iter_call(Iterator const &amp;iter)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00213">fusion/algorithm/query/detail/find_if.hpp:213</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="boost_2fusion_2sequence_2intrinsic_2begin_8hpp_source.html#l00080">boost::fusion::begin()</a>, <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00213">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::iter_call()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_a7ece0dbea9d705017d1481ef368046b8_cgraph.svg" width="640" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a07000a9ec4a4382d9827ec22103eb954" name="a07000a9ec4a4382d9827ec22103eb954"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07000a9ec4a4382d9827ec22103eb954">&#9670;&#160;</a></span>iter_call() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1disable__if.html">boost::disable_if</a>&lt; <a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt; Iterator &gt;, <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">::type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::iter_call </td>
+          <td>(</td>
+          <td class="paramtype">Iterator const &amp;&#160;</td>
+          <td class="paramname"><em>iter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00213">213</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  214</span>        {</div>
+<div class="line"><span class="lineno">  215</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#adfa2cbbd4c5962ddff69cda4b2c5ba46">recursive_call</a>(iter);</div>
+<div class="line"><span class="lineno">  216</span>        }</div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1static__find__if_html_adfa2cbbd4c5962ddff69cda4b2c5ba46"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#adfa2cbbd4c5962ddff69cda4b2c5ba46">boost::fusion::detail::static_find_if::recursive_call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type recursive_call(Iterator const &amp;iter, mpl::true_)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00188">fusion/algorithm/query/detail/find_if.hpp:188</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00188">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::recursive_call()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00230">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::call()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_a07000a9ec4a4382d9827ec22103eb954_cgraph.svg" width="442" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_a07000a9ec4a4382d9827ec22103eb954_icgraph.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae97194caac2d3b2d195035f2a0d2879f" name="ae97194caac2d3b2d195035f2a0d2879f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae97194caac2d3b2d195035f2a0d2879f">&#9670;&#160;</a></span>iter_call() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1enable__if.html">boost::enable_if</a>&lt; <a class="el" href="structboost_1_1fusion_1_1traits_1_1is__random__access.html">traits::is_random_access</a>&lt; Iterator &gt;, <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">::type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::iter_call </td>
+          <td>(</td>
+          <td class="paramtype">Iterator const &amp;&#160;</td>
+          <td class="paramname"><em>iter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00221">221</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  222</span>        {</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> result_of::distance&lt;Iterator, type&gt;::type <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>;</div>
+<div class="line"><span class="lineno">  224</span>            <span class="keywordflow">return</span> fusion::advance&lt;N&gt;(iter);</div>
+<div class="line"><span class="lineno">  225</span>        }</div>
+<div class="ttc" id="aforward__adapter_8hpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00227">forward_adapter.hpp:227</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="forward__adapter_8hpp_source.html#l00227">N</a>.</p>
+
+</div>
+</div>
+<a id="a8f54310737c8f4e317a1a554eed7590f" name="a8f54310737c8f4e317a1a554eed7590f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f54310737c8f4e317a1a554eed7590f">&#9670;&#160;</a></span>recursive_call() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::recursive_call </td>
+          <td>(</td>
+          <td class="paramtype">Iterator const &amp;&#160;</td>
+          <td class="paramname"><em>iter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>        {</div>
+<div class="line"><span class="lineno">  206</span>            <span class="keyword">typedef</span> result_of::equal_to&lt;Iterator, type&gt; found;</div>
+<div class="line"><span class="lineno">  207</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#adfa2cbbd4c5962ddff69cda4b2c5ba46">recursive_call</a>(iter, found());</div>
+<div class="line"><span class="lineno">  208</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00188">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::recursive_call()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_a8f54310737c8f4e317a1a554eed7590f_cgraph.svg" width="480" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a26d89e8b06b2cdfba84a0dfd9376e9ee" name="a26d89e8b06b2cdfba84a0dfd9376e9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26d89e8b06b2cdfba84a0dfd9376e9ee">&#9670;&#160;</a></span>recursive_call() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::recursive_call </td>
+          <td>(</td>
+          <td class="paramtype">Iterator const &amp;&#160;</td>
+          <td class="paramname"><em>iter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mpl::false_&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00196">196</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>        {</div>
+<div class="line"><span class="lineno">  198</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#adfa2cbbd4c5962ddff69cda4b2c5ba46">recursive_call</a>(<a class="code hl_function" href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">fusion::next</a>(iter));</div>
+<div class="line"><span class="lineno">  199</span>        }</div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a812fa52b7ea9f7aab4ce02e4f6b61c76"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">boost::fusion::next</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED result_of::next&lt; Iterator &gt;::type const next(Iterator const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2next_8hpp_source.html#l00059">fusion/iterator/next.hpp:59</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="fusion_2iterator_2next_8hpp_source.html#l00059">boost::fusion::next()</a>, <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00188">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::recursive_call()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_a26d89e8b06b2cdfba84a0dfd9376e9ee_cgraph.svg" width="480" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="adfa2cbbd4c5962ddff69cda4b2c5ba46" name="adfa2cbbd4c5962ddff69cda4b2c5ba46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa2cbbd4c5962ddff69cda4b2c5ba46">&#9670;&#160;</a></span>recursive_call() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename First , typename Last , typename Pred &gt; </div>
+<div class="memtemplate">
+template&lt;typename Iterator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html#a96ec107dbe55b5489f57c54ad13c7c66">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">boost::fusion::detail::static_find_if</a>&lt; First, Last, Pred &gt;::recursive_call </td>
+          <td>(</td>
+          <td class="paramtype">Iterator const &amp;&#160;</td>
+          <td class="paramname"><em>iter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mpl::true_&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a> の <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00188">188</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  189</span>        {</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">return</span> iter;</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00213">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::iter_call()</a>, <a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html#l00196">boost::fusion::detail::static_find_if&lt; First, Last, Pred &gt;::recursive_call()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1static__find__if_adfa2cbbd4c5962ddff69cda4b2c5ba46_icgraph.svg" width="679" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="fusion_2algorithm_2query_2detail_2find__if_8hpp_source.html">fusion/algorithm/query/detail/find_if.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1fusion.html">fusion</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="structboost_1_1fusion_1_1detail_1_1static__find__if.html">static_find_if</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var structboost_1_1type__traits_1_1ice__and_3_01true_00_01true_00_01true_00_01true_00_01true_00_01true_00_01true_01_4 =
+[
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1type__traits_1_1ice__and_3_01true_00_01true_00_01true_00_01true_00_01true_00_01true_00_01true_01_4.html#a1e9ec63433964db89c9a22828677a0b1", null ]
+];

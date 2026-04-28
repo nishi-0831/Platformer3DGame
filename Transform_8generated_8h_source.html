@@ -101,112 +101,68 @@ $(document).ready(function(){initNavTree('Transform_8generated_8h_source.html','
 <a href="Transform_8generated_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Transform.generated.h</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;nlohmann/json.hpp&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;<a class="code" href="json_8hpp.html">nlohmann/json.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="JsonConverter_8h.html">JsonConverter.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// Transformの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTransformState.html">   14</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTransformState.html">TransformState</a></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">   16</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a> <a class="code hl_variable" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">parent</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">   17</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_variable" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">position</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">   18</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_variable" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">scale</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">   19</a></span>        <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a> <a class="code hl_variable" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">rotate</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>};</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// クラスの前方宣言</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">class </span>Transform;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    }</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// Transformの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structTransformState.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTransformState.html">TransformState</a></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">   15</a></span>        <a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a> <a class="code hl_variable" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">parent</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">   16</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_variable" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">position</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">   17</a></span>        <a class="code hl_struct" href="structmtgb_1_1Vector3.html">mtgb::Vector3</a> <a class="code hl_variable" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">scale</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">   18</a></span>        <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a> <a class="code hl_variable" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">rotate</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// クラスの前方宣言</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacemtgb.html">mtgb</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keyword">class </span>Transform;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">   32</a></span><span class="keyword">using </span><a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">TransformMemento</a> = <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento&lt;mtgb::Transform, TransformState&gt;</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// TransformとTransformMementoの相互変換処理を実装</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">// ============================================================================</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#a768b9fd23cdf17d537e57931bd04578d">   37</a></span><span class="preprocessor">#define MT_GENERATED_BODY_Transform() \</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    public: \</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    using Memento = TransformMemento; \</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    TransformMemento* SaveToMemento() \</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    OnPreSave(); \</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">        TransformState state; \</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">        state.parent = this-&gt;parent; \</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">        state.position = this-&gt;position; \</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">        state.scale = this-&gt;scale; \</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">        state.rotate = this-&gt;rotate; \</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">        return new Memento(GetEntityId(), state); \</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">    \</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">    void RestoreFromMemento(const Memento&amp; _memento) \</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">        const TransformState&amp; state = _memento.GetState(); \</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">        this-&gt;parent = state.parent; \</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">        this-&gt;position = state.position; \</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">        this-&gt;scale = state.scale; \</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">        this-&gt;rotate = state.rotate; \</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">        OnPostRestore(); \</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">    \</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">    friend struct Transform_Register; \</span></div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">    friend void to_json(nlohmann::json&amp; _j,const Transform&amp; _target) \</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">        _j[&quot;parent&quot;</span>] = JsonConverter::Serialize&lt;mtgb::EntityId&gt;(_target.parent); \</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _j[&quot;position&quot;] = JsonConverter::Serialize&lt;mtgb::Vector3&gt;(_target.position); \</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        _j[&quot;scale&quot;] = JsonConverter::Serialize&lt;mtgb::Vector3&gt;(_target.scale); \</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        _j[&quot;rotate&quot;] = JsonConverter::Serialize&lt;mtgb::Quaternion&gt;(_target.rotate); \</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    } \</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    friend void from_json(const nlohmann::json&amp; _j, Transform&amp; _target) \</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    { \</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        JsonConverter::Deserialize&lt;mtgb::EntityId&gt;(_target.parent, _j,&quot;parent&quot;); \</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        JsonConverter::Deserialize&lt;mtgb::Vector3&gt;(_target.position, _j,&quot;position&quot;); \</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        JsonConverter::Deserialize&lt;mtgb::Vector3&gt;(_target.scale, _j,&quot;scale&quot;); \</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        JsonConverter::Deserialize&lt;mtgb::Quaternion&gt;(_target.rotate, _j,&quot;rotate&quot;); \</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _target.OnPostRestore(); \</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    } \</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    static std::string TypeName(){ return &quot;Transform&quot; ;} \</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">/* ImGui表示処理の登録 */</span><span class="preprocessor"> \</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">    static void RegisterImGui() \</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="preprocessor">    { \</span></div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">        static bool registered = false; \</span></div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">        if (registered) return; \</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">        registered = true; \</span></div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">        \</span></div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">        RegisterShowFuncHolder::Set&lt;Transform&gt;([]( Transform* _target, const char* _name) \</span></div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">            { \</span></div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;parent, &quot;parent&quot;</span>); \</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;position, &quot;position&quot;); \</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;scale, &quot;scale&quot;); \</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>                PropertyDisplayRegistry::Instance().ShowProperty(&amp;_target-&gt;rotate, &quot;rotate&quot;); \</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            }); \</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        MTImGui::RegisterComponentViewer&lt;Transform&gt;(); \</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#pragma warning(push)</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#pragma warning(disable:4005)</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">// マクロ上書き</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#a37ea79c1d7c1153a3868c2e33ba1c9eb">   98</a></span><span class="preprocessor">#define MT_GENERATED_BODY() MT_GENERATED_BODY_Transform()</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#pragma warning(pop)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#aeefa60442d625f7a6343c1ef8013a7f5">   31</a></span><span class="keyword">using </span><a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">TransformMemento</a> = <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento&lt;mtgb::Transform, TransformState&gt;</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">// TransformとTransformMementoの相互変換処理を実装</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#a768b9fd23cdf17d537e57931bd04578d">   36</a></span><span class="preprocessor">#define MT_GENERATED_BODY_Transform() \</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">    public: \</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">    using Memento = TransformMemento; \</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">    TransformMemento* SaveToMemento(); \</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">    \</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">    void RestoreFromMemento(const Memento&amp; _memento); \</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">    \</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">    friend struct Transform_Register; \</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">    friend void to_json(nlohmann::json&amp; _j,const Transform&amp; _target); \</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">    friend void from_json(const nlohmann::json&amp; _j, Transform&amp; _target); \</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">    \</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">    static std::string TypeName(){ return &quot;Transform&quot;</span> ;} \</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">/* ImGui表示処理の登録 */</span><span class="preprocessor"> \</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">    static void RegisterImGui(); \</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor"></span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#pragma warning(push)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#pragma warning(disable:4005)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// マクロ上書き</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="Transform_8generated_8h.html#a37ea79c1d7c1153a3868c2e33ba1c9eb">   54</a></span><span class="preprocessor">#define MT_GENERATED_BODY() MT_GENERATED_BODY_Transform()</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#pragma warning(pop)</span></div>
 <div class="ttc" id="aJsonConverter_8h_html"><div class="ttname"><a href="JsonConverter_8h.html">JsonConverter.h</a></div></div>
-<div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00015">IComponentMemento.h:16</a></div></div>
-<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8generated_8h_source.html#l00026">Collider.generated.h:27</a></div></div>
+<div class="ttc" id="ajson_8hpp_html"><div class="ttname"><a href="json_8hpp.html">json.hpp</a></div></div>
+<div class="ttc" id="anamespacemtgb_html"><div class="ttname"><a href="namespacemtgb.html">mtgb</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8generated_8h_source.html#l00025">Collider.generated.h:26</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
-<div class="ttc" id="astructTransformState_html"><div class="ttname"><a href="structTransformState.html">TransformState</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00014">Transform.generated.h:15</a></div></div>
-<div class="ttc" id="astructTransformState_html_a734c2e2d2753fe9cbb51550a719bea2f"><div class="ttname"><a href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">TransformState::scale</a></div><div class="ttdeci">mtgb::Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00018">Transform.generated.h:18</a></div></div>
-<div class="ttc" id="astructTransformState_html_a8f5b322eed85e573b7561980de4da931"><div class="ttname"><a href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">TransformState::position</a></div><div class="ttdeci">mtgb::Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00017">Transform.generated.h:17</a></div></div>
-<div class="ttc" id="astructTransformState_html_aaa0e9f1423ef8bbcba38aa03692c280e"><div class="ttname"><a href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">TransformState::rotate</a></div><div class="ttdeci">mtgb::Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00019">Transform.generated.h:19</a></div></div>
-<div class="ttc" id="astructTransformState_html_ac00cdd977742fcc9eed3a1970b57db80"><div class="ttname"><a href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">TransformState::parent</a></div><div class="ttdeci">mtgb::EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00016">Transform.generated.h:16</a></div></div>
+<div class="ttc" id="astructTransformState_html"><div class="ttname"><a href="structTransformState.html">TransformState</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00013">Transform.generated.h:14</a></div></div>
+<div class="ttc" id="astructTransformState_html_a734c2e2d2753fe9cbb51550a719bea2f"><div class="ttname"><a href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">TransformState::scale</a></div><div class="ttdeci">mtgb::Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00017">Transform.generated.h:17</a></div></div>
+<div class="ttc" id="astructTransformState_html_a8f5b322eed85e573b7561980de4da931"><div class="ttname"><a href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">TransformState::position</a></div><div class="ttdeci">mtgb::Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00016">Transform.generated.h:16</a></div></div>
+<div class="ttc" id="astructTransformState_html_aaa0e9f1423ef8bbcba38aa03692c280e"><div class="ttname"><a href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">TransformState::rotate</a></div><div class="ttdeci">mtgb::Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00018">Transform.generated.h:18</a></div></div>
+<div class="ttc" id="astructTransformState_html_ac00cdd977742fcc9eed3a1970b57db80"><div class="ttname"><a href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">TransformState::parent</a></div><div class="ttdeci">mtgb::EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00015">Transform.generated.h:15</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Quaternion_html"><div class="ttname"><a href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a></div><div class="ttdoc">四元数の構造体</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00011">Quaternion.h:12</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

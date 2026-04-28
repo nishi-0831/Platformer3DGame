@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: is_swappable_cxx_11.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('is__swappable__cxx__11_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">is_swappable_cxx_11.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="is__swappable__cxx__11_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOOST_TYPE_TRAITS_DETAIL_IS_SWAPPABLE_CXX_11_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOST_TYPE_TRAITS_DETAIL_IS_SWAPPABLE_CXX_11_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  Copyright 2017 Peter Dimov</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  Copyright 2023 Andrey Semashev</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="config_2workaround_8hpp.html">boost/config/workaround.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="type__traits_2declval_8hpp.html">boost/type_traits/declval.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="integral__constant_8hpp.html">boost/type_traits/integral_constant.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#if __cplusplus &gt;= 201103L || defined(BOOST_DINKUMWARE_STDLIB)</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;utility&gt;</span> <span class="comment">// for std::swap (C++11)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;algorithm&gt;</span> <span class="comment">// for std::swap (C++98)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">// Intentionally not within boost namespace to avoid implicitly pulling in boost::swap overloads other than through ADL</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html">   22</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost__type__traits__swappable__detail.html">boost_type_traits_swappable_detail</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">using </span><a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#a914e362c08216cbf90018d2b4e61f8e8">   27</a></span>template&lt;class T, class U, class = decltype(swap(boost::declval&lt;T&gt;(), boost::declval&lt;U&gt;()))&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::true_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#adbbe2c982fc84aaa12ce4fa0f64c5945">is_swappable_with_impl</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#adbbe2c982fc84aaa12ce4fa0f64c5945">   28</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#adbbe2c982fc84aaa12ce4fa0f64c5945">is_swappable_with_impl</a>( ... );</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structboost__type__traits__swappable__detail_1_1is__swappable__with__helper.html#aedef61c1b7d179ea6363aba987516295">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost__type__traits__swappable__detail_1_1is__swappable__with__helper.html">is_swappable_with_helper</a> { <span class="keyword">typedef</span> <span class="keyword">decltype</span>( boost_type_traits_swappable_detail::is_swappable_with_impl&lt;T, U&gt;(0) ) <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__swappable__with__helper.html#aedef61c1b7d179ea6363aba987516295">type</a>; };</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#ae27c15a7e65495a4f96ea009ac1e639d">   32</a></span>template&lt;class T, class = decltype(swap(boost::declval&lt;T&amp;&gt;(), boost::declval&lt;T&amp;&gt;()))&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::true_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#a98c89589c5d4a6e00c5e2ae0ecc2cf2c">is_swappable_impl</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#a98c89589c5d4a6e00c5e2ae0ecc2cf2c">   33</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#a98c89589c5d4a6e00c5e2ae0ecc2cf2c">is_swappable_impl</a>( ... );</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structboost__type__traits__swappable__detail_1_1is__swappable__helper.html#acfeefbd0e4854e41d6ec94575bb2da33">   35</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost__type__traits__swappable__detail_1_1is__swappable__helper.html">is_swappable_helper</a> { <span class="keyword">typedef</span> <span class="keyword">decltype</span>( boost_type_traits_swappable_detail::is_swappable_impl&lt;T&gt;(0) ) <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__swappable__helper.html#acfeefbd0e4854e41d6ec94575bb2da33">type</a>; };</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#if !defined(BOOST_NO_CXX11_NOEXCEPT)</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#if BOOST_WORKAROUND(BOOST_GCC, &lt; 40700)</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// gcc 4.6 ICEs when noexcept operator is used on an invalid expression</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>template&lt;class T, class U, bool = is_swappable_with_helper&lt;T, U&gt;::type::value&gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">struct </span><a class="code hl_struct" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html">is_nothrow_swappable_with_helper</a> { <span class="keyword">typedef</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html#a4f813fa89fab2f2a9af1bf3115061862">type</a>; };</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">struct </span>is_nothrow_swappable_with_helper&lt;T, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>, true&gt; { <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant&lt;bool, noexcept(swap(boost::declval&lt;T&gt;</a>(), boost::declval&lt;U&gt;()))&gt; <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html#a4f813fa89fab2f2a9af1bf3115061862">type</a>; };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>template&lt;class T, bool = is_swappable_helper&lt;T&gt;::type::value&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">struct </span>is_nothrow_swappable_helper { <span class="keyword">typedef</span> <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html#afa4a44a4909ae73eadbefc783e97100c">type</a>; };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keyword">struct </span>is_nothrow_swappable_helper&lt;<a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>, true&gt; { <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant&lt;bool, noexcept(swap(boost::declval&lt;T&amp;&gt;</a>(), boost::declval&lt;T&amp;&gt;()))&gt; <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html#afa4a44a4909ae73eadbefc783e97100c">type</a>; };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#else </span><span class="comment">// BOOST_WORKAROUND(BOOST_GCC, &lt; 40700)</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#ae47e31111b24812c309674793b7641bc">   54</a></span>template&lt;class T, class U, bool B = noexcept(swap(boost::declval&lt;T&gt;(), boost::declval&lt;U&gt;()))&gt; <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant&lt;bool, B&gt;</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#aec81e144466d8202d839702dc02077a8">is_nothrow_swappable_with_impl</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#aec81e144466d8202d839702dc02077a8">   55</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#aec81e144466d8202d839702dc02077a8">is_nothrow_swappable_with_impl</a>( ... );</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html#a4f813fa89fab2f2a9af1bf3115061862">   57</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html">is_nothrow_swappable_with_helper</a> { <span class="keyword">typedef</span> <span class="keyword">decltype</span>( boost_type_traits_swappable_detail::is_nothrow_swappable_with_impl&lt;T, U&gt;(0) ) <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html#a4f813fa89fab2f2a9af1bf3115061862">type</a>; };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#ae1da2008c7207fbfe1a44835fae79320">   59</a></span>template&lt;class T, bool B = noexcept(swap(boost::declval&lt;T&amp;&gt;(), boost::declval&lt;T&amp;&gt;()))&gt; <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant&lt;bool, B&gt;</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#a289c0e3489fa5fcb68e75dddf793334b">is_nothrow_swappable_impl</a>( <span class="keywordtype">int</span> );</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="namespaceboost__type__traits__swappable__detail.html#a289c0e3489fa5fcb68e75dddf793334b">   60</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <a class="code hl_class" href="structboost_1_1integral__constant.html">boost::false_type</a> <a class="code hl_variable" href="namespaceboost__type__traits__swappable__detail.html#a289c0e3489fa5fcb68e75dddf793334b">is_nothrow_swappable_impl</a>( ... );</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html#afa4a44a4909ae73eadbefc783e97100c">   62</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html">is_nothrow_swappable_helper</a> { <span class="keyword">typedef</span> <span class="keyword">decltype</span>( boost_type_traits_swappable_detail::is_nothrow_swappable_impl&lt;T&gt;(0) ) <a class="code hl_typedef" href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html#afa4a44a4909ae73eadbefc783e97100c">type</a>; };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_WORKAROUND(BOOST_GCC, &lt; 40700)</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">// !defined(BOOST_NO_CXX11_NOEXCEPT)</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>} <span class="comment">// namespace boost_type_traits_swappable_detail</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif </span><span class="comment">// #ifndef BOOST_TYPE_TRAITS_DETAIL_IS_SWAPPABLE_CXX_11_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="aconfig_2workaround_8hpp_html"><div class="ttname"><a href="config_2workaround_8hpp.html">workaround.hpp</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="aintegral__constant_8hpp_html"><div class="ttname"><a href="integral__constant_8hpp.html">integral_constant.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost__type__traits__swappable__detail_html"><div class="ttname"><a href="namespaceboost__type__traits__swappable__detail.html">boost_type_traits_swappable_detail</a></div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00022">is_swappable_cxx_11.hpp:23</a></div></div>
+<div class="ttc" id="anamespaceboost__type__traits__swappable__detail_html_a289c0e3489fa5fcb68e75dddf793334b"><div class="ttname"><a href="namespaceboost__type__traits__swappable__detail.html#a289c0e3489fa5fcb68e75dddf793334b">boost_type_traits_swappable_detail::is_nothrow_swappable_impl</a></div><div class="ttdeci">boost::false_type is_nothrow_swappable_impl(...)</div></div>
+<div class="ttc" id="anamespaceboost__type__traits__swappable__detail_html_a98c89589c5d4a6e00c5e2ae0ecc2cf2c"><div class="ttname"><a href="namespaceboost__type__traits__swappable__detail.html#a98c89589c5d4a6e00c5e2ae0ecc2cf2c">boost_type_traits_swappable_detail::is_swappable_impl</a></div><div class="ttdeci">boost::false_type is_swappable_impl(...)</div></div>
+<div class="ttc" id="anamespaceboost__type__traits__swappable__detail_html_adbbe2c982fc84aaa12ce4fa0f64c5945"><div class="ttname"><a href="namespaceboost__type__traits__swappable__detail.html#adbbe2c982fc84aaa12ce4fa0f64c5945">boost_type_traits_swappable_detail::is_swappable_with_impl</a></div><div class="ttdeci">boost::false_type is_swappable_with_impl(...)</div></div>
+<div class="ttc" id="anamespaceboost__type__traits__swappable__detail_html_aec81e144466d8202d839702dc02077a8"><div class="ttname"><a href="namespaceboost__type__traits__swappable__detail.html#aec81e144466d8202d839702dc02077a8">boost_type_traits_swappable_detail::is_nothrow_swappable_with_impl</a></div><div class="ttdeci">boost::false_type is_nothrow_swappable_with_impl(...)</div></div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
+<div class="ttc" id="astructboost_1_1integral__constant_html"><div class="ttname"><a href="structboost_1_1integral__constant.html">boost::integral_constant&lt; bool, true &gt;</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper_html"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html">boost_type_traits_swappable_detail::is_nothrow_swappable_helper</a></div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00062">is_swappable_cxx_11.hpp:62</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper_html_afa4a44a4909ae73eadbefc783e97100c"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__helper.html#afa4a44a4909ae73eadbefc783e97100c">boost_type_traits_swappable_detail::is_nothrow_swappable_helper::type</a></div><div class="ttdeci">decltype(boost_type_traits_swappable_detail::is_nothrow_swappable_impl&lt; T &gt;(0)) type</div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00062">is_swappable_cxx_11.hpp:62</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper_html"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html">boost_type_traits_swappable_detail::is_nothrow_swappable_with_helper</a></div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00057">is_swappable_cxx_11.hpp:57</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper_html_a4f813fa89fab2f2a9af1bf3115061862"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__nothrow__swappable__with__helper.html#a4f813fa89fab2f2a9af1bf3115061862">boost_type_traits_swappable_detail::is_nothrow_swappable_with_helper::type</a></div><div class="ttdeci">decltype(boost_type_traits_swappable_detail::is_nothrow_swappable_with_impl&lt; T, U &gt;(0)) type</div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00057">is_swappable_cxx_11.hpp:57</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__swappable__helper_html"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__swappable__helper.html">boost_type_traits_swappable_detail::is_swappable_helper</a></div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00035">is_swappable_cxx_11.hpp:35</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__swappable__helper_html_acfeefbd0e4854e41d6ec94575bb2da33"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__swappable__helper.html#acfeefbd0e4854e41d6ec94575bb2da33">boost_type_traits_swappable_detail::is_swappable_helper::type</a></div><div class="ttdeci">decltype(boost_type_traits_swappable_detail::is_swappable_impl&lt; T &gt;(0)) type</div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00035">is_swappable_cxx_11.hpp:35</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__swappable__with__helper_html"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__swappable__with__helper.html">boost_type_traits_swappable_detail::is_swappable_with_helper</a></div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00030">is_swappable_cxx_11.hpp:30</a></div></div>
+<div class="ttc" id="astructboost__type__traits__swappable__detail_1_1is__swappable__with__helper_html_aedef61c1b7d179ea6363aba987516295"><div class="ttname"><a href="structboost__type__traits__swappable__detail_1_1is__swappable__with__helper.html#aedef61c1b7d179ea6363aba987516295">boost_type_traits_swappable_detail::is_swappable_with_helper::type</a></div><div class="ttdeci">decltype(boost_type_traits_swappable_detail::is_swappable_with_impl&lt; T, U &gt;(0)) type</div><div class="ttdef"><b>Definition:</b> <a href="is__swappable__cxx__11_8hpp_source.html#l00030">is_swappable_cxx_11.hpp:30</a></div></div>
+<div class="ttc" id="atype__traits_2declval_8hpp_html"><div class="ttname"><a href="type__traits_2declval_8hpp.html">declval.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_58e84a66c35a87b44d1654fe688cf24e.html">type_traits</a></li><li class="navelem"><a class="el" href="dir_fa81cdd1c7ed274f4777b66f14e2bed6.html">detail</a></li><li class="navelem"><a class="el" href="is__swappable__cxx__11_8hpp.html">is_swappable_cxx_11.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

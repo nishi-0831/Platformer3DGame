@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1dereference__iterator_1_1result_3_01This_07Iterator_08_01_4 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1dereference__iterator_1_1result_3_01This_07Iterator_08_01_4.html#a39440028832d7f39840a8203c73543f1", null ]
+];

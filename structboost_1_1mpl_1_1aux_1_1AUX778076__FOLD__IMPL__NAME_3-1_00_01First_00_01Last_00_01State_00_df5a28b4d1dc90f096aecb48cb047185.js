@@ -1,0 +1,6 @@
+var structboost_1_1mpl_1_1aux_1_1AUX778076__FOLD__IMPL__NAME_3_1_00_01First_00_01Last_00_01State_00_df5a28b4d1dc90f096aecb48cb047185 =
+[
+    [ "iterator", "structboost_1_1mpl_1_1aux_1_1AUX778076__FOLD__IMPL__NAME_3-1_00_01First_00_01Last_00_01State_00_df5a28b4d1dc90f096aecb48cb047185.html#a1f099929c76a9e5f594298fac1a1ceaf", null ],
+    [ "nested_step", "structboost_1_1mpl_1_1aux_1_1AUX778076__FOLD__IMPL__NAME_3-1_00_01First_00_01Last_00_01State_00_df5a28b4d1dc90f096aecb48cb047185.html#afe40fc063e49a3ea2529f9712ac928d2", null ],
+    [ "state", "structboost_1_1mpl_1_1aux_1_1AUX778076__FOLD__IMPL__NAME_3-1_00_01First_00_01Last_00_01State_00_df5a28b4d1dc90f096aecb48cb047185.html#ae036c130af246ba0767a6a27a45d446c", null ]
+];

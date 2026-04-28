@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: msvc_is_class.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('msvc__is__class_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">msvc_is_class.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="msvc__is__class_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef BOOST_MPL_AUX_MSVC_IS_CLASS_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define BOOST_MPL_AUX_MSVC_IS_CLASS_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Copyright Aleksey Gurtovoy 2002-2004</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Distributed under the Boost Software License, Version 1.0. </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// (See accompanying file LICENSE_1_0.txt or copy at </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// See http://www.boost.org/libs/mpl for documentation.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// $Id$</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// $Date$</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// $Revision$</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2if_8hpp.html">boost/mpl/if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2bool_8hpp.html">boost/mpl/bool.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="type__wrapper_8hpp.html">boost/mpl/aux_/type_wrapper.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="yes__no_8hpp.html">boost/mpl/aux_/yes_no.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="is__reference_8hpp.html">boost/type_traits/is_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a> { <span class="keyword">namespace </span>aux {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1is__class__helper.html">   26</a></span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> T &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1is__class__helper.html">is_class_helper</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1is__class__helper.html#a356b03c0d7549a34a582b7e0dc6247f7">   28</a></span>    <span class="keyword">typedef</span> int (T::* <a class="code hl_struct" href="structboost_1_1type.html">type</a>)();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// MSVC 6.x-specific lightweight &#39;is_class&#39; implementation; </span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// Distinguishing feature: does not instantiate the type being tested.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html">   34</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html">msvc_is_class_impl</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3b7f472fe11593c65efc98c4fba305d5">   37</a></span>    <span class="keyword">static</span> <a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">yes_tag</a>  <a class="code hl_function" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3b7f472fe11593c65efc98c4fba305d5">test</a>(<a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">type_wrapper&lt;U&gt;</a>*, <span class="comment">/*typename*/</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1is__class__helper.html">is_class_helper&lt;U&gt;::type</a> = 0);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3fecaef52807aff82af6f303ba5dc5e1">   38</a></span>    <span class="keyword">static</span> <a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#a5751341f4cae8e839de3e1f23f0b21e8">no_tag</a>   <a class="code hl_function" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3fecaef52807aff82af6f303ba5dc5e1">test</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> <span class="keyword">volatile</span>*, ...);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a173b8be89999e928572b36f10613cfbda3925e6037b2b383afe6c10b8f2947d68">   40</a></span>    <span class="keyword">enum</span> { <a class="code hl_enumvalue" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a173b8be89999e928572b36f10613cfbda3925e6037b2b383afe6c10b8f2947d68">value</a> = <span class="keyword">sizeof</span>(<a class="code hl_function" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3b7f472fe11593c65efc98c4fba305d5">test</a>((<a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">type_wrapper&lt;T&gt;</a>*)0)) == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">yes_tag</a>) };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a324870cc526506c87b288f63e864100f">   41</a></span>    <span class="keyword">typedef</span> bool_&lt;value&gt; <a class="code hl_typedef" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a324870cc526506c87b288f63e864100f">type</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">// agurt, 17/sep/04: have to check for &#39;is_reference&#39; upfront to avoid ICEs in</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// complex metaprograms</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> T &gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class.html">   47</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1msvc__is__class.html">msvc_is_class</a></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    : <a class="code hl_struct" href="structboost_1_1mpl_1_1if__.html">if_</a>&lt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>          is_reference&lt;T&gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        , false_</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        , msvc_is_class_impl&lt;T&gt;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        &gt;::type</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>{</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}}}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_MPL_AUX_MSVC_IS_CLASS_HPP_INCLUDED</span></div>
+<div class="ttc" id="ais__reference_8hpp_html"><div class="ttname"><a href="is__reference_8hpp.html">is_reference.hpp</a></div></div>
+<div class="ttc" id="ampl_2bool_8hpp_html"><div class="ttname"><a href="mpl_2bool_8hpp.html">bool.hpp</a></div></div>
+<div class="ttc" id="ampl_2if_8hpp_html"><div class="ttname"><a href="mpl_2if_8hpp.html">if.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_1_1aux_html_a5751341f4cae8e839de3e1f23f0b21e8"><div class="ttname"><a href="namespaceboost_1_1mpl_1_1aux.html#a5751341f4cae8e839de3e1f23f0b21e8">boost::mpl::aux::no_tag</a></div><div class="ttdeci">char(&amp; no_tag)[1]</div><div class="ttdef"><b>Definition:</b> <a href="yes__no_8hpp_source.html#l00026">yes_no.hpp:26</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_1_1aux_html_aa20a762e798c56326a79bc72227b34bc"><div class="ttname"><a href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">boost::mpl::aux::yes_tag</a></div><div class="ttdeci">char(&amp; yes_tag)[2]</div><div class="ttdef"><b>Definition:</b> <a href="yes__no_8hpp_source.html#l00027">yes_no.hpp:27</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_html"><div class="ttname"><a href="namespaceboost_1_1mpl.html">boost::mpl</a></div><div class="ttdef"><b>Definition:</b> <a href="components__as__mpl__sequence_8hpp_source.html#l00024">components_as_mpl_sequence.hpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1is__class__helper_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1is__class__helper.html">boost::mpl::aux::is_class_helper</a></div><div class="ttdef"><b>Definition:</b> <a href="msvc__is__class_8hpp_source.html#l00026">msvc_is_class.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class__impl_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html">boost::mpl::aux::msvc_is_class_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="msvc__is__class_8hpp_source.html#l00034">msvc_is_class.hpp:35</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class__impl_html_a173b8be89999e928572b36f10613cfbda3925e6037b2b383afe6c10b8f2947d68"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a173b8be89999e928572b36f10613cfbda3925e6037b2b383afe6c10b8f2947d68">boost::mpl::aux::msvc_is_class_impl::value</a></div><div class="ttdeci">@ value</div><div class="ttdef"><b>Definition:</b> <a href="msvc__is__class_8hpp_source.html#l00040">msvc_is_class.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class__impl_html_a324870cc526506c87b288f63e864100f"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a324870cc526506c87b288f63e864100f">boost::mpl::aux::msvc_is_class_impl::type</a></div><div class="ttdeci">bool_&lt; value &gt; type</div><div class="ttdef"><b>Definition:</b> <a href="msvc__is__class_8hpp_source.html#l00041">msvc_is_class.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class__impl_html_a3b7f472fe11593c65efc98c4fba305d5"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3b7f472fe11593c65efc98c4fba305d5">boost::mpl::aux::msvc_is_class_impl::test</a></div><div class="ttdeci">static yes_tag test(type_wrapper&lt; U &gt; *, is_class_helper&lt; U &gt;::type=0)</div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class__impl_html_a3fecaef52807aff82af6f303ba5dc5e1"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class__impl.html#a3fecaef52807aff82af6f303ba5dc5e1">boost::mpl::aux::msvc_is_class_impl::test</a></div><div class="ttdeci">static no_tag test(void const volatile *,...)</div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1msvc__is__class_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1msvc__is__class.html">boost::mpl::aux::msvc_is_class</a></div><div class="ttdef"><b>Definition:</b> <a href="msvc__is__class_8hpp_source.html#l00047">msvc_is_class.hpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1type__wrapper_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="type__wrapper_8hpp_source.html#l00022">type_wrapper.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1if___html"><div class="ttname"><a href="structboost_1_1mpl_1_1if__.html">boost::mpl::if_</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2if_8hpp_source.html#l00055">mpl/if.hpp:56</a></div></div>
+<div class="ttc" id="astructboost_1_1type_html"><div class="ttname"><a href="structboost_1_1type.html">boost::type</a></div><div class="ttdef"><b>Definition:</b> <a href="type_8hpp_source.html#l00014">type.hpp:14</a></div></div>
+<div class="ttc" id="atype__wrapper_8hpp_html"><div class="ttname"><a href="type__wrapper_8hpp.html">type_wrapper.hpp</a></div></div>
+<div class="ttc" id="ayes__no_8hpp_html"><div class="ttname"><a href="yes__no_8hpp.html">yes_no.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="dir_1f1b666f95cbf3a5023467b539a5c08a.html">aux_</a></li><li class="navelem"><a class="el" href="msvc__is__class_8hpp.html">msvc_is_class.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

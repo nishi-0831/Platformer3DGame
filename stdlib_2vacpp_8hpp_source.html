@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: vacpp.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('stdlib_2vacpp_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">stdlib/vacpp.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="stdlib_2vacpp_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright John Maddock 2001 - 2002. </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Use, modification and distribution are subject to the </span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  Boost Software License, Version 1.0. (See accompanying file </span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  See http://www.boost.org for most recent version.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if __IBMCPP__ &lt;= 501</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#ae4e4629a2d4b5ed01aba3f0c497b8e1d">    9</a></span><span class="preprocessor">#  define BOOST_NO_STD_ALLOCATOR</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#aa7c2f337068e7448af8ff650b1196b1b">   12</a></span><span class="preprocessor">#define BOOST_HAS_MACRO_USE_FACET</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a41d894689ba110f0812dafd4424077d7">   13</a></span><span class="preprocessor">#define BOOST_NO_STD_MESSAGES</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// Apple doesn&#39;t seem to reliably defined a *unix* macro</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if !defined(CYGWIN) &amp;&amp; (  defined(__unix__)  \</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">                        || defined(__unix)    \</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">                        || defined(unix)      \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">                        || defined(__APPLE__) \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">                        || defined(__APPLE)   \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">                        || defined(APPLE))</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#  include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//  C++0x headers not yet implemented</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a6df32e65711226f3bbfb621701f95c8a">   27</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ARRAY</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#addbf6511b553639be9dd7f4155cd8bd9">   28</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CHRONO</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a4cca95b34874442588cc9fa346fa3954">   29</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CODECVT</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a0ab2fdbd3363a3d2b486005d833265ff">   30</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a20dbff9633831d4cdc7cb202920566a9">   31</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FORWARD_LIST</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#aa78c24bb25fccb7f7fd5cf7314f5b96e">   32</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FUTURE</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a551937f7d1112aa20a6076187c7325aa">   33</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_INITIALIZER_LIST</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a74be47bdec9bf8a2559a9f9a9f0d2598">   34</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_MUTEX</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a19104c24f82ea4bb484dcfa8afea2685">   35</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_RANDOM</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a7682af1f1951af20581fcd7b88eb82c1">   36</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_RATIO</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a496e38ed7a6fb064cdf697c65e8f70df">   37</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_REGEX</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a9a2b999c49760060681164f101d2d0b2">   38</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_SYSTEM_ERROR</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a1e36a594d88e2f05c56afe1a098bb635">   39</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_THREAD</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#ae0f012ee15e2f843c527a0544be3c474">   40</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TUPLE</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a617844b2f5d18b6957a9ac487e9bf336">   41</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TYPE_TRAITS</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a3dc0bc999363f9eeede49426be6bb2fb">   42</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TYPEINDEX</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a86719f340370402d163f1ef0132d3128">   43</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_UNORDERED_MAP</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#af84cf65761bb2e6aa9bdc9e27cc0b72b">   44</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_UNORDERED_SET</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a2852469b7736150a6116c5bb10ad2816">   45</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_NUMERIC_LIMITS</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#abc3adc8818104d1355ba12325f4a5159">   46</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ALLOCATOR</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a38f11d337d2f6a3a9429a8a28ccf3f71">   47</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_POINTER_TRAITS</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a0fd68fb82fe3c5500ad7b2eb52ec985c">   48</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ATOMIC_SMART_PTR</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#ae23b24e85d04f74fdebd21fe0cc0ebcf">   49</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_SMART_PTR</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a3ce6d53fa915aa7614ba46c54c061bd9">   50</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FUNCTIONAL</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a735bc151ab7b301616d69ca05de02799">   51</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ATOMIC</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a80190d9d0e47e0859b8a04dd3c8737d5">   52</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_STD_ALIGN</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a5c632ef7896d821ec60f6fa2457cb1a9">   53</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ADDRESSOF</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#aeed4962e3510066f2cd4b9b220d6df44">   54</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_EXCEPTION</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#if defined(__has_include)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#if !__has_include(&lt;shared_mutex&gt;)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#elif __cplusplus &lt; 201402</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#adf66dfdd984ac23b83c75a2395e01e51">   63</a></span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">// C++14 features</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a3bf81e06cf0cf9ff47b8c65949bd066c">   67</a></span><span class="preprocessor">#  define BOOST_NO_CXX14_STD_EXCHANGE</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// C++17 features</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a49cbf1e474d59b0dc5d9890ba74fdb70">   70</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_STD_APPLY</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a831db83a5320d84e6629c7c7a638dee7">   71</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_STD_INVOKE</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#ace50ab1b91cea23c78b0577b48397840">   72</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_ITERATOR_TRAITS</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="stdlib_2vacpp_8hpp.html#a119bfbef30b482000f193169d6ae9fee">   74</a></span><span class="preprocessor">#define BOOST_STDLIB &quot;Visual Age default standard library&quot;</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_9f819e5a95b48ef443de9cf51f4bbd0a.html">config</a></li><li class="navelem"><a class="el" href="dir_2730c73ef58ee2acbca0a2511b13b966.html">stdlib</a></li><li class="navelem"><a class="el" href="stdlib_2vacpp_8hpp.html">vacpp.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

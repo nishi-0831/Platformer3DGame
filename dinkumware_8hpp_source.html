@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: dinkumware.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dinkumware_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">dinkumware.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="dinkumware_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright John Maddock 2001 - 2003.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  (C) Copyright Jens Maurer 2001.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  (C) Copyright Peter Dimov 2001.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  (C) Copyright David Abrahams 2002.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  (C) Copyright Guillaume Melquiond 2003.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  Use, modification and distribution are subject to the</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  Boost Software License, Version 1.0. (See accompanying file</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//  LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  See http://www.boost.org for most recent version.</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//  Dinkumware standard library config:</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if !defined(_YVALS) &amp;&amp; !defined(_CPPLIB_VER)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="config_2no__tr1_2utility_8hpp.html">boost/config/no_tr1/utility.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#if !defined(_YVALS) &amp;&amp; !defined(_CPPLIB_VER)</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#error This is not the Dinkumware lib!</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#if defined(_CPPLIB_VER) &amp;&amp; (_CPPLIB_VER &gt;= 306)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>   <span class="comment">// full dinkumware 3.06 and above</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>   <span class="comment">// fully conforming provided the compiler supports it:</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#  if !(defined(_GLOBAL_USING) &amp;&amp; (_GLOBAL_USING+0 &gt; 0)) &amp;&amp; !defined(BOOST_BORLANDC) &amp;&amp; !defined(_STD) &amp;&amp; !(defined(__ICC) &amp;&amp; (__ICC &gt;= 700))   </span><span class="comment">// can be defined in yvals.h</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#     define BOOST_NO_STDC_NAMESPACE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#  if !(defined(_HAS_MEMBER_TEMPLATES_REBIND) &amp;&amp; (_HAS_MEMBER_TEMPLATES_REBIND+0 &gt; 0)) &amp;&amp; !(defined(_MSC_VER) &amp;&amp; (_MSC_VER &gt; 1300)) &amp;&amp; defined(BOOST_MSVC)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#     define BOOST_NO_STD_ALLOCATOR</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#  define BOOST_HAS_PARTIAL_STD_ALLOCATOR</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#  if defined(BOOST_MSVC) &amp;&amp; (BOOST_MSVC &lt; 1300)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      <span class="comment">// if this lib version is set up for vc6 then there is no std::use_facet:</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#     define BOOST_NO_STD_USE_FACET</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#     define BOOST_HAS_TWO_ARG_USE_FACET</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      <span class="comment">// C lib functions aren&#39;t in namespace std either:</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#     define BOOST_NO_STDC_NAMESPACE</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="comment">// and nor is &lt;exception&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#     define BOOST_NO_EXCEPTION_STD_NAMESPACE</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// There&#39;s no numeric_limits&lt;long long&gt; support unless _LONGLONG is defined:</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#  if !defined(_LONGLONG) &amp;&amp; (_CPPLIB_VER &lt;= 310)</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="preprocessor">#     define BOOST_NO_MS_INT64_NUMERIC_LIMITS</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// 3.06 appears to have (non-sgi versions of) &lt;hash_set&gt; &amp; &lt;hash_map&gt;,</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// and no &lt;slist&gt; at all</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ac919589dbb90e2a98958e89033d4b1ae">   48</a></span><span class="preprocessor">#  define BOOST_MSVC_STD_ITERATOR 1</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#abc79a0adf4057be6a7b5e35da4186256">   49</a></span><span class="preprocessor">#  define BOOST_NO_STD_ITERATOR</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#abd05e0eebd57d4d79a48c08aa1f42dd1">   50</a></span><span class="preprocessor">#  define BOOST_NO_TEMPLATED_ITERATOR_CONSTRUCTORS</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ae4e4629a2d4b5ed01aba3f0c497b8e1d">   51</a></span><span class="preprocessor">#  define BOOST_NO_STD_ALLOCATOR</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#aebbd6e6bccced913c7f1d69263c29802">   52</a></span><span class="preprocessor">#  define BOOST_NO_STDC_NAMESPACE</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a9d31bfd3cc6e57f30c10993b67f2918d">   53</a></span><span class="preprocessor">#  define BOOST_NO_STD_USE_FACET</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a9a3a5ee2aff62c21d71ebcec5f38e319">   54</a></span><span class="preprocessor">#  define BOOST_NO_STD_OUTPUT_ITERATOR_ASSIGN</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#aa7c2f337068e7448af8ff650b1196b1b">   55</a></span><span class="preprocessor">#  define BOOST_HAS_MACRO_USE_FACET</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#  ifndef _CPPLIB_VER</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <span class="comment">// Updated Dinkum library defines this, and provides</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      <span class="comment">// its own min and max definitions, as does MTA version.</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#     ifndef __MTA__ </span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a07dcc82a1f78a0b5edc0d04113b84ddf">   60</a></span><span class="preprocessor">#        define BOOST_NO_STD_MIN_MAX</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#     endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ab4ec15368ad4a8520765a47c74c6aa84">   62</a></span><span class="preprocessor">#     define BOOST_NO_MS_INT64_NUMERIC_LIMITS</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// std extension namespace is stdext for vc7.1 and later, </span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">// the same applies to other compilers that sit on top</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment">// of vc7.1 (Intel and Comeau):</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="comment">//</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#if defined(_MSC_VER) &amp;&amp; (_MSC_VER &gt;= 1310) &amp;&amp; !defined(BOOST_BORLANDC)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#  define BOOST_STD_EXTENSION_NAMESPACE stdext</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#if (defined(_MSC_VER) &amp;&amp; (_MSC_VER &lt;= 1300) &amp;&amp; !defined(BOOST_BORLANDC)) || !defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 306)</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>   <span class="comment">// if we&#39;re using a dinkum lib that&#39;s</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>   <span class="comment">// been configured for VC6/7 then there is</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>   <span class="comment">// no iterator traits (true even for icl)</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a8d8e1c6496a27aa2c0f70c23c132fa58">   80</a></span><span class="preprocessor">#  define BOOST_NO_STD_ITERATOR_TRAITS</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#if defined(__ICL) &amp;&amp; (__ICL &lt; 800) &amp;&amp; defined(_CPPLIB_VER) &amp;&amp; (_CPPLIB_VER &lt;= 310)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">// Intel C++ chokes over any non-trivial use of &lt;locale&gt;</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="comment">// this may be an overly restrictive define, but regex fails without it:</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#  define BOOST_NO_STD_LOCALE</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#if ((defined(BOOST_MSVC) &amp;&amp; BOOST_MSVC &gt;= 1400) || (defined(__clang__) &amp;&amp; defined(_MSC_VER))) &amp;&amp; (_MSC_VER &lt; 1800)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">// Fix for VC++ 8.0 on up ( I do not have a previous version to test )</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">// or clang-cl. If exceptions are off you must manually include the </span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">// &lt;exception&gt; header before including the &lt;typeinfo&gt; header. Admittedly </span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// trying to use Boost libraries or the standard C++ libraries without </span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">// exception support is not suggested but currently clang-cl ( v 3.4 ) </span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">// does not support exceptions and must be compiled with exceptions off.</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#if !_HAS_EXCEPTIONS</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#include &lt;exception&gt;</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#include &lt;typeinfo&gt;</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">#if !_HAS_EXCEPTIONS</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">#  define BOOST_NO_STD_TYPEINFO</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif  </span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#if defined(__ghs__) &amp;&amp; !_HAS_NAMESPACE</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#  define BOOST_NO_STD_TYPEINFO</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">//  C++0x headers implemented in 520 (as shipped by Microsoft)</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">//</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 520</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a6df32e65711226f3bbfb621701f95c8a">  111</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ARRAY</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a4cca95b34874442588cc9fa346fa3954">  112</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CODECVT</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a20dbff9633831d4cdc7cb202920566a9">  113</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FORWARD_LIST</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_INITIALIZER_LIST</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a19104c24f82ea4bb484dcfa8afea2685">  115</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_RANDOM</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a496e38ed7a6fb064cdf697c65e8f70df">  116</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_REGEX</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a9a2b999c49760060681164f101d2d0b2">  117</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_SYSTEM_ERROR</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a86719f340370402d163f1ef0132d3128">  118</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_UNORDERED_MAP</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#af84cf65761bb2e6aa9bdc9e27cc0b72b">  119</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_UNORDERED_SET</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ae0f012ee15e2f843c527a0544be3c474">  120</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TUPLE</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a3dc0bc999363f9eeede49426be6bb2fb">  121</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TYPEINDEX</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a3ce6d53fa915aa7614ba46c54c061bd9">  122</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FUNCTIONAL</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a2852469b7736150a6116c5bb10ad2816">  123</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_NUMERIC_LIMITS</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ae23b24e85d04f74fdebd21fe0cc0ebcf">  124</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_SMART_PTR</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if ((!defined(_HAS_TR1_IMPORTS) || (_HAS_TR1_IMPORTS+0 == 0)) &amp;&amp; !defined(BOOST_NO_CXX11_HDR_TUPLE)) \</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">  &amp;&amp; (!defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 610)</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TUPLE</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">//  C++0x headers implemented in 540 (as shipped by Microsoft)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="comment">//</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 540</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a617844b2f5d18b6957a9ac487e9bf336">  135</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_TYPE_TRAITS</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#addbf6511b553639be9dd7f4155cd8bd9">  136</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CHRONO</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a0ab2fdbd3363a3d2b486005d833265ff">  137</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#aa78c24bb25fccb7f7fd5cf7314f5b96e">  138</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FUTURE</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a74be47bdec9bf8a2559a9f9a9f0d2598">  139</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_MUTEX</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a7682af1f1951af20581fcd7b88eb82c1">  140</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_RATIO</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a1e36a594d88e2f05c56afe1a098bb635">  141</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_THREAD</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a0fd68fb82fe3c5500ad7b2eb52ec985c">  142</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ATOMIC_SMART_PTR</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#aeed4962e3510066f2cd4b9b220d6df44">  143</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_EXCEPTION</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="comment">//  C++0x headers implemented in 610 (as shipped by Microsoft)</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">//</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 610</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a551937f7d1112aa20a6076187c7325aa">  149</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_INITIALIZER_LIST</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a735bc151ab7b301616d69ca05de02799">  150</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ATOMIC</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#abc3adc8818104d1355ba12325f4a5159">  151</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ALLOCATOR</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="comment">// 540 has std::align but it is not a conforming implementation</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a80190d9d0e47e0859b8a04dd3c8737d5">  153</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_STD_ALIGN</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="comment">// Before 650 std::pointer_traits has a broken rebind template</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 650</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a38f11d337d2f6a3a9429a8a28ccf3f71">  158</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_POINTER_TRAITS</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#elif defined(BOOST_MSVC) &amp;&amp; BOOST_MSVC &lt; 1910</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#  define BOOST_NO_CXX11_POINTER_TRAITS</span></div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="preprocessor">#if defined(__has_include)</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="preprocessor">#if !__has_include(&lt;shared_mutex&gt;)</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span><span class="preprocessor">#elif (__cplusplus &lt; 201402) &amp;&amp; !defined(_MSC_VER)</span></div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="preprocessor">#elif !defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 650)</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#adf66dfdd984ac23b83c75a2395e01e51">  170</a></span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">// C++14 features</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 650)</span></div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a3bf81e06cf0cf9ff47b8c65949bd066c">  175</a></span><span class="preprocessor">#  define BOOST_NO_CXX14_STD_EXCHANGE</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span><span class="comment">// C++17 features</span></div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 650) \</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span><span class="preprocessor"> || ((!defined(BOOST_MSVC) || (BOOST_MSVC &lt; 1910))) &amp;&amp; (!defined(__clang__) || !defined(_MSC_VER) || (_MSC_VER &lt; 1929))\</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span><span class="preprocessor"> || !defined(_HAS_CXX17) || (_HAS_CXX17 == 0)</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a49cbf1e474d59b0dc5d9890ba74fdb70">  182</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_STD_APPLY</span></div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ace50ab1b91cea23c78b0577b48397840">  183</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_ITERATOR_TRAITS</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a730de6f700794fcfd2a09c050e005c4e">  184</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_STRING_VIEW</span></div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a197af5d3db5fef4c2ac2f572823e70d5">  185</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_OPTIONAL</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#ac20dd8603ea01cbdaa9cc103807afb33">  186</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_VARIANT</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a2a555c4782ed018f478db90630717455">  187</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_ANY</span></div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a941ca51fc8e78d40368532d7861caf18">  188</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_MEMORY_RESOURCE</span></div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#afcd0f71c17c28cb72bd02c4d452cb871">  189</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_CHARCONV</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a3354d60c208f09924f0527da0b25ef27">  190</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_EXECUTION</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#afc3bc45d3a73bce1f2b898d18d785841">  191</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_HDR_FILESYSTEM</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 650) || !defined(_HAS_CXX17) || (_HAS_CXX17 == 0) || !defined(_MSVC_STL_UPDATE) || (_MSVC_STL_UPDATE &lt; 201709)</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a831db83a5320d84e6629c7c7a638dee7">  194</a></span><span class="preprocessor">#  define BOOST_NO_CXX17_STD_INVOKE</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span><span class="comment">// C++20 features which aren&#39;t configured in suffix.hpp correctly:</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="preprocessor">#if !defined(_MSVC_STL_UPDATE) || (_MSVC_STL_UPDATE &lt; 202008L) || !defined(_HAS_CXX20) || (_HAS_CXX20 == 0)</span></div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a2211c948a589f32bac6b7ac402564080">  199</a></span><span class="preprocessor">#  define BOOST_NO_CXX20_HDR_CONCEPTS</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span><span class="preprocessor">#if !(!defined(_CPPLIB_VER) || (_CPPLIB_VER &lt; 650) || !defined(BOOST_MSVC) || (BOOST_MSVC &lt; 1912) || !defined(_HAS_CXX17) || (_HAS_CXX17 == 0))</span></div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="comment">// Deprecated std::iterator:</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="preprocessor">#  define BOOST_NO_STD_ITERATOR</span></div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span><span class="preprocessor">#if defined(BOOST_INTEL) &amp;&amp; (BOOST_INTEL &lt;= 1400)</span></div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span><span class="comment">// Intel&#39;s compiler can&#39;t handle this header yet:</span></div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ATOMIC</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="comment">//  520..610 have std::addressof, but it doesn&#39;t support functions</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span><span class="comment">//</span></div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span><span class="preprocessor">#if !defined(_CPPLIB_VER) || _CPPLIB_VER &lt; 650</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a5c632ef7896d821ec60f6fa2457cb1a9">  216</a></span><span class="preprocessor">#  define BOOST_NO_CXX11_ADDRESSOF</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="comment">// Bug specific to VC14, </span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="comment">// See https://connect.microsoft.com/VisualStudio/feedback/details/1348277/link-error-when-using-std-codecvt-utf8-utf16-char16-t</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="comment">// and discussion here: http://blogs.msdn.com/b/vcblog/archive/2014/11/12/visual-studio-2015-preview-now-available.aspx?PageIndex=2</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">#if defined(_CPPLIB_VER) &amp;&amp; (_CPPLIB_VER == 650) &amp;&amp; (!defined(_MSVC_STL_VERSION) || (_MSVC_STL_VERSION &lt; 142))</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CODECVT</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span><span class="preprocessor">#if (_MSVC_LANG &gt; 201700) &amp;&amp; !defined(BOOST_NO_CXX11_HDR_CODECVT)</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span><span class="comment">//</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="comment">// &lt;codecvt&gt; is deprected as of C++17, and by default MSVC emits hard errors</span></div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span><span class="comment">// if you try to use it, so mark it as unavailable:</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="comment">//</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CODECVT</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#if defined(_CPPLIB_VER) &amp;&amp; (_CPPLIB_VER &gt;= 650)</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="comment">// If _HAS_AUTO_PTR_ETC is defined to 0, std::auto_ptr and std::random_shuffle are not available.</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">// See https://www.visualstudio.com/en-us/news/vs2015-vs.aspx#C++</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="comment">// and http://blogs.msdn.com/b/vcblog/archive/2015/06/19/c-11-14-17-features-in-vs-2015-rtm.aspx</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#  if defined(_HAS_AUTO_PTR_ETC) &amp;&amp; (_HAS_AUTO_PTR_ETC == 0)</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#    define BOOST_NO_AUTO_PTR</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#    define BOOST_NO_CXX98_RANDOM_SHUFFLE</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span><span class="preprocessor">#    define BOOST_NO_CXX98_FUNCTION_BASE</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="preprocessor">#    define BOOST_NO_CXX98_BINDERS</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span><span class="preprocessor">#  elif defined(_HAS_DEPRECATED_ADAPTOR_TYPEDEFS) &amp;&amp; (_HAS_DEPRECATED_ADAPTOR_TYPEDEFS == 0)</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span><span class="preprocessor">#    define BOOST_NO_CXX98_BINDERS</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="comment">//</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="comment">// Things deprecated in C++20:</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="comment">//</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span><span class="preprocessor">#if defined(_HAS_CXX20)</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span><span class="preprocessor">#  define BOOST_NO_CXX11_ATOMIC_SMART_PTR</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="comment">//</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="comment">// Things not supported by the CLR:</span></div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="preprocessor">#ifdef _M_CEE</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_HDR_MUTEX</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_MUTEX</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_HDR_ATOMIC</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_ATOMIC</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_HDR_FUTURE</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_FUTURE</span></div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</span></div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_HDR_THREAD</span></div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span><span class="preprocessor">#  define BOOST_NO_CXX11_HDR_THREAD</span></div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="preprocessor">#ifndef BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="preprocessor">#  define BOOST_NO_CXX14_HDR_SHARED_MUTEX</span></div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span><span class="preprocessor">#ifndef BOOST_NO_CXX14_STD_EXCHANGE</span></div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span><span class="preprocessor">#  define BOOST_NO_CXX14_STD_EXCHANGE</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#ifndef BOOST_NO_FENV_H</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">#  define BOOST_NO_FENV_H</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span><span class="preprocessor">#ifdef _CPPLIB_VER</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span><span class="preprocessor">#  define BOOST_DINKUMWARE_STDLIB _CPPLIB_VER</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a5b5a5ed150f8016d84fc1f73d68f73e5">  287</a></span><span class="preprocessor">#  define BOOST_DINKUMWARE_STDLIB 1</span></div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span><span class="comment">// BOOST_MSSTL_VERSION: as _MSVC_STL_VERSION, but for earlier releases as well</span></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span><span class="preprocessor">#if defined(_MSVC_STL_VERSION) </span><span class="comment">// VS2017 (14.1) and above</span></div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION _MSVC_STL_VERSION</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 650 </span><span class="comment">// VS2015 (14.0)</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 140</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 610 </span><span class="comment">// VS2013 (12.0)</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 120</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 540 </span><span class="comment">// VS2012 (11.0)</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 110</span></div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 520 </span><span class="comment">// VS2010 (10.0)</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 100</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 505 </span><span class="comment">// VS2008SP1 (9.0)</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 91</span></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 503 </span><span class="comment">// VS2008 (also 9.0)</span></div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 90</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span><span class="preprocessor">#elif defined(_CPPLIB_VER) &amp;&amp; _CPPLIB_VER &gt;= 405 </span><span class="comment">// VS2005 (8.0)</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span><span class="preprocessor">#  define BOOST_MSSTL_VERSION 80</span></div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="comment">//</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#ifdef _CPPLIB_VER</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">#  define BOOST_STDLIB &quot;Dinkumware standard library version &quot;</span> BOOST_STRINGIZE(_CPPLIB_VER)</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno"><a class="line" href="dinkumware_8hpp.html#a119bfbef30b482000f193169d6ae9fee">  323</a></span><span class="preprocessor">#  define BOOST_STDLIB &quot;Dinkumware standard library version 1.x&quot;</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_2no__tr1_2utility_8hpp_html"><div class="ttname"><a href="config_2no__tr1_2utility_8hpp.html">utility.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_9f819e5a95b48ef443de9cf51f4bbd0a.html">config</a></li><li class="navelem"><a class="el" href="dir_2730c73ef58ee2acbca0a2511b13b966.html">stdlib</a></li><li class="navelem"><a class="el" href="dinkumware_8hpp.html">dinkumware.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

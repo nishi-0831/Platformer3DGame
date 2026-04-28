@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1if__default_3_01use__default_00_01Default_00_01Nondefault_01_4 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1if__default_3_01use__default_00_01Default_00_01Nondefault_01_4.html#a8cc33e9a2f29d2617b1c78a3563427ad", null ]
+];

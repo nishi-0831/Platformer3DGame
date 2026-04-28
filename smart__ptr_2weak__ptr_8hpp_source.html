@@ -1,0 +1,434 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: weak_ptr.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('smart__ptr_2weak__ptr_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">smart_ptr/weak_ptr.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="smart__ptr_2weak__ptr_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOOST_SMART_PTR_WEAK_PTR_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOST_SMART_PTR_WEAK_PTR_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//  weak_ptr.hpp</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//  Copyright (c) 2001, 2002, 2003 Peter Dimov</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//  Distributed under the Boost Software License, Version 1.0. (See</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//  See http://www.boost.org/libs/smart_ptr/ for documentation.</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="shared__count_8hpp.html">boost/smart_ptr/detail/shared_count.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="smart__ptr_2shared__ptr_8hpp.html">boost/smart_ptr/shared_ptr.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html">   24</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">class </span><a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// Borland 5.5.1 specific workarounds</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">   29</a></span>    <span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;T&gt;</a> <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">this_type</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">   33</a></span>    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1detail_1_1sp__element.html#ad8cf172b4623f987f5365688bfd9018e">boost::detail::sp_element&lt; T &gt;::type</a> <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">element_type</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a35520e434b203c89a0676a5b9dad8565">   35</a></span>    <span class="keyword">constexpr</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#a35520e434b203c89a0676a5b9dad8565">weak_ptr</a>() noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>(0), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>()</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//  generated copy constructor, assignment, destructor are fine...</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">// ... except in C++0x, move disables the implicit copy</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#aa29594b0612bb8ee6047a8f960184db7">   42</a></span>    <a class="code hl_function" href="classboost_1_1weak__ptr.html#aa29594b0612bb8ee6047a8f960184db7">weak_ptr</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> <span class="keyword">const</span> &amp; r ) noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( r.px ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( r.pn )</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a797a2b79065222e3a616a0d64813a1cd">   46</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp; <a class="code hl_function" href="classboost_1_1weak__ptr.html#a797a2b79065222e3a616a0d64813a1cd">operator=</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> <span class="keyword">const</span> &amp; r ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> = r.px;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> = r.pn;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">//</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">//  The &quot;obvious&quot; converting constructor implementation:</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//  template&lt;class Y&gt;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment">//  weak_ptr(weak_ptr&lt;Y&gt; const &amp; r): px(r.px), pn(r.pn)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="comment">//  {</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">//  }</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">//  has a serious problem.</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">//  r.px may already have been invalidated. The px(r.px)</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//  conversion may require access to *r.px (virtual inheritance).</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment">//</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment">//  It is not possible to avoid spurious access violations since</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">//  in multithreaded programs r.px may be invalidated at any point.</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ae88d3725ec474a8147bea4e1b934e379">   71</a></span>    <a class="code hl_function" href="classboost_1_1weak__ptr.html#ae88d3725ec474a8147bea4e1b934e379">weak_ptr</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r, <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible&lt;Y,T&gt;::type</a> = <a class="code hl_struct" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>() )</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>(r.<a class="code hl_function" href="classboost_1_1weak__ptr.html#ac94512a398c3a141901c38ce9c1d3ade">lock</a>().get()), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>(r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>)</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a5219770f26111752314a591e6ec57b03">   78</a></span>    <a class="code hl_function" href="classboost_1_1weak__ptr.html#a5219770f26111752314a591e6ec57b03">weak_ptr</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> &amp;&amp; r, <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible&lt;Y,T&gt;::type</a> = <a class="code hl_struct" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>() )</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( r.<a class="code hl_function" href="classboost_1_1weak__ptr.html#ac94512a398c3a141901c38ce9c1d3ade">lock</a>().get() ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( static_cast&lt; <a class="code hl_namespace" href="namespaceboost.html">boost</a>::<a class="code hl_namespace" href="namespacedetail.html">detail</a>::weak_count &amp;&amp; &gt;( r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> ) )</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> = 0;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// for better efficiency in the T == Y case</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ac2230779c3ede1eb9dd7de7eb80c162e">   86</a></span>    <a class="code hl_function" href="classboost_1_1weak__ptr.html#ac2230779c3ede1eb9dd7de7eb80c162e">weak_ptr</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp;&amp; r )</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( <span class="keyword">static_cast&lt;</span> <a class="code hl_class" href="classboost_1_1detail_1_1weak__count.html">boost::detail::weak_count</a> &amp;&amp; <span class="keyword">&gt;</span>( r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> ) )</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> = 0;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// for better efficiency in the T == Y case</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a8e081f2e06704d8cc178f616258cbc04">   93</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp; <a class="code hl_function" href="classboost_1_1weak__ptr.html#a8e081f2e06704d8cc178f616258cbc04">operator=</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp;&amp; r ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">this_type</a>( <span class="keyword">static_cast&lt;</span> <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp;&amp; <span class="keyword">&gt;</span>( r ) ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a30d9a5b92cfd922d159a9f9d1376b575">  101</a></span>    <a class="code hl_function" href="classboost_1_1weak__ptr.html#a30d9a5b92cfd922d159a9f9d1376b575">weak_ptr</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r, <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible&lt;Y,T&gt;::type</a> = <a class="code hl_struct" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>() )</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    noexcept : <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( r.<a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> )</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="comment">// aliasing</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a8662518fba76f20e2d245e0a00da6e35">  108</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <a class="code hl_function" href="classboost_1_1weak__ptr.html#a8662518fba76f20e2d245e0a00da6e35">weak_ptr</a>(<a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r, <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">element_type</a> * p) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( p ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">pn</a> )</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a25b3936149aec12de3850da531e8c6c5">  112</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <a class="code hl_function" href="classboost_1_1weak__ptr.html#a25b3936149aec12de3850da531e8c6c5">weak_ptr</a>(<a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r, <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">element_type</a> * p) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( p ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">pn</a> )</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#aa063f236cac9ea1723bfeef6e8950221">  116</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <a class="code hl_function" href="classboost_1_1weak__ptr.html#aa063f236cac9ea1723bfeef6e8950221">weak_ptr</a>(<a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> &amp;&amp; r, <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">element_type</a> * p) <span class="keyword">noexcept</span>: <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>( p ), <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>( std::move( r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">pn</a> ) )</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a881d03cf81c4280983bb2125dd7efee2">  121</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp; <a class="code hl_function" href="classboost_1_1weak__ptr.html#a881d03cf81c4280983bb2125dd7efee2">operator=</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> = r.lock().<a class="code hl_function" href="classboost_1_1shared__ptr.html#ab024dc6a012a6102b39f65738753346b">get</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> = r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">pn</a>;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    }</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#aaa5fc46eacc5b259ed15e28b2faa46a5">  132</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp; <a class="code hl_function" href="classboost_1_1weak__ptr.html#aaa5fc46eacc5b259ed15e28b2faa46a5">operator=</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> &amp;&amp; r ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">this_type</a>( <span class="keyword">static_cast&lt;</span> <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> &amp;&amp; <span class="keyword">&gt;</span>( r ) ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ab5dca9e287bf1904160e959069f1079f">  139</a></span>    <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a> &amp; <a class="code hl_function" href="classboost_1_1weak__ptr.html#ab5dca9e287bf1904160e959069f1079f">operator=</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; r ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a> = r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#aea05d06d37c02b37292b2a9d2f889832">px</a>;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> = r.<a class="code hl_variable" href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">pn</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ac94512a398c3a141901c38ce9c1d3ade">  149</a></span>    <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;T&gt;</a> <a class="code hl_function" href="classboost_1_1weak__ptr.html#ac94512a398c3a141901c38ce9c1d3ade">lock</a>() const noexcept</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keywordflow">return</span> <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;T&gt;</a>( *<span class="keyword">this</span>, <a class="code hl_struct" href="structboost_1_1detail_1_1sp__nothrow__tag.html">boost::detail::sp_nothrow_tag</a>() );</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#aaaab762d85cec4552b799e0c1c2f505b">  154</a></span>    <span class="keywordtype">long</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#aaaab762d85cec4552b799e0c1c2f505b">use_count</a>() const noexcept</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#ae742bb2170259403ce7f0d5d275826a0">use_count</a>();</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">  159</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">expired</a>() const noexcept</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#ae742bb2170259403ce7f0d5d275826a0">use_count</a>() == 0;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#afdb607454ea148316e7d321b29dd3007">  164</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#afdb607454ea148316e7d321b29dd3007">_empty</a>() const noexcept <span class="comment">// extension, not in std::weak_ptr</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#a88a74031f9536c37a63d9b584e46f044">empty</a>();</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a11a0c46f07c7f6e089e7b2372c065a19">  169</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#a11a0c46f07c7f6e089e7b2372c065a19">empty</a>() const noexcept <span class="comment">// extension, not in std::weak_ptr</span></div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#a88a74031f9536c37a63d9b584e46f044">empty</a>();</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ad108136627b10c95caac60028b3fe6b4">  174</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#ad108136627b10c95caac60028b3fe6b4">reset</a>() noexcept</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">this_type</a>().swap(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    }</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ac24a962c785cedf076de2510295f6208">  179</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#ac24a962c785cedf076de2510295f6208">swap</a>(<a class="code hl_class" href="classboost_1_1weak__ptr.html">this_type</a> &amp; other) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(<a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>, other.px);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#aa6ffd4f90f38c3b2482ea78c25b3ead3">swap</a>(other.pn);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a335e967032f108a847ad6a444805255d">  185</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#a335e967032f108a847ad6a444805255d">owner_before</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; rhs ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> &lt; rhs.pn;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a04803a8d0b394401598fdf85d506b59b">  190</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#a04803a8d0b394401598fdf85d506b59b">owner_before</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; rhs ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    {</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> &lt; rhs.pn;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    }</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span> </div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ad188cf532e14744e7871995b746fd708">  195</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#ad188cf532e14744e7871995b746fd708">owner_equals</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; rhs ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    {</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> == rhs.pn;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ac053c59de4137a6bddf67d09abf24297">  200</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1weak__ptr.html#ac053c59de4137a6bddf67d09abf24297">owner_equals</a>( <a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr&lt;Y&gt;</a> <span class="keyword">const</span> &amp; rhs ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a> == rhs.pn;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    }</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#adc41fdee28d621560069e7c487f59581">  205</a></span>    std::size_t <a class="code hl_function" href="classboost_1_1weak__ptr.html#adc41fdee28d621560069e7c487f59581">owner_hash_value</a>() const noexcept</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    {</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>.<a class="code hl_function" href="classboost_1_1detail_1_1weak__count.html#a287d350ff0ff49d16db6a0349dbed5f2">hash_value</a>();</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a27df6e2a1650d985bdeda33f0303c83f">  212</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr</a>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#ab2104fa6e839672da3c30400e8325e52">  213</a></span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Y&gt; <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classboost_1_1shared__ptr.html">shared_ptr</a>;</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span> </div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">  215</a></span>    <a class="code hl_typedef" href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">element_type</a> * <a class="code hl_variable" href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">px</a>;            <span class="comment">// contained pointer</span></div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">  216</a></span>    <a class="code hl_class" href="classboost_1_1detail_1_1weak__count.html">boost::detail::weak_count</a> <a class="code hl_variable" href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">pn</a>; <span class="comment">// reference counter</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>};  <span class="comment">// weak_ptr</span></div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="namespaceboost.html#a6d49133ae5555d44a814e8dcbcd4954b">  220</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> U&gt; <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="Input_8cpp.html#a7fc6739f45e61e4ad26d81635f3a3f33">operator&lt;</a>(<a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;T&gt;</a> <span class="keyword">const</span> &amp; a, <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;U&gt;</a> <span class="keyword">const</span> &amp; b) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>{</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">return</span> a.owner_before( b );</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>}</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno"><a class="line" href="namespaceboost.html#a040c87e326086e852abb59e03b4d2b51">  225</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceboost.html#a5b5d5f7f6261101428f35e20c4de295c">swap</a>(<a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;T&gt;</a> &amp; a, <a class="code hl_class" href="classboost_1_1weak__ptr.html">weak_ptr&lt;T&gt;</a> &amp; b) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>{</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    a.swap(b);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>}</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="preprocessor">#if defined(__cpp_deduction_guides)</span></div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; weak_ptr( shared_ptr&lt;T&gt; ) -&gt; weak_ptr&lt;T&gt;;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">// hash_value</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="namespaceboost.html#aa3fafcb34c156df91758d2386078a70b">  238</a></span><span class="keyword">template</span>&lt; <span class="keyword">class</span> T &gt; std::size_t <a class="code hl_function" href="namespaceboost.html#a27854c81a61539328f366a331381b343">hash_value</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr&lt;T&gt;</a> <span class="keyword">const</span> &amp; p ) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>{</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">return</span> p.owner_hash_value();</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>}</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="comment">// std::hash, std::equal_to</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacestd.html">std</a></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>{</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html">  250</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span>hash&lt; ::<a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr</a>&lt;T&gt; &gt;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>{</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno"><a class="line" href="structstd_1_1hash_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#ad50913091a6e1e736ecba340a762cd6a">  252</a></span>    std::size_t <a class="code hl_function" href="structstd_1_1hash_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#ad50913091a6e1e736ecba340a762cd6a">operator()</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">::boost::weak_ptr&lt;T&gt;</a> <span class="keyword">const</span> &amp; p ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>        <span class="keywordflow">return</span> p.owner_hash_value();</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    }</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>};</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno"><a class="line" href="structstd_1_1equal__to_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html">  258</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span>equal_to&lt; ::<a class="code hl_class" href="classboost_1_1weak__ptr.html">boost::weak_ptr</a>&lt;T&gt; &gt;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>{</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno"><a class="line" href="structstd_1_1equal__to_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#acc16150c26144cd016bbcbf617022e78">  260</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structstd_1_1equal__to_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#acc16150c26144cd016bbcbf617022e78">operator()</a>( <a class="code hl_class" href="classboost_1_1weak__ptr.html">::boost::weak_ptr&lt;T&gt;</a> <span class="keyword">const</span> &amp; a, <a class="code hl_class" href="classboost_1_1weak__ptr.html">::boost::weak_ptr&lt;T&gt;</a> <span class="keyword">const</span> &amp; b ) <span class="keyword">const</span> <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>        <span class="keywordflow">return</span> a.owner_equals( b );</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    }</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>};</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>} <span class="comment">// namespace std</span></div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="preprocessor">#endif  </span><span class="comment">// #ifndef BOOST_SMART_PTR_WEAK_PTR_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInput_8cpp_html_a7fc6739f45e61e4ad26d81635f3a3f33"><div class="ttname"><a href="Input_8cpp.html#a7fc6739f45e61e4ad26d81635f3a3f33">operator&lt;</a></div><div class="ttdeci">bool operator&lt;(const GUID &amp;_lhs, const GUID &amp;_rhs)</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00059">Input.cpp:59</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1weak__count_html"><div class="ttname"><a href="classboost_1_1detail_1_1weak__count.html">boost::detail::weak_count</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00490">shared_count.hpp:491</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1weak__count_html_a287d350ff0ff49d16db6a0349dbed5f2"><div class="ttname"><a href="classboost_1_1detail_1_1weak__count.html#a287d350ff0ff49d16db6a0349dbed5f2">boost::detail::weak_count::hash_value</a></div><div class="ttdeci">std::size_t hash_value() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00610">shared_count.hpp:610</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1weak__count_html_a88a74031f9536c37a63d9b584e46f044"><div class="ttname"><a href="classboost_1_1detail_1_1weak__count.html#a88a74031f9536c37a63d9b584e46f044">boost::detail::weak_count::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00585">shared_count.hpp:585</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1weak__count_html_aa6ffd4f90f38c3b2482ea78c25b3ead3"><div class="ttname"><a href="classboost_1_1detail_1_1weak__count.html#aa6ffd4f90f38c3b2482ea78c25b3ead3">boost::detail::weak_count::swap</a></div><div class="ttdeci">void swap(weak_count &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00573">shared_count.hpp:573</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1weak__count_html_ae742bb2170259403ce7f0d5d275826a0"><div class="ttname"><a href="classboost_1_1detail_1_1weak__count.html#ae742bb2170259403ce7f0d5d275826a0">boost::detail::weak_count::use_count</a></div><div class="ttdeci">long use_count() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00580">shared_count.hpp:580</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html"><div class="ttname"><a href="classboost_1_1shared__ptr.html">boost::shared_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00253">smart_ptr/shared_ptr.hpp:254</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html_a8b1ba90a97ebc4690caf42e4ec4de057"><div class="ttname"><a href="classboost_1_1shared__ptr.html#a8b1ba90a97ebc4690caf42e4ec4de057">boost::shared_ptr::pn</a></div><div class="ttdeci">boost::detail::shared_count pn</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00645">smart_ptr/shared_ptr.hpp:645</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html_ab024dc6a012a6102b39f65738753346b"><div class="ttname"><a href="classboost_1_1shared__ptr.html#ab024dc6a012a6102b39f65738753346b">boost::shared_ptr::get</a></div><div class="ttdeci">element_type * get() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00562">smart_ptr/shared_ptr.hpp:562</a></div></div>
+<div class="ttc" id="aclassboost_1_1shared__ptr_html_aea05d06d37c02b37292b2a9d2f889832"><div class="ttname"><a href="classboost_1_1shared__ptr.html#aea05d06d37c02b37292b2a9d2f889832">boost::shared_ptr::px</a></div><div class="ttdeci">element_type * px</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00644">smart_ptr/shared_ptr.hpp:644</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html"><div class="ttname"><a href="classboost_1_1weak__ptr.html">boost::weak_ptr</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00024">smart_ptr/weak_ptr.hpp:25</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a04803a8d0b394401598fdf85d506b59b"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a04803a8d0b394401598fdf85d506b59b">boost::weak_ptr::owner_before</a></div><div class="ttdeci">bool owner_before(shared_ptr&lt; Y &gt; const &amp;rhs) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00190">smart_ptr/weak_ptr.hpp:190</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a11a0c46f07c7f6e089e7b2372c065a19"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a11a0c46f07c7f6e089e7b2372c065a19">boost::weak_ptr::empty</a></div><div class="ttdeci">bool empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00169">smart_ptr/weak_ptr.hpp:169</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a25b3936149aec12de3850da531e8c6c5"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a25b3936149aec12de3850da531e8c6c5">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr&lt; Y &gt; const &amp;r, element_type *p) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00112">smart_ptr/weak_ptr.hpp:112</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a30d9a5b92cfd922d159a9f9d1376b575"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a30d9a5b92cfd922d159a9f9d1376b575">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(shared_ptr&lt; Y &gt; const &amp;r, typename boost::detail::sp_enable_if_convertible&lt; Y, T &gt;::type=boost::detail::sp_empty()) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00101">smart_ptr/weak_ptr.hpp:101</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a335e967032f108a847ad6a444805255d"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a335e967032f108a847ad6a444805255d">boost::weak_ptr::owner_before</a></div><div class="ttdeci">bool owner_before(weak_ptr&lt; Y &gt; const &amp;rhs) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00185">smart_ptr/weak_ptr.hpp:185</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a35520e434b203c89a0676a5b9dad8565"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a35520e434b203c89a0676a5b9dad8565">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">constexpr weak_ptr() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00035">smart_ptr/weak_ptr.hpp:35</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a5219770f26111752314a591e6ec57b03"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a5219770f26111752314a591e6ec57b03">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr&lt; Y &gt; &amp;&amp;r, typename boost::detail::sp_enable_if_convertible&lt; Y, T &gt;::type=boost::detail::sp_empty()) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00078">smart_ptr/weak_ptr.hpp:78</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a5a807ea3cad24be0cbf3082736beba61"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a5a807ea3cad24be0cbf3082736beba61">boost::weak_ptr::pn</a></div><div class="ttdeci">boost::detail::weak_count pn</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00216">smart_ptr/weak_ptr.hpp:216</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a797a2b79065222e3a616a0d64813a1cd"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a797a2b79065222e3a616a0d64813a1cd">boost::weak_ptr::operator=</a></div><div class="ttdeci">weak_ptr &amp; operator=(weak_ptr const &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00046">smart_ptr/weak_ptr.hpp:46</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a8662518fba76f20e2d245e0a00da6e35"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a8662518fba76f20e2d245e0a00da6e35">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(shared_ptr&lt; Y &gt; const &amp;r, element_type *p) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00108">smart_ptr/weak_ptr.hpp:108</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a881d03cf81c4280983bb2125dd7efee2"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a881d03cf81c4280983bb2125dd7efee2">boost::weak_ptr::operator=</a></div><div class="ttdeci">weak_ptr &amp; operator=(weak_ptr&lt; Y &gt; const &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00121">smart_ptr/weak_ptr.hpp:121</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_a8e081f2e06704d8cc178f616258cbc04"><div class="ttname"><a href="classboost_1_1weak__ptr.html#a8e081f2e06704d8cc178f616258cbc04">boost::weak_ptr::operator=</a></div><div class="ttdeci">weak_ptr &amp; operator=(weak_ptr &amp;&amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00093">smart_ptr/weak_ptr.hpp:93</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_aa063f236cac9ea1723bfeef6e8950221"><div class="ttname"><a href="classboost_1_1weak__ptr.html#aa063f236cac9ea1723bfeef6e8950221">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr&lt; Y &gt; &amp;&amp;r, element_type *p) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00116">smart_ptr/weak_ptr.hpp:116</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_aa29594b0612bb8ee6047a8f960184db7"><div class="ttname"><a href="classboost_1_1weak__ptr.html#aa29594b0612bb8ee6047a8f960184db7">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr const &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00042">smart_ptr/weak_ptr.hpp:42</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_aaa5fc46eacc5b259ed15e28b2faa46a5"><div class="ttname"><a href="classboost_1_1weak__ptr.html#aaa5fc46eacc5b259ed15e28b2faa46a5">boost::weak_ptr::operator=</a></div><div class="ttdeci">weak_ptr &amp; operator=(weak_ptr&lt; Y &gt; &amp;&amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00132">smart_ptr/weak_ptr.hpp:132</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_aaaab762d85cec4552b799e0c1c2f505b"><div class="ttname"><a href="classboost_1_1weak__ptr.html#aaaab762d85cec4552b799e0c1c2f505b">boost::weak_ptr::use_count</a></div><div class="ttdeci">long use_count() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00154">smart_ptr/weak_ptr.hpp:154</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ab5dca9e287bf1904160e959069f1079f"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ab5dca9e287bf1904160e959069f1079f">boost::weak_ptr::operator=</a></div><div class="ttdeci">weak_ptr &amp; operator=(shared_ptr&lt; Y &gt; const &amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00139">smart_ptr/weak_ptr.hpp:139</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ac053c59de4137a6bddf67d09abf24297"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ac053c59de4137a6bddf67d09abf24297">boost::weak_ptr::owner_equals</a></div><div class="ttdeci">bool owner_equals(shared_ptr&lt; Y &gt; const &amp;rhs) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00200">smart_ptr/weak_ptr.hpp:200</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ac2230779c3ede1eb9dd7de7eb80c162e"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ac2230779c3ede1eb9dd7de7eb80c162e">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr &amp;&amp;r) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00086">smart_ptr/weak_ptr.hpp:86</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ac24a962c785cedf076de2510295f6208"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ac24a962c785cedf076de2510295f6208">boost::weak_ptr::swap</a></div><div class="ttdeci">void swap(this_type &amp;other) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00179">smart_ptr/weak_ptr.hpp:179</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ac94512a398c3a141901c38ce9c1d3ade"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ac94512a398c3a141901c38ce9c1d3ade">boost::weak_ptr::lock</a></div><div class="ttdeci">shared_ptr&lt; T &gt; lock() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00149">smart_ptr/weak_ptr.hpp:149</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_acef4526b695b19a409ed38c5fd729e79"><div class="ttname"><a href="classboost_1_1weak__ptr.html#acef4526b695b19a409ed38c5fd729e79">boost::weak_ptr::expired</a></div><div class="ttdeci">bool expired() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00159">smart_ptr/weak_ptr.hpp:159</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ad108136627b10c95caac60028b3fe6b4"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ad108136627b10c95caac60028b3fe6b4">boost::weak_ptr::reset</a></div><div class="ttdeci">void reset() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00174">smart_ptr/weak_ptr.hpp:174</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ad188cf532e14744e7871995b746fd708"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ad188cf532e14744e7871995b746fd708">boost::weak_ptr::owner_equals</a></div><div class="ttdeci">bool owner_equals(weak_ptr&lt; Y &gt; const &amp;rhs) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00195">smart_ptr/weak_ptr.hpp:195</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ad958c6dd8e920d5b57ae41baef74fd8e"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ad958c6dd8e920d5b57ae41baef74fd8e">boost::weak_ptr::this_type</a></div><div class="ttdeci">weak_ptr&lt; T &gt; this_type</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00029">smart_ptr/weak_ptr.hpp:29</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_adbbdb658171e049e04259932f4d1076f"><div class="ttname"><a href="classboost_1_1weak__ptr.html#adbbdb658171e049e04259932f4d1076f">boost::weak_ptr::px</a></div><div class="ttdeci">element_type * px</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00215">smart_ptr/weak_ptr.hpp:215</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_adc41fdee28d621560069e7c487f59581"><div class="ttname"><a href="classboost_1_1weak__ptr.html#adc41fdee28d621560069e7c487f59581">boost::weak_ptr::owner_hash_value</a></div><div class="ttdeci">std::size_t owner_hash_value() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00205">smart_ptr/weak_ptr.hpp:205</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_ae88d3725ec474a8147bea4e1b934e379"><div class="ttname"><a href="classboost_1_1weak__ptr.html#ae88d3725ec474a8147bea4e1b934e379">boost::weak_ptr::weak_ptr</a></div><div class="ttdeci">weak_ptr(weak_ptr&lt; Y &gt; const &amp;r, typename boost::detail::sp_enable_if_convertible&lt; Y, T &gt;::type=boost::detail::sp_empty()) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00071">smart_ptr/weak_ptr.hpp:71</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_af2ad24f4b78e7f55661cfc7eac668497"><div class="ttname"><a href="classboost_1_1weak__ptr.html#af2ad24f4b78e7f55661cfc7eac668497">boost::weak_ptr::element_type</a></div><div class="ttdeci">boost::detail::sp_element&lt; T &gt;::type element_type</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00033">smart_ptr/weak_ptr.hpp:33</a></div></div>
+<div class="ttc" id="aclassboost_1_1weak__ptr_html_afdb607454ea148316e7d321b29dd3007"><div class="ttname"><a href="classboost_1_1weak__ptr.html#afdb607454ea148316e7d321b29dd3007">boost::weak_ptr::_empty</a></div><div class="ttdeci">bool _empty() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00164">smart_ptr/weak_ptr.hpp:164</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a27854c81a61539328f366a331381b343"><div class="ttname"><a href="namespaceboost.html#a27854c81a61539328f366a331381b343">boost::hash_value</a></div><div class="ttdeci">std::enable_if&lt; hash_detail::is_integral&lt; T &gt;::value, std::size_t &gt;::type hash_value(T v)</div><div class="ttdef"><b>Definition:</b> <a href="hash__integral_8hpp_source.html#l00139">hash_integral.hpp:139</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a5b5d5f7f6261101428f35e20c4de295c"><div class="ttname"><a href="namespaceboost.html#a5b5d5f7f6261101428f35e20c4de295c">boost::swap</a></div><div class="ttdeci">BOOST_GPU_ENABLED enable_if_c&lt;!boost_swap_impl::is_const&lt; T1 &gt;::value &amp;&amp;!boost_swap_impl::is_const&lt; T2 &gt;::value &gt;::type swap(T1 &amp;left, T2 &amp;right)</div><div class="ttdef"><b>Definition:</b> <a href="core_2swap_8hpp_source.html#l00034">core/swap.hpp:34</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> <a href="move_2make__unique_8hpp_source.html#l00046">move/make_unique.hpp:46</a></div></div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
+<div class="ttc" id="ashared__count_8hpp_html"><div class="ttname"><a href="shared__count_8hpp.html">shared_count.hpp</a></div></div>
+<div class="ttc" id="asmart__ptr_2shared__ptr_8hpp_html"><div class="ttname"><a href="smart__ptr_2shared__ptr_8hpp.html">shared_ptr.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__element_html_ad8cf172b4623f987f5365688bfd9018e"><div class="ttname"><a href="structboost_1_1detail_1_1sp__element.html#ad8cf172b4623f987f5365688bfd9018e">boost::detail::sp_element::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00065">smart_ptr/shared_ptr.hpp:65</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__empty_html"><div class="ttname"><a href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a></div><div class="ttdef"><b>Definition:</b> <a href="sp__convertible_8hpp_source.html#l00053">sp_convertible.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__enable__if__convertible_html"><div class="ttname"><a href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a></div><div class="ttdef"><b>Definition:</b> <a href="sp__convertible_8hpp_source.html#l00068">sp_convertible.hpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__nothrow__tag_html"><div class="ttname"><a href="structboost_1_1detail_1_1sp__nothrow__tag.html">boost::detail::sp_nothrow_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="shared__count_8hpp_source.html#l00065">shared_count.hpp:65</a></div></div>
+<div class="ttc" id="astructstd_1_1equal__to_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4_html_acc16150c26144cd016bbcbf617022e78"><div class="ttname"><a href="structstd_1_1equal__to_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#acc16150c26144cd016bbcbf617022e78">std::equal_to&lt; ::boost::weak_ptr&lt; T &gt; &gt;::operator()</a></div><div class="ttdeci">bool operator()(::boost::weak_ptr&lt; T &gt; const &amp;a, ::boost::weak_ptr&lt; T &gt; const &amp;b) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00260">smart_ptr/weak_ptr.hpp:260</a></div></div>
+<div class="ttc" id="astructstd_1_1hash_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4_html_ad50913091a6e1e736ecba340a762cd6a"><div class="ttname"><a href="structstd_1_1hash_3_01_1_1boost_1_1weak__ptr_3_01T_01_4_01_4.html#ad50913091a6e1e736ecba340a762cd6a">std::hash&lt; ::boost::weak_ptr&lt; T &gt; &gt;::operator()</a></div><div class="ttdeci">std::size_t operator()(::boost::weak_ptr&lt; T &gt; const &amp;p) const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2weak__ptr_8hpp_source.html#l00252">smart_ptr/weak_ptr.hpp:252</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_dce58d0d071335e7b898537fe26149d3.html">smart_ptr</a></li><li class="navelem"><a class="el" href="smart__ptr_2weak__ptr_8hpp.html">weak_ptr.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

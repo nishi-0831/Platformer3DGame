@@ -1,0 +1,5 @@
+var structboost_1_1mpl_1_1push__front__impl_3_01aux_1_1vector__tag_3_0117_01_4_01_4_1_1apply =
+[
+    [ "type", "structboost_1_1mpl_1_1push__front__impl_3_01aux_1_1vector__tag_3_0117_01_4_01_4_1_1apply.html#a2eff31df36bc59e445568aa1718f3c3e", null ],
+    [ "type", "structboost_1_1mpl_1_1push__front__impl_3_01aux_1_1vector__tag_3_0117_01_4_01_4_1_1apply.html#a2eff31df36bc59e445568aa1718f3c3e", null ]
+];

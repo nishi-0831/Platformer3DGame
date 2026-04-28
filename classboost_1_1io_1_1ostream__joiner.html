@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::io::ostream_joiner&lt; Delim, Char, Traits &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1io_1_1ostream__joiner.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1io_1_1ostream__joiner-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::io::ostream_joiner&lt; Delim, Char, Traits &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1io_1_1ostream__joiner__coll__graph.svg" width="238" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a6bf6b43829865ca9f53a090200e3a106"><td class="memItemLeft" align="right" valign="top">typedef Char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a6bf6b43829865ca9f53a090200e3a106">char_type</a></td></tr>
+<tr class="separator:a6bf6b43829865ca9f53a090200e3a106"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc88a79b6c88715c9ed998b56db4c2d9"><td class="memItemLeft" align="right" valign="top">typedef Traits&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#acc88a79b6c88715c9ed998b56db4c2d9">traits_type</a></td></tr>
+<tr class="separator:acc88a79b6c88715c9ed998b56db4c2d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ff58b9ec2a91b078577aa1385b89921"><td class="memItemLeft" align="right" valign="top">typedef std::basic_ostream&lt; Char, Traits &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a></td></tr>
+<tr class="separator:a8ff58b9ec2a91b078577aa1385b89921"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a649624658ee0ecb08f053f68862883b0"><td class="memItemLeft" align="right" valign="top">typedef std::output_iterator_tag&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a649624658ee0ecb08f053f68862883b0">iterator_category</a></td></tr>
+<tr class="separator:a649624658ee0ecb08f053f68862883b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ea47074434f4f27c319963f46dcea89"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ea47074434f4f27c319963f46dcea89">value_type</a></td></tr>
+<tr class="separator:a8ea47074434f4f27c319963f46dcea89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c740dc8479de8f525fe5a059a48b5c7"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a4c740dc8479de8f525fe5a059a48b5c7">difference_type</a></td></tr>
+<tr class="separator:a4c740dc8479de8f525fe5a059a48b5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac767627992c40f9e25e871e3add0dfbb"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ac767627992c40f9e25e871e3add0dfbb">pointer</a></td></tr>
+<tr class="separator:ac767627992c40f9e25e871e3add0dfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4113d25e9a5deb66210012674c0d732"><td class="memItemLeft" align="right" valign="top">typedef void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ae4113d25e9a5deb66210012674c0d732">reference</a></td></tr>
+<tr class="separator:ae4113d25e9a5deb66210012674c0d732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a14856192d084875d26edfd249556020c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a14856192d084875d26edfd249556020c">ostream_joiner</a> (<a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a> &amp;output, const Delim &amp;delim)</td></tr>
+<tr class="separator:a14856192d084875d26edfd249556020c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a859fd94f9400480d00f7727dd88388"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a4a859fd94f9400480d00f7727dd88388">ostream_joiner</a> (<a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a> &amp;output, Delim &amp;&amp;delim)</td></tr>
+<tr class="separator:a4a859fd94f9400480d00f7727dd88388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f1cb143863397b406de60712a64c98"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a31f1cb143863397b406de60712a64c98"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a31f1cb143863397b406de60712a64c98">operator=</a> (const T &amp;value)</td></tr>
+<tr class="separator:a31f1cb143863397b406de60712a64c98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac84e0df3beb067593f22bc3b425ce671"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ac84e0df3beb067593f22bc3b425ce671">operator*</a> () <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ac84e0df3beb067593f22bc3b425ce671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3a73876ef96e910e7a09ac54957629e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ac3a73876ef96e910e7a09ac54957629e">operator++</a> () <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ac3a73876ef96e910e7a09ac54957629e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9490feaf3c288ff00b97a1555258b3e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ac9490feaf3c288ff00b97a1555258b3e">operator++</a> (int) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ac9490feaf3c288ff00b97a1555258b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ad77f4610899069e66fcaf0bbea9dfd60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">output_</a></td></tr>
+<tr class="separator:ad77f4610899069e66fcaf0bbea9dfd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d424d95c6f4eea171d73644b6ec4c6"><td class="memItemLeft" align="right" valign="top">Delim&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#ac4d424d95c6f4eea171d73644b6ec4c6">delim_</a></td></tr>
+<tr class="separator:ac4d424d95c6f4eea171d73644b6ec4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986e23416fc65b2918153daee09915c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">first_</a></td></tr>
+<tr class="separator:a986e23416fc65b2918153daee09915c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Delim, class Char = char, class Traits = std::char_traits&lt;Char&gt;&gt;<br />
+class boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;</div>
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00045">45</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a6bf6b43829865ca9f53a090200e3a106" name="a6bf6b43829865ca9f53a090200e3a106"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bf6b43829865ca9f53a090200e3a106">&#9670;&#160;</a></span>char_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Char <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::char_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4c740dc8479de8f525fe5a059a48b5c7" name="a4c740dc8479de8f525fe5a059a48b5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c740dc8479de8f525fe5a059a48b5c7">&#9670;&#160;</a></span>difference_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::difference_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a649624658ee0ecb08f053f68862883b0" name="a649624658ee0ecb08f053f68862883b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a649624658ee0ecb08f053f68862883b0">&#9670;&#160;</a></span>iterator_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::output_iterator_tag <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::iterator_category</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8ff58b9ec2a91b078577aa1385b89921" name="a8ff58b9ec2a91b078577aa1385b89921"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff58b9ec2a91b078577aa1385b89921">&#9670;&#160;</a></span>ostream_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::basic_ostream&lt;Char, Traits&gt; <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::ostream_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac767627992c40f9e25e871e3add0dfbb" name="ac767627992c40f9e25e871e3add0dfbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac767627992c40f9e25e871e3add0dfbb">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00053">53</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae4113d25e9a5deb66210012674c0d732" name="ae4113d25e9a5deb66210012674c0d732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4113d25e9a5deb66210012674c0d732">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::reference</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00054">54</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acc88a79b6c88715c9ed998b56db4c2d9" name="acc88a79b6c88715c9ed998b56db4c2d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc88a79b6c88715c9ed998b56db4c2d9">&#9670;&#160;</a></span>traits_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Traits <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::traits_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8ea47074434f4f27c319963f46dcea89" name="a8ea47074434f4f27c319963f46dcea89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ea47074434f4f27c319963f46dcea89">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00051">51</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a14856192d084875d26edfd249556020c" name="a14856192d084875d26edfd249556020c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14856192d084875d26edfd249556020c">&#9670;&#160;</a></span>ostream_joiner() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::ostream_joiner </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Delim &amp;&#160;</td>
+          <td class="paramname"><em>delim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>        : <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">output_</a>(<a class="code hl_function" href="namespaceboost_1_1io_1_1detail.html#a5c9e7518694ad5f7b9c0b3ccd15d75cb">detail::osj_address</a>(output))</div>
+<div class="line"><span class="lineno">   58</span>        , <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ac4d424d95c6f4eea171d73644b6ec4c6">delim_</a>(delim)</div>
+<div class="line"><span class="lineno">   59</span>        , <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">first_</a>(<span class="keyword">true</span>) { }</div>
+<div class="ttc" id="aclassboost_1_1io_1_1ostream__joiner_html_a986e23416fc65b2918153daee09915c3"><div class="ttname"><a href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">boost::io::ostream_joiner::first_</a></div><div class="ttdeci">bool first_</div><div class="ttdef"><b>Definition:</b> <a href="ostream__joiner_8hpp_source.html#l00093">ostream_joiner.hpp:93</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1ostream__joiner_html_ac4d424d95c6f4eea171d73644b6ec4c6"><div class="ttname"><a href="classboost_1_1io_1_1ostream__joiner.html#ac4d424d95c6f4eea171d73644b6ec4c6">boost::io::ostream_joiner::delim_</a></div><div class="ttdeci">Delim delim_</div><div class="ttdef"><b>Definition:</b> <a href="ostream__joiner_8hpp_source.html#l00092">ostream_joiner.hpp:92</a></div></div>
+<div class="ttc" id="aclassboost_1_1io_1_1ostream__joiner_html_ad77f4610899069e66fcaf0bbea9dfd60"><div class="ttname"><a href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">boost::io::ostream_joiner::output_</a></div><div class="ttdeci">ostream_type * output_</div><div class="ttdef"><b>Definition:</b> <a href="ostream__joiner_8hpp_source.html#l00091">ostream_joiner.hpp:91</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1io_1_1detail_html_a5c9e7518694ad5f7b9c0b3ccd15d75cb"><div class="ttname"><a href="namespaceboost_1_1io_1_1detail.html#a5c9e7518694ad5f7b9c0b3ccd15d75cb">boost::io::detail::osj_address</a></div><div class="ttdeci">T * osj_address(T &amp;o)</div><div class="ttdef"><b>Definition:</b> <a href="ostream__joiner_8hpp_source.html#l00028">ostream_joiner.hpp:28</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4a859fd94f9400480d00f7727dd88388" name="a4a859fd94f9400480d00f7727dd88388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a859fd94f9400480d00f7727dd88388">&#9670;&#160;</a></span>ostream_joiner() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::ostream_joiner </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a> &amp;&#160;</td>
+          <td class="paramname"><em>output</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Delim &amp;&amp;&#160;</td>
+          <td class="paramname"><em>delim</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>        : <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">output_</a>(<a class="code hl_function" href="namespaceboost_1_1io_1_1detail.html#a5c9e7518694ad5f7b9c0b3ccd15d75cb">detail::osj_address</a>(output))</div>
+<div class="line"><span class="lineno">   64</span>        , <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ac4d424d95c6f4eea171d73644b6ec4c6">delim_</a>(std::move(delim))</div>
+<div class="line"><span class="lineno">   65</span>        , <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">first_</a>(<span class="keyword">true</span>) { }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ac84e0df3beb067593f22bc3b425ce671" name="ac84e0df3beb067593f22bc3b425ce671"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac84e0df3beb067593f22bc3b425ce671">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp; <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                               {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac3a73876ef96e910e7a09ac54957629e" name="ac3a73876ef96e910e7a09ac54957629e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3a73876ef96e910e7a09ac54957629e">&#9670;&#160;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp; <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                                {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac9490feaf3c288ff00b97a1555258b3e" name="ac9490feaf3c288ff00b97a1555258b3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9490feaf3c288ff00b97a1555258b3e">&#9670;&#160;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp; <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   86</span>                                                   {</div>
+<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   88</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a31f1cb143863397b406de60712a64c98" name="a31f1cb143863397b406de60712a64c98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f1cb143863397b406de60712a64c98">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a> &amp; <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                              {</div>
+<div class="line"><span class="lineno">   70</span>        <span class="keywordflow">if</span> (!<a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">first_</a>) {</div>
+<div class="line"><span class="lineno">   71</span>            *<a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">output_</a> &lt;&lt; <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ac4d424d95c6f4eea171d73644b6ec4c6">delim_</a>;</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+<div class="line"><span class="lineno">   73</span>        <a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#a986e23416fc65b2918153daee09915c3">first_</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   74</span>        *<a class="code hl_variable" href="classboost_1_1io_1_1ostream__joiner.html#ad77f4610899069e66fcaf0bbea9dfd60">output_</a> &lt;&lt; <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>;</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">detail::parse_event_t::value</a></div><div class="ttdeci">@ value</div><div class="ttdoc">the parser finished reading a JSON value</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ostream__joiner_8hpp_source.html#l00092">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::delim_</a>, <a class="el" href="ostream__joiner_8hpp_source.html#l00093">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::first_</a>, <a class="el" href="ostream__joiner_8hpp_source.html#l00091">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::output_</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac4d424d95c6f4eea171d73644b6ec4c6" name="ac4d424d95c6f4eea171d73644b6ec4c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4d424d95c6f4eea171d73644b6ec4c6">&#9670;&#160;</a></span>delim_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Delim <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::delim_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ostream__joiner_8hpp_source.html#l00069">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::operator=()</a>.</p>
+
+</div>
+</div>
+<a id="a986e23416fc65b2918153daee09915c3" name="a986e23416fc65b2918153daee09915c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986e23416fc65b2918153daee09915c3">&#9670;&#160;</a></span>first_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::first_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ostream__joiner_8hpp_source.html#l00069">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::operator=()</a>.</p>
+
+</div>
+</div>
+<a id="ad77f4610899069e66fcaf0bbea9dfd60" name="ad77f4610899069e66fcaf0bbea9dfd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad77f4610899069e66fcaf0bbea9dfd60">&#9670;&#160;</a></span>output_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Delim , class Char  = char, class Traits  = std::char_traits&lt;Char&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html#a8ff58b9ec2a91b078577aa1385b89921">ostream_type</a>* <a class="el" href="classboost_1_1io_1_1ostream__joiner.html">boost::io::ostream_joiner</a>&lt; Delim, Char, Traits &gt;::output_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a> の <a class="el" href="ostream__joiner_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="ostream__joiner_8hpp_source.html#l00069">boost::io::ostream_joiner&lt; Delim, Char, Traits &gt;::operator=()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="ostream__joiner_8hpp_source.html">ostream_joiner.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1io.html">io</a></li><li class="navelem"><a class="el" href="classboost_1_1io_1_1ostream__joiner.html">ostream_joiner</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

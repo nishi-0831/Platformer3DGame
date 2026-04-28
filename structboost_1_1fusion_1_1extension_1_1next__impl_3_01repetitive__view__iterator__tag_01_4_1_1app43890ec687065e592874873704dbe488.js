@@ -1,0 +1,5 @@
+var structboost_1_1fusion_1_1extension_1_1next__impl_3_01repetitive__view__iterator__tag_01_4_1_1app43890ec687065e592874873704dbe488 =
+[
+    [ "type", "structboost_1_1fusion_1_1extension_1_1next__impl_3_01repetitive__view__iterator__tag_01_4_1_1app43890ec687065e592874873704dbe488.html#a8823380ce8141460e71748691c62df01", null ],
+    [ "call", "structboost_1_1fusion_1_1extension_1_1next__impl_3_01repetitive__view__iterator__tag_01_4_1_1app43890ec687065e592874873704dbe488.html#aa9b7416c12853835606dc2baeb1abd32", null ]
+];

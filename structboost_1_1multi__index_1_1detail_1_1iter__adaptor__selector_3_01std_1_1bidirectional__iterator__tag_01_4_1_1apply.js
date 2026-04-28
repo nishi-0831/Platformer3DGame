@@ -1,0 +1,4 @@
+var structboost_1_1multi__index_1_1detail_1_1iter__adaptor__selector_3_01std_1_1bidirectional__iterator__tag_01_4_1_1apply =
+[
+    [ "type", "structboost_1_1multi__index_1_1detail_1_1iter__adaptor__selector_3_01std_1_1bidirectional__iterator__tag_01_4_1_1apply.html#a3e277a2829f344191d92c126b44b4342", null ]
+];

@@ -1,0 +1,4 @@
+var structboost_1_1serialization_1_1version_3_01boost_1_1multi__index__container_3_01Value_00_01Indef60268961dbaa07f3fae3147fd7be3bb =
+[
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1serialization_1_1version_3_01boost_1_1multi__index__container_3_01Value_00_01Indef60268961dbaa07f3fae3147fd7be3bb.html#a124a7071d91eda2d27f901af7e18bc9f", null ]
+];

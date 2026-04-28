@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('classmtgb_1_1AudioClip.html',''); init
 <div class="dynheader">
 mtgb::AudioClip 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1AudioClip__coll__graph.svg" width="286" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1AudioClip__coll__graph.svg" width="286" height="662"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -516,8 +516,8 @@ mtgb::AudioClip 連携図</div>
 <p class="definition"> <a class="el" href="AudioClip_8cpp_source.html">AudioClip.cpp</a> の <a class="el" href="AudioClip_8cpp_source.html#l00150">150</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  151</span>{</div>
 <div class="line"><span class="lineno">  152</span>    <span class="comment">// MemoryStreamからmp3データを読み込む</span></div>
-<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">size_t</span> size    = _ms.<a class="code hl_function" href="classmtbin_1_1MemoryStream.html#a0d2c7da59cb67f59f8d68837da782aed">GetLength</a>();</div>
-<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">byte</span>* mp3_data = <span class="keyword">new</span> <span class="keywordtype">byte</span>[size];</div>
+<div class="line"><span class="lineno">  153</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>    = _ms.<a class="code hl_function" href="classmtbin_1_1MemoryStream.html#a0d2c7da59cb67f59f8d68837da782aed">GetLength</a>();</div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordtype">byte</span>* mp3_data = <span class="keyword">new</span> <span class="keywordtype">byte</span>[<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>];</div>
 <div class="line"><span class="lineno">  155</span>    _ms.<a class="code hl_function" href="classmtbin_1_1MemoryStream.html#af2d5c3eecd0164a5db1111592776051d">Read</a>(mp3_data, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(size), <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(size));</div>
 <div class="line"><span class="lineno">  156</span> </div>
 <div class="line"><span class="lineno">  157</span>    <span class="comment">// drmp3のデコード初期化</span></div>
@@ -531,7 +531,7 @@ mtgb::AudioClip 連携図</div>
 <div class="line"><span class="lineno">  165</span>    <span class="comment">// 総PCMサンプル数を取得</span></div>
 <div class="line"><span class="lineno">  166</span>    <a class="code hl_typedef" href="dr__mp3_8h.html#ae8b9dce3662c113d9e33c7946bcef558">drmp3_uint64</a> total_samples = <a class="code hl_function" href="dr__mp3_8h.html#af1a2d71e97ba6a731df5c5186dbe8188">drmp3_get_pcm_frame_count</a>(&amp;config);</div>
 <div class="line"><span class="lineno">  167</span>    <span class="comment">// バッファサイズを計算</span></div>
-<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">size_t</span> pcm_sample_count = (size_t)(total_samples * config.<a class="code hl_variable" href="structdrmp3.html#ade030203edf619566625bd278421d4e7">channels</a>);</div>
+<div class="line"><span class="lineno">  168</span>    <span class="keywordtype">size_t</span> pcm_sample_count = (<a class="code hl_struct" href="structsize__t.html">size_t</a>)(total_samples * config.<a class="code hl_variable" href="structdrmp3.html#ade030203edf619566625bd278421d4e7">channels</a>);</div>
 <div class="line"><span class="lineno">  169</span>    <span class="keywordtype">size_t</span> pcm_bytes        = pcm_sample_count * <span class="keyword">sizeof</span>(short);</div>
 <div class="line"><span class="lineno">  170</span> </div>
 <div class="line"><span class="lineno">  171</span>    <span class="comment">// PCM出力バッファ確保</span></div>
@@ -561,10 +561,12 @@ mtgb::AudioClip 連携図</div>
 <div class="ttc" id="adr__mp3_8h_html_ad5d6920f5fe0e9ce641217839a1a92c4"><div class="ttname"><a href="dr__mp3_8h.html#ad5d6920f5fe0e9ce641217839a1a92c4">drmp3_uninit</a></div><div class="ttdeci">DRMP3_API void drmp3_uninit(drmp3 *_pMP3)</div></div>
 <div class="ttc" id="adr__mp3_8h_html_ae8b9dce3662c113d9e33c7946bcef558"><div class="ttname"><a href="dr__mp3_8h.html#ae8b9dce3662c113d9e33c7946bcef558">drmp3_uint64</a></div><div class="ttdeci">unsigned long long drmp3_uint64</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00099">dr_mp3.h:99</a></div></div>
 <div class="ttc" id="adr__mp3_8h_html_af1a2d71e97ba6a731df5c5186dbe8188"><div class="ttname"><a href="dr__mp3_8h.html#af1a2d71e97ba6a731df5c5186dbe8188">drmp3_get_pcm_frame_count</a></div><div class="ttdeci">DRMP3_API drmp3_uint64 drmp3_get_pcm_frame_count(drmp3 *_pMP3)</div></div>
+<div class="ttc" id="anamespaceboost_html_a6fba56e63fab408320679073cd64ce9d"><div class="ttname"><a href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">boost::size</a></div><div class="ttdeci">constexpr auto size(const C &amp;c) noexcept(noexcept(c.size())) -&gt; decltype(c.size())</div><div class="ttdef"><b>Definition:</b> <a href="core_2size_8hpp_source.html#l00017">core/size.hpp:17</a></div></div>
 <div class="ttc" id="astructdrmp3_html"><div class="ttname"><a href="structdrmp3.html">drmp3</a></div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00369">dr_mp3.h:370</a></div></div>
 <div class="ttc" id="astructdrmp3_html_a125a69b581af18055b9aced80a68ddea"><div class="ttname"><a href="structdrmp3.html#a125a69b581af18055b9aced80a68ddea">drmp3::sampleRate</a></div><div class="ttdeci">drmp3_uint32 sampleRate</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00373">dr_mp3.h:373</a></div></div>
 <div class="ttc" id="astructdrmp3_html_ade030203edf619566625bd278421d4e7"><div class="ttname"><a href="structdrmp3.html#ade030203edf619566625bd278421d4e7">drmp3::channels</a></div><div class="ttdeci">drmp3_uint32 channels</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00372">dr_mp3.h:372</a></div></div>
 <div class="ttc" id="astructmtgb_1_1WaveData_html_a244307cda5047b766a880f71895873b4"><div class="ttname"><a href="structmtgb_1_1WaveData.html#a244307cda5047b766a880f71895873b4">mtgb::WaveData::pBuffer</a></div><div class="ttdeci">byte * pBuffer</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00015">WaveData.h:15</a></div></div>
+<div class="ttc" id="astructsize__t_html"><div class="ttname"><a href="structsize__t.html">size_t</a></div><div class="ttdef"><b>Definition:</b> <a href="size__t__fwd_8hpp_source.html#l00023">size_t_fwd.hpp:23</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="dr__mp3_8h_source.html#l00372">drmp3::channels</a>, <a class="el" href="dr__mp3_8h.html#af1a2d71e97ba6a731df5c5186dbe8188">drmp3_get_pcm_frame_count()</a>, <a class="el" href="dr__mp3_8h.html#aa3f30bc9a35d608ca6fcda17d276d1b1">drmp3_init_memory()</a>, <a class="el" href="dr__mp3_8h.html#a4ee8917908e2f2f1f3437f65950289da">drmp3_read_pcm_frames_s16()</a>, <a class="el" href="dr__mp3_8h.html#ad5d6920f5fe0e9ce641217839a1a92c4">drmp3_uninit()</a>, <a class="el" href="MemoryStream_8h_source.html#l00062">mtbin::MemoryStream::GetLength()</a>, <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="MemoryStream_8h_source.html#l00083">mtbin::MemoryStream::Read()</a>, <a class="el" href="dr__mp3_8h_source.html#l00373">drmp3::sampleRate</a>.</p>
 <div class="dynheader">
@@ -618,12 +620,12 @@ mtgb::AudioClip 連携図</div>
 <div class="line"><span class="lineno">   94</span>    {</div>
 <div class="line"><span class="lineno">   95</span>        ChunkHeader()</div>
 <div class="line"><span class="lineno">   96</span>            : id {}</div>
-<div class="line"><span class="lineno">   97</span>            , size { 0 }</div>
+<div class="line"><span class="lineno">   97</span>            , <a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a> { 0 }</div>
 <div class="line"><span class="lineno">   98</span>        {</div>
 <div class="line"><span class="lineno">   99</span>        }</div>
 <div class="line"><span class="lineno">  100</span> </div>
 <div class="line"><span class="lineno">  101</span>        <span class="keywordtype">byte</span> <span class="keywordtype">id</span>[ID_SIZE]; <span class="comment">// チャンク識別子</span></div>
-<div class="line"><span class="lineno">  102</span>        uint32_t size;    <span class="comment">// チャンクボディのサイズ</span></div>
+<div class="line"><span class="lineno">  102</span>        uint32_t <a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>;    <span class="comment">// チャンクボディのサイズ</span></div>
 <div class="line"><span class="lineno">  103</span>    };</div>
 <div class="line"><span class="lineno">  104</span> </div>
 <div class="line"><span class="lineno">  105</span>    <span class="comment">// RIFF チャンク</span></div>

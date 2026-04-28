@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: reverse.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('preprocessor_2tuple_2reverse_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">preprocessor/tuple/reverse.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2config_2config_8hpp_source.html">boost/preprocessor/config/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2control_2if_8hpp_source.html">boost/preprocessor/control/if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="overload_8hpp_source.html">boost/preprocessor/facilities/overload.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2tuple_2size_8hpp_source.html">boost/preprocessor/tuple/size.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2variadic_2size_8hpp_source.html">boost/preprocessor/variadic/size.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="has__opt_8hpp_source.html">boost/preprocessor/variadic/has_opt.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2config_2limits_8hpp_source.html">boost/preprocessor/config/limits.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+preprocessor/tuple/reverse.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="preprocessor_2tuple_2reverse_8hpp__incl.svg" width="1148" height="476"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="preprocessor_2tuple_2reverse_8hpp__dep__incl.svg" width="375" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="preprocessor_2tuple_2reverse_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a6a5f6066e51da3ba657a48a751852cc0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2tuple_2reverse_8hpp.html#a6a5f6066e51da3ba657a48a751852cc0">BOOST_PP_TUPLE_REVERSE</a>(...)&#160;&#160;&#160;<a class="el" href="overload_8hpp.html#aa74697119c5bccd86f12cd791d14620b">BOOST_PP_OVERLOAD</a>(BOOST_PP_TUPLE_REVERSE_O_, __VA_ARGS__)(__VA_ARGS__)</td></tr>
+<tr class="separator:a6a5f6066e51da3ba657a48a751852cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c75f36526d5ca7f34f12e1ab5ab0835"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2tuple_2reverse_8hpp.html#a0c75f36526d5ca7f34f12e1ab5ab0835">BOOST_PP_TUPLE_REVERSE_O_1</a>(tuple)&#160;&#160;&#160;<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(BOOST_PP_TUPLE_REVERSE_, <a class="el" href="preprocessor_2variadic_2size_8hpp.html#ab5db16746c2cf0fc6394e5d6a743eda8">BOOST_PP_VARIADIC_SIZE</a> tuple) tuple</td></tr>
+<tr class="separator:a0c75f36526d5ca7f34f12e1ab5ab0835"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f966848042de441fdafaf07e3798876"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2tuple_2reverse_8hpp.html#a5f966848042de441fdafaf07e3798876">BOOST_PP_TUPLE_REVERSE_O_2</a>(size,  tuple)&#160;&#160;&#160;<a class="el" href="preprocessor_2tuple_2reverse_8hpp.html#a0c75f36526d5ca7f34f12e1ab5ab0835">BOOST_PP_TUPLE_REVERSE_O_1</a>(tuple)</td></tr>
+<tr class="separator:a5f966848042de441fdafaf07e3798876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a6a5f6066e51da3ba657a48a751852cc0" name="a6a5f6066e51da3ba657a48a751852cc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5f6066e51da3ba657a48a751852cc0">&#9670;&#160;</a></span>BOOST_PP_TUPLE_REVERSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_TUPLE_REVERSE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em></td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="overload_8hpp.html#aa74697119c5bccd86f12cd791d14620b">BOOST_PP_OVERLOAD</a>(BOOST_PP_TUPLE_REVERSE_O_, __VA_ARGS__)(__VA_ARGS__)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html">preprocessor/tuple/reverse.hpp</a> の <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c75f36526d5ca7f34f12e1ab5ab0835" name="a0c75f36526d5ca7f34f12e1ab5ab0835"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c75f36526d5ca7f34f12e1ab5ab0835">&#9670;&#160;</a></span>BOOST_PP_TUPLE_REVERSE_O_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_TUPLE_REVERSE_O_1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tuple</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(BOOST_PP_TUPLE_REVERSE_, <a class="el" href="preprocessor_2variadic_2size_8hpp.html#ab5db16746c2cf0fc6394e5d6a743eda8">BOOST_PP_VARIADIC_SIZE</a> tuple) tuple</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html">preprocessor/tuple/reverse.hpp</a> の <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5f966848042de441fdafaf07e3798876" name="a5f966848042de441fdafaf07e3798876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f966848042de441fdafaf07e3798876">&#9670;&#160;</a></span>BOOST_PP_TUPLE_REVERSE_O_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_TUPLE_REVERSE_O_2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">size, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">tuple&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2tuple_2reverse_8hpp.html#a0c75f36526d5ca7f34f12e1ab5ab0835">BOOST_PP_TUPLE_REVERSE_O_1</a>(tuple)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html">preprocessor/tuple/reverse.hpp</a> の <a class="el" href="preprocessor_2tuple_2reverse_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f59814f4c9a8c50c3d3ea0e21fb94ec2.html">preprocessor</a></li><li class="navelem"><a class="el" href="dir_495888ccb2b8d904dcf569e275fdbca2.html">tuple</a></li><li class="navelem"><a class="el" href="preprocessor_2tuple_2reverse_8hpp.html">reverse.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

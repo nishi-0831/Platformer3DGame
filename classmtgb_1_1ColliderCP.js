@@ -11,7 +11,7 @@ var classmtgb_1_1ColliderCP =
     [ "IsHitAll", "classmtgb_1_1ColliderCP.html#ac350bcabc48cda29ce797380cc727243", null ],
     [ "RayCastHit", "classmtgb_1_1ColliderCP.html#adaff30b59f72e58050b1b3f10af75944", null ],
     [ "RayCastHitAll", "classmtgb_1_1ColliderCP.html#a44c1ce38039e2df6b0a16266f59dad91", null ],
-    [ "RegisterComponent", "classmtgb_1_1ColliderCP.html#a228bc6bfb0fd1f8f1e1dd7df86dbd084", null ],
+    [ "RegisterComponent", "classmtgb_1_1ColliderCP.html#a2a4238ed198e4a3ae024338094b6c034", null ],
     [ "RegisterCurrentScene", "classmtgb_1_1ColliderCP.html#a4d2d02ef42687005a44d0fb93b353182", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1ColliderCP.html#a4f9e8e9a7a14625c83206da315a9697b", null ],
     [ "Release", "classmtgb_1_1ColliderCP.html#ae1beb41221e47868e09b1450cdee75fb", null ],

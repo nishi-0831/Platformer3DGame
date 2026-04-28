@@ -23,7 +23,7 @@ var classScoreItem =
     [ "Initialize", "classScoreItem.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classScoreItem.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classScoreItem.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classScoreItem.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classScoreItem.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classScoreItem.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "Serialize", "classScoreItem.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],
     [ "SetName", "classScoreItem.html#af0b3630f3e49fde5433ef21cc243a235", null ],

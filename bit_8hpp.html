@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: bit.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('bit_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">bit.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="static__assert_8hpp_source.html">boost/static_assert.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cstdint_8hpp_source.html">boost/cstdint.hpp</a>&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+bit.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="bit_8hpp__incl.svg" width="979" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="bit_8hpp__dep__incl.svg" width="142" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="bit_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1core"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html">boost::core</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1core_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html">boost::core::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ab82640ada1aa9232780196ad2d68b448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bit_8hpp.html#ab82640ada1aa9232780196ad2d68b448">BOOST_CORE_BIT_NATIVE_INITIALIZER</a></td></tr>
+<tr class="separator:ab82640ada1aa9232780196ad2d68b448"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:afed121750382b939d070dea6da5c9fc4"><td class="memItemLeft" align="right" valign="top">typedef endian&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#afed121750382b939d070dea6da5c9fc4">boost::core::endian_type</a></td></tr>
+<tr class="separator:afed121750382b939d070dea6da5c9fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:ab2756cd6a8daaae4ce0dc215841900fb"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#ab2756cd6a8daaae4ce0dc215841900fb">boost::core::endian</a> { <a class="el" href="namespaceboost_1_1core.html#ab2756cd6a8daaae4ce0dc215841900fbad861877da56b8b4ceb35c8cbfdf65bb4">boost::core::big</a>
+, <a class="el" href="namespaceboost_1_1core.html#ab2756cd6a8daaae4ce0dc215841900fbaaae6635e044ac56046b2893a529b5114">boost::core::little</a>
+, <a class="el" href="namespaceboost_1_1core.html#ab2756cd6a8daaae4ce0dc215841900fba62ed6e61394e10a1c5026de6d57a7e5a">boost::core::BOOST_CORE_BIT_NATIVE_INITIALIZER</a>
+ }</td></tr>
+<tr class="separator:ab2756cd6a8daaae4ce0dc215841900fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a447acdcc877406593dc6abecae462341"><td class="memTemplParams" colspan="2">template&lt;class To , class From &gt; </td></tr>
+<tr class="memitem:a447acdcc877406593dc6abecae462341"><td class="memTemplItemLeft" align="right" valign="top">To&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a447acdcc877406593dc6abecae462341">boost::core::bit_cast</a> (From const &amp;from) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a447acdcc877406593dc6abecae462341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95d79b33f8cc422f3178f9e470393ac4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a95d79b33f8cc422f3178f9e470393ac4">boost::core::detail::countl_impl</a> (boost::uint32_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a95d79b33f8cc422f3178f9e470393ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48caf8508d6e73cc606ad4c86590dd6e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a48caf8508d6e73cc606ad4c86590dd6e">boost::core::detail::countl_impl</a> (boost::uint8_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a48caf8508d6e73cc606ad4c86590dd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a667ffcb7d3cccdc68609a47fed275745"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a667ffcb7d3cccdc68609a47fed275745">boost::core::detail::countl_impl</a> (boost::uint16_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a667ffcb7d3cccdc68609a47fed275745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8059c50244980f3248ecfa30980a14c9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a8059c50244980f3248ecfa30980a14c9">boost::core::detail::countl_impl</a> (boost::uint64_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a8059c50244980f3248ecfa30980a14c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2232848d5fef0e0e382e9e42e12dd993"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2232848d5fef0e0e382e9e42e12dd993"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a2232848d5fef0e0e382e9e42e12dd993">boost::core::countl_zero</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a2232848d5fef0e0e382e9e42e12dd993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53975b58d14769ae1bc3d7ce8c3a37cd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a53975b58d14769ae1bc3d7ce8c3a37cd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a53975b58d14769ae1bc3d7ce8c3a37cd">boost::core::countl_one</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a53975b58d14769ae1bc3d7ce8c3a37cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe5fb64411882ccda0110528511735c6"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#afe5fb64411882ccda0110528511735c6">boost::core::detail::countr_impl</a> (boost::uint32_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:afe5fb64411882ccda0110528511735c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa98b05bb0e6e566405047f8732bf9e1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#aa98b05bb0e6e566405047f8732bf9e1a">boost::core::detail::countr_impl</a> (boost::uint8_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:aa98b05bb0e6e566405047f8732bf9e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5083ada1f70f4edfdcfcd96d7c4b8066"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a5083ada1f70f4edfdcfcd96d7c4b8066">boost::core::detail::countr_impl</a> (boost::uint16_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a5083ada1f70f4edfdcfcd96d7c4b8066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc6bca07b2eda1edd904b8b9f428b62"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a3cc6bca07b2eda1edd904b8b9f428b62">boost::core::detail::countr_impl</a> (boost::uint64_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a3cc6bca07b2eda1edd904b8b9f428b62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f441aa424d4f2ee9811729071f90bfd"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7f441aa424d4f2ee9811729071f90bfd"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a7f441aa424d4f2ee9811729071f90bfd">boost::core::countr_zero</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a7f441aa424d4f2ee9811729071f90bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d8a59d7c6bcd5d38f4b7f79500faa9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a16d8a59d7c6bcd5d38f4b7f79500faa9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a16d8a59d7c6bcd5d38f4b7f79500faa9">boost::core::countr_one</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a16d8a59d7c6bcd5d38f4b7f79500faa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78351321dc5f509fc952fe27ce152675"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a78351321dc5f509fc952fe27ce152675">boost::core::detail::popcount_impl</a> (boost::uint32_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a78351321dc5f509fc952fe27ce152675"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f33376b3069d32d5be6fd288c67c3aa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a5f33376b3069d32d5be6fd288c67c3aa">boost::core::detail::popcount_impl</a> (boost::uint64_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a5f33376b3069d32d5be6fd288c67c3aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd6a29ae0c4ee43e565efd6cd6a750d7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:acd6a29ae0c4ee43e565efd6cd6a750d7"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#acd6a29ae0c4ee43e565efd6cd6a750d7">boost::core::popcount</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:acd6a29ae0c4ee43e565efd6cd6a750d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9096749e41fa0ddfca594dcf6cdefe96"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9096749e41fa0ddfca594dcf6cdefe96"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a9096749e41fa0ddfca594dcf6cdefe96">boost::core::rotl</a> (T x, int s) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a9096749e41fa0ddfca594dcf6cdefe96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e67dc27602a46822480b524dcdc9019"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6e67dc27602a46822480b524dcdc9019"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a6e67dc27602a46822480b524dcdc9019">boost::core::rotr</a> (T x, int s) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a6e67dc27602a46822480b524dcdc9019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a490069bed2ef96c1b5aacd26c3abe69b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a490069bed2ef96c1b5aacd26c3abe69b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a490069bed2ef96c1b5aacd26c3abe69b">boost::core::has_single_bit</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a490069bed2ef96c1b5aacd26c3abe69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac10d3457c759e288a2adac326b85eaea"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac10d3457c759e288a2adac326b85eaea"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#ac10d3457c759e288a2adac326b85eaea">boost::core::bit_width</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ac10d3457c759e288a2adac326b85eaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad780cdf2ed3b5e73705627ed64afdf93"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad780cdf2ed3b5e73705627ed64afdf93"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#ad780cdf2ed3b5e73705627ed64afdf93">boost::core::bit_floor</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ad780cdf2ed3b5e73705627ed64afdf93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5324ff6da410c885dc846d96799f4ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> boost::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#ae5324ff6da410c885dc846d96799f4ff">boost::core::detail::bit_ceil_impl</a> (boost::uint32_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ae5324ff6da410c885dc846d96799f4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d45092b17f41800ce3747bfdb221a10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> boost::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a3d45092b17f41800ce3747bfdb221a10">boost::core::detail::bit_ceil_impl</a> (boost::uint64_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a3d45092b17f41800ce3747bfdb221a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b3be058bb5447c85999f6c43a75c528"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9b3be058bb5447c85999f6c43a75c528"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a9b3be058bb5447c85999f6c43a75c528">boost::core::bit_ceil</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a9b3be058bb5447c85999f6c43a75c528"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ba0ecaf6df93711f76ed20fea7ab5b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> boost::uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a34ba0ecaf6df93711f76ed20fea7ab5b">boost::core::detail::byteswap_impl</a> (boost::uint8_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a34ba0ecaf6df93711f76ed20fea7ab5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff361fd79d2dca71fb8c0ef2b4313d22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> boost::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#aff361fd79d2dca71fb8c0ef2b4313d22">boost::core::detail::byteswap_impl</a> (boost::uint16_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:aff361fd79d2dca71fb8c0ef2b4313d22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16bdef11caf960ce631f93862689a9f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> boost::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#a16bdef11caf960ce631f93862689a9f7">boost::core::detail::byteswap_impl</a> (boost::uint32_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a16bdef11caf960ce631f93862689a9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8eb15365d68e5f3aeb03ee9bbec1da7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> boost::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core_1_1detail.html#ad8eb15365d68e5f3aeb03ee9bbec1da7">boost::core::detail::byteswap_impl</a> (boost::uint64_t x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:ad8eb15365d68e5f3aeb03ee9bbec1da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e178341ea5bf50f0d05c5e22e7fff32"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3e178341ea5bf50f0d05c5e22e7fff32"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a3e178341ea5bf50f0d05c5e22e7fff32">boost::core::byteswap</a> (T x) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a3e178341ea5bf50f0d05c5e22e7fff32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ab82640ada1aa9232780196ad2d68b448" name="ab82640ada1aa9232780196ad2d68b448"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab82640ada1aa9232780196ad2d68b448">&#9670;&#160;</a></span>BOOST_CORE_BIT_NATIVE_INITIALIZER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CORE_BIT_NATIVE_INITIALIZER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bit_8hpp_source.html">bit.hpp</a> の <a class="el" href="bit_8hpp_source.html#l00790">790</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_3d8842992ca4653e6f2b7f6848ba9a43.html">core</a></li><li class="navelem"><a class="el" href="bit_8hpp.html">bit.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

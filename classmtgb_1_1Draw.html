@@ -120,7 +120,7 @@ mtgb::Draw の継承関係図</div>
 <div class="dynheader">
 mtgb::Draw 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw__coll__graph.svg" width="1552" height="3003"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw__coll__graph.svg" width="1660" height="2974"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -720,7 +720,7 @@ mtgb::Draw 連携図</div>
 <div class="line"><span class="lineno">  248</span>    Game::System&lt;mtgb::Fbx&gt;().Draw(_hFBXModel, _pTransform, _frame);</div>
 <div class="line"><span class="lineno">  249</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00400">mtgb::Collider::Draw()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00037">mtgb::MeshRenderer::Render()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Collider_8cpp_source.html#l00398">mtgb::Collider::Draw()</a>, <a class="el" href="MeshRenderer_8cpp_source.html#l00037">mtgb::MeshRenderer::Render()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -850,7 +850,7 @@ mtgb::Draw 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Sprite_8cpp_source.html#l00018">mtgb::Sprite::Draw()</a>, <a class="el" href="RectT_8h_source.html#l00085">mtgb::RectT&lt; T &gt;::point</a>, <a class="el" href="RectT_8h_source.html#l00094">mtgb::RectT&lt; T &gt;::size</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">mtgb::SPRITE2_D</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00060">ResultScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00035">TitleScene::Draw()</a>, <a class="el" href="ImageRenderer_8cpp_source.html#l00016">mtgb::ImageRenderer::Render()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00060">ResultScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00058">TitleScene::Draw()</a>, <a class="el" href="ImageRenderer_8cpp_source.html#l00020">mtgb::ImageRenderer::Render()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1064,7 +1064,7 @@ mtgb::Draw 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">  194</span>{</div>
 <div class="line"><span class="lineno">  195</span>    <a class="code hl_variable" href="classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1">uiDrawCommands_</a>.emplace(</div>
 <div class="line"><span class="lineno">  196</span>        _uiParams,</div>
-<div class="line"><span class="lineno">  197</span>        [=]()</div>
+<div class="line"><span class="lineno">  197</span>        [text = std::string { _text }, _rect, _size, _alignment]()</div>
 <div class="line"><span class="lineno">  198</span>        {</div>
 <div class="line"><span class="lineno">  199</span>            <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  200</span>            <a class="code hl_function" href="classmtgb_1_1Draw.html#ac133ef58a5b951a98cd144ca36f00ce3">CheckSetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">ShaderType::SPRITE2_D</a>);</div>
@@ -1075,7 +1075,7 @@ mtgb::Draw 連携図</div>
 <div class="line"><span class="lineno">  205</span> </div>
 <div class="line"><span class="lineno">  206</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> ratio = Game::System&lt;Screen&gt;().GetSizeRatio();</div>
 <div class="line"><span class="lineno">  207</span>            Game::System&lt;DirectWrite&gt;().ImmediateDraw(</div>
-<div class="line"><span class="lineno">  208</span>                <a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(_text.data()),</div>
+<div class="line"><span class="lineno">  208</span>                <a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(text.c_str()),</div>
 <div class="line"><span class="lineno">  209</span>                formatData-&gt;format,</div>
 <div class="line"><span class="lineno">  210</span>                formatData-&gt;pixelFontMetrics,</div>
 <div class="line"><span class="lineno">  211</span>                _rect.x * ratio.x,</div>
@@ -1180,7 +1180,7 @@ mtgb::Draw 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00060">ResultScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00035">TitleScene::Draw()</a>, <a class="el" href="TextRenderer_8cpp_source.html#l00015">mtgb::TextRenderer::Render()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00060">ResultScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00058">TitleScene::Draw()</a>, <a class="el" href="TextRenderer_8cpp_source.html#l00015">mtgb::TextRenderer::Render()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1258,7 +1258,7 @@ mtgb::Draw 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">  143</span>{</div>
 <div class="line"><span class="lineno">  144</span>    <a class="code hl_variable" href="classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1">uiDrawCommands_</a>.emplace(</div>
 <div class="line"><span class="lineno">  145</span>        _uiParams,</div>
-<div class="line"><span class="lineno">  146</span>        [=]()</div>
+<div class="line"><span class="lineno">  146</span>        [text = std::wstring { _text }, _rect, _size, _alignment]()</div>
 <div class="line"><span class="lineno">  147</span>        {</div>
 <div class="line"><span class="lineno">  148</span>            <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  149</span>            <a class="code hl_function" href="classmtgb_1_1Draw.html#ac133ef58a5b951a98cd144ca36f00ce3">CheckSetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">ShaderType::SPRITE2_D</a>);</div>
@@ -1269,7 +1269,7 @@ mtgb::Draw 連携図</div>
 <div class="line"><span class="lineno">  154</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> ratio = Game::System&lt;Screen&gt;().GetSizeRatio();</div>
 <div class="line"><span class="lineno">  155</span> </div>
 <div class="line"><span class="lineno">  156</span>            Game::System&lt;DirectWrite&gt;().ImmediateDraw(</div>
-<div class="line"><span class="lineno">  157</span>                _text,</div>
+<div class="line"><span class="lineno">  157</span>                text,</div>
 <div class="line"><span class="lineno">  158</span>                formatData-&gt;format,</div>
 <div class="line"><span class="lineno">  159</span>                formatData-&gt;pixelFontMetrics,</div>
 <div class="line"><span class="lineno">  160</span>                _rect.x * ratio.x,</div>
@@ -1459,7 +1459,7 @@ mtgb::Draw 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">  233</span>{</div>
 <div class="line"><span class="lineno">  234</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#ac133ef58a5b951a98cd144ca36f00ce3">CheckSetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda064c7ce013731f15c809ec3cec9d431b">ShaderType::FBX_PARTS</a>);</div>
 <div class="line"><span class="lineno">  235</span> </div>
-<div class="line"><span class="lineno">  236</span>    Game::System&lt;mtgb::OBJ&gt;().Draw((<span class="keywordtype">int</span>)_hOBJModel, _pTransform);</div>
+<div class="line"><span class="lineno">  236</span>    Game::System&lt;mtgb::OBJ&gt;().Draw(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_hOBJModel), _pTransform);</div>
 <div class="line"><span class="lineno">  237</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_abd56f621e81af02c018dca9fbb31a5fda064c7ce013731f15c809ec3cec9d431b"><div class="ttname"><a href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda064c7ce013731f15c809ec3cec9d431b">mtgb::ShaderType::FBX_PARTS</a></div><div class="ttdeci">@ FBX_PARTS</div></div>
 </div><!-- fragment -->
@@ -1641,7 +1641,7 @@ mtgb::Draw 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   98</span>{</div>
 <div class="line"><span class="lineno">   99</span>    <a class="code hl_variable" href="classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1">uiDrawCommands_</a>.emplace(</div>
 <div class="line"><span class="lineno">  100</span>        _uiParams,</div>
-<div class="line"><span class="lineno">  101</span>        [&amp;]()</div>
+<div class="line"><span class="lineno">  101</span>        [=]()</div>
 <div class="line"><span class="lineno">  102</span>        {</div>
 <div class="line"><span class="lineno">  103</span>            <a class="code hl_function" href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">DirectX11Draw::SetIsWriteToDepthBuffer</a>(<span class="keyword">false</span>);</div>
 <div class="line"><span class="lineno">  104</span>            <a class="code hl_function" href="classmtgb_1_1Draw.html#ac133ef58a5b951a98cd144ca36f00ce3">CheckSetShader</a>(<a class="code hl_enumvalue" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">ShaderType::SPRITE2_D</a>);</div>

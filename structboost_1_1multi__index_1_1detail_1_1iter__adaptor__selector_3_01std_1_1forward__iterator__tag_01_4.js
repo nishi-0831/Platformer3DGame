@@ -1,0 +1,4 @@
+var structboost_1_1multi__index_1_1detail_1_1iter__adaptor__selector_3_01std_1_1forward__iterator__tag_01_4 =
+[
+    [ "apply", "structboost_1_1multi__index_1_1detail_1_1iter__adaptor__selector_3_01std_1_1forward__iterator__tag_01_4_1_1apply.html", "structboost_1_1multi__index_1_1detail_1_1iter__adaptor__selector_3_01std_1_1forward__iterator__tag_01_4_1_1apply" ]
+];

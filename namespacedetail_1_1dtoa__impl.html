@@ -1,0 +1,1538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: detail::dtoa_impl 名前空間</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('namespacedetail_1_1dtoa__impl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">detail::dtoa_impl 名前空間</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>implements the Grisu2 algorithm for binary to decimal floating-point conversion.  
+<a href="namespacedetail_1_1dtoa__impl.html#details">[詳解]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1dtoa__impl_1_1boundaries.html">boundaries</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1dtoa__impl_1_1cached__power.html">cached_power</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a3c879bf97b806cacbcbb2da07a5ff5c8"><td class="memTemplParams" colspan="2">template&lt;typename Target , typename Source &gt; </td></tr>
+<tr class="memitem:a3c879bf97b806cacbcbb2da07a5ff5c8"><td class="memTemplItemLeft" align="right" valign="top">Target&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a3c879bf97b806cacbcbb2da07a5ff5c8">reinterpret_bits</a> (const Source source)</td></tr>
+<tr class="separator:a3c879bf97b806cacbcbb2da07a5ff5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5ccf11847aab7a0f42f587b33935df"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:a6a5ccf11847aab7a0f42f587b33935df"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structdetail_1_1dtoa__impl_1_1boundaries.html">boundaries</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a6a5ccf11847aab7a0f42f587b33935df">compute_boundaries</a> (FloatType <a class="el" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>)</td></tr>
+<tr class="separator:a6a5ccf11847aab7a0f42f587b33935df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ae6574f6be09a5c8ab08da9a3f71b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdetail_1_1dtoa__impl_1_1cached__power.html">cached_power</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a29ae6574f6be09a5c8ab08da9a3f71b4">get_cached_power_for_binary_exponent</a> (int e)</td></tr>
+<tr class="separator:a29ae6574f6be09a5c8ab08da9a3f71b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04eb234a28617519974fc962cd4da666"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a04eb234a28617519974fc962cd4da666">find_largest_pow10</a> (const std::uint32_t n, std::uint32_t &amp;pow10)</td></tr>
+<tr class="separator:a04eb234a28617519974fc962cd4da666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73a15efcb5c2157ea0e1375b98ef0e83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a73a15efcb5c2157ea0e1375b98ef0e83">grisu2_round</a> (char *buf, int len, std::uint64_t dist, std::uint64_t delta, std::uint64_t rest, std::uint64_t ten_k)</td></tr>
+<tr class="separator:a73a15efcb5c2157ea0e1375b98ef0e83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae877aa13ab872c99a1c614e5e1524807"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807">grisu2_digit_gen</a> (char *buffer, int &amp;length, int &amp;decimal_exponent, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_minus, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> w, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_plus)</td></tr>
+<tr class="separator:ae877aa13ab872c99a1c614e5e1524807"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad549352ed1a9676a092d143a2daa3dee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee">grisu2</a> (char *buf, int &amp;len, int &amp;decimal_exponent, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> m_minus, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> v, <a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> m_plus)</td></tr>
+<tr class="separator:ad549352ed1a9676a092d143a2daa3dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf6bc05c54068a5930f66c2e803e8b8"><td class="memTemplParams" colspan="2">template&lt;typename FloatType &gt; </td></tr>
+<tr class="memitem:abdf6bc05c54068a5930f66c2e803e8b8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#abdf6bc05c54068a5930f66c2e803e8b8">grisu2</a> (char *buf, int &amp;len, int &amp;decimal_exponent, FloatType <a class="el" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">value</a>)</td></tr>
+<tr class="separator:abdf6bc05c54068a5930f66c2e803e8b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9f6655c3b629aeb0e8c887aea5da87"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hedley_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#aec9f6655c3b629aeb0e8c887aea5da87">append_exponent</a> (char *buf, int e)</td></tr>
+<tr class="memdesc:aec9f6655c3b629aeb0e8c887aea5da87"><td class="mdescLeft">&#160;</td><td class="mdescRight">appends a decimal representation of e to buf  <br /></td></tr>
+<tr class="separator:aec9f6655c3b629aeb0e8c887aea5da87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afab91abfdd1cdf43cc2fcd5b9c4a7456"><td class="memItemLeft" align="right" valign="top"><a class="el" href="hedley_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#afab91abfdd1cdf43cc2fcd5b9c4a7456">format_buffer</a> (char *buf, int len, int decimal_exponent, int min_exp, int max_exp)</td></tr>
+<tr class="memdesc:afab91abfdd1cdf43cc2fcd5b9c4a7456"><td class="mdescLeft">&#160;</td><td class="mdescRight">prettify v = buf * 10^decimal_exponent  <br /></td></tr>
+<tr class="separator:afab91abfdd1cdf43cc2fcd5b9c4a7456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a95c569b7627a9372686f1f77d73e8660"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#a95c569b7627a9372686f1f77d73e8660">kAlpha</a> = -60</td></tr>
+<tr class="separator:a95c569b7627a9372686f1f77d73e8660"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae152a095d2dd1a6dd41ef8ad39c26e19"><td class="memItemLeft" align="right" valign="top">constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedetail_1_1dtoa__impl.html#ae152a095d2dd1a6dd41ef8ad39c26e19">kGamma</a> = -32</td></tr>
+<tr class="separator:ae152a095d2dd1a6dd41ef8ad39c26e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>implements the Grisu2 algorithm for binary to decimal floating-point conversion. </p>
+<p>This implementation is a slightly modified version of the reference implementation which may be obtained from <a href="http://florian.loitsch.com/publications">http://florian.loitsch.com/publications</a> (bench.tar.gz).</p>
+<p>The code is distributed under the MIT license, Copyright (c) 2009 Florian Loitsch.</p>
+<p>For a detailed description of the algorithm see:</p>
+<p>[1] Loitsch, "Printing Floating-Point Numbers Quickly and Accurately with
+    Integers", Proceedings of the ACM SIGPLAN 2010 Conference on Programming Language Design and Implementation, PLDI 2010 [2] Burger, Dybvig, "Printing Floating-Point Numbers Quickly and Accurately", Proceedings of the ACM SIGPLAN 1996 Conference on Programming Language Design and Implementation, PLDI 1996 </p>
+</div><h2 class="groupheader">関数詳解</h2>
+<a id="aec9f6655c3b629aeb0e8c887aea5da87" name="aec9f6655c3b629aeb0e8c887aea5da87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec9f6655c3b629aeb0e8c887aea5da87">&#9670;&#160;</a></span>append_exponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hedley_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char * detail::dtoa_impl::append_exponent </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>appends a decimal representation of e to buf </p>
+<dl class="section return"><dt>戻り値</dt><dd>a pointer to the element following the exponent. </dd></dl>
+<dl class="section pre"><dt>事前条件</dt><dd>-1000 &lt; e &lt; 1000 </dd></dl>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00928">928</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  929</span>{</div>
+<div class="line"><span class="lineno">  930</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(e &gt; -1000);</div>
+<div class="line"><span class="lineno">  931</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(e &lt;  1000);</div>
+<div class="line"><span class="lineno">  932</span> </div>
+<div class="line"><span class="lineno">  933</span>    <span class="keywordflow">if</span> (e &lt; 0)</div>
+<div class="line"><span class="lineno">  934</span>    {</div>
+<div class="line"><span class="lineno">  935</span>        e = -e;</div>
+<div class="line"><span class="lineno">  936</span>        *buf++ = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><span class="lineno">  937</span>    }</div>
+<div class="line"><span class="lineno">  938</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  939</span>    {</div>
+<div class="line"><span class="lineno">  940</span>        *buf++ = <span class="charliteral">&#39;+&#39;</span>;</div>
+<div class="line"><span class="lineno">  941</span>    }</div>
+<div class="line"><span class="lineno">  942</span> </div>
+<div class="line"><span class="lineno">  943</span>    <span class="keyword">auto</span> k = <span class="keyword">static_cast&lt;</span>std::uint32_t<span class="keyword">&gt;</span>(e);</div>
+<div class="line"><span class="lineno">  944</span>    <span class="keywordflow">if</span> (k &lt; 10)</div>
+<div class="line"><span class="lineno">  945</span>    {</div>
+<div class="line"><span class="lineno">  946</span>        <span class="comment">// Always print at least two digits in the exponent.</span></div>
+<div class="line"><span class="lineno">  947</span>        <span class="comment">// This is for compatibility with printf(&quot;%g&quot;).</span></div>
+<div class="line"><span class="lineno">  948</span>        *buf++ = <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno">  949</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + k);</div>
+<div class="line"><span class="lineno">  950</span>    }</div>
+<div class="line"><span class="lineno">  951</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (k &lt; 100)</div>
+<div class="line"><span class="lineno">  952</span>    {</div>
+<div class="line"><span class="lineno">  953</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + (k / 10));</div>
+<div class="line"><span class="lineno">  954</span>        k %= 10;</div>
+<div class="line"><span class="lineno">  955</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + k);</div>
+<div class="line"><span class="lineno">  956</span>    }</div>
+<div class="line"><span class="lineno">  957</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  958</span>    {</div>
+<div class="line"><span class="lineno">  959</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + (k / 100));</div>
+<div class="line"><span class="lineno">  960</span>        k %= 100;</div>
+<div class="line"><span class="lineno">  961</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + (k / 10));</div>
+<div class="line"><span class="lineno">  962</span>        k %= 10;</div>
+<div class="line"><span class="lineno">  963</span>        *buf++ = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + k);</div>
+<div class="line"><span class="lineno">  964</span>    }</div>
+<div class="line"><span class="lineno">  965</span> </div>
+<div class="line"><span class="lineno">  966</span>    <span class="keywordflow">return</span> buf;</div>
+<div class="line"><span class="lineno">  967</span>}</div>
+<div class="ttc" id="amacro__scope_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="macro__scope_8hpp_source.html#l00205">macro_scope.hpp:205</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00980">format_buffer()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_aec9f6655c3b629aeb0e8c887aea5da87_icgraph.svg" width="510" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6a5ccf11847aab7a0f42f587b33935df" name="a6a5ccf11847aab7a0f42f587b33935df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5ccf11847aab7a0f42f587b33935df">&#9670;&#160;</a></span>compute_boundaries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdetail_1_1dtoa__impl_1_1boundaries.html">boundaries</a> detail::dtoa_impl::compute_boundaries </td>
+          <td>(</td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Compute the (normalized) diyfp representing the input number 'value' and its boundaries.</p>
+<dl class="section pre"><dt>事前条件</dt><dd>value must be finite and positive </dd></dl>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00189">189</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>{</div>
+<div class="line"><span class="lineno">  191</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::isfinite(value));</div>
+<div class="line"><span class="lineno">  192</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(value &gt; 0);</div>
+<div class="line"><span class="lineno">  193</span> </div>
+<div class="line"><span class="lineno">  194</span>    <span class="comment">// Convert the IEEE representation into a diyfp.</span></div>
+<div class="line"><span class="lineno">  195</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  196</span>    <span class="comment">// If v is denormal:</span></div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">//      value = 0.F * 2^(1 - bias) = (          F) * 2^(1 - bias - (p-1))</span></div>
+<div class="line"><span class="lineno">  198</span>    <span class="comment">// If v is normalized:</span></div>
+<div class="line"><span class="lineno">  199</span>    <span class="comment">//      value = 1.F * 2^(E - bias) = (2^(p-1) + F) * 2^(E - bias - (p-1))</span></div>
+<div class="line"><span class="lineno">  200</span> </div>
+<div class="line"><span class="lineno">  201</span>    <span class="keyword">static_assert</span>(std::numeric_limits&lt;FloatType&gt;::is_iec559,</div>
+<div class="line"><span class="lineno">  202</span>                  <span class="stringliteral">&quot;internal error: dtoa_short requires an IEEE-754 floating-point implementation&quot;</span>);</div>
+<div class="line"><span class="lineno">  203</span> </div>
+<div class="line"><span class="lineno">  204</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span>      kPrecision = std::numeric_limits&lt;FloatType&gt;::digits; <span class="comment">// = p (includes the hidden bit)</span></div>
+<div class="line"><span class="lineno">  205</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span>      kBias      = std::numeric_limits&lt;FloatType&gt;::max_exponent - 1 + (kPrecision - 1);</div>
+<div class="line"><span class="lineno">  206</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span>      kMinExp    = 1 - kBias;</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keyword">constexpr</span> std::uint64_t kHiddenBit = std::uint64_t{1} &lt;&lt; (kPrecision - 1); <span class="comment">// = 2^(p-1)</span></div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span>    <span class="keyword">using </span>bits_type = <span class="keyword">typename</span> std::conditional&lt;kPrecision == 24, std::uint32_t, std::uint64_t &gt;::type;</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="keyword">const</span> <span class="keyword">auto</span> bits = <span class="keyword">static_cast&lt;</span>std::uint64_t<span class="keyword">&gt;</span>(reinterpret_bits&lt;bits_type&gt;(value));</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keyword">const</span> std::uint64_t <a class="code hl_class" href="classE.html">E</a> = bits &gt;&gt; (kPrecision - 1);</div>
+<div class="line"><span class="lineno">  213</span>    <span class="keyword">const</span> std::uint64_t F = bits &amp; (kHiddenBit - 1);</div>
+<div class="line"><span class="lineno">  214</span> </div>
+<div class="line"><span class="lineno">  215</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> is_denormal = <a class="code hl_class" href="classE.html">E</a> == 0;</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keyword">const</span> diyfp v = is_denormal</div>
+<div class="line"><span class="lineno">  217</span>                    ? diyfp(F, kMinExp)</div>
+<div class="line"><span class="lineno">  218</span>                    : diyfp(F + kHiddenBit, static_cast&lt;int&gt;(<a class="code hl_class" href="classE.html">E</a>) - kBias);</div>
+<div class="line"><span class="lineno">  219</span> </div>
+<div class="line"><span class="lineno">  220</span>    <span class="comment">// Compute the boundaries m- and m+ of the floating-point value</span></div>
+<div class="line"><span class="lineno">  221</span>    <span class="comment">// v = f * 2^e.</span></div>
+<div class="line"><span class="lineno">  222</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  223</span>    <span class="comment">// Determine v- and v+, the floating-point predecessor and successor if v,</span></div>
+<div class="line"><span class="lineno">  224</span>    <span class="comment">// respectively.</span></div>
+<div class="line"><span class="lineno">  225</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  226</span>    <span class="comment">//      v- = v - 2^e        if f != 2^(p-1) or e == e_min                (A)</span></div>
+<div class="line"><span class="lineno">  227</span>    <span class="comment">//         = v - 2^(e-1)    if f == 2^(p-1) and e &gt; e_min                (B)</span></div>
+<div class="line"><span class="lineno">  228</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  229</span>    <span class="comment">//      v+ = v + 2^e</span></div>
+<div class="line"><span class="lineno">  230</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  231</span>    <span class="comment">// Let m- = (v- + v) / 2 and m+ = (v + v+) / 2. All real numbers _strictly_</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="comment">// between m- and m+ round to v, regardless of how the input rounding</span></div>
+<div class="line"><span class="lineno">  233</span>    <span class="comment">// algorithm breaks ties.</span></div>
+<div class="line"><span class="lineno">  234</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  235</span>    <span class="comment">//      ---+-------------+-------------+-------------+-------------+---  (A)</span></div>
+<div class="line"><span class="lineno">  236</span>    <span class="comment">//         v-            m-            v             m+            v+</span></div>
+<div class="line"><span class="lineno">  237</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  238</span>    <span class="comment">//      -----------------+------+------+-------------+-------------+---  (B)</span></div>
+<div class="line"><span class="lineno">  239</span>    <span class="comment">//                       v-     m-     v             m+            v+</span></div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> lower_boundary_is_closer = F == 0 &amp;&amp; <a class="code hl_class" href="classE.html">E</a> &gt; 1;</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keyword">const</span> diyfp m_plus = diyfp((2 * v.f) + 1, v.e - 1);</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keyword">const</span> diyfp m_minus = lower_boundary_is_closer</div>
+<div class="line"><span class="lineno">  244</span>                          ? diyfp((4 * v.f) - 1, v.e - 2)  <span class="comment">// (B)</span></div>
+<div class="line"><span class="lineno">  245</span>                          : diyfp((2 * v.f) - 1, v.e - 1); <span class="comment">// (A)</span></div>
+<div class="line"><span class="lineno">  246</span> </div>
+<div class="line"><span class="lineno">  247</span>    <span class="comment">// Determine the normalized w+ = m+.</span></div>
+<div class="line"><span class="lineno">  248</span>    <span class="keyword">const</span> diyfp w_plus = diyfp::normalize(m_plus);</div>
+<div class="line"><span class="lineno">  249</span> </div>
+<div class="line"><span class="lineno">  250</span>    <span class="comment">// Determine w- = m- such that e_(w-) = e_(w+).</span></div>
+<div class="line"><span class="lineno">  251</span>    <span class="keyword">const</span> diyfp w_minus = diyfp::normalize_to(m_minus, w_plus.e);</div>
+<div class="line"><span class="lineno">  252</span> </div>
+<div class="line"><span class="lineno">  253</span>    <span class="keywordflow">return</span> {diyfp::normalize(v), w_minus, w_plus};</div>
+<div class="line"><span class="lineno">  254</span>}</div>
+<div class="ttc" id="aclassE_html"><div class="ttname"><a href="classE.html">E</a></div><div class="ttdef"><b>Definition:</b> <a href="diagrams__e_8h_source.html#l00004">diagrams_e.h:4</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00062">detail::dtoa_impl::diyfp::e</a>, <a class="el" href="to__chars_8hpp_source.html#l00061">detail::dtoa_impl::diyfp::f</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="to__chars_8hpp_source.html#l00147">detail::dtoa_impl::diyfp::normalize()</a>, <a class="el" href="to__chars_8hpp_source.html#l00164">detail::dtoa_impl::diyfp::normalize_to()</a>, <a class="el" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">detail::value</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00888">grisu2()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df_cgraph.svg" width="366" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_a6a5ccf11847aab7a0f42f587b33935df_icgraph.svg" width="358" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a04eb234a28617519974fc962cd4da666" name="a04eb234a28617519974fc962cd4da666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04eb234a28617519974fc962cd4da666">&#9670;&#160;</a></span>find_largest_pow10()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int detail::dtoa_impl::find_largest_pow10 </td>
+          <td>(</td>
+          <td class="paramtype">const std::uint32_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint32_t &amp;&#160;</td>
+          <td class="paramname"><em>pow10</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For n != 0, returns k, such that pow10 := 10^(k-1) &lt;= n &lt; 10^k. For n == 0, returns 1 and sets pow10 := 1. </p>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00492">492</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  493</span>{</div>
+<div class="line"><span class="lineno">  494</span>    <span class="comment">// LCOV_EXCL_START</span></div>
+<div class="line"><span class="lineno">  495</span>    <span class="keywordflow">if</span> (n &gt;= 1000000000)</div>
+<div class="line"><span class="lineno">  496</span>    {</div>
+<div class="line"><span class="lineno">  497</span>        pow10 = 1000000000;</div>
+<div class="line"><span class="lineno">  498</span>        <span class="keywordflow">return</span> 10;</div>
+<div class="line"><span class="lineno">  499</span>    }</div>
+<div class="line"><span class="lineno">  500</span>    <span class="comment">// LCOV_EXCL_STOP</span></div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordflow">if</span> (n &gt;= 100000000)</div>
+<div class="line"><span class="lineno">  502</span>    {</div>
+<div class="line"><span class="lineno">  503</span>        pow10 = 100000000;</div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordflow">return</span>  9;</div>
+<div class="line"><span class="lineno">  505</span>    }</div>
+<div class="line"><span class="lineno">  506</span>    <span class="keywordflow">if</span> (n &gt;= 10000000)</div>
+<div class="line"><span class="lineno">  507</span>    {</div>
+<div class="line"><span class="lineno">  508</span>        pow10 = 10000000;</div>
+<div class="line"><span class="lineno">  509</span>        <span class="keywordflow">return</span>  8;</div>
+<div class="line"><span class="lineno">  510</span>    }</div>
+<div class="line"><span class="lineno">  511</span>    <span class="keywordflow">if</span> (n &gt;= 1000000)</div>
+<div class="line"><span class="lineno">  512</span>    {</div>
+<div class="line"><span class="lineno">  513</span>        pow10 = 1000000;</div>
+<div class="line"><span class="lineno">  514</span>        <span class="keywordflow">return</span>  7;</div>
+<div class="line"><span class="lineno">  515</span>    }</div>
+<div class="line"><span class="lineno">  516</span>    <span class="keywordflow">if</span> (n &gt;= 100000)</div>
+<div class="line"><span class="lineno">  517</span>    {</div>
+<div class="line"><span class="lineno">  518</span>        pow10 = 100000;</div>
+<div class="line"><span class="lineno">  519</span>        <span class="keywordflow">return</span>  6;</div>
+<div class="line"><span class="lineno">  520</span>    }</div>
+<div class="line"><span class="lineno">  521</span>    <span class="keywordflow">if</span> (n &gt;= 10000)</div>
+<div class="line"><span class="lineno">  522</span>    {</div>
+<div class="line"><span class="lineno">  523</span>        pow10 = 10000;</div>
+<div class="line"><span class="lineno">  524</span>        <span class="keywordflow">return</span>  5;</div>
+<div class="line"><span class="lineno">  525</span>    }</div>
+<div class="line"><span class="lineno">  526</span>    <span class="keywordflow">if</span> (n &gt;= 1000)</div>
+<div class="line"><span class="lineno">  527</span>    {</div>
+<div class="line"><span class="lineno">  528</span>        pow10 = 1000;</div>
+<div class="line"><span class="lineno">  529</span>        <span class="keywordflow">return</span>  4;</div>
+<div class="line"><span class="lineno">  530</span>    }</div>
+<div class="line"><span class="lineno">  531</span>    <span class="keywordflow">if</span> (n &gt;= 100)</div>
+<div class="line"><span class="lineno">  532</span>    {</div>
+<div class="line"><span class="lineno">  533</span>        pow10 = 100;</div>
+<div class="line"><span class="lineno">  534</span>        <span class="keywordflow">return</span>  3;</div>
+<div class="line"><span class="lineno">  535</span>    }</div>
+<div class="line"><span class="lineno">  536</span>    <span class="keywordflow">if</span> (n &gt;= 10)</div>
+<div class="line"><span class="lineno">  537</span>    {</div>
+<div class="line"><span class="lineno">  538</span>        pow10 = 10;</div>
+<div class="line"><span class="lineno">  539</span>        <span class="keywordflow">return</span>  2;</div>
+<div class="line"><span class="lineno">  540</span>    }</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>    pow10 = 1;</div>
+<div class="line"><span class="lineno">  543</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  544</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00587">grisu2_digit_gen()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_a04eb234a28617519974fc962cd4da666_icgraph.svg" width="723" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afab91abfdd1cdf43cc2fcd5b9c4a7456" name="afab91abfdd1cdf43cc2fcd5b9c4a7456"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afab91abfdd1cdf43cc2fcd5b9c4a7456">&#9670;&#160;</a></span>format_buffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="hedley_8hpp.html#a5f2aaec3b681d0a72f7d6e90b70cdcd1">JSON_HEDLEY_RETURNS_NON_NULL</a> char * detail::dtoa_impl::format_buffer </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>min_exp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_exp</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>prettify v = buf * 10^decimal_exponent </p>
+<p>If v is in the range [10^min_exp, 10^max_exp) it will be printed in fixed-point notation. Otherwise it will be printed in exponential notation.</p>
+<dl class="section pre"><dt>事前条件</dt><dd>min_exp &lt; 0 </dd>
+<dd>
+max_exp &gt; 0 </dd></dl>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00980">980</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  982</span>{</div>
+<div class="line"><span class="lineno">  983</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(min_exp &lt; 0);</div>
+<div class="line"><span class="lineno">  984</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(max_exp &gt; 0);</div>
+<div class="line"><span class="lineno">  985</span> </div>
+<div class="line"><span class="lineno">  986</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> k = len;</div>
+<div class="line"><span class="lineno">  987</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> n = len + decimal_exponent;</div>
+<div class="line"><span class="lineno">  988</span> </div>
+<div class="line"><span class="lineno">  989</span>    <span class="comment">// v = buf * 10^(n-k)</span></div>
+<div class="line"><span class="lineno">  990</span>    <span class="comment">// k is the length of the buffer (number of decimal digits)</span></div>
+<div class="line"><span class="lineno">  991</span>    <span class="comment">// n is the position of the decimal point relative to the start of the buffer.</span></div>
+<div class="line"><span class="lineno">  992</span> </div>
+<div class="line"><span class="lineno">  993</span>    <span class="keywordflow">if</span> (k &lt;= n &amp;&amp; n &lt;= max_exp)</div>
+<div class="line"><span class="lineno">  994</span>    {</div>
+<div class="line"><span class="lineno">  995</span>        <span class="comment">// digits[000]</span></div>
+<div class="line"><span class="lineno">  996</span>        <span class="comment">// len &lt;= max_exp + 2</span></div>
+<div class="line"><span class="lineno">  997</span> </div>
+<div class="line"><span class="lineno">  998</span>        std::memset(buf + k, <span class="charliteral">&#39;0&#39;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(n) - <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k));</div>
+<div class="line"><span class="lineno">  999</span>        <span class="comment">// Make it look like a floating-point number (#362, #378)</span></div>
+<div class="line"><span class="lineno"> 1000</span>        buf[n + 0] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1001</span>        buf[n + 1] = <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1002</span>        <span class="keywordflow">return</span> buf + (<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(n) + 2);</div>
+<div class="line"><span class="lineno"> 1003</span>    }</div>
+<div class="line"><span class="lineno"> 1004</span> </div>
+<div class="line"><span class="lineno"> 1005</span>    <span class="keywordflow">if</span> (0 &lt; n &amp;&amp; n &lt;= max_exp)</div>
+<div class="line"><span class="lineno"> 1006</span>    {</div>
+<div class="line"><span class="lineno"> 1007</span>        <span class="comment">// dig.its</span></div>
+<div class="line"><span class="lineno"> 1008</span>        <span class="comment">// len &lt;= max_digits10 + 1</span></div>
+<div class="line"><span class="lineno"> 1009</span> </div>
+<div class="line"><span class="lineno"> 1010</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(k &gt; n);</div>
+<div class="line"><span class="lineno"> 1011</span> </div>
+<div class="line"><span class="lineno"> 1012</span>        std::memmove(buf + (<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(n) + 1), buf + n, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k) - <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(n));</div>
+<div class="line"><span class="lineno"> 1013</span>        buf[n] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1014</span>        <span class="keywordflow">return</span> buf + (<span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k) + 1U);</div>
+<div class="line"><span class="lineno"> 1015</span>    }</div>
+<div class="line"><span class="lineno"> 1016</span> </div>
+<div class="line"><span class="lineno"> 1017</span>    <span class="keywordflow">if</span> (min_exp &lt; n &amp;&amp; n &lt;= 0)</div>
+<div class="line"><span class="lineno"> 1018</span>    {</div>
+<div class="line"><span class="lineno"> 1019</span>        <span class="comment">// 0.[000]digits</span></div>
+<div class="line"><span class="lineno"> 1020</span>        <span class="comment">// len &lt;= 2 + (-min_exp - 1) + max_digits10</span></div>
+<div class="line"><span class="lineno"> 1021</span> </div>
+<div class="line"><span class="lineno"> 1022</span>        std::memmove(buf + (2 + <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(-n)), buf, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k));</div>
+<div class="line"><span class="lineno"> 1023</span>        buf[0] = <span class="charliteral">&#39;0&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1024</span>        buf[1] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1025</span>        std::memset(buf + 2, <span class="charliteral">&#39;0&#39;</span>, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(-n));</div>
+<div class="line"><span class="lineno"> 1026</span>        <span class="keywordflow">return</span> buf + (2U + <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(-n) + <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k));</div>
+<div class="line"><span class="lineno"> 1027</span>    }</div>
+<div class="line"><span class="lineno"> 1028</span> </div>
+<div class="line"><span class="lineno"> 1029</span>    <span class="keywordflow">if</span> (k == 1)</div>
+<div class="line"><span class="lineno"> 1030</span>    {</div>
+<div class="line"><span class="lineno"> 1031</span>        <span class="comment">// dE+123</span></div>
+<div class="line"><span class="lineno"> 1032</span>        <span class="comment">// len &lt;= 1 + 5</span></div>
+<div class="line"><span class="lineno"> 1033</span> </div>
+<div class="line"><span class="lineno"> 1034</span>        buf += 1;</div>
+<div class="line"><span class="lineno"> 1035</span>    }</div>
+<div class="line"><span class="lineno"> 1036</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno"> 1037</span>    {</div>
+<div class="line"><span class="lineno"> 1038</span>        <span class="comment">// d.igitsE+123</span></div>
+<div class="line"><span class="lineno"> 1039</span>        <span class="comment">// len &lt;= max_digits10 + 1 + 5</span></div>
+<div class="line"><span class="lineno"> 1040</span> </div>
+<div class="line"><span class="lineno"> 1041</span>        std::memmove(buf + 2, buf + 1, <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k) - 1);</div>
+<div class="line"><span class="lineno"> 1042</span>        buf[1] = <span class="charliteral">&#39;.&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1043</span>        buf += 1 + <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(k);</div>
+<div class="line"><span class="lineno"> 1044</span>    }</div>
+<div class="line"><span class="lineno"> 1045</span> </div>
+<div class="line"><span class="lineno"> 1046</span>    *buf++ = <span class="charliteral">&#39;e&#39;</span>;</div>
+<div class="line"><span class="lineno"> 1047</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#aec9f6655c3b629aeb0e8c887aea5da87">append_exponent</a>(buf, n - 1);</div>
+<div class="line"><span class="lineno"> 1048</span>}</div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_aec9f6655c3b629aeb0e8c887aea5da87"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#aec9f6655c3b629aeb0e8c887aea5da87">detail::dtoa_impl::append_exponent</a></div><div class="ttdeci">JSON_HEDLEY_RETURNS_NON_NULL char * append_exponent(char *buf, int e)</div><div class="ttdoc">appends a decimal representation of e to buf</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00928">to_chars.hpp:928</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00928">append_exponent()</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l01065">detail::to_chars()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_afab91abfdd1cdf43cc2fcd5b9c4a7456_cgraph.svg" width="339" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_afab91abfdd1cdf43cc2fcd5b9c4a7456_icgraph.svg" width="322" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a29ae6574f6be09a5c8ab08da9a3f71b4" name="a29ae6574f6be09a5c8ab08da9a3f71b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ae6574f6be09a5c8ab08da9a3f71b4">&#9670;&#160;</a></span>get_cached_power_for_binary_exponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdetail_1_1dtoa__impl_1_1cached__power.html">cached_power</a> detail::dtoa_impl::get_cached_power_for_binary_exponent </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>e</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>For a normalized diyfp w = f * 2^e, this function returns a (normalized) cached power-of-ten c = f_c * 2^e_c, such that the exponent of the product w * c satisfies (Definition 3.2 from [1]) </p><pre class="fragment"> alpha &lt;= e_c + e + q &lt;= gamma.
+</pre> 
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00328">328</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  329</span>{</div>
+<div class="line"><span class="lineno">  330</span>    <span class="comment">// Now</span></div>
+<div class="line"><span class="lineno">  331</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  332</span>    <span class="comment">//      alpha &lt;= e_c + e + q &lt;= gamma                                    (1)</span></div>
+<div class="line"><span class="lineno">  333</span>    <span class="comment">//      ==&gt; f_c * 2^alpha &lt;= c * 2^e * 2^q</span></div>
+<div class="line"><span class="lineno">  334</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  335</span>    <span class="comment">// and since the c&#39;s are normalized, 2^(q-1) &lt;= f_c,</span></div>
+<div class="line"><span class="lineno">  336</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  337</span>    <span class="comment">//      ==&gt; 2^(q - 1 + alpha) &lt;= c * 2^(e + q)</span></div>
+<div class="line"><span class="lineno">  338</span>    <span class="comment">//      ==&gt; 2^(alpha - e - 1) &lt;= c</span></div>
+<div class="line"><span class="lineno">  339</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  340</span>    <span class="comment">// If c were an exact power of ten, i.e. c = 10^k, one may determine k as</span></div>
+<div class="line"><span class="lineno">  341</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  342</span>    <span class="comment">//      k = ceil( log_10( 2^(alpha - e - 1) ) )</span></div>
+<div class="line"><span class="lineno">  343</span>    <span class="comment">//        = ceil( (alpha - e - 1) * log_10(2) )</span></div>
+<div class="line"><span class="lineno">  344</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  345</span>    <span class="comment">// From the paper:</span></div>
+<div class="line"><span class="lineno">  346</span>    <span class="comment">// &quot;In theory the result of the procedure could be wrong since c is rounded,</span></div>
+<div class="line"><span class="lineno">  347</span>    <span class="comment">//  and the computation itself is approximated [...]. In practice, however,</span></div>
+<div class="line"><span class="lineno">  348</span>    <span class="comment">//  this simple function is sufficient.&quot;</span></div>
+<div class="line"><span class="lineno">  349</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  350</span>    <span class="comment">// For IEEE double precision floating-point numbers converted into</span></div>
+<div class="line"><span class="lineno">  351</span>    <span class="comment">// normalized diyfp&#39;s w = f * 2^e, with q = 64,</span></div>
+<div class="line"><span class="lineno">  352</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  353</span>    <span class="comment">//      e &gt;= -1022      (min IEEE exponent)</span></div>
+<div class="line"><span class="lineno">  354</span>    <span class="comment">//           -52        (p - 1)</span></div>
+<div class="line"><span class="lineno">  355</span>    <span class="comment">//           -52        (p - 1, possibly normalize denormal IEEE numbers)</span></div>
+<div class="line"><span class="lineno">  356</span>    <span class="comment">//           -11        (normalize the diyfp)</span></div>
+<div class="line"><span class="lineno">  357</span>    <span class="comment">//         = -1137</span></div>
+<div class="line"><span class="lineno">  358</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  359</span>    <span class="comment">// and</span></div>
+<div class="line"><span class="lineno">  360</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  361</span>    <span class="comment">//      e &lt;= +1023      (max IEEE exponent)</span></div>
+<div class="line"><span class="lineno">  362</span>    <span class="comment">//           -52        (p - 1)</span></div>
+<div class="line"><span class="lineno">  363</span>    <span class="comment">//           -11        (normalize the diyfp)</span></div>
+<div class="line"><span class="lineno">  364</span>    <span class="comment">//         = 960</span></div>
+<div class="line"><span class="lineno">  365</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  366</span>    <span class="comment">// This binary exponent range [-1137,960] results in a decimal exponent</span></div>
+<div class="line"><span class="lineno">  367</span>    <span class="comment">// range [-307,324]. One does not need to store a cached power for each</span></div>
+<div class="line"><span class="lineno">  368</span>    <span class="comment">// k in this range. For each such k it suffices to find a cached power</span></div>
+<div class="line"><span class="lineno">  369</span>    <span class="comment">// such that the exponent of the product lies in [alpha,gamma].</span></div>
+<div class="line"><span class="lineno">  370</span>    <span class="comment">// This implies that the difference of the decimal exponents of adjacent</span></div>
+<div class="line"><span class="lineno">  371</span>    <span class="comment">// table entries must be less than or equal to</span></div>
+<div class="line"><span class="lineno">  372</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  373</span>    <span class="comment">//      floor( (gamma - alpha) * log_10(2) ) = 8.</span></div>
+<div class="line"><span class="lineno">  374</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  375</span>    <span class="comment">// (A smaller distance gamma-alpha would require a larger table.)</span></div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>    <span class="comment">// NB:</span></div>
+<div class="line"><span class="lineno">  378</span>    <span class="comment">// Actually this function returns c, such that -60 &lt;= e_c + e + 64 &lt;= -34.</span></div>
+<div class="line"><span class="lineno">  379</span> </div>
+<div class="line"><span class="lineno">  380</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kCachedPowersMinDecExp = -300;</div>
+<div class="line"><span class="lineno">  381</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kCachedPowersDecStep = 8;</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>    <span class="keyword">static</span> <span class="keyword">constexpr</span> std::array&lt;cached_power, 79&gt; kCachedPowers =</div>
+<div class="line"><span class="lineno">  384</span>    {</div>
+<div class="line"><span class="lineno">  385</span>        {</div>
+<div class="line"><span class="lineno">  386</span>            { 0xAB70FE17C79AC6CA, -1060, -300 },</div>
+<div class="line"><span class="lineno">  387</span>            { 0xFF77B1FCBEBCDC4F, -1034, -292 },</div>
+<div class="line"><span class="lineno">  388</span>            { 0xBE5691EF416BD60C, -1007, -284 },</div>
+<div class="line"><span class="lineno">  389</span>            { 0x8DD01FAD907FFC3C,  -980, -276 },</div>
+<div class="line"><span class="lineno">  390</span>            { 0xD3515C2831559A83,  -954, -268 },</div>
+<div class="line"><span class="lineno">  391</span>            { 0x9D71AC8FADA6C9B5,  -927, -260 },</div>
+<div class="line"><span class="lineno">  392</span>            { 0xEA9C227723EE8BCB,  -901, -252 },</div>
+<div class="line"><span class="lineno">  393</span>            { 0xAECC49914078536D,  -874, -244 },</div>
+<div class="line"><span class="lineno">  394</span>            { 0x823C12795DB6CE57,  -847, -236 },</div>
+<div class="line"><span class="lineno">  395</span>            { 0xC21094364DFB5637,  -821, -228 },</div>
+<div class="line"><span class="lineno">  396</span>            { 0x9096EA6F3848984F,  -794, -220 },</div>
+<div class="line"><span class="lineno">  397</span>            { 0xD77485CB25823AC7,  -768, -212 },</div>
+<div class="line"><span class="lineno">  398</span>            { 0xA086CFCD97BF97F4,  -741, -204 },</div>
+<div class="line"><span class="lineno">  399</span>            { 0xEF340A98172AACE5,  -715, -196 },</div>
+<div class="line"><span class="lineno">  400</span>            { 0xB23867FB2A35B28E,  -688, -188 },</div>
+<div class="line"><span class="lineno">  401</span>            { 0x84C8D4DFD2C63F3B,  -661, -180 },</div>
+<div class="line"><span class="lineno">  402</span>            { 0xC5DD44271AD3CDBA,  -635, -172 },</div>
+<div class="line"><span class="lineno">  403</span>            { 0x936B9FCEBB25C996,  -608, -164 },</div>
+<div class="line"><span class="lineno">  404</span>            { 0xDBAC6C247D62A584,  -582, -156 },</div>
+<div class="line"><span class="lineno">  405</span>            { 0xA3AB66580D5FDAF6,  -555, -148 },</div>
+<div class="line"><span class="lineno">  406</span>            { 0xF3E2F893DEC3F126,  -529, -140 },</div>
+<div class="line"><span class="lineno">  407</span>            { 0xB5B5ADA8AAFF80B8,  -502, -132 },</div>
+<div class="line"><span class="lineno">  408</span>            { 0x87625F056C7C4A8B,  -475, -124 },</div>
+<div class="line"><span class="lineno">  409</span>            { 0xC9BCFF6034C13053,  -449, -116 },</div>
+<div class="line"><span class="lineno">  410</span>            { 0x964E858C91BA2655,  -422, -108 },</div>
+<div class="line"><span class="lineno">  411</span>            { 0xDFF9772470297EBD,  -396, -100 },</div>
+<div class="line"><span class="lineno">  412</span>            { 0xA6DFBD9FB8E5B88F,  -369,  -92 },</div>
+<div class="line"><span class="lineno">  413</span>            { 0xF8A95FCF88747D94,  -343,  -84 },</div>
+<div class="line"><span class="lineno">  414</span>            { 0xB94470938FA89BCF,  -316,  -76 },</div>
+<div class="line"><span class="lineno">  415</span>            { 0x8A08F0F8BF0F156B,  -289,  -68 },</div>
+<div class="line"><span class="lineno">  416</span>            { 0xCDB02555653131B6,  -263,  -60 },</div>
+<div class="line"><span class="lineno">  417</span>            { 0x993FE2C6D07B7FAC,  -236,  -52 },</div>
+<div class="line"><span class="lineno">  418</span>            { 0xE45C10C42A2B3B06,  -210,  -44 },</div>
+<div class="line"><span class="lineno">  419</span>            { 0xAA242499697392D3,  -183,  -36 },</div>
+<div class="line"><span class="lineno">  420</span>            { 0xFD87B5F28300CA0E,  -157,  -28 },</div>
+<div class="line"><span class="lineno">  421</span>            { 0xBCE5086492111AEB,  -130,  -20 },</div>
+<div class="line"><span class="lineno">  422</span>            { 0x8CBCCC096F5088CC,  -103,  -12 },</div>
+<div class="line"><span class="lineno">  423</span>            { 0xD1B71758E219652C,   -77,   -4 },</div>
+<div class="line"><span class="lineno">  424</span>            { 0x9C40000000000000,   -50,    4 },</div>
+<div class="line"><span class="lineno">  425</span>            { 0xE8D4A51000000000,   -24,   12 },</div>
+<div class="line"><span class="lineno">  426</span>            { 0xAD78EBC5AC620000,     3,   20 },</div>
+<div class="line"><span class="lineno">  427</span>            { 0x813F3978F8940984,    30,   28 },</div>
+<div class="line"><span class="lineno">  428</span>            { 0xC097CE7BC90715B3,    56,   36 },</div>
+<div class="line"><span class="lineno">  429</span>            { 0x8F7E32CE7BEA5C70,    83,   44 },</div>
+<div class="line"><span class="lineno">  430</span>            { 0xD5D238A4ABE98068,   109,   52 },</div>
+<div class="line"><span class="lineno">  431</span>            { 0x9F4F2726179A2245,   136,   60 },</div>
+<div class="line"><span class="lineno">  432</span>            { 0xED63A231D4C4FB27,   162,   68 },</div>
+<div class="line"><span class="lineno">  433</span>            { 0xB0DE65388CC8ADA8,   189,   76 },</div>
+<div class="line"><span class="lineno">  434</span>            { 0x83C7088E1AAB65DB,   216,   84 },</div>
+<div class="line"><span class="lineno">  435</span>            { 0xC45D1DF942711D9A,   242,   92 },</div>
+<div class="line"><span class="lineno">  436</span>            { 0x924D692CA61BE758,   269,  100 },</div>
+<div class="line"><span class="lineno">  437</span>            { 0xDA01EE641A708DEA,   295,  108 },</div>
+<div class="line"><span class="lineno">  438</span>            { 0xA26DA3999AEF774A,   322,  116 },</div>
+<div class="line"><span class="lineno">  439</span>            { 0xF209787BB47D6B85,   348,  124 },</div>
+<div class="line"><span class="lineno">  440</span>            { 0xB454E4A179DD1877,   375,  132 },</div>
+<div class="line"><span class="lineno">  441</span>            { 0x865B86925B9BC5C2,   402,  140 },</div>
+<div class="line"><span class="lineno">  442</span>            { 0xC83553C5C8965D3D,   428,  148 },</div>
+<div class="line"><span class="lineno">  443</span>            { 0x952AB45CFA97A0B3,   455,  156 },</div>
+<div class="line"><span class="lineno">  444</span>            { 0xDE469FBD99A05FE3,   481,  164 },</div>
+<div class="line"><span class="lineno">  445</span>            { 0xA59BC234DB398C25,   508,  172 },</div>
+<div class="line"><span class="lineno">  446</span>            { 0xF6C69A72A3989F5C,   534,  180 },</div>
+<div class="line"><span class="lineno">  447</span>            { 0xB7DCBF5354E9BECE,   561,  188 },</div>
+<div class="line"><span class="lineno">  448</span>            { 0x88FCF317F22241E2,   588,  196 },</div>
+<div class="line"><span class="lineno">  449</span>            { 0xCC20CE9BD35C78A5,   614,  204 },</div>
+<div class="line"><span class="lineno">  450</span>            { 0x98165AF37B2153DF,   641,  212 },</div>
+<div class="line"><span class="lineno">  451</span>            { 0xE2A0B5DC971F303A,   667,  220 },</div>
+<div class="line"><span class="lineno">  452</span>            { 0xA8D9D1535CE3B396,   694,  228 },</div>
+<div class="line"><span class="lineno">  453</span>            { 0xFB9B7CD9A4A7443C,   720,  236 },</div>
+<div class="line"><span class="lineno">  454</span>            { 0xBB764C4CA7A44410,   747,  244 },</div>
+<div class="line"><span class="lineno">  455</span>            { 0x8BAB8EEFB6409C1A,   774,  252 },</div>
+<div class="line"><span class="lineno">  456</span>            { 0xD01FEF10A657842C,   800,  260 },</div>
+<div class="line"><span class="lineno">  457</span>            { 0x9B10A4E5E9913129,   827,  268 },</div>
+<div class="line"><span class="lineno">  458</span>            { 0xE7109BFBA19C0C9D,   853,  276 },</div>
+<div class="line"><span class="lineno">  459</span>            { 0xAC2820D9623BF429,   880,  284 },</div>
+<div class="line"><span class="lineno">  460</span>            { 0x80444B5E7AA7CF85,   907,  292 },</div>
+<div class="line"><span class="lineno">  461</span>            { 0xBF21E44003ACDD2D,   933,  300 },</div>
+<div class="line"><span class="lineno">  462</span>            { 0x8E679C2F5E44FF8F,   960,  308 },</div>
+<div class="line"><span class="lineno">  463</span>            { 0xD433179D9C8CB841,   986,  316 },</div>
+<div class="line"><span class="lineno">  464</span>            { 0x9E19DB92B4E31BA9,  1013,  324 },</div>
+<div class="line"><span class="lineno">  465</span>        }</div>
+<div class="line"><span class="lineno">  466</span>    };</div>
+<div class="line"><span class="lineno">  467</span> </div>
+<div class="line"><span class="lineno">  468</span>    <span class="comment">// This computation gives exactly the same results for k as</span></div>
+<div class="line"><span class="lineno">  469</span>    <span class="comment">//      k = ceil((kAlpha - e - 1) * 0.30102999566398114)</span></div>
+<div class="line"><span class="lineno">  470</span>    <span class="comment">// for |e| &lt;= 1500, but doesn&#39;t require floating-point operations.</span></div>
+<div class="line"><span class="lineno">  471</span>    <span class="comment">// NB: log_10(2) ~= 78913 / 2^18</span></div>
+<div class="line"><span class="lineno">  472</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(e &gt;= -1500);</div>
+<div class="line"><span class="lineno">  473</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(e &lt;=  1500);</div>
+<div class="line"><span class="lineno">  474</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> f = <a class="code hl_variable" href="namespacedetail_1_1dtoa__impl.html#a95c569b7627a9372686f1f77d73e8660">kAlpha</a> - e - 1;</div>
+<div class="line"><span class="lineno">  475</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> k = ((f * 78913) / (1 &lt;&lt; 18)) + <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(f &gt; 0);</div>
+<div class="line"><span class="lineno">  476</span> </div>
+<div class="line"><span class="lineno">  477</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> index = (-kCachedPowersMinDecExp + k + (kCachedPowersDecStep - 1)) / kCachedPowersDecStep;</div>
+<div class="line"><span class="lineno">  478</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(index &gt;= 0);</div>
+<div class="line"><span class="lineno">  479</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(index) &lt; kCachedPowers.size());</div>
+<div class="line"><span class="lineno">  480</span> </div>
+<div class="line"><span class="lineno">  481</span>    <span class="keyword">const</span> cached_power cached = kCachedPowers[<span class="keyword">static_cast&lt;</span>std::size_t<span class="keyword">&gt;</span>(index)];</div>
+<div class="line"><span class="lineno">  482</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(kAlpha &lt;= cached.e + e + 64);</div>
+<div class="line"><span class="lineno">  483</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(kGamma &gt;= cached.e + e + 64);</div>
+<div class="line"><span class="lineno">  484</span> </div>
+<div class="line"><span class="lineno">  485</span>    <span class="keywordflow">return</span> cached;</div>
+<div class="line"><span class="lineno">  486</span>}</div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_a95c569b7627a9372686f1f77d73e8660"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#a95c569b7627a9372686f1f77d73e8660">detail::dtoa_impl::kAlpha</a></div><div class="ttdeci">constexpr int kAlpha</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00311">to_chars.hpp:311</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00317">detail::dtoa_impl::cached_power::e</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="to__chars_8hpp_source.html#l00311">kAlpha</a>, <a class="el" href="to__chars_8hpp_source.html#l00312">kGamma</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00828">grisu2()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_a29ae6574f6be09a5c8ab08da9a3f71b4_icgraph.svg" width="555" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad549352ed1a9676a092d143a2daa3dee" name="ad549352ed1a9676a092d143a2daa3dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad549352ed1a9676a092d143a2daa3dee">&#9670;&#160;</a></span>grisu2() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detail::dtoa_impl::grisu2 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>m_minus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>m_plus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>v = buf * 10^decimal_exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.e. &gt;= max_digits10. </p>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00828">828</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  830</span>{</div>
+<div class="line"><span class="lineno">  831</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a> == m_minus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>);</div>
+<div class="line"><span class="lineno">  832</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(m_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a> == v.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>);</div>
+<div class="line"><span class="lineno">  833</span> </div>
+<div class="line"><span class="lineno">  834</span>    <span class="comment">//  --------(-----------------------+-----------------------)--------    (A)</span></div>
+<div class="line"><span class="lineno">  835</span>    <span class="comment">//          m-                      v                       m+</span></div>
+<div class="line"><span class="lineno">  836</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  837</span>    <span class="comment">//  --------------------(-----------+-----------------------)--------    (B)</span></div>
+<div class="line"><span class="lineno">  838</span>    <span class="comment">//                      m-          v                       m+</span></div>
+<div class="line"><span class="lineno">  839</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  840</span>    <span class="comment">// First scale v (and m- and m+) such that the exponent is in the range</span></div>
+<div class="line"><span class="lineno">  841</span>    <span class="comment">// [alpha, gamma].</span></div>
+<div class="line"><span class="lineno">  842</span> </div>
+<div class="line"><span class="lineno">  843</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1cached__power.html">cached_power</a> cached = <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#a29ae6574f6be09a5c8ab08da9a3f71b4">get_cached_power_for_binary_exponent</a>(m_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>);</div>
+<div class="line"><span class="lineno">  844</span> </div>
+<div class="line"><span class="lineno">  845</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> c_minus_k(cached.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1cached__power.html#a1e1bc1d228d8e54dc830fe6ef719eecf">f</a>, cached.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1cached__power.html#a96cc75e988a7e08e2de93db20024e7df">e</a>); <span class="comment">// = c ~= 10^-k</span></div>
+<div class="line"><span class="lineno">  846</span> </div>
+<div class="line"><span class="lineno">  847</span>    <span class="comment">// The exponent of the products is = v.e + c_minus_k.e + q and is in the range [alpha,gamma]</span></div>
+<div class="line"><span class="lineno">  848</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> w       = diyfp::mul(v,       c_minus_k);</div>
+<div class="line"><span class="lineno">  849</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> w_minus = diyfp::mul(m_minus, c_minus_k);</div>
+<div class="line"><span class="lineno">  850</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> w_plus  = diyfp::mul(m_plus,  c_minus_k);</div>
+<div class="line"><span class="lineno">  851</span> </div>
+<div class="line"><span class="lineno">  852</span>    <span class="comment">//  ----(---+---)---------------(---+---)---------------(---+---)----</span></div>
+<div class="line"><span class="lineno">  853</span>    <span class="comment">//          w-                      w                       w+</span></div>
+<div class="line"><span class="lineno">  854</span>    <span class="comment">//          = c*m-                  = c*v                   = c*m+</span></div>
+<div class="line"><span class="lineno">  855</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  856</span>    <span class="comment">// diyfp::mul rounds its result and c_minus_k is approximated too. w, w- and</span></div>
+<div class="line"><span class="lineno">  857</span>    <span class="comment">// w+ are now off by a small amount.</span></div>
+<div class="line"><span class="lineno">  858</span>    <span class="comment">// In fact:</span></div>
+<div class="line"><span class="lineno">  859</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  860</span>    <span class="comment">//      w - v * 10^k &lt; 1 ulp</span></div>
+<div class="line"><span class="lineno">  861</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  862</span>    <span class="comment">// To account for this inaccuracy, add resp. subtract 1 ulp.</span></div>
+<div class="line"><span class="lineno">  863</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  864</span>    <span class="comment">//  --------+---[---------------(---+---)---------------]---+--------</span></div>
+<div class="line"><span class="lineno">  865</span>    <span class="comment">//          w-  M-                  w                   M+  w+</span></div>
+<div class="line"><span class="lineno">  866</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  867</span>    <span class="comment">// Now any number in [M-, M+] (bounds included) will round to w when input,</span></div>
+<div class="line"><span class="lineno">  868</span>    <span class="comment">// regardless of how the input rounding algorithm breaks ties.</span></div>
+<div class="line"><span class="lineno">  869</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  870</span>    <span class="comment">// And digit_gen generates the shortest possible such number in [M-, M+].</span></div>
+<div class="line"><span class="lineno">  871</span>    <span class="comment">// Note that this does not mean that Grisu2 always generates the shortest</span></div>
+<div class="line"><span class="lineno">  872</span>    <span class="comment">// possible number in the interval (m-, m+).</span></div>
+<div class="line"><span class="lineno">  873</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_minus(w_minus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae1518119517cb69d79aa64ffb93c8375">f</a> + 1, w_minus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>);</div>
+<div class="line"><span class="lineno">  874</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> M_plus (w_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae1518119517cb69d79aa64ffb93c8375">f</a>  - 1, w_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a> );</div>
+<div class="line"><span class="lineno">  875</span> </div>
+<div class="line"><span class="lineno">  876</span>    decimal_exponent = -cached.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1cached__power.html#ae9c889d5fc4427f633ec23044e986755">k</a>; <span class="comment">// = -(-k) = k</span></div>
+<div class="line"><span class="lineno">  877</span> </div>
+<div class="line"><span class="lineno">  878</span>    <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807">grisu2_digit_gen</a>(buf, len, decimal_exponent, M_minus, w, M_plus);</div>
+<div class="line"><span class="lineno">  879</span>}</div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_a29ae6574f6be09a5c8ab08da9a3f71b4"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#a29ae6574f6be09a5c8ab08da9a3f71b4">detail::dtoa_impl::get_cached_power_for_binary_exponent</a></div><div class="ttdeci">cached_power get_cached_power_for_binary_exponent(int e)</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00328">to_chars.hpp:328</a></div></div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_ae877aa13ab872c99a1c614e5e1524807"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#ae877aa13ab872c99a1c614e5e1524807">detail::dtoa_impl::grisu2_digit_gen</a></div><div class="ttdeci">void grisu2_digit_gen(char *buffer, int &amp;length, int &amp;decimal_exponent, diyfp M_minus, diyfp w, diyfp M_plus)</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00587">to_chars.hpp:587</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1cached__power_html"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1cached__power.html">detail::dtoa_impl::cached_power</a></div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00314">to_chars.hpp:315</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1cached__power_html_a1e1bc1d228d8e54dc830fe6ef719eecf"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1cached__power.html#a1e1bc1d228d8e54dc830fe6ef719eecf">detail::dtoa_impl::cached_power::f</a></div><div class="ttdeci">std::uint64_t f</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00316">to_chars.hpp:316</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1cached__power_html_a96cc75e988a7e08e2de93db20024e7df"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1cached__power.html#a96cc75e988a7e08e2de93db20024e7df">detail::dtoa_impl::cached_power::e</a></div><div class="ttdeci">int e</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00317">to_chars.hpp:317</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1cached__power_html_ae9c889d5fc4427f633ec23044e986755"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1cached__power.html#ae9c889d5fc4427f633ec23044e986755">detail::dtoa_impl::cached_power::k</a></div><div class="ttdeci">int k</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00318">to_chars.hpp:318</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1diyfp_html"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1diyfp.html">detail::dtoa_impl::diyfp</a></div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00057">to_chars.hpp:58</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1diyfp_html_ae1518119517cb69d79aa64ffb93c8375"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae1518119517cb69d79aa64ffb93c8375">detail::dtoa_impl::diyfp::f</a></div><div class="ttdeci">std::uint64_t f</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00061">to_chars.hpp:61</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1diyfp_html_ae2b59fab8dee9ef0192eb6b568fa7314"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">detail::dtoa_impl::diyfp::e</a></div><div class="ttdeci">int e</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00062">to_chars.hpp:62</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00062">detail::dtoa_impl::diyfp::e</a>, <a class="el" href="to__chars_8hpp_source.html#l00317">detail::dtoa_impl::cached_power::e</a>, <a class="el" href="to__chars_8hpp_source.html#l00061">detail::dtoa_impl::diyfp::f</a>, <a class="el" href="to__chars_8hpp_source.html#l00316">detail::dtoa_impl::cached_power::f</a>, <a class="el" href="to__chars_8hpp_source.html#l00328">get_cached_power_for_binary_exponent()</a>, <a class="el" href="to__chars_8hpp_source.html#l00587">grisu2_digit_gen()</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="to__chars_8hpp_source.html#l00318">detail::dtoa_impl::cached_power::k</a>, <a class="el" href="to__chars_8hpp_source.html#l00082">detail::dtoa_impl::diyfp::mul()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00888">grisu2()</a>, <a class="el" href="to__chars_8hpp_source.html#l01065">detail::to_chars()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee_cgraph.svg" width="563" height="195"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_ad549352ed1a9676a092d143a2daa3dee_icgraph.svg" width="339" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="abdf6bc05c54068a5930f66c2e803e8b8" name="abdf6bc05c54068a5930f66c2e803e8b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdf6bc05c54068a5930f66c2e803e8b8">&#9670;&#160;</a></span>grisu2() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void detail::dtoa_impl::grisu2 </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatType&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>v = buf * 10^decimal_exponent len is the length of the buffer (number of decimal digits) The buffer must be large enough, i.e. &gt;= max_digits10. </p>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00888">888</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  889</span>{</div>
+<div class="line"><span class="lineno">  890</span>    <span class="keyword">static_assert</span>(diyfp::kPrecision &gt;= std::numeric_limits&lt;FloatType&gt;::digits + 3,</div>
+<div class="line"><span class="lineno">  891</span>                  <span class="stringliteral">&quot;internal error: not enough precision&quot;</span>);</div>
+<div class="line"><span class="lineno">  892</span> </div>
+<div class="line"><span class="lineno">  893</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(std::isfinite(value));</div>
+<div class="line"><span class="lineno">  894</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(value &gt; 0);</div>
+<div class="line"><span class="lineno">  895</span> </div>
+<div class="line"><span class="lineno">  896</span>    <span class="comment">// If the neighbors (and boundaries) of &#39;value&#39; are always computed for double-precision</span></div>
+<div class="line"><span class="lineno">  897</span>    <span class="comment">// numbers, all float&#39;s can be recovered using strtod (and strtof). However, the resulting</span></div>
+<div class="line"><span class="lineno">  898</span>    <span class="comment">// decimal representations are not exactly &quot;short&quot;.</span></div>
+<div class="line"><span class="lineno">  899</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  900</span>    <span class="comment">// The documentation for &#39;std::to_chars&#39; (https://en.cppreference.com/w/cpp/utility/to_chars)</span></div>
+<div class="line"><span class="lineno">  901</span>    <span class="comment">// says &quot;value is converted to a string as if by std::sprintf in the default (&quot;C&quot;) locale&quot;</span></div>
+<div class="line"><span class="lineno">  902</span>    <span class="comment">// and since sprintf promotes floats to doubles, I think this is exactly what &#39;std::to_chars&#39;</span></div>
+<div class="line"><span class="lineno">  903</span>    <span class="comment">// does.</span></div>
+<div class="line"><span class="lineno">  904</span>    <span class="comment">// On the other hand, the documentation for &#39;std::to_chars&#39; requires that &quot;parsing the</span></div>
+<div class="line"><span class="lineno">  905</span>    <span class="comment">// representation using the corresponding std::from_chars function recovers value exactly&quot;. That</span></div>
+<div class="line"><span class="lineno">  906</span>    <span class="comment">// indicates that single precision floating-point numbers should be recovered using</span></div>
+<div class="line"><span class="lineno">  907</span>    <span class="comment">// &#39;std::strtof&#39;.</span></div>
+<div class="line"><span class="lineno">  908</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  909</span>    <span class="comment">// NB: If the neighbors are computed for single-precision numbers, there is a single float</span></div>
+<div class="line"><span class="lineno">  910</span>    <span class="comment">//     (7.0385307e-26f) which can&#39;t be recovered using strtod. The resulting double precision</span></div>
+<div class="line"><span class="lineno">  911</span>    <span class="comment">//     value is off by 1 ulp.</span></div>
+<div class="line"><span class="lineno">  912</span><span class="preprocessor">#if 0 </span><span class="comment">// NOLINT(readability-avoid-unconditional-preprocessor-if)</span></div>
+<div class="line"><span class="lineno">  913</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1boundaries.html">boundaries</a> w = <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#a6a5ccf11847aab7a0f42f587b33935df">compute_boundaries</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(value));</div>
+<div class="line"><span class="lineno">  914</span><span class="preprocessor">#else</span></div>
+<div class="line"><span class="lineno">  915</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1boundaries.html">boundaries</a> w = <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#a6a5ccf11847aab7a0f42f587b33935df">compute_boundaries</a>(value);</div>
+<div class="line"><span class="lineno">  916</span><span class="preprocessor">#endif</span></div>
+<div class="line"><span class="lineno">  917</span> </div>
+<div class="line"><span class="lineno">  918</span>    <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee">grisu2</a>(buf, len, decimal_exponent, w.minus, w.w, w.plus);</div>
+<div class="line"><span class="lineno">  919</span>}</div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_a6a5ccf11847aab7a0f42f587b33935df"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#a6a5ccf11847aab7a0f42f587b33935df">detail::dtoa_impl::compute_boundaries</a></div><div class="ttdeci">boundaries compute_boundaries(FloatType value)</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00189">to_chars.hpp:189</a></div></div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_ad549352ed1a9676a092d143a2daa3dee"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#ad549352ed1a9676a092d143a2daa3dee">detail::dtoa_impl::grisu2</a></div><div class="ttdeci">void grisu2(char *buf, int &amp;len, int &amp;decimal_exponent, diyfp m_minus, diyfp v, diyfp m_plus)</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00828">to_chars.hpp:828</a></div></div>
+<div class="ttc" id="astructdetail_1_1dtoa__impl_1_1boundaries_html"><div class="ttname"><a href="structdetail_1_1dtoa__impl_1_1boundaries.html">detail::dtoa_impl::boundaries</a></div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00175">to_chars.hpp:176</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00189">compute_boundaries()</a>, <a class="el" href="to__chars_8hpp_source.html#l00828">grisu2()</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="to__chars_8hpp_source.html#l00059">detail::dtoa_impl::diyfp::kPrecision</a>, <a class="el" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa2063c1608d6e0baf80249c42e2be5804">detail::value</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_abdf6bc05c54068a5930f66c2e803e8b8_cgraph.svg" width="770" height="323"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae877aa13ab872c99a1c614e5e1524807" name="ae877aa13ab872c99a1c614e5e1524807"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae877aa13ab872c99a1c614e5e1524807">&#9670;&#160;</a></span>grisu2_digit_gen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detail::dtoa_impl::grisu2_digit_gen </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int &amp;&#160;</td>
+          <td class="paramname"><em>decimal_exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>M_minus</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a>&#160;</td>
+          <td class="paramname"><em>M_plus</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Generates V = buffer * 10^decimal_exponent, such that M- &lt;= V &lt;= M+. M- and M+ must be normalized and share the same exponent -60 &lt;= e &lt;= -32. </p>
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00587">587</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  589</span>{</div>
+<div class="line"><span class="lineno">  590</span>    <span class="keyword">static_assert</span>(<a class="code hl_variable" href="namespacedetail_1_1dtoa__impl.html#a95c569b7627a9372686f1f77d73e8660">kAlpha</a> &gt;= -60, <span class="stringliteral">&quot;internal error&quot;</span>);</div>
+<div class="line"><span class="lineno">  591</span>    <span class="keyword">static_assert</span>(<a class="code hl_variable" href="namespacedetail_1_1dtoa__impl.html#ae152a095d2dd1a6dd41ef8ad39c26e19">kGamma</a> &lt;= -32, <span class="stringliteral">&quot;internal error&quot;</span>);</div>
+<div class="line"><span class="lineno">  592</span> </div>
+<div class="line"><span class="lineno">  593</span>    <span class="comment">// Generates the digits (and the exponent) of a decimal floating-point</span></div>
+<div class="line"><span class="lineno">  594</span>    <span class="comment">// number V = buffer * 10^decimal_exponent in the range [M-, M+]. The diyfp&#39;s</span></div>
+<div class="line"><span class="lineno">  595</span>    <span class="comment">// w, M- and M+ share the same exponent e, which satisfies alpha &lt;= e &lt;= gamma.</span></div>
+<div class="line"><span class="lineno">  596</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  597</span>    <span class="comment">//               &lt;--------------------------- delta ----&gt;</span></div>
+<div class="line"><span class="lineno">  598</span>    <span class="comment">//                                  &lt;---- dist ---------&gt;</span></div>
+<div class="line"><span class="lineno">  599</span>    <span class="comment">// --------------[------------------+-------------------]--------------</span></div>
+<div class="line"><span class="lineno">  600</span>    <span class="comment">//               M-                 w                   M+</span></div>
+<div class="line"><span class="lineno">  601</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  602</span>    <span class="comment">// Grisu2 generates the digits of M+ from left to right and stops as soon as</span></div>
+<div class="line"><span class="lineno">  603</span>    <span class="comment">// V is in [M-,M+].</span></div>
+<div class="line"><span class="lineno">  604</span> </div>
+<div class="line"><span class="lineno">  605</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a> &gt;= kAlpha);</div>
+<div class="line"><span class="lineno">  606</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a> &lt;= kGamma);</div>
+<div class="line"><span class="lineno">  607</span> </div>
+<div class="line"><span class="lineno">  608</span>    std::uint64_t delta = diyfp::sub(M_plus, M_minus).f; <span class="comment">// (significand of (M+ - M-), implicit exponent is e)</span></div>
+<div class="line"><span class="lineno">  609</span>    std::uint64_t dist  = diyfp::sub(M_plus, w      ).f; <span class="comment">// (significand of (M+ - w ), implicit exponent is e)</span></div>
+<div class="line"><span class="lineno">  610</span> </div>
+<div class="line"><span class="lineno">  611</span>    <span class="comment">// Split M+ = f * 2^e into two parts p1 and p2 (note: e &lt; 0):</span></div>
+<div class="line"><span class="lineno">  612</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  613</span>    <span class="comment">//      M+ = f * 2^e</span></div>
+<div class="line"><span class="lineno">  614</span>    <span class="comment">//         = ((f div 2^-e) * 2^-e + (f mod 2^-e)) * 2^e</span></div>
+<div class="line"><span class="lineno">  615</span>    <span class="comment">//         = ((p1        ) * 2^-e + (p2        )) * 2^e</span></div>
+<div class="line"><span class="lineno">  616</span>    <span class="comment">//         = p1 + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  617</span> </div>
+<div class="line"><span class="lineno">  618</span>    <span class="keyword">const</span> <a class="code hl_struct" href="structdetail_1_1dtoa__impl_1_1diyfp.html">diyfp</a> one(std::uint64_t{1} &lt;&lt; -M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>, M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae2b59fab8dee9ef0192eb6b568fa7314">e</a>);</div>
+<div class="line"><span class="lineno">  619</span> </div>
+<div class="line"><span class="lineno">  620</span>    <span class="keyword">auto</span> p1 = <span class="keyword">static_cast&lt;</span>std::uint32_t<span class="keyword">&gt;</span>(M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae1518119517cb69d79aa64ffb93c8375">f</a> &gt;&gt; -one.e); <span class="comment">// p1 = f div 2^-e (Since -e &gt;= 32, p1 fits into a 32-bit int.)</span></div>
+<div class="line"><span class="lineno">  621</span>    std::uint64_t p2 = M_plus.<a class="code hl_variable" href="structdetail_1_1dtoa__impl_1_1diyfp.html#ae1518119517cb69d79aa64ffb93c8375">f</a> &amp; (one.f - 1);                    <span class="comment">// p2 = f mod 2^-e</span></div>
+<div class="line"><span class="lineno">  622</span> </div>
+<div class="line"><span class="lineno">  623</span>    <span class="comment">// 1)</span></div>
+<div class="line"><span class="lineno">  624</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  625</span>    <span class="comment">// Generate the digits of the integral part p1 = d[n-1]...d[1]d[0]</span></div>
+<div class="line"><span class="lineno">  626</span> </div>
+<div class="line"><span class="lineno">  627</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(p1 &gt; 0);</div>
+<div class="line"><span class="lineno">  628</span> </div>
+<div class="line"><span class="lineno">  629</span>    std::uint32_t pow10{};</div>
+<div class="line"><span class="lineno">  630</span>    <span class="keyword">const</span> <span class="keywordtype">int</span> k = find_largest_pow10(p1, pow10);</div>
+<div class="line"><span class="lineno">  631</span> </div>
+<div class="line"><span class="lineno">  632</span>    <span class="comment">//      10^(k-1) &lt;= p1 &lt; 10^k, pow10 = 10^(k-1)</span></div>
+<div class="line"><span class="lineno">  633</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  634</span>    <span class="comment">//      p1 = (p1 div 10^(k-1)) * 10^(k-1) + (p1 mod 10^(k-1))</span></div>
+<div class="line"><span class="lineno">  635</span>    <span class="comment">//         = (d[k-1]         ) * 10^(k-1) + (p1 mod 10^(k-1))</span></div>
+<div class="line"><span class="lineno">  636</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  637</span>    <span class="comment">//      M+ = p1                                             + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  638</span>    <span class="comment">//         = d[k-1] * 10^(k-1) + (p1 mod 10^(k-1))          + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  639</span>    <span class="comment">//         = d[k-1] * 10^(k-1) + ((p1 mod 10^(k-1)) * 2^-e + p2) * 2^e</span></div>
+<div class="line"><span class="lineno">  640</span>    <span class="comment">//         = d[k-1] * 10^(k-1) + (                         rest) * 2^e</span></div>
+<div class="line"><span class="lineno">  641</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  642</span>    <span class="comment">// Now generate the digits d[n] of p1 from left to right (n = k-1,...,0)</span></div>
+<div class="line"><span class="lineno">  643</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  644</span>    <span class="comment">//      p1 = d[k-1]...d[n] * 10^n + d[n-1]...d[0]</span></div>
+<div class="line"><span class="lineno">  645</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  646</span>    <span class="comment">// but stop as soon as</span></div>
+<div class="line"><span class="lineno">  647</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  648</span>    <span class="comment">//      rest * 2^e = (d[n-1]...d[0] * 2^-e + p2) * 2^e &lt;= delta * 2^e</span></div>
+<div class="line"><span class="lineno">  649</span> </div>
+<div class="line"><span class="lineno">  650</span>    <span class="keywordtype">int</span> n = k;</div>
+<div class="line"><span class="lineno">  651</span>    <span class="keywordflow">while</span> (n &gt; 0)</div>
+<div class="line"><span class="lineno">  652</span>    {</div>
+<div class="line"><span class="lineno">  653</span>        <span class="comment">// Invariants:</span></div>
+<div class="line"><span class="lineno">  654</span>        <span class="comment">//      M+ = buffer * 10^n + (p1 + p2 * 2^e)    (buffer = 0 for n = k)</span></div>
+<div class="line"><span class="lineno">  655</span>        <span class="comment">//      pow10 = 10^(n-1) &lt;= p1 &lt; 10^n</span></div>
+<div class="line"><span class="lineno">  656</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  657</span>        <span class="keyword">const</span> std::uint32_t d = p1 / pow10;  <span class="comment">// d = p1 div 10^(n-1)</span></div>
+<div class="line"><span class="lineno">  658</span>        <span class="keyword">const</span> std::uint32_t r = p1 % pow10;  <span class="comment">// r = p1 mod 10^(n-1)</span></div>
+<div class="line"><span class="lineno">  659</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  660</span>        <span class="comment">//      M+ = buffer * 10^n + (d * 10^(n-1) + r) + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  661</span>        <span class="comment">//         = (buffer * 10 + d) * 10^(n-1) + (r + p2 * 2^e)</span></div>
+<div class="line"><span class="lineno">  662</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  663</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(d &lt;= 9);</div>
+<div class="line"><span class="lineno">  664</span>        buffer[length++] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + d); <span class="comment">// buffer := buffer * 10 + d</span></div>
+<div class="line"><span class="lineno">  665</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  666</span>        <span class="comment">//      M+ = buffer * 10^(n-1) + (r + p2 * 2^e)</span></div>
+<div class="line"><span class="lineno">  667</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  668</span>        p1 = r;</div>
+<div class="line"><span class="lineno">  669</span>        n--;</div>
+<div class="line"><span class="lineno">  670</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  671</span>        <span class="comment">//      M+ = buffer * 10^n + (p1 + p2 * 2^e)</span></div>
+<div class="line"><span class="lineno">  672</span>        <span class="comment">//      pow10 = 10^n</span></div>
+<div class="line"><span class="lineno">  673</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  674</span> </div>
+<div class="line"><span class="lineno">  675</span>        <span class="comment">// Now check if enough digits have been generated.</span></div>
+<div class="line"><span class="lineno">  676</span>        <span class="comment">// Compute</span></div>
+<div class="line"><span class="lineno">  677</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  678</span>        <span class="comment">//      p1 + p2 * 2^e = (p1 * 2^-e + p2) * 2^e = rest * 2^e</span></div>
+<div class="line"><span class="lineno">  679</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  680</span>        <span class="comment">// Note:</span></div>
+<div class="line"><span class="lineno">  681</span>        <span class="comment">// Since rest and delta share the same exponent e, it suffices to</span></div>
+<div class="line"><span class="lineno">  682</span>        <span class="comment">// compare the significands.</span></div>
+<div class="line"><span class="lineno">  683</span>        <span class="keyword">const</span> std::uint64_t rest = (std::uint64_t{p1} &lt;&lt; -one.e) + p2;</div>
+<div class="line"><span class="lineno">  684</span>        <span class="keywordflow">if</span> (rest &lt;= delta)</div>
+<div class="line"><span class="lineno">  685</span>        {</div>
+<div class="line"><span class="lineno">  686</span>            <span class="comment">// V = buffer * 10^n, with M- &lt;= V &lt;= M+.</span></div>
+<div class="line"><span class="lineno">  687</span> </div>
+<div class="line"><span class="lineno">  688</span>            decimal_exponent += n;</div>
+<div class="line"><span class="lineno">  689</span> </div>
+<div class="line"><span class="lineno">  690</span>            <span class="comment">// We may now just stop. But instead look if the buffer could be</span></div>
+<div class="line"><span class="lineno">  691</span>            <span class="comment">// decremented to bring V closer to w.</span></div>
+<div class="line"><span class="lineno">  692</span>            <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  693</span>            <span class="comment">// pow10 = 10^n is now 1 ulp in the decimal representation V.</span></div>
+<div class="line"><span class="lineno">  694</span>            <span class="comment">// The rounding procedure works with diyfp&#39;s with an implicit</span></div>
+<div class="line"><span class="lineno">  695</span>            <span class="comment">// exponent of e.</span></div>
+<div class="line"><span class="lineno">  696</span>            <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  697</span>            <span class="comment">//      10^n = (10^n * 2^-e) * 2^e = ulp * 2^e</span></div>
+<div class="line"><span class="lineno">  698</span>            <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  699</span>            <span class="keyword">const</span> std::uint64_t ten_n = std::uint64_t{pow10} &lt;&lt; -one.e;</div>
+<div class="line"><span class="lineno">  700</span>            <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#a73a15efcb5c2157ea0e1375b98ef0e83">grisu2_round</a>(buffer, length, dist, delta, rest, ten_n);</div>
+<div class="line"><span class="lineno">  701</span> </div>
+<div class="line"><span class="lineno">  702</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  703</span>        }</div>
+<div class="line"><span class="lineno">  704</span> </div>
+<div class="line"><span class="lineno">  705</span>        pow10 /= 10;</div>
+<div class="line"><span class="lineno">  706</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  707</span>        <span class="comment">//      pow10 = 10^(n-1) &lt;= p1 &lt; 10^n</span></div>
+<div class="line"><span class="lineno">  708</span>        <span class="comment">// Invariants restored.</span></div>
+<div class="line"><span class="lineno">  709</span>    }</div>
+<div class="line"><span class="lineno">  710</span> </div>
+<div class="line"><span class="lineno">  711</span>    <span class="comment">// 2)</span></div>
+<div class="line"><span class="lineno">  712</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  713</span>    <span class="comment">// The digits of the integral part have been generated:</span></div>
+<div class="line"><span class="lineno">  714</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  715</span>    <span class="comment">//      M+ = d[k-1]...d[1]d[0] + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  716</span>    <span class="comment">//         = buffer            + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  717</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  718</span>    <span class="comment">// Now generate the digits of the fractional part p2 * 2^e.</span></div>
+<div class="line"><span class="lineno">  719</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  720</span>    <span class="comment">// Note:</span></div>
+<div class="line"><span class="lineno">  721</span>    <span class="comment">// No decimal point is generated: the exponent is adjusted instead.</span></div>
+<div class="line"><span class="lineno">  722</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  723</span>    <span class="comment">// p2 actually represents the fraction</span></div>
+<div class="line"><span class="lineno">  724</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  725</span>    <span class="comment">//      p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  726</span>    <span class="comment">//          = p2 / 2^-e</span></div>
+<div class="line"><span class="lineno">  727</span>    <span class="comment">//          = d[-1] / 10^1 + d[-2] / 10^2 + ...</span></div>
+<div class="line"><span class="lineno">  728</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  729</span>    <span class="comment">// Now generate the digits d[-m] of p1 from left to right (m = 1,2,...)</span></div>
+<div class="line"><span class="lineno">  730</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  731</span>    <span class="comment">//      p2 * 2^e = d[-1]d[-2]...d[-m] * 10^-m</span></div>
+<div class="line"><span class="lineno">  732</span>    <span class="comment">//                      + 10^-m * (d[-m-1] / 10^1 + d[-m-2] / 10^2 + ...)</span></div>
+<div class="line"><span class="lineno">  733</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  734</span>    <span class="comment">// using</span></div>
+<div class="line"><span class="lineno">  735</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  736</span>    <span class="comment">//      10^m * p2 = ((10^m * p2) div 2^-e) * 2^-e + ((10^m * p2) mod 2^-e)</span></div>
+<div class="line"><span class="lineno">  737</span>    <span class="comment">//                = (                   d) * 2^-e + (                   r)</span></div>
+<div class="line"><span class="lineno">  738</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  739</span>    <span class="comment">// or</span></div>
+<div class="line"><span class="lineno">  740</span>    <span class="comment">//      10^m * p2 * 2^e = d + r * 2^e</span></div>
+<div class="line"><span class="lineno">  741</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  742</span>    <span class="comment">// i.e.</span></div>
+<div class="line"><span class="lineno">  743</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  744</span>    <span class="comment">//      M+ = buffer + p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  745</span>    <span class="comment">//         = buffer + 10^-m * (d + r * 2^e)</span></div>
+<div class="line"><span class="lineno">  746</span>    <span class="comment">//         = (buffer * 10^m + d) * 10^-m + 10^-m * r * 2^e</span></div>
+<div class="line"><span class="lineno">  747</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  748</span>    <span class="comment">// and stop as soon as 10^-m * r * 2^e &lt;= delta * 2^e</span></div>
+<div class="line"><span class="lineno">  749</span> </div>
+<div class="line"><span class="lineno">  750</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(p2 &gt; delta);</div>
+<div class="line"><span class="lineno">  751</span> </div>
+<div class="line"><span class="lineno">  752</span>    <span class="keywordtype">int</span> m = 0;</div>
+<div class="line"><span class="lineno">  753</span>    <span class="keywordflow">for</span> (;;)</div>
+<div class="line"><span class="lineno">  754</span>    {</div>
+<div class="line"><span class="lineno">  755</span>        <span class="comment">// Invariant:</span></div>
+<div class="line"><span class="lineno">  756</span>        <span class="comment">//      M+ = buffer * 10^-m + 10^-m * (d[-m-1] / 10 + d[-m-2] / 10^2 + ...) * 2^e</span></div>
+<div class="line"><span class="lineno">  757</span>        <span class="comment">//         = buffer * 10^-m + 10^-m * (p2                                 ) * 2^e</span></div>
+<div class="line"><span class="lineno">  758</span>        <span class="comment">//         = buffer * 10^-m + 10^-m * (1/10 * (10 * p2)                   ) * 2^e</span></div>
+<div class="line"><span class="lineno">  759</span>        <span class="comment">//         = buffer * 10^-m + 10^-m * (1/10 * ((10*p2 div 2^-e) * 2^-e + (10*p2 mod 2^-e)) * 2^e</span></div>
+<div class="line"><span class="lineno">  760</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  761</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(p2 &lt;= (std::numeric_limits&lt;std::uint64_t&gt;::max)() / 10);</div>
+<div class="line"><span class="lineno">  762</span>        p2 *= 10;</div>
+<div class="line"><span class="lineno">  763</span>        <span class="keyword">const</span> std::uint64_t d = p2 &gt;&gt; -one.e;     <span class="comment">// d = (10 * p2) div 2^-e</span></div>
+<div class="line"><span class="lineno">  764</span>        <span class="keyword">const</span> std::uint64_t r = p2 &amp; (one.f - 1); <span class="comment">// r = (10 * p2) mod 2^-e</span></div>
+<div class="line"><span class="lineno">  765</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  766</span>        <span class="comment">//      M+ = buffer * 10^-m + 10^-m * (1/10 * (d * 2^-e + r) * 2^e</span></div>
+<div class="line"><span class="lineno">  767</span>        <span class="comment">//         = buffer * 10^-m + 10^-m * (1/10 * (d + r * 2^e))</span></div>
+<div class="line"><span class="lineno">  768</span>        <span class="comment">//         = (buffer * 10 + d) * 10^(-m-1) + 10^(-m-1) * r * 2^e</span></div>
+<div class="line"><span class="lineno">  769</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  770</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(d &lt;= 9);</div>
+<div class="line"><span class="lineno">  771</span>        buffer[length++] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span><span class="keyword">&gt;</span>(<span class="charliteral">&#39;0&#39;</span> + d); <span class="comment">// buffer := buffer * 10 + d</span></div>
+<div class="line"><span class="lineno">  772</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  773</span>        <span class="comment">//      M+ = buffer * 10^(-m-1) + 10^(-m-1) * r * 2^e</span></div>
+<div class="line"><span class="lineno">  774</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  775</span>        p2 = r;</div>
+<div class="line"><span class="lineno">  776</span>        m++;</div>
+<div class="line"><span class="lineno">  777</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  778</span>        <span class="comment">//      M+ = buffer * 10^-m + 10^-m * p2 * 2^e</span></div>
+<div class="line"><span class="lineno">  779</span>        <span class="comment">// Invariant restored.</span></div>
+<div class="line"><span class="lineno">  780</span> </div>
+<div class="line"><span class="lineno">  781</span>        <span class="comment">// Check if enough digits have been generated.</span></div>
+<div class="line"><span class="lineno">  782</span>        <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  783</span>        <span class="comment">//      10^-m * p2 * 2^e &lt;= delta * 2^e</span></div>
+<div class="line"><span class="lineno">  784</span>        <span class="comment">//              p2 * 2^e &lt;= 10^m * delta * 2^e</span></div>
+<div class="line"><span class="lineno">  785</span>        <span class="comment">//                    p2 &lt;= 10^m * delta</span></div>
+<div class="line"><span class="lineno">  786</span>        delta *= 10;</div>
+<div class="line"><span class="lineno">  787</span>        dist  *= 10;</div>
+<div class="line"><span class="lineno">  788</span>        <span class="keywordflow">if</span> (p2 &lt;= delta)</div>
+<div class="line"><span class="lineno">  789</span>        {</div>
+<div class="line"><span class="lineno">  790</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  791</span>        }</div>
+<div class="line"><span class="lineno">  792</span>    }</div>
+<div class="line"><span class="lineno">  793</span> </div>
+<div class="line"><span class="lineno">  794</span>    <span class="comment">// V = buffer * 10^-m, with M- &lt;= V &lt;= M+.</span></div>
+<div class="line"><span class="lineno">  795</span> </div>
+<div class="line"><span class="lineno">  796</span>    decimal_exponent -= m;</div>
+<div class="line"><span class="lineno">  797</span> </div>
+<div class="line"><span class="lineno">  798</span>    <span class="comment">// 1 ulp in the decimal representation is now 10^-m.</span></div>
+<div class="line"><span class="lineno">  799</span>    <span class="comment">// Since delta and dist are now scaled by 10^m, we need to do the</span></div>
+<div class="line"><span class="lineno">  800</span>    <span class="comment">// same with ulp in order to keep the units in sync.</span></div>
+<div class="line"><span class="lineno">  801</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  802</span>    <span class="comment">//      10^m * 10^-m = 1 = 2^-e * 2^e = ten_m * 2^e</span></div>
+<div class="line"><span class="lineno">  803</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  804</span>    <span class="keyword">const</span> std::uint64_t ten_m = one.f;</div>
+<div class="line"><span class="lineno">  805</span>    <a class="code hl_function" href="namespacedetail_1_1dtoa__impl.html#a73a15efcb5c2157ea0e1375b98ef0e83">grisu2_round</a>(buffer, length, dist, delta, p2, ten_m);</div>
+<div class="line"><span class="lineno">  806</span> </div>
+<div class="line"><span class="lineno">  807</span>    <span class="comment">// By construction this algorithm generates the shortest possible decimal</span></div>
+<div class="line"><span class="lineno">  808</span>    <span class="comment">// number (Loitsch, Theorem 6.2) which rounds back to w.</span></div>
+<div class="line"><span class="lineno">  809</span>    <span class="comment">// For an input number of precision p, at least</span></div>
+<div class="line"><span class="lineno">  810</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  811</span>    <span class="comment">//      N = 1 + ceil(p * log_10(2))</span></div>
+<div class="line"><span class="lineno">  812</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  813</span>    <span class="comment">// decimal digits are sufficient to identify all binary floating-point</span></div>
+<div class="line"><span class="lineno">  814</span>    <span class="comment">// numbers (Matula, &quot;In-and-Out conversions&quot;).</span></div>
+<div class="line"><span class="lineno">  815</span>    <span class="comment">// This implies that the algorithm does not produce more than N decimal</span></div>
+<div class="line"><span class="lineno">  816</span>    <span class="comment">// digits.</span></div>
+<div class="line"><span class="lineno">  817</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  818</span>    <span class="comment">//      N = 17 for p = 53 (IEEE double precision)</span></div>
+<div class="line"><span class="lineno">  819</span>    <span class="comment">//      N = 9  for p = 24 (IEEE single precision)</span></div>
+<div class="line"><span class="lineno">  820</span>}</div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_a73a15efcb5c2157ea0e1375b98ef0e83"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#a73a15efcb5c2157ea0e1375b98ef0e83">detail::dtoa_impl::grisu2_round</a></div><div class="ttdeci">void grisu2_round(char *buf, int len, std::uint64_t dist, std::uint64_t delta, std::uint64_t rest, std::uint64_t ten_k)</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00546">to_chars.hpp:546</a></div></div>
+<div class="ttc" id="anamespacedetail_1_1dtoa__impl_html_ae152a095d2dd1a6dd41ef8ad39c26e19"><div class="ttname"><a href="namespacedetail_1_1dtoa__impl.html#ae152a095d2dd1a6dd41ef8ad39c26e19">detail::dtoa_impl::kGamma</a></div><div class="ttdeci">constexpr int kGamma</div><div class="ttdef"><b>Definition:</b> <a href="to__chars_8hpp_source.html#l00312">to_chars.hpp:312</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="to__chars_8hpp_source.html#l00062">detail::dtoa_impl::diyfp::e</a>, <a class="el" href="to__chars_8hpp_source.html#l00061">detail::dtoa_impl::diyfp::f</a>, <a class="el" href="to__chars_8hpp_source.html#l00492">find_largest_pow10()</a>, <a class="el" href="to__chars_8hpp_source.html#l00546">grisu2_round()</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="to__chars_8hpp_source.html#l00311">kAlpha</a>, <a class="el" href="to__chars_8hpp_source.html#l00312">kGamma</a>, <a class="el" href="to__chars_8hpp_source.html#l00070">detail::dtoa_impl::diyfp::sub()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00828">grisu2()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807_cgraph.svg" width="347" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_ae877aa13ab872c99a1c614e5e1524807_icgraph.svg" width="527" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a73a15efcb5c2157ea0e1375b98ef0e83" name="a73a15efcb5c2157ea0e1375b98ef0e83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73a15efcb5c2157ea0e1375b98ef0e83">&#9670;&#160;</a></span>grisu2_round()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void detail::dtoa_impl::grisu2_round </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>delta</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>rest</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::uint64_t&#160;</td>
+          <td class="paramname"><em>ten_k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00546">546</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  548</span>{</div>
+<div class="line"><span class="lineno">  549</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(len &gt;= 1);</div>
+<div class="line"><span class="lineno">  550</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(dist &lt;= delta);</div>
+<div class="line"><span class="lineno">  551</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(rest &lt;= delta);</div>
+<div class="line"><span class="lineno">  552</span>    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(ten_k &gt; 0);</div>
+<div class="line"><span class="lineno">  553</span> </div>
+<div class="line"><span class="lineno">  554</span>    <span class="comment">//               &lt;--------------------------- delta ----&gt;</span></div>
+<div class="line"><span class="lineno">  555</span>    <span class="comment">//                                  &lt;---- dist ---------&gt;</span></div>
+<div class="line"><span class="lineno">  556</span>    <span class="comment">// --------------[------------------+-------------------]--------------</span></div>
+<div class="line"><span class="lineno">  557</span>    <span class="comment">//               M-                 w                   M+</span></div>
+<div class="line"><span class="lineno">  558</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  559</span>    <span class="comment">//                                  ten_k</span></div>
+<div class="line"><span class="lineno">  560</span>    <span class="comment">//                                &lt;------&gt;</span></div>
+<div class="line"><span class="lineno">  561</span>    <span class="comment">//                                       &lt;---- rest ----&gt;</span></div>
+<div class="line"><span class="lineno">  562</span>    <span class="comment">// --------------[------------------+----+--------------]--------------</span></div>
+<div class="line"><span class="lineno">  563</span>    <span class="comment">//                                  w    V</span></div>
+<div class="line"><span class="lineno">  564</span>    <span class="comment">//                                       = buf * 10^k</span></div>
+<div class="line"><span class="lineno">  565</span>    <span class="comment">//</span></div>
+<div class="line"><span class="lineno">  566</span>    <span class="comment">// ten_k represents a unit-in-the-last-place in the decimal representation</span></div>
+<div class="line"><span class="lineno">  567</span>    <span class="comment">// stored in buf.</span></div>
+<div class="line"><span class="lineno">  568</span>    <span class="comment">// Decrement buf by ten_k while this takes buf closer to w.</span></div>
+<div class="line"><span class="lineno">  569</span> </div>
+<div class="line"><span class="lineno">  570</span>    <span class="comment">// The tests are written in this order to avoid overflow in unsigned</span></div>
+<div class="line"><span class="lineno">  571</span>    <span class="comment">// integer arithmetic.</span></div>
+<div class="line"><span class="lineno">  572</span> </div>
+<div class="line"><span class="lineno">  573</span>    <span class="keywordflow">while</span> (rest &lt; dist</div>
+<div class="line"><span class="lineno">  574</span>            &amp;&amp; delta - rest &gt;= ten_k</div>
+<div class="line"><span class="lineno">  575</span>            &amp;&amp; (rest + ten_k &lt; dist || dist - rest &gt; rest + ten_k - dist))</div>
+<div class="line"><span class="lineno">  576</span>    {</div>
+<div class="line"><span class="lineno">  577</span>        <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(buf[len - 1] != <span class="charliteral">&#39;0&#39;</span>);</div>
+<div class="line"><span class="lineno">  578</span>        buf[len - 1]--;</div>
+<div class="line"><span class="lineno">  579</span>        rest += ten_k;</div>
+<div class="line"><span class="lineno">  580</span>    }</div>
+<div class="line"><span class="lineno">  581</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00587">grisu2_digit_gen()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacedetail_1_1dtoa__impl_a73a15efcb5c2157ea0e1375b98ef0e83_icgraph.svg" width="715" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3c879bf97b806cacbcbb2da07a5ff5c8" name="a3c879bf97b806cacbcbb2da07a5ff5c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c879bf97b806cacbcbb2da07a5ff5c8">&#9670;&#160;</a></span>reinterpret_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Target , typename Source &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">Target detail::dtoa_impl::reinterpret_bits </td>
+          <td>(</td>
+          <td class="paramtype">const Source&#160;</td>
+          <td class="paramname"><em>source</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>{</div>
+<div class="line"><span class="lineno">   50</span>    <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(Target) == <span class="keyword">sizeof</span>(Source), <span class="stringliteral">&quot;size mismatch&quot;</span>);</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   52</span>    Target target;</div>
+<div class="line"><span class="lineno">   53</span>    std::memcpy(&amp;target, &amp;source, <span class="keyword">sizeof</span>(Source));</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> target;</div>
+<div class="line"><span class="lineno">   55</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="a95c569b7627a9372686f1f77d73e8660" name="a95c569b7627a9372686f1f77d73e8660"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c569b7627a9372686f1f77d73e8660">&#9670;&#160;</a></span>kAlpha</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int detail::dtoa_impl::kAlpha = -60</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00311">311</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00328">get_cached_power_for_binary_exponent()</a>, <a class="el" href="to__chars_8hpp_source.html#l00587">grisu2_digit_gen()</a>.</p>
+
+</div>
+</div>
+<a id="ae152a095d2dd1a6dd41ef8ad39c26e19" name="ae152a095d2dd1a6dd41ef8ad39c26e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae152a095d2dd1a6dd41ef8ad39c26e19">&#9670;&#160;</a></span>kGamma</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int detail::dtoa_impl::kGamma = -32</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="to__chars_8hpp_source.html">to_chars.hpp</a> の <a class="el" href="to__chars_8hpp_source.html#l00312">312</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="to__chars_8hpp_source.html#l00328">get_cached_power_for_binary_exponent()</a>, <a class="el" href="to__chars_8hpp_source.html#l00587">grisu2_digit_gen()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedetail.html">detail</a></li><li class="navelem"><a class="el" href="namespacedetail_1_1dtoa__impl.html">dtoa_impl</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

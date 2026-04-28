@@ -1,0 +1,2365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::local_shared_ptr&lt; T &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1local__shared__ptr.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classboost_1_1local__shared__ptr-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::local_shared_ptr&lt; T &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::local_shared_ptr&lt; T &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr__coll__graph.svg" width="251" height="932"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:ab344b483a176ea29ba9ddc5d01c97a47"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1detail_1_1sp__element.html">boost::detail::sp_element</a>&lt; T &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a></td></tr>
+<tr class="separator:ab344b483a176ea29ba9ddc5d01c97a47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:afa2cb9ea5ffe7e1f8ce1b19402d72859"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#afa2cb9ea5ffe7e1f8ce1b19402d72859">~local_shared_ptr</a> () noexcept</td></tr>
+<tr class="separator:afa2cb9ea5ffe7e1f8ce1b19402d72859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa56af392d91420045a991db6568aff60"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#aa56af392d91420045a991db6568aff60">local_shared_ptr</a> () noexcept</td></tr>
+<tr class="separator:aa56af392d91420045a991db6568aff60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a788afc4f18a43bde8337baae6b606194"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a788afc4f18a43bde8337baae6b606194">local_shared_ptr</a> (std::nullptr_t) noexcept</td></tr>
+<tr class="separator:a788afc4f18a43bde8337baae6b606194"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec1e721bcbba81293985a530926ae4f7"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#aec1e721bcbba81293985a530926ae4f7">local_shared_ptr</a> (<a class="el" href="structboost_1_1detail_1_1lsp__internal__constructor__tag.html">boost::detail::lsp_internal_constructor_tag</a>, <a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *px_, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *pn_) noexcept</td></tr>
+<tr class="separator:aec1e721bcbba81293985a530926ae4f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33351642111ead0073e1f53ca9f8c2cd"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a33351642111ead0073e1f53ca9f8c2cd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a33351642111ead0073e1f53ca9f8c2cd">local_shared_ptr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p)</td></tr>
+<tr class="separator:a33351642111ead0073e1f53ca9f8c2cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace3513857ec53684dc322fda198f091c"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:ace3513857ec53684dc322fda198f091c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ace3513857ec53684dc322fda198f091c">local_shared_ptr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classD.html">D</a> d)</td></tr>
+<tr class="separator:ace3513857ec53684dc322fda198f091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca172db95d035b97273f6937945a442"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a6ca172db95d035b97273f6937945a442"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a6ca172db95d035b97273f6937945a442">local_shared_ptr</a> (std::nullptr_t p, <a class="el" href="classD.html">D</a> d)</td></tr>
+<tr class="separator:a6ca172db95d035b97273f6937945a442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acee2d52918b19a6f3d12712d54f0caa8"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:acee2d52918b19a6f3d12712d54f0caa8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#acee2d52918b19a6f3d12712d54f0caa8">local_shared_ptr</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classD.html">D</a> d, <a class="el" href="classA.html">A</a> a)</td></tr>
+<tr class="separator:acee2d52918b19a6f3d12712d54f0caa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd56538265510ed60902085a5810c82"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a3cd56538265510ed60902085a5810c82"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a3cd56538265510ed60902085a5810c82">local_shared_ptr</a> (std::nullptr_t p, <a class="el" href="classD.html">D</a> d, <a class="el" href="classA.html">A</a> a)</td></tr>
+<tr class="separator:a3cd56538265510ed60902085a5810c82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfd2f812bfcc56f423a2e64120abde0b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:acfd2f812bfcc56f423a2e64120abde0b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#acfd2f812bfcc56f423a2e64120abde0b">local_shared_ptr</a> (<a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r, typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type=<a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>())</td></tr>
+<tr class="separator:acfd2f812bfcc56f423a2e64120abde0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9eafcc9a335dae8ce0ff89e32ce9c8b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:ad9eafcc9a335dae8ce0ff89e32ce9c8b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ad9eafcc9a335dae8ce0ff89e32ce9c8b">local_shared_ptr</a> (<a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;r, typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type=<a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>())</td></tr>
+<tr class="separator:ad9eafcc9a335dae8ce0ff89e32ce9c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae838d07b058b7096948b422edef083f9"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:ae838d07b058b7096948b422edef083f9"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ae838d07b058b7096948b422edef083f9">local_shared_ptr</a> (std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; &amp;&amp;r, typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type=<a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>())</td></tr>
+<tr class="separator:ae838d07b058b7096948b422edef083f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab09b7a90e8f07a64ea02ae0e79fb1066"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:ab09b7a90e8f07a64ea02ae0e79fb1066"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ab09b7a90e8f07a64ea02ae0e79fb1066">local_shared_ptr</a> (<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; r)</td></tr>
+<tr class="separator:ab09b7a90e8f07a64ea02ae0e79fb1066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31db0ed2f868bb7d693e92d5f4960e46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a31db0ed2f868bb7d693e92d5f4960e46">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> const &amp;r) noexcept</td></tr>
+<tr class="separator:a31db0ed2f868bb7d693e92d5f4960e46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d65f467922729fc380ecad08bc77f6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a87d65f467922729fc380ecad08bc77f6">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:a87d65f467922729fc380ecad08bc77f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca81dd10c95bf6a9da82a40cc391a777"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:aca81dd10c95bf6a9da82a40cc391a777"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#aca81dd10c95bf6a9da82a40cc391a777">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r, typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type=<a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()) noexcept</td></tr>
+<tr class="separator:aca81dd10c95bf6a9da82a40cc391a777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a74942e65810762248cec45dee325dd"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a5a74942e65810762248cec45dee325dd"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a5a74942e65810762248cec45dee325dd">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;r, typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type=<a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()) noexcept</td></tr>
+<tr class="separator:a5a74942e65810762248cec45dee325dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a789feb4e9b4533161cdec1a0757a487a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a789feb4e9b4533161cdec1a0757a487a"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a789feb4e9b4533161cdec1a0757a487a">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r, <a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *p) noexcept</td></tr>
+<tr class="separator:a789feb4e9b4533161cdec1a0757a487a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedb91d1033856eefa81a3c5a113d6f78"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:aedb91d1033856eefa81a3c5a113d6f78"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#aedb91d1033856eefa81a3c5a113d6f78">local_shared_ptr</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;r, <a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *p) noexcept</td></tr>
+<tr class="separator:aedb91d1033856eefa81a3c5a113d6f78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e2e64d073d3408f4410a5664da3e721"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a4e2e64d073d3408f4410a5664da3e721">operator=</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> const &amp;r) noexcept</td></tr>
+<tr class="separator:a4e2e64d073d3408f4410a5664da3e721"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae72c4c3fc3a05fedb4db399b03f27881"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:ae72c4c3fc3a05fedb4db399b03f27881"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ae72c4c3fc3a05fedb4db399b03f27881">operator=</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r) noexcept</td></tr>
+<tr class="separator:ae72c4c3fc3a05fedb4db399b03f27881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3a3fd59db70f24493bff683f37e5526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#af3a3fd59db70f24493bff683f37e5526">operator=</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:af3a3fd59db70f24493bff683f37e5526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdf648e6a8e36d859e7ec384791ba491"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:afdf648e6a8e36d859e7ec384791ba491"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#afdf648e6a8e36d859e7ec384791ba491">operator=</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:afdf648e6a8e36d859e7ec384791ba491"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6887497c9638deb64488266d54d2e042"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a6887497c9638deb64488266d54d2e042">operator=</a> (std::nullptr_t) noexcept</td></tr>
+<tr class="separator:a6887497c9638deb64488266d54d2e042"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23e4ea0285fca52b203012a77b45f271"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a23e4ea0285fca52b203012a77b45f271"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a23e4ea0285fca52b203012a77b45f271">operator=</a> (std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; &amp;&amp;r)</td></tr>
+<tr class="separator:a23e4ea0285fca52b203012a77b45f271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68153d9ab5ed00699f4220f0e498f4af"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a68153d9ab5ed00699f4220f0e498f4af"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a68153d9ab5ed00699f4220f0e498f4af">operator=</a> (<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; r)</td></tr>
+<tr class="separator:a68153d9ab5ed00699f4220f0e498f4af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa46cf1f01ea7678fa2cee00ce6950945"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#aa46cf1f01ea7678fa2cee00ce6950945">reset</a> () noexcept</td></tr>
+<tr class="separator:aa46cf1f01ea7678fa2cee00ce6950945"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a393b65193f454cb226bdadc501235246"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a393b65193f454cb226bdadc501235246"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a393b65193f454cb226bdadc501235246">reset</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p)</td></tr>
+<tr class="separator:a393b65193f454cb226bdadc501235246"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae391fe426d58771461b7f6e74c4c72f0"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:ae391fe426d58771461b7f6e74c4c72f0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ae391fe426d58771461b7f6e74c4c72f0">reset</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classD.html">D</a> d)</td></tr>
+<tr class="separator:ae391fe426d58771461b7f6e74c4c72f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8239bd053514d729218197c194f01354"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a8239bd053514d729218197c194f01354"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a8239bd053514d729218197c194f01354">reset</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classD.html">D</a> d, <a class="el" href="classA.html">A</a> a)</td></tr>
+<tr class="separator:a8239bd053514d729218197c194f01354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf9bbbdc4ae2d710121b70b684c692ce"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:acf9bbbdc4ae2d710121b70b684c692ce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#acf9bbbdc4ae2d710121b70b684c692ce">reset</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r, <a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *p) noexcept</td></tr>
+<tr class="separator:acf9bbbdc4ae2d710121b70b684c692ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6607a9fc956b0fd13364fa790e25347"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:af6607a9fc956b0fd13364fa790e25347"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#af6607a9fc956b0fd13364fa790e25347">reset</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;r, <a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *p) noexcept</td></tr>
+<tr class="separator:af6607a9fc956b0fd13364fa790e25347"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03f46e630997b19076f935eed1da9c22"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1detail_1_1sp__dereference.html">boost::detail::sp_dereference</a>&lt; T &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a03f46e630997b19076f935eed1da9c22">operator*</a> () const noexcept</td></tr>
+<tr class="separator:a03f46e630997b19076f935eed1da9c22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32824af0aeb1be27fb5b86effb0d6c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1detail_1_1sp__member__access.html">boost::detail::sp_member_access</a>&lt; T &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a32824af0aeb1be27fb5b86effb0d6c16">operator-&gt;</a> () const noexcept</td></tr>
+<tr class="separator:a32824af0aeb1be27fb5b86effb0d6c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18f5c2da64bdee2e54e8eacf3f224634"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1detail_1_1sp__array__access.html">boost::detail::sp_array_access</a>&lt; T &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a18f5c2da64bdee2e54e8eacf3f224634">operator[]</a> (std::ptrdiff_t i) const <a class="el" href="sp__noexcept_8hpp.html#ad3bdfbbf987c9667a981c5276293cfce">BOOST_SP_NOEXCEPT_WITH_ASSERT</a></td></tr>
+<tr class="separator:a18f5c2da64bdee2e54e8eacf3f224634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1f998c4313467bd4fce10e901289ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a6a1f998c4313467bd4fce10e901289ed">get</a> () const noexcept</td></tr>
+<tr class="separator:a6a1f998c4313467bd4fce10e901289ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f69f047f820488ff987796f11a6c42"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a25f69f047f820488ff987796f11a6c42">operator bool</a> () const noexcept</td></tr>
+<tr class="separator:a25f69f047f820488ff987796f11a6c42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6b79371f81b58bdd87e5ca3b53f4a6"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a0c6b79371f81b58bdd87e5ca3b53f4a6">local_use_count</a> () const noexcept</td></tr>
+<tr class="separator:a0c6b79371f81b58bdd87e5ca3b53f4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2f1be8820c801a4ac55fee70fc6f58e"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classE.html">E</a>  = typename boost::detail::sp_enable_if_convertible&lt;T,Y&gt;::type&gt; </td></tr>
+<tr class="memitem:ab2f1be8820c801a4ac55fee70fc6f58e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ab2f1be8820c801a4ac55fee70fc6f58e">operator shared_ptr&lt; Y &gt;</a> () const noexcept</td></tr>
+<tr class="separator:ab2f1be8820c801a4ac55fee70fc6f58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96ecbe682c2f40c8d23fc6553dd1d59f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classE.html">E</a>  = typename boost::detail::sp_enable_if_convertible&lt;T,Y&gt;::type&gt; </td></tr>
+<tr class="memitem:a96ecbe682c2f40c8d23fc6553dd1d59f"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a96ecbe682c2f40c8d23fc6553dd1d59f">operator weak_ptr&lt; Y &gt;</a> () const noexcept</td></tr>
+<tr class="separator:a96ecbe682c2f40c8d23fc6553dd1d59f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb9316162063a206f0d4a4b9550a7119"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#acb9316162063a206f0d4a4b9550a7119">swap</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp;r) noexcept</td></tr>
+<tr class="separator:acb9316162063a206f0d4a4b9550a7119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b445bfb717300028b3372d3ea208229"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a5b445bfb717300028b3372d3ea208229"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a5b445bfb717300028b3372d3ea208229">owner_before</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r) const noexcept</td></tr>
+<tr class="separator:a5b445bfb717300028b3372d3ea208229"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16d6560f46581825fab6b84960bcbf7b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:a16d6560f46581825fab6b84960bcbf7b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a16d6560f46581825fab6b84960bcbf7b">owner_equals</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;r) const noexcept</td></tr>
+<tr class="separator:a16d6560f46581825fab6b84960bcbf7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a20511dd9b052e2a90d3e7269aa82c7c5"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a20511dd9b052e2a90d3e7269aa82c7c5">this_type</a></td></tr>
+<tr class="separator:a20511dd9b052e2a90d3e7269aa82c7c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:afb18034ab1b4ab29cce59090d8ffe496"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a></td></tr>
+<tr class="separator:afb18034ab1b4ab29cce59090d8ffe496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cfbbc4822074e1b425790e0293b4612"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a></td></tr>
+<tr class="separator:a5cfbbc4822074e1b425790e0293b4612"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:ad7059302bd84cd1f8a030449278d1cd3"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:ad7059302bd84cd1f8a030449278d1cd3"><td class="memTemplItemLeft" align="right" valign="top">class&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a></td></tr>
+<tr class="separator:ad7059302bd84cd1f8a030449278d1cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
+class boost::local_shared_ptr&lt; T &gt;</div>
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="ab344b483a176ea29ba9ddc5d01c97a47" name="ab344b483a176ea29ba9ddc5d01c97a47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab344b483a176ea29ba9ddc5d01c97a47">&#9670;&#160;</a></span>element_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1detail_1_1sp__element.html">boost::detail::sp_element</a>&lt;T&gt;::type <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::element_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00118">118</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a20511dd9b052e2a90d3e7269aa82c7c5" name="a20511dd9b052e2a90d3e7269aa82c7c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20511dd9b052e2a90d3e7269aa82c7c5">&#9670;&#160;</a></span>this_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::this_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00114">114</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="afa2cb9ea5ffe7e1f8ce1b19402d72859" name="afa2cb9ea5ffe7e1f8ce1b19402d72859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa2cb9ea5ffe7e1f8ce1b19402d72859">&#9670;&#160;</a></span>~local_shared_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::~<a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00131">131</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>    {</div>
+<div class="line"><span class="lineno">  133</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  134</span>        {</div>
+<div class="line"><span class="lineno">  135</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#ad9471fa40e75151f58e0093cfbd57570">release</a>();</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_ad9471fa40e75151f58e0093cfbd57570"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#ad9471fa40e75151f58e0093cfbd57570">boost::detail::local_counted_base::release</a></div><div class="ttdeci">void release() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00076">local_counted_base.hpp:76</a></div></div>
+<div class="ttc" id="aclassboost_1_1local__shared__ptr_html_a5cfbbc4822074e1b425790e0293b4612"><div class="ttname"><a href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">boost::local_shared_ptr::pn</a></div><div class="ttdeci">boost::detail::local_counted_base * pn</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00123">local_shared_ptr.hpp:123</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__counted__base_8hpp_source.html#l00076">boost::detail::local_counted_base::release()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_afa2cb9ea5ffe7e1f8ce1b19402d72859_cgraph.svg" width="407" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa56af392d91420045a991db6568aff60" name="aa56af392d91420045a991db6568aff60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa56af392d91420045a991db6568aff60">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[1/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00141">141</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                                          : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( 0 ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  142</span>    {</div>
+<div class="line"><span class="lineno">  143</span>    }</div>
+<div class="ttc" id="aclassboost_1_1local__shared__ptr_html_afb18034ab1b4ab29cce59090d8ffe496"><div class="ttname"><a href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">boost::local_shared_ptr::px</a></div><div class="ttdeci">element_type * px</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00122">local_shared_ptr.hpp:122</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a788afc4f18a43bde8337baae6b606194" name="a788afc4f18a43bde8337baae6b606194"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a788afc4f18a43bde8337baae6b606194">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[2/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00145">145</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>                                                        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( 0 ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aec1e721bcbba81293985a530926ae4f7" name="aec1e721bcbba81293985a530926ae4f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1e721bcbba81293985a530926ae4f7">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[3/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1detail_1_1lsp__internal__constructor__tag.html">boost::detail::lsp_internal_constructor_tag</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td>
+          <td class="paramname"><em>px_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&#160;</td>
+          <td class="paramname"><em>pn_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00150">150</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>                                                                                                                                            : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( px_ ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( pn_ )</div>
+<div class="line"><span class="lineno">  151</span>    {</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a33351642111ead0073e1f53ca9f8c2cd" name="a33351642111ead0073e1f53ca9f8c2cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33351642111ead0073e1f53ca9f8c2cd">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[4/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00155">155</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>                                      : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  156</span>    {</div>
+<div class="line"><span class="lineno">  157</span>        <a class="code hl_function" href="namespaceboost_1_1detail.html#ab05fc6c16258bed49e048f5edb3cf1ca">boost::detail::lsp_pointer_construct</a>( <span class="keyword">this</span>, p, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> );</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_ab05fc6c16258bed49e048f5edb3cf1ca"><div class="ttname"><a href="namespaceboost_1_1detail.html#ab05fc6c16258bed49e048f5edb3cf1ca">boost::detail::lsp_pointer_construct</a></div><div class="ttdeci">void lsp_pointer_construct(boost::local_shared_ptr&lt; E &gt; *, Y *p, boost::detail::local_counted_base *&amp;pn)</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00026">local_shared_ptr.hpp:26</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00026">boost::detail::lsp_pointer_construct()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a33351642111ead0073e1f53ca9f8c2cd_cgraph.svg" width="1084" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ace3513857ec53684dc322fda198f091c" name="ace3513857ec53684dc322fda198f091c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace3513857ec53684dc322fda198f091c">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[5/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00160">160</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>                                                             : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  161</span>    {</div>
+<div class="line"><span class="lineno">  162</span>        <a class="code hl_function" href="namespaceboost_1_1detail.html#a199ce455d3f8a7913647523194ab34e1">boost::detail::lsp_deleter_construct</a>( <span class="keyword">this</span>, p, d, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> );</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_a199ce455d3f8a7913647523194ab34e1"><div class="ttname"><a href="namespaceboost_1_1detail.html#a199ce455d3f8a7913647523194ab34e1">boost::detail::lsp_deleter_construct</a></div><div class="ttdeci">void lsp_deleter_construct(boost::local_shared_ptr&lt; E &gt; *, P p, D const &amp;d, boost::detail::local_counted_base *&amp;pn)</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00071">local_shared_ptr.hpp:71</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00071">boost::detail::lsp_deleter_construct()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_ace3513857ec53684dc322fda198f091c_cgraph.svg" width="1084" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6ca172db95d035b97273f6937945a442" name="a6ca172db95d035b97273f6937945a442"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ca172db95d035b97273f6937945a442">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[6/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classD.html">D</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  165</span>                                                             : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_function" href="namespaceboost_1_1detail.html#a199ce455d3f8a7913647523194ab34e1">boost::detail::lsp_deleter_construct</a>( <span class="keyword">this</span>, p, d, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> );</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00071">boost::detail::lsp_deleter_construct()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a6ca172db95d035b97273f6937945a442_cgraph.svg" width="1084" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acee2d52918b19a6f3d12712d54f0caa8" name="acee2d52918b19a6f3d12712d54f0caa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee2d52918b19a6f3d12712d54f0caa8">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[7/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classA.html">A</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00170">170</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  170</span>                                                                           : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>        <a class="code hl_function" href="namespaceboost_1_1detail.html#a5e4770179813b92f024475210e2c65d6">boost::detail::lsp_allocator_construct</a>( <span class="keyword">this</span>, p, d, a, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> );</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_a5e4770179813b92f024475210e2c65d6"><div class="ttname"><a href="namespaceboost_1_1detail.html#a5e4770179813b92f024475210e2c65d6">boost::detail::lsp_allocator_construct</a></div><div class="ttdeci">void lsp_allocator_construct(boost::local_shared_ptr&lt; E &gt; *, P p, D const &amp;d, A const &amp;a, boost::detail::local_counted_base *&amp;pn)</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00084">local_shared_ptr.hpp:84</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00084">boost::detail::lsp_allocator_construct()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_acee2d52918b19a6f3d12712d54f0caa8_cgraph.svg" width="1095" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3cd56538265510ed60902085a5810c82" name="a3cd56538265510ed60902085a5810c82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd56538265510ed60902085a5810c82">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[8/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classA.html">A</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>                                                                           : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  176</span>    {</div>
+<div class="line"><span class="lineno">  177</span>        <a class="code hl_function" href="namespaceboost_1_1detail.html#a5e4770179813b92f024475210e2c65d6">boost::detail::lsp_allocator_construct</a>( <span class="keyword">this</span>, p, d, a, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> );</div>
+<div class="line"><span class="lineno">  178</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00084">boost::detail::lsp_allocator_construct()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a3cd56538265510ed60902085a5810c82_cgraph.svg" width="1095" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acfd2f812bfcc56f423a2e64120abde0b" name="acfd2f812bfcc56f423a2e64120abde0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfd2f812bfcc56f423a2e64120abde0b">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[9/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type&#160;</td>
+          <td class="paramname"> = <code><a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00182">182</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  184</span>        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.get() ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  185</span>    {</div>
+<div class="line"><span class="lineno">  186</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">if</span>( r.use_count() != 0 )</div>
+<div class="line"><span class="lineno">  189</span>        {</div>
+<div class="line"><span class="lineno">  190</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> = <span class="keyword">new</span> <a class="code hl_class" href="classboost_1_1detail_1_1local__counted__impl.html">boost::detail::local_counted_impl</a>( r._internal_count() );</div>
+<div class="line"><span class="lineno">  191</span>        }</div>
+<div class="line"><span class="lineno">  192</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__impl_html"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__impl.html">boost::detail::local_counted_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00092">local_counted_base.hpp:93</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00633">boost::shared_ptr&lt; T &gt;::_internal_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00577">boost::shared_ptr&lt; T &gt;::use_count()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_acfd2f812bfcc56f423a2e64120abde0b_cgraph.svg" width="800" height="115"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ad9eafcc9a335dae8ce0ff89e32ce9c8b" name="ad9eafcc9a335dae8ce0ff89e32ce9c8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9eafcc9a335dae8ce0ff89e32ce9c8b">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[10/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type&#160;</td>
+          <td class="paramname"> = <code><a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00194">194</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.get() ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  197</span>    {</div>
+<div class="line"><span class="lineno">  198</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>        <span class="keywordflow">if</span>( r.use_count() != 0 )</div>
+<div class="line"><span class="lineno">  201</span>        {</div>
+<div class="line"><span class="lineno">  202</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> = <span class="keyword">new</span> <a class="code hl_class" href="classboost_1_1detail_1_1local__counted__impl.html">boost::detail::local_counted_impl</a>( r._internal_count() );</div>
+<div class="line"><span class="lineno">  203</span>            r.reset();</div>
+<div class="line"><span class="lineno">  204</span>        }</div>
+<div class="line"><span class="lineno">  205</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00633">boost::shared_ptr&lt; T &gt;::_internal_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00511">boost::shared_ptr&lt; T &gt;::reset()</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00577">boost::shared_ptr&lt; T &gt;::use_count()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_ad9eafcc9a335dae8ce0ff89e32ce9c8b_cgraph.svg" width="800" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae838d07b058b7096948b422edef083f9" name="ae838d07b058b7096948b422edef083f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae838d07b058b7096948b422edef083f9">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[11/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type&#160;</td>
+          <td class="paramname"> = <code><a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00210">210</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.get() ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( 0 )</div>
+<div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a> )</div>
+<div class="line"><span class="lineno">  217</span>        {</div>
+<div class="line"><span class="lineno">  218</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> = <span class="keyword">new</span> <a class="code hl_class" href="classboost_1_1detail_1_1local__counted__impl.html">boost::detail::local_counted_impl</a>( shared_ptr&lt;T&gt;( std::move(r) )._internal_count() );</div>
+<div class="line"><span class="lineno">  219</span>        }</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="ab09b7a90e8f07a64ea02ae0e79fb1066" name="ab09b7a90e8f07a64ea02ae0e79fb1066"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab09b7a90e8f07a64ea02ae0e79fb1066">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[12/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a31db0ed2f868bb7d693e92d5f4960e46" name="a31db0ed2f868bb7d693e92d5f4960e46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31db0ed2f868bb7d693e92d5f4960e46">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[13/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00231">231</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  231</span>                                                            : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.px ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  232</span>    {</div>
+<div class="line"><span class="lineno">  233</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  234</span>        {</div>
+<div class="line"><span class="lineno">  235</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a805adca453d7de0a89004e5535f8d5cd">add_ref</a>();</div>
+<div class="line"><span class="lineno">  236</span>        }</div>
+<div class="line"><span class="lineno">  237</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a805adca453d7de0a89004e5535f8d5cd"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a805adca453d7de0a89004e5535f8d5cd">boost::detail::local_counted_base::add_ref</a></div><div class="ttdeci">void add_ref() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00061">local_counted_base.hpp:61</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__counted__base_8hpp_source.html#l00061">boost::detail::local_counted_base::add_ref()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a31db0ed2f868bb7d693e92d5f4960e46_cgraph.svg" width="398" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a87d65f467922729fc380ecad08bc77f6" name="a87d65f467922729fc380ecad08bc77f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d65f467922729fc380ecad08bc77f6">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[14/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00241">241</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  241</span>                                                       : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.px ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  242</span>    {</div>
+<div class="line"><span class="lineno">  243</span>        r.px = 0;</div>
+<div class="line"><span class="lineno">  244</span>        r.pn = 0;</div>
+<div class="line"><span class="lineno">  245</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00645">boost::shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html#l00644">boost::shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="aca81dd10c95bf6a9da82a40cc391a777" name="aca81dd10c95bf6a9da82a40cc391a777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca81dd10c95bf6a9da82a40cc391a777">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[15/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type&#160;</td>
+          <td class="paramname"> = <code><a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00249">249</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.px ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  252</span>    {</div>
+<div class="line"><span class="lineno">  253</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  256</span>        {</div>
+<div class="line"><span class="lineno">  257</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a805adca453d7de0a89004e5535f8d5cd">add_ref</a>();</div>
+<div class="line"><span class="lineno">  258</span>        }</div>
+<div class="line"><span class="lineno">  259</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__counted__base_8hpp_source.html#l00061">boost::detail::local_counted_base::add_ref()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_aca81dd10c95bf6a9da82a40cc391a777_cgraph.svg" width="398" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a5a74942e65810762248cec45dee325dd" name="a5a74942e65810762248cec45dee325dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a74942e65810762248cec45dee325dd">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[16/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structboost_1_1detail_1_1sp__enable__if__convertible.html">boost::detail::sp_enable_if_convertible</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, T &gt;::type&#160;</td>
+          <td class="paramname"> = <code><a class="el" href="structboost_1_1detail_1_1sp__empty.html">boost::detail::sp_empty</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00263">263</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>        : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( r.px ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  266</span>    {</div>
+<div class="line"><span class="lineno">  267</span>        boost::detail::sp_assert_convertible&lt; Y, T &gt;();</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>        r.px = 0;</div>
+<div class="line"><span class="lineno">  270</span>        r.pn = 0;</div>
+<div class="line"><span class="lineno">  271</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a789feb4e9b4533161cdec1a0757a487a" name="a789feb4e9b4533161cdec1a0757a487a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a789feb4e9b4533161cdec1a0757a487a">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[17/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00276">276</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  276</span>                                                                                 : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  277</span>    {</div>
+<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  279</span>        {</div>
+<div class="line"><span class="lineno">  280</span>            <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a805adca453d7de0a89004e5535f8d5cd">add_ref</a>();</div>
+<div class="line"><span class="lineno">  281</span>        }</div>
+<div class="line"><span class="lineno">  282</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__counted__base_8hpp_source.html#l00061">boost::detail::local_counted_base::add_ref()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a789feb4e9b4533161cdec1a0757a487a_cgraph.svg" width="398" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aedb91d1033856eefa81a3c5a113d6f78" name="aedb91d1033856eefa81a3c5a113d6f78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedb91d1033856eefa81a3c5a113d6f78">&#9670;&#160;</a></span>local_shared_ptr() <span class="overload">[18/18]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_shared_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00285">285</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  285</span>                                                                            : <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>( p ), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>( r.pn )</div>
+<div class="line"><span class="lineno">  286</span>    {</div>
+<div class="line"><span class="lineno">  287</span>        r.px = 0;</div>
+<div class="line"><span class="lineno">  288</span>        r.pn = 0;</div>
+<div class="line"><span class="lineno">  289</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a6a1f998c4313467bd4fce10e901289ed" name="a6a1f998c4313467bd4fce10e901289ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1f998c4313467bd4fce10e901289ed">&#9670;&#160;</a></span>get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> * <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00386">386</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  387</span>    {</div>
+<div class="line"><span class="lineno">  388</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>;</div>
+<div class="line"><span class="lineno">  389</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00524">boost::const_pointer_cast()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00534">boost::dynamic_pointer_cast()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00544">boost::reinterpret_pointer_cast()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00514">boost::static_pointer_cast()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a6a1f998c4313467bd4fce10e901289ed_icgraph.svg" width="416" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0c6b79371f81b58bdd87e5ca3b53f4a6" name="a0c6b79371f81b58bdd87e5ca3b53f4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6b79371f81b58bdd87e5ca3b53f4a6">&#9670;&#160;</a></span>local_use_count()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::local_use_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00396">396</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  397</span>    {</div>
+<div class="line"><span class="lineno">  398</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>? <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a328ddce860432ce9d7d7d0c7edd9af2d">local_use_count</a>(): 0;</div>
+<div class="line"><span class="lineno">  399</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a328ddce860432ce9d7d7d0c7edd9af2d"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a328ddce860432ce9d7d7d0c7edd9af2d">boost::detail::local_counted_base::local_use_count</a></div><div class="ttdeci">long local_use_count() const noexcept</div><div class="ttdef"><b>Definition:</b> <a href="local__counted__base_8hpp_source.html#l00086">local_counted_base.hpp:86</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__counted__base_8hpp_source.html#l00086">boost::detail::local_counted_base::local_use_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a0c6b79371f81b58bdd87e5ca3b53f4a6_cgraph.svg" width="376" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a25f69f047f820488ff987796f11a6c42" name="a25f69f047f820488ff987796f11a6c42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f69f047f820488ff987796f11a6c42">&#9670;&#160;</a></span>operator bool()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00391">391</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  392</span>    {</div>
+<div class="line"><span class="lineno">  393</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a> != 0;</div>
+<div class="line"><span class="lineno">  394</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="ab2f1be8820c801a4ac55fee70fc6f58e" name="ab2f1be8820c801a4ac55fee70fc6f58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2f1be8820c801a4ac55fee70fc6f58e">&#9670;&#160;</a></span>operator shared_ptr&lt; Y &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classE.html">E</a>  = typename boost::detail::sp_enable_if_convertible&lt;T,Y&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator <a class="el" href="classboost_1_1shared__ptr.html">shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00403">403</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  404</span>    {</div>
+<div class="line"><span class="lineno">  405</span>        boost::detail::sp_assert_convertible&lt;T, Y&gt;();</div>
+<div class="line"><span class="lineno">  406</span> </div>
+<div class="line"><span class="lineno">  407</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  408</span>        {</div>
+<div class="line"><span class="lineno">  409</span>            <span class="keywordflow">return</span> shared_ptr&lt;Y&gt;( <a class="code hl_struct" href="structboost_1_1detail_1_1sp__internal__constructor__tag.html">boost::detail::sp_internal_constructor_tag</a>(), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">local_cb_get_shared_count</a>() );</div>
+<div class="line"><span class="lineno">  410</span>        }</div>
+<div class="line"><span class="lineno">  411</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  412</span>        {</div>
+<div class="line"><span class="lineno">  413</span>            <span class="keywordflow">return</span> shared_ptr&lt;Y&gt;();</div>
+<div class="line"><span class="lineno">  414</span>        }</div>
+<div class="line"><span class="lineno">  415</span>    }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1local__counted__base_html_a73efb9a67c056abbf4bb54bd70084124"><div class="ttname"><a href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">boost::detail::local_counted_base::local_cb_get_shared_count</a></div><div class="ttdeci">virtual boost::detail::shared_count local_cb_get_shared_count() const noexcept=0</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__internal__constructor__tag_html"><div class="ttname"><a href="structboost_1_1detail_1_1sp__internal__constructor__tag.html">boost::detail::sp_internal_constructor_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00238">smart_ptr/shared_ptr.hpp:239</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">boost::detail::local_counted_base::local_cb_get_shared_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_ab2f1be8820c801a4ac55fee70fc6f58e_cgraph.svg" width="384" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a96ecbe682c2f40c8d23fc6553dd1d59f" name="a96ecbe682c2f40c8d23fc6553dd1d59f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96ecbe682c2f40c8d23fc6553dd1d59f">&#9670;&#160;</a></span>operator weak_ptr&lt; Y &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classE.html">E</a>  = typename boost::detail::sp_enable_if_convertible&lt;T,Y&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator <a class="el" href="classboost_1_1weak__ptr.html">weak_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00417">417</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  418</span>    {</div>
+<div class="line"><span class="lineno">  419</span>        boost::detail::sp_assert_convertible&lt;T, Y&gt;();</div>
+<div class="line"><span class="lineno">  420</span> </div>
+<div class="line"><span class="lineno">  421</span>        <span class="keywordflow">if</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> )</div>
+<div class="line"><span class="lineno">  422</span>        {</div>
+<div class="line"><span class="lineno">  423</span>            <span class="keywordflow">return</span> shared_ptr&lt;Y&gt;( <a class="code hl_struct" href="structboost_1_1detail_1_1sp__internal__constructor__tag.html">boost::detail::sp_internal_constructor_tag</a>(), <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>, <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>-&gt;<a class="code hl_function" href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">local_cb_get_shared_count</a>() );</div>
+<div class="line"><span class="lineno">  424</span>        }</div>
+<div class="line"><span class="lineno">  425</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  426</span>        {</div>
+<div class="line"><span class="lineno">  427</span>            <span class="keywordflow">return</span> weak_ptr&lt;Y&gt;();</div>
+<div class="line"><span class="lineno">  428</span>        }</div>
+<div class="line"><span class="lineno">  429</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="classboost_1_1detail_1_1local__counted__base.html#a73efb9a67c056abbf4bb54bd70084124">boost::detail::local_counted_base::local_cb_get_shared_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a96ecbe682c2f40c8d23fc6553dd1d59f_cgraph.svg" width="375" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a03f46e630997b19076f935eed1da9c22" name="a03f46e630997b19076f935eed1da9c22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03f46e630997b19076f935eed1da9c22">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1detail_1_1sp__dereference.html">boost::detail::sp_dereference</a>&lt; T &gt;::type <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00368">368</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  369</span>    {</div>
+<div class="line"><span class="lineno">  370</span>        <span class="keywordflow">return</span> *<a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>;</div>
+<div class="line"><span class="lineno">  371</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a32824af0aeb1be27fb5b86effb0d6c16" name="a32824af0aeb1be27fb5b86effb0d6c16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32824af0aeb1be27fb5b86effb0d6c16">&#9670;&#160;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1detail_1_1sp__member__access.html">boost::detail::sp_member_access</a>&lt; T &gt;::type <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00373">373</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  374</span>    {</div>
+<div class="line"><span class="lineno">  375</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>;</div>
+<div class="line"><span class="lineno">  376</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a68153d9ab5ed00699f4220f0e498f4af" name="a68153d9ab5ed00699f4220f0e498f4af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68153d9ab5ed00699f4220f0e498f4af">&#9670;&#160;</a></span>operator=() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af3a3fd59db70f24493bff683f37e5526" name="af3a3fd59db70f24493bff683f37e5526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3a3fd59db70f24493bff683f37e5526">&#9670;&#160;</a></span>operator=() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; T &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00305">305</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>    {</div>
+<div class="line"><span class="lineno">  307</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( std::move( r ) ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  308</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  309</span>    }</div>
+<div class="ttc" id="aclassboost_1_1local__shared__ptr_html_ad7059302bd84cd1f8a030449278d1cd3"><div class="ttname"><a href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">boost::local_shared_ptr::local_shared_ptr</a></div><div class="ttdeci">friend class local_shared_ptr</div><div class="ttdef"><b>Definition:</b> <a href="local__shared__ptr_8hpp_source.html#l00125">local_shared_ptr.hpp:125</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_af3a3fd59db70f24493bff683f37e5526_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4e2e64d073d3408f4410a5664da3e721" name="a4e2e64d073d3408f4410a5664da3e721"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e2e64d073d3408f4410a5664da3e721">&#9670;&#160;</a></span>operator=() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; T &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00293">293</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  294</span>    {</div>
+<div class="line"><span class="lineno">  295</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( r ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  296</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  297</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a4e2e64d073d3408f4410a5664da3e721_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afdf648e6a8e36d859e7ec384791ba491" name="afdf648e6a8e36d859e7ec384791ba491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf648e6a8e36d859e7ec384791ba491">&#9670;&#160;</a></span>operator=() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00312">312</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  313</span>    {</div>
+<div class="line"><span class="lineno">  314</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( std::move( r ) ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  316</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_afdf648e6a8e36d859e7ec384791ba491_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae72c4c3fc3a05fedb4db399b03f27881" name="ae72c4c3fc3a05fedb4db399b03f27881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae72c4c3fc3a05fedb4db399b03f27881">&#9670;&#160;</a></span>operator=() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00299">299</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  300</span>    {</div>
+<div class="line"><span class="lineno">  301</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( r ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  302</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  303</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_ae72c4c3fc3a05fedb4db399b03f27881_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6887497c9638deb64488266d54d2e042" name="a6887497c9638deb64488266d54d2e042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6887497c9638deb64488266d54d2e042">&#9670;&#160;</a></span>operator=() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">std::nullptr_t&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00318">318</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>    {</div>
+<div class="line"><span class="lineno">  320</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>().swap(*<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">  321</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  322</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a6887497c9638deb64488266d54d2e042_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a23e4ea0285fca52b203012a77b45f271" name="a23e4ea0285fca52b203012a77b45f271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23e4ea0285fca52b203012a77b45f271">&#9670;&#160;</a></span>operator=() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a> &amp; <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>, <a class="el" href="classD.html">D</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00325">325</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>    {</div>
+<div class="line"><span class="lineno">  327</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( std::move(r) ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  328</span>        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  329</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a23e4ea0285fca52b203012a77b45f271_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a18f5c2da64bdee2e54e8eacf3f224634" name="a18f5c2da64bdee2e54e8eacf3f224634"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18f5c2da64bdee2e54e8eacf3f224634">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1detail_1_1sp__array__access.html">boost::detail::sp_array_access</a>&lt; T &gt;::type <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">std::ptrdiff_t&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00378">378</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  379</span>    {</div>
+<div class="line"><span class="lineno">  380</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a> != 0 );</div>
+<div class="line"><span class="lineno">  381</span>        <a class="code hl_define" href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a>( i &gt;= 0 &amp;&amp; ( i &lt; <a class="code hl_struct" href="structboost_1_1detail_1_1sp__extent.html">boost::detail::sp_extent&lt; T &gt;::value</a> || <a class="code hl_struct" href="structboost_1_1detail_1_1sp__extent.html">boost::detail::sp_extent&lt; T &gt;::value</a> == 0 ) );</div>
+<div class="line"><span class="lineno">  382</span> </div>
+<div class="line"><span class="lineno">  383</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span> typename <a class="code hl_typedef" href="structboost_1_1detail_1_1sp__array__access.html#a273eb262b2dc86f8310b29bf41022480">boost::detail::sp_array_access&lt; T &gt;::type</a> <span class="keyword">&gt;</span>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>[ i ] );</div>
+<div class="line"><span class="lineno">  384</span>    }</div>
+<div class="ttc" id="aassert_8hpp_html_af7c4c2fca8dd235a0eaadd7570181c13"><div class="ttname"><a href="assert_8hpp.html#af7c4c2fca8dd235a0eaadd7570181c13">BOOST_ASSERT</a></div><div class="ttdeci">#define BOOST_ASSERT(expr)</div><div class="ttdef"><b>Definition:</b> <a href="assert_8hpp_source.html#l00066">assert.hpp:66</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__array__access_html_a273eb262b2dc86f8310b29bf41022480"><div class="ttname"><a href="structboost_1_1detail_1_1sp__array__access.html#a273eb262b2dc86f8310b29bf41022480">boost::detail::sp_array_access::type</a></div><div class="ttdeci">void type</div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00136">smart_ptr/shared_ptr.hpp:136</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1sp__extent_html"><div class="ttname"><a href="structboost_1_1detail_1_1sp__extent.html">boost::detail::sp_extent</a></div><div class="ttdef"><b>Definition:</b> <a href="smart__ptr_2shared__ptr_8hpp_source.html#l00151">smart_ptr/shared_ptr.hpp:152</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="assert_8hpp_source.html#l00066">BOOST_ASSERT</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>.</p>
+
+</div>
+</div>
+<a id="a5b445bfb717300028b3372d3ea208229" name="a5b445bfb717300028b3372d3ea208229"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b445bfb717300028b3372d3ea208229">&#9670;&#160;</a></span>owner_before()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::owner_before </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00441">441</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  442</span>    {</div>
+<div class="line"><span class="lineno">  443</span>        <span class="keywordflow">return</span> std::less&lt; boost::detail::local_counted_base* &gt;()( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>, r.pn );</div>
+<div class="line"><span class="lineno">  444</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+
+</div>
+</div>
+<a id="a16d6560f46581825fab6b84960bcbf7b" name="a16d6560f46581825fab6b84960bcbf7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16d6560f46581825fab6b84960bcbf7b">&#9670;&#160;</a></span>owner_equals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::owner_equals </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00448">448</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  449</span>    {</div>
+<div class="line"><span class="lineno">  450</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a> == r.pn;</div>
+<div class="line"><span class="lineno">  451</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>.</p>
+
+</div>
+</div>
+<a id="aa46cf1f01ea7678fa2cee00ce6950945" name="aa46cf1f01ea7678fa2cee00ce6950945"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa46cf1f01ea7678fa2cee00ce6950945">&#9670;&#160;</a></span>reset() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00336">336</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  337</span>    {</div>
+<div class="line"><span class="lineno">  338</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>().swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  339</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_aa46cf1f01ea7678fa2cee00ce6950945_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af6607a9fc956b0fd13364fa790e25347" name="af6607a9fc956b0fd13364fa790e25347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6607a9fc956b0fd13364fa790e25347">&#9670;&#160;</a></span>reset() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00361">361</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  362</span>    {</div>
+<div class="line"><span class="lineno">  363</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( std::move( r ), p ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  364</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_af6607a9fc956b0fd13364fa790e25347_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acf9bbbdc4ae2d710121b70b684c692ce" name="acf9bbbdc4ae2d710121b70b684c692ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf9bbbdc4ae2d710121b70b684c692ce">&#9670;&#160;</a></span>reset() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a> *&#160;</td>
+          <td class="paramname"><em>p</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00356">356</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  357</span>    {</div>
+<div class="line"><span class="lineno">  358</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( r, p ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  359</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_acf9bbbdc4ae2d710121b70b684c692ce_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a393b65193f454cb226bdadc501235246" name="a393b65193f454cb226bdadc501235246"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a393b65193f454cb226bdadc501235246">&#9670;&#160;</a></span>reset() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00341">341</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  342</span>    {</div>
+<div class="line"><span class="lineno">  343</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( p ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  344</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a393b65193f454cb226bdadc501235246_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae391fe426d58771461b7f6e74c4c72f0" name="ae391fe426d58771461b7f6e74c4c72f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae391fe426d58771461b7f6e74c4c72f0">&#9670;&#160;</a></span>reset() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00346">346</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>    {</div>
+<div class="line"><span class="lineno">  348</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( p, d ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  349</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_ae391fe426d58771461b7f6e74c4c72f0_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8239bd053514d729218197c194f01354" name="a8239bd053514d729218197c194f01354"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8239bd053514d729218197c194f01354">&#9670;&#160;</a></span>reset() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> , class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classD.html">D</a>&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classA.html">A</a>&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00351">351</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  352</span>    {</div>
+<div class="line"><span class="lineno">  353</span>        <a class="code hl_friend" href="classboost_1_1local__shared__ptr.html#ad7059302bd84cd1f8a030449278d1cd3">local_shared_ptr</a>( p, d, a ).swap( *<span class="keyword">this</span> );</div>
+<div class="line"><span class="lineno">  354</span>    }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_a8239bd053514d729218197c194f01354_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acb9316162063a206f0d4a4b9550a7119" name="acb9316162063a206f0d4a4b9550a7119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb9316162063a206f0d4a4b9550a7119">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00433">433</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  434</span>    {</div>
+<div class="line"><span class="lineno">  435</span>        <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#afb18034ab1b4ab29cce59090d8ffe496">px</a>, r.px );</div>
+<div class="line"><span class="lineno">  436</span>        <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>( <a class="code hl_variable" href="classboost_1_1local__shared__ptr.html#a5cfbbc4822074e1b425790e0293b4612">pn</a>, r.pn );</div>
+<div class="line"><span class="lineno">  437</span>    }</div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">boost::local_shared_ptr&lt; T &gt;::pn</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">boost::local_shared_ptr&lt; T &gt;::px</a>, <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1local__shared__ptr_acb9316162063a206f0d4a4b9550a7119_cgraph.svg" width="291" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="ad7059302bd84cd1f8a030449278d1cd3" name="ad7059302bd84cd1f8a030449278d1cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7059302bd84cd1f8a030449278d1cd3">&#9670;&#160;</a></span>local_shared_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00125">125</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00293">boost::local_shared_ptr&lt; T &gt;::operator=()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00336">boost::local_shared_ptr&lt; T &gt;::reset()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5cfbbc4822074e1b425790e0293b4612" name="a5cfbbc4822074e1b425790e0293b4612"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cfbbc4822074e1b425790e0293b4612">&#9670;&#160;</a></span>pn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a>* <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::pn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00123">123</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00155">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00396">boost::local_shared_ptr&lt; T &gt;::local_use_count()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00403">boost::local_shared_ptr&lt; T &gt;::operator shared_ptr&lt; Y &gt;()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00417">boost::local_shared_ptr&lt; T &gt;::operator weak_ptr&lt; Y &gt;()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00441">boost::local_shared_ptr&lt; T &gt;::owner_before()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00448">boost::local_shared_ptr&lt; T &gt;::owner_equals()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00433">boost::local_shared_ptr&lt; T &gt;::swap()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00131">boost::local_shared_ptr&lt; T &gt;::~local_shared_ptr()</a>.</p>
+
+</div>
+</div>
+<a id="afb18034ab1b4ab29cce59090d8ffe496" name="afb18034ab1b4ab29cce59090d8ffe496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb18034ab1b4ab29cce59090d8ffe496">&#9670;&#160;</a></span>px</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1local__shared__ptr.html#ab344b483a176ea29ba9ddc5d01c97a47">element_type</a>* <a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; T &gt;::px</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a> の <a class="el" href="local__shared__ptr_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="local__shared__ptr_8hpp_source.html#l00386">boost::local_shared_ptr&lt; T &gt;::get()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00210">boost::local_shared_ptr&lt; T &gt;::local_shared_ptr()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00391">boost::local_shared_ptr&lt; T &gt;::operator bool()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00403">boost::local_shared_ptr&lt; T &gt;::operator shared_ptr&lt; Y &gt;()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00417">boost::local_shared_ptr&lt; T &gt;::operator weak_ptr&lt; Y &gt;()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00368">boost::local_shared_ptr&lt; T &gt;::operator*()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00373">boost::local_shared_ptr&lt; T &gt;::operator-&gt;()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00378">boost::local_shared_ptr&lt; T &gt;::operator[]()</a>, <a class="el" href="local__shared__ptr_8hpp_source.html#l00433">boost::local_shared_ptr&lt; T &gt;::swap()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="local__shared__ptr_8hpp_source.html">local_shared_ptr.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="classboost_1_1local__shared__ptr.html">local_shared_ptr</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

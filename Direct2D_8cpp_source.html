@@ -108,110 +108,107 @@ $(document).ready(function(){initNavTree('Direct2D_8cpp_source.html',''); initRe
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;d3d11.h&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;d2d1.h&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="IncludingWindows_8h.html">IncludingWindows.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// #include &lt;dwrite.h&gt;  // direct write のやつ</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma comment(lib, &quot;d3d11.lib&quot;</span>)</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// #pragma comment(lib,&quot;d3dx11.lib&quot;)</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// #pragma comment(lib,&quot;dwrite.lib&quot;)</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#pragma comment(lib, &quot;d2d1.lib&quot;</span>)</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>ComPtr&lt;ID2D1Factory&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">mtgb::Direct2D::pD2DFactory_</a> { <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>ComPtr&lt;ID2D1SolidColorBrush&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">mtgb::Direct2D::pDefD2DBrush_</a> { <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>ComPtr&lt;ID2D1RenderTarget&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">mtgb::Direct2D::pDefRenderTarget_</a> { <span class="keyword">nullptr</span> };</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">   22</a></span><a class="code hl_function" href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">mtgb::Direct2D::~Direct2D</a>()</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">Release</a>();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">   27</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">mtgb::Direct2D::Initialize</a>()</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    InitializeCommonResource();</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">mtgb::Direct2D::InitializeCommonResource</a>()</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// ファクトリー作成</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, pD2DFactory_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#pragma comment(lib, &quot;d3d11.lib&quot;</span>)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma comment(lib, &quot;d2d1.lib&quot;</span>)</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>ComPtr&lt;ID2D1Factory&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">mtgb::Direct2D::pD2DFactory_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>ComPtr&lt;ID2D1SolidColorBrush&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">mtgb::Direct2D::pDefD2DBrush_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>ComPtr&lt;ID2D1RenderTarget&gt; <a class="code hl_variable" href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">mtgb::Direct2D::pDefRenderTarget_</a> { <span class="keyword">nullptr</span> };</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">   19</a></span><a class="code hl_function" href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">mtgb::Direct2D::~Direct2D</a>()</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>{</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">Release</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">mtgb::Direct2D::Initialize</a>()</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    InitializeCommonResource();</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>}</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">   29</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">mtgb::Direct2D::InitializeCommonResource</a>()</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>{</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">// ファクトリー作成</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    HRESULT hResult = D2D1CreateFactory(D2D1_FACTORY_TYPE_MULTI_THREADED, pD2DFactory_.ReleaseAndGetAddressOf());</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;D2D1CreateFactoryに失敗 @Direct2D::Initialize&quot;</span>);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;D2D1CreateFactoryに失敗 @Direct2D::Initialize&quot;</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">   40</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">mtgb::Direct2D::CreateD2DRenderTarget</a>(IDXGISurface* _pIdxgiSurface, ID2D1RenderTarget** _ppRenderTarget)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>{</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// レンダーターゲットのプロパティ設定書く</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties = D2D1::RenderTargetProperties(</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        D2D1_RENDER_TARGET_TYPE_DEFAULT, <span class="comment">// レンダリングモード。DEFAULTだと使用可能ならGPU、それ以外はCPUでレンダリング</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_IGNORE), <span class="comment">// ピクセルの形式、アルファ値</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">mtgb::Direct2D::CreateD2DRenderTarget</a>(IDXGISurface* _pIdxgiSurface, ID2D1RenderTarget** _ppRenderTarget)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">// レンダーターゲットのプロパティ設定書く</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    D2D1_RENDER_TARGET_PROPERTIES renderTargetProperties = D2D1::RenderTargetProperties(</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        D2D1_RENDER_TARGET_TYPE_DEFAULT, <span class="comment">// レンダリングモード。DEFAULTだと使用可能ならGPU、それ以外はCPUでレンダリング</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        D2D1::PixelFormat(DXGI_FORMAT_R8G8B8A8_UNORM, D2D1_ALPHA_MODE_IGNORE), <span class="comment">// ピクセルの形式、アルファ値</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        0, <span class="comment">// x方向のdpi</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        0, <span class="comment">// y方向のdpi</span></div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        0, <span class="comment">// x方向のdpi</span></div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        0, <span class="comment">// y方向のdpi</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        D2D1_RENDER_TARGET_USAGE_NONE, <span class="comment">// 何かしらの利用方法を設定</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        D2D1_FEATURE_LEVEL_DEFAULT <span class="comment">// 最小の機能レベルを指定</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    );</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="comment">// レンダーターゲット作成</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    HRESULT hResult =</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        pD2DFactory_-&gt;CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="comment">// massert(SUCCEEDED(hResult) &amp;&amp; &quot;CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget&quot;);</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (FAILED(hResult))</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        _com_error error(hResult);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        LPCTSTR message = error.ErrorMessage();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        std::string str = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>(message);</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        MessageBoxW(NULL, <a class="code hl_function" href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a>(str.c_str()).c_str(), <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;f&quot;</span>, MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">   72</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">mtgb::Direct2D::CreateSolidColorBrush</a>(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keyword">const</span> D2D1::ColorF&amp; _color,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    ID2D1RenderTarget* _pRenderTarget,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    ID2D1SolidColorBrush** _ppD2DBrush</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>)</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// ブラシ作成</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    HRESULT hResult = _pRenderTarget-&gt;CreateSolidColorBrush(_color, _ppD2DBrush);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        D2D1_RENDER_TARGET_USAGE_NONE, <span class="comment">// 何かしらの利用方法を設定</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        D2D1_FEATURE_LEVEL_DEFAULT <span class="comment">// 最小の機能レベルを指定</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    );</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// レンダーターゲット作成</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    HRESULT hResult =</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        pD2DFactory_-&gt;CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// massert(SUCCEEDED(hResult) &amp;&amp; &quot;CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget&quot;);</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (FAILED(hResult))</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        _com_error error(hResult);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        LPCTSTR message = error.ErrorMessage();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        std::string str = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>(message);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        MessageBoxW(NULL, <a class="code hl_function" href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a>(str.c_str()).c_str(), <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;f&quot;</span>, MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">   69</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">mtgb::Direct2D::CreateSolidColorBrush</a>(</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">const</span> D2D1::ColorF&amp; _color,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    ID2D1RenderTarget* _pRenderTarget,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    ID2D1SolidColorBrush** _ppD2DBrush</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>)</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>{</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// ブラシ作成</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    HRESULT hResult = _pRenderTarget-&gt;CreateSolidColorBrush(_color, _ppD2DBrush);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush&quot;</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;CreateSolidColorBrushに失敗 @Direct2D::CreateSolidColorBrush&quot;</span>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>}</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">   84</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">mtgb::Direct2D::ChangeRenderTarget</a>(</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    ComPtr&lt;ID2D1SolidColorBrush&gt; _pD2DBrush,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    ComPtr&lt;ID2D1RenderTarget&gt; _pRenderTarget</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>)</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>{</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    pDefD2DBrush_     = _pD2DBrush;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    pDefRenderTarget_ = _pRenderTarget;</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">   93</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">mtgb::Direct2D::Update</a>() {}</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">   95</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">mtgb::Direct2D::Draw</a>() {}</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">   97</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">mtgb::Direct2D::Release</a>()</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>{</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    pD2DFactory_.Reset();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    pDefD2DBrush_.Reset();</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    pDefRenderTarget_.Reset();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">  105</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">mtgb::Direct2D::Reset</a>()</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    pDefD2DBrush_.Reset();</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    pDefRenderTarget_.Reset();</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">  111</a></span>D2D1_SIZE_F <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">mtgb::Direct2D::GetRenderTargetSize</a>()</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">return</span> pDefRenderTarget_-&gt;GetSize();</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">   81</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">mtgb::Direct2D::ChangeRenderTarget</a>(</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    ComPtr&lt;ID2D1SolidColorBrush&gt; _pD2DBrush,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    ComPtr&lt;ID2D1RenderTarget&gt; _pRenderTarget</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>)</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>{</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    pDefD2DBrush_     = _pD2DBrush;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    pDefRenderTarget_ = _pRenderTarget;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">mtgb::Direct2D::Update</a>() {}</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">   92</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">mtgb::Direct2D::Draw</a>() {}</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">   94</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">mtgb::Direct2D::Release</a>()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    pD2DFactory_.Reset();</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    pDefD2DBrush_.Reset();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    pDefRenderTarget_.Reset();</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">  102</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">mtgb::Direct2D::Reset</a>()</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>{</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    pDefD2DBrush_.Reset();</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    pDefRenderTarget_.Reset();</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">  108</a></span>D2D1_SIZE_F <a class="code hl_function" href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">mtgb::Direct2D::GetRenderTargetSize</a>()</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> pDefRenderTarget_-&gt;GetSize();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
 <div class="ttc" id="aDirect2D_8h_html"><div class="ttname"><a href="Direct2D_8h.html">Direct2D.h</a></div></div>
 <div class="ttc" id="aDirectX11Draw_8h_html"><div class="ttname"><a href="DirectX11Draw_8h.html">DirectX11Draw.h</a></div></div>
 <div class="ttc" id="aIncludingWindows_8h_html"><div class="ttname"><a href="IncludingWindows_8h.html">IncludingWindows.h</a></div></div>
@@ -219,20 +216,20 @@ $(document).ready(function(){initNavTree('Direct2D_8cpp_source.html',''); initRe
 <div class="ttc" id="aMTAssert_8h_html"><div class="ttname"><a href="MTAssert_8h.html">MTAssert.h</a></div></div>
 <div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00048">MTAssert.h:48</a></div></div>
 <div class="ttc" id="aReleaseUtility_8h_html"><div class="ttname"><a href="ReleaseUtility_8h.html">ReleaseUtility.h</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a0b613a35e929c42072eb0a28477b1f92"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">mtgb::Direct2D::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00097">Direct2D.cpp:97</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a0dae23e9d0c20e2e62528b452d63f7a8"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">mtgb::Direct2D::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00093">Direct2D.cpp:93</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a0b613a35e929c42072eb0a28477b1f92"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a0b613a35e929c42072eb0a28477b1f92">mtgb::Direct2D::Release</a></div><div class="ttdeci">void Release() override</div><div class="ttdoc">開放処理</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00094">Direct2D.cpp:94</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a0dae23e9d0c20e2e62528b452d63f7a8"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a0dae23e9d0c20e2e62528b452d63f7a8">mtgb::Direct2D::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00090">Direct2D.cpp:90</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_a517fd556b9f8bce9796427fea48af420"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a517fd556b9f8bce9796427fea48af420">mtgb::Direct2D::pDefD2DBrush_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1SolidColorBrush &gt; pDefD2DBrush_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00043">Direct2D.h:43</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a5b2e0010e9fd608aaed3f55f3e2c6bd4"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">mtgb::Direct2D::CreateSolidColorBrush</a></div><div class="ttdeci">void CreateSolidColorBrush(const D2D1::ColorF &amp;_color, ID2D1RenderTarget *_pRenderTarget, ID2D1SolidColorBrush **_ppD2DBrush)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00072">Direct2D.cpp:72</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a6c99b9db2c2cd3834630af4730e7fbd1"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">mtgb::Direct2D::ChangeRenderTarget</a></div><div class="ttdeci">void ChangeRenderTarget(ComPtr&lt; ID2D1SolidColorBrush &gt; _pD2DBrush, ComPtr&lt; ID2D1RenderTarget &gt; _pRenderTarget)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00084">Direct2D.cpp:84</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aa99edab7a5edd30088bb447511de2363"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">mtgb::Direct2D::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00095">Direct2D.cpp:95</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ab1e32008048b1a4f376bb0cd1bf58314"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">mtgb::Direct2D::GetRenderTargetSize</a></div><div class="ttdeci">D2D1_SIZE_F GetRenderTargetSize()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00111">Direct2D.cpp:111</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a5b2e0010e9fd608aaed3f55f3e2c6bd4"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a5b2e0010e9fd608aaed3f55f3e2c6bd4">mtgb::Direct2D::CreateSolidColorBrush</a></div><div class="ttdeci">void CreateSolidColorBrush(const D2D1::ColorF &amp;_color, ID2D1RenderTarget *_pRenderTarget, ID2D1SolidColorBrush **_ppD2DBrush)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00069">Direct2D.cpp:69</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_a6c99b9db2c2cd3834630af4730e7fbd1"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#a6c99b9db2c2cd3834630af4730e7fbd1">mtgb::Direct2D::ChangeRenderTarget</a></div><div class="ttdeci">void ChangeRenderTarget(ComPtr&lt; ID2D1SolidColorBrush &gt; _pD2DBrush, ComPtr&lt; ID2D1RenderTarget &gt; _pRenderTarget)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00081">Direct2D.cpp:81</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aa99edab7a5edd30088bb447511de2363"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aa99edab7a5edd30088bb447511de2363">mtgb::Direct2D::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00092">Direct2D.cpp:92</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ab1e32008048b1a4f376bb0cd1bf58314"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ab1e32008048b1a4f376bb0cd1bf58314">mtgb::Direct2D::GetRenderTargetSize</a></div><div class="ttdeci">D2D1_SIZE_F GetRenderTargetSize()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00108">Direct2D.cpp:108</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_aba829b8ee709828b87b57771d7a2b983"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aba829b8ee709828b87b57771d7a2b983">mtgb::Direct2D::pD2DFactory_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1Factory &gt; pD2DFactory_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00041">Direct2D.h:41</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_abe2d591a928f5755fe7b1bbfc41f22d9"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">mtgb::Direct2D::CreateD2DRenderTarget</a></div><div class="ttdeci">void CreateD2DRenderTarget(IDXGISurface *_pIdxgiSurface, ID2D1RenderTarget **_ppRenderTarget)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00040">Direct2D.cpp:40</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ae8cad2910b002ebb61812eb32e16a20c"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">mtgb::Direct2D::InitializeCommonResource</a></div><div class="ttdeci">void InitializeCommonResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00032">Direct2D.cpp:32</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aeec060e7b5aa4b1c5170732b88c634f3"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">mtgb::Direct2D::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00027">Direct2D.cpp:27</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afa16bd7d41493e2a76d9d7596a66cef1"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">mtgb::Direct2D::~Direct2D</a></div><div class="ttdeci">~Direct2D()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00022">Direct2D.cpp:22</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_abe2d591a928f5755fe7b1bbfc41f22d9"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#abe2d591a928f5755fe7b1bbfc41f22d9">mtgb::Direct2D::CreateD2DRenderTarget</a></div><div class="ttdeci">void CreateD2DRenderTarget(IDXGISurface *_pIdxgiSurface, ID2D1RenderTarget **_ppRenderTarget)</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00037">Direct2D.cpp:37</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_ae8cad2910b002ebb61812eb32e16a20c"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#ae8cad2910b002ebb61812eb32e16a20c">mtgb::Direct2D::InitializeCommonResource</a></div><div class="ttdeci">void InitializeCommonResource()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00029">Direct2D.cpp:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_aeec060e7b5aa4b1c5170732b88c634f3"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#aeec060e7b5aa4b1c5170732b88c634f3">mtgb::Direct2D::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00024">Direct2D.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afa16bd7d41493e2a76d9d7596a66cef1"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afa16bd7d41493e2a76d9d7596a66cef1">mtgb::Direct2D::~Direct2D</a></div><div class="ttdeci">~Direct2D()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00019">Direct2D.cpp:19</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Direct2D_html_afaa4832cd7c29a441dcf8a771916261d"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afaa4832cd7c29a441dcf8a771916261d">mtgb::Direct2D::pDefRenderTarget_</a></div><div class="ttdeci">static ComPtr&lt; ID2D1RenderTarget &gt; pDefRenderTarget_</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8h_source.html#l00044">Direct2D.h:44</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afdc8d1bab25d976fbc85655e31231997"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">mtgb::Direct2D::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00105">Direct2D.cpp:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Direct2D_html_afdc8d1bab25d976fbc85655e31231997"><div class="ttname"><a href="classmtgb_1_1Direct2D.html#afdc8d1bab25d976fbc85655e31231997">mtgb::Direct2D::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> <a href="Direct2D_8cpp_source.html#l00102">Direct2D.cpp:102</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a91dcf894b121fab17af7182528469d05"><div class="ttname"><a href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a></div><div class="ttdeci">std::wstring UTF8ToWide(const std::string &amp;_string)</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00144">MTStringUtility.cpp:144</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_acfe6481cc8fb042261c35c383a942246"><div class="ttname"><a href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a></div><div class="ttdeci">std::string MultiToUTF8(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00224">MTStringUtility.cpp:224</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

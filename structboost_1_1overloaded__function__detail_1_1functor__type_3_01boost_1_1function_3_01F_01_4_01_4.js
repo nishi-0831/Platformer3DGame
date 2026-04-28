@@ -1,0 +1,4 @@
+var structboost_1_1overloaded__function__detail_1_1functor__type_3_01boost_1_1function_3_01F_01_4_01_4 =
+[
+    [ "type", "structboost_1_1overloaded__function__detail_1_1functor__type_3_01boost_1_1function_3_01F_01_4_01_4.html#a31724126c9df3c69fd15d3f6cb81da34", null ]
+];

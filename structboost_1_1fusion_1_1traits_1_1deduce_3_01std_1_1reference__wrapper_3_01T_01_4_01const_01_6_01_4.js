@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1traits_1_1deduce_3_01std_1_1reference__wrapper_3_01T_01_4_01const_01_6_01_4 =
+[
+    [ "type", "structboost_1_1fusion_1_1traits_1_1deduce_3_01std_1_1reference__wrapper_3_01T_01_4_01const_01_6_01_4.html#ab2356906873ec4ee174663b14ecd0c13", null ]
+];

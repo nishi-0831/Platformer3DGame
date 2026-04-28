@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1writable__iterator__t_01_4 =
+[
+    [ "archetype", "structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1writable__iterator__t_01_4_1_1archetype.html", "structboost_1_1iterators_1_1iterator__access__archetype__impl_3_01archetypes_1_1writable__iterator__t_01_4_1_1archetype" ]
+];

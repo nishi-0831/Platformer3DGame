@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1vector__n__chooser_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_0514659ad8ce957a92337ae374a5950e =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1vector__n__chooser_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_0514659ad8ce957a92337ae374a5950e.html#a91b79f071cf7cb0849bbda0b25b99538", null ]
+];

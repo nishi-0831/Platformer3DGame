@@ -4,7 +4,7 @@ var classmtgb_1_1InputResource =
     [ "InputResource", "classmtgb_1_1InputResource.html#ad8deaa9bc391dcde9e9c00e50df22911", null ],
     [ "GetInput", "classmtgb_1_1InputResource.html#acd031967f72aa9ff2afc11b7dcdbd268", null ],
     [ "GetWindowContext", "classmtgb_1_1InputResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],
-    [ "OnResize", "classmtgb_1_1InputResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf", null ],
+    [ "OnResize", "classmtgb_1_1InputResource.html#a756c8998345bc109275bdcdc60f6f44b", null ],
     [ "operator=", "classmtgb_1_1InputResource.html#a227277ebec08778dc1e85a105a20adaa", null ],
     [ "Release", "classmtgb_1_1InputResource.html#ac35062b587ac9e98b13dcf7cb07d1aae", null ],
     [ "Reset", "classmtgb_1_1InputResource.html#af7a1be98828072a5924a3bd2240a7589", null ],

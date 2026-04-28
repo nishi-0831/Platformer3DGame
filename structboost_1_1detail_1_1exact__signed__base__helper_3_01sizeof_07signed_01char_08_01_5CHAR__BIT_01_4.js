@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1exact__signed__base__helper_3_01sizeof_07signed_01char_08_01_5CHAR__BIT_01_4 =
+[
+    [ "exact", "structboost_1_1detail_1_1exact__signed__base__helper_3_01sizeof_07signed_01char_08_01_5CHAR__BIT_01_4.html#a824ffc56c1732aa2558577764fbdfbf1", null ]
+];

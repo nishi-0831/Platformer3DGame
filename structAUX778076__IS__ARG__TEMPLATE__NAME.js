@@ -1,0 +1,4 @@
+var structAUX778076__IS__ARG__TEMPLATE__NAME =
+[
+    [ "BOOST_STATIC_CONSTANT", "structAUX778076__IS__ARG__TEMPLATE__NAME.html#a7fdd2d5640a456a9757e32bef00ee920", null ]
+];

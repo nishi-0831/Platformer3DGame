@@ -212,17 +212,15 @@ mtgb::GameObjectGenerator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="GameObjectGenerator_8cpp_source.html">GameObjectGenerator.cpp</a> の <a class="el" href="GameObjectGenerator_8cpp_source.html#l00081">81</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   82</span>{</div>
-<div class="line"><span class="lineno">   83</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_entityId);</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    DeleteGameObjectCommand* cmd =</div>
-<div class="line"><span class="lineno">   86</span>        <span class="keyword">new</span> DeleteGameObjectCommand(pGameObj, <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>);</div>
+<p class="definition"> <a class="el" href="GameObjectGenerator_8cpp_source.html">GameObjectGenerator.cpp</a> の <a class="el" href="GameObjectGenerator_8cpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>{</div>
+<div class="line"><span class="lineno">   84</span>    GameObject* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_entityId);</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>    DeleteGameObjectCommand* cmd = <span class="keyword">new</span> DeleteGameObjectCommand(pGameObj, <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>);</div>
 <div class="line"><span class="lineno">   87</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
 <div class="line"><span class="lineno">   88</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_ac624e6e7947f83d85ebd418a7b5eaedf"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">mtgb::GameObjectGenerator::GetInstance</a></div><div class="ttdeci">static GameObjectGenerator * GetInstance()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00090">GameObjectGenerator.cpp:90</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_add8addbbb1c3db289596e8508aa600ef"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">mtgb::GameObjectGenerator::gameObjFactory_</a></div><div class="ttdeci">GameObjectFactory gameObjFactory_</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8h_source.html#l00032">GameObjectGenerator.h:32</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00015">GameObject.h:16</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00040">mtgb::ImGuiEditor::Update()</a>.</p>
 <div class="dynheader">
@@ -260,23 +258,22 @@ mtgb::GameObjectGenerator 連携図</div>
 
 <p>コマンドを渡すことができるリスナーを登録 </p>
 
-<p class="definition"> <a class="el" href="GameObjectGenerator_8cpp_source.html">GameObjectGenerator.cpp</a> の <a class="el" href="GameObjectGenerator_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
-<div class="line"><span class="lineno">   67</span>    <span class="comment">// TODO:ゲームオブジェクト作成、コンポーネントの付与のコマンドをまとめる</span></div>
-<div class="line"><span class="lineno">   68</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* src           = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_srcEntityId);</div>
-<div class="line"><span class="lineno">   69</span>    std::string classTypeName = src-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">GetClassTypeName</a>();</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    DuplicateGameObjectCommand* cmd = <span class="keyword">new</span> DuplicateGameObjectCommand(</div>
-<div class="line"><span class="lineno">   72</span>        [classTypeName]()</div>
-<div class="line"><span class="lineno">   73</span>        {</div>
-<div class="line"><span class="lineno">   74</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(classTypeName);</div>
-<div class="line"><span class="lineno">   75</span>        },</div>
-<div class="line"><span class="lineno">   76</span>        _srcEntityId</div>
-<div class="line"><span class="lineno">   77</span>    );</div>
-<div class="line"><span class="lineno">   78</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
-<div class="line"><span class="lineno">   79</span>}</div>
+<p class="definition"> <a class="el" href="GameObjectGenerator_8cpp_source.html">GameObjectGenerator.cpp</a> の <a class="el" href="GameObjectGenerator_8cpp_source.html#l00066">66</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{</div>
+<div class="line"><span class="lineno">   68</span>    <span class="comment">// TODO:ゲームオブジェクト作成、コンポーネントの付与のコマンドをまとめる</span></div>
+<div class="line"><span class="lineno">   69</span>    GameObject* src           = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(_srcEntityId);</div>
+<div class="line"><span class="lineno">   70</span>    std::string classTypeName = src-&gt;GetClassTypeName();</div>
+<div class="line"><span class="lineno">   71</span> </div>
+<div class="line"><span class="lineno">   72</span>    DuplicateGameObjectCommand* cmd = <span class="keyword">new</span> DuplicateGameObjectCommand(</div>
+<div class="line"><span class="lineno">   73</span>        [classTypeName]()</div>
+<div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(classTypeName);</div>
+<div class="line"><span class="lineno">   76</span>        },</div>
+<div class="line"><span class="lineno">   77</span>        _srcEntityId</div>
+<div class="line"><span class="lineno">   78</span>    );</div>
+<div class="line"><span class="lineno">   79</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
+<div class="line"><span class="lineno">   80</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectFactory_html_a3fe3d6c4ad51c9390ca118666b8a1b78"><div class="ttname"><a href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">mtgb::GameObjectFactory::Create</a></div><div class="ttdeci">GameObject * Create(std::string_view _typeName) const override</div><div class="ttdoc">型名からゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectFactory_8cpp_source.html#l00004">GameObjectFactory.cpp:4</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1GameObject_html_ae98ecf286d6e93064a967ef02c41a438"><div class="ttname"><a href="classmtgb_1_1GameObject.html#ae98ecf286d6e93064a967ef02c41a438">mtgb::GameObject::GetClassTypeName</a></div><div class="ttdeci">std::string GetClassTypeName() const</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00106">GameObject.cpp:106</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8cpp_source.html#l00106">mtgb::GameObject::GetClassTypeName()</a>.</p>
 
@@ -325,14 +322,15 @@ mtgb::GameObjectGenerator 連携図</div>
 
 <p class="definition"> <a class="el" href="GameObjectGenerator_8cpp_source.html">GameObjectGenerator.cpp</a> の <a class="el" href="GameObjectGenerator_8cpp_source.html#l00054">54</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   55</span>{</div>
-<div class="line"><span class="lineno">   56</span>    GameObjectCreateCommand* cmd = <span class="keyword">new</span> GameObjectCreateCommand(</div>
-<div class="line"><span class="lineno">   57</span>        [_gameObjName]()</div>
-<div class="line"><span class="lineno">   58</span>        {</div>
-<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(_gameObjName);</div>
-<div class="line"><span class="lineno">   60</span>        }</div>
-<div class="line"><span class="lineno">   61</span>    );</div>
-<div class="line"><span class="lineno">   62</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<div class="line"><span class="lineno">   56</span>    std::string gameObjName { _gameObjName };</div>
+<div class="line"><span class="lineno">   57</span>    GameObjectCreateCommand* cmd = <span class="keyword">new</span> GameObjectCreateCommand(</div>
+<div class="line"><span class="lineno">   58</span>        [gameObjName]()</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">return</span> <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#ac624e6e7947f83d85ebd418a7b5eaedf">GetInstance</a>()-&gt;<a class="code hl_variable" href="classmtgb_1_1GameObjectGenerator.html#add8addbbb1c3db289596e8508aa600ef">gameObjFactory_</a>.<a class="code hl_function" href="classmtgb_1_1GameObjectFactory.html#a3fe3d6c4ad51c9390ca118666b8a1b78">Create</a>(gameObjName);</div>
+<div class="line"><span class="lineno">   61</span>        }</div>
+<div class="line"><span class="lineno">   62</span>    );</div>
+<div class="line"><span class="lineno">   63</span>    Game::System&lt;CommandHistoryManager&gt;().ExecuteCommand(cmd);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ImGuiEditor_8cpp_source.html#l00177">mtgb::ImGuiEditor::ShowGenerateGameObjectButton()</a>.</p>
 <div class="dynheader">
@@ -382,7 +380,7 @@ mtgb::GameObjectGenerator 連携図</div>
 <div class="line"><span class="lineno">   29</span>    cmdHitoryManager.BeginGroupCommand();</div>
 <div class="line"><span class="lineno">   30</span> </div>
 <div class="line"><span class="lineno">   31</span>    nlohmann::json gameObjs = _json.at(<span class="stringliteral">&quot;GameObject&quot;</span>);</div>
-<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span> (nlohmann::json::iterator itr = gameObjs.begin(); itr != gameObjs.end(); itr++)</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">for</span> (<a class="code hl_typedef" href="classbasic__json.html#ae206a491161d043f8efaa1330f1ccf97">nlohmann::json::iterator</a> itr = gameObjs.begin(); itr != gameObjs.end(); itr++)</div>
 <div class="line"><span class="lineno">   33</span>    {</div>
 <div class="line"><span class="lineno">   34</span>        nlohmann::json j = (*itr);</div>
 <div class="line"><span class="lineno">   35</span>        <span class="comment">// 型名を取得</span></div>
@@ -403,11 +401,12 @@ mtgb::GameObjectGenerator 連携図</div>
 <div class="line"><span class="lineno">   50</span>    }</div>
 <div class="line"><span class="lineno">   51</span>    cmdHitoryManager.EndGroupCommand();</div>
 <div class="line"><span class="lineno">   52</span>}</div>
+<div class="ttc" id="aclassbasic__json_html_ae206a491161d043f8efaa1330f1ccf97"><div class="ttname"><a href="classbasic__json.html#ae206a491161d043f8efaa1330f1ccf97">basic_json::iterator</a></div><div class="ttdeci">iter_impl&lt; basic_json &gt; iterator</div><div class="ttdoc">an iterator for a basic_json container</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00231">json.hpp:231</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_aeaa55851e01df60f0661fc0b24e65d7a"><div class="ttname"><a href="classmtgb_1_1Game.html#aeaa55851e01df60f0661fc0b24e65d7a">mtgb::Game::DeserializeComponents</a></div><div class="ttdeci">static void DeserializeComponents(EntityId _entityId, const nlohmann::json &amp;_json)</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00111">Game.cpp:111</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00033">mtgb::CommandHistoryManager::BeginGroupCommand()</a>, <a class="el" href="Game_8cpp_source.html#l00111">mtgb::Game::DeserializeComponents()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00043">mtgb::CommandHistoryManager::EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00052">mtgb::CommandHistoryManager::ExecuteCommand()</a>.</p>
+<p class="reference">参照先 <a class="el" href="CommandHistoryManager_8cpp_source.html#l00034">mtgb::CommandHistoryManager::BeginGroupCommand()</a>, <a class="el" href="Game_8cpp_source.html#l00111">mtgb::Game::DeserializeComponents()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00044">mtgb::CommandHistoryManager::EndGroupCommand()</a>, <a class="el" href="CommandHistoryManager_8cpp_source.html#l00053">mtgb::CommandHistoryManager::ExecuteCommand()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00020">SampleScene::Initialize()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00108">mtgb::ImGuiEditor::LoadMapData()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00017">SampleScene::Initialize()</a>, <a class="el" href="ImGuiEditor_8cpp_source.html#l00108">mtgb::ImGuiEditor::LoadMapData()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">

@@ -1,0 +1,322 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: rest_n.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('seq_2rest__n_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">seq/rest_n.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="arithmetic_2inc_8hpp_source.html">boost/preprocessor/arithmetic/inc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="not__equal_8hpp_source.html">boost/preprocessor/comparison/not_equal.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2config_2config_8hpp_source.html">boost/preprocessor/config/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iif_8hpp_source.html">boost/preprocessor/control/iif.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2facilities_2identity_8hpp_source.html">boost/preprocessor/facilities/identity.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2logical_2bitand_8hpp_source.html">boost/preprocessor/logical/bitand.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2seq_2detail_2is__empty_8hpp_source.html">boost/preprocessor/seq/detail/is_empty.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="seq_2detail_2split_8hpp_source.html">boost/preprocessor/seq/detail/split.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_2elem_8hpp_source.html">boost/preprocessor/tuple/elem.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+seq/rest_n.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="seq_2rest__n_8hpp__incl.svg" width="2444" height="667"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="seq_2rest__n_8hpp__dep__incl.svg" width="1184" height="564"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="seq_2rest__n_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a7516971fd1c24b59c48d496bbd7b7031"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2rest__n_8hpp.html#a7516971fd1c24b59c48d496bbd7b7031">BOOST_PP_SEQ_REST_N</a>(n,  seq)&#160;&#160;&#160;<a class="el" href="seq_2rest__n_8hpp.html#a09c46912282a781f2b5d7078a90fa690">BOOST_PP_SEQ_REST_N_I</a>(n, seq)</td></tr>
+<tr class="separator:a7516971fd1c24b59c48d496bbd7b7031"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09c46912282a781f2b5d7078a90fa690"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2rest__n_8hpp.html#a09c46912282a781f2b5d7078a90fa690">BOOST_PP_SEQ_REST_N_I</a>(n,  seq)&#160;&#160;&#160;<a class="el" href="seq_2rest__n_8hpp.html#ae225f7554881aa1f51f03edc399ef148">BOOST_PP_SEQ_REST_N_DETAIL_EXEC</a>(n, seq, <a class="el" href="preprocessor_2seq_2detail_2is__empty_8hpp.html#abe09d9cbbe96da30d085d764d01c37ed">BOOST_PP_SEQ_DETAIL_EMPTY_SIZE</a>(seq))</td></tr>
+<tr class="separator:a09c46912282a781f2b5d7078a90fa690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8e6d818b7fa613a04c79f6b58c0034"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2rest__n_8hpp.html#a1b8e6d818b7fa613a04c79f6b58c0034">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH</a>(n,  seq)</td></tr>
+<tr class="separator:a1b8e6d818b7fa613a04c79f6b58c0034"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb7ff6bda286f9721d01e30a64b1fa0a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2rest__n_8hpp.html#afb7ff6bda286f9721d01e30a64b1fa0a">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH</a>(n,  seq)&#160;&#160;&#160;            <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 1, <a class="el" href="seq_2detail_2split_8hpp.html#afb2db89ffe640d5afd031286c7eee649">BOOST_PP_SEQ_SPLIT</a>(<a class="el" href="arithmetic_2inc_8hpp.html#aef3bad1b60f54cf20acf665029f6b458">BOOST_PP_INC</a>(n), <a class="el" href="preprocessor_2facilities_2identity_8hpp.html#af7b8374a721d70a1fed3966b68442a5d">BOOST_PP_IDENTITY</a>( (nil) seq )))() \</td></tr>
+<tr class="separator:afb7ff6bda286f9721d01e30a64b1fa0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae225f7554881aa1f51f03edc399ef148"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="seq_2rest__n_8hpp.html#ae225f7554881aa1f51f03edc399ef148">BOOST_PP_SEQ_REST_N_DETAIL_EXEC</a>(n,  seq,  size)</td></tr>
+<tr class="separator:ae225f7554881aa1f51f03edc399ef148"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a7516971fd1c24b59c48d496bbd7b7031" name="a7516971fd1c24b59c48d496bbd7b7031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7516971fd1c24b59c48d496bbd7b7031">&#9670;&#160;</a></span>BOOST_PP_SEQ_REST_N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_REST_N</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2rest__n_8hpp.html#a09c46912282a781f2b5d7078a90fa690">BOOST_PP_SEQ_REST_N_I</a>(n, seq)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2rest__n_8hpp_source.html">seq/rest_n.hpp</a> の <a class="el" href="seq_2rest__n_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae225f7554881aa1f51f03edc399ef148" name="ae225f7554881aa1f51f03edc399ef148"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae225f7554881aa1f51f03edc399ef148">&#9670;&#160;</a></span>BOOST_PP_SEQ_REST_N_DETAIL_EXEC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_REST_N_DETAIL_EXEC</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">size&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a> \</div>
+<div class="line">            ( \</div>
+<div class="line">            <a class="code hl_define" href="preprocessor_2logical_2bitand_8hpp.html#a97e43b523e7eaad29c29c733e484301f">BOOST_PP_BITAND</a> \</div>
+<div class="line">                ( \</div>
+<div class="line">                BOOST_PP_SEQ_DETAIL_IS_NOT_EMPTY_SIZE(size), \</div>
+<div class="line">                BOOST_PP_NOT_EQUAL(n,size) \</div>
+<div class="line">                ), \</div>
+<div class="line">            <a class="code hl_define" href="seq_2rest__n_8hpp.html#afb7ff6bda286f9721d01e30a64b1fa0a">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH</a>, \</div>
+<div class="line">            <a class="code hl_define" href="seq_2rest__n_8hpp.html#a1b8e6d818b7fa613a04c79f6b58c0034">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH</a> \</div>
+<div class="line">            ) \</div>
+<div class="line">        (n, seq)  \</div>
+<div class="ttc" id="aiif_8hpp_html_adf26de1282939d1dbca6fdf095b10fcf"><div class="ttname"><a href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a></div><div class="ttdeci">#define BOOST_PP_IIF(bit, t, f)</div><div class="ttdef"><b>Definition:</b> <a href="iif_8hpp_source.html#l00020">iif.hpp:20</a></div></div>
+<div class="ttc" id="apreprocessor_2logical_2bitand_8hpp_html_a97e43b523e7eaad29c29c733e484301f"><div class="ttname"><a href="preprocessor_2logical_2bitand_8hpp.html#a97e43b523e7eaad29c29c733e484301f">BOOST_PP_BITAND</a></div><div class="ttdeci">#define BOOST_PP_BITAND(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2logical_2bitand_8hpp_source.html#l00022">preprocessor/logical/bitand.hpp:22</a></div></div>
+<div class="ttc" id="aseq_2rest__n_8hpp_html_a1b8e6d818b7fa613a04c79f6b58c0034"><div class="ttname"><a href="seq_2rest__n_8hpp.html#a1b8e6d818b7fa613a04c79f6b58c0034">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH</a></div><div class="ttdeci">#define BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH(n, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2rest__n_8hpp_source.html#l00034">seq/rest_n.hpp:34</a></div></div>
+<div class="ttc" id="aseq_2rest__n_8hpp_html_afb7ff6bda286f9721d01e30a64b1fa0a"><div class="ttname"><a href="seq_2rest__n_8hpp.html#afb7ff6bda286f9721d01e30a64b1fa0a">BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH</a></div><div class="ttdeci">#define BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH(n, seq)</div><div class="ttdef"><b>Definition:</b> <a href="seq_2rest__n_8hpp_source.html#l00035">seq/rest_n.hpp:35</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="seq_2rest__n_8hpp_source.html">seq/rest_n.hpp</a> の <a class="el" href="seq_2rest__n_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afb7ff6bda286f9721d01e30a64b1fa0a" name="afb7ff6bda286f9721d01e30a64b1fa0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb7ff6bda286f9721d01e30a64b1fa0a">&#9670;&#160;</a></span>BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_REST_N_DETAIL_EXEC_MATCH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;            <a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 1, <a class="el" href="seq_2detail_2split_8hpp.html#afb2db89ffe640d5afd031286c7eee649">BOOST_PP_SEQ_SPLIT</a>(<a class="el" href="arithmetic_2inc_8hpp.html#aef3bad1b60f54cf20acf665029f6b458">BOOST_PP_INC</a>(n), <a class="el" href="preprocessor_2facilities_2identity_8hpp.html#af7b8374a721d70a1fed3966b68442a5d">BOOST_PP_IDENTITY</a>( (nil) seq )))() \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2rest__n_8hpp_source.html">seq/rest_n.hpp</a> の <a class="el" href="seq_2rest__n_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1b8e6d818b7fa613a04c79f6b58c0034" name="a1b8e6d818b7fa613a04c79f6b58c0034"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8e6d818b7fa613a04c79f6b58c0034">&#9670;&#160;</a></span>BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_REST_N_DETAIL_EXEC_NO_MATCH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2rest__n_8hpp_source.html">seq/rest_n.hpp</a> の <a class="el" href="seq_2rest__n_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a09c46912282a781f2b5d7078a90fa690" name="a09c46912282a781f2b5d7078a90fa690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09c46912282a781f2b5d7078a90fa690">&#9670;&#160;</a></span>BOOST_PP_SEQ_REST_N_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_SEQ_REST_N_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">seq&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="seq_2rest__n_8hpp.html#ae225f7554881aa1f51f03edc399ef148">BOOST_PP_SEQ_REST_N_DETAIL_EXEC</a>(n, seq, <a class="el" href="preprocessor_2seq_2detail_2is__empty_8hpp.html#abe09d9cbbe96da30d085d764d01c37ed">BOOST_PP_SEQ_DETAIL_EMPTY_SIZE</a>(seq))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq_2rest__n_8hpp_source.html">seq/rest_n.hpp</a> の <a class="el" href="seq_2rest__n_8hpp_source.html#l00031">31</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f59814f4c9a8c50c3d3ea0e21fb94ec2.html">preprocessor</a></li><li class="navelem"><a class="el" href="dir_a937e92cfa2eced3acab5fd651c3818a.html">seq</a></li><li class="navelem"><a class="el" href="seq_2rest__n_8hpp.html">rest_n.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1keyed__element__value__at_3_01keyed__element_3_01Key_00_01Value_00_01Rest_01_4_00_01Key_01_4 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1keyed__element__value__at_3_01keyed__element_3_01Key_00_01Value_00_01Rest_01_4_00_01Key_01_4.html#acfaf493226e7dc183f16e453c8f6b1cd", null ]
+];

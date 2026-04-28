@@ -1,0 +1,4 @@
+var structboost_1_1details_1_1compressed__pair__switch_3_01T1_00_01T2_00_01false_00_01false_00_01true_01_4 =
+[
+    [ "value", "structboost_1_1details_1_1compressed__pair__switch_3_01T1_00_01T2_00_01false_00_01false_00_01true_01_4.html#a847ee96fa689b3e3dbf93aa4f0a301c4", null ]
+];

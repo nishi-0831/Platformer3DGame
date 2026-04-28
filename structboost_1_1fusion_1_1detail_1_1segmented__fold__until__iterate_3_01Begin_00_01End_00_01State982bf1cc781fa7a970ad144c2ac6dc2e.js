@@ -1,0 +1,6 @@
+var structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate_3_01Begin_00_01End_00_01State982bf1cc781fa7a970ad144c2ac6dc2e =
+[
+    [ "continue_type", "structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate_3_01Begin_00_01End_00_01State982bf1cc781fa7a970ad144c2ac6dc2e.html#a8c4263b0b5f19c65f94887a486b8009e", null ],
+    [ "type", "structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate_3_01Begin_00_01End_00_01State982bf1cc781fa7a970ad144c2ac6dc2e.html#a1b6a233bd648309daf545588c21cd967", null ],
+    [ "call", "structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate_3_01Begin_00_01End_00_01State982bf1cc781fa7a970ad144c2ac6dc2e.html#a69546cdd201c691c2ceb1e9439a45a9b", null ]
+];

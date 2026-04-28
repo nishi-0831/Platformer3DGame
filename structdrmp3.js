@@ -12,7 +12,7 @@ var structdrmp3 =
     [ "delayInPCMFrames", "structdrmp3.html#af381f8773f9986e7e23ff88a4cf1bc48", null ],
     [ "isCBR", "structdrmp3.html#a1bb77968f1bc5d91ad53835852a58a55", null ],
     [ "isVBR", "structdrmp3.html#a40708454ddcd6ff34d56e61628d90040", null ],
-    [ "memory", "structdrmp3.html#a32382655a3d5abf7ba47be74dbf8cfb6", null ],
+    [ "memory", "structdrmp3.html#aa65202cf96be40699d0a88c900f91c4d", null ],
     [ "mp3FrameChannels", "structdrmp3.html#aec49fe9de2778f11bb2013957fc12029", null ],
     [ "mp3FrameSampleRate", "structdrmp3.html#ade76fd0c402a551a22c0a06a0b8eb5dc", null ],
     [ "onMeta", "structdrmp3.html#af6c0f129830211cfea16c18be9706c1e", null ],

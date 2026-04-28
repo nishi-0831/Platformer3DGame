@@ -1,0 +1,5 @@
+var structboost_1_1iterators_1_1detail_1_1minimum__traversal__category__in__iterator__list_3_01tupleee2d38d7acfa3c8db728163a44a080f8 =
+[
+    [ "front_traversal", "structboost_1_1iterators_1_1detail_1_1minimum__traversal__category__in__iterator__list_3_01tupleee2d38d7acfa3c8db728163a44a080f8.html#a22239a1c4dd3026e04031bfa5154ca2e", null ],
+    [ "type", "structboost_1_1iterators_1_1detail_1_1minimum__traversal__category__in__iterator__list_3_01tupleee2d38d7acfa3c8db728163a44a080f8.html#a9c728332ed45a64a18260badfa307aae", null ]
+];

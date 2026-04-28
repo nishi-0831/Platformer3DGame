@@ -1,0 +1,878 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl__inherit__graph.svg" width="283" height="1552"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl__coll__graph.svg" width="239" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a1a8841096b05b9a9b9a7387b5f4ef4d9"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">sequenced_index_node_impl</a> &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a1a8841096b05b9a9b9a7387b5f4ef4d9">node_allocator</a></td></tr>
+<tr class="separator:a1a8841096b05b9a9b9a7387b5f4ef4d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0598cfc58b6b72922eedcb968e85d1da"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a1a8841096b05b9a9b9a7387b5f4ef4d9">node_allocator</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0598cfc58b6b72922eedcb968e85d1da">alloc_traits</a></td></tr>
+<tr class="separator:a0598cfc58b6b72922eedcb968e85d1da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae86c44f5860232e6c10e63c4154876"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a></td></tr>
+<tr class="separator:adae86c44f5860232e6c10e63c4154876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad168050c29f5a6686ac8177b5937a3df"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::const_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#ad168050c29f5a6686ac8177b5937a3df">const_pointer</a></td></tr>
+<tr class="separator:ad168050c29f5a6686ac8177b5937a3df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d97283d551669ff4cd43025b8a2a10c"><td class="memItemLeft" align="right" valign="top">typedef alloc_traits::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a5d97283d551669ff4cd43025b8a2a10c">difference_type</a></td></tr>
+<tr class="separator:a5d97283d551669ff4cd43025b8a2a10c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a87a5cc151d14870318138aed9f858d93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a87a5cc151d14870318138aed9f858d93">prior</a> ()</td></tr>
+<tr class="separator:a87a5cc151d14870318138aed9f858d93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e345681abc89b2414d8acea98e5645"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a29e345681abc89b2414d8acea98e5645">prior</a> () const</td></tr>
+<tr class="separator:a29e345681abc89b2414d8acea98e5645"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5bfac1f4ddf89cafdf78b4adff9cb5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#af5bfac1f4ddf89cafdf78b4adff9cb5c">next</a> ()</td></tr>
+<tr class="separator:af5bfac1f4ddf89cafdf78b4adff9cb5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50522b69818c16e7e8e93747d04e928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#ab50522b69818c16e7e8e93747d04e928">next</a> () const</td></tr>
+<tr class="separator:ab50522b69818c16e7e8e93747d04e928"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9adf2519e5a2b458e87a084644f7baa9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a9adf2519e5a2b458e87a084644f7baa9">increment</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;x)</td></tr>
+<tr class="separator:a9adf2519e5a2b458e87a084644f7baa9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a889666c0ccc49b6504f11be3aa55e6af"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a889666c0ccc49b6504f11be3aa55e6af">decrement</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;x)</td></tr>
+<tr class="separator:a889666c0ccc49b6504f11be3aa55e6af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27d110159cd597912e7c0fa2c1ec4917"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a27d110159cd597912e7c0fa2c1ec4917">link</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> header)</td></tr>
+<tr class="separator:a27d110159cd597912e7c0fa2c1ec4917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63c1fc5a222dc19ccea6c978852354c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a63c1fc5a222dc19ccea6c978852354c9">unlink</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x)</td></tr>
+<tr class="separator:a63c1fc5a222dc19ccea6c978852354c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af038a872cee7ccc6407649cb269a240a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#af038a872cee7ccc6407649cb269a240a">relink</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> position, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x)</td></tr>
+<tr class="separator:af038a872cee7ccc6407649cb269a240a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96cc26d474fd5427391e37ff5ac51f62"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a96cc26d474fd5427391e37ff5ac51f62">relink</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> position, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> y)</td></tr>
+<tr class="separator:a96cc26d474fd5427391e37ff5ac51f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f6b2aa3e7318e0ee5897c8b4d41529d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a5f6b2aa3e7318e0ee5897c8b4d41529d">reverse</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> header)</td></tr>
+<tr class="separator:a5f6b2aa3e7318e0ee5897c8b4d41529d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f32d8746ef202684ccf8441872c7779"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a8f32d8746ef202684ccf8441872c7779">swap</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> y)</td></tr>
+<tr class="separator:a8f32d8746ef202684ccf8441872c7779"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a0571c3088ca18b36c1ea427abccba173"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0571c3088ca18b36c1ea427abccba173">prior_</a></td></tr>
+<tr class="separator:a0571c3088ca18b36c1ea427abccba173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b4a02ff485c696b847e37e37cd710ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0b4a02ff485c696b847e37e37cd710ef">next_</a></td></tr>
+<tr class="separator:a0b4a02ff485c696b847e37e37cd710ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Allocator&gt;<br />
+struct boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;</div>
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a0598cfc58b6b72922eedcb968e85d1da" name="a0598cfc58b6b72922eedcb968e85d1da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0598cfc58b6b72922eedcb968e85d1da">&#9670;&#160;</a></span>alloc_traits</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1allocator__traits.html">allocator_traits</a>&lt;<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a1a8841096b05b9a9b9a7387b5f4ef4d9">node_allocator</a>&gt; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::alloc_traits</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad168050c29f5a6686ac8177b5937a3df" name="ad168050c29f5a6686ac8177b5937a3df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad168050c29f5a6686ac8177b5937a3df">&#9670;&#160;</a></span>const_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::const_pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::const_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00037">37</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5d97283d551669ff4cd43025b8a2a10c" name="a5d97283d551669ff4cd43025b8a2a10c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d97283d551669ff4cd43025b8a2a10c">&#9670;&#160;</a></span>difference_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::difference_type <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::difference_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00038">38</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1a8841096b05b9a9b9a7387b5f4ef4d9" name="a1a8841096b05b9a9b9a7387b5f4ef4d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a8841096b05b9a9b9a7387b5f4ef4d9">&#9670;&#160;</a></span>node_allocator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt;Allocator,<a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">sequenced_index_node_impl</a>&gt;::type <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::node_allocator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adae86c44f5860232e6c10e63c4154876" name="adae86c44f5860232e6c10e63c4154876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adae86c44f5860232e6c10e63c4154876">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef alloc_traits::pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a889666c0ccc49b6504f11be3aa55e6af" name="a889666c0ccc49b6504f11be3aa55e6af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a889666c0ccc49b6504f11be3aa55e6af">&#9670;&#160;</a></span>decrement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::decrement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{x=x-&gt;prior();}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9adf2519e5a2b458e87a084644f7baa9" name="a9adf2519e5a2b458e87a084644f7baa9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9adf2519e5a2b458e87a084644f7baa9">&#9670;&#160;</a></span>increment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::increment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>{x=x-&gt;next();}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a27d110159cd597912e7c0fa2c1ec4917" name="a27d110159cd597912e7c0fa2c1ec4917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27d110159cd597912e7c0fa2c1ec4917">&#9670;&#160;</a></span>link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::link </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>header</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00052">52</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>  {</div>
+<div class="line"><span class="lineno">   54</span>    x-&gt;prior()=header-&gt;prior();</div>
+<div class="line"><span class="lineno">   55</span>    x-&gt;next()=header;</div>
+<div class="line"><span class="lineno">   56</span>    x-&gt;prior()-&gt;next()=x-&gt;next()-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">   57</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="sequenced__index_8hpp_source.html#l00911">boost::multi_index::detail::sequenced_index&lt; SuperMeta, TagList &gt;::link()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_a27d110159cd597912e7c0fa2c1ec4917_icgraph.svg" width="570" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af5bfac1f4ddf89cafdf78b4adff9cb5c" name="af5bfac1f4ddf89cafdf78b4adff9cb5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5bfac1f4ddf89cafdf78b4adff9cb5c">&#9670;&#160;</a></span>next() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0b4a02ff485c696b847e37e37cd710ef">next_</a>;}</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_html_a0b4a02ff485c696b847e37e37cd710ef"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0b4a02ff485c696b847e37e37cd710ef">boost::multi_index::detail::sequenced_index_node_impl::next_</a></div><div class="ttdeci">pointer next_</div><div class="ttdef"><b>Definition:</b> <a href="seq__index__node_8hpp_source.html#l00129">seq_index_node.hpp:129</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="seq__index__node_8hpp_source.html#l00129">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::next_</a>.</p>
+
+</div>
+</div>
+<a id="ab50522b69818c16e7e8e93747d04e928" name="ab50522b69818c16e7e8e93747d04e928"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab50522b69818c16e7e8e93747d04e928">&#9670;&#160;</a></span>next() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::next </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0b4a02ff485c696b847e37e37cd710ef">next_</a>;}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="seq__index__node_8hpp_source.html#l00129">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::next_</a>.</p>
+
+</div>
+</div>
+<a id="a87a5cc151d14870318138aed9f858d93" name="a87a5cc151d14870318138aed9f858d93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a5cc151d14870318138aed9f858d93">&#9670;&#160;</a></span>prior() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> &amp; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::prior </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0571c3088ca18b36c1ea427abccba173">prior_</a>;}</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_html_a0571c3088ca18b36c1ea427abccba173"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0571c3088ca18b36c1ea427abccba173">boost::multi_index::detail::sequenced_index_node_impl::prior_</a></div><div class="ttdeci">pointer prior_</div><div class="ttdef"><b>Definition:</b> <a href="seq__index__node_8hpp_source.html#l00128">seq_index_node.hpp:128</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="seq__index__node_8hpp_source.html#l00128">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::prior_</a>.</p>
+
+</div>
+</div>
+<a id="a29e345681abc89b2414d8acea98e5645" name="a29e345681abc89b2414d8acea98e5645"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e345681abc89b2414d8acea98e5645">&#9670;&#160;</a></span>prior() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::prior </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00041">41</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>{<span class="keywordflow">return</span> <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a0571c3088ca18b36c1ea427abccba173">prior_</a>;}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="seq__index__node_8hpp_source.html#l00128">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::prior_</a>.</p>
+
+</div>
+</div>
+<a id="af038a872cee7ccc6407649cb269a240a" name="af038a872cee7ccc6407649cb269a240a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af038a872cee7ccc6407649cb269a240a">&#9670;&#160;</a></span>relink() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::relink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>  {</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a63c1fc5a222dc19ccea6c978852354c9">unlink</a>(x);</div>
+<div class="line"><span class="lineno">   68</span>    x-&gt;prior()=position-&gt;prior();</div>
+<div class="line"><span class="lineno">   69</span>    x-&gt;next()=position;</div>
+<div class="line"><span class="lineno">   70</span>    x-&gt;prior()-&gt;next()=x-&gt;next()-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_html_a63c1fc5a222dc19ccea6c978852354c9"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#a63c1fc5a222dc19ccea6c978852354c9">boost::multi_index::detail::sequenced_index_node_impl::unlink</a></div><div class="ttdeci">static void unlink(pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="seq__index__node_8hpp_source.html#l00059">seq_index_node.hpp:59</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="seq__index__node_8hpp_source.html#l00059">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::unlink()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="sequenced__index_8hpp_source.html#l00921">boost::multi_index::detail::sequenced_index&lt; SuperMeta, TagList &gt;::relink()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_af038a872cee7ccc6407649cb269a240a_cgraph.svg" width="432" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_af038a872cee7ccc6407649cb269a240a_icgraph.svg" width="1380" height="971"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a96cc26d474fd5427391e37ff5ac51f62" name="a96cc26d474fd5427391e37ff5ac51f62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96cc26d474fd5427391e37ff5ac51f62">&#9670;&#160;</a></span>relink() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::relink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>position</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>  {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">/* position is assumed not to be in [x,y) */</span></div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <span class="keywordflow">if</span>(x!=y){</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> z=y-&gt;prior();</div>
+<div class="line"><span class="lineno">   79</span>      x-&gt;prior()-&gt;next()=y;</div>
+<div class="line"><span class="lineno">   80</span>      y-&gt;prior()=x-&gt;prior();</div>
+<div class="line"><span class="lineno">   81</span>      x-&gt;prior()=position-&gt;prior();</div>
+<div class="line"><span class="lineno">   82</span>      z-&gt;next()=position;</div>
+<div class="line"><span class="lineno">   83</span>      x-&gt;prior()-&gt;next()=x;</div>
+<div class="line"><span class="lineno">   84</span>      z-&gt;next()-&gt;prior()=z;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
+<div class="line"><span class="lineno">   86</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_html_adae86c44f5860232e6c10e63c4154876"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">boost::multi_index::detail::sequenced_index_node_impl::pointer</a></div><div class="ttdeci">alloc_traits::pointer pointer</div><div class="ttdef"><b>Definition:</b> <a href="seq__index__node_8hpp_source.html#l00036">seq_index_node.hpp:36</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a5f6b2aa3e7318e0ee5897c8b4d41529d" name="a5f6b2aa3e7318e0ee5897c8b4d41529d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f6b2aa3e7318e0ee5897c8b4d41529d">&#9670;&#160;</a></span>reverse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::reverse </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>header</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   89</span>  {</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> x=header;</div>
+<div class="line"><span class="lineno">   91</span>    <span class="keywordflow">do</span>{</div>
+<div class="line"><span class="lineno">   92</span>      <a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> y=x-&gt;next();</div>
+<div class="line"><span class="lineno">   93</span>      <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(x-&gt;prior(),x-&gt;next());</div>
+<div class="line"><span class="lineno">   94</span>      x=y;</div>
+<div class="line"><span class="lineno">   95</span>    }<span class="keywordflow">while</span>(x!=header);</div>
+<div class="line"><span class="lineno">   96</span>  }</div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="sequenced__index_8hpp_source.html#l00625">boost::multi_index::detail::sequenced_index&lt; SuperMeta, TagList &gt;::reverse()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_a5f6b2aa3e7318e0ee5897c8b4d41529d_cgraph.svg" width="340" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_a5f6b2aa3e7318e0ee5897c8b4d41529d_icgraph.svg" width="402" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8f32d8746ef202684ccf8441872c7779" name="a8f32d8746ef202684ccf8441872c7779"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f32d8746ef202684ccf8441872c7779">&#9670;&#160;</a></span>swap()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00098">98</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>  {</div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">/* This swap function does not exchange the header nodes,</span></div>
+<div class="line"><span class="lineno">  101</span><span class="comment">     * but rather their pointers. This is *not* used for implementing</span></div>
+<div class="line"><span class="lineno">  102</span><span class="comment">     * sequenced_index::swap.</span></div>
+<div class="line"><span class="lineno">  103</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span>(x-&gt;next()!=x){</div>
+<div class="line"><span class="lineno">  106</span>      <span class="keywordflow">if</span>(y-&gt;next()!=y){</div>
+<div class="line"><span class="lineno">  107</span>        <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(x-&gt;next(),y-&gt;next());</div>
+<div class="line"><span class="lineno">  108</span>        <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(x-&gt;prior(),y-&gt;prior());</div>
+<div class="line"><span class="lineno">  109</span>        x-&gt;next()-&gt;prior()=x-&gt;prior()-&gt;next()=x;</div>
+<div class="line"><span class="lineno">  110</span>        y-&gt;next()-&gt;prior()=y-&gt;prior()-&gt;next()=y;</div>
+<div class="line"><span class="lineno">  111</span>      }</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  113</span>        y-&gt;next()=x-&gt;next();</div>
+<div class="line"><span class="lineno">  114</span>        y-&gt;prior()=x-&gt;prior();</div>
+<div class="line"><span class="lineno">  115</span>        x-&gt;next()=x-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  116</span>        y-&gt;next()-&gt;prior()=y-&gt;prior()-&gt;next()=y;</div>
+<div class="line"><span class="lineno">  117</span>      }</div>
+<div class="line"><span class="lineno">  118</span>    }</div>
+<div class="line"><span class="lineno">  119</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(y-&gt;next()!=y){</div>
+<div class="line"><span class="lineno">  120</span>      x-&gt;next()=y-&gt;next();</div>
+<div class="line"><span class="lineno">  121</span>      x-&gt;prior()=y-&gt;prior();</div>
+<div class="line"><span class="lineno">  122</span>      y-&gt;next()=y-&gt;prior()=y;</div>
+<div class="line"><span class="lineno">  123</span>      x-&gt;next()-&gt;prior()=x-&gt;prior()-&gt;next()=x;</div>
+<div class="line"><span class="lineno">  124</span>    }</div>
+<div class="line"><span class="lineno">  125</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_a8f32d8746ef202684ccf8441872c7779_cgraph.svg" width="326" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a63c1fc5a222dc19ccea6c978852354c9" name="a63c1fc5a222dc19ccea6c978852354c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63c1fc5a222dc19ccea6c978852354c9">&#9670;&#160;</a></span>unlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::unlink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   60</span>  {</div>
+<div class="line"><span class="lineno">   61</span>    x-&gt;prior()-&gt;next()=x-&gt;next();</div>
+<div class="line"><span class="lineno">   62</span>    x-&gt;next()-&gt;prior()=x-&gt;prior();</div>
+<div class="line"><span class="lineno">   63</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="seq__index__node_8hpp_source.html#l00065">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::relink()</a>, <a class="el" href="sequenced__index_8hpp_source.html#l00916">boost::multi_index::detail::sequenced_index&lt; SuperMeta, TagList &gt;::unlink()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl_a63c1fc5a222dc19ccea6c978852354c9_icgraph.svg" width="1616" height="971"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a0b4a02ff485c696b847e37e37cd710ef" name="a0b4a02ff485c696b847e37e37cd710ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4a02ff485c696b847e37e37cd710ef">&#9670;&#160;</a></span>next_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::next_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="seq__index__node_8hpp_source.html#l00042">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::next()</a>.</p>
+
+</div>
+</div>
+<a id="a0571c3088ca18b36c1ea427abccba173" name="a0571c3088ca18b36c1ea427abccba173"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0571c3088ca18b36c1ea427abccba173">&#9670;&#160;</a></span>prior_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html#adae86c44f5860232e6c10e63c4154876">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">boost::multi_index::detail::sequenced_index_node_impl</a>&lt; Allocator &gt;::prior_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a> の <a class="el" href="seq__index__node_8hpp_source.html#l00128">128</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="seq__index__node_8hpp_source.html#l00040">boost::multi_index::detail::sequenced_index_node_impl&lt; Allocator &gt;::prior()</a>.</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="seq__index__node_8hpp_source.html">seq_index_node.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1sequenced__index__node__impl.html">sequenced_index_node_impl</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

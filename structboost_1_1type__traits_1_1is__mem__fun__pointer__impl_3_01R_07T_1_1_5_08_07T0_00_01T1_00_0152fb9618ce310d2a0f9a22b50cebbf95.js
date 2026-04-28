@@ -1,0 +1,4 @@
+var structboost_1_1type__traits_1_1is__mem__fun__pointer__impl_3_01R_07T_1_1_5_08_07T0_00_01T1_00_0152fb9618ce310d2a0f9a22b50cebbf95 =
+[
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1type__traits_1_1is__mem__fun__pointer__impl_3_01R_07T_1_1_5_08_07T0_00_01T1_00_0152fb9618ce310d2a0f9a22b50cebbf95.html#a2fe2ba542f050988b9e60dc63a197371", null ]
+];

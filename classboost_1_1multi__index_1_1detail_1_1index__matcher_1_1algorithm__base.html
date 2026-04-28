@@ -1,0 +1,693 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base__inherit__graph.svg" width="266" height="1036"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base__coll__graph.svg" width="604" height="1620"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3843285efe4e56c7ef22b508b8e515be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a3843285efe4e56c7ef22b508b8e515be">algorithm_base</a> (const Allocator &amp;al, std::size_t <a class="el" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>)</td></tr>
+<tr class="separator:a3843285efe4e56c7ef22b508b8e515be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a578adcab6dd477de668231503cf330c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a578adcab6dd477de668231503cf330c9">add</a> (void *node)</td></tr>
+<tr class="separator:a578adcab6dd477de668231503cf330c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b6cf2407bf7ad192ed0ccf7e9e8989"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a71b6cf2407bf7ad192ed0ccf7e9e8989">begin_algorithm</a> () const</td></tr>
+<tr class="separator:a71b6cf2407bf7ad192ed0ccf7e9e8989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc9bc0d57054e7c30c3afc691238737"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a7dc9bc0d57054e7c30c3afc691238737">add_node_to_algorithm</a> (void *node) const</td></tr>
+<tr class="separator:a7dc9bc0d57054e7c30c3afc691238737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8fa3fbc9a5f8ccc5b5203ef00bf5277"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">finish_algorithm</a> () const</td></tr>
+<tr class="separator:ae8fa3fbc9a5f8ccc5b5203ef00bf5277"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade119d34b5bdf6c54679d10ef3e9430e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ade119d34b5bdf6c54679d10ef3e9430e">is_ordered</a> (void *node) const</td></tr>
+<tr class="separator:ade119d34b5bdf6c54679d10ef3e9430e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:afe43262c853209eccdf85fd6e69660cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a> () const</td></tr>
+<tr class="separator:afe43262c853209eccdf85fd6e69660cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:aafb0f89e070d4b28aa8798a4bb55adba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a></td></tr>
+<tr class="separator:aafb0f89e070d4b28aa8798a4bb55adba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bc1ab18c607ea05d26bc9c9fcfc8f0e"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a></td></tr>
+<tr class="separator:a6bc1ab18c607ea05d26bc9c9fcfc8f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a09f642212e5de142d1df8610a4a535"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a></td></tr>
+<tr class="separator:a4a09f642212e5de142d1df8610a4a535"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c2228b98b8490875355ad2d36f3424"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a></td></tr>
+<tr class="separator:af9c2228b98b8490875355ad2d36f3424"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2b3c9ca08cfc54d958a583748a660e8"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a></td></tr>
+<tr class="separator:ad2b3c9ca08cfc54d958a583748a660e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Allocator&gt;<br />
+class boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;</div>
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00106">106</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a3843285efe4e56c7ef22b508b8e515be" name="a3843285efe4e56c7ef22b508b8e515be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3843285efe4e56c7ef22b508b8e515be">&#9670;&#160;</a></span>algorithm_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::algorithm_base </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>al</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00109">109</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                    :</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a>(al,<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>(<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>(0),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  111</span>  {</div>
+<div class="line"><span class="lineno">  112</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a4a09f642212e5de142d1df8610a4a535"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">boost::multi_index::detail::index_matcher::algorithm_base::n_</a></div><div class="ttdeci">std::size_t n_</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00187">index_matcher.hpp:187</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a6bc1ab18c607ea05d26bc9c9fcfc8f0e"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">boost::multi_index::detail::index_matcher::algorithm_base::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00186">index_matcher.hpp:186</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_aafb0f89e070d4b28aa8798a4bb55adba"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">boost::multi_index::detail::index_matcher::algorithm_base::spc</a></div><div class="ttdeci">auto_space&lt; entry, Allocator &gt; spc</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00185">index_matcher.hpp:185</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_af9c2228b98b8490875355ad2d36f3424"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">boost::multi_index::detail::index_matcher::algorithm_base::sorted</a></div><div class="ttdeci">bool sorted</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00188">index_matcher.hpp:188</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a6fba56e63fab408320679073cd64ce9d"><div class="ttname"><a href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">boost::size</a></div><div class="ttdeci">constexpr auto size(const C &amp;c) noexcept(noexcept(c.size())) -&gt; decltype(c.size())</div><div class="ttdef"><b>Definition:</b> <a href="core_2size_8hpp_source.html#l00017">core/size.hpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a578adcab6dd477de668231503cf330c9" name="a578adcab6dd477de668231503cf330c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a578adcab6dd477de668231503cf330c9">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00114">114</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>  {</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>]=entry(node,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>);</div>
+<div class="line"><span class="lineno">  117</span>    ++<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>;</div>
+<div class="line"><span class="lineno">  118</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_afe43262c853209eccdf85fd6e69660cb"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">boost::multi_index::detail::index_matcher::algorithm_base::entries</a></div><div class="ttdeci">entry * entries() const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00183">index_matcher.hpp:183</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00187">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::n_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00206">boost::multi_index::detail::index_matcher::algorithm&lt; Node, Allocator &gt;::add()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a578adcab6dd477de668231503cf330c9_cgraph.svg" width="415" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a578adcab6dd477de668231503cf330c9_icgraph.svg" width="403" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7dc9bc0d57054e7c30c3afc691238737" name="a7dc9bc0d57054e7c30c3afc691238737"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc9bc0d57054e7c30c3afc691238737">&#9670;&#160;</a></span>add_node_to_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::add_node_to_algorithm </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>  {</div>
+<div class="line"><span class="lineno">  131</span>    entry* ent=</div>
+<div class="line"><span class="lineno">  132</span>      std::lower_bound(</div>
+<div class="line"><span class="lineno">  133</span>        <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,</div>
+<div class="line"><span class="lineno">  134</span>        entry(node),entry::less_by_node()); <span class="comment">/* localize entry */</span></div>
+<div class="line"><span class="lineno">  135</span>    ent-&gt;ordered=<span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  136</span>    std::size_t n=ent-&gt;pos;                 <span class="comment">/* get its position */</span></div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>    entry dummy(0);</div>
+<div class="line"><span class="lineno">  139</span>    dummy.pile_top=n;</div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>    entry* pile_ent=                        <span class="comment">/* find the first available pile */</span></div>
+<div class="line"><span class="lineno">  142</span>      std::lower_bound(                     <span class="comment">/* to stack the entry            */</span></div>
+<div class="line"><span class="lineno">  143</span>        <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>,</div>
+<div class="line"><span class="lineno">  144</span>        dummy,entry::less_by_pile_top());</div>
+<div class="line"><span class="lineno">  145</span> </div>
+<div class="line"><span class="lineno">  146</span>    pile_ent-&gt;pile_top=n;                   <span class="comment">/* stack the entry */</span></div>
+<div class="line"><span class="lineno">  147</span>    pile_ent-&gt;pile_top_entry=ent;        </div>
+<div class="line"><span class="lineno">  148</span> </div>
+<div class="line"><span class="lineno">  149</span>    <span class="comment">/* if not the first pile, link entry to top of the preceding pile */</span></div>
+<div class="line"><span class="lineno">  150</span>    <span class="keywordflow">if</span>(pile_ent&gt;&amp;<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[0]){ </div>
+<div class="line"><span class="lineno">  151</span>      ent-&gt;previous=(pile_ent-1)-&gt;pile_top_entry;</div>
+<div class="line"><span class="lineno">  152</span>    }</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="keywordflow">if</span>(pile_ent==&amp;<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>]){    <span class="comment">/* new pile? */</span></div>
+<div class="line"><span class="lineno">  155</span>      ++<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>;</div>
+<div class="line"><span class="lineno">  156</span>    }</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_ad2b3c9ca08cfc54d958a583748a660e8"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">boost::multi_index::detail::index_matcher::algorithm_base::num_piles</a></div><div class="ttdeci">std::size_t num_piles</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00189">index_matcher.hpp:189</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00189">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::num_piles</a>, <a class="el" href="index__matcher_8hpp_source.html#l00077">boost::multi_index::detail::index_matcher::entry::ordered</a>, <a class="el" href="index__matcher_8hpp_source.html#l00090">boost::multi_index::detail::index_matcher::entry::pile_top</a>, <a class="el" href="index__matcher_8hpp_source.html#l00091">boost::multi_index::detail::index_matcher::entry::pile_top_entry</a>, <a class="el" href="index__matcher_8hpp_source.html#l00075">boost::multi_index::detail::index_matcher::entry::pos</a>, <a class="el" href="index__matcher_8hpp_source.html#l00076">boost::multi_index::detail::index_matcher::entry::previous</a>, <a class="el" href="index__matcher_8hpp_source.html#l00186">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::size_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00229">boost::multi_index::detail::index_matcher::algorithm&lt; Node, Allocator &gt;::add_node_to_algorithm()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a7dc9bc0d57054e7c30c3afc691238737_cgraph.svg" width="446" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a7dc9bc0d57054e7c30c3afc691238737_icgraph.svg" width="666" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a71b6cf2407bf7ad192ed0ccf7e9e8989" name="a71b6cf2407bf7ad192ed0ccf7e9e8989"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71b6cf2407bf7ad192ed0ccf7e9e8989">&#9670;&#160;</a></span>begin_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::begin_algorithm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00120">120</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>  {</div>
+<div class="line"><span class="lineno">  122</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>){</div>
+<div class="line"><span class="lineno">  123</span>      std::sort(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,entry::less_by_node());</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  125</span>    }</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>=0;</div>
+<div class="line"><span class="lineno">  127</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00189">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::num_piles</a>, <a class="el" href="index__matcher_8hpp_source.html#l00186">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::size_</a>, <a class="el" href="index__matcher_8hpp_source.html#l00188">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::sorted</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00212">boost::multi_index::detail::index_matcher::algorithm&lt; Node, Allocator &gt;::execute()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a71b6cf2407bf7ad192ed0ccf7e9e8989_cgraph.svg" width="418" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_a71b6cf2407bf7ad192ed0ccf7e9e8989_icgraph.svg" width="406" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afe43262c853209eccdf85fd6e69660cb" name="afe43262c853209eccdf85fd6e69660cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe43262c853209eccdf85fd6e69660cb">&#9670;&#160;</a></span>entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a> * <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::entries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00183">183</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>{<span class="keywordflow">return</span> raw_ptr&lt;entry*&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a>.data());}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00185">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00114">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::add()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00129">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::add_node_to_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00120">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::begin_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00159">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::finish_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00175">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::is_ordered()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_afe43262c853209eccdf85fd6e69660cb_icgraph.svg" width="902" height="394"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae8fa3fbc9a5f8ccc5b5203ef00bf5277" name="ae8fa3fbc9a5f8ccc5b5203ef00bf5277"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">&#9670;&#160;</a></span>finish_algorithm()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::finish_algorithm </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00159">159</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>  {</div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>&gt;0){</div>
+<div class="line"><span class="lineno">  162</span>      <span class="comment">/* Mark those elements which are in their correct position, i.e. those</span></div>
+<div class="line"><span class="lineno">  163</span><span class="comment">       * belonging to the longest increasing subsequence. These are those</span></div>
+<div class="line"><span class="lineno">  164</span><span class="comment">       * elements linked from the top of the last pile.</span></div>
+<div class="line"><span class="lineno">  165</span><span class="comment">       */</span></div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>      entry* ent=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>-1].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">pile_top_entry</a>;</div>
+<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">for</span>(std::size_t n=<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>;n--;){</div>
+<div class="line"><span class="lineno">  169</span>        ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">ordered</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  170</span>        ent=ent-&gt;previous;</div>
+<div class="line"><span class="lineno">  171</span>      }</div>
+<div class="line"><span class="lineno">  172</span>    }</div>
+<div class="line"><span class="lineno">  173</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_a2781b14354e195989a080442c0fc627f"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">boost::multi_index::detail::index_matcher::entry::ordered</a></div><div class="ttdeci">bool ordered</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00077">index_matcher.hpp:77</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_ab328c71e958a1a11b09cfd997b05cf88"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">boost::multi_index::detail::index_matcher::entry::pile_top_entry</a></div><div class="ttdeci">entry * pile_top_entry</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00091">index_matcher.hpp:91</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00189">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::num_piles</a>, <a class="el" href="index__matcher_8hpp_source.html#l00077">boost::multi_index::detail::index_matcher::entry::ordered</a>, <a class="el" href="index__matcher_8hpp_source.html#l00091">boost::multi_index::detail::index_matcher::entry::pile_top_entry</a>, <a class="el" href="index__matcher_8hpp_source.html#l00076">boost::multi_index::detail::index_matcher::entry::previous</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00212">boost::multi_index::detail::index_matcher::algorithm&lt; Node, Allocator &gt;::execute()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_ae8fa3fbc9a5f8ccc5b5203ef00bf5277_cgraph.svg" width="418" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_ae8fa3fbc9a5f8ccc5b5203ef00bf5277_icgraph.svg" width="406" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ade119d34b5bdf6c54679d10ef3e9430e" name="ade119d34b5bdf6c54679d10ef3e9430e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade119d34b5bdf6c54679d10ef3e9430e">&#9670;&#160;</a></span>is_ordered()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::is_ordered </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  176</span>  {</div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> std::lower_bound(</div>
+<div class="line"><span class="lineno">  178</span>      <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,</div>
+<div class="line"><span class="lineno">  179</span>      entry(node),entry::less_by_node())-&gt;ordered;</div>
+<div class="line"><span class="lineno">  180</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00186">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::size_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00223">boost::multi_index::detail::index_matcher::algorithm&lt; Node, Allocator &gt;::is_ordered()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_ade119d34b5bdf6c54679d10ef3e9430e_cgraph.svg" width="450" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_ade119d34b5bdf6c54679d10ef3e9430e_icgraph.svg" width="438" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4a09f642212e5de142d1df8610a4a535" name="a4a09f642212e5de142d1df8610a4a535"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a09f642212e5de142d1df8610a4a535">&#9670;&#160;</a></span>n_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::n_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00187">187</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00114">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::add()</a>.</p>
+
+</div>
+</div>
+<a id="ad2b3c9ca08cfc54d958a583748a660e8" name="ad2b3c9ca08cfc54d958a583748a660e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2b3c9ca08cfc54d958a583748a660e8">&#9670;&#160;</a></span>num_piles</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::num_piles</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00189">189</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00129">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::add_node_to_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00120">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::begin_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00159">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::finish_algorithm()</a>.</p>
+
+</div>
+</div>
+<a id="a6bc1ab18c607ea05d26bc9c9fcfc8f0e" name="a6bc1ab18c607ea05d26bc9c9fcfc8f0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">&#9670;&#160;</a></span>size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00186">186</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00129">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::add_node_to_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00120">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::begin_algorithm()</a>, <a class="el" href="index__matcher_8hpp_source.html#l00175">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::is_ordered()</a>.</p>
+
+</div>
+</div>
+<a id="af9c2228b98b8490875355ad2d36f3424" name="af9c2228b98b8490875355ad2d36f3424"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c2228b98b8490875355ad2d36f3424">&#9670;&#160;</a></span>sorted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::sorted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00188">188</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00120">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::begin_algorithm()</a>.</p>
+
+</div>
+</div>
+<a id="aafb0f89e070d4b28aa8798a4bb55adba" name="aafb0f89e070d4b28aa8798a4bb55adba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb0f89e070d4b28aa8798a4bb55adba">&#9670;&#160;</a></span>spc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt;<a class="el" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>,Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a>&lt; Allocator &gt;::spc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a> の <a class="el" href="index__matcher_8hpp_source.html#l00185">185</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__matcher_8hpp_source.html#l00183">boost::multi_index::detail::index_matcher::algorithm_base&lt; Allocator &gt;::entries()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="index__matcher_8hpp_source.html">index_matcher.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail_1_1index__matcher.html">index_matcher</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">algorithm_base</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

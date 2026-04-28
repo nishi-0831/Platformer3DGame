@@ -118,7 +118,7 @@ mtgb::Debug の継承関係図</div>
 <div class="dynheader">
 mtgb::Debug 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Debug__coll__graph.svg" width="216" height="727"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Debug__coll__graph.svg" width="360" height="712"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -174,7 +174,7 @@ mtgb::Debug 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 静的非公開変数類</h2></td></tr>
-<tr class="memitem:a45e53b26726a41e33ced611689828aee"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Debug.html#a45e53b26726a41e33ced611689828aee">BUFFER_SIZE</a> { 1024 }</td></tr>
+<tr class="memitem:a45e53b26726a41e33ced611689828aee"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structsize__t.html">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Debug.html#a45e53b26726a41e33ced611689828aee">BUFFER_SIZE</a> { 1024 }</td></tr>
 <tr class="separator:a45e53b26726a41e33ced611689828aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1ea62dc3dcadec5864a2cd04f955bd1"><td class="memItemLeft" align="right" valign="top">static constexpr UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Debug.html#ae1ea62dc3dcadec5864a2cd04f955bd1">MAX_LOG_COUNT</a> { 30 }</td></tr>
 <tr class="separator:ae1ea62dc3dcadec5864a2cd04f955bd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -454,9 +454,9 @@ template&lt;typename... Args&gt; </div>
 <div class="line"><span class="lineno">  115</span>        ::sprintf_s&lt;BUFFER_SIZE&gt;(buffer, _format, _args...);</div>
 <div class="line"><span class="lineno">  116</span> </div>
 <div class="line"><span class="lineno">  117</span>        std::string msg = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>(buffer);</div>
-<div class="line"><span class="lineno">  118</span>        std::string key =</div>
+<div class="line"><span class="lineno">  118</span>        std::string <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a> =</div>
 <div class="line"><span class="lineno">  119</span>            <a class="code hl_function" href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">Debug::MakeKey</a>(_category, _location.file_name(), _location.line(), _location.function_name(), msg);</div>
-<div class="line"><span class="lineno">  120</span>        key      = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>(key);</div>
+<div class="line"><span class="lineno">  120</span>        <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a>      = <a class="code hl_function" href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a>(key);</div>
 <div class="line"><span class="lineno">  121</span>        <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Debug.html#a273847e78de34025a76cc3a8624c9c90">logMap_</a>.find(key);</div>
 <div class="line"><span class="lineno">  122</span>        <span class="keywordflow">if</span> (itr != <a class="code hl_variable" href="classmtgb_1_1Debug.html#a273847e78de34025a76cc3a8624c9c90">logMap_</a>.end())</div>
 <div class="line"><span class="lineno">  123</span>        {</div>
@@ -465,18 +465,19 @@ template&lt;typename... Args&gt; </div>
 <div class="line"><span class="lineno">  126</span>        <span class="keywordflow">else</span></div>
 <div class="line"><span class="lineno">  127</span>        {</div>
 <div class="line"><span class="lineno">  128</span>            <a class="code hl_variable" href="classmtgb_1_1Debug.html#a72a815bfa94b14923bb9cb4133c529e2">logs_</a>.push_back(LogEntry { .msg        = msg,</div>
-<div class="line"><span class="lineno">  129</span>                                       .msgDetail  = key,</div>
+<div class="line"><span class="lineno">  129</span>                                       .msgDetail  = <a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a>,</div>
 <div class="line"><span class="lineno">  130</span>                                       .file       = _location.file_name(),</div>
 <div class="line"><span class="lineno">  131</span>                                       .line       = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(_location.line()),</div>
 <div class="line"><span class="lineno">  132</span>                                       .func       = _location.function_name(),</div>
 <div class="line"><span class="lineno">  133</span>                                       .objectName = <span class="stringliteral">&quot;&quot;</span>,</div>
 <div class="line"><span class="lineno">  134</span>                                       .category   = _category, <span class="comment">// カテゴリを設定</span></div>
 <div class="line"><span class="lineno">  135</span>                                       .count      = 1 });</div>
-<div class="line"><span class="lineno">  136</span>            <a class="code hl_variable" href="classmtgb_1_1Debug.html#a273847e78de34025a76cc3a8624c9c90">logMap_</a>[key] = std::prev(<a class="code hl_variable" href="classmtgb_1_1Debug.html#a72a815bfa94b14923bb9cb4133c529e2">logs_</a>.end());</div>
+<div class="line"><span class="lineno">  136</span>            <a class="code hl_variable" href="classmtgb_1_1Debug.html#a273847e78de34025a76cc3a8624c9c90">logMap_</a>[<a class="code hl_enumvalue" href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">key</a>] = std::prev(<a class="code hl_variable" href="classmtgb_1_1Debug.html#a72a815bfa94b14923bb9cb4133c529e2">logs_</a>.end());</div>
 <div class="line"><span class="lineno">  137</span>        }</div>
 <div class="line"><span class="lineno">  138</span>    }</div>
 <div class="ttc" id="aclassmtgb_1_1Debug_html_a273847e78de34025a76cc3a8624c9c90"><div class="ttname"><a href="classmtgb_1_1Debug.html#a273847e78de34025a76cc3a8624c9c90">mtgb::Debug::logMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, LogItr &gt; logMap_</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8h_source.html#l00084">Debug.h:84</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Debug_html_acd36fc01d6475539b923aac4a97ec619"><div class="ttname"><a href="classmtgb_1_1Debug.html#acd36fc01d6475539b923aac4a97ec619">mtgb::Debug::MakeKey</a></div><div class="ttdeci">static std::string MakeKey(const std::string &amp;_object, const char *_file, int _line, const char *_func, const std::string _msg)</div><div class="ttdef"><b>Definition:</b> <a href="Debug_8cpp_source.html#l00032">Debug.cpp:32</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d"><div class="ttname"><a href="namespacedetail.html#a47b1bb0bbd3596589ed9187059c312efa3c6e0b8a9c15224a8228b9a98ca1531d">detail::parse_event_t::key</a></div><div class="ttdeci">@ key</div><div class="ttdoc">the parser read a key of a value in an object</div></div>
 <div class="ttc" id="anamespacemtgb_html_acfe6481cc8fb042261c35c383a942246"><div class="ttname"><a href="namespacemtgb.html#acfe6481cc8fb042261c35c383a942246">mtgb::MultiToUTF8</a></div><div class="ttdeci">std::string MultiToUTF8(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00224">MTStringUtility.cpp:224</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Debug_8h_source.html#l00078">BUFFER_SIZE</a>, <a class="el" href="Debug_8h_source.html#l00084">logMap_</a>, <a class="el" href="Debug_8h_source.html#l00083">logs_</a>, <a class="el" href="Debug_8cpp_source.html#l00032">MakeKey()</a>, <a class="el" href="Debug_8h_source.html#l00033">mtgb::LogEntry::msg</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00224">mtgb::MultiToUTF8()</a>.</p>
@@ -680,7 +681,7 @@ template&lt;typename... Args&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr size_t mtgb::Debug::BUFFER_SIZE { 1024 }</td>
+          <td class="memname">constexpr <a class="el" href="structsize__t.html">size_t</a> mtgb::Debug::BUFFER_SIZE { 1024 }</td>
         </tr>
       </table>
   </td>

@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1tag__of__impl_3_01Sequence_00_01typename_01boost_1_1enable__i3cc6605c5ca0fe68253822f61bd1a437 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1tag__of__impl_3_01Sequence_00_01typename_01boost_1_1enable__i3cc6605c5ca0fe68253822f61bd1a437.html#adcf51d78678c95df358a4a76f72c5cdf", null ]
+];

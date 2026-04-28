@@ -1,0 +1,4 @@
+var structboost_1_1serialization_1_1version_3_01boost_1_1multi__index_1_1detail_1_1hashed__index__it532d6a684e9c37cee09c6c2226ad4798 =
+[
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1serialization_1_1version_3_01boost_1_1multi__index_1_1detail_1_1hashed__index__it532d6a684e9c37cee09c6c2226ad4798.html#adddb7f563911b59829ffca2e2efdd34d", null ]
+];

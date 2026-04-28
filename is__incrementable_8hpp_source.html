@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: is_incrementable.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('is__incrementable_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">is_incrementable.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="is__incrementable_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright David Abrahams 2004. Use, modification and distribution is</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// subject to the Boost Software License, Version 1.0. (See accompanying</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#ifndef IS_INCREMENTABLE_DWA200415_HPP</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor"># define IS_INCREMENTABLE_DWA200415_HPP</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor"># include &lt;<a class="code" href="integral__constant_8hpp.html">boost/type_traits/integral_constant.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor"># include &lt;<a class="code" href="remove__cv_8hpp.html">boost/type_traits/remove_cv.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor"># include &lt;<a class="code" href="detail_2workaround_8hpp.html">boost/detail/workaround.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// is_incrementable&lt;T&gt; metafunction</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// Requires: Given x of type T&amp;, if the expression ++x is well-formed</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">// it must have complete type; otherwise, it must neither be ambiguous</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">// nor violate access.</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// This namespace ensures that ADL doesn&#39;t mess things up.</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html">   20</a></span><span class="keyword">namespace </span>is_incrementable_</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="comment">// a type returned from operator++ when no increment is found in the</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="comment">// type&#39;s own namespace</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">   24</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a> {};</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">// any soaks up implicit conversions and makes the following</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="comment">// operator++ less-preferred than any other such operator that</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>  <span class="comment">// might be found via ADL.</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1any.html#a5bfca227410e480793209a4623ed2bb0">   29</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1any.html">any</a> { <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <a class="code hl_function" href="structboost_1_1detail_1_1is__incrementable___1_1any.html#a5bfca227410e480793209a4623ed2bb0">any</a>(T <span class="keyword">const</span>&amp;); };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">// This is a last-resort operator++ for when none other is found</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor"># if BOOST_WORKAROUND(__GNUC__, == 4) &amp;&amp; __GNUC_MINOR__ == 0 &amp;&amp; __GNUC_PATCHLEVEL__ == 2</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>}</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">namespace </span>is_incrementable_2</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">is_incrementable_::tag</a> operator++(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1any.html">is_incrementable_::any</a> <span class="keyword">const</span>&amp;);</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">is_incrementable_::tag</a> operator++(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1any.html">is_incrementable_::any</a> <span class="keyword">const</span>&amp;,<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">using namespace </span>is_incrementable_2;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">namespace </span>is_incrementable_</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor"># else</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html#ac90d918f07bd656581355b76c726610c">   48</a></span>  <a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a> <a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#ac90d918f07bd656581355b76c726610c">operator++</a>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1any.html">any</a> <span class="keyword">const</span>&amp;);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a6ebb0fa0db7135948105737f291abc6c">   49</a></span>  <a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a> <a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#ac90d918f07bd656581355b76c726610c">operator++</a>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1any.html">any</a> <span class="keyword">const</span>&amp;,<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor"># endif</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor"># if BOOST_WORKAROUND(__MWERKS__, BOOST_TESTED_AT(0x3202)) </span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#  define BOOST_comma(a,b) (a)</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor"># else</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="comment">// In case an operator++ is found that returns void, we&#39;ll use ++x,0</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html#abaa90a1679eedadd8d07866099a50644">   57</a></span>  <a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a> <a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#abaa90a1679eedadd8d07866099a50644">operator,</a>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a>,<span class="keywordtype">int</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="is__incrementable_8hpp.html#a4ef0de6706b44b4120ceb71ca7edcb39">   58</a></span><span class="preprocessor">#  define BOOST_comma(a,b) (a,b)</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor"># endif</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor"># if defined(BOOST_MSVC)</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#  pragma warning(push)</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#  pragma warning(disable:4913) </span><span class="comment">// Warning about operator,</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor"># endif</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="comment">// two check overloads help us identify which operator++ was picked</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">   67</a></span>  char (&amp; <a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">check_</a>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">tag</a>) )[2];</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a76d5cb0711277ca35567dcf0028895f9">   70</a></span>  <span class="keywordtype">char</span> <a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">check_</a>(T <span class="keyword">const</span>&amp;);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html">   74</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html">impl</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#a82d32ca3f407eab4ae9b8a136038e381">   76</a></span>      <span class="keyword">static</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;T&gt;::type</a>&amp; <a class="code hl_variable" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#a82d32ca3f407eab4ae9b8a136038e381">x</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#aad0e05ef6fdec2c2f591519fc13111c7">   78</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#aad0e05ef6fdec2c2f591519fc13111c7">BOOST_STATIC_CONSTANT</a>(</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        , value = <span class="keyword">sizeof</span>(<a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">is_incrementable_::check_</a>(<a class="code hl_define" href="is__incrementable_8hpp.html#a4ef0de6706b44b4120ceb71ca7edcb39">BOOST_comma</a>(++<a class="code hl_variable" href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#a82d32ca3f407eab4ae9b8a136038e381">x</a>,0))) == 1</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      );</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  };</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html">   85</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html">postfix_impl</a></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a4da4908dfd8dfdaf27be78b2ac639cec">   87</a></span>      <span class="keyword">static</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv&lt;T&gt;::type</a>&amp; <a class="code hl_variable" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a4da4908dfd8dfdaf27be78b2ac639cec">x</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a90ca78131f677f8ede03b7ae553bcb6d">   89</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a90ca78131f677f8ede03b7ae553bcb6d">BOOST_STATIC_CONSTANT</a>(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>          <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        , value = <span class="keyword">sizeof</span>(<a class="code hl_function" href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">is_incrementable_::check_</a>(<a class="code hl_define" href="is__incrementable_8hpp.html#a4ef0de6706b44b4120ceb71ca7edcb39">BOOST_comma</a>(<a class="code hl_variable" href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a4da4908dfd8dfdaf27be78b2ac639cec">x</a>++,0))) == 1</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      );</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  };</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor"># if defined(BOOST_MSVC)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#  pragma warning(pop)</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor"># endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>}</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor"># undef BOOST_comma</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__incrementable.html">  104</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__incrementable.html">is_incrementable</a> :</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant</a>&lt;bool, boost::detail::is_incrementable_::impl&lt;T&gt;::value&gt;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>{</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>};</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__postfix__incrementable.html">  110</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__postfix__incrementable.html">is_postfix_incrementable</a> :</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">boost::integral_constant</a>&lt;bool, boost::detail::is_incrementable_::postfix_impl&lt;T&gt;::value&gt;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>{</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>};</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor"># include &lt;<a class="code" href="bool__trait__undef_8hpp.html">boost/type_traits/detail/bool_trait_undef.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// IS_INCREMENTABLE_DWA200415_HPP</span></div>
+<div class="ttc" id="abool__trait__undef_8hpp_html"><div class="ttname"><a href="bool__trait__undef_8hpp.html">bool_trait_undef.hpp</a></div></div>
+<div class="ttc" id="adetail_2workaround_8hpp_html"><div class="ttname"><a href="detail_2workaround_8hpp.html">workaround.hpp</a></div></div>
+<div class="ttc" id="aintegral__constant_8hpp_html"><div class="ttname"><a href="integral__constant_8hpp.html">integral_constant.hpp</a></div></div>
+<div class="ttc" id="ais__incrementable_8hpp_html_a4ef0de6706b44b4120ceb71ca7edcb39"><div class="ttname"><a href="is__incrementable_8hpp.html#a4ef0de6706b44b4120ceb71ca7edcb39">BOOST_comma</a></div><div class="ttdeci">#define BOOST_comma(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00058">is_incrementable.hpp:58</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1detail_1_1is__incrementable___html_a663c49bc92bfd1a43b35ed2cb0a031dd"><div class="ttname"><a href="namespaceboost_1_1detail_1_1is__incrementable__.html#a663c49bc92bfd1a43b35ed2cb0a031dd">boost::detail::is_incrementable_::check_</a></div><div class="ttdeci">char(&amp; check_(tag))[2]</div></div>
+<div class="ttc" id="anamespaceboost_1_1detail_1_1is__incrementable___html_abaa90a1679eedadd8d07866099a50644"><div class="ttname"><a href="namespaceboost_1_1detail_1_1is__incrementable__.html#abaa90a1679eedadd8d07866099a50644">boost::detail::is_incrementable_::operator,</a></div><div class="ttdeci">tag operator,(tag, int)</div></div>
+<div class="ttc" id="anamespaceboost_1_1detail_1_1is__incrementable___html_ac90d918f07bd656581355b76c726610c"><div class="ttname"><a href="namespaceboost_1_1detail_1_1is__incrementable__.html#ac90d918f07bd656581355b76c726610c">boost::detail::is_incrementable_::operator++</a></div><div class="ttdeci">tag operator++(any const &amp;)</div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="aremove__cv_8hpp_html"><div class="ttname"><a href="remove__cv_8hpp.html">remove_cv.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1any_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1any.html">boost::detail::is_incrementable_::any</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00029">is_incrementable.hpp:29</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1any_html_a5bfca227410e480793209a4623ed2bb0"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1any.html#a5bfca227410e480793209a4623ed2bb0">boost::detail::is_incrementable_::any::any</a></div><div class="ttdeci">any(T const &amp;)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1impl_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1impl.html">boost::detail::is_incrementable_::impl</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00074">is_incrementable.hpp:75</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1impl_html_a82d32ca3f407eab4ae9b8a136038e381"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#a82d32ca3f407eab4ae9b8a136038e381">boost::detail::is_incrementable_::impl::x</a></div><div class="ttdeci">static boost::remove_cv&lt; T &gt;::type &amp; x</div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00076">is_incrementable.hpp:76</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1impl_html_aad0e05ef6fdec2c2f591519fc13111c7"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1impl.html#aad0e05ef6fdec2c2f591519fc13111c7">boost::detail::is_incrementable_::impl::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=sizeof(is_incrementable_::check_(BOOST_comma(++x, 0)))==1)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1postfix__impl_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html">boost::detail::is_incrementable_::postfix_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00085">is_incrementable.hpp:86</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1postfix__impl_html_a4da4908dfd8dfdaf27be78b2ac639cec"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a4da4908dfd8dfdaf27be78b2ac639cec">boost::detail::is_incrementable_::postfix_impl::x</a></div><div class="ttdeci">static boost::remove_cv&lt; T &gt;::type &amp; x</div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00087">is_incrementable.hpp:87</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1postfix__impl_html_a90ca78131f677f8ede03b7ae553bcb6d"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1postfix__impl.html#a90ca78131f677f8ede03b7ae553bcb6d">boost::detail::is_incrementable_::postfix_impl::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=sizeof(is_incrementable_::check_(BOOST_comma(x++, 0)))==1)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable___1_1tag_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable___1_1tag.html">boost::detail::is_incrementable_::tag</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00024">is_incrementable.hpp:24</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__incrementable_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__incrementable.html">boost::detail::is_incrementable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00104">is_incrementable.hpp:106</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__postfix__incrementable_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__postfix__incrementable.html">boost::detail::is_postfix_incrementable</a></div><div class="ttdef"><b>Definition:</b> <a href="is__incrementable_8hpp_source.html#l00110">is_incrementable.hpp:112</a></div></div>
+<div class="ttc" id="astructboost_1_1integral__constant_html"><div class="ttname"><a href="structboost_1_1integral__constant.html">boost::integral_constant</a></div><div class="ttdef"><b>Definition:</b> <a href="integral__constant_8hpp_source.html#l00053">integral_constant.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1remove__cv_html_a783448ede77b7efd6c66581a9b03312d"><div class="ttname"><a href="structboost_1_1remove__cv.html#a783448ede77b7efd6c66581a9b03312d">boost::remove_cv::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="remove__cv_8hpp_source.html#l00021">remove_cv.hpp:21</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_204251ecf48cb64f2a46e6324bca1e7c.html">detail</a></li><li class="navelem"><a class="el" href="is__incrementable_8hpp.html">is_incrementable.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

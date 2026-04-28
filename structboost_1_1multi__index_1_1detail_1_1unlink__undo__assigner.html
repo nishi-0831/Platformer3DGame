@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner__coll__graph.svg" width="468" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html">base_pointer_track</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html">pointer_track</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:aa0f464291fe3471be9664f63618ea777"><td class="memItemLeft" align="right" valign="top">typedef Node::base_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aa0f464291fe3471be9664f63618ea777">base_pointer</a></td></tr>
+<tr class="separator:aa0f464291fe3471be9664f63618ea777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7410b2155c44d787d49f3139961a71f"><td class="memItemLeft" align="right" valign="top">typedef Node::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ad7410b2155c44d787d49f3139961a71f">pointer</a></td></tr>
+<tr class="separator:ad7410b2155c44d787d49f3139961a71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a304f09f4adacf216352ea43ec4244f13"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a304f09f4adacf216352ea43ec4244f13">unlink_undo_assigner</a> ()</td></tr>
+<tr class="separator:a304f09f4adacf216352ea43ec4244f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9567c5d2d81355c45b31225de53a9e27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a9567c5d2d81355c45b31225de53a9e27">operator()</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ad7410b2155c44d787d49f3139961a71f">pointer</a> &amp;x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ad7410b2155c44d787d49f3139961a71f">pointer</a> val)</td></tr>
+<tr class="separator:a9567c5d2d81355c45b31225de53a9e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb884faec8c80e230b976ec0fc1a5f2f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#abb884faec8c80e230b976ec0fc1a5f2f">operator()</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aa0f464291fe3471be9664f63618ea777">base_pointer</a> &amp;x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aa0f464291fe3471be9664f63618ea777">base_pointer</a> val)</td></tr>
+<tr class="separator:abb884faec8c80e230b976ec0fc1a5f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d2bd013812f605afa39ff392f1707e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a79d2bd013812f605afa39ff392f1707e">operator()</a> ()</td></tr>
+<tr class="separator:a79d2bd013812f605afa39ff392f1707e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:af5fc089e519cf665cc70ecb40f99ee2b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html">pointer_track</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">pointer_tracks</a> [3]</td></tr>
+<tr class="separator:af5fc089e519cf665cc70ecb40f99ee2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab29cba262262e9790c2a750462ff58e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a></td></tr>
+<tr class="separator:aab29cba262262e9790c2a750462ff58e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80af0fe81dbabcbf336c9060f4fa1fd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html">base_pointer_track</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">base_pointer_tracks</a> [2]</td></tr>
+<tr class="separator:a80af0fe81dbabcbf336c9060f4fa1fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab05124d4fc48f59866f24240ce88bb6b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a></td></tr>
+<tr class="separator:ab05124d4fc48f59866f24240ce88bb6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Node&gt;<br />
+struct boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;</div>
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00170">170</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="aa0f464291fe3471be9664f63618ea777" name="aa0f464291fe3471be9664f63618ea777"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f464291fe3471be9664f63618ea777">&#9670;&#160;</a></span>base_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::base_pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::base_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00172">172</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad7410b2155c44d787d49f3139961a71f" name="ad7410b2155c44d787d49f3139961a71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7410b2155c44d787d49f3139961a71f">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00173">173</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a304f09f4adacf216352ea43ec4244f13" name="a304f09f4adacf216352ea43ec4244f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a304f09f4adacf216352ea43ec4244f13">&#9670;&#160;</a></span>unlink_undo_assigner()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::unlink_undo_assigner </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>:<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>(0),<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>(0){}</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_html_aab29cba262262e9790c2a750462ff58e"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">boost::multi_index::detail::unlink_undo_assigner::pointer_track_count</a></div><div class="ttdeci">int pointer_track_count</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00214">hash_index_node.hpp:214</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_html_ab05124d4fc48f59866f24240ce88bb6b"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">boost::multi_index::detail::unlink_undo_assigner::base_pointer_track_count</a></div><div class="ttdeci">int base_pointer_track_count</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00216">hash_index_node.hpp:216</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a79d2bd013812f605afa39ff392f1707e" name="a79d2bd013812f605afa39ff392f1707e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d2bd013812f605afa39ff392f1707e">&#9670;&#160;</a></span>operator()() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00191">191</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  192</span>  {</div>
+<div class="line"><span class="lineno">  193</span>    <span class="comment">/* in the absence of aliasing, restitution order is immaterial */</span></div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    <span class="keywordflow">while</span>(<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>--){</div>
+<div class="line"><span class="lineno">  196</span>      *(<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html#adf4190a0d80d6f3cbc0a471ab48e5e7b">x</a>)=</div>
+<div class="line"><span class="lineno">  197</span>        <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>].val;</div>
+<div class="line"><span class="lineno">  198</span>    }</div>
+<div class="line"><span class="lineno">  199</span>    <span class="keywordflow">while</span>(<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>--){</div>
+<div class="line"><span class="lineno">  200</span>      *(<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">base_pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html#a19139348ca835c9d021275a0b9ddc0d7">x</a>)=</div>
+<div class="line"><span class="lineno">  201</span>        <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">base_pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>].val;</div>
+<div class="line"><span class="lineno">  202</span>    }</div>
+<div class="line"><span class="lineno">  203</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track_html_a19139348ca835c9d021275a0b9ddc0d7"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html#a19139348ca835c9d021275a0b9ddc0d7">boost::multi_index::detail::unlink_undo_assigner::base_pointer_track::x</a></div><div class="ttdeci">base_pointer * x</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00206">hash_index_node.hpp:206</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track_html_adf4190a0d80d6f3cbc0a471ab48e5e7b"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html#adf4190a0d80d6f3cbc0a471ab48e5e7b">boost::multi_index::detail::unlink_undo_assigner::pointer_track::x</a></div><div class="ttdeci">pointer * x</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00205">hash_index_node.hpp:205</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_html_a80af0fe81dbabcbf336c9060f4fa1fd2"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">boost::multi_index::detail::unlink_undo_assigner::base_pointer_tracks</a></div><div class="ttdeci">base_pointer_track base_pointer_tracks[2]</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00215">hash_index_node.hpp:215</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_html_af5fc089e519cf665cc70ecb40f99ee2b"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">boost::multi_index::detail::unlink_undo_assigner::pointer_tracks</a></div><div class="ttdeci">pointer_track pointer_tracks[3]</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00213">hash_index_node.hpp:213</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="hash__index__node_8hpp_source.html#l00216">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_track_count</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00215">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_tracks</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00214">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_track_count</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00213">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_tracks</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00205">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_track::x</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00206">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_track::x</a>.</p>
+
+</div>
+</div>
+<a id="abb884faec8c80e230b976ec0fc1a5f2f" name="abb884faec8c80e230b976ec0fc1a5f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb884faec8c80e230b976ec0fc1a5f2f">&#9670;&#160;</a></span>operator()() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aa0f464291fe3471be9664f63618ea777">base_pointer</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aa0f464291fe3471be9664f63618ea777">base_pointer</a>&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00184">184</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>  {</div>
+<div class="line"><span class="lineno">  186</span>    <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">base_pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html#a19139348ca835c9d021275a0b9ddc0d7">x</a>=&amp;x;</div>
+<div class="line"><span class="lineno">  187</span>    <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#a80af0fe81dbabcbf336c9060f4fa1fd2">base_pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ab05124d4fc48f59866f24240ce88bb6b">base_pointer_track_count</a>++].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html#a145f7367bb04270f749b78a1c0f2c393">val</a>=x;</div>
+<div class="line"><span class="lineno">  188</span>    x=val;</div>
+<div class="line"><span class="lineno">  189</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track_html_a145f7367bb04270f749b78a1c0f2c393"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html#a145f7367bb04270f749b78a1c0f2c393">boost::multi_index::detail::unlink_undo_assigner::base_pointer_track::val</a></div><div class="ttdeci">base_pointer val</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00206">hash_index_node.hpp:206</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="hash__index__node_8hpp_source.html#l00216">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_track_count</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00215">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_tracks</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00206">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_track::val</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00206">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::base_pointer_track::x</a>.</p>
+
+</div>
+</div>
+<a id="a9567c5d2d81355c45b31225de53a9e27" name="a9567c5d2d81355c45b31225de53a9e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9567c5d2d81355c45b31225de53a9e27">&#9670;&#160;</a></span>operator()() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ad7410b2155c44d787d49f3139961a71f">pointer</a> &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#ad7410b2155c44d787d49f3139961a71f">pointer</a>&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>  {</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html#adf4190a0d80d6f3cbc0a471ab48e5e7b">x</a>=&amp;x;</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#af5fc089e519cf665cc70ecb40f99ee2b">pointer_tracks</a>[<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html#aab29cba262262e9790c2a750462ff58e">pointer_track_count</a>++].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html#a87e1ea63949ec945e4d640523e42b809">val</a>=x;</div>
+<div class="line"><span class="lineno">  181</span>    x=val;</div>
+<div class="line"><span class="lineno">  182</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track_html_a87e1ea63949ec945e4d640523e42b809"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html#a87e1ea63949ec945e4d640523e42b809">boost::multi_index::detail::unlink_undo_assigner::pointer_track::val</a></div><div class="ttdeci">pointer val</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00205">hash_index_node.hpp:205</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="hash__index__node_8hpp_source.html#l00214">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_track_count</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00213">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_tracks</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00205">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_track::val</a>, <a class="el" href="hash__index__node_8hpp_source.html#l00205">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::pointer_track::x</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ab05124d4fc48f59866f24240ce88bb6b" name="ab05124d4fc48f59866f24240ce88bb6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab05124d4fc48f59866f24240ce88bb6b">&#9670;&#160;</a></span>base_pointer_track_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::base_pointer_track_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00216">216</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="hash__index__node_8hpp_source.html#l00184">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<a id="a80af0fe81dbabcbf336c9060f4fa1fd2" name="a80af0fe81dbabcbf336c9060f4fa1fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80af0fe81dbabcbf336c9060f4fa1fd2">&#9670;&#160;</a></span>base_pointer_tracks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1base__pointer__track.html">base_pointer_track</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::base_pointer_tracks[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00215">215</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="hash__index__node_8hpp_source.html#l00184">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<a id="aab29cba262262e9790c2a750462ff58e" name="aab29cba262262e9790c2a750462ff58e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab29cba262262e9790c2a750462ff58e">&#9670;&#160;</a></span>pointer_track_count</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::pointer_track_count</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00214">214</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="hash__index__node_8hpp_source.html#l00177">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<a id="af5fc089e519cf665cc70ecb40f99ee2b" name="af5fc089e519cf665cc70ecb40f99ee2b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5fc089e519cf665cc70ecb40f99ee2b">&#9670;&#160;</a></span>pointer_tracks</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner_1_1pointer__track.html">pointer_track</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">boost::multi_index::detail::unlink_undo_assigner</a>&lt; Node &gt;::pointer_tracks[3]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00213">213</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="hash__index__node_8hpp_source.html#l00177">boost::multi_index::detail::unlink_undo_assigner&lt; Node &gt;::operator()()</a>.</p>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">unlink_undo_assigner</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -23,7 +23,7 @@ var classGameOverManager =
     [ "Initialize", "classGameOverManager.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classGameOverManager.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classGameOverManager.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classGameOverManager.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classGameOverManager.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classGameOverManager.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "OnGameOver", "classGameOverManager.html#a655d1d3ff0875abe0b6adebbdef644e8", null ],
     [ "Serialize", "classGameOverManager.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],

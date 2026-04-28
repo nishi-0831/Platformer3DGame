@@ -38,7 +38,7 @@ var classPlayer =
     [ "InitializeState", "classPlayer.html#ae193410ca1549f1245a9064f0c2fe473", null ],
     [ "Instantiate", "classPlayer.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classPlayer.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classPlayer.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classPlayer.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classPlayer.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "OnCollisionEnter", "classPlayer.html#a80fcab0539c8df52bfc931b0762e2307", null ],
     [ "OnHitSide", "classPlayer.html#a5a366cfffd1642228afaa6ae0769fab8", null ],

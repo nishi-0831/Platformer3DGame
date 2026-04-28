@@ -1,0 +1,701 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: core.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('core_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">core.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config__begin_8hpp_source.html">boost/move/detail/config_begin.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="move_2detail_2workaround_8hpp_source.html">boost/move/detail/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config__end_8hpp_source.html">boost/move/detail/config_end.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+core.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="core_8hpp__incl.svg" width="911" height="374"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="core_8hpp__dep__incl.svg" width="2903" height="696"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="core_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1has__move__emulation__enabled.html">boost::has_move_emulation_enabled&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1has__move__emulation__disabled.html">boost::has_move_emulation_disabled&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1move__detail_1_1forward__type.html">boost::move_detail::forward_type&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1move__detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1move__detail.html">boost::move_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a358a85a0713b80c331742612dae0367f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a358a85a0713b80c331742612dae0367f">BOOST_MOVABLE_BUT_NOT_COPYABLE</a>(TYPE)</td></tr>
+<tr class="separator:a358a85a0713b80c331742612dae0367f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a021821de2147094b325d6849767f1c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a2a021821de2147094b325d6849767f1c">BOOST_COPYABLE_AND_MOVABLE</a>(TYPE)&#160;&#160;&#160;\</td></tr>
+<tr class="separator:a2a021821de2147094b325d6849767f1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb0e1629ffa173d9695439bf3f2063f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#afb0e1629ffa173d9695439bf3f2063f2">BOOST_COPYABLE_AND_MOVABLE_ALT</a>(TYPE)&#160;&#160;&#160;\</td></tr>
+<tr class="separator:afb0e1629ffa173d9695439bf3f2063f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41dbf698e587e2adc7f518a2b8625436"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a41dbf698e587e2adc7f518a2b8625436">BOOST_RV_REF</a>(TYPE)&#160;&#160;&#160;      TYPE &amp;&amp; \</td></tr>
+<tr class="separator:a41dbf698e587e2adc7f518a2b8625436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8d981a36b56073831603aef6120652e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#aa8d981a36b56073831603aef6120652e">BOOST_RV_REF_BEG</a>&#160;&#160;&#160;         \</td></tr>
+<tr class="separator:aa8d981a36b56073831603aef6120652e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e4ac6029f371438042b6e6abdbc3124"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a1e4ac6029f371438042b6e6abdbc3124">BOOST_RV_REF_END</a>&#160;&#160;&#160;      &amp;&amp; \</td></tr>
+<tr class="separator:a1e4ac6029f371438042b6e6abdbc3124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a33a2f3b6add665b5897a10c5e481d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a3a33a2f3b6add665b5897a10c5e481d2">BOOST_RV_REF_BEG_IF_CXX11</a>&#160;&#160;&#160;      <a class="el" href="core_8hpp.html#aa8d981a36b56073831603aef6120652e">BOOST_RV_REF_BEG</a> \</td></tr>
+<tr class="separator:a3a33a2f3b6add665b5897a10c5e481d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfa9516be94a3d8a740a92aed6b8f0f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#abfa9516be94a3d8a740a92aed6b8f0f1">BOOST_RV_REF_END_IF_CXX11</a>&#160;&#160;&#160;      <a class="el" href="core_8hpp.html#a1e4ac6029f371438042b6e6abdbc3124">BOOST_RV_REF_END</a> \</td></tr>
+<tr class="separator:abfa9516be94a3d8a740a92aed6b8f0f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37936e2bbaac51d9868f9274fb648d32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a37936e2bbaac51d9868f9274fb648d32">BOOST_COPY_ASSIGN_REF</a>(TYPE)&#160;&#160;&#160;      const TYPE &amp; \</td></tr>
+<tr class="separator:a37936e2bbaac51d9868f9274fb648d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ca6cade8db3b19f8be8cfdc0b0da3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a12ca6cade8db3b19f8be8cfdc0b0da3d">BOOST_FWD_REF</a>(TYPE)&#160;&#160;&#160;      TYPE &amp;&amp; \</td></tr>
+<tr class="separator:a12ca6cade8db3b19f8be8cfdc0b0da3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32adce17b9a7b3c07167a36ceb6b84aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a32adce17b9a7b3c07167a36ceb6b84aa">BOOST_RV_REF_2_TEMPL_ARGS</a>(TYPE,  ARG1,  ARG2)&#160;&#160;&#160;      TYPE&lt;ARG1, ARG2&gt; &amp;&amp; \</td></tr>
+<tr class="separator:a32adce17b9a7b3c07167a36ceb6b84aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef8b0f1b19c29569824c448623e43bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a9ef8b0f1b19c29569824c448623e43bd">BOOST_RV_REF_3_TEMPL_ARGS</a>(TYPE,  ARG1,  ARG2,  ARG3)&#160;&#160;&#160;      TYPE&lt;ARG1, ARG2, ARG3&gt; &amp;&amp; \</td></tr>
+<tr class="separator:a9ef8b0f1b19c29569824c448623e43bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a000fddf27e6648aa08575db2fad76e79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a000fddf27e6648aa08575db2fad76e79">BOOST_COPY_ASSIGN_REF_BEG</a>&#160;&#160;&#160;      const \</td></tr>
+<tr class="separator:a000fddf27e6648aa08575db2fad76e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f16dad7c961e9dc40234159105168f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#ab3f16dad7c961e9dc40234159105168f">BOOST_COPY_ASSIGN_REF_END</a>&#160;&#160;&#160;      &amp; \</td></tr>
+<tr class="separator:ab3f16dad7c961e9dc40234159105168f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3463459aff1b67ed0b0b69736f211d39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a3463459aff1b67ed0b0b69736f211d39">BOOST_COPY_ASSIGN_REF_2_TEMPL_ARGS</a>(TYPE,  ARG1,  ARG2)&#160;&#160;&#160;      const TYPE&lt;ARG1, ARG2&gt; &amp; \</td></tr>
+<tr class="separator:a3463459aff1b67ed0b0b69736f211d39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31d13b49a53be0ebc8e83f157b467c0f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a31d13b49a53be0ebc8e83f157b467c0f">BOOST_COPY_ASSIGN_REF_3_TEMPL_ARGS</a>(TYPE,  ARG1,  ARG2,  ARG3)&#160;&#160;&#160;      const TYPE&lt;ARG1, ARG2, ARG3&gt;&amp; \</td></tr>
+<tr class="separator:a31d13b49a53be0ebc8e83f157b467c0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5468130dfafeddc7b5118de23552f66b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#a5468130dfafeddc7b5118de23552f66b">BOOST_CATCH_CONST_RLVALUE</a>(TYPE)&#160;&#160;&#160;      const TYPE &amp; \</td></tr>
+<tr class="separator:a5468130dfafeddc7b5118de23552f66b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab582644b3621ae7776dfb96e9f1d9748"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#ab582644b3621ae7776dfb96e9f1d9748">BOOST_MOVE_RET</a>(RET_TYPE,  REF)&#160;&#160;&#160;         REF</td></tr>
+<tr class="separator:ab582644b3621ae7776dfb96e9f1d9748"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2f08196120b1b5f09f240ef498ebd7f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#aa2f08196120b1b5f09f240ef498ebd7f">BOOST_MOVE_BASE</a>(BASE_TYPE,  ARG)&#160;&#160;&#160;      <a class="el" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>((BASE_TYPE&amp;)(ARG))</td></tr>
+<tr class="memdesc:aa2f08196120b1b5f09f240ef498ebd7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_MSVC_AUTO_MOVE_RETURN_BUG) || defined(BOOST_MOVE_DOXYGEN_INVOKED)  <br /></td></tr>
+<tr class="separator:aa2f08196120b1b5f09f240ef498ebd7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5121b990a0bd5b35e62ab4d2341705c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_8hpp.html#ab5121b990a0bd5b35e62ab4d2341705c">BOOST_MOVE_TO_LV</a>(ARG)&#160;&#160;&#160;ARG</td></tr>
+<tr class="separator:ab5121b990a0bd5b35e62ab4d2341705c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p>This header implements macros to define movable classes and move-aware functions </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> に定義があります。</p>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a5468130dfafeddc7b5118de23552f66b" name="a5468130dfafeddc7b5118de23552f66b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5468130dfafeddc7b5118de23552f66b">&#9670;&#160;</a></span>BOOST_CATCH_CONST_RLVALUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CATCH_CONST_RLVALUE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;      const TYPE &amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00416">416</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a37936e2bbaac51d9868f9274fb648d32" name="a37936e2bbaac51d9868f9274fb648d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37936e2bbaac51d9868f9274fb648d32">&#9670;&#160;</a></span>BOOST_COPY_ASSIGN_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPY_ASSIGN_REF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;      const TYPE &amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable syntax in copy assignment for classes marked as BOOST_COPYABLE_AND_MOVABLE. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00380">380</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3463459aff1b67ed0b0b69736f211d39" name="a3463459aff1b67ed0b0b69736f211d39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3463459aff1b67ed0b0b69736f211d39">&#9670;&#160;</a></span>BOOST_COPY_ASSIGN_REF_2_TEMPL_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPY_ASSIGN_REF_2_TEMPL_ARGS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      const TYPE&lt;ARG1, ARG2&gt; &amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00408">408</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a31d13b49a53be0ebc8e83f157b467c0f" name="a31d13b49a53be0ebc8e83f157b467c0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31d13b49a53be0ebc8e83f157b467c0f">&#9670;&#160;</a></span>BOOST_COPY_ASSIGN_REF_3_TEMPL_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPY_ASSIGN_REF_3_TEMPL_ARGS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG3&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      const TYPE&lt;ARG1, ARG2, ARG3&gt;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00412">412</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a000fddf27e6648aa08575db2fad76e79" name="a000fddf27e6648aa08575db2fad76e79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a000fddf27e6648aa08575db2fad76e79">&#9670;&#160;</a></span>BOOST_COPY_ASSIGN_REF_BEG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPY_ASSIGN_REF_BEG&#160;&#160;&#160;      const \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00400">400</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab3f16dad7c961e9dc40234159105168f" name="ab3f16dad7c961e9dc40234159105168f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f16dad7c961e9dc40234159105168f">&#9670;&#160;</a></span>BOOST_COPY_ASSIGN_REF_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPY_ASSIGN_REF_END&#160;&#160;&#160;      &amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00404">404</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2a021821de2147094b325d6849767f1c" name="a2a021821de2147094b325d6849767f1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a021821de2147094b325d6849767f1c">&#9670;&#160;</a></span>BOOST_COPYABLE_AND_MOVABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPYABLE_AND_MOVABLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;\</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro marks a type as copyable and movable. The user will need to write a move constructor/assignment and a copy assignment as explained in the documentation to fully write a copyable and movable class. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00312">312</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afb0e1629ffa173d9695439bf3f2063f2" name="afb0e1629ffa173d9695439bf3f2063f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb0e1629ffa173d9695439bf3f2063f2">&#9670;&#160;</a></span>BOOST_COPYABLE_AND_MOVABLE_ALT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COPYABLE_AND_MOVABLE_ALT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;\</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00316">316</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a12ca6cade8db3b19f8be8cfdc0b0da3d" name="a12ca6cade8db3b19f8be8cfdc0b0da3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12ca6cade8db3b19f8be8cfdc0b0da3d">&#9670;&#160;</a></span>BOOST_FWD_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FWD_REF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;      TYPE &amp;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to implement portable perfect forwarding as explained in the documentation. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00386">386</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a358a85a0713b80c331742612dae0367f" name="a358a85a0713b80c331742612dae0367f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a358a85a0713b80c331742612dae0367f">&#9670;&#160;</a></span>BOOST_MOVABLE_BUT_NOT_COPYABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVABLE_BUT_NOT_COPYABLE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      BOOST_MOVE_IMPL_NO_COPY_CTOR_OR_ASSIGN(TYPE)\</div>
+<div class="line">      <span class="keyword">public</span>:\</div>
+<div class="line">      <span class="keyword">typedef</span> <span class="keywordtype">int</span> boost_move_emulation_t;\</div>
+<div class="line">      <span class="keyword">private</span>:\</div>
+</div><!-- fragment --><p>This macro marks a type as movable but not copyable, disabling copy construction and assignment. The user will need to write a move constructor/assignment as explained in the documentation to fully write a movable but not copyable class. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00302">302</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa2f08196120b1b5f09f240ef498ebd7f" name="aa2f08196120b1b5f09f240ef498ebd7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2f08196120b1b5f09f240ef498ebd7f">&#9670;&#160;</a></span>BOOST_MOVE_BASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_BASE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">BASE_TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      <a class="el" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>((BASE_TYPE&amp;)(ARG))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>defined(BOOST_MOVE_MSVC_AUTO_MOVE_RETURN_BUG) || defined(BOOST_MOVE_DOXYGEN_INVOKED) </p>
+<p>This macro is used to achieve portable optimal move constructors.</p>
+<p>When implementing the move constructor, in C++03 compilers the moved-from argument must be cast to the base type before calling <code><a class="el" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move()</a></code> due to rvalue reference limitations.</p>
+<p>In C++11 compilers the cast from a rvalue reference of a derived type to a rvalue reference of a base type is implicit. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00489">489</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab582644b3621ae7776dfb96e9f1d9748" name="ab582644b3621ae7776dfb96e9f1d9748"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab582644b3621ae7776dfb96e9f1d9748">&#9670;&#160;</a></span>BOOST_MOVE_RET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_RET</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">RET_TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">REF&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;         REF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable move return semantics. The C++11 Standard allows implicit move returns when the object to be returned is designated by a lvalue and:</p><ul>
+<li>The criteria for elision of a copy operation are met OR</li>
+<li>The criteria would be met save for the fact that the source object is a function parameter</li>
+</ul>
+<p>For C++11 conforming compilers this macros only yields to REF: <code>return <a class="el" href="core_8hpp.html#ab582644b3621ae7776dfb96e9f1d9748">BOOST_MOVE_RET(RET_TYPE, REF)</a>;</code> -&gt; <code>return REF;</code></p>
+<p>For compilers without rvalue references this macro does an explicit move if the move emulation is activated and the return type (RET_TYPE) is not a reference.</p>
+<p>For non-conforming compilers with rvalue references like Visual 2010 &amp; 2012, an explicit move is performed if RET_TYPE is not a reference.</p>
+<p><b>Caution</b>: When using this macro in non-conforming or C++03 compilers, a move will be performed even if the C++11 standard does not allow it (e.g. returning a static variable). The user is responsible for using this macro only to return local objects that met C++11 criteria. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00444">444</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab5121b990a0bd5b35e62ab4d2341705c" name="ab5121b990a0bd5b35e62ab4d2341705c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5121b990a0bd5b35e62ab4d2341705c">&#9670;&#160;</a></span>BOOST_MOVE_TO_LV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_TO_LV</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG</td><td>)</td>
+          <td>&#160;&#160;&#160;ARG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable optimal move constructors.</p>
+<p>In C++03 mode, when accessing a member of type through a rvalue (implemented as a <code>rv&lt;T&gt; &amp;</code> type, where rv&lt;T&gt; derives from T) triggers a potential UB as the program never creates objects of type rv&lt;T&gt;. This macro casts back <code>rv&lt;T&gt;</code> to <code>T&amp;</code> so that access to member types are done through the original type.</p>
+<p>In C++11 compilers the cast from a rvalue reference of a derived type to a rvalue reference of a base type is implicit, so it's a no-op. </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00501">501</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a41dbf698e587e2adc7f518a2b8625436" name="a41dbf698e587e2adc7f518a2b8625436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41dbf698e587e2adc7f518a2b8625436">&#9670;&#160;</a></span>BOOST_RV_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE</td><td>)</td>
+          <td>&#160;&#160;&#160;      TYPE &amp;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable syntax in move constructors and assignments for classes marked as BOOST_COPYABLE_AND_MOVABLE or BOOST_MOVABLE_BUT_NOT_COPYABLE </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00342">342</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a32adce17b9a7b3c07167a36ceb6b84aa" name="a32adce17b9a7b3c07167a36ceb6b84aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32adce17b9a7b3c07167a36ceb6b84aa">&#9670;&#160;</a></span>BOOST_RV_REF_2_TEMPL_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_2_TEMPL_ARGS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      TYPE&lt;ARG1, ARG2&gt; &amp;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00392">392</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9ef8b0f1b19c29569824c448623e43bd" name="a9ef8b0f1b19c29569824c448623e43bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef8b0f1b19c29569824c448623e43bd">&#9670;&#160;</a></span>BOOST_RV_REF_3_TEMPL_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_3_TEMPL_ARGS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TYPE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ARG3&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      TYPE&lt;ARG1, ARG2, ARG3&gt; &amp;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00396">396</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa8d981a36b56073831603aef6120652e" name="aa8d981a36b56073831603aef6120652e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8d981a36b56073831603aef6120652e">&#9670;&#160;</a></span>BOOST_RV_REF_BEG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_BEG&#160;&#160;&#160;         \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable syntax in move constructors and assignments for template classes marked as BOOST_COPYABLE_AND_MOVABLE or BOOST_MOVABLE_BUT_NOT_COPYABLE. As macros have problems with comma-separated template arguments, the template argument must be preceded with BOOST_RV_REF_BEG and ended with BOOST_RV_REF_END </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00352">352</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3a33a2f3b6add665b5897a10c5e481d2" name="a3a33a2f3b6add665b5897a10c5e481d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a33a2f3b6add665b5897a10c5e481d2">&#9670;&#160;</a></span>BOOST_RV_REF_BEG_IF_CXX11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_BEG_IF_CXX11&#160;&#160;&#160;      <a class="el" href="core_8hpp.html#aa8d981a36b56073831603aef6120652e">BOOST_RV_REF_BEG</a> \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro expands to BOOST_RV_REF_BEG if BOOST_NO_CXX11_RVALUE_REFERENCES is not defined, empty otherwise </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00368">368</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1e4ac6029f371438042b6e6abdbc3124" name="a1e4ac6029f371438042b6e6abdbc3124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e4ac6029f371438042b6e6abdbc3124">&#9670;&#160;</a></span>BOOST_RV_REF_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_END&#160;&#160;&#160;      &amp;&amp; \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro is used to achieve portable syntax in move constructors and assignments for template classes marked as BOOST_COPYABLE_AND_MOVABLE or BOOST_MOVABLE_BUT_NOT_COPYABLE. As macros have problems with comma-separated template arguments, the template argument must be preceded with BOOST_RV_REF_BEG and ended with BOOST_RV_REF_END </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00362">362</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abfa9516be94a3d8a740a92aed6b8f0f1" name="abfa9516be94a3d8a740a92aed6b8f0f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfa9516be94a3d8a740a92aed6b8f0f1">&#9670;&#160;</a></span>BOOST_RV_REF_END_IF_CXX11</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_RV_REF_END_IF_CXX11&#160;&#160;&#160;      <a class="el" href="core_8hpp.html#a1e4ac6029f371438042b6e6abdbc3124">BOOST_RV_REF_END</a> \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This macro expands to BOOST_RV_REF_END if BOOST_NO_CXX11_RVALUE_REFERENCES is not defined, empty otherwise </p>
+
+<p class="definition"> <a class="el" href="core_8hpp_source.html">core.hpp</a> の <a class="el" href="core_8hpp_source.html#l00374">374</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_bd26f2a9b666a6a4c805ff0dd2b8a2e0.html">move</a></li><li class="navelem"><a class="el" href="core_8hpp.html">core.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

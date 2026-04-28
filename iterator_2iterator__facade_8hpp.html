@@ -1,0 +1,665 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: iterator_facade.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('iterator_2iterator__facade_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">iterator/iterator_facade.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp11_2utility_8hpp_source.html">boost/mp11/utility.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="interoperable_8hpp_source.html">boost/iterator/interoperable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="boost_2iterator_2iterator__traits_8hpp_source.html">boost/iterator/iterator_traits.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iterator__categories_8hpp_source.html">boost/iterator/iterator_categories.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="facade__iterator__category_8hpp_source.html">boost/iterator/detail/facade_iterator_category.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iterator_2detail_2type__traits_2conjunction_8hpp_source.html">boost/iterator/detail/type_traits/conjunction.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iterator_2detail_2type__traits_2negation_8hpp_source.html">boost/iterator/detail/type_traits/negation.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+iterator/iterator_facade.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="iterator_2iterator__facade_8hpp__incl.svg" width="2586" height="975"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="iterator_2iterator__facade_8hpp__dep__incl.svg" width="3215" height="623"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="iterator_2iterator__facade_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1is__traversal__at__least.html">boost::iterators::detail::is_traversal_at_least&lt; CategoryOrTraversal, Required &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable.html">boost::iterators::detail::enable_if_interoperable&lt; Facade1, Facade2, Return &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable__and__random__access__traversal.html">boost::iterators::detail::enable_if_interoperable_and_random_access_traversal&lt; Facade1, Facade2, Return &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1iterator__facade__types.html">boost::iterators::detail::iterator_facade_types&lt; ValueParam, CategoryOrTraversal, Reference, Difference &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1postfix__increment__proxy.html">boost::iterators::detail::postfix_increment_proxy&lt; Iterator &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1is__not__writable__postfix__increment__dereference__proxy.html">boost::iterators::detail::is_not_writable_postfix_increment_dereference_proxy&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1is__not__writable__postfix__increment__dereference__proxy_4516a59f91f009f3207b20e43c463285.html">boost::iterators::detail::is_not_writable_postfix_increment_dereference_proxy&lt; writable_postfix_increment_dereference_proxy&lt; Iterator &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1writable__postfix__increment__dereference__proxy.html">boost::iterators::detail::writable_postfix_increment_dereference_proxy&lt; Iterator &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1writable__postfix__increment__proxy.html">boost::iterators::detail::writable_postfix_increment_proxy&lt; Iterator &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1is__non__proxy__reference.html">boost::iterators::detail::is_non_proxy_reference&lt; Reference, Value &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1postfix__increment__result.html">boost::iterators::detail::postfix_increment_result&lt; Iterator, Value, Reference, CategoryOrTraversal &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1operator__arrow__dispatch.html">boost::iterators::detail::operator_arrow_dispatch&lt; Reference, Pointer &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1operator__arrow__dispatch_1_1proxy.html">boost::iterators::detail::operator_arrow_dispatch&lt; Reference, Pointer &gt;::proxy</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1operator__arrow__dispatch_3_01T_01_6_00_01Pointer_01_4.html">boost::iterators::detail::operator_arrow_dispatch&lt; T &amp;, Pointer &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1operator__brackets__proxy.html">boost::iterators::detail::operator_brackets_proxy&lt; Iterator &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1use__operator__brackets__proxy.html">boost::iterators::detail::use_operator_brackets_proxy&lt; ValueType, Reference &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1iterators_1_1detail_1_1operator__brackets__result.html">boost::iterators::detail::operator_brackets_result&lt; Iterator, Value, Reference &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1iterator__core__access.html">boost::iterators::iterator_core_access</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1iterator__facade__base_3_01Derived_00_01Value_00_01Category3b8e802589dde5bbd6cfc07ee14db1d6.html">boost::iterators::detail::iterator_facade_base&lt; Derived, Value, CategoryOrTraversal, Reference, Difference, false, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1iterator__facade__base_3_01Derived_00_01Value_00_01Categoryfab3193108e21a0192e3f37cb61c006c.html">boost::iterators::detail::iterator_facade_base&lt; Derived, Value, CategoryOrTraversal, Reference, Difference, true, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1detail_1_1iterator__facade__base_3_01Derived_00_01Value_00_01Category0858d5315aa4fcb7bfa8ce5bb7114c8d.html">boost::iterators::detail::iterator_facade_base&lt; Derived, Value, CategoryOrTraversal, Reference, Difference, true, true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1iterators_1_1iterator__facade.html">boost::iterators::iterator_facade&lt; Derived, Value, CategoryOrTraversal, Reference, Difference &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1iterators"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators.html">boost::iterators</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1iterators_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators_1_1detail.html">boost::iterators::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:abaf1a3d5507e26f1730b4094fa21d54b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#abaf1a3d5507e26f1730b4094fa21d54b">BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</a>(prefix,  op,  result_type,  enabler)</td></tr>
+<tr class="separator:abaf1a3d5507e26f1730b4094fa21d54b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2288b3964726067e93b2d8aac294adb6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#a2288b3964726067e93b2d8aac294adb6">BOOST_ITERATOR_FACADE_INTEROP_HEAD</a>(prefix,  op,  result_type)&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#abaf1a3d5507e26f1730b4094fa21d54b">BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</a>(prefix, op, result_type, <a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable.html">boost::iterators::detail::enable_if_interoperable</a>)</td></tr>
+<tr class="separator:a2288b3964726067e93b2d8aac294adb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9a4714bd74041cf2bc26909d7ecc941"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#ac9a4714bd74041cf2bc26909d7ecc941">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</a>(prefix,  op,  result_type)&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#abaf1a3d5507e26f1730b4094fa21d54b">BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</a>(prefix, op, result_type, <a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable__and__random__access__traversal.html">boost::iterators::detail::enable_if_interoperable_and_random_access_traversal</a>)</td></tr>
+<tr class="separator:ac9a4714bd74041cf2bc26909d7ecc941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb139ea2d580f4ef9c24ca424e746ede"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#acb139ea2d580f4ef9c24ca424e746ede">BOOST_ITERATOR_FACADE_PLUS_HEAD</a>(prefix,  args)</td></tr>
+<tr class="separator:acb139ea2d580f4ef9c24ca424e746ede"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abacdfeab6eb3175911eb2ebeaf1de9d9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#abacdfeab6eb3175911eb2ebeaf1de9d9">BOOST_ITERATOR_FACADE_RELATION</a>(op)&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#a2288b3964726067e93b2d8aac294adb6">BOOST_ITERATOR_FACADE_INTEROP_HEAD</a>(friend, op, <a class="el" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>);</td></tr>
+<tr class="separator:abacdfeab6eb3175911eb2ebeaf1de9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a964decd0d88c954ab12b29ae5b728722"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#a964decd0d88c954ab12b29ae5b728722">BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION</a>(op)&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#ac9a4714bd74041cf2bc26909d7ecc941">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</a>(friend, op, <a class="el" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>);</td></tr>
+<tr class="separator:a964decd0d88c954ab12b29ae5b728722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1d7696faea5bd290106d63382508ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#adc1d7696faea5bd290106d63382508ae">BOOST_ITERATOR_FACADE_INTEROP</a>(op,  result_type,  return_prefix,  base_op)</td></tr>
+<tr class="separator:adc1d7696faea5bd290106d63382508ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a8e1f00e117f1b627c722dc6cca802"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#a78a8e1f00e117f1b627c722dc6cca802">BOOST_ITERATOR_FACADE_RELATION</a>(op,  return_prefix,  base_op)</td></tr>
+<tr class="separator:a78a8e1f00e117f1b627c722dc6cca802"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7bd215dbccabd63a73a1b79bd87c029"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#ab7bd215dbccabd63a73a1b79bd87c029">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS</a>(op,  result_type,  return_prefix,  base_op)</td></tr>
+<tr class="separator:ab7bd215dbccabd63a73a1b79bd87c029"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaacfb26740f54ec1d304f897352b20f2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#aaacfb26740f54ec1d304f897352b20f2">BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION</a>(op,  return_prefix,  base_op)</td></tr>
+<tr class="separator:aaacfb26740f54ec1d304f897352b20f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a998304c01404e55135a8f96d0f25fa15"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iterator_2iterator__facade_8hpp.html#a998304c01404e55135a8f96d0f25fa15">BOOST_ITERATOR_FACADE_PLUS</a>(args)</td></tr>
+<tr class="separator:a998304c01404e55135a8f96d0f25fa15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:afb4385adab4b5139d01ead8b52916e59"><td class="memTemplParams" colspan="2">template&lt;typename Iterator1 , typename Iterator2 &gt; </td></tr>
+<tr class="memitem:afb4385adab4b5139d01ead8b52916e59"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a> = bool</td></tr>
+<tr class="separator:afb4385adab4b5139d01ead8b52916e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa695970f9bae722747fa78107d32a147"><td class="memTemplParams" colspan="2">template&lt;typename Iterator1 , typename Iterator2 &gt; </td></tr>
+<tr class="memitem:aa695970f9bae722747fa78107d32a147"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators_1_1detail.html#aa695970f9bae722747fa78107d32a147">boost::iterators::detail::choose_difference_type_t</a> = typename std::conditional&lt; std::is_convertible&lt; Iterator2, Iterator1 &gt;::value, iterator_difference&lt; Iterator1 &gt;, iterator_difference&lt; Iterator2 &gt; &gt;::type::type</td></tr>
+<tr class="separator:aa695970f9bae722747fa78107d32a147"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a1486cfca1aa3e6bf7300e07e39d8cb20"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a1486cfca1aa3e6bf7300e07e39d8cb20"><td class="memTemplItemLeft" align="right" valign="top">operator_brackets_proxy&lt; Iterator &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators_1_1detail.html#a1486cfca1aa3e6bf7300e07e39d8cb20">boost::iterators::detail::make_operator_brackets_result</a> (Iterator const &amp;iter, std::true_type)</td></tr>
+<tr class="separator:a1486cfca1aa3e6bf7300e07e39d8cb20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a431e27f778c7598842a5c4eff04072f5"><td class="memTemplParams" colspan="2">template&lt;typename Iterator &gt; </td></tr>
+<tr class="memitem:a431e27f778c7598842a5c4eff04072f5"><td class="memTemplItemLeft" align="right" valign="top">Iterator::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators_1_1detail.html#a431e27f778c7598842a5c4eff04072f5">boost::iterators::detail::make_operator_brackets_result</a> (Iterator const &amp;iter, std::false_type)</td></tr>
+<tr class="separator:a431e27f778c7598842a5c4eff04072f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01f27b5392dd185d18b3a8ac5d42250a"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a> , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> , typename TC , typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6">R</a> , typename <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a01f27b5392dd185d18b3a8ac5d42250a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1iterators_1_1detail_1_1postfix__increment__result.html">boost::iterators::detail::postfix_increment_result</a>&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6">R</a>, TC &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1iterators.html#a01f27b5392dd185d18b3a8ac5d42250a">boost::iterators::operator++</a> (iterator_facade&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a>, TC, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6">R</a>, <a class="el" href="classD.html">D</a> &gt; &amp;i, int)</td></tr>
+<tr class="separator:a01f27b5392dd185d18b3a8ac5d42250a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="adc1d7696faea5bd290106d63382508ae" name="adc1d7696faea5bd290106d63382508ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1d7696faea5bd290106d63382508ae">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_INTEROP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_INTEROP</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">result_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">return_prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">base_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="iterator_2iterator__facade_8hpp.html#a2288b3964726067e93b2d8aac294adb6">BOOST_ITERATOR_FACADE_INTEROP_HEAD</a>(<span class="keyword">inline</span>, op, result_type)                                \</div>
+<div class="line">    {                                                                                          \</div>
+<div class="line">        return_prefix iterator_core_access::base_op(                                           \</div>
+<div class="line">            *<span class="keyword">static_cast&lt;</span> Derived1 const* <span class="keyword">&gt;</span>(&amp;lhs),                                             \</div>
+<div class="line">            *<span class="keyword">static_cast&lt;</span> Derived2 const* <span class="keyword">&gt;</span>(&amp;rhs),                                             \</div>
+<div class="line">            std::integral_constant&lt; <span class="keywordtype">bool</span>, std::is_convertible&lt; Derived2, Derived1 &gt;::value &gt;() \</div>
+<div class="line">        );                                                                                     \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aiterator_2iterator__facade_8hpp_html_a2288b3964726067e93b2d8aac294adb6"><div class="ttname"><a href="iterator_2iterator__facade_8hpp.html#a2288b3964726067e93b2d8aac294adb6">BOOST_ITERATOR_FACADE_INTEROP_HEAD</a></div><div class="ttdeci">#define BOOST_ITERATOR_FACADE_INTEROP_HEAD(prefix, op, result_type)</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00445">iterator/iterator_facade.hpp:445</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00819">819</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2288b3964726067e93b2d8aac294adb6" name="a2288b3964726067e93b2d8aac294adb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2288b3964726067e93b2d8aac294adb6">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_INTEROP_HEAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_INTEROP_HEAD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">result_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#abaf1a3d5507e26f1730b4094fa21d54b">BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</a>(prefix, op, result_type, <a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable.html">boost::iterators::detail::enable_if_interoperable</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00445">445</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abaf1a3d5507e26f1730b4094fa21d54b" name="abaf1a3d5507e26f1730b4094fa21d54b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abaf1a3d5507e26f1730b4094fa21d54b">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">result_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">enabler&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">template</span>&lt;                                                           \</div>
+<div class="line">        <span class="keyword">typename</span> Derived1, <span class="keyword">typename</span> V1, <span class="keyword">typename</span> TC1, <span class="keyword">typename</span> Reference1, <span class="keyword">typename</span> Difference1, \</div>
+<div class="line">        <span class="keyword">typename</span> Derived2, <span class="keyword">typename</span> V2, <span class="keyword">typename</span> TC2, <span class="keyword">typename</span> Reference2, <span class="keyword">typename</span> Difference2  \</div>
+<div class="line">    &gt;                                                                   \</div>
+<div class="line">    prefix <span class="keyword">typename</span> enabler&lt;                                            \</div>
+<div class="line">        Derived1, Derived2,                                             \</div>
+<div class="line">        result_type&lt; Derived1, Derived2 &gt;                               \</div>
+<div class="line">    &gt;::type                                                             \</div>
+<div class="line">    operator op(                                                        \</div>
+<div class="line">        iterator_facade&lt; Derived1, V1, TC1, Reference1, Difference1 &gt; <span class="keyword">const</span>&amp; lhs,   \</div>
+<div class="line">        iterator_facade&lt; Derived2, V2, TC2, Reference2, Difference2 &gt; <span class="keyword">const</span>&amp; rhs)</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00432">432</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab7bd215dbccabd63a73a1b79bd87c029" name="ab7bd215dbccabd63a73a1b79bd87c029"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7bd215dbccabd63a73a1b79bd87c029">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">result_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">return_prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">base_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="iterator_2iterator__facade_8hpp.html#ac9a4714bd74041cf2bc26909d7ecc941">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</a>(<span class="keyword">inline</span>, op, result_type)                  \</div>
+<div class="line">    {                                                                                          \</div>
+<div class="line">        return_prefix iterator_core_access::base_op(                                           \</div>
+<div class="line">            *<span class="keyword">static_cast&lt;</span> Derived1 const* <span class="keyword">&gt;</span>(&amp;lhs),                                             \</div>
+<div class="line">            *<span class="keyword">static_cast&lt;</span> Derived2 const* <span class="keyword">&gt;</span>(&amp;rhs),                                             \</div>
+<div class="line">            std::integral_constant&lt; <span class="keywordtype">bool</span>, std::is_convertible&lt; Derived2, Derived1 &gt;::value &gt;() \</div>
+<div class="line">        );                                                                                     \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aiterator_2iterator__facade_8hpp_html_ac9a4714bd74041cf2bc26909d7ecc941"><div class="ttname"><a href="iterator_2iterator__facade_8hpp.html#ac9a4714bd74041cf2bc26909d7ecc941">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</a></div><div class="ttdeci">#define BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD(prefix, op, result_type)</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00448">iterator/iterator_facade.hpp:448</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00843">843</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac9a4714bd74041cf2bc26909d7ecc941" name="ac9a4714bd74041cf2bc26909d7ecc941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a4714bd74041cf2bc26909d7ecc941">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">result_type&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#abaf1a3d5507e26f1730b4094fa21d54b">BOOST_ITERATOR_FACADE_INTEROP_HEAD_IMPL</a>(prefix, op, result_type, <a class="el" href="structboost_1_1iterators_1_1detail_1_1enable__if__interoperable__and__random__access__traversal.html">boost::iterators::detail::enable_if_interoperable_and_random_access_traversal</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00448">448</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a998304c01404e55135a8f96d0f25fa15" name="a998304c01404e55135a8f96d0f25fa15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a998304c01404e55135a8f96d0f25fa15">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_PLUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_PLUS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="iterator_2iterator__facade_8hpp.html#acb139ea2d580f4ef9c24ca424e746ede">BOOST_ITERATOR_FACADE_PLUS_HEAD</a>(<span class="keyword">inline</span>, args)      \</div>
+<div class="line">    {                                                  \</div>
+<div class="line">        Derived tmp(<span class="keyword">static_cast&lt;</span> Derived const&amp; <span class="keyword">&gt;</span>(i)); \</div>
+<div class="line">        <span class="keywordflow">return</span> tmp += n;                               \</div>
+<div class="line">    }</div>
+<div class="ttc" id="aiterator_2iterator__facade_8hpp_html_acb139ea2d580f4ef9c24ca424e746ede"><div class="ttname"><a href="iterator_2iterator__facade_8hpp.html#acb139ea2d580f4ef9c24ca424e746ede">BOOST_ITERATOR_FACADE_PLUS_HEAD</a></div><div class="ttdeci">#define BOOST_ITERATOR_FACADE_PLUS_HEAD(prefix, args)</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00451">iterator/iterator_facade.hpp:451</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="acb139ea2d580f4ef9c24ca424e746ede" name="acb139ea2d580f4ef9c24ca424e746ede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb139ea2d580f4ef9c24ca424e746ede">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_PLUS_HEAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_PLUS_HEAD</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Derived, <span class="keyword">typename</span> V, <span class="keyword">typename</span> TC, <span class="keyword">typename</span> R, <span class="keyword">typename</span> D &gt;   \</div>
+<div class="line">    prefix <span class="keyword">typename</span> std::enable_if&lt;                                 \</div>
+<div class="line">        <a class="code hl_struct" href="structboost_1_1iterators_1_1detail_1_1is__traversal__at__least.html">boost::iterators::detail::is_traversal_at_least</a>&lt;            \</div>
+<div class="line">            TC,                                                     \</div>
+<div class="line">            <a class="code hl_struct" href="structboost_1_1iterators_1_1random__access__traversal__tag.html">boost::iterators::random_access_traversal_tag</a>           \</div>
+<div class="line">        &gt;::value,                                                   \</div>
+<div class="line">        Derived                                                     \</div>
+<div class="line">    &gt;::type <span class="keyword">operator</span>+ args</div>
+<div class="ttc" id="astructboost_1_1iterators_1_1detail_1_1is__traversal__at__least_html"><div class="ttname"><a href="structboost_1_1iterators_1_1detail_1_1is__traversal__at__least.html">boost::iterators::detail::is_traversal_at_least</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00042">iterator/iterator_facade.hpp:44</a></div></div>
+<div class="ttc" id="astructboost_1_1iterators_1_1random__access__traversal__tag_html"><div class="ttname"><a href="structboost_1_1iterators_1_1random__access__traversal__tag.html">boost::iterators::random_access_traversal_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator__categories_8hpp_source.html#l00026">iterator_categories.hpp:26</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00451">451</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a964decd0d88c954ab12b29ae5b728722" name="a964decd0d88c954ab12b29ae5b728722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a964decd0d88c954ab12b29ae5b728722">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op</td><td>)</td>
+          <td>&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#ac9a4714bd74041cf2bc26909d7ecc941">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS_HEAD</a>(friend, op, <a class="el" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00853">853</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaacfb26740f54ec1d304f897352b20f2" name="aaacfb26740f54ec1d304f897352b20f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaacfb26740f54ec1d304f897352b20f2">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_RANDOM_ACCESS_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">return_prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">base_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="iterator_2iterator__facade_8hpp.html#ab7bd215dbccabd63a73a1b79bd87c029">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS</a>(                                 \</div>
+<div class="line">        op,                                                                      \</div>
+<div class="line">        <a class="code hl_typedef" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>,                                 \</div>
+<div class="line">        return_prefix,                                                           \</div>
+<div class="line">        base_op                                                                  \</div>
+<div class="line">    )</div>
+<div class="ttc" id="aiterator_2iterator__facade_8hpp_html_ab7bd215dbccabd63a73a1b79bd87c029"><div class="ttname"><a href="iterator_2iterator__facade_8hpp.html#ab7bd215dbccabd63a73a1b79bd87c029">BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS</a></div><div class="ttdeci">#define BOOST_ITERATOR_FACADE_INTEROP_RANDOM_ACCESS(op, result_type, return_prefix, base_op)</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00843">iterator/iterator_facade.hpp:843</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1iterators_1_1detail_html_afb4385adab4b5139d01ead8b52916e59"><div class="ttname"><a href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a></div><div class="ttdeci">bool always_bool_t</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00408">iterator/iterator_facade.hpp:408</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00853">853</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abacdfeab6eb3175911eb2ebeaf1de9d9" name="abacdfeab6eb3175911eb2ebeaf1de9d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abacdfeab6eb3175911eb2ebeaf1de9d9">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_RELATION <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op</td><td>)</td>
+          <td>&#160;&#160;&#160;    <a class="el" href="iterator_2iterator__facade_8hpp.html#a2288b3964726067e93b2d8aac294adb6">BOOST_ITERATOR_FACADE_INTEROP_HEAD</a>(friend, op, <a class="el" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>);</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00829">829</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a78a8e1f00e117f1b627c722dc6cca802" name="a78a8e1f00e117f1b627c722dc6cca802"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78a8e1f00e117f1b627c722dc6cca802">&#9670;&#160;</a></span>BOOST_ITERATOR_FACADE_RELATION <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ITERATOR_FACADE_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">op, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">return_prefix, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">base_op&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="iterator_2iterator__facade_8hpp.html#adc1d7696faea5bd290106d63382508ae">BOOST_ITERATOR_FACADE_INTEROP</a>(                                 \</div>
+<div class="line">        op,                                                        \</div>
+<div class="line">        <a class="code hl_typedef" href="namespaceboost_1_1iterators_1_1detail.html#afb4385adab4b5139d01ead8b52916e59">boost::iterators::detail::always_bool_t</a>,                   \</div>
+<div class="line">        return_prefix,                                             \</div>
+<div class="line">        base_op                                                    \</div>
+<div class="line">    )</div>
+<div class="ttc" id="aiterator_2iterator__facade_8hpp_html_adc1d7696faea5bd290106d63382508ae"><div class="ttname"><a href="iterator_2iterator__facade_8hpp.html#adc1d7696faea5bd290106d63382508ae">BOOST_ITERATOR_FACADE_INTEROP</a></div><div class="ttdeci">#define BOOST_ITERATOR_FACADE_INTEROP(op, result_type, return_prefix, base_op)</div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00819">iterator/iterator_facade.hpp:819</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="iterator_2iterator__facade_8hpp_source.html">iterator/iterator_facade.hpp</a> の <a class="el" href="iterator_2iterator__facade_8hpp_source.html#l00829">829</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_497445f121fbdceb3f004577ceef024e.html">iterator</a></li><li class="navelem"><a class="el" href="iterator_2iterator__facade_8hpp.html">iterator_facade.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

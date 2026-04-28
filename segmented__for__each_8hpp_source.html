@@ -1,0 +1,195 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: segmented_for_each.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('segmented__for__each_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">segmented_for_each.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="segmented__for__each_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2011 Eric Niebler</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying </span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#if !defined(BOOST_FUSION_SEGMENTED_FOR_EACH_HPP_INCLUDED)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define BOOST_FUSION_SEGMENTED_FOR_EACH_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2bool_8hpp.html">boost/mpl/bool.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2void_8hpp.html">boost/fusion/support/void.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="for__each__fwd_8hpp.html">boost/fusion/algorithm/iteration/for_each_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="support_2segmented__fold__until_8hpp.html">boost/fusion/support/segmented_fold_until.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#  pragma warning(push)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#  pragma warning(disable: 4512) </span><span class="comment">// assignment operator could not be generated.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Fun&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html">   24</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html">segmented_for_each_fun</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#ab4e4aa6e246eed0357385a19023f390f">   27</a></span>        <span class="keyword">explicit</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#ab4e4aa6e246eed0357385a19023f390f">segmented_for_each_fun</a>(Fun&amp; f)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>          : <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">fun</a>(f)</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        {}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">   31</a></span>        Fun&amp; <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">fun</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Sequence, <span class="keyword">typename</span> State, <span class="keyword">typename</span> Context&gt;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html">   34</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a70c44e437acb35b5dc174066f58009a6">   36</a></span>            <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1void__.html">void_</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a70c44e437acb35b5dc174066f58009a6">type</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a3b0826e21850b60735b80b204e2695f1">   37</a></span>            <span class="keyword">typedef</span> mpl::true_ <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a3b0826e21850b60735b80b204e2695f1">continue_type</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            <a class="code hl_define" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#ae2c0720298f15e154acf63d855c72736">   40</a></span>            <span class="keyword">static</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1void__.html">type</a> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#ae2c0720298f15e154acf63d855c72736">call</a>(Sequence&amp; seq, <a class="code hl_variable" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> <span class="keyword">const</span>&amp;, Context <span class="keyword">const</span>&amp;, <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html">segmented_for_each_fun</a> <span class="keyword">const</span>&amp; <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">fun</a>)</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>            {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                <a class="code hl_function" href="namespaceboost_1_1fusion.html#a48135e7e7df3e1fed6140d0899a31bb2">fusion::for_each</a>(seq, <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">fun</a>.fun);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                <span class="keywordflow">return</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1void__.html">void_</a>();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        };</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> Sequence, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_define" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="namespaceboost_1_1fusion_1_1detail.html#a707d205c9d9c97fc3694558ffee9d7f6">   51</a></span>    <a class="code hl_function" href="namespaceboost_1_1fusion_1_1detail.html#ac63e03c1a3fd1616f697980f58d99503">for_each</a>(Sequence&amp; seq, <a class="code hl_variable" href="namespaceboost_1_1fusion_1_1detail.html#a9572308aa07b72299c859ad864bbad7b">F</a>&amp; f, mpl::true_) <span class="comment">// segmented implementation</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <a class="code hl_function" href="namespaceboost_1_1fusion.html#ad5f2e22daa735570b2b14a6479cdb934">fusion::segmented_fold_until</a>(seq, <a class="code hl_struct" href="structboost_1_1fusion_1_1void__.html">void_</a>(), <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html">segmented_for_each_fun&lt;F&gt;</a>(f));</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}}}</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#  pragma warning(pop)</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="afor__each__fwd_8hpp_html"><div class="ttname"><a href="for__each__fwd_8hpp.html">for_each_fwd.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="afusion_2support_2void_8hpp_html"><div class="ttname"><a href="fusion_2support_2void_8hpp.html">void.hpp</a></div></div>
+<div class="ttc" id="ampl_2bool_8hpp_html"><div class="ttname"><a href="mpl_2bool_8hpp.html">bool.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_1_1detail_html_a9572308aa07b72299c859ad864bbad7b"><div class="ttname"><a href="namespaceboost_1_1fusion_1_1detail.html#a9572308aa07b72299c859ad864bbad7b">boost::fusion::detail::F</a></div><div class="ttdeci">struct BOOST_FUSION_FOLD_NAME&lt; SeqSize-1, typename result_of::BOOST_FUSION_FOLD_IMPL_NEXT_IT_FUNCTION&lt; It &gt; F</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00142">fusion/algorithm/iteration/detail/fold.hpp:144</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_1_1detail_html_ac10897133562698916f210696bd89cba"><div class="ttname"><a href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">boost::fusion::detail::State</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED State</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00151">fusion/algorithm/iteration/detail/fold.hpp:152</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_1_1detail_html_ac63e03c1a3fd1616f697980f58d99503"><div class="ttname"><a href="namespaceboost_1_1fusion_1_1detail.html#ac63e03c1a3fd1616f697980f58d99503">boost::fusion::detail::for_each</a></div><div class="ttdeci">BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED void for_each(Sequence &amp;seq, F &amp;f, mpl::false_)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2iteration_2detail_2for__each_8hpp_source.html#l00141">fusion/algorithm/iteration/detail/for_each.hpp:141</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a48135e7e7df3e1fed6140d0899a31bb2"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a48135e7e7df3e1fed6140d0899a31bb2">boost::fusion::for_each</a></div><div class="ttdeci">BOOST_CXX14_CONSTEXPR BOOST_FUSION_GPU_ENABLED enable_if&lt; traits::is_sequence&lt; Sequence &gt; &gt;::type for_each(Sequence &amp;seq, F f)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2iteration_2for__each_8hpp_source.html#l00033">fusion/algorithm/iteration/for_each.hpp:33</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_ad5f2e22daa735570b2b14a6479cdb934"><div class="ttname"><a href="namespaceboost_1_1fusion.html#ad5f2e22daa735570b2b14a6479cdb934">boost::fusion::segmented_fold_until</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED lazy_disable_if&lt; is_const&lt; Sequence &gt;, result_of::segmented_fold_until&lt; Sequence, State, Fun &gt; &gt;::type segmented_fold_until(Sequence &amp;seq, State const &amp;state, Fun const &amp;fun)</div><div class="ttdef"><b>Definition:</b> <a href="support_2segmented__fold__until_8hpp_source.html#l00049">support/segmented_fold_until.hpp:49</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html">boost::fusion::detail::segmented_for_each_fun::apply</a></div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00034">segmented_for_each.hpp:35</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply_html_a3b0826e21850b60735b80b204e2695f1"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a3b0826e21850b60735b80b204e2695f1">boost::fusion::detail::segmented_for_each_fun::apply::continue_type</a></div><div class="ttdeci">mpl::true_ continue_type</div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00037">segmented_for_each.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply_html_a70c44e437acb35b5dc174066f58009a6"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#a70c44e437acb35b5dc174066f58009a6">boost::fusion::detail::segmented_for_each_fun::apply::type</a></div><div class="ttdeci">void_ type</div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00036">segmented_for_each.hpp:36</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply_html_ae2c0720298f15e154acf63d855c72736"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_1_1apply.html#ae2c0720298f15e154acf63d855c72736">boost::fusion::detail::segmented_for_each_fun::apply::call</a></div><div class="ttdeci">BOOST_CXX14_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Sequence &amp;seq, State const &amp;, Context const &amp;, segmented_for_each_fun const &amp;fun)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00040">segmented_for_each.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html">boost::fusion::detail::segmented_for_each_fun</a></div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00024">segmented_for_each.hpp:25</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_html_ab4e4aa6e246eed0357385a19023f390f"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#ab4e4aa6e246eed0357385a19023f390f">boost::fusion::detail::segmented_for_each_fun::segmented_for_each_fun</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED segmented_for_each_fun(Fun &amp;f)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00027">segmented_for_each.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__for__each__fun_html_aff2b2dd22fe79edeab8c0286c8b1d77d"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__for__each__fun.html#aff2b2dd22fe79edeab8c0286c8b1d77d">boost::fusion::detail::segmented_for_each_fun::fun</a></div><div class="ttdeci">Fun &amp; fun</div><div class="ttdef"><b>Definition:</b> <a href="segmented__for__each_8hpp_source.html#l00031">segmented_for_each.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1void___html"><div class="ttname"><a href="structboost_1_1fusion_1_1void__.html">boost::fusion::void_</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2void_8hpp_source.html#l00012">fusion/support/void.hpp:12</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a50b61a7451654c299733dff36f31af1b"><div class="ttname"><a href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CXX14_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01049">suffix.hpp:1049</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_aa02e911ac6c4e5abc85276284b9801aa"><div class="ttname"><a href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01043">suffix.hpp:1043</a></div></div>
+<div class="ttc" id="asupport_2segmented__fold__until_8hpp_html"><div class="ttname"><a href="support_2segmented__fold__until_8hpp.html">segmented_fold_until.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_7dd17c6ed4a0bbe9f73acb7dfec1be90.html">algorithm</a></li><li class="navelem"><a class="el" href="dir_9efa65075e2dbc7104bb3389990cde05.html">iteration</a></li><li class="navelem"><a class="el" href="dir_b39dfd60cab7fe4ed4253914e252cd99.html">detail</a></li><li class="navelem"><a class="el" href="segmented__for__each_8hpp.html">segmented_for_each.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

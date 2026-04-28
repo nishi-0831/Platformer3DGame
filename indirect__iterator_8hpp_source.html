@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: indirect_iterator.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('indirect__iterator_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">indirect_iterator.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="indirect__iterator_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// (C) Copyright David Abrahams 2002.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// (C) Copyright Jeremy Siek    2002.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// (C) Copyright Thomas Witt    2002.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Distributed under the Boost Software License, Version 1.0. (See</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef BOOST_INDIRECT_ITERATOR_23022003THW_HPP</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define BOOST_INDIRECT_ITERATOR_23022003THW_HPP</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;type_traits&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="iterator__adaptor_8hpp.html">boost/iterator/iterator_adaptor.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="enable__if__convertible_8hpp.html">boost/iterator/enable_if_convertible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="eval__if__default_8hpp.html">boost/iterator/detail/eval_if_default.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="pointee_8hpp.html">boost/pointee.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="indirect__reference_8hpp.html">boost/indirect_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="use__default_8hpp.html">boost/core/use_default.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span>iterators {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iter, <span class="keyword">typename</span> Value, <span class="keyword">typename</span> Category, <span class="keyword">typename</span> Reference, <span class="keyword">typename</span> Difference &gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">class </span>indirect_iterator;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iter, <span class="keyword">typename</span> Value, <span class="keyword">typename</span> Category, <span class="keyword">typename</span> Reference, <span class="keyword">typename</span> Difference &gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html">   31</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html">indirect_base</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html#a87f658651369072ffd31422abab17c5c">   33</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html#a87f658651369072ffd31422abab17c5c">dereferenceable</a> = <span class="keyword">typename</span> std::iterator_traits&lt; Iter &gt;::value_type;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html#a001db98915d19eddfa3db5a05dfc977e">   35</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classboost_1_1iterators_1_1iterator__adaptor.html">type</a> = <a class="code hl_class" href="classboost_1_1iterators_1_1iterator__adaptor.html">iterator_adaptor</a>&lt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iter, Value, Category, Reference, Difference &gt;</a>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        Iter,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <a class="code hl_typedef" href="namespaceboost_1_1iterators_1_1detail.html#adbe2d51936e26b026e4134193bc6f8b1">detail::eval_if_default_t</a>&lt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            Value,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_struct" href="structboost_1_1pointee.html">pointee&lt; dereferenceable &gt;</a></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        &gt;,</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        Category,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <a class="code hl_typedef" href="namespaceboost_1_1iterators_1_1detail.html#adbe2d51936e26b026e4134193bc6f8b1">detail::eval_if_default_t</a>&lt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            Reference,</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>            <a class="code hl_struct" href="structboost_1_1iterators_1_1detail_1_1eval__if__default.html">detail::eval_if_default</a>&lt;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                Value,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                <a class="code hl_struct" href="structboost_1_1indirect__reference.html">indirect_reference&lt; dereferenceable &gt;</a>,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                std::add_lvalue_reference&lt; Value &gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            &gt;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        &gt;,</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        Difference</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    &gt;;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keyword">typename</span> Iterator,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keyword">typename</span> Value = <a class="code hl_struct" href="structboost_1_1use__default.html">use_default</a>,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">typename</span> Category = <a class="code hl_struct" href="structboost_1_1use__default.html">use_default</a>,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">typename</span> Reference = <a class="code hl_struct" href="structboost_1_1use__default.html">use_default</a>,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">typename</span> Difference = <a class="code hl_struct" href="structboost_1_1use__default.html">use_default</a></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>&gt;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html">   65</a></span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator</a> :</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html">detail::indirect_base</a>&lt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        Iterator, Value, Category, Reference, Difference</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    &gt;::type</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#a258db95e9b511c3ab8008b12a1ec021f">   70</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classboost_1_1iterators_1_1indirect__iterator.html#a258db95e9b511c3ab8008b12a1ec021f">super_t</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1iterators_1_1detail_1_1indirect__base.html">detail::indirect_base</a>&lt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        Iterator, Value, Category, Reference, Difference</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    &gt;::type;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#a0975271623c74c5b89bdf8d7fbce69c4">   74</a></span>    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code hl_class" href="classboost_1_1iterators_1_1iterator__core__access.html">iterator_core_access</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#a7358cc47a8decac0e56b8be862f7ef12">   77</a></span>    <a class="code hl_function" href="classboost_1_1iterators_1_1indirect__iterator.html#a7358cc47a8decac0e56b8be862f7ef12">indirect_iterator</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#a9705d4a59d6c78c18767beb7b7ecbb59">   79</a></span>    <a class="code hl_function" href="classboost_1_1iterators_1_1indirect__iterator.html#a9705d4a59d6c78c18767beb7b7ecbb59">indirect_iterator</a>(Iterator iter) :</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <a class="code hl_typedef" href="classboost_1_1iterators_1_1indirect__iterator.html#a258db95e9b511c3ab8008b12a1ec021f">super_t</a>(iter)</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {}</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keyword">template</span>&lt;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keyword">typename</span> Iterator2,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keyword">typename</span> Value2,</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        <span class="keyword">typename</span> Category2,</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keyword">typename</span> Reference2,</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keyword">typename</span> Difference2,</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keyword">typename</span> = <a class="code hl_typedef" href="namespaceboost_1_1iterators.html#a80593628052baee007e1e51c5d681d5b">enable_if_convertible_t&lt; Iterator2, Iterator &gt;</a></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    &gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#a8f7b2b99697409e59742336f08a3f93d">   91</a></span>    <a class="code hl_function" href="classboost_1_1iterators_1_1indirect__iterator.html#a8f7b2b99697409e59742336f08a3f93d">indirect_iterator</a>(<a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iterator2, Value2, Category2, Reference2, Difference2 &gt;</a> <span class="keyword">const</span>&amp; y) :</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_typedef" href="classboost_1_1iterators_1_1indirect__iterator.html#a258db95e9b511c3ab8008b12a1ec021f">super_t</a>(y.<a class="code hl_function" href="classboost_1_1iterators_1_1iterator__adaptor.html#aa9831486533901dd839493df2b87b0a7">base</a>())</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    {}</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classboost_1_1iterators_1_1indirect__iterator.html#aae080111fe7c96196bc682aaa7b14a36">   96</a></span>    <span class="keyword">typename</span> super_t::reference <a class="code hl_function" href="classboost_1_1iterators_1_1indirect__iterator.html#aae080111fe7c96196bc682aaa7b14a36">dereference</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> **this-&gt;<a class="code hl_function" href="classboost_1_1iterators_1_1iterator__adaptor.html#aa9831486533901dd839493df2b87b0a7">base</a>();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Iter &gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespaceboost_1_1iterators.html#a6075ff88b61d8896d383b2c67d9353c1">  103</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iter &gt;</a> <a class="code hl_function" href="namespaceboost_1_1iterators.html#a6075ff88b61d8896d383b2c67d9353c1">make_indirect_iterator</a>(Iter x)</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>{</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iter &gt;</a>(x);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> Value, <span class="keyword">typename</span> Iter &gt;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespaceboost_1_1iterators.html#ae64e1990bbae93eada439262f58f4649">  109</a></span><span class="keyword">inline</span> <a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iter, Value &gt;</a> <a class="code hl_function" href="namespaceboost_1_1iterators.html#a6075ff88b61d8896d383b2c67d9353c1">make_indirect_iterator</a>(Iter x)</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>{</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordflow">return</span> <a class="code hl_class" href="classboost_1_1iterators_1_1indirect__iterator.html">indirect_iterator&lt; Iter, Value &gt;</a>(x);</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <span class="comment">// namespace iterators</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">using </span>iterators::indirect_iterator;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">using </span><a class="code hl_function" href="namespaceboost_1_1iterators.html#a6075ff88b61d8896d383b2c67d9353c1">iterators::make_indirect_iterator</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_INDIRECT_ITERATOR_23022003THW_HPP</span></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html">boost::iterators::indirect_iterator</a></div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00065">indirect_iterator.hpp:69</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html_a258db95e9b511c3ab8008b12a1ec021f"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html#a258db95e9b511c3ab8008b12a1ec021f">boost::iterators::indirect_iterator::super_t</a></div><div class="ttdeci">typename detail::indirect_base&lt; Iterator, Value, Category, Reference, Difference &gt;::type super_t</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00070">indirect_iterator.hpp:72</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html_a7358cc47a8decac0e56b8be862f7ef12"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html#a7358cc47a8decac0e56b8be862f7ef12">boost::iterators::indirect_iterator::indirect_iterator</a></div><div class="ttdeci">indirect_iterator()=default</div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html_a8f7b2b99697409e59742336f08a3f93d"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html#a8f7b2b99697409e59742336f08a3f93d">boost::iterators::indirect_iterator::indirect_iterator</a></div><div class="ttdeci">indirect_iterator(indirect_iterator&lt; Iterator2, Value2, Category2, Reference2, Difference2 &gt; const &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00091">indirect_iterator.hpp:91</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html_a9705d4a59d6c78c18767beb7b7ecbb59"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html#a9705d4a59d6c78c18767beb7b7ecbb59">boost::iterators::indirect_iterator::indirect_iterator</a></div><div class="ttdeci">indirect_iterator(Iterator iter)</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00079">indirect_iterator.hpp:79</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1indirect__iterator_html_aae080111fe7c96196bc682aaa7b14a36"><div class="ttname"><a href="classboost_1_1iterators_1_1indirect__iterator.html#aae080111fe7c96196bc682aaa7b14a36">boost::iterators::indirect_iterator::dereference</a></div><div class="ttdeci">super_t::reference dereference() const</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00096">indirect_iterator.hpp:96</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1iterator__adaptor_html"><div class="ttname"><a href="classboost_1_1iterators_1_1iterator__adaptor.html">boost::iterators::iterator_adaptor</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator__adaptor_8hpp_source.html#l00116">iterator_adaptor.hpp:120</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1iterator__adaptor_html_aa9831486533901dd839493df2b87b0a7"><div class="ttname"><a href="classboost_1_1iterators_1_1iterator__adaptor.html#aa9831486533901dd839493df2b87b0a7">boost::iterators::iterator_adaptor::base</a></div><div class="ttdeci">base_type const &amp; base() const</div><div class="ttdef"><b>Definition:</b> <a href="iterator__adaptor_8hpp_source.html#l00138">iterator_adaptor.hpp:138</a></div></div>
+<div class="ttc" id="aclassboost_1_1iterators_1_1iterator__core__access_html"><div class="ttname"><a href="classboost_1_1iterators_1_1iterator__core__access.html">boost::iterators::iterator_core_access</a></div><div class="ttdef"><b>Definition:</b> <a href="iterator_2iterator__facade_8hpp_source.html#l00470">iterator/iterator_facade.hpp:471</a></div></div>
+<div class="ttc" id="aenable__if__convertible_8hpp_html"><div class="ttname"><a href="enable__if__convertible_8hpp.html">enable_if_convertible.hpp</a></div></div>
+<div class="ttc" id="aeval__if__default_8hpp_html"><div class="ttname"><a href="eval__if__default_8hpp.html">eval_if_default.hpp</a></div></div>
+<div class="ttc" id="aindirect__reference_8hpp_html"><div class="ttname"><a href="indirect__reference_8hpp.html">indirect_reference.hpp</a></div></div>
+<div class="ttc" id="aiterator__adaptor_8hpp_html"><div class="ttname"><a href="iterator__adaptor_8hpp.html">iterator_adaptor.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1iterators_1_1detail_html_adbe2d51936e26b026e4134193bc6f8b1"><div class="ttname"><a href="namespaceboost_1_1iterators_1_1detail.html#adbe2d51936e26b026e4134193bc6f8b1">boost::iterators::detail::eval_if_default_t</a></div><div class="ttdeci">typename eval_if_default&lt; T, DefaultNullaryFn, NondefaultNullaryFn &gt;::type eval_if_default_t</div><div class="ttdef"><b>Definition:</b> <a href="eval__if__default_8hpp_source.html#l00038">eval_if_default.hpp:38</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1iterators_html_a6075ff88b61d8896d383b2c67d9353c1"><div class="ttname"><a href="namespaceboost_1_1iterators.html#a6075ff88b61d8896d383b2c67d9353c1">boost::iterators::make_indirect_iterator</a></div><div class="ttdeci">indirect_iterator&lt; Iter &gt; make_indirect_iterator(Iter x)</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00103">indirect_iterator.hpp:103</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1iterators_html_a80593628052baee007e1e51c5d681d5b"><div class="ttname"><a href="namespaceboost_1_1iterators.html#a80593628052baee007e1e51c5d681d5b">boost::iterators::enable_if_convertible_t</a></div><div class="ttdeci">typename enable_if_convertible&lt; From, To &gt;::type enable_if_convertible_t</div><div class="ttdef"><b>Definition:</b> <a href="enable__if__convertible_8hpp_source.html#l00076">enable_if_convertible.hpp:76</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="apointee_8hpp_html"><div class="ttname"><a href="pointee_8hpp.html">pointee.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1indirect__reference_html"><div class="ttname"><a href="structboost_1_1indirect__reference.html">boost::indirect_reference</a></div><div class="ttdef"><b>Definition:</b> <a href="indirect__reference_8hpp_source.html#l00032">indirect_reference.hpp:38</a></div></div>
+<div class="ttc" id="astructboost_1_1iterators_1_1detail_1_1eval__if__default_html"><div class="ttname"><a href="structboost_1_1iterators_1_1detail_1_1eval__if__default.html">boost::iterators::detail::eval_if_default</a></div><div class="ttdef"><b>Definition:</b> <a href="eval__if__default_8hpp_source.html#l00026">eval_if_default.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1iterators_1_1detail_1_1indirect__base_html"><div class="ttname"><a href="structboost_1_1iterators_1_1detail_1_1indirect__base.html">boost::iterators::detail::indirect_base</a></div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00031">indirect_iterator.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1iterators_1_1detail_1_1indirect__base_html_a87f658651369072ffd31422abab17c5c"><div class="ttname"><a href="structboost_1_1iterators_1_1detail_1_1indirect__base.html#a87f658651369072ffd31422abab17c5c">boost::iterators::detail::indirect_base::dereferenceable</a></div><div class="ttdeci">typename std::iterator_traits&lt; Iter &gt;::value_type dereferenceable</div><div class="ttdef"><b>Definition:</b> <a href="indirect__iterator_8hpp_source.html#l00033">indirect_iterator.hpp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1pointee_html"><div class="ttname"><a href="structboost_1_1pointee.html">boost::pointee</a></div><div class="ttdef"><b>Definition:</b> <a href="pointee_8hpp_source.html#l00048">pointee.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1use__default_html"><div class="ttname"><a href="structboost_1_1use__default.html">boost::use_default</a></div><div class="ttdef"><b>Definition:</b> <a href="use__default_8hpp_source.html#l00013">use_default.hpp:13</a></div></div>
+<div class="ttc" id="ause__default_8hpp_html"><div class="ttname"><a href="use__default_8hpp.html">use_default.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_497445f121fbdceb3f004577ceef024e.html">iterator</a></li><li class="navelem"><a class="el" href="indirect__iterator_8hpp.html">indirect_iterator.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

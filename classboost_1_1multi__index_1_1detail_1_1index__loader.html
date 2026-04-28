@@ -1,0 +1,734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1index__loader.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1index__loader-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader__inherit__graph.svg" width="266" height="823"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader__coll__graph.svg" width="584" height="1606"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2453a6e823d460f54307f17aec4966f2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a2453a6e823d460f54307f17aec4966f2">index_loader</a> (const Allocator &amp;al, std::size_t <a class="el" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>)</td></tr>
+<tr class="separator:a2453a6e823d460f54307f17aec4966f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93128e88eae477d180d67199ec3131b8"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:a93128e88eae477d180d67199ec3131b8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a93128e88eae477d180d67199ec3131b8">add</a> (Node *node, Archive &amp;ar, const unsigned int)</td></tr>
+<tr class="separator:a93128e88eae477d180d67199ec3131b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a493527d853bd8800ece948d31be043e6"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:a493527d853bd8800ece948d31be043e6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a493527d853bd8800ece948d31be043e6">add_track</a> (Node *node, Archive &amp;ar, const unsigned int)</td></tr>
+<tr class="separator:a493527d853bd8800ece948d31be043e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b7c8be1be716b7c7a2b5f21ff067f79"><td class="memTemplParams" colspan="2">template&lt;typename Rearranger , class Archive &gt; </td></tr>
+<tr class="memitem:a4b7c8be1be716b7c7a2b5f21ff067f79"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a4b7c8be1be716b7c7a2b5f21ff067f79">load</a> (Rearranger r, Archive &amp;ar, const unsigned int) const</td></tr>
+<tr class="separator:a4b7c8be1be716b7c7a2b5f21ff067f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a8ecc7fddce3705c5b7a9fc9d99d19369"><td class="memItemLeft" align="right" valign="top">Node **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a> () const</td></tr>
+<tr class="separator:a8ecc7fddce3705c5b7a9fc9d99d19369"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51b4e0daa00d6f9d0b0e405f5a0314cb"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:a51b4e0daa00d6f9d0b0e405f5a0314cb"><td class="memTemplItemLeft" align="right" valign="top">FinalNode *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a51b4e0daa00d6f9d0b0e405f5a0314cb">unchecked_load_node</a> (Archive &amp;ar) const</td></tr>
+<tr class="separator:a51b4e0daa00d6f9d0b0e405f5a0314cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9050f84218efbbcd15ce44a52b9dbbe6"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:a9050f84218efbbcd15ce44a52b9dbbe6"><td class="memTemplItemLeft" align="right" valign="top">FinalNode *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a9050f84218efbbcd15ce44a52b9dbbe6">load_node</a> (Archive &amp;ar) const</td></tr>
+<tr class="separator:a9050f84218efbbcd15ce44a52b9dbbe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00cfa7dd54afe1371487f319cf9bea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad00cfa7dd54afe1371487f319cf9bea3">check_node</a> (Node *node) const</td></tr>
+<tr class="separator:ad00cfa7dd54afe1371487f319cf9bea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a2741ae51db5dcf62f4a5d124e2480c28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt; Node *, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a2741ae51db5dcf62f4a5d124e2480c28">spc</a></td></tr>
+<tr class="separator:a2741ae51db5dcf62f4a5d124e2480c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad72ae5c0a4f9a4218d86a53d5e46e810"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad72ae5c0a4f9a4218d86a53d5e46e810">size_</a></td></tr>
+<tr class="separator:ad72ae5c0a4f9a4218d86a53d5e46e810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3067836fc8c7d824de089d7ce55e877"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ae3067836fc8c7d824de089d7ce55e877">n</a></td></tr>
+<tr class="separator:ae3067836fc8c7d824de089d7ce55e877"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e2578fc4af57ef9bf6779273232377"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a19e2578fc4af57ef9bf6779273232377">sorted</a></td></tr>
+<tr class="separator:a19e2578fc4af57ef9bf6779273232377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Node, typename FinalNode, typename Allocator&gt;<br />
+class boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;</div>
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a2453a6e823d460f54307f17aec4966f2" name="a2453a6e823d460f54307f17aec4966f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2453a6e823d460f54307f17aec4966f2">&#9670;&#160;</a></span>index_loader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::index_loader </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>al</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>                                                  :</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a2741ae51db5dcf62f4a5d124e2480c28">spc</a>(al,<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad72ae5c0a4f9a4218d86a53d5e46e810">size_</a>(<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ae3067836fc8c7d824de089d7ce55e877">n</a>(0),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a19e2578fc4af57ef9bf6779273232377">sorted</a>(<span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">   45</span>  {</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_a19e2578fc4af57ef9bf6779273232377"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a19e2578fc4af57ef9bf6779273232377">boost::multi_index::detail::index_loader::sorted</a></div><div class="ttdeci">bool sorted</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00129">index_loader.hpp:129</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_a2741ae51db5dcf62f4a5d124e2480c28"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a2741ae51db5dcf62f4a5d124e2480c28">boost::multi_index::detail::index_loader::spc</a></div><div class="ttdeci">auto_space&lt; Node *, Allocator &gt; spc</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00126">index_loader.hpp:126</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_ad72ae5c0a4f9a4218d86a53d5e46e810"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad72ae5c0a4f9a4218d86a53d5e46e810">boost::multi_index::detail::index_loader::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00127">index_loader.hpp:127</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_ae3067836fc8c7d824de089d7ce55e877"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ae3067836fc8c7d824de089d7ce55e877">boost::multi_index::detail::index_loader::n</a></div><div class="ttdeci">std::size_t n</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00128">index_loader.hpp:128</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a6fba56e63fab408320679073cd64ce9d"><div class="ttname"><a href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">boost::size</a></div><div class="ttdeci">constexpr auto size(const C &amp;c) noexcept(noexcept(c.size())) -&gt; decltype(c.size())</div><div class="ttdef"><b>Definition:</b> <a href="core_2size_8hpp_source.html#l00017">core/size.hpp:17</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a93128e88eae477d180d67199ec3131b8" name="a93128e88eae477d180d67199ec3131b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93128e88eae477d180d67199ec3131b8">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname"><em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00049">49</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   50</span>  {</div>
+<div class="line"><span class="lineno">   51</span>    ar&gt;&gt;core::make_nvp(<span class="stringliteral">&quot;position&quot;</span>,*node);</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ae3067836fc8c7d824de089d7ce55e877">n</a>++]=node;</div>
+<div class="line"><span class="lineno">   53</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_a8ecc7fddce3705c5b7a9fc9d99d19369"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">boost::multi_index::detail::index_loader::entries</a></div><div class="ttdeci">Node ** entries() const</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00096">index_loader.hpp:96</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__loader_8hpp_source.html#l00096">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::entries()</a>, <a class="el" href="index__loader_8hpp_source.html#l00128">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::n</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a93128e88eae477d180d67199ec3131b8_cgraph.svg" width="643" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a493527d853bd8800ece948d31be043e6" name="a493527d853bd8800ece948d31be043e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a493527d853bd8800ece948d31be043e6">&#9670;&#160;</a></span>add_track()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::add_track </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname"><em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00056">56</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  {</div>
+<div class="line"><span class="lineno">   58</span>    ar&gt;&gt;core::make_nvp(<span class="stringliteral">&quot;position&quot;</span>,*node);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad00cfa7dd54afe1371487f319cf9bea3" name="ad00cfa7dd54afe1371487f319cf9bea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad00cfa7dd54afe1371487f319cf9bea3">&#9670;&#160;</a></span>check_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::check_node </td>
+          <td>(</td>
+          <td class="paramtype">Node *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>  {</div>
+<div class="line"><span class="lineno">  121</span>    <span class="keywordflow">if</span>(node!=0&amp;&amp;!std::binary_search(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad72ae5c0a4f9a4218d86a53d5e46e810">size_</a>,node)){</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_function" href="namespaceboost.html#ade458807df548ee88d1f0cd430b18560">throw_exception</a>(bad_archive_exception());</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span>  }</div>
+<div class="ttc" id="anamespaceboost_html_ade458807df548ee88d1f0cd430b18560"><div class="ttname"><a href="namespaceboost.html#ade458807df548ee88d1f0cd430b18560">boost::throw_exception</a></div><div class="ttdeci">BOOST_NORETURN void throw_exception(E const &amp;e)</div><div class="ttdef"><b>Definition:</b> <a href="throw__exception_8hpp_source.html#l00162">throw_exception.hpp:162</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__loader_8hpp_source.html#l00096">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::entries()</a>, <a class="el" href="index__loader_8hpp_source.html#l00127">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::size_</a>, <a class="el" href="throw__exception_8hpp_source.html#l00162">boost::throw_exception()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>, <a class="el" href="index__loader_8hpp_source.html#l00111">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load_node()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_ad00cfa7dd54afe1371487f319cf9bea3_cgraph.svg" width="627" height="123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_ad00cfa7dd54afe1371487f319cf9bea3_icgraph.svg" width="619" height="98"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8ecc7fddce3705c5b7a9fc9d99d19369" name="a8ecc7fddce3705c5b7a9fc9d99d19369"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ecc7fddce3705c5b7a9fc9d99d19369">&#9670;&#160;</a></span>entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Node ** <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::entries </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{<span class="keywordflow">return</span> raw_ptr&lt;Node**&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a2741ae51db5dcf62f4a5d124e2480c28">spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">data</a>());}</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html_aaa30af0a9d3a5f2155ab80e3e89adfd4"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">boost::multi_index::detail::auto_space::data</a></div><div class="ttdeci">pointer data() const</div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00064">auto_space.hpp:64</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="auto__space_8hpp_source.html#l00064">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::data()</a>, <a class="el" href="index__loader_8hpp_source.html#l00126">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00049">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::add()</a>, <a class="el" href="index__loader_8hpp_source.html#l00119">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::check_node()</a>, <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a8ecc7fddce3705c5b7a9fc9d99d19369_cgraph.svg" width="404" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a8ecc7fddce3705c5b7a9fc9d99d19369_icgraph.svg" width="858" height="162"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4b7c8be1be716b7c7a2b5f21ff067f79" name="a4b7c8be1be716b7c7a2b5f21ff067f79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b7c8be1be716b7c7a2b5f21ff067f79">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;typename Rearranger , class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::load </td>
+          <td>(</td>
+          <td class="paramtype">Rearranger&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname"><em>ar</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00068">68</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>  {</div>
+<div class="line"><span class="lineno">   70</span>    FinalNode* prev=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a51b4e0daa00d6f9d0b0e405f5a0314cb">unchecked_load_node</a>(ar);</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">if</span>(!prev)<span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a19e2578fc4af57ef9bf6779273232377">sorted</a>){</div>
+<div class="line"><span class="lineno">   74</span>      std::sort(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a8ecc7fddce3705c5b7a9fc9d99d19369">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad72ae5c0a4f9a4218d86a53d5e46e810">size_</a>);</div>
+<div class="line"><span class="lineno">   75</span>      <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a19e2578fc4af57ef9bf6779273232377">sorted</a>=<span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad00cfa7dd54afe1371487f319cf9bea3">check_node</a>(prev);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">for</span>(;;){</div>
+<div class="line"><span class="lineno">   81</span>      <span class="keywordflow">for</span>(;;){</div>
+<div class="line"><span class="lineno">   82</span>        FinalNode* node=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a9050f84218efbbcd15ce44a52b9dbbe6">load_node</a>(ar);</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span>(!node)<span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>        <span class="keywordflow">if</span>(node==prev)prev=0;</div>
+<div class="line"><span class="lineno">   86</span>        r(prev,node);</div>
+<div class="line"><span class="lineno">   87</span> </div>
+<div class="line"><span class="lineno">   88</span>        prev=node;</div>
+<div class="line"><span class="lineno">   89</span>      }</div>
+<div class="line"><span class="lineno">   90</span>      prev=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a9050f84218efbbcd15ce44a52b9dbbe6">load_node</a>(ar);</div>
+<div class="line"><span class="lineno">   91</span>      <span class="keywordflow">if</span>(!prev)<span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   92</span>    }</div>
+<div class="line"><span class="lineno">   93</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_a51b4e0daa00d6f9d0b0e405f5a0314cb"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a51b4e0daa00d6f9d0b0e405f5a0314cb">boost::multi_index::detail::index_loader::unchecked_load_node</a></div><div class="ttdeci">FinalNode * unchecked_load_node(Archive &amp;ar) const</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00103">index_loader.hpp:103</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_a9050f84218efbbcd15ce44a52b9dbbe6"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#a9050f84218efbbcd15ce44a52b9dbbe6">boost::multi_index::detail::index_loader::load_node</a></div><div class="ttdeci">FinalNode * load_node(Archive &amp;ar) const</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00111">index_loader.hpp:111</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__loader_html_ad00cfa7dd54afe1371487f319cf9bea3"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad00cfa7dd54afe1371487f319cf9bea3">boost::multi_index::detail::index_loader::check_node</a></div><div class="ttdeci">void check_node(Node *node) const</div><div class="ttdef"><b>Definition:</b> <a href="index__loader_8hpp_source.html#l00119">index_loader.hpp:119</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__loader_8hpp_source.html#l00119">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::check_node()</a>, <a class="el" href="index__loader_8hpp_source.html#l00096">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::entries()</a>, <a class="el" href="index__loader_8hpp_source.html#l00111">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load_node()</a>, <a class="el" href="index__loader_8hpp_source.html#l00127">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::size_</a>, <a class="el" href="index__loader_8hpp_source.html#l00129">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::sorted</a>, <a class="el" href="index__loader_8hpp_source.html#l00103">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::unchecked_load_node()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a4b7c8be1be716b7c7a2b5f21ff067f79_cgraph.svg" width="1091" height="220"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9050f84218efbbcd15ce44a52b9dbbe6" name="a9050f84218efbbcd15ce44a52b9dbbe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9050f84218efbbcd15ce44a52b9dbbe6">&#9670;&#160;</a></span>load_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FinalNode * <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::load_node </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname"><em>ar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00111">111</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  112</span>  {</div>
+<div class="line"><span class="lineno">  113</span>    Node* node=0;</div>
+<div class="line"><span class="lineno">  114</span>    ar&gt;&gt;core::make_nvp(<span class="stringliteral">&quot;pointer&quot;</span>,node);</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html#ad00cfa7dd54afe1371487f319cf9bea3">check_node</a>(node);</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>FinalNode*<span class="keyword">&gt;</span>(node);</div>
+<div class="line"><span class="lineno">  117</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="index__loader_8hpp_source.html#l00119">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::check_node()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a9050f84218efbbcd15ce44a52b9dbbe6_cgraph.svg" width="834" height="123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a9050f84218efbbcd15ce44a52b9dbbe6_icgraph.svg" width="412" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a51b4e0daa00d6f9d0b0e405f5a0314cb" name="a51b4e0daa00d6f9d0b0e405f5a0314cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b4e0daa00d6f9d0b0e405f5a0314cb">&#9670;&#160;</a></span>unchecked_load_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FinalNode * <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::unchecked_load_node </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname"><em>ar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00103">103</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  104</span>  {</div>
+<div class="line"><span class="lineno">  105</span>    Node* node=0;</div>
+<div class="line"><span class="lineno">  106</span>    ar&gt;&gt;core::make_nvp(<span class="stringliteral">&quot;pointer&quot;</span>,node);</div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>FinalNode*<span class="keyword">&gt;</span>(node);</div>
+<div class="line"><span class="lineno">  108</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1index__loader_a51b4e0daa00d6f9d0b0e405f5a0314cb_icgraph.svg" width="427" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ae3067836fc8c7d824de089d7ce55e877" name="ae3067836fc8c7d824de089d7ce55e877"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3067836fc8c7d824de089d7ce55e877">&#9670;&#160;</a></span>n</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::n</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00128">128</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00049">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::add()</a>.</p>
+
+</div>
+</div>
+<a id="ad72ae5c0a4f9a4218d86a53d5e46e810" name="ad72ae5c0a4f9a4218d86a53d5e46e810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad72ae5c0a4f9a4218d86a53d5e46e810">&#9670;&#160;</a></span>size_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::size_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00127">127</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00119">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::check_node()</a>, <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>.</p>
+
+</div>
+</div>
+<a id="a19e2578fc4af57ef9bf6779273232377" name="a19e2578fc4af57ef9bf6779273232377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19e2578fc4af57ef9bf6779273232377">&#9670;&#160;</a></span>sorted</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::sorted</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00129">129</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00068">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::load()</a>.</p>
+
+</div>
+</div>
+<a id="a2741ae51db5dcf62f4a5d124e2480c28" name="a2741ae51db5dcf62f4a5d124e2480c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2741ae51db5dcf62f4a5d124e2480c28">&#9670;&#160;</a></span>spc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node , typename FinalNode , typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt;Node*,Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">boost::multi_index::detail::index_loader</a>&lt; Node, FinalNode, Allocator &gt;::spc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a> の <a class="el" href="index__loader_8hpp_source.html#l00126">126</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="index__loader_8hpp_source.html#l00096">boost::multi_index::detail::index_loader&lt; Node, FinalNode, Allocator &gt;::entries()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="index__loader_8hpp_source.html">index_loader.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1index__loader.html">index_loader</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

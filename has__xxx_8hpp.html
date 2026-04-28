@@ -1,0 +1,817 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: has_xxx.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('has__xxx_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">has_xxx.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="mpl_2bool_8hpp_source.html">boost/mpl/bool.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="na__spec_8hpp_source.html">boost/mpl/aux_/na_spec.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__wrapper_8hpp_source.html">boost/mpl/aux_/type_wrapper.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="yes__no_8hpp_source.html">boost/mpl/aux_/yes_no.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2gcc_8hpp_source.html">boost/mpl/aux_/config/gcc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="aux___2config_2has__xxx_8hpp_source.html">boost/mpl/aux_/config/has_xxx.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="msvc__typename_8hpp_source.html">boost/mpl/aux_/config/msvc_typename.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2msvc_8hpp_source.html">boost/mpl/aux_/config/msvc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="static__constant_8hpp_source.html">boost/mpl/aux_/config/static_constant.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2workaround_8hpp_source.html">boost/mpl/aux_/config/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="array_2elem_8hpp_source.html">boost/preprocessor/array/elem.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2control_2if_8hpp_source.html">boost/preprocessor/control/if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="repetition_2enum__params_8hpp_source.html">boost/preprocessor/repetition/enum_params.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="enum__trailing__params_8hpp_source.html">boost/preprocessor/repetition/enum_trailing_params.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+has_xxx.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="has__xxx_8hpp__incl.svg" width="4078" height="740"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="has__xxx_8hpp__dep__incl.svg" width="3288" height="491"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="has__xxx_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a3dc8f5fe5e97d4368d46ca4377610b1a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a3dc8f5fe5e97d4368d46ca4377610b1a">BOOST_MPL_HAS_XXX_TRAIT_NAMED_DEF</a>(trait,  name,  default_)</td></tr>
+<tr class="separator:a3dc8f5fe5e97d4368d46ca4377610b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f80d4d7a55faf498e2117e310fd17c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a1f80d4d7a55faf498e2117e310fd17c8">BOOST_MPL_HAS_XXX_TRAIT_DEF</a>(name)&#160;&#160;&#160;    <a class="el" href="has__xxx_8hpp.html#a3dc8f5fe5e97d4368d46ca4377610b1a">BOOST_MPL_HAS_XXX_TRAIT_NAMED_DEF</a>(<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(has_,name), name, false) \</td></tr>
+<tr class="separator:a1f80d4d7a55faf498e2117e310fd17c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fda85d79e2784c29d0cff6e4e181dc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a4fda85d79e2784c29d0cff6e4e181dc8">BOOST_MPL_HAS_XXX_NO_WRAPPED_TYPES</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a4fda85d79e2784c29d0cff6e4e181dc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a892cf12bda967c93f29ef9f4af3d671d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a892cf12bda967c93f29ef9f4af3d671d">BOOST_MPL_HAS_XXX_NO_EXPLICIT_TEST_FUNCTION</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a892cf12bda967c93f29ef9f4af3d671d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79fd546e9a5c44c0624ab9eb0d5763fe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a79fd546e9a5c44c0624ab9eb0d5763fe">BOOST_MPL_HAS_XXX_NEEDS_TEMPLATE_SFINAE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a79fd546e9a5c44c0624ab9eb0d5763fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d060a68885df83d41e93ed4479e7c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#ab4d060a68885df83d41e93ed4479e7c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</a>(args)&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _introspect) \</td></tr>
+<tr class="separator:ab4d060a68885df83d41e93ed4479e7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e7abede2e5bf4da647c478731d750c6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a6e7abede2e5bf4da647c478731d750c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</a>(args,  n)&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _substitute), n) \</td></tr>
+<tr class="separator:a6e7abede2e5bf4da647c478731d750c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1de43257fcc0c2ac40552ac63a441868"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a1de43257fcc0c2ac40552ac63a441868">BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME</a>(args)&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _test) \</td></tr>
+<tr class="separator:a1de43257fcc0c2ac40552ac63a441868"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4c52e8e7e3596ccfd6a97483da701b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#ab4c52e8e7e3596ccfd6a97483da701b1">BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE</a>(z,  n,  args)</td></tr>
+<tr class="separator:ab4c52e8e7e3596ccfd6a97483da701b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f3f23a78e7f292f28a4c8bde02cd39"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#ad3f3f23a78e7f292f28a4c8bde02cd39">BOOST_MPL_HAS_MEMBER_SUBSTITUTE</a>(args,  substitute_macro)</td></tr>
+<tr class="separator:ad3f3f23a78e7f292f28a4c8bde02cd39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0798c3c154e3e0bb07ab9314fd3b0248"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a0798c3c154e3e0bb07ab9314fd3b0248">BOOST_MPL_HAS_MEMBER_REJECT</a>(args,  member_macro)</td></tr>
+<tr class="separator:a0798c3c154e3e0bb07ab9314fd3b0248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bfa8a78240a2279ac21be05a43f66db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a6bfa8a78240a2279ac21be05a43f66db">BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT</a>(z,  n,  args)</td></tr>
+<tr class="separator:a6bfa8a78240a2279ac21be05a43f66db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1376de115a9dd3b836a52b3a742ae769"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a1376de115a9dd3b836a52b3a742ae769">BOOST_MPL_HAS_MEMBER_ACCEPT</a>(args,  member_macro)</td></tr>
+<tr class="separator:a1376de115a9dd3b836a52b3a742ae769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61e079712a9ae7514f5903596c99f4dc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a61e079712a9ae7514f5903596c99f4dc">BOOST_MPL_HAS_MEMBER_TEST</a>(args)</td></tr>
+<tr class="separator:a61e079712a9ae7514f5903596c99f4dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac866c8fc143b3c66ef7669124e18a7e0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#ac866c8fc143b3c66ef7669124e18a7e0">BOOST_MPL_HAS_MEMBER_INTROSPECT</a>(args,  substitute_macro,  member_macro)</td></tr>
+<tr class="separator:ac866c8fc143b3c66ef7669124e18a7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac06810f4aa0f4924893a3f0cbb8733e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#ac06810f4aa0f4924893a3f0cbb8733e3">BOOST_MPL_HAS_MEMBER_IMPLEMENTATION</a>(args,  introspect_macro,  substitute_macro,  member_macro)</td></tr>
+<tr class="separator:ac06810f4aa0f4924893a3f0cbb8733e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c3822ace9d65e68c19fd883524d6e91"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a1c3822ace9d65e68c19fd883524d6e91">BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE</a>(args,  substitute_macro,  member_macro)</td></tr>
+<tr class="separator:a1c3822ace9d65e68c19fd883524d6e91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef8c470d99ad183a623bbaf8c6486e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#acef8c470d99ad183a623bbaf8c6486e8">BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF</a>(trait,  name,  default_)</td></tr>
+<tr class="separator:acef8c470d99ad183a623bbaf8c6486e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a390312f10f444a2b6ded407064e57326"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="has__xxx_8hpp.html#a390312f10f444a2b6ded407064e57326">BOOST_MPL_HAS_XXX_TEMPLATE_DEF</a>(name)</td></tr>
+<tr class="separator:a390312f10f444a2b6ded407064e57326"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a1376de115a9dd3b836a52b3a742ae769" name="a1376de115a9dd3b836a52b3a742ae769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1376de115a9dd3b836a52b3a742ae769">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_ACCEPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_ACCEPT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="preprocessor_2repetition_2repeat_8hpp.html#ac938453293bcce58875187d0ef1561df">BOOST_PP_REPEAT</a>( \</div>
+<div class="line">            <a class="code hl_define" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(2, args) \</div>
+<div class="line">          , <a class="code hl_define" href="has__xxx_8hpp.html#a6bfa8a78240a2279ac21be05a43f66db">BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT</a> \</div>
+<div class="line">          , args \</div>
+<div class="line">        ) \</div>
+<div class="ttc" id="aarray_2elem_8hpp_html_a35ba0fc8a67b20000a0a45e910272f47"><div class="ttname"><a href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a></div><div class="ttdeci">#define BOOST_PP_ARRAY_ELEM(i, array)</div><div class="ttdef"><b>Definition:</b> <a href="array_2elem_8hpp_source.html#l00025">array/elem.hpp:25</a></div></div>
+<div class="ttc" id="ahas__xxx_8hpp_html_a6bfa8a78240a2279ac21be05a43f66db"><div class="ttname"><a href="has__xxx_8hpp.html#a6bfa8a78240a2279ac21be05a43f66db">BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT(z, n, args)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00365">has_xxx.hpp:365</a></div></div>
+<div class="ttc" id="apreprocessor_2repetition_2repeat_8hpp_html_ac938453293bcce58875187d0ef1561df"><div class="ttname"><a href="preprocessor_2repetition_2repeat_8hpp.html#ac938453293bcce58875187d0ef1561df">BOOST_PP_REPEAT</a></div><div class="ttdeci">#define BOOST_PP_REPEAT</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2repetition_2repeat_8hpp_source.html#l00030">preprocessor/repetition/repeat.hpp:30</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00375">375</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac06810f4aa0f4924893a3f0cbb8733e3" name="ac06810f4aa0f4924893a3f0cbb8733e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac06810f4aa0f4924893a3f0cbb8733e3">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_IMPLEMENTATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_IMPLEMENTATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">introspect_macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">substitute_macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <span class="keyword">template</span>&lt; \</div>
+<div class="line">          <span class="keyword">typename</span> T \</div>
+<div class="line">        , <span class="keyword">typename</span> fallback_ \</div>
+<div class="line">              = boost::mpl::bool_&lt; <a class="code hl_define" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(3, args) &gt; \</div>
+<div class="line">      &gt; \</div>
+<div class="line">      <span class="keyword">class </span><a class="code hl_define" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) { \</div>
+<div class="line">          introspect_macro(args, substitute_macro, member_macro) \</div>
+<div class="line">      <span class="keyword">public</span>: \</div>
+<div class="line">          <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">bool</span> value \</div>
+<div class="line">              = <a class="code hl_define" href="has__xxx_8hpp.html#ab4d060a68885df83d41e93ed4479e7c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</a>(args)&lt; T &gt;::value; \</div>
+<div class="line">          <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_define" href="has__xxx_8hpp.html#ab4d060a68885df83d41e93ed4479e7c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</a>(args)&lt; \</div>
+<div class="line">              T \</div>
+<div class="line">          &gt;::type type; \</div>
+<div class="line">      }; \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_ab4d060a68885df83d41e93ed4479e7c6"><div class="ttname"><a href="has__xxx_8hpp.html#ab4d060a68885df83d41e93ed4479e7c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME(args)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00319">has_xxx.hpp:319</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00433">433</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac866c8fc143b3c66ef7669124e18a7e0" name="ac866c8fc143b3c66ef7669124e18a7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac866c8fc143b3c66ef7669124e18a7e0">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_INTROSPECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_INTROSPECT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">substitute_macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <span class="keyword">template</span>&lt; <span class="keyword">typename</span> U &gt; \</div>
+<div class="line">      <span class="keyword">struct </span>BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME(args) { \</div>
+<div class="line">          BOOST_MPL_HAS_MEMBER_SUBSTITUTE(args, substitute_macro) \</div>
+<div class="line">          BOOST_MPL_HAS_MEMBER_REJECT(args, member_macro) \</div>
+<div class="line">          BOOST_MPL_HAS_MEMBER_ACCEPT(args, member_macro) \</div>
+<div class="line">          BOOST_STATIC_CONSTANT( \</div>
+<div class="line">              <span class="keywordtype">bool</span>, value = <a class="code hl_define" href="has__xxx_8hpp.html#a61e079712a9ae7514f5903596c99f4dc">BOOST_MPL_HAS_MEMBER_TEST</a>(args) \</div>
+<div class="line">          ); \</div>
+<div class="line">          <span class="keyword">typedef</span> boost::mpl::bool_&lt; value &gt; type; \</div>
+<div class="line">      }; \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_a61e079712a9ae7514f5903596c99f4dc"><div class="ttname"><a href="has__xxx_8hpp.html#a61e079712a9ae7514f5903596c99f4dc">BOOST_MPL_HAS_MEMBER_TEST</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_TEST(args)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00394">has_xxx.hpp:394</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00418">418</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab4d060a68885df83d41e93ed4479e7c6" name="ab4d060a68885df83d41e93ed4479e7c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4d060a68885df83d41e93ed4479e7c6">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_NAME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args</td><td>)</td>
+          <td>&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _introspect) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00319">319</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6e7abede2e5bf4da647c478731d750c6" name="a6e7abede2e5bf4da647c478731d750c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e7abede2e5bf4da647c478731d750c6">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _substitute), n) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00323">323</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1de43257fcc0c2ac40552ac63a441868" name="a1de43257fcc0c2ac40552ac63a441868"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1de43257fcc0c2ac40552ac63a441868">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args</td><td>)</td>
+          <td>&#160;&#160;&#160;      <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(0, args) , _test) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00327">327</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6bfa8a78240a2279ac21be05a43f66db" name="a6bfa8a78240a2279ac21be05a43f66db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bfa8a78240a2279ac21be05a43f66db">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_MULTI_ACCEPT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> V &gt; \</div>
+<div class="line">        <span class="keyword">static</span> boost::mpl::aux::yes_tag \</div>
+<div class="line">        BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME(args)( \</div>
+<div class="line">            <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper&lt; V &gt;</a> <span class="keyword">const</span> <span class="keyword">volatile</span>* \</div>
+<div class="line">          , <a class="code hl_define" href="has__xxx_8hpp.html#a6e7abede2e5bf4da647c478731d750c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</a>(args, n) &lt; \</div>
+<div class="line">                V::template <a class="code hl_define" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(1, args) \</div>
+<div class="line">            &gt;* = 0 \</div>
+<div class="line">        ); \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_a6e7abede2e5bf4da647c478731d750c6"><div class="ttname"><a href="has__xxx_8hpp.html#a6e7abede2e5bf4da647c478731d750c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME(args, n)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00323">has_xxx.hpp:323</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1type__wrapper_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="type__wrapper_8hpp_source.html#l00022">type_wrapper.hpp:23</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00365">365</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab4c52e8e7e3596ccfd6a97483da701b1" name="ab4c52e8e7e3596ccfd6a97483da701b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4c52e8e7e3596ccfd6a97483da701b1">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <span class="keyword">template</span>&lt; \</div>
+<div class="line">          <span class="keyword">template</span>&lt; BOOST_PP_ENUM_PARAMS_Z(z, BOOST_PP_INC(n), <span class="keyword">typename</span> V) &gt; <span class="keyword">class </span><a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> \</div>
+<div class="line">       &gt; \</div>
+<div class="line">      <span class="keyword">struct </span><a class="code hl_define" href="has__xxx_8hpp.html#a6e7abede2e5bf4da647c478731d750c6">BOOST_MPL_HAS_MEMBER_INTROSPECTION_SUBSTITUTE_NAME</a>(args, n) { \</div>
+<div class="line">      }; \</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">KeyCode::V</a></div><div class="ttdeci">@ V</div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00335">335</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0798c3c154e3e0bb07ab9314fd3b0248" name="a0798c3c154e3e0bb07ab9314fd3b0248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0798c3c154e3e0bb07ab9314fd3b0248">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_REJECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_REJECT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> V &gt; \</div>
+<div class="line">        <span class="keyword">static</span> boost::mpl::aux::no_tag \</div>
+<div class="line">        BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME(args)(...); \</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00352">352</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad3f3f23a78e7f292f28a4c8bde02cd39" name="ad3f3f23a78e7f292f28a4c8bde02cd39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f3f23a78e7f292f28a4c8bde02cd39">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_SUBSTITUTE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_SUBSTITUTE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">substitute_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <a class="code hl_define" href="preprocessor_2repetition_2repeat_8hpp.html#ac938453293bcce58875187d0ef1561df">BOOST_PP_REPEAT</a>( \</div>
+<div class="line">          <a class="code hl_define" href="array_2elem_8hpp.html#a35ba0fc8a67b20000a0a45e910272f47">BOOST_PP_ARRAY_ELEM</a>(2, args) \</div>
+<div class="line">        , <a class="code hl_define" href="has__xxx_8hpp.html#ab4c52e8e7e3596ccfd6a97483da701b1">BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE</a> \</div>
+<div class="line">        , args \</div>
+<div class="line">      ) \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_ab4c52e8e7e3596ccfd6a97483da701b1"><div class="ttname"><a href="has__xxx_8hpp.html#ab4c52e8e7e3596ccfd6a97483da701b1">BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_MULTI_SUBSTITUTE(z, n, args)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00335">has_xxx.hpp:335</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00343">343</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a61e079712a9ae7514f5903596c99f4dc" name="a61e079712a9ae7514f5903596c99f4dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61e079712a9ae7514f5903596c99f4dc">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_TEST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">          <span class="keyword">sizeof</span>(<a class="code hl_define" href="has__xxx_8hpp.html#a1de43257fcc0c2ac40552ac63a441868">BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME</a>(args)&lt; <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> &gt;(0)) \</div>
+<div class="line">              == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">boost::mpl::aux::yes_tag</a>) \</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="ahas__xxx_8hpp_html_a1de43257fcc0c2ac40552ac63a441868"><div class="ttname"><a href="has__xxx_8hpp.html#a1de43257fcc0c2ac40552ac63a441868">BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_INTROSPECTION_TEST_NAME(args)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00327">has_xxx.hpp:327</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_1_1aux_html_aa20a762e798c56326a79bc72227b34bc"><div class="ttname"><a href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">boost::mpl::aux::yes_tag</a></div><div class="ttdeci">char(&amp; yes_tag)[2]</div><div class="ttdef"><b>Definition:</b> <a href="yes__no_8hpp_source.html#l00027">yes_no.hpp:27</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00394">394</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1c3822ace9d65e68c19fd883524d6e91" name="a1c3822ace9d65e68c19fd883524d6e91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c3822ace9d65e68c19fd883524d6e91">&#9670;&#160;</a></span>BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">args, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">substitute_macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member_macro&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <a class="code hl_define" href="has__xxx_8hpp.html#ac06810f4aa0f4924893a3f0cbb8733e3">BOOST_MPL_HAS_MEMBER_IMPLEMENTATION</a>( \</div>
+<div class="line">          args \</div>
+<div class="line">        , <a class="code hl_define" href="has__xxx_8hpp.html#ac866c8fc143b3c66ef7669124e18a7e0">BOOST_MPL_HAS_MEMBER_INTROSPECT</a> \</div>
+<div class="line">        , substitute_macro \</div>
+<div class="line">        , member_macro \</div>
+<div class="line">      ) \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_ac06810f4aa0f4924893a3f0cbb8733e3"><div class="ttname"><a href="has__xxx_8hpp.html#ac06810f4aa0f4924893a3f0cbb8733e3">BOOST_MPL_HAS_MEMBER_IMPLEMENTATION</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_IMPLEMENTATION(args, introspect_macro, substitute_macro, member_macro)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00433">has_xxx.hpp:433</a></div></div>
+<div class="ttc" id="ahas__xxx_8hpp_html_ac866c8fc143b3c66ef7669124e18a7e0"><div class="ttname"><a href="has__xxx_8hpp.html#ac866c8fc143b3c66ef7669124e18a7e0">BOOST_MPL_HAS_MEMBER_INTROSPECT</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_INTROSPECT(args, substitute_macro, member_macro)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00418">has_xxx.hpp:418</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00455">455</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79fd546e9a5c44c0624ab9eb0d5763fe" name="a79fd546e9a5c44c0624ab9eb0d5763fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79fd546e9a5c44c0624ab9eb0d5763fe">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_NEEDS_TEMPLATE_SFINAE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_NEEDS_TEMPLATE_SFINAE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00311">311</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a892cf12bda967c93f29ef9f4af3d671d" name="a892cf12bda967c93f29ef9f4af3d671d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a892cf12bda967c93f29ef9f4af3d671d">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_NO_EXPLICIT_TEST_FUNCTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_NO_EXPLICIT_TEST_FUNCTION&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00303">303</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4fda85d79e2784c29d0cff6e4e181dc8" name="a4fda85d79e2784c29d0cff6e4e181dc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fda85d79e2784c29d0cff6e4e181dc8">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_NO_WRAPPED_TYPES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_NO_WRAPPED_TYPES&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a390312f10f444a2b6ded407064e57326" name="a390312f10f444a2b6ded407064e57326"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a390312f10f444a2b6ded407064e57326">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_TEMPLATE_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_TEMPLATE_DEF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <a class="code hl_define" href="has__xxx_8hpp.html#acef8c470d99ad183a623bbaf8c6486e8">BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF</a>( \</div>
+<div class="line">          <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(has_, name), name, <span class="keyword">false</span> \</div>
+<div class="line">      ) \</div>
+<div class="ttc" id="acat_8hpp_html_ac796d6dcc22f521a9b7ee409c312f7c4"><div class="ttname"><a href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a></div><div class="ttdeci">#define BOOST_PP_CAT(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="cat_8hpp_source.html#l00024">cat.hpp:24</a></div></div>
+<div class="ttc" id="ahas__xxx_8hpp_html_acef8c470d99ad183a623bbaf8c6486e8"><div class="ttname"><a href="has__xxx_8hpp.html#acef8c470d99ad183a623bbaf8c6486e8">BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF</a></div><div class="ttdeci">#define BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF(trait, name, default_)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00609">has_xxx.hpp:609</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00641">641</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acef8c470d99ad183a623bbaf8c6486e8" name="acef8c470d99ad183a623bbaf8c6486e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef8c470d99ad183a623bbaf8c6486e8">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_TEMPLATE_NAMED_DEF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">trait, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">default_&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">        <a class="code hl_define" href="has__xxx_8hpp.html#a1c3822ace9d65e68c19fd883524d6e91">BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE</a>( \</div>
+<div class="line">            ( 4, ( trait, name, <a class="code hl_define" href="limits_2arity_8hpp.html#add19bfd3b2b79f9086bc116a851c03a3">BOOST_MPL_LIMIT_METAFUNCTION_ARITY</a>, default_ ) ) \</div>
+<div class="line">          , BOOST_MPL_HAS_MEMBER_TEMPLATE_SUBSTITUTE_PARAMETER \</div>
+<div class="line">          , BOOST_MPL_HAS_MEMBER_TEMPLATE_ACCESS \</div>
+<div class="line">        ) \</div>
+<div class="ttc" id="ahas__xxx_8hpp_html_a1c3822ace9d65e68c19fd883524d6e91"><div class="ttname"><a href="has__xxx_8hpp.html#a1c3822ace9d65e68c19fd883524d6e91">BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE</a></div><div class="ttdeci">#define BOOST_MPL_HAS_MEMBER_WITH_FUNCTION_SFINAE(args, substitute_macro, member_macro)</div><div class="ttdef"><b>Definition:</b> <a href="has__xxx_8hpp_source.html#l00455">has_xxx.hpp:455</a></div></div>
+<div class="ttc" id="alimits_2arity_8hpp_html_add19bfd3b2b79f9086bc116a851c03a3"><div class="ttname"><a href="limits_2arity_8hpp.html#add19bfd3b2b79f9086bc116a851c03a3">BOOST_MPL_LIMIT_METAFUNCTION_ARITY</a></div><div class="ttdeci">#define BOOST_MPL_LIMIT_METAFUNCTION_ARITY</div><div class="ttdef"><b>Definition:</b> <a href="limits_2arity_8hpp_source.html#l00018">limits/arity.hpp:18</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00609">609</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1f80d4d7a55faf498e2117e310fd17c8" name="a1f80d4d7a55faf498e2117e310fd17c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f80d4d7a55faf498e2117e310fd17c8">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_TRAIT_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_TRAIT_DEF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name</td><td>)</td>
+          <td>&#160;&#160;&#160;    <a class="el" href="has__xxx_8hpp.html#a3dc8f5fe5e97d4368d46ca4377610b1a">BOOST_MPL_HAS_XXX_TRAIT_NAMED_DEF</a>(<a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(has_,name), name, false) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00278">278</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3dc8f5fe5e97d4368d46ca4377610b1a" name="a3dc8f5fe5e97d4368d46ca4377610b1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc8f5fe5e97d4368d46ca4377610b1a">&#9670;&#160;</a></span>BOOST_MPL_HAS_XXX_TRAIT_NAMED_DEF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_HAS_XXX_TRAIT_NAMED_DEF</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">trait, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">default_&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt; <span class="keyword">typename</span> T, <span class="keyword">typename</span> fallback_ = boost::mpl::<span class="keywordtype">bool</span>_&lt;default_&gt; &gt; \</div>
+<div class="line"><span class="keyword">struct </span>trait \</div>
+<div class="line">{ \</div>
+<div class="line">    <span class="keyword">struct </span>gcc_3_2_wknd \</div>
+<div class="line">    { \</div>
+<div class="line">        <span class="keyword">template</span>&lt; <span class="keyword">typename</span> U &gt; \</div>
+<div class="line">        <span class="keyword">static</span> <a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">boost::mpl::aux::yes_tag</a> test( \</div>
+<div class="line">              <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper&lt;U&gt;</a> <span class="keyword">const</span> <span class="keyword">volatile</span>* \</div>
+<div class="line">            , <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper&lt;BOOST_MSVC_TYPENAME U::name&gt;</a>* = 0 \</div>
+<div class="line">            ); \</div>
+<div class="line">    \</div>
+<div class="line">        <span class="keyword">static</span> <a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#a5751341f4cae8e839de3e1f23f0b21e8">boost::mpl::aux::no_tag</a> test(...); \</div>
+<div class="line">    }; \</div>
+<div class="line">    \</div>
+<div class="line">    <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper&lt;T&gt;</a> t_; \</div>
+<div class="line">    BOOST_STATIC_CONSTANT(<span class="keywordtype">bool</span>, value = \</div>
+<div class="line">          <span class="keyword">sizeof</span>(gcc_3_2_wknd::test(<span class="keyword">static_cast&lt;</span>t_*<span class="keyword">&gt;</span>(0))) \</div>
+<div class="line">            == <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="namespaceboost_1_1mpl_1_1aux.html#aa20a762e798c56326a79bc72227b34bc">boost::mpl::aux::yes_tag</a>) \</div>
+<div class="line">        ); \</div>
+<div class="line">    <span class="keyword">typedef</span> boost::mpl::bool_&lt;value&gt; type; \</div>
+<div class="line">}; \</div>
+<div class="ttc" id="anamespaceboost_1_1mpl_1_1aux_html_a5751341f4cae8e839de3e1f23f0b21e8"><div class="ttname"><a href="namespaceboost_1_1mpl_1_1aux.html#a5751341f4cae8e839de3e1f23f0b21e8">boost::mpl::aux::no_tag</a></div><div class="ttdeci">char(&amp; no_tag)[1]</div><div class="ttdef"><b>Definition:</b> <a href="yes__no_8hpp_source.html#l00026">yes_no.hpp:26</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="has__xxx_8hpp_source.html">has_xxx.hpp</a> の <a class="el" href="has__xxx_8hpp_source.html#l00236">236</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="has__xxx_8hpp.html">has_xxx.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

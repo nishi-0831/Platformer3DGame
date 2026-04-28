@@ -121,7 +121,7 @@ mtgb::ComponentFactory 連携図</div>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a3ba7025f5a17b1c0fc4208eb368ed7bc"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:a3ba7025f5a17b1c0fc4208eb368ed7bc"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a3ba7025f5a17b1c0fc4208eb368ed7bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentFactory.html#a3ba7025f5a17b1c0fc4208eb368ed7bc">RegisterComponent</a> ()</td></tr>
 <tr class="separator:a3ba7025f5a17b1c0fc4208eb368ed7bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a628e994f3a8d4f3ffc82b0a9463babf0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1IComponentMemento.html">IComponentMemento</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ComponentFactory.html#a628e994f3a8d4f3ffc82b0a9463babf0">AddComponent</a> (const std::type_index &amp;_info, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id) const</td></tr>
@@ -358,7 +358,7 @@ mtgb::ComponentFactory 連携図</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void mtgb::ComponentFactory::RegisterComponent</td>
@@ -370,10 +370,10 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="fragment"><div class="line"><span class="lineno">   43</span>    {</div>
 <div class="line"><span class="lineno">   44</span>        <span class="keyword">using </span>Memento = T::Memento;</div>
 <div class="line"><span class="lineno">   45</span> </div>
-<div class="line"><span class="lineno">   46</span>        std::type_index typeIdx(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">   46</span>        std::type_index typeIdx(<span class="keyword">typeid</span>(T));</div>
 <div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#af68695b039d21635b82a903b395057e0">creators_</a>[typeIdx] = [](<a class="code hl_typedef" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id)</div>
 <div class="line"><span class="lineno">   48</span>        {</div>
-<div class="line"><span class="lineno">   49</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&amp; component = T::Get(_id);</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>&amp; component = T::Get(_id);</div>
 <div class="line"><span class="lineno">   50</span>            <span class="keywordflow">return</span> component.SaveToMemento();</div>
 <div class="line"><span class="lineno">   51</span>        };</div>
 <div class="line"><span class="lineno">   52</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#a5607f7f14eaaec0a2b388b97271b3fee">creatorsFromMemento_</a>[typeIdx] = [](<span class="keyword">const</span> IComponentMemento&amp; _memento)</div>
@@ -393,7 +393,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">   66</span>            );</div>
 <div class="line"><span class="lineno">   67</span> </div>
 <div class="line"><span class="lineno">   68</span>            <span class="comment">// エンティティのIdからコンポーネントを取得</span></div>
-<div class="line"><span class="lineno">   69</span>            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>* pComponent = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   69</span>            <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>* pComponent = <span class="keyword">nullptr</span>;</div>
 <div class="line"><span class="lineno">   70</span> </div>
 <div class="line"><span class="lineno">   71</span>            <span class="comment">// インデックスが有効かチェック</span></div>
 <div class="line"><span class="lineno">   72</span>            <span class="keywordflow">if</span> (componentIndex.has_value())</div>
@@ -415,12 +415,12 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">   88</span>                pComponent-&gt;RestoreFromMemento(*pMemento);</div>
 <div class="line"><span class="lineno">   89</span>            }</div>
 <div class="line"><span class="lineno">   90</span>        };</div>
-<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#a56509a4c913a008eee3d2a74925e0a00">types_</a>.push_back(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">   91</span>        <a class="code hl_variable" href="classmtgb_1_1ComponentFactory.html#a56509a4c913a008eee3d2a74925e0a00">types_</a>.push_back(<span class="keyword">typeid</span>(T));</div>
 <div class="line"><span class="lineno">   92</span>    }</div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="anamespacemtgb_html_a33d2d6c57bed7a7d2ed9aa5f5029547c"><div class="ttname"><a href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">mtgb::EntityId</a></div><div class="ttdeci">int64_t EntityId</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00010">cmtgb.h:10</a></div></div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="ComponentFactory_8h_source.html#l00037">creators_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00038">creatorsFromMemento_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, <a class="el" href="ComponentFactory_8h_source.html#l00039">types_</a>.</p>
+<p class="reference">参照先 <a class="el" href="ComponentFactory_8h_source.html#l00037">creators_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00038">creatorsFromMemento_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00039">types_</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="Game_8h_source.html#l00218">mtgb::Game::Set()</a>.</p>
 <div class="dynheader">

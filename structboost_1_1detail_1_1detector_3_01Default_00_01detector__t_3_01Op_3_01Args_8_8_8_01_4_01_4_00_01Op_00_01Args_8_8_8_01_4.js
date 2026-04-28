@@ -1,0 +1,5 @@
+var structboost_1_1detail_1_1detector_3_01Default_00_01detector__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4 =
+[
+    [ "type", "structboost_1_1detail_1_1detector_3_01Default_00_01detector__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#ac56935afc94a3c6d045e0e71e161cb7b", null ],
+    [ "value_t", "structboost_1_1detail_1_1detector_3_01Default_00_01detector__t_3_01Op_3_01Args_8_8_8_01_4_01_4_00_01Op_00_01Args_8_8_8_01_4.html#ac6591e6c1b17c75ef8c7340a9d9cbc4b", null ]
+];

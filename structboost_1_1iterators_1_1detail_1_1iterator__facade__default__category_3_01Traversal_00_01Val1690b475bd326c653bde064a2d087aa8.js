@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1iterator__facade__default__category_3_01Traversal_00_01Val1690b475bd326c653bde064a2d087aa8 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1iterator__facade__default__category_3_01Traversal_00_01Val1690b475bd326c653bde064a2d087aa8.html#a76256331a61977db166a0f3556932d1e", null ]
+];

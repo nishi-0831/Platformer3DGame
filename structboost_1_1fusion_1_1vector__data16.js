@@ -1,0 +1,27 @@
+var structboost_1_1fusion_1_1vector__data16 =
+[
+    [ "vector_data16", "structboost_1_1fusion_1_1vector__data16.html#a5ad1b287a4ad710f38abb362e83a583b", null ],
+    [ "vector_data16", "structboost_1_1fusion_1_1vector__data16.html#a290ade5fa9d1baa210737965b6622b72", null ],
+    [ "vector_data16", "structboost_1_1fusion_1_1vector__data16.html#a36f3332d381864a15c536013eb6e5aff", null ],
+    [ "vector_data16", "structboost_1_1fusion_1_1vector__data16.html#aff6a2c7d0efa35cd19a5fcf0383e88cf", null ],
+    [ "vector_data16", "structboost_1_1fusion_1_1vector__data16.html#aab3c195c0586bf941e304015437b00a8", null ],
+    [ "init_from_sequence", "structboost_1_1fusion_1_1vector__data16.html#a7b3fc75ae999126f544db612a0fe9a81", null ],
+    [ "init_from_sequence", "structboost_1_1fusion_1_1vector__data16.html#a6b68bedcd2c3d33e4514fd0c38efdb1e", null ],
+    [ "operator=", "structboost_1_1fusion_1_1vector__data16.html#ac730f9a8ad266fb8b21f81be0487095f", null ],
+    [ "m0", "structboost_1_1fusion_1_1vector__data16.html#af63c701cf6181a857e56f986184d6b7d", null ],
+    [ "m1", "structboost_1_1fusion_1_1vector__data16.html#a6e0b4672cd486f8992d67e942d6bec30", null ],
+    [ "m10", "structboost_1_1fusion_1_1vector__data16.html#a884ab25b0a61309cb1434af70e1a5672", null ],
+    [ "m11", "structboost_1_1fusion_1_1vector__data16.html#a036c0355b58033de8cc4c6adef2691c1", null ],
+    [ "m12", "structboost_1_1fusion_1_1vector__data16.html#ae7cd28b945ccf80fd2b00c987ce2e0de", null ],
+    [ "m13", "structboost_1_1fusion_1_1vector__data16.html#a4ce7755933487c1911f3b498f62b3b1a", null ],
+    [ "m14", "structboost_1_1fusion_1_1vector__data16.html#a7732618db34006f2f59a9d3db45c5822", null ],
+    [ "m15", "structboost_1_1fusion_1_1vector__data16.html#a825f693dfae673c9f727508433c73bc8", null ],
+    [ "m2", "structboost_1_1fusion_1_1vector__data16.html#a225ed0699b7cbd9a9548db7971b514c5", null ],
+    [ "m3", "structboost_1_1fusion_1_1vector__data16.html#aa15407b8b18ea2cce15c63f015de10be", null ],
+    [ "m4", "structboost_1_1fusion_1_1vector__data16.html#a254190a91db8702f777f4f97d9b8cecc", null ],
+    [ "m5", "structboost_1_1fusion_1_1vector__data16.html#a14d3b083e9d3abd6b80ab3c4e8f9fd8a", null ],
+    [ "m6", "structboost_1_1fusion_1_1vector__data16.html#a1f66abe2124ee7d877fa818113071a3b", null ],
+    [ "m7", "structboost_1_1fusion_1_1vector__data16.html#ad0718b390c49395c20542745a9b63286", null ],
+    [ "m8", "structboost_1_1fusion_1_1vector__data16.html#a7cd519215034dd99737dc9996d800144", null ],
+    [ "m9", "structboost_1_1fusion_1_1vector__data16.html#ae2ee13fed93c7b133047e56bd13a8fa0", null ]
+];

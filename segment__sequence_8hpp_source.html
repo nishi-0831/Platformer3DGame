@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: segment_sequence.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('segment__sequence_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">segment_sequence.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="segment__sequence_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2011 Eric Niebler</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"></span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#if !defined(BOOST_FUSION_SEGMENTED_SEQUENCE_HPP_INCLUDED)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define BOOST_FUSION_SEGMENTED_SEQUENCE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2bool_8hpp.html">boost/mpl/bool.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="remove__reference_8hpp.html">boost/type_traits/remove_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="support_2tag__of_8hpp.html">boost/fusion/support/tag_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="intrinsic__fwd_8hpp.html">boost/fusion/sequence/intrinsic_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#  pragma warning(push)</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#  pragma warning(disable: 4512) </span><span class="comment">// assignment operator could not be generated.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence__tag.html">   23</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segment__sequence__tag.html">segment_sequence_tag</a> {};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="comment">// Here, Sequence is a sequence of ranges (which may or may not be</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">// segmented).</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sequence&gt;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html">   28</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html">segment_sequence</a></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        : <a class="code hl_struct" href="structboost_1_1fusion_1_1sequence__base.html">sequence_base</a>&lt;segment_sequence&lt;Sequence&gt; &gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#af9b022b4a58865913d20f27f0f89e247">   31</a></span>        <span class="keyword">typedef</span> fusion_sequence_tag <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#af9b022b4a58865913d20f27f0f89e247">tag</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a5f1ed98aa44ef2eb8f7d5252c39d71fd">   32</a></span>        <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1segment__sequence__tag.html">segment_sequence_tag</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a5f1ed98aa44ef2eb8f7d5252c39d71fd">fusion_tag</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2f91230a32147b44de3895f00b7da91d">   33</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> Sequence::is_view <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2f91230a32147b44de3895f00b7da91d">is_view</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2a253b9d5c6a3ffdd92877d96a0f642b">   34</a></span>        <span class="keyword">typedef</span> <span class="keyword">typename</span> Sequence::category <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2a253b9d5c6a3ffdd92877d96a0f642b">category</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a9e33ad212bc14009226dd5c3894f18f6">   35</a></span>        <span class="keyword">typedef</span> Sequence <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a9e33ad212bc14009226dd5c3894f18f6">sequence_type</a>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a50508fd4b06c2b70d8d918a59e2dd5ad">   36</a></span>        <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a9e33ad212bc14009226dd5c3894f18f6">sequence_type</a> <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a50508fd4b06c2b70d8d918a59e2dd5ad">sequence</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2782b8ad160b6bf8a111d56cc833ebc1">   38</a></span>        <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <span class="keyword">explicit</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2782b8ad160b6bf8a111d56cc833ebc1">segment_sequence</a>(Sequence <span class="keyword">const</span> &amp; seq)</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            : <a class="code hl_variable" href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a50508fd4b06c2b70d8d918a59e2dd5ad">sequence</a>(seq)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        {}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>}</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#ifdef _MSC_VER</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#  pragma warning(pop)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">namespace </span>extension</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tag&gt;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">struct </span>is_segmented_impl;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01detail_1_1segment__sequence__tag_01_4.html">   54</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1extension_1_1is__segmented__impl.html">is_segmented_impl</a>&lt;<a class="code hl_namespace" href="namespacedetail.html">detail</a>::segment_sequence_tag&gt;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sequence&gt;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html">   57</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            : mpl::true_</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        {};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    };</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tag&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1extension_1_1segments__impl.html">segments_impl</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4.html">   66</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1extension_1_1segments__impl.html">segments_impl</a>&lt;<a class="code hl_namespace" href="namespacedetail.html">detail</a>::segment_sequence_tag&gt;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sequence&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html">   69</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a539c31fcec0996303bdbe18b5c3bc7bb">   71</a></span>            <span class="keyword">typedef</span> <span class="keyword">typename</span> Sequence::sequence_type <a class="code hl_typedef" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a539c31fcec0996303bdbe18b5c3bc7bb">type</a>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            <a class="code hl_define" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a5587a65fdd78477db4e78b5a89b1277d">   74</a></span>            <span class="keyword">static</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a539c31fcec0996303bdbe18b5c3bc7bb">type</a> <a class="code hl_function" href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a5587a65fdd78477db4e78b5a89b1277d">call</a>(Sequence &amp; seq)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keywordflow">return</span> seq.sequence;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            }</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        };</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    };</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}}}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="aintrinsic__fwd_8hpp_html"><div class="ttname"><a href="intrinsic__fwd_8hpp.html">intrinsic_fwd.hpp</a></div></div>
+<div class="ttc" id="ampl_2bool_8hpp_html"><div class="ttname"><a href="mpl_2bool_8hpp.html">bool.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="aremove__reference_8hpp_html"><div class="ttname"><a href="remove__reference_8hpp.html">remove_reference.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1apply_html"><div class="ttname"><a href="structboost_1_1apply.html">boost::apply</a></div><div class="ttdef"><b>Definition:</b> <a href="bind_2apply_8hpp_source.html#l00017">bind/apply.hpp:18</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence__tag_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence__tag.html">boost::fusion::detail::segment_sequence_tag</a></div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00023">segment_sequence.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html">boost::fusion::detail::segment_sequence</a></div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00028">segment_sequence.hpp:30</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a2782b8ad160b6bf8a111d56cc833ebc1"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2782b8ad160b6bf8a111d56cc833ebc1">boost::fusion::detail::segment_sequence::segment_sequence</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED segment_sequence(Sequence const &amp;seq)</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00038">segment_sequence.hpp:38</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a2a253b9d5c6a3ffdd92877d96a0f642b"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2a253b9d5c6a3ffdd92877d96a0f642b">boost::fusion::detail::segment_sequence::category</a></div><div class="ttdeci">Sequence::category category</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00034">segment_sequence.hpp:34</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a2f91230a32147b44de3895f00b7da91d"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a2f91230a32147b44de3895f00b7da91d">boost::fusion::detail::segment_sequence::is_view</a></div><div class="ttdeci">Sequence::is_view is_view</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00033">segment_sequence.hpp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a50508fd4b06c2b70d8d918a59e2dd5ad"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a50508fd4b06c2b70d8d918a59e2dd5ad">boost::fusion::detail::segment_sequence::sequence</a></div><div class="ttdeci">sequence_type sequence</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00036">segment_sequence.hpp:36</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a5f1ed98aa44ef2eb8f7d5252c39d71fd"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a5f1ed98aa44ef2eb8f7d5252c39d71fd">boost::fusion::detail::segment_sequence::fusion_tag</a></div><div class="ttdeci">segment_sequence_tag fusion_tag</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00032">segment_sequence.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_a9e33ad212bc14009226dd5c3894f18f6"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#a9e33ad212bc14009226dd5c3894f18f6">boost::fusion::detail::segment_sequence::sequence_type</a></div><div class="ttdeci">Sequence sequence_type</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00035">segment_sequence.hpp:35</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segment__sequence_html_af9b022b4a58865913d20f27f0f89e247"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segment__sequence.html#af9b022b4a58865913d20f27f0f89e247">boost::fusion::detail::segment_sequence::tag</a></div><div class="ttdeci">fusion_sequence_tag tag</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00031">segment_sequence.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1is__segmented__impl_html"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1is__segmented__impl.html">boost::fusion::extension::is_segmented_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2is__segmented_8hpp_source.html#l00023">support/is_segmented.hpp:24</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply_html_a539c31fcec0996303bdbe18b5c3bc7bb"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a539c31fcec0996303bdbe18b5c3bc7bb">boost::fusion::extension::segments_impl&lt; detail::segment_sequence_tag &gt;::apply::type</a></div><div class="ttdeci">Sequence::sequence_type type</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00071">segment_sequence.hpp:71</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply_html_a5587a65fdd78477db4e78b5a89b1277d"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1segments__impl_3_01detail_1_1segment__sequence__tag_01_4_1_1apply.html#a5587a65fdd78477db4e78b5a89b1277d">boost::fusion::extension::segments_impl&lt; detail::segment_sequence_tag &gt;::apply::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Sequence &amp;seq)</div><div class="ttdef"><b>Definition:</b> <a href="segment__sequence_8hpp_source.html#l00074">segment_sequence.hpp:74</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1extension_1_1segments__impl_html"><div class="ttname"><a href="structboost_1_1fusion_1_1extension_1_1segments__impl.html">boost::fusion::extension::segments_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="sequence_2intrinsic_2segments_8hpp_source.html#l00026">sequence/intrinsic/segments.hpp:27</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1sequence__base_html"><div class="ttname"><a href="structboost_1_1fusion_1_1sequence__base.html">boost::fusion::sequence_base</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2sequence__base_8hpp_source.html#l00024">support/sequence_base.hpp:25</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_aa02e911ac6c4e5abc85276284b9801aa"><div class="ttname"><a href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01043">suffix.hpp:1043</a></div></div>
+<div class="ttc" id="asupport_2tag__of_8hpp_html"><div class="ttname"><a href="support_2tag__of_8hpp.html">tag_of.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_f3971e55d1c55e78d48dc5197610c0ff.html">iterator</a></li><li class="navelem"><a class="el" href="dir_9e51917c5611b8d7d14e629b855f32cf.html">detail</a></li><li class="navelem"><a class="el" href="segment__sequence_8hpp.html">segment_sequence.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

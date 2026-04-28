@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1eval__if__default_3_01use__default_00_01DefaultNullaryFn_00_01NondefaultNullaryFn_01_4 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1eval__if__default_3_01use__default_00_01DefaultNullaryFn_00_01NondefaultNullaryFn_01_4.html#a4330ce46b1d7c657f7e9b8bf4f397ecf", null ]
+];

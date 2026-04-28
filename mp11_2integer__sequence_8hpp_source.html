@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: integer_sequence.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mp11_2integer__sequence_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">mp11/integer_sequence.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="mp11_2integer__sequence_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef BOOST_MP11_INTEGER_SEQUENCE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define BOOST_MP11_INTEGER_SEQUENCE_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Copyright 2015, 2017, 2019 Peter Dimov.</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="mp11_2version_8hpp.html">boost/mp11/version.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if defined(_MSC_VER) || defined(__GNUC__)</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor"># pragma push_macro( &quot;I&quot;</span> )</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor"># undef I</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#if defined(__has_builtin)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor"># if __has_builtin(__make_integer_seq)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#  define BOOST_MP11_HAS_MAKE_INTEGER_SEQ</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor"># endif</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span>mp11</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">// integer_sequence</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1integer__sequence.html">   31</a></span><span class="keyword">template</span>&lt;<span class="keyword">class </span>T, T... <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">integer_sequence</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#if defined(BOOST_MP11_HAS_MAKE_INTEGER_SEQ)</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, T N&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">make_integer_sequence</a> = __make_integer_seq&lt;integer_sequence, T, N&gt;;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment">// detail::make_integer_sequence_impl</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment">// iseq_if_c</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">   46</a></span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> C, <span class="keyword">class</span> T, <span class="keyword">class</span> E&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">iseq_if_c_impl</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01true_00_01T_00_01E_01_4.html">   48</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> E&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">iseq_if_c_impl</a>&lt;true, T, <a class="code hl_class" href="classE.html">E</a>&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>{</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01true_00_01T_00_01E_01_4.html#a107143fc2512337ea7af674ad094ace0">   50</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01true_00_01T_00_01E_01_4.html#a107143fc2512337ea7af674ad094ace0">type</a> = T;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01false_00_01T_00_01E_01_4.html">   53</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> E&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">iseq_if_c_impl</a>&lt;false, T, <a class="code hl_class" href="classE.html">E</a>&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01false_00_01T_00_01E_01_4.html#ad1650975b08de14b6301786511377537">   55</a></span>    <span class="keyword">using </span><a class="code hl_class" href="classE.html">type</a> = <a class="code hl_variable" href="namespaceboost.html#a0259fab8814a034aa71ce75b449de7ee">E</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="namespaceboost_1_1mp11_1_1detail.html#ae2644f344860e912c40be52765cb6de7">   58</a></span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> C, <span class="keyword">class</span> T, <span class="keyword">class</span> E&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost_1_1mp11_1_1detail.html#ae2644f344860e912c40be52765cb6de7">iseq_if_c</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">iseq_if_c_impl&lt;C, T, E&gt;::type</a>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// iseq_identity</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html">   61</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html">iseq_identity</a></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>{</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html#ae1590474fbc30bced1547d4ade46cd85">   63</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html#ae1590474fbc30bced1547d4ade46cd85">type</a> = T;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">   66</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> S1, <span class="keyword">class</span> S2&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">append_integer_sequence</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence_3_01integer__sequence_3_01T_00_01I_8_094757858a71b37a65251aad7c273565.html">   68</a></span><span class="keyword">template</span>&lt;<span class="keyword">class </span>T, T... <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>, T... <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a>&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">append_integer_sequence</a>&lt;<a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">integer_sequence</a>&lt;T, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>...&gt;, <a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">integer_sequence</a>&lt;T, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a>...&gt;&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence_3_01integer__sequence_3_01T_00_01I_8_094757858a71b37a65251aad7c273565.html#a80e7f8e1a2dfa51ddb0dcd8c1eac4222">   70</a></span>    <span class="keyword">using </span><a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">type</a> = <a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">integer_sequence</a>&lt; T, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>..., ( <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a> + <span class="keyword">sizeof</span>...(I) )... &gt;;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, T N&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">make_integer_sequence_impl</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html">   75</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, T N&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html">make_integer_sequence_impl_</a></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">static_assert</span>( <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> &gt;= 0, <span class="stringliteral">&quot;make_integer_sequence&lt;T, N&gt;: N must not be negative&quot;</span> );</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#af29ca0b7d027bb442395a54af2021235">   81</a></span>    <span class="keyword">static</span> T <span class="keyword">const</span> <a class="code hl_variable" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#af29ca0b7d027bb442395a54af2021235">M</a> = <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> / 2;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a46baaecfff9c95cd364cb8fbb8238350">   82</a></span>    <span class="keyword">static</span> T <span class="keyword">const</span> <a class="code hl_variable" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a46baaecfff9c95cd364cb8fbb8238350">R</a> = <a class="code hl_define" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a> % 2;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#abae3366a1cd7935ff3a704253bbd9996">   84</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#abae3366a1cd7935ff3a704253bbd9996">S1</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">make_integer_sequence_impl&lt;T, M&gt;::type</a>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a9c22292f311c1c54a8e2d5d811cdf3eb">   85</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a9c22292f311c1c54a8e2d5d811cdf3eb">S2</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">append_integer_sequence&lt;S1, S1&gt;::type</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a233211ae7ce24e858baaa0a10604a335">   86</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a233211ae7ce24e858baaa0a10604a335">S3</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">make_integer_sequence_impl&lt;T, R&gt;::type</a>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#ad62f944dc1eb366f4891015960c3cb56">   87</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#ad62f944dc1eb366f4891015960c3cb56">S4</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">append_integer_sequence&lt;S2, S3&gt;::type</a>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#aa007afb35a47733917cc632fe28574c5">   91</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#aa007afb35a47733917cc632fe28574c5">type</a> = <a class="code hl_typedef" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#ad62f944dc1eb366f4891015960c3cb56">S4</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>};</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">   94</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, T N&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">make_integer_sequence_impl</a>: <a class="code hl_typedef" href="namespaceboost_1_1mp11_1_1detail.html#ae2644f344860e912c40be52765cb6de7">iseq_if_c</a>&lt;N == 0, iseq_identity&lt;integer_sequence&lt;T&gt;&gt;, iseq_if_c&lt;N == 1, iseq_identity&lt;integer_sequence&lt;T, 0&gt;&gt;, make_integer_sequence_impl_&lt;T, N&gt; &gt; &gt;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>{</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">// make_integer_sequence</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">  101</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T, T N&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">make_integer_sequence</a> = <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">detail::make_integer_sequence_impl&lt;T, N&gt;::type</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">#endif </span><span class="comment">// defined(BOOST_MP11_HAS_MAKE_INTEGER_SEQ)</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">// index_sequence</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="namespaceboost_1_1mp11.html#a8004427a27e96830c5f7f45715745172">  106</a></span><span class="keyword">template</span>&lt;std::size_t... <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>&gt; <span class="keyword">using </span><a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">index_sequence</a> = <a class="code hl_struct" href="structboost_1_1mp11_1_1integer__sequence.html">integer_sequence</a>&lt;std::size_t, <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>...&gt;;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">// make_index_sequence</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="namespaceboost_1_1mp11.html#ae7565aa42291d6438c3543f01467e476">  109</a></span><span class="keyword">template</span>&lt;std::<span class="keywordtype">size_t</span> N&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost_1_1mp11.html#ae7565aa42291d6438c3543f01467e476">make_index_sequence</a> = <a class="code hl_typedef" href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">make_integer_sequence&lt;std::size_t, N&gt;</a>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// index_sequence_for</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="namespaceboost_1_1mp11.html#add53da98ce2e96546f1bcf72cd2b9170">  112</a></span><span class="keyword">template</span>&lt;<span class="keyword">class</span>... T&gt; <span class="keyword">using </span><a class="code hl_typedef" href="namespaceboost_1_1mp11.html#add53da98ce2e96546f1bcf72cd2b9170">index_sequence_for</a> = <a class="code hl_typedef" href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">make_integer_sequence</a>&lt;std::size_t, <span class="keyword">sizeof</span>...(T)&gt;;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>} <span class="comment">// namespace mp11</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="preprocessor">#if defined(_MSC_VER) || defined(__GNUC__)</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor"># pragma pop_macro( &quot;I&quot;</span> )</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="preprocessor">#endif </span><span class="comment">// #ifndef BOOST_MP11_INTEGER_SEQUENCE_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">KeyCode::I</a></div><div class="ttdeci">@ I</div></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">KeyCode::J</a></div><div class="ttdeci">@ J</div></div>
+<div class="ttc" id="aclassE_html"><div class="ttname"><a href="classE.html">E</a></div><div class="ttdef"><b>Definition:</b> <a href="diagrams__e_8h_source.html#l00004">diagrams_e.h:4</a></div></div>
+<div class="ttc" id="aforward__adapter_8hpp_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdef"><b>Definition:</b> <a href="forward__adapter_8hpp_source.html#l00227">forward_adapter.hpp:227</a></div></div>
+<div class="ttc" id="amp11_2version_8hpp_html"><div class="ttname"><a href="mp11_2version_8hpp.html">version.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mp11_1_1detail_html_ae2644f344860e912c40be52765cb6de7"><div class="ttname"><a href="namespaceboost_1_1mp11_1_1detail.html#ae2644f344860e912c40be52765cb6de7">boost::mp11::detail::iseq_if_c</a></div><div class="ttdeci">typename iseq_if_c_impl&lt; C, T, E &gt;::type iseq_if_c</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00058">mp11/integer_sequence.hpp:58</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mp11_html_add53da98ce2e96546f1bcf72cd2b9170"><div class="ttname"><a href="namespaceboost_1_1mp11.html#add53da98ce2e96546f1bcf72cd2b9170">boost::mp11::index_sequence_for</a></div><div class="ttdeci">make_integer_sequence&lt; std::size_t, sizeof...(T)&gt; index_sequence_for</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00112">mp11/integer_sequence.hpp:112</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mp11_html_ae4311955c166f6b5e1c4f6129c52ac03"><div class="ttname"><a href="namespaceboost_1_1mp11.html#ae4311955c166f6b5e1c4f6129c52ac03">boost::mp11::make_integer_sequence</a></div><div class="ttdeci">typename detail::make_integer_sequence_impl&lt; T, N &gt;::type make_integer_sequence</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00101">mp11/integer_sequence.hpp:101</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mp11_html_ae7565aa42291d6438c3543f01467e476"><div class="ttname"><a href="namespaceboost_1_1mp11.html#ae7565aa42291d6438c3543f01467e476">boost::mp11::make_index_sequence</a></div><div class="ttdeci">make_integer_sequence&lt; std::size_t, N &gt; make_index_sequence</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00109">mp11/integer_sequence.hpp:109</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a0259fab8814a034aa71ce75b449de7ee"><div class="ttname"><a href="namespaceboost.html#a0259fab8814a034aa71ce75b449de7ee">boost::E</a></div><div class="ttdeci">E</div><div class="ttdef"><b>Definition:</b> <a href="blank_8hpp_source.html#l00094">blank.hpp:94</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1append__integer__sequence_html"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1append__integer__sequence.html">boost::mp11::detail::append_integer_sequence</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00066">mp11/integer_sequence.hpp:66</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1iseq__identity_html"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html">boost::mp11::detail::iseq_identity</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00061">mp11/integer_sequence.hpp:62</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1iseq__identity_html_ae1590474fbc30bced1547d4ade46cd85"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1iseq__identity.html#ae1590474fbc30bced1547d4ade46cd85">boost::mp11::detail::iseq_identity::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00063">mp11/integer_sequence.hpp:63</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01true_00_01T_00_01E_01_4_html_a107143fc2512337ea7af674ad094ace0"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_3_01true_00_01T_00_01E_01_4.html#a107143fc2512337ea7af674ad094ace0">boost::mp11::detail::iseq_if_c_impl&lt; true, T, E &gt;::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00050">mp11/integer_sequence.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1iseq__if__c__impl_html"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1iseq__if__c__impl.html">boost::mp11::detail::iseq_if_c_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00046">mp11/integer_sequence.hpp:46</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html">boost::mp11::detail::make_integer_sequence_impl_</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00075">mp11/integer_sequence.hpp:76</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_a233211ae7ce24e858baaa0a10604a335"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a233211ae7ce24e858baaa0a10604a335">boost::mp11::detail::make_integer_sequence_impl_::S3</a></div><div class="ttdeci">typename make_integer_sequence_impl&lt; T, R &gt;::type S3</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00086">mp11/integer_sequence.hpp:86</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_a46baaecfff9c95cd364cb8fbb8238350"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a46baaecfff9c95cd364cb8fbb8238350">boost::mp11::detail::make_integer_sequence_impl_::R</a></div><div class="ttdeci">static T const R</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00082">mp11/integer_sequence.hpp:82</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_a9c22292f311c1c54a8e2d5d811cdf3eb"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#a9c22292f311c1c54a8e2d5d811cdf3eb">boost::mp11::detail::make_integer_sequence_impl_::S2</a></div><div class="ttdeci">typename append_integer_sequence&lt; S1, S1 &gt;::type S2</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00085">mp11/integer_sequence.hpp:85</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_aa007afb35a47733917cc632fe28574c5"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#aa007afb35a47733917cc632fe28574c5">boost::mp11::detail::make_integer_sequence_impl_::type</a></div><div class="ttdeci">S4 type</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00091">mp11/integer_sequence.hpp:91</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_abae3366a1cd7935ff3a704253bbd9996"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#abae3366a1cd7935ff3a704253bbd9996">boost::mp11::detail::make_integer_sequence_impl_::S1</a></div><div class="ttdeci">typename make_integer_sequence_impl&lt; T, M &gt;::type S1</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00084">mp11/integer_sequence.hpp:84</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_ad62f944dc1eb366f4891015960c3cb56"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#ad62f944dc1eb366f4891015960c3cb56">boost::mp11::detail::make_integer_sequence_impl_::S4</a></div><div class="ttdeci">typename append_integer_sequence&lt; S2, S3 &gt;::type S4</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00087">mp11/integer_sequence.hpp:87</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl___html_af29ca0b7d027bb442395a54af2021235"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl__.html#af29ca0b7d027bb442395a54af2021235">boost::mp11::detail::make_integer_sequence_impl_::M</a></div><div class="ttdeci">static T const M</div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00081">mp11/integer_sequence.hpp:81</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl_html"><div class="ttname"><a href="structboost_1_1mp11_1_1detail_1_1make__integer__sequence__impl.html">boost::mp11::detail::make_integer_sequence_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00094">mp11/integer_sequence.hpp:95</a></div></div>
+<div class="ttc" id="astructboost_1_1mp11_1_1integer__sequence_html"><div class="ttname"><a href="structboost_1_1mp11_1_1integer__sequence.html">boost::mp11::integer_sequence</a></div><div class="ttdef"><b>Definition:</b> <a href="mp11_2integer__sequence_8hpp_source.html#l00031">mp11/integer_sequence.hpp:32</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_ae448cbf0b60ec142440a2a25fe29c82.html">mp11</a></li><li class="navelem"><a class="el" href="mp11_2integer__sequence_8hpp.html">integer_sequence.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['cameraoperation_0',['CameraOperation',['../namespacemtgb.html#a37101587d14921b46ed8416616e9f088',1,'mtgb']]],
-  ['camerastate_1',['CameraState',['../classmtgb_1_1SphericalCamera.html#acdd96adeadf5902ca6e9ddab5a90b26c',1,'mtgb::SphericalCamera']]],
-  ['collidertag_2',['ColliderTag',['../ColliderType_8h.html#ac7af8ecfc927eb4be84ab71d0d3ec21e',1,'ColliderType.h']]],
-  ['collidertype_3',['ColliderType',['../ColliderType_8h.html#a7f138e75fc3cc79e825c39e040690395',1,'ColliderType.h']]],
-  ['component_4',['Component',['../structmtgb_1_1Color.html#a2903026d7b264844673f9bebac9f025e',1,'mtgb::Color']]],
-  ['controllertype_5',['ControllerType',['../namespacemtgb.html#ad5fce522aec9941a8920f42294209e65',1,'mtgb']]]
+  ['bjdata_5fversion_5ft_0',['bjdata_version_t',['../namespacedetail.html#ae785f1c6c99c714463b625da13a75dad',1,'detail']]],
+  ['blendmode_1',['BlendMode',['../namespacemtgb.html#aead6ef9b5b93082fb6419e3d5676e748',1,'mtgb']]]
 ];

@@ -1,0 +1,6 @@
+var structboost_1_1mpl_1_1aux_1_1vector__c__chooser_3_0114_01_4_1_1result__ =
+[
+    [ "type", "structboost_1_1mpl_1_1aux_1_1vector__c__chooser_3_0114_01_4_1_1result__.html#a64104e31a1bddd0691fb0ef4b5ee0b02", null ],
+    [ "type", "structboost_1_1mpl_1_1aux_1_1vector__c__chooser_3_0114_01_4_1_1result__.html#a64104e31a1bddd0691fb0ef4b5ee0b02", null ],
+    [ "type", "structboost_1_1mpl_1_1aux_1_1vector__c__chooser_3_0114_01_4_1_1result__.html#a64104e31a1bddd0691fb0ef4b5ee0b02", null ]
+];

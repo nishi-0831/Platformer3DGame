@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1addrof__non__member__operator_3_01T_00_01typename_01addrof__void_3_01deae75c9e02ab02c81132639a9c05c40f9 =
+[
+    [ "value", "structboost_1_1detail_1_1addrof__non__member__operator_3_01T_00_01typename_01addrof__void_3_01deae75c9e02ab02c81132639a9c05c40f9.html#a9ba5b1e76a6e292e591f4975236d5a3d", null ]
+];

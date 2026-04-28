@@ -130,7 +130,7 @@ mtgb::GameObjectFactory 連携図</div>
 <tr class="memitem:a33af2c7c13a4e9ef5ecc1f09698e583d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectFactory.html#a33af2c7c13a4e9ef5ecc1f09698e583d">RegisterFactory</a> (std::string_view _typeName, const <a class="el" href="namespacemtgb.html#aa490daec225fde1f46d5e75aa15fe98a">CreateFunc</a> &amp;_creator, bool _isUnique) override</td></tr>
 <tr class="memdesc:a33af2c7c13a4e9ef5ecc1f09698e583d"><td class="mdescLeft">&#160;</td><td class="mdescRight">ゲームオブジェクトの生成関数を登録する  <br /></td></tr>
 <tr class="separator:a33af2c7c13a4e9ef5ecc1f09698e583d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa07373ad437b7d9f59cfba528eb42f00"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa07373ad437b7d9f59cfba528eb42f00"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa07373ad437b7d9f59cfba528eb42f00"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#aa07373ad437b7d9f59cfba528eb42f00">Register</a> (std::string_view _typeName, bool _isUnique=false)</td></tr>
 <tr class="separator:aa07373ad437b7d9f59cfba528eb42f00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -239,7 +239,7 @@ mtgb::GameObjectFactory 連携図</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -271,7 +271,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p class="definition"> <a class="el" href="IGameObjectRegistrar_8h_source.html">IGameObjectRegistrar.h</a> の <a class="el" href="IGameObjectRegistrar_8h_source.html#l00017">17</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   18</span>        {</div>
-<div class="line"><span class="lineno">   19</span>            Game::System&lt;GameObjectTypeRegistry&gt;().Register&lt;<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>&gt;(_typeName);</div>
+<div class="line"><span class="lineno">   19</span>            Game::System&lt;GameObjectTypeRegistry&gt;().Register&lt;<a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>&gt;(_typeName);</div>
 <div class="line"><span class="lineno">   20</span>            <a class="code hl_function" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">RegisterFactory</a>(</div>
 <div class="line"><span class="lineno">   21</span>                _typeName,</div>
 <div class="line"><span class="lineno">   22</span>                []() -&gt; GameObject*</div>
@@ -281,10 +281,10 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">   26</span>                _isUnique</div>
 <div class="line"><span class="lineno">   27</span>            );</div>
 <div class="line"><span class="lineno">   28</span>        }</div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="aclassmtgb_1_1IGameObjectRegistrar_html_a2dbf7ea66261ac91b378528696c892cb"><div class="ttname"><a href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">mtgb::IGameObjectRegistrar::RegisterFactory</a></div><div class="ttdeci">virtual void RegisterFactory(std::string_view, const CreateFunc &amp;_creator, bool _isUnique)=0</div></div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">mtgb::IGameObjectRegistrar::RegisterFactory()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>.</p>
+<p class="reference">参照先 <a class="el" href="classmtgb_1_1IGameObjectRegistrar.html#a2dbf7ea66261ac91b378528696c892cb">mtgb::IGameObjectRegistrar::RegisterFactory()</a>.</p>
 
 <p class="reference">参照元 <a class="el" href="RegisterCommonGameObjectType_8cpp_source.html#l00004">mtgb::RegisterCommonGameObjectType()</a>, <a class="el" href="RegisterGameObjectType_8cpp_source.html#l00012">mtgb::RegisterGameObjectType()</a>.</p>
 <div class="dynheader">

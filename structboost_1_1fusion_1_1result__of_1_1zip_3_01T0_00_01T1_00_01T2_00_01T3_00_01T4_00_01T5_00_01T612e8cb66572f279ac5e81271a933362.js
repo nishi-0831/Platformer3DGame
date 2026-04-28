@@ -1,0 +1,6 @@
+var structboost_1_1fusion_1_1result__of_1_1zip_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T5_00_01T612e8cb66572f279ac5e81271a933362 =
+[
+    [ "ref_params", "structboost_1_1fusion_1_1result__of_1_1zip_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T5_00_01T612e8cb66572f279ac5e81271a933362.html#ae19bd5b7fdb26797dd11091d316a34dd", null ],
+    [ "sequences", "structboost_1_1fusion_1_1result__of_1_1zip_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T5_00_01T612e8cb66572f279ac5e81271a933362.html#a51e672369026090bcf1ff0282606dc0e", null ],
+    [ "type", "structboost_1_1fusion_1_1result__of_1_1zip_3_01T0_00_01T1_00_01T2_00_01T3_00_01T4_00_01T5_00_01T612e8cb66572f279ac5e81271a933362.html#aa109c9cdab30f78452dd56beaf3da519", null ]
+];

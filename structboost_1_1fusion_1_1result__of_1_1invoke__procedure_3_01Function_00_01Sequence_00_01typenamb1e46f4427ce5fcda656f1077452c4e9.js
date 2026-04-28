@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1result__of_1_1invoke__procedure_3_01Function_00_01Sequence_00_01typenamb1e46f4427ce5fcda656f1077452c4e9 =
+[
+    [ "type", "structboost_1_1fusion_1_1result__of_1_1invoke__procedure_3_01Function_00_01Sequence_00_01typenamb1e46f4427ce5fcda656f1077452c4e9.html#ad4e83f39fd497965fea098ca732ded7f", null ]
+];

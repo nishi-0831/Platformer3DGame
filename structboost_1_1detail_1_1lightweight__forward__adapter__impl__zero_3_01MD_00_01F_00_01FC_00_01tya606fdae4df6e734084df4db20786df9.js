@@ -1,0 +1,5 @@
+var structboost_1_1detail_1_1lightweight__forward__adapter__impl__zero_3_01MD_00_01F_00_01FC_00_01tya606fdae4df6e734084df4db20786df9 =
+[
+    [ "operator()", "structboost_1_1detail_1_1lightweight__forward__adapter__impl__zero_3_01MD_00_01F_00_01FC_00_01tya606fdae4df6e734084df4db20786df9.html#a55c36a06cd0edf7dbdd4a2b3a10a415b", null ],
+    [ "operator()", "structboost_1_1detail_1_1lightweight__forward__adapter__impl__zero_3_01MD_00_01F_00_01FC_00_01tya606fdae4df6e734084df4db20786df9.html#a6e524cc2799657e06d1602ecffe4b1f0", null ]
+];

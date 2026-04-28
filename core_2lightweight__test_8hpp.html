@@ -1,0 +1,810 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: lightweight_test.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('core_2lightweight__test_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">core/lightweight_test.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="lwt__unattended_8hpp_source.html">boost/core/detail/lwt_unattended.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="current__function_8hpp_source.html">boost/current_function.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;exception&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;cctype&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+core/lightweight_test.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="core_2lightweight__test_8hpp__incl.svg" width="1260" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="core_2lightweight__test_8hpp__dep__incl.svg" width="603" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="core_2lightweight__test_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1test__result.html">boost::detail::test_result</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lwt__long__type.html">boost::detail::lwt_long_type&lt; Signed &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lwt__long__type_3_01true_01_4.html">boost::detail::lwt_long_type&lt; true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lwt__long__type_3_01false_01_4.html">boost::detail::lwt_long_type&lt; false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__eq.html">boost::detail::lw_test_eq</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__ne.html">boost::detail::lw_test_ne</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__lt.html">boost::detail::lw_test_lt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__le.html">boost::detail::lw_test_le</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__gt.html">boost::detail::lw_test_gt</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lw__test__ge.html">boost::detail::lw_test_ge</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1core"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html">boost::core</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a6f77465cc8dce5d76257848dbe2f3214"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a6f77465cc8dce5d76257848dbe2f3214">BOOST_LIGHTWEIGHT_TEST_OSTREAM</a>&#160;&#160;&#160;std::cerr</td></tr>
+<tr class="separator:a6f77465cc8dce5d76257848dbe2f3214"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2daa378535db1ac78372eb93c53d20"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a7a2daa378535db1ac78372eb93c53d20">BOOST_TEST</a>(expr)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a2c676a572c6dd23b3c468820468b67dc">::boost::detail::test_impl</a>(#expr, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, (expr)? true: false) )</td></tr>
+<tr class="separator:a7a2daa378535db1ac78372eb93c53d20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1803d6ea383082ed5db26f4afd7fe985"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a1803d6ea383082ed5db26f4afd7fe985">BOOST_TEST_NOT</a>(expr)&#160;&#160;&#160;<a class="el" href="core_2lightweight__test_8hpp.html#a7a2daa378535db1ac78372eb93c53d20">BOOST_TEST</a>(!(expr))</td></tr>
+<tr class="separator:a1803d6ea383082ed5db26f4afd7fe985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93af9f0168cd24ebd52a27f6ac2ae21f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a93af9f0168cd24ebd52a27f6ac2ae21f">BOOST_ERROR</a>(msg)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a0ac504eea7d398c7f43f101f2610b4cd">::boost::detail::error_impl</a>(msg, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>) )</td></tr>
+<tr class="separator:a93af9f0168cd24ebd52a27f6ac2ae21f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cf5d94c4fa4eac5566c86b2a6d64d1d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a6cf5d94c4fa4eac5566c86b2a6d64d1d">BOOST_TEST_WITH</a>(expr1,  expr2,  predicate)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(predicate, #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:a6cf5d94c4fa4eac5566c86b2a6d64d1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa993afe505ff66f3d315279938fb9fa8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#aa993afe505ff66f3d315279938fb9fa8">BOOST_TEST_EQ</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__eq.html">::boost::detail::lw_test_eq</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:aa993afe505ff66f3d315279938fb9fa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff2d5615d3870f9b7348a1bff53ce83"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#aaff2d5615d3870f9b7348a1bff53ce83">BOOST_TEST_NE</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__ne.html">::boost::detail::lw_test_ne</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:aaff2d5615d3870f9b7348a1bff53ce83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac25f1a79bf875f8ede6ef7a4012e4062"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#ac25f1a79bf875f8ede6ef7a4012e4062">BOOST_TEST_LT</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__lt.html">::boost::detail::lw_test_lt</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:ac25f1a79bf875f8ede6ef7a4012e4062"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb83534a1eab8ff742ab3b90c726cd57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#acb83534a1eab8ff742ab3b90c726cd57">BOOST_TEST_LE</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__le.html">::boost::detail::lw_test_le</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:acb83534a1eab8ff742ab3b90c726cd57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d213c3e8816603ca7c37fc1a10603ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a0d213c3e8816603ca7c37fc1a10603ed">BOOST_TEST_GT</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__gt.html">::boost::detail::lw_test_gt</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:a0d213c3e8816603ca7c37fc1a10603ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a128872d1e3e9a153ac05b49d0b161602"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a128872d1e3e9a153ac05b49d0b161602">BOOST_TEST_GE</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__ge.html">::boost::detail::lw_test_ge</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:a128872d1e3e9a153ac05b49d0b161602"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c020d2b35699d0010c4376ec43e0df1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a2c020d2b35699d0010c4376ec43e0df1">BOOST_TEST_CSTR_EQ</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#ae28abaa5e1c081ccc7b2d5cd20354c18">::boost::detail::test_cstr_eq_impl</a>(#expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:a2c020d2b35699d0010c4376ec43e0df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ee04f33ed650d34814d7942e7f5d081"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a9ee04f33ed650d34814d7942e7f5d081">BOOST_TEST_CSTR_NE</a>(expr1,  expr2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a66042e53f3ddf0af04de473a608004d8">::boost::detail::test_cstr_ne_impl</a>(#expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td></tr>
+<tr class="separator:a9ee04f33ed650d34814d7942e7f5d081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae62faf2a9698fe9c7c97a04637cd896a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#ae62faf2a9698fe9c7c97a04637cd896a">BOOST_TEST_ALL_EQ</a>(begin1,  end1,  begin2,  end2)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a85fb6480c9178ecd44e69b1406807cef">::boost::detail::test_all_eq_impl</a>(<a class="el" href="core_2lightweight__test_8hpp.html#a6f77465cc8dce5d76257848dbe2f3214">BOOST_LIGHTWEIGHT_TEST_OSTREAM</a>, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, begin1, end1, begin2, end2) )</td></tr>
+<tr class="separator:ae62faf2a9698fe9c7c97a04637cd896a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae73c4f00cad3a10dd9d87306f5a4bb29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#ae73c4f00cad3a10dd9d87306f5a4bb29">BOOST_TEST_ALL_WITH</a>(begin1,  end1,  begin2,  end2,  predicate)&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#ae2012db6cb9cf9aee2549a633f33025e">::boost::detail::test_all_with_impl</a>(<a class="el" href="core_2lightweight__test_8hpp.html#a6f77465cc8dce5d76257848dbe2f3214">BOOST_LIGHTWEIGHT_TEST_OSTREAM</a>, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, begin1, end1, begin2, end2, predicate) )</td></tr>
+<tr class="separator:ae73c4f00cad3a10dd9d87306f5a4bb29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c80e33c504f08e65ae24164de9d7cfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a6c80e33c504f08e65ae24164de9d7cfb">BOOST_TEST_THROWS</a>(EXPR,  EXCEP)</td></tr>
+<tr class="separator:a6c80e33c504f08e65ae24164de9d7cfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552877678b51299c288079d698967f37"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="core_2lightweight__test_8hpp.html#a552877678b51299c288079d698967f37">BOOST_TEST_NO_THROW</a>(EXPR)</td></tr>
+<tr class="separator:a552877678b51299c288079d698967f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a9a65f8fa5957335c6d73d7d568746586"><td class="memItemLeft" align="right" valign="top">test_result &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a9a65f8fa5957335c6d73d7d568746586">boost::detail::test_results</a> ()</td></tr>
+<tr class="separator:a9a65f8fa5957335c6d73d7d568746586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad956be38f55ca66f50bb7e76f566b875"><td class="memItemLeft" align="right" valign="top">int &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ad956be38f55ca66f50bb7e76f566b875">boost::detail::test_errors</a> ()</td></tr>
+<tr class="separator:ad956be38f55ca66f50bb7e76f566b875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c676a572c6dd23b3c468820468b67dc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a2c676a572c6dd23b3c468820468b67dc">boost::detail::test_impl</a> (char const *expr, char const *file, int line, char const *function, bool v)</td></tr>
+<tr class="separator:a2c676a572c6dd23b3c468820468b67dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ac504eea7d398c7f43f101f2610b4cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a0ac504eea7d398c7f43f101f2610b4cd">boost::detail::error_impl</a> (char const *msg, char const *file, int line, char const *function)</td></tr>
+<tr class="separator:a0ac504eea7d398c7f43f101f2610b4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c77b2cc4a5c868a7930641811529d71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a1c77b2cc4a5c868a7930641811529d71">boost::detail::throw_failed_impl</a> (const char *expr, char const *excep, char const *file, int line, char const *function)</td></tr>
+<tr class="separator:a1c77b2cc4a5c868a7930641811529d71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7ea15325f9626f326bc5c9fad35f0f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ac7ea15325f9626f326bc5c9fad35f0f3">boost::detail::no_throw_failed_impl</a> (const char *expr, const char *file, int line, const char *function)</td></tr>
+<tr class="separator:ac7ea15325f9626f326bc5c9fad35f0f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95c64a481af720ab8b77910d9a70c777"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a95c64a481af720ab8b77910d9a70c777">boost::detail::no_throw_failed_impl</a> (const char *expr, const char *what, const char *file, int line, const char *function)</td></tr>
+<tr class="separator:a95c64a481af720ab8b77910d9a70c777"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526e30441948325061ef408c7068cdb7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a526e30441948325061ef408c7068cdb7"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a526e30441948325061ef408c7068cdb7">boost::detail::test_output_impl</a> (const T &amp;v)</td></tr>
+<tr class="separator:a526e30441948325061ef408c7068cdb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202677bce847d2ad50b0f1b7fd1523b3"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a202677bce847d2ad50b0f1b7fd1523b3">boost::detail::test_output_impl</a> (const char *v)</td></tr>
+<tr class="separator:a202677bce847d2ad50b0f1b7fd1523b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a059b09031b602b05118f4d405185758a"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a059b09031b602b05118f4d405185758a">boost::detail::test_output_impl</a> (const unsigned char *v)</td></tr>
+<tr class="separator:a059b09031b602b05118f4d405185758a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ad37a94d32498e92b450d1db5ccd7eb"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a3ad37a94d32498e92b450d1db5ccd7eb">boost::detail::test_output_impl</a> (const signed char *v)</td></tr>
+<tr class="separator:a3ad37a94d32498e92b450d1db5ccd7eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf9998ecda3c5d554da13e25e55e67d"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a3cf9998ecda3c5d554da13e25e55e67d">boost::detail::test_output_impl</a> (char *v)</td></tr>
+<tr class="separator:a3cf9998ecda3c5d554da13e25e55e67d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0851fd9e532acfba499e32fc3cbf39db"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a0851fd9e532acfba499e32fc3cbf39db">boost::detail::test_output_impl</a> (unsigned char *v)</td></tr>
+<tr class="separator:a0851fd9e532acfba499e32fc3cbf39db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582e7000db8f0ef182df5c83aeb936de"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a582e7000db8f0ef182df5c83aeb936de">boost::detail::test_output_impl</a> (signed char *v)</td></tr>
+<tr class="separator:a582e7000db8f0ef182df5c83aeb936de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35fe2aaab5c63232dd48a872980e626"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac35fe2aaab5c63232dd48a872980e626"><td class="memTemplItemLeft" align="right" valign="top">const void *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ac35fe2aaab5c63232dd48a872980e626">boost::detail::test_output_impl</a> (T volatile *v)</td></tr>
+<tr class="separator:ac35fe2aaab5c63232dd48a872980e626"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783f25cad28b5125eff80e4477e08cfd"><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a783f25cad28b5125eff80e4477e08cfd">boost::detail::test_output_impl</a> (std::nullptr_t)</td></tr>
+<tr class="separator:a783f25cad28b5125eff80e4477e08cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab94fc87fb513cb8958a2036d861e7ee0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ab94fc87fb513cb8958a2036d861e7ee0">boost::detail::test_output_impl</a> (signed char const &amp;v)</td></tr>
+<tr class="separator:ab94fc87fb513cb8958a2036d861e7ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af57b9c876c2c50ce179dfab8cfbd262d"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#af57b9c876c2c50ce179dfab8cfbd262d">boost::detail::test_output_impl</a> (unsigned char const &amp;v)</td></tr>
+<tr class="separator:af57b9c876c2c50ce179dfab8cfbd262d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11833091dd82f12b2d2c855a607ae02"><td class="memItemLeft" align="right" valign="top">lwt_long_type&lt;(static_cast&lt; wchar_t &gt;(-1)&lt; static_cast&lt; wchar_t &gt;(0))&gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ad11833091dd82f12b2d2c855a607ae02">boost::detail::test_output_impl</a> (wchar_t const &amp;v)</td></tr>
+<tr class="separator:ad11833091dd82f12b2d2c855a607ae02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc8debe54645be3ba3fbc17b1ea2cf34"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#acc8debe54645be3ba3fbc17b1ea2cf34">boost::detail::test_output_impl</a> (char16_t const &amp;v)</td></tr>
+<tr class="separator:acc8debe54645be3ba3fbc17b1ea2cf34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acba472d25f502fc71ac3432069659de9"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#acba472d25f502fc71ac3432069659de9">boost::detail::test_output_impl</a> (char32_t const &amp;v)</td></tr>
+<tr class="separator:acba472d25f502fc71ac3432069659de9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a870311eb4c9053e3eff423138b38dd88"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a870311eb4c9053e3eff423138b38dd88">boost::detail::test_output_impl</a> (char const &amp;v)</td></tr>
+<tr class="separator:a870311eb4c9053e3eff423138b38dd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da80c0801b776796f90d2e51d28fd6e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a7da80c0801b776796f90d2e51d28fd6e"><td class="memTemplItemLeft" align="right" valign="top">char const *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a7da80c0801b776796f90d2e51d28fd6e">boost::detail::lwt_predicate_name</a> (T const &amp;)</td></tr>
+<tr class="separator:a7da80c0801b776796f90d2e51d28fd6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac21c8031e6c9221d5f81425af56ca4c6"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ac21c8031e6c9221d5f81425af56ca4c6">boost::detail::lwt_predicate_name</a> (lw_test_eq const &amp;)</td></tr>
+<tr class="separator:ac21c8031e6c9221d5f81425af56ca4c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57c02caf89de2791dbb3a4d98bc0a24e"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a57c02caf89de2791dbb3a4d98bc0a24e">boost::detail::lwt_predicate_name</a> (lw_test_ne const &amp;)</td></tr>
+<tr class="separator:a57c02caf89de2791dbb3a4d98bc0a24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35729ed15acbde0788a75323036c1c43"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a35729ed15acbde0788a75323036c1c43">boost::detail::lwt_predicate_name</a> (lw_test_lt const &amp;)</td></tr>
+<tr class="separator:a35729ed15acbde0788a75323036c1c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a514634ba18a2c3669f3c2e54c22dd3ad"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a514634ba18a2c3669f3c2e54c22dd3ad">boost::detail::lwt_predicate_name</a> (lw_test_le const &amp;)</td></tr>
+<tr class="separator:a514634ba18a2c3669f3c2e54c22dd3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb1b131eadbf21daac64e936dbdf9d8"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#adcb1b131eadbf21daac64e936dbdf9d8">boost::detail::lwt_predicate_name</a> (lw_test_gt const &amp;)</td></tr>
+<tr class="separator:adcb1b131eadbf21daac64e936dbdf9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a5e943ea752abb479132b3e8a23985"><td class="memItemLeft" align="right" valign="top">char const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a02a5e943ea752abb479132b3e8a23985">boost::detail::lwt_predicate_name</a> (lw_test_ge const &amp;)</td></tr>
+<tr class="separator:a02a5e943ea752abb479132b3e8a23985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61455056f873a38482d2e7ae29bfa4b3"><td class="memTemplParams" colspan="2">template&lt;class BinaryPredicate , class T , class U &gt; </td></tr>
+<tr class="memitem:a61455056f873a38482d2e7ae29bfa4b3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">boost::detail::test_with_impl</a> (BinaryPredicate pred, char const *expr1, char const *expr2, char const *file, int line, char const *function, T const &amp;t, U const &amp;u)</td></tr>
+<tr class="separator:a61455056f873a38482d2e7ae29bfa4b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28abaa5e1c081ccc7b2d5cd20354c18"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ae28abaa5e1c081ccc7b2d5cd20354c18">boost::detail::test_cstr_eq_impl</a> (char const *expr1, char const *expr2, char const *file, int line, char const *function, char const *const t, char const *const u)</td></tr>
+<tr class="separator:ae28abaa5e1c081ccc7b2d5cd20354c18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66042e53f3ddf0af04de473a608004d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a66042e53f3ddf0af04de473a608004d8">boost::detail::test_cstr_ne_impl</a> (char const *expr1, char const *expr2, char const *file, int line, char const *function, char const *const t, char const *const u)</td></tr>
+<tr class="separator:a66042e53f3ddf0af04de473a608004d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85fb6480c9178ecd44e69b1406807cef"><td class="memTemplParams" colspan="2">template&lt;class FormattedOutputFunction , class InputIterator1 , class InputIterator2 &gt; </td></tr>
+<tr class="memitem:a85fb6480c9178ecd44e69b1406807cef"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a85fb6480c9178ecd44e69b1406807cef">boost::detail::test_all_eq_impl</a> (FormattedOutputFunction &amp;output, char const *file, int line, char const *function, InputIterator1 first_begin, InputIterator1 first_end, InputIterator2 second_begin, InputIterator2 second_end)</td></tr>
+<tr class="separator:a85fb6480c9178ecd44e69b1406807cef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2012db6cb9cf9aee2549a633f33025e"><td class="memTemplParams" colspan="2">template&lt;class FormattedOutputFunction , class InputIterator1 , class InputIterator2 , typename BinaryPredicate &gt; </td></tr>
+<tr class="memitem:ae2012db6cb9cf9aee2549a633f33025e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ae2012db6cb9cf9aee2549a633f33025e">boost::detail::test_all_with_impl</a> (FormattedOutputFunction &amp;output, char const *file, int line, char const *function, InputIterator1 first_begin, InputIterator1 first_end, InputIterator2 second_begin, InputIterator2 second_end, BinaryPredicate predicate)</td></tr>
+<tr class="separator:ae2012db6cb9cf9aee2549a633f33025e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19b0ee1f5bf1da0702f3920dc392be9f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a19b0ee1f5bf1da0702f3920dc392be9f">boost::report_errors</a> ()</td></tr>
+<tr class="separator:a19b0ee1f5bf1da0702f3920dc392be9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992f75bbd9065cf925ced906b17965d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1core.html#a992f75bbd9065cf925ced906b17965d5">boost::core::lwt_init</a> ()</td></tr>
+<tr class="separator:a992f75bbd9065cf925ced906b17965d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a93af9f0168cd24ebd52a27f6ac2ae21f" name="a93af9f0168cd24ebd52a27f6ac2ae21f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93af9f0168cd24ebd52a27f6ac2ae21f">&#9670;&#160;</a></span>BOOST_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ERROR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg</td><td>)</td>
+          <td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a0ac504eea7d398c7f43f101f2610b4cd">::boost::detail::error_impl</a>(msg, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00536">536</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6f77465cc8dce5d76257848dbe2f3214" name="a6f77465cc8dce5d76257848dbe2f3214"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f77465cc8dce5d76257848dbe2f3214">&#9670;&#160;</a></span>BOOST_LIGHTWEIGHT_TEST_OSTREAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_LIGHTWEIGHT_TEST_OSTREAM&#160;&#160;&#160;std::cerr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00040">40</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7a2daa378535db1ac78372eb93c53d20" name="a7a2daa378535db1ac78372eb93c53d20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2daa378535db1ac78372eb93c53d20">&#9670;&#160;</a></span>BOOST_TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr</td><td>)</td>
+          <td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a2c676a572c6dd23b3c468820468b67dc">::boost::detail::test_impl</a>(#expr, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, (expr)? true: false) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00533">533</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae62faf2a9698fe9c7c97a04637cd896a" name="ae62faf2a9698fe9c7c97a04637cd896a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae62faf2a9698fe9c7c97a04637cd896a">&#9670;&#160;</a></span>BOOST_TEST_ALL_EQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_ALL_EQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">begin1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">end1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">begin2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">end2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a85fb6480c9178ecd44e69b1406807cef">::boost::detail::test_all_eq_impl</a>(<a class="el" href="core_2lightweight__test_8hpp.html#a6f77465cc8dce5d76257848dbe2f3214">BOOST_LIGHTWEIGHT_TEST_OSTREAM</a>, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, begin1, end1, begin2, end2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00551">551</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae73c4f00cad3a10dd9d87306f5a4bb29" name="ae73c4f00cad3a10dd9d87306f5a4bb29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae73c4f00cad3a10dd9d87306f5a4bb29">&#9670;&#160;</a></span>BOOST_TEST_ALL_WITH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_ALL_WITH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">begin1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">end1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">begin2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">end2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">predicate&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#ae2012db6cb9cf9aee2549a633f33025e">::boost::detail::test_all_with_impl</a>(<a class="el" href="core_2lightweight__test_8hpp.html#a6f77465cc8dce5d76257848dbe2f3214">BOOST_LIGHTWEIGHT_TEST_OSTREAM</a>, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, begin1, end1, begin2, end2, predicate) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00552">552</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2c020d2b35699d0010c4376ec43e0df1" name="a2c020d2b35699d0010c4376ec43e0df1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c020d2b35699d0010c4376ec43e0df1">&#9670;&#160;</a></span>BOOST_TEST_CSTR_EQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_CSTR_EQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#ae28abaa5e1c081ccc7b2d5cd20354c18">::boost::detail::test_cstr_eq_impl</a>(#expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00548">548</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9ee04f33ed650d34814d7942e7f5d081" name="a9ee04f33ed650d34814d7942e7f5d081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ee04f33ed650d34814d7942e7f5d081">&#9670;&#160;</a></span>BOOST_TEST_CSTR_NE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_CSTR_NE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a66042e53f3ddf0af04de473a608004d8">::boost::detail::test_cstr_ne_impl</a>(#expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00549">549</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa993afe505ff66f3d315279938fb9fa8" name="aa993afe505ff66f3d315279938fb9fa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa993afe505ff66f3d315279938fb9fa8">&#9670;&#160;</a></span>BOOST_TEST_EQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_EQ</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__eq.html">::boost::detail::lw_test_eq</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00540">540</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a128872d1e3e9a153ac05b49d0b161602" name="a128872d1e3e9a153ac05b49d0b161602"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a128872d1e3e9a153ac05b49d0b161602">&#9670;&#160;</a></span>BOOST_TEST_GE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_GE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__ge.html">::boost::detail::lw_test_ge</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00546">546</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d213c3e8816603ca7c37fc1a10603ed" name="a0d213c3e8816603ca7c37fc1a10603ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d213c3e8816603ca7c37fc1a10603ed">&#9670;&#160;</a></span>BOOST_TEST_GT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_GT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__gt.html">::boost::detail::lw_test_gt</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00545">545</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acb83534a1eab8ff742ab3b90c726cd57" name="acb83534a1eab8ff742ab3b90c726cd57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb83534a1eab8ff742ab3b90c726cd57">&#9670;&#160;</a></span>BOOST_TEST_LE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_LE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__le.html">::boost::detail::lw_test_le</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00544">544</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac25f1a79bf875f8ede6ef7a4012e4062" name="ac25f1a79bf875f8ede6ef7a4012e4062"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac25f1a79bf875f8ede6ef7a4012e4062">&#9670;&#160;</a></span>BOOST_TEST_LT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_LT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__lt.html">::boost::detail::lw_test_lt</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00543">543</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaff2d5615d3870f9b7348a1bff53ce83" name="aaff2d5615d3870f9b7348a1bff53ce83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaff2d5615d3870f9b7348a1bff53ce83">&#9670;&#160;</a></span>BOOST_TEST_NE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_NE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(<a class="el" href="structboost_1_1detail_1_1lw__test__ne.html">::boost::detail::lw_test_ne</a>(), #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00541">541</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a552877678b51299c288079d698967f37" name="a552877678b51299c288079d698967f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a552877678b51299c288079d698967f37">&#9670;&#160;</a></span>BOOST_TEST_NO_THROW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_NO_THROW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">EXPR</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <span class="keywordflow">try</span> {                                                              \</div>
+<div class="line">        EXPR;                                                          \</div>
+<div class="line">    } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {                                \</div>
+<div class="line">        <a class="code hl_function" href="namespaceboost_1_1detail.html#ac7ea15325f9626f326bc5c9fad35f0f3">::boost::detail::no_throw_failed_impl</a>                          \</div>
+<div class="line">        (#EXPR, e.what(), __FILE__, __LINE__, <a class="code hl_define" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>); \</div>
+<div class="line">    } <span class="keywordflow">catch</span> (...) {                                                    \</div>
+<div class="line">        <a class="code hl_function" href="namespaceboost_1_1detail.html#ac7ea15325f9626f326bc5c9fad35f0f3">::boost::detail::no_throw_failed_impl</a>                          \</div>
+<div class="line">        (#EXPR, __FILE__, __LINE__, <a class="code hl_define" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>);           \</div>
+<div class="line">    }</div>
+<div class="ttc" id="acurrent__function_8hpp_html_ae82718a98b4bc41a7a6dbbf37ed8e07f"><div class="ttname"><a href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a></div><div class="ttdeci">#define BOOST_CURRENT_FUNCTION</div></div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_ac7ea15325f9626f326bc5c9fad35f0f3"><div class="ttname"><a href="namespaceboost_1_1detail.html#ac7ea15325f9626f326bc5c9fad35f0f3">boost::detail::no_throw_failed_impl</a></div><div class="ttdeci">void no_throw_failed_impl(const char *expr, const char *file, int line, const char *function)</div><div class="ttdef"><b>Definition:</b> <a href="core_2lightweight__test_8hpp_source.html#l00126">core/lightweight_test.hpp:126</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00574">574</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1803d6ea383082ed5db26f4afd7fe985" name="a1803d6ea383082ed5db26f4afd7fe985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1803d6ea383082ed5db26f4afd7fe985">&#9670;&#160;</a></span>BOOST_TEST_NOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_NOT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="core_2lightweight__test_8hpp.html#a7a2daa378535db1ac78372eb93c53d20">BOOST_TEST</a>(!(expr))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00534">534</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6c80e33c504f08e65ae24164de9d7cfb" name="a6c80e33c504f08e65ae24164de9d7cfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c80e33c504f08e65ae24164de9d7cfb">&#9670;&#160;</a></span>BOOST_TEST_THROWS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_THROWS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">EXPR, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">EXCEP&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">      <span class="keywordflow">try</span> {                                                           \</div>
+<div class="line">         EXPR;                                                        \</div>
+<div class="line">         <a class="code hl_function" href="namespaceboost_1_1detail.html#a1c77b2cc4a5c868a7930641811529d71">::boost::detail::throw_failed_impl</a>                           \</div>
+<div class="line">         (#EXPR, #EXCEP, __FILE__, __LINE__, <a class="code hl_define" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>); \</div>
+<div class="line">      }                                                               \</div>
+<div class="line">      catch(EXCEP <span class="keyword">const</span>&amp;) {                                           \</div>
+<div class="line">         ::boost::detail::test_results();                             \</div>
+<div class="line">      }                                                               \</div>
+<div class="line">      catch(...) {                                                    \</div>
+<div class="line">         <a class="code hl_function" href="namespaceboost_1_1detail.html#a1c77b2cc4a5c868a7930641811529d71">::boost::detail::throw_failed_impl</a>                           \</div>
+<div class="line">         (#EXPR, #EXCEP, __FILE__, __LINE__, <a class="code hl_define" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>); \</div>
+<div class="line">      }                                                               \</div>
+<div class="ttc" id="anamespaceboost_1_1detail_html_a1c77b2cc4a5c868a7930641811529d71"><div class="ttname"><a href="namespaceboost_1_1detail.html#a1c77b2cc4a5c868a7930641811529d71">boost::detail::throw_failed_impl</a></div><div class="ttdeci">void throw_failed_impl(const char *expr, char const *excep, char const *file, int line, char const *function)</div><div class="ttdef"><b>Definition:</b> <a href="core_2lightweight__test_8hpp_source.html#l00118">core/lightweight_test.hpp:118</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00555">555</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6cf5d94c4fa4eac5566c86b2a6d64d1d" name="a6cf5d94c4fa4eac5566c86b2a6d64d1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cf5d94c4fa4eac5566c86b2a6d64d1d">&#9670;&#160;</a></span>BOOST_TEST_WITH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_TEST_WITH</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">predicate&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;( <a class="el" href="namespaceboost_1_1detail.html#a61455056f873a38482d2e7ae29bfa4b3">::boost::detail::test_with_impl</a>(predicate, #expr1, #expr2, __FILE__, __LINE__, <a class="el" href="current__function_8hpp.html#ae82718a98b4bc41a7a6dbbf37ed8e07f">BOOST_CURRENT_FUNCTION</a>, expr1, expr2) )</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="core_2lightweight__test_8hpp_source.html">core/lightweight_test.hpp</a> の <a class="el" href="core_2lightweight__test_8hpp_source.html#l00538">538</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_3d8842992ca4653e6f2b7f6848ba9a43.html">core</a></li><li class="navelem"><a class="el" href="core_2lightweight__test_8hpp.html">lightweight_test.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

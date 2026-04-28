@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1apply =
+[
+    [ "BOOST_MPL_ASSERT_RELATION", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1apply.html#ac0dba0750811222440d0aefc60278d4d", null ]
+];

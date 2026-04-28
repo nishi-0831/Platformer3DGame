@@ -1,0 +1,415 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: concept_archetype.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('concept__archetype_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">concept_archetype.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_2workaround_8hpp_source.html">boost/config/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+concept_archetype.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="concept__archetype_8hpp__incl.svg" width="816" height="359"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="concept__archetype_8hpp__dep__incl.svg" width="420" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="concept__archetype_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1dummy__constructor.html">boost::detail::dummy_constructor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1null__archetype.html">boost::null_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1static__object.html">boost::static_object&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1default__constructible__archetype.html">boost::default_constructible_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1assignable__archetype.html">boost::assignable_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1copy__constructible__archetype.html">boost::copy_constructible_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1sgi__assignable__archetype.html">boost::sgi_assignable_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1default__archetype__base.html">boost::default_archetype_base</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1convertible__to__archetype.html">boost::convertible_to_archetype&lt; T, Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1convertible__from__archetype.html">boost::convertible_from_archetype&lt; T, Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1boolean__archetype.html">boost::boolean_archetype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1equality__comparable__archetype.html">boost::equality_comparable_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1equality__comparable2__first__archetype.html">boost::equality_comparable2_first_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1equality__comparable2__second__archetype.html">boost::equality_comparable2_second_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1less__than__comparable__archetype.html">boost::less_than_comparable_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1comparable__archetype.html">boost::comparable_archetype&lt; Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optag1.html">boost::optag1</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optag2.html">boost::optag2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optag3.html">boost::optag3</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1generator__archetype.html">boost::generator_archetype&lt; Return &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1void__generator__archetype.html">boost::void_generator_archetype</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1unary__function__archetype.html">boost::unary_function_archetype&lt; Arg, Return &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1binary__function__archetype.html">boost::binary_function_archetype&lt; Arg1, Arg2, Return &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1unary__predicate__archetype.html">boost::unary_predicate_archetype&lt; Arg &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1binary__predicate__archetype.html">boost::binary_predicate_archetype&lt; Arg1, Arg2, Base &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1input__iterator__archetype.html">boost::input_iterator_archetype&lt; T, I &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1input__iterator__archetype_1_1reference.html">boost::input_iterator_archetype&lt; T, I &gt;::reference</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1input__iterator__archetype__no__proxy.html">boost::input_iterator_archetype_no_proxy&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1output__proxy.html">boost::output_proxy&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1output__iterator__archetype.html">boost::output_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1input__output__iterator__archetype.html">boost::input_output_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1input__output__iterator__archetype_1_1in__out__tag.html">boost::input_output_iterator_archetype&lt; T &gt;::in_out_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1input__output__iterator__archetype_1_1reference.html">boost::input_output_iterator_archetype&lt; T &gt;::reference</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1forward__iterator__archetype.html">boost::forward_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1mutable__forward__iterator__archetype.html">boost::mutable_forward_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1bidirectional__iterator__archetype.html">boost::bidirectional_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1mutable__bidirectional__iterator__archetype.html">boost::mutable_bidirectional_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1random__access__iterator__archetype.html">boost::random_access_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1mutable__random__access__iterator__archetype.html">boost::mutable_random_access_iterator_archetype&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a0c25d5afb3de8be606d2c2f42c73fecf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept__archetype_8hpp.html#a0c25d5afb3de8be606d2c2f42c73fecf">BOOST_DEFINE_BINARY_PREDICATE_ARCHETYPE</a>(OP,  NAME)</td></tr>
+<tr class="separator:a0c25d5afb3de8be606d2c2f42c73fecf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa585de6e7dea34c71b3454c03000e05b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept__archetype_8hpp.html#aa585de6e7dea34c71b3454c03000e05b">BOOST_DEFINE_OPERATOR_ARCHETYPE</a>(OP,  NAME)</td></tr>
+<tr class="separator:aa585de6e7dea34c71b3454c03000e05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af350f9898f46faf4dfa76fbd429aa8e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="concept__archetype_8hpp.html#af350f9898f46faf4dfa76fbd429aa8e5">BOOST_DEFINE_BINARY_OPERATOR_ARCHETYPE</a>(OP,  NAME)</td></tr>
+<tr class="separator:af350f9898f46faf4dfa76fbd429aa8e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a249b642655efe511a72c57c73e8d0dab"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:a249b642655efe511a72c57c73e8d0dab"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a249b642655efe511a72c57c73e8d0dab">boost::operator==</a> (const equality_comparable_archetype&lt; Base &gt; &amp;, const equality_comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:a249b642655efe511a72c57c73e8d0dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfaf37d15206f13fc8188703354d3186"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:adfaf37d15206f13fc8188703354d3186"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#adfaf37d15206f13fc8188703354d3186">boost::operator!=</a> (const equality_comparable_archetype&lt; Base &gt; &amp;, const equality_comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:adfaf37d15206f13fc8188703354d3186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12e51a33cfdf7b11f0d8cfbed1111da1"><td class="memTemplParams" colspan="2">template&lt;class Base1 , class Base2 &gt; </td></tr>
+<tr class="memitem:a12e51a33cfdf7b11f0d8cfbed1111da1"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a12e51a33cfdf7b11f0d8cfbed1111da1">boost::operator==</a> (const equality_comparable2_first_archetype&lt; Base1 &gt; &amp;, const equality_comparable2_second_archetype&lt; Base2 &gt; &amp;)</td></tr>
+<tr class="separator:a12e51a33cfdf7b11f0d8cfbed1111da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71cc134686996bbc8bd71b9748c9c7e5"><td class="memTemplParams" colspan="2">template&lt;class Base1 , class Base2 &gt; </td></tr>
+<tr class="memitem:a71cc134686996bbc8bd71b9748c9c7e5"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a71cc134686996bbc8bd71b9748c9c7e5">boost::operator!=</a> (const equality_comparable2_first_archetype&lt; Base1 &gt; &amp;, const equality_comparable2_second_archetype&lt; Base2 &gt; &amp;)</td></tr>
+<tr class="separator:a71cc134686996bbc8bd71b9748c9c7e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4d7978e884ef4778b065e7112844a87"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:ae4d7978e884ef4778b065e7112844a87"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ae4d7978e884ef4778b065e7112844a87">boost::operator&lt;</a> (const less_than_comparable_archetype&lt; Base &gt; &amp;, const less_than_comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:ae4d7978e884ef4778b065e7112844a87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fe06b8a09d2be95992abb16d5255987"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:a8fe06b8a09d2be95992abb16d5255987"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a8fe06b8a09d2be95992abb16d5255987">boost::operator&lt;</a> (const comparable_archetype&lt; Base &gt; &amp;, const comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:a8fe06b8a09d2be95992abb16d5255987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57da3d8b351fb0e0bb2869269be54ed0"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:a57da3d8b351fb0e0bb2869269be54ed0"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a57da3d8b351fb0e0bb2869269be54ed0">boost::operator&lt;=</a> (const comparable_archetype&lt; Base &gt; &amp;, const comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:a57da3d8b351fb0e0bb2869269be54ed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0f29d290657d51ecc0f877025df6992"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:ad0f29d290657d51ecc0f877025df6992"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ad0f29d290657d51ecc0f877025df6992">boost::operator&gt;</a> (const comparable_archetype&lt; Base &gt; &amp;, const comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:ad0f29d290657d51ecc0f877025df6992"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0fe348abacb4a63edc992b0d3f743e6"><td class="memTemplParams" colspan="2">template&lt;class Base &gt; </td></tr>
+<tr class="memitem:ac0fe348abacb4a63edc992b0d3f743e6"><td class="memTemplItemLeft" align="right" valign="top">boolean_archetype&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ac0fe348abacb4a63edc992b0d3f743e6">boost::operator&gt;=</a> (const comparable_archetype&lt; Base &gt; &amp;, const comparable_archetype&lt; Base &gt; &amp;)</td></tr>
+<tr class="separator:ac0fe348abacb4a63edc992b0d3f743e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9ad048d729ffdb544ff921e853ca52b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:af9ad048d729ffdb544ff921e853ca52b"><td class="memTemplItemLeft" align="right" valign="top">random_access_iterator_archetype&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#af9ad048d729ffdb544ff921e853ca52b">boost::operator+</a> (typename random_access_iterator_archetype&lt; T &gt;::difference_type, const random_access_iterator_archetype&lt; T &gt; &amp;x)</td></tr>
+<tr class="separator:af9ad048d729ffdb544ff921e853ca52b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29b2f83951322860d7af49dcab8432f8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a29b2f83951322860d7af49dcab8432f8"><td class="memTemplItemLeft" align="right" valign="top">mutable_random_access_iterator_archetype&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a29b2f83951322860d7af49dcab8432f8">boost::operator+</a> (typename mutable_random_access_iterator_archetype&lt; T &gt;::difference_type, const mutable_random_access_iterator_archetype&lt; T &gt; &amp;x)</td></tr>
+<tr class="separator:a29b2f83951322860d7af49dcab8432f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="af350f9898f46faf4dfa76fbd429aa8e5" name="af350f9898f46faf4dfa76fbd429aa8e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af350f9898f46faf4dfa76fbd429aa8e5">&#9670;&#160;</a></span>BOOST_DEFINE_BINARY_OPERATOR_ARCHETYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_DEFINE_BINARY_OPERATOR_ARCHETYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OP, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Return, <span class="keyword">class</span> Base = null_archetype&lt;&gt; &gt; \</div>
+<div class="line">  <span class="keyword">class </span>NAME##_first_archetype : <span class="keyword">public</span> Base { \</div>
+<div class="line">  <span class="keyword">public</span>: \</div>
+<div class="line">    NAME##_first_archetype(detail::dummy_constructor x) : Base(x) { } \</div>
+<div class="line">  }; \</div>
+<div class="line">  \</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Return, <span class="keyword">class</span> Base = null_archetype&lt;&gt; &gt; \</div>
+<div class="line">  <span class="keyword">class </span>NAME##_second_archetype : <span class="keyword">public</span> Base { \</div>
+<div class="line">  <span class="keyword">public</span>: \</div>
+<div class="line">    NAME##_second_archetype(detail::dummy_constructor x) : Base(x) { } \</div>
+<div class="line">  }; \</div>
+<div class="line">  \</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Return, <span class="keyword">class</span> BaseFirst, <span class="keyword">class</span> BaseSecond&gt; \</div>
+<div class="line">  Return \</div>
+<div class="line">  operator OP (<span class="keyword">const</span> NAME##_first_archetype&lt;Return, BaseFirst&gt;&amp;, \</div>
+<div class="line">               <span class="keyword">const</span> NAME##_second_archetype&lt;Return, BaseSecond&gt;&amp;) \</div>
+<div class="line">  { \</div>
+<div class="line">    <span class="keywordflow">return</span> Return(static_object&lt;detail::dummy_constructor&gt;::get()); \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="concept__archetype_8hpp_source.html">concept_archetype.hpp</a> の <a class="el" href="concept__archetype_8hpp_source.html#l00322">322</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0c25d5afb3de8be606d2c2f42c73fecf" name="a0c25d5afb3de8be606d2c2f42c73fecf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c25d5afb3de8be606d2c2f42c73fecf">&#9670;&#160;</a></span>BOOST_DEFINE_BINARY_PREDICATE_ARCHETYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_DEFINE_BINARY_PREDICATE_ARCHETYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OP, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Base = null_archetype&lt;&gt;, <span class="keyword">class</span> Tag = optag1 &gt;                 \</div>
+<div class="line">  <span class="keyword">class </span>NAME##_first_archetype : <span class="keyword">public</span> Base {                                  \</div>
+<div class="line">  <span class="keyword">public</span>:                                                                       \</div>
+<div class="line">    NAME##_first_archetype(detail::dummy_constructor x) : Base(x) { }           \</div>
+<div class="line">  };                                                                            \</div>
+<div class="line">                                                                                \</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Base = null_archetype&lt;&gt;, <span class="keyword">class</span> Tag = optag1 &gt;                 \</div>
+<div class="line">  <span class="keyword">class </span>NAME##_second_archetype : <span class="keyword">public</span> Base {                                 \</div>
+<div class="line">  <span class="keyword">public</span>:                                                                       \</div>
+<div class="line">    NAME##_second_archetype(detail::dummy_constructor x) : Base(x) { }          \</div>
+<div class="line">  };                                                                            \</div>
+<div class="line">                                                                                \</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> BaseFirst, <span class="keyword">class</span> BaseSecond, <span class="keyword">class</span> Tag&gt;                       \</div>
+<div class="line">  boolean_archetype                                                             \</div>
+<div class="line">  operator OP (<span class="keyword">const</span> NAME##_first_archetype&lt;BaseFirst, Tag&gt;&amp;,                   \</div>
+<div class="line">               <span class="keyword">const</span> NAME##_second_archetype&lt;BaseSecond, Tag&gt;&amp;)                 \</div>
+<div class="line">  {                                                                             \</div>
+<div class="line">   <span class="keywordflow">return</span> boolean_archetype(static_object&lt;detail::dummy_constructor&gt;::get());   \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="concept__archetype_8hpp_source.html">concept_archetype.hpp</a> の <a class="el" href="concept__archetype_8hpp_source.html#l00268">268</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa585de6e7dea34c71b3454c03000e05b" name="aa585de6e7dea34c71b3454c03000e05b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa585de6e7dea34c71b3454c03000e05b">&#9670;&#160;</a></span>BOOST_DEFINE_OPERATOR_ARCHETYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_DEFINE_OPERATOR_ARCHETYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">OP, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Base = null_archetype&lt;&gt; &gt; \</div>
+<div class="line">  <span class="keyword">class </span>NAME##_archetype : <span class="keyword">public</span> Base { \</div>
+<div class="line">  <span class="keyword">public</span>: \</div>
+<div class="line">    NAME##_archetype(detail::dummy_constructor x) : Base(x) { } \</div>
+<div class="line">    NAME##_archetype(<span class="keyword">const</span> NAME##_archetype&amp;)  \</div>
+<div class="line">      : Base(static_object&lt;detail::dummy_constructor&gt;::get()) { } \</div>
+<div class="line">    NAME##_archetype&amp; operator=(<span class="keyword">const</span> NAME##_archetype&amp;) { <span class="keywordflow">return</span> *<span class="keyword">this</span>; } \</div>
+<div class="line">  }; \</div>
+<div class="line">  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Base&gt; \</div>
+<div class="line">  NAME##_archetype&lt;Base&gt; \</div>
+<div class="line">  <span class="keyword">operator</span> OP (<span class="keyword">const</span> NAME##_archetype&lt;Base&gt;&amp;,\</div>
+<div class="line">               <span class="keyword">const</span> NAME##_archetype&lt;Base&gt;&amp;)  \</div>
+<div class="line">  { \</div>
+<div class="line">    return \</div>
+<div class="line">     NAME##_archetype&lt;Base&gt;(static_object&lt;detail::dummy_constructor&gt;::get()); \</div>
+<div class="line">  }</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="concept__archetype_8hpp_source.html">concept_archetype.hpp</a> の <a class="el" href="concept__archetype_8hpp_source.html#l00296">296</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="concept__archetype_8hpp.html">concept_archetype.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+var structboost_1_1iterators_1_1detail_1_1tuple__of__references_3_01Tuple_3_01Iterators_8_8_8_01_4_01_4 =
+[
+    [ "type", "structboost_1_1iterators_1_1detail_1_1tuple__of__references_3_01Tuple_3_01Iterators_8_8_8_01_4_01_4.html#ac1eae07c14095fc04f88fa48bd1035aa", null ]
+];

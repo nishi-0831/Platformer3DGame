@@ -167,7 +167,7 @@ mtgb::Interpolator 連携図</div>
 <tr class="separator:af1eb4ba05a672953e5bf9f976695d2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c254d764532f89c1e69ddca84a25e7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a6c254d764532f89c1e69ddca84a25e7b">Get</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
 <tr class="separator:a6c254d764532f89c1e69ddca84a25e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (<a class="el" href="structsize__t.html">size_t</a> _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
 <tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a43753ff7c3ef1b19dd267096935f8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a5a43753ff7c3ef1b19dd267096935f8a">Reuse</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
 <tr class="separator:a5a43753ff7c3ef1b19dd267096935f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,7 +266,7 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">   30</span>{</div>
 <div class="line"><span class="lineno">   31</span>    <span class="comment">// 始点、終点のゲームオブジェクト作成</span></div>
 <div class="line"><span class="lineno">   32</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* start = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>();</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* end   = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>();</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>   = <span class="keyword">new</span> <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>();</div>
 <div class="line"><span class="lineno">   34</span> </div>
 <div class="line"><span class="lineno">   35</span>    <span class="comment">// ゲームオブジェクトをシーンに登録</span></div>
 <div class="line"><span class="lineno">   36</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;RegisterGameObject(start);</div>
@@ -274,7 +274,7 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">   38</span> </div>
 <div class="line"><span class="lineno">   39</span>    <span class="comment">// Transform作成</span></div>
 <div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a74e5f738a34ca2110524e17f7eb63337">pStartTransform_</a> = start-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;();</div>
-<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a68e75d8146eac766daced95a8fd577c9">pEndTransform_</a>   = end-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;();</div>
+<div class="line"><span class="lineno">   41</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a68e75d8146eac766daced95a8fd577c9">pEndTransform_</a>   = <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;Component&lt;<a class="code hl_class" href="classmtgb_1_1Transform.html">Transform</a>&gt;();</div>
 <div class="line"><span class="lineno">   42</span>    <span class="comment">// オフセット分動かす</span></div>
 <div class="line"><span class="lineno">   43</span> </div>
 <div class="line"><span class="lineno">   44</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a74e5f738a34ca2110524e17f7eb63337">pStartTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a59922337bc5260bcd560fd0b834d30ff">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> - <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> { <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#a59922337bc5260bcd560fd0b834d30ff">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a> * INIT_OFFSET };</div>
@@ -282,7 +282,7 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">   46</span> </div>
 <div class="line"><span class="lineno">   47</span>    <span class="comment">// コライダー作成</span></div>
 <div class="line"><span class="lineno">   48</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a> = start-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>&gt;();</div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a>   = end-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>&gt;();</div>
+<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a>   = <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;Component&lt;<a class="code hl_class" href="classmtgb_1_1Collider.html">Collider</a>&gt;();</div>
 <div class="line"><span class="lineno">   50</span> </div>
 <div class="line"><span class="lineno">   51</span>    <span class="comment">// コライダーを球に設定</span></div>
 <div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">colliderType_</a> = ColliderType::TYPE_SPHERE;</div>
@@ -294,11 +294,11 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">   58</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html"><div class="ttname"><a href="classmtgb_1_1Collider.html">mtgb::Collider</a></div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00021">Collider.h:22</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_a31cbcdf00d33fe152a900e95867075ad"><div class="ttname"><a href="classmtgb_1_1Collider.html#a31cbcdf00d33fe152a900e95867075ad">mtgb::Collider::colliderType_</a></div><div class="ttdeci">ColliderType colliderType_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00076">Collider.h:76</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Collider_html_a5e61e476c9d384d64ccaac909a02a360"><div class="ttname"><a href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">mtgb::Collider::SetRadius</a></div><div class="ttdeci">void SetRadius(float _radius)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00288">Collider.cpp:288</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Collider_html_a5e61e476c9d384d64ccaac909a02a360"><div class="ttname"><a href="classmtgb_1_1Collider.html#a5e61e476c9d384d64ccaac909a02a360">mtgb::Collider::SetRadius</a></div><div class="ttdeci">void SetRadius(float _radius)</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8cpp_source.html#l00286">Collider.cpp:286</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Collider_html_ae3cdd36ffab49d607691ce819c169b10"><div class="ttname"><a href="classmtgb_1_1Collider.html#ae3cdd36ffab49d607691ce819c169b10">mtgb::Collider::isTrigger_</a></div><div class="ttdeci">bool isTrigger_</div><div class="ttdef"><b>Definition:</b> <a href="Collider_8h_source.html#l00083">Collider.h:83</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html"><div class="ttname"><a href="classmtgb_1_1GameObject.html">mtgb::GameObject</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00015">GameObject.h:16</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_aec1d6bd2a9c2953d360201599fc31d4a"><div class="ttname"><a href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">mtgb::GameObject::Component</a></div><div class="ttdeci">ComponentT * Component(Args &amp;&amp;... _args)</div><div class="ttdoc">コンポーネントを取得/追加</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00131">GameObject.h:131</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html_af1eb4ba05a672953e5bf9f976695d2c9"><div class="ttname"><a href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00030">IComponent.h:66</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_af1eb4ba05a672953e5bf9f976695d2c9"><div class="ttname"><a href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00027">IComponent.h:63</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Interpolator_html_a4121ff788f7bdd832d9cbb5d72f2bdd5"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a4121ff788f7bdd832d9cbb5d72f2bdd5">mtgb::Interpolator::elapsed_</a></div><div class="ttdeci">float elapsed_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00058">Interpolator.h:58</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Interpolator_html_a4d071516469c944b2c1b0d10f3b3c670"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a4d071516469c944b2c1b0d10f3b3c670">mtgb::Interpolator::dir_</a></div><div class="ttdeci">float dir_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00054">Interpolator.h:54</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Interpolator_html_a5867fad8cf2861dca398602f0ea3be51"><div class="ttname"><a href="classmtgb_1_1Interpolator.html#a5867fad8cf2861dca398602f0ea3be51">mtgb::Interpolator::startPos_</a></div><div class="ttdeci">Vector3 startPos_</div><div class="ttdef"><b>Definition:</b> <a href="Interpolator_8h_source.html#l00066">Interpolator.h:66</a></div></div>
@@ -313,10 +313,11 @@ mtgb::Interpolator 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00016">Transform.h:17</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00150">Transform.h:150</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00152">Transform.h:152</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a0c376d2cd96d6e2e6d173905bb95afb6"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">boost::fusion::end</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED lazy_enable_if&lt; traits::is_sequence&lt; Sequence &gt;, result_of::end&lt; Sequence &gt; &gt;::type const end(Sequence &amp;seq)</div><div class="ttdef"><b>Definition:</b> <a href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00080">boost/fusion/sequence/intrinsic/end.hpp:80</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_ab917aa260001d850f3372df7b3c94aeb"><div class="ttname"><a href="structmtgb_1_1Vector3.html#ab917aa260001d850f3372df7b3c94aeb">mtgb::Vector3::Zero</a></div><div class="ttdeci">static Vector3 Zero()</div><div class="ttdoc">零ベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00112">Vector3.h:112</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00076">mtgb::Collider::colliderType_</a>, <a class="el" href="GameObject_8h_source.html#l00131">mtgb::GameObject::Component()</a>, <a class="el" href="Collider_8h_source.html#l00083">mtgb::Collider::isTrigger_</a>, <a class="el" href="Interpolator_8h_source.html#l00081">pEndCollider_</a>, <a class="el" href="Interpolator_8h_source.html#l00078">pEndTransform_</a>, <a class="el" href="Transform_8h_source.html#l00150">mtgb::Transform::position</a>, <a class="el" href="Interpolator_8h_source.html#l00080">pStartCollider_</a>, <a class="el" href="Interpolator_8h_source.html#l00077">pStartTransform_</a>, <a class="el" href="Interpolator_8h_source.html#l00050">pTransform_</a>, <a class="el" href="Transform_8h_source.html#l00152">mtgb::Transform::scale</a>, <a class="el" href="Collider_8cpp_source.html#l00288">mtgb::Collider::SetRadius()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Collider_8h_source.html#l00076">mtgb::Collider::colliderType_</a>, <a class="el" href="GameObject_8h_source.html#l00131">mtgb::GameObject::Component()</a>, <a class="el" href="Collider_8h_source.html#l00083">mtgb::Collider::isTrigger_</a>, <a class="el" href="Interpolator_8h_source.html#l00081">pEndCollider_</a>, <a class="el" href="Interpolator_8h_source.html#l00078">pEndTransform_</a>, <a class="el" href="Transform_8h_source.html#l00150">mtgb::Transform::position</a>, <a class="el" href="Interpolator_8h_source.html#l00080">pStartCollider_</a>, <a class="el" href="Interpolator_8h_source.html#l00077">pStartTransform_</a>, <a class="el" href="Interpolator_8h_source.html#l00050">pTransform_</a>, <a class="el" href="Transform_8h_source.html#l00152">mtgb::Transform::scale</a>, <a class="el" href="Collider_8cpp_source.html#l00286">mtgb::Collider::SetRadius()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -473,10 +474,10 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00030">30</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>    {</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -514,10 +515,10 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -544,11 +545,11 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00041">41</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>;</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; InterpolatorCP, Interpolator &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00047">IComponent.h:47</a></div></div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; InterpolatorCP, Interpolator &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00044">IComponent.h:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -608,9 +609,9 @@ mtgb::Interpolator 連携図</div>
 </div><div class="memdoc">
 
 <p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00024">24</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>        : <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a> { _entityId }</div>
-<div class="line"><span class="lineno">   53</span>    {</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="fragment"><div class="line"><span class="lineno">   49</span>        : <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a> { _entityId }</div>
+<div class="line"><span class="lineno">   50</span>    {</div>
+<div class="line"><span class="lineno">   51</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -637,8 +638,8 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00035">35</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{}</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -783,7 +784,7 @@ mtgb::Interpolator 連携図</div>
 <div class="line"><span class="lineno">  155</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1Interpolator.html#aec4bc186401b0bbfd304fbef3431082f">pStartCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">GetEntityId</a>());</div>
 <div class="line"><span class="lineno">  156</span>    Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;DestroyGameObject(<a class="code hl_variable" href="classmtgb_1_1Interpolator.html#acd843596315bdb961140d25be486a90c">pEndCollider_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">GetEntityId</a>());</div>
 <div class="line"><span class="lineno">  157</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html_a7c5ec3a0bbee0b1441ed353a543a5cf6"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">mtgb::IComponent::GetEntityId</a></div><div class="ttdeci">EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00041">IComponent.h:41</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a7c5ec3a0bbee0b1441ed353a543a5cf6"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">mtgb::IComponent::GetEntityId</a></div><div class="ttdeci">EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -811,17 +812,17 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span>        ComponentT* result = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>        <span class="keyword">auto</span> componentIndex = Game::System&lt;ComponentRegistry&gt;().GetComponentIndex(_entityId, <span class="keyword">typeid</span>(ComponentT));</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (componentIndex.has_value())</div>
-<div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            result = Game::System&lt;ComponentPoolT&gt;().Reuse(componentIndex.value(), _entityId);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        ComponentT* result = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        <span class="keyword">auto</span> componentIndex = Game::System&lt;ComponentRegistry&gt;().GetComponentIndex(_entityId, <span class="keyword">typeid</span>(ComponentT));</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (componentIndex.has_value())</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            result = Game::System&lt;ComponentPoolT&gt;().Reuse(componentIndex.value(), _entityId);</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -837,7 +838,7 @@ mtgb::Interpolator 連携図</div>
         <tr>
           <td class="memname"><a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1InterpolatorCP.html">InterpolatorCP</a> , <a class="el" href="classmtgb_1_1Interpolator.html">Interpolator</a>  &gt;::Reuse </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="structsize__t.html">size_t</a>&#160;</td>
           <td class="paramname"><em>_index</em>, </td>
         </tr>
         <tr>
@@ -859,10 +860,10 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00033">33</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1158,7 +1159,7 @@ mtgb::Interpolator 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00044">44</a> 行目に定義があります。</p>
 
 </div>
 </div>

@@ -1,0 +1,531 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty__coll__graph.svg" width="246" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:abcb2f90a261a6b977d3bf9590e1d1749"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1push__context.html">push_context</a>&lt; Begin, End, Context &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#abcb2f90a261a6b977d3bf9590e1d1749">push_context_impl</a></td></tr>
+<tr class="separator:abcb2f90a261a6b977d3bf9590e1d1749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae029a1dddf5318a4e41bd875db9e6292"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1push__context.html#a5b47dd51dbcc744b4c0bdbd7ff01a30a">push_context_impl::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ae029a1dddf5318a4e41bd875db9e6292">next_context_type</a></td></tr>
+<tr class="separator:ae029a1dddf5318a4e41bd875db9e6292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d9fef2fc02c861878b8499c7339b06"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html">segmented_fold_until_impl</a>&lt; typename <a class="el" href="structboost_1_1remove__reference.html">remove_reference</a>&lt; typename <a class="el" href="structboost_1_1add__const.html">add_const</a>&lt; typename <a class="el" href="structboost_1_1fusion_1_1result__of_1_1deref.html">result_of::deref</a>&lt; Begin &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a>, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ae029a1dddf5318a4e41bd875db9e6292">next_context_type</a>, Fun &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a79d9fef2fc02c861878b8499c7339b06">fold_recurse_impl</a></td></tr>
+<tr class="separator:a79d9fef2fc02c861878b8499c7339b06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af52695ce65a025460a29970ebb1346c7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#a2d28afad7acd8bdf4a9605f76b4b19de">fold_recurse_impl::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#af52695ce65a025460a29970ebb1346c7">next_state_type</a></td></tr>
+<tr class="separator:af52695ce65a025460a29970ebb1346c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453bb0275fcc179a48012c7997ccb4ff"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate.html">segmented_fold_until_iterate</a>&lt; typename <a class="el" href="structboost_1_1fusion_1_1result__of_1_1next.html">result_of::next</a>&lt; Begin &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a>, End, <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#af52695ce65a025460a29970ebb1346c7">next_state_type</a>, Context, Fun &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a453bb0275fcc179a48012c7997ccb4ff">next_iteration_impl</a></td></tr>
+<tr class="separator:a453bb0275fcc179a48012c7997ccb4ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ab87bfd1afba84b7fb760a09ef00ae"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1mpl_1_1eval__if.html">mpl::eval_if</a>&lt; typenamefold_recurse_impl::continue_type, <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a453bb0275fcc179a48012c7997ccb4ff">next_iteration_impl</a>, <a class="el" href="structboost_1_1mpl_1_1identity.html">mpl::identity</a>&lt; <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#af52695ce65a025460a29970ebb1346c7">next_state_type</a> &gt; &gt;::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a></td></tr>
+<tr class="separator:ad2ab87bfd1afba84b7fb760a09ef00ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0ddb0d4caed3b797cdfac0749f14858"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1mpl_1_1eval__if.html">mpl::eval_if</a>&lt; typenamefold_recurse_impl::continue_type, <a class="el" href="structboost_1_1fusion_1_1detail_1_1continue__wrap.html">continue_wrap</a>&lt; <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a453bb0275fcc179a48012c7997ccb4ff">next_iteration_impl</a> &gt;, <a class="el" href="structboost_1_1mpl_1_1identity.html">mpl::identity</a>&lt; mpl::false_ &gt; &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ab0ddb0d4caed3b797cdfac0749f14858">continue_type</a></td></tr>
+<tr class="separator:ab0ddb0d4caed3b797cdfac0749f14858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a82ec964804e0268f1ce040fbdaace9d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a82ec964804e0268f1ce040fbdaace9d0">call</a> (Begin const &amp;beg, End const &amp;<a class="el" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;state, Context const &amp;context, Fun const &amp;fun)</td></tr>
+<tr class="separator:a82ec964804e0268f1ce040fbdaace9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a11dc31ce311781bd408b95bb612b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a26a11dc31ce311781bd408b95bb612b5">call</a> (Begin const &amp;beg, End const &amp;<a class="el" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;state, Context const &amp;context, Fun const &amp;fun, mpl::true_)</td></tr>
+<tr class="separator:a26a11dc31ce311781bd408b95bb612b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50e1898f16f532f43d40f3ced3bbef17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a50e1898f16f532f43d40f3ced3bbef17">call</a> (Begin const &amp;beg, End const &amp;<a class="el" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;state, Context const &amp;context, Fun const &amp;fun, mpl::false_)</td></tr>
+<tr class="separator:a50e1898f16f532f43d40f3ced3bbef17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Begin, typename End, typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, typename Context, typename Fun, bool IsEmpty&gt;<br />
+struct boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt;</div>
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00223">223</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="ab0ddb0d4caed3b797cdfac0749f14858" name="ab0ddb0d4caed3b797cdfac0749f14858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0ddb0d4caed3b797cdfac0749f14858">&#9670;&#160;</a></span>continue_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1mpl_1_1eval__if.html">mpl::eval_if</a>&lt;typenamefold_recurse_impl::continue_type,<a class="el" href="structboost_1_1fusion_1_1detail_1_1continue__wrap.html">continue_wrap</a>&lt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a453bb0275fcc179a48012c7997ccb4ff">next_iteration_impl</a>&gt;,<a class="el" href="structboost_1_1mpl_1_1identity.html">mpl::identity</a>&lt;mpl::false_&gt;&gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::continue_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00275">275</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79d9fef2fc02c861878b8499c7339b06" name="a79d9fef2fc02c861878b8499c7339b06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79d9fef2fc02c861878b8499c7339b06">&#9670;&#160;</a></span>fold_recurse_impl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html">segmented_fold_until_impl</a>&lt; typename <a class="el" href="structboost_1_1remove__reference.html">remove_reference</a>&lt; typename <a class="el" href="structboost_1_1add__const.html">add_const</a>&lt; typename <a class="el" href="structboost_1_1fusion_1_1result__of_1_1deref.html">result_of::deref</a>&lt;Begin&gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> &gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> , <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ae029a1dddf5318a4e41bd875db9e6292">next_context_type</a> , Fun &gt; <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::fold_recurse_impl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00245">245</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae029a1dddf5318a4e41bd875db9e6292" name="ae029a1dddf5318a4e41bd875db9e6292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae029a1dddf5318a4e41bd875db9e6292">&#9670;&#160;</a></span>next_context_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1push__context.html#a5b47dd51dbcc744b4c0bdbd7ff01a30a">push_context_impl::type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::next_context_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a453bb0275fcc179a48012c7997ccb4ff" name="a453bb0275fcc179a48012c7997ccb4ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a453bb0275fcc179a48012c7997ccb4ff">&#9670;&#160;</a></span>next_iteration_impl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate.html">segmented_fold_until_iterate</a>&lt; typename <a class="el" href="structboost_1_1fusion_1_1result__of_1_1next.html">result_of::next</a>&lt;Begin&gt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">::type</a> , End , <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#af52695ce65a025460a29970ebb1346c7">next_state_type</a> , Context , Fun &gt; <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::next_iteration_impl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00259">259</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af52695ce65a025460a29970ebb1346c7" name="af52695ce65a025460a29970ebb1346c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af52695ce65a025460a29970ebb1346c7">&#9670;&#160;</a></span>next_state_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#a2d28afad7acd8bdf4a9605f76b4b19de">fold_recurse_impl::type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::next_state_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00249">249</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abcb2f90a261a6b977d3bf9590e1d1749" name="abcb2f90a261a6b977d3bf9590e1d1749"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb2f90a261a6b977d3bf9590e1d1749">&#9670;&#160;</a></span>push_context_impl</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1fusion_1_1detail_1_1push__context.html">push_context</a>&lt;Begin, End, Context&gt; <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::push_context_impl</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00228">228</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad2ab87bfd1afba84b7fb760a09ef00ae" name="ad2ab87bfd1afba84b7fb760a09ef00ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2ab87bfd1afba84b7fb760a09ef00ae">&#9670;&#160;</a></span>type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1mpl_1_1eval__if.html">mpl::eval_if</a>&lt;typenamefold_recurse_impl::continue_type,<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a453bb0275fcc179a48012c7997ccb4ff">next_iteration_impl</a>,<a class="el" href="structboost_1_1mpl_1_1identity.html">mpl::identity</a>&lt;<a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#af52695ce65a025460a29970ebb1346c7">next_state_type</a>&gt;&gt;::type <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00267">267</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a82ec964804e0268f1ce040fbdaace9d0" name="a82ec964804e0268f1ce040fbdaace9d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82ec964804e0268f1ce040fbdaace9d0">&#9670;&#160;</a></span>call() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::call </td>
+          <td>(</td>
+          <td class="paramtype">Begin const &amp;&#160;</td>
+          <td class="paramname"><em>beg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">End const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Context const &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Fun const &amp;&#160;</td>
+          <td class="paramname"><em>fun</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00278">278</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  280</span>            {</div>
+<div class="line"><span class="lineno">  281</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a82ec964804e0268f1ce040fbdaace9d0">call</a>(beg, end, state, context, fun, <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#a57e6d9ab08bed4a9d95cd2d92fa5e07e">fold_recurse_impl::continue_type</a>());</div>
+<div class="line"><span class="lineno">  282</span>            }</div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl_html_a57e6d9ab08bed4a9d95cd2d92fa5e07e"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#a57e6d9ab08bed4a9d95cd2d92fa5e07e">boost::fusion::detail::segmented_fold_until_impl::continue_type</a></div><div class="ttdeci">impl::continue_type continue_type</div><div class="ttdef"><b>Definition:</b> <a href="segmented__fold__until__impl_8hpp_source.html#l00171">segmented_fold_until_impl.hpp:171</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty_html_a82ec964804e0268f1ce040fbdaace9d0"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#a82ec964804e0268f1ce040fbdaace9d0">boost::fusion::detail::segmented_fold_until_iterate_skip_empty::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Begin const &amp;beg, End const &amp;end, State const &amp;state, Context const &amp;context, Fun const &amp;fun)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__fold__until__impl_8hpp_source.html#l00278">segmented_fold_until_impl.hpp:278</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00278">boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt;::call()</a>, <a class="el" href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00080">boost::fusion::end()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00278">boost::fusion::detail::segmented_fold_until_iterate_skip_empty&lt; Begin, End, State, Context, Fun, IsEmpty &gt;::call()</a>, <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00355">boost::fusion::detail::segmented_fold_until_iterate&lt; Begin, End, State, Context, Fun, IsDone &gt;::call()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty_a82ec964804e0268f1ce040fbdaace9d0_cgraph.svg" width="383" height="90"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty_a82ec964804e0268f1ce040fbdaace9d0_icgraph.svg" width="1344" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a50e1898f16f532f43d40f3ced3bbef17" name="a50e1898f16f532f43d40f3ced3bbef17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50e1898f16f532f43d40f3ced3bbef17">&#9670;&#160;</a></span>call() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::call </td>
+          <td>(</td>
+          <td class="paramtype">Begin const &amp;&#160;</td>
+          <td class="paramname"><em>beg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">End const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Context const &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Fun const &amp;&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mpl::false_&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00301">301</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  303</span>            {</div>
+<div class="line"><span class="lineno">  304</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#adde2be3f83d0b455992199e8bac82766">fold_recurse_impl::call</a>(</div>
+<div class="line"><span class="lineno">  305</span>                    *beg</div>
+<div class="line"><span class="lineno">  306</span>                  , state</div>
+<div class="line"><span class="lineno">  307</span>                  , <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1push__context.html#a71ade92bcde9b56f2a24b848e7c99f00">push_context_impl::call</a>(beg, end, context)</div>
+<div class="line"><span class="lineno">  308</span>                  , fun);</div>
+<div class="line"><span class="lineno">  309</span>            }</div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1push__context_html_a71ade92bcde9b56f2a24b848e7c99f00"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1push__context.html#a71ade92bcde9b56f2a24b848e7c99f00">boost::fusion::detail::push_context::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Cur const &amp;cur, End const &amp;end, Context const &amp;context)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__fold__until__impl_8hpp_source.html#l00125">segmented_fold_until_impl.hpp:125</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl_html_adde2be3f83d0b455992199e8bac82766"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#adde2be3f83d0b455992199e8bac82766">boost::fusion::detail::segmented_fold_until_impl::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Sequence &amp;seq, State const &amp;state, Context const &amp;context, Fun const &amp;fun)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__fold__until__impl_8hpp_source.html#l00174">segmented_fold_until_impl.hpp:174</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00125">boost::fusion::detail::push_context&lt; Cur, End, Context &gt;::call()</a>, <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00174">boost::fusion::detail::segmented_fold_until_impl&lt; Sequence, State, Context, Fun, IsSegmented &gt;::call()</a>, <a class="el" href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00080">boost::fusion::end()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty_a50e1898f16f532f43d40f3ced3bbef17_cgraph.svg" width="1280" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a26a11dc31ce311781bd408b95bb612b5" name="a26a11dc31ce311781bd408b95bb612b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26a11dc31ce311781bd408b95bb612b5">&#9670;&#160;</a></span>call() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Begin , typename End , typename <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> , typename Context , typename Fun , bool IsEmpty&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> static <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html#ad2ab87bfd1afba84b7fb760a09ef00ae">type</a> <a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">boost::fusion::detail::segmented_fold_until_iterate_skip_empty</a>&lt; Begin, End, <a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a>, Context, Fun, IsEmpty &gt;::call </td>
+          <td>(</td>
+          <td class="paramtype">Begin const &amp;&#160;</td>
+          <td class="paramname"><em>beg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">End const &amp;&#160;</td>
+          <td class="paramname"><em>end</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">State</a> const &amp;&#160;</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Context const &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Fun const &amp;&#160;</td>
+          <td class="paramname"><em>fun</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">mpl::true_&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a> の <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00285">285</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>            {</div>
+<div class="line"><span class="lineno">  288</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate.html#aba290b0445099a8da6c4981d0cd9b048">next_iteration_impl::call</a>(</div>
+<div class="line"><span class="lineno">  289</span>                    <a class="code hl_function" href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">fusion::next</a>(beg)</div>
+<div class="line"><span class="lineno">  290</span>                  , end</div>
+<div class="line"><span class="lineno">  291</span>                  , <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__impl.html#adde2be3f83d0b455992199e8bac82766">fold_recurse_impl::call</a>(</div>
+<div class="line"><span class="lineno">  292</span>                        *beg</div>
+<div class="line"><span class="lineno">  293</span>                      , state</div>
+<div class="line"><span class="lineno">  294</span>                      , <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1push__context.html#a71ade92bcde9b56f2a24b848e7c99f00">push_context_impl::call</a>(beg, end, context)</div>
+<div class="line"><span class="lineno">  295</span>                      , fun)</div>
+<div class="line"><span class="lineno">  296</span>                  , context</div>
+<div class="line"><span class="lineno">  297</span>                  , fun);</div>
+<div class="line"><span class="lineno">  298</span>            }</div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a812fa52b7ea9f7aab4ce02e4f6b61c76"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a812fa52b7ea9f7aab4ce02e4f6b61c76">boost::fusion::next</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED result_of::next&lt; Iterator &gt;::type const next(Iterator const &amp;i)</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2iterator_2next_8hpp_source.html#l00059">fusion/iterator/next.hpp:59</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate_html_aba290b0445099a8da6c4981d0cd9b048"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate.html#aba290b0445099a8da6c4981d0cd9b048">boost::fusion::detail::segmented_fold_until_iterate::call</a></div><div class="ttdeci">BOOST_CONSTEXPR static BOOST_FUSION_GPU_ENABLED type call(Begin const &amp;beg, End const &amp;end, State const &amp;state, Context const &amp;context, Fun const &amp;fun)</div><div class="ttdef"><b>Definition:</b> <a href="segmented__fold__until__impl_8hpp_source.html#l00355">segmented_fold_until_impl.hpp:355</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00355">boost::fusion::detail::segmented_fold_until_iterate&lt; Begin, End, State, Context, Fun, IsDone &gt;::call()</a>, <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00125">boost::fusion::detail::push_context&lt; Cur, End, Context &gt;::call()</a>, <a class="el" href="segmented__fold__until__impl_8hpp_source.html#l00174">boost::fusion::detail::segmented_fold_until_impl&lt; Sequence, State, Context, Fun, IsSegmented &gt;::call()</a>, <a class="el" href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00080">boost::fusion::end()</a>, <a class="el" href="fusion_2iterator_2next_8hpp_source.html#l00059">boost::fusion::next()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty_a26a11dc31ce311781bd408b95bb612b5_cgraph.svg" width="1280" height="287"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="segmented__fold__until__impl_8hpp_source.html">segmented_fold_until_impl.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1fusion.html">fusion</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="structboost_1_1fusion_1_1detail_1_1segmented__fold__until__iterate__skip__empty.html">segmented_fold_until_iterate_skip_empty</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

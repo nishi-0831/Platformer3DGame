@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: adaptive_sort_merge.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('adaptive__sort__merge_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">adaptive_sort_merge.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config__begin_8hpp_source.html">boost/move/detail/config_begin.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="move_2detail_2reverse__iterator_8hpp_source.html">boost/move/detail/reverse_iterator.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="move_2algo_2move_8hpp_source.html">boost/move/algo/move.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="merge_8hpp_source.html">boost/move/algo/detail/merge.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adl__move__swap_8hpp_source.html">boost/move/adl_move_swap.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="insertion__sort_8hpp_source.html">boost/move/algo/detail/insertion_sort.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="merge__sort_8hpp_source.html">boost/move/algo/detail/merge_sort.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="heap__sort_8hpp_source.html">boost/move/algo/detail/heap_sort.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="move_2algo_2detail_2is__sorted_8hpp_source.html">boost/move/algo/detail/is_sorted.hpp</a>&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;<a class="el" href="cstdint_8hpp_source.html">boost/cstdint.hpp</a>&gt;</code><br />
+<code>#include &lt;limits.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="config__end_8hpp_source.html">boost/move/detail/config_end.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+adaptive_sort_merge.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="adaptive__sort__merge_8hpp__incl.svg" width="3491" height="1254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="adaptive__sort__merge_8hpp__dep__incl.svg" width="331" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="adaptive__sort__merge_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1movelib_1_1detail__adaptive_1_1less.html">boost::movelib::detail_adaptive::less</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1movelib"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib.html">boost::movelib</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1movelib_1_1detail__adaptive"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html">boost::movelib::detail_adaptive</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a0d800a7c62db87932d10ebc7f06d2142"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adaptive__sort__merge_8hpp.html#a0d800a7c62db87932d10ebc7f06d2142">BOOST_MOVE_ADAPTIVE_SORT_STATS_LEVEL</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a0d800a7c62db87932d10ebc7f06d2142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a4f170bceca989846495ebeb96bcef8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adaptive__sort__merge_8hpp.html#a2a4f170bceca989846495ebeb96bcef8">BOOST_MOVE_ADAPTIVE_SORT_PRINT_L1</a>(STR,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>)</td></tr>
+<tr class="separator:a2a4f170bceca989846495ebeb96bcef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d286f8b073914ed948e286d5e109e7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adaptive__sort__merge_8hpp.html#a6d286f8b073914ed948e286d5e109e7b">BOOST_MOVE_ADAPTIVE_SORT_PRINT_L2</a>(STR,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>)</td></tr>
+<tr class="separator:a6d286f8b073914ed948e286d5e109e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55d644c459a68210dd88606dc7845a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adaptive__sort__merge_8hpp.html#ab55d644c459a68210dd88606dc7845a4">BOOST_MOVE_ADAPTIVE_SORT_INVARIANT</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>)</td></tr>
+<tr class="separator:ab55d644c459a68210dd88606dc7845a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a3cbaafa90c6e5ffe0ecd322bf15ccd25"><td class="memItemLeft" align="right" valign="top">typedef std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a3cbaafa90c6e5ffe0ecd322bf15ccd25">boost::movelib::detail_adaptive::uintptr_t</a></td></tr>
+<tr class="separator:a3cbaafa90c6e5ffe0ecd322bf15ccd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a3c56674bb0012f708aebe36e55bc7846"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a3c56674bb0012f708aebe36e55bc7846">boost::movelib::detail_adaptive::BOOST_MOVE_STATIC_ASSERT</a> ((AdaptiveSortInsertionSortThreshold &amp;(AdaptiveSortInsertionSortThreshold-1))==0)</td></tr>
+<tr class="separator:a3c56674bb0012f708aebe36e55bc7846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae222f208fc454f48bd299788d30d0548"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae222f208fc454f48bd299788d30d0548"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ae222f208fc454f48bd299788d30d0548">boost::movelib::detail_adaptive::min_value</a> (const T &amp;a, const T &amp;b)</td></tr>
+<tr class="separator:ae222f208fc454f48bd299788d30d0548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad66f165c2255468fb4636852a66a061e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad66f165c2255468fb4636852a66a061e"><td class="memTemplItemLeft" align="right" valign="top">const T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ad66f165c2255468fb4636852a66a061e">boost::movelib::detail_adaptive::max_value</a> (const T &amp;a, const T &amp;b)</td></tr>
+<tr class="separator:ad66f165c2255468fb4636852a66a061e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac888adb102e9acd4c49541713e9736bc"><td class="memTemplParams" colspan="2">template&lt;class ForwardIt , class Pred , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> &gt; </td></tr>
+<tr class="memitem:ac888adb102e9acd4c49541713e9736bc"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; ForwardIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ac888adb102e9acd4c49541713e9736bc">boost::movelib::detail_adaptive::count_if_with</a> (ForwardIt first, ForwardIt last, Pred pred, const <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a5206560a306a2e085a437fd258eb57ce">V</a> &amp;v)</td></tr>
+<tr class="separator:ac888adb102e9acd4c49541713e9736bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e2de5188ed476fb3b401ef71ba3fa19"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a7e2de5188ed476fb3b401ef71ba3fa19"><td class="memTemplItemLeft" align="right" valign="top">RandIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a7e2de5188ed476fb3b401ef71ba3fa19">boost::movelib::detail_adaptive::skip_until_merge</a> (RandIt first1, RandIt const last1, const typename iterator_traits&lt; RandIt &gt;::value_type &amp;next_key, Compare comp)</td></tr>
+<tr class="separator:a7e2de5188ed476fb3b401ef71ba3fa19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac01129b311298792a2953d8079e961c4"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class RandIt &gt; </td></tr>
+<tr class="memitem:ac01129b311298792a2953d8079e961c4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ac01129b311298792a2953d8079e961c4">boost::movelib::detail_adaptive::swap_and_update_key</a> (RandItKeys const key_next, RandItKeys const key_range2, RandItKeys &amp;key_mid, RandIt const begin, RandIt const end, RandIt const with)</td></tr>
+<tr class="separator:ac01129b311298792a2953d8079e961c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cc106e9160b39ec91698bbea2a49226"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys &gt; </td></tr>
+<tr class="memitem:a7cc106e9160b39ec91698bbea2a49226"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a7cc106e9160b39ec91698bbea2a49226">boost::movelib::detail_adaptive::update_key</a> (RandItKeys const key_next, RandItKeys const key_range2, RandItKeys &amp;key_mid)</td></tr>
+<tr class="separator:a7cc106e9160b39ec91698bbea2a49226"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d2d369d73e34eadfe2ea8d7de35edda"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class RandIt , class RandIt2 , class Op &gt; </td></tr>
+<tr class="memitem:a4d2d369d73e34eadfe2ea8d7de35edda"><td class="memTemplItemLeft" align="right" valign="top">RandIt2&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a4d2d369d73e34eadfe2ea8d7de35edda">boost::movelib::detail_adaptive::buffer_and_update_key</a> (RandItKeys const key_next, RandItKeys const key_range2, RandItKeys &amp;key_mid, RandIt begin, RandIt end, RandIt with, RandIt2 buffer, Op op)</td></tr>
+<tr class="separator:a4d2d369d73e34eadfe2ea8d7de35edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f2275b755c2782498402da35e2d36d6"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a8f2275b755c2782498402da35e2d36d6"><td class="memTemplItemLeft" align="right" valign="top">RandIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a8f2275b755c2782498402da35e2d36d6">boost::movelib::detail_adaptive::partial_merge_bufferless_impl</a> (RandIt first1, RandIt last1, RandIt const last2, bool *const pis_range1_A, Compare comp)</td></tr>
+<tr class="separator:a8f2275b755c2782498402da35e2d36d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3274df9aade719b97f4fc88ed5875d07"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a3274df9aade719b97f4fc88ed5875d07"><td class="memTemplItemLeft" align="right" valign="top">RandIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a3274df9aade719b97f4fc88ed5875d07">boost::movelib::detail_adaptive::partial_merge_bufferless</a> (RandIt first1, RandIt last1, RandIt const last2, bool *const pis_range1_A, Compare comp)</td></tr>
+<tr class="separator:a3274df9aade719b97f4fc88ed5875d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44373387fe86a9e2a1dfdc75c2578f01"><td class="memTemplParams" colspan="2">template&lt;class SizeType &gt; </td></tr>
+<tr class="memitem:a44373387fe86a9e2a1dfdc75c2578f01"><td class="memTemplItemLeft" align="right" valign="top">static SizeType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a44373387fe86a9e2a1dfdc75c2578f01">boost::movelib::detail_adaptive::needed_keys_count</a> (SizeType n_block_a, SizeType n_block_b)</td></tr>
+<tr class="separator:a44373387fe86a9e2a1dfdc75c2578f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d41515e87527b32d54dd9efac5769f"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a08d41515e87527b32d54dd9efac5769f"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; RandIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a08d41515e87527b32d54dd9efac5769f">boost::movelib::detail_adaptive::find_next_block</a> (RandItKeys const key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const ix_first_block, typename iter_size&lt; RandIt &gt;::type const ix_last_block, Compare comp)</td></tr>
+<tr class="separator:a08d41515e87527b32d54dd9efac5769f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228227a8a7534f1cb0cbbde73398a0dd"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a228227a8a7534f1cb0cbbde73398a0dd"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a228227a8a7534f1cb0cbbde73398a0dd">boost::movelib::detail_adaptive::merge_blocks_bufferless</a> (RandItKeys const key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const l_irreg1, typename iter_size&lt; RandIt &gt;::type const n_block_a, typename iter_size&lt; RandIt &gt;::type const n_block_b, typename iter_size&lt; RandIt &gt;::type const l_irreg2, Compare comp)</td></tr>
+<tr class="separator:a228227a8a7534f1cb0cbbde73398a0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6592bedc96166ca43a77b34001cd6fd4"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class XBuf &gt; </td></tr>
+<tr class="memitem:a6592bedc96166ca43a77b34001cd6fd4"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; RandIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a6592bedc96166ca43a77b34001cd6fd4">boost::movelib::detail_adaptive::collect_unique</a> (RandIt const first, RandIt const last, typename iter_size&lt; RandIt &gt;::type const max_collected, Compare comp, XBuf &amp;xbuf)</td></tr>
+<tr class="separator:a6592bedc96166ca43a77b34001cd6fd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13d3a24e3ca0353e90caf503f9fc5423"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:a13d3a24e3ca0353e90caf503f9fc5423"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a13d3a24e3ca0353e90caf503f9fc5423">boost::movelib::detail_adaptive::floor_sqrt</a> (Unsigned n)</td></tr>
+<tr class="separator:a13d3a24e3ca0353e90caf503f9fc5423"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29608c4bde9ca18cd4c8372eea5f9c9a"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:a29608c4bde9ca18cd4c8372eea5f9c9a"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a29608c4bde9ca18cd4c8372eea5f9c9a">boost::movelib::detail_adaptive::ceil_sqrt</a> (Unsigned const n)</td></tr>
+<tr class="separator:a29608c4bde9ca18cd4c8372eea5f9c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade6a43045328a7d89bff34d4318d7397"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:ade6a43045328a7d89bff34d4318d7397"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ade6a43045328a7d89bff34d4318d7397">boost::movelib::detail_adaptive::floor_merge_multiple</a> (Unsigned const n, Unsigned &amp;base, Unsigned &amp;pow)</td></tr>
+<tr class="separator:ade6a43045328a7d89bff34d4318d7397"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a125f6837b310d81300be0af47fc5ae"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:a4a125f6837b310d81300be0af47fc5ae"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a4a125f6837b310d81300be0af47fc5ae">boost::movelib::detail_adaptive::ceil_merge_multiple</a> (Unsigned const n, Unsigned &amp;base, Unsigned &amp;pow)</td></tr>
+<tr class="separator:a4a125f6837b310d81300be0af47fc5ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e65ae5e56eed35590353bc0fa699679"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:a6e65ae5e56eed35590353bc0fa699679"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a6e65ae5e56eed35590353bc0fa699679">boost::movelib::detail_adaptive::ceil_sqrt_multiple</a> (Unsigned const n, Unsigned *pbase=0)</td></tr>
+<tr class="separator:a6e65ae5e56eed35590353bc0fa699679"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac277502bad4540e7e0d70eb49c6aece6"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:ac277502bad4540e7e0d70eb49c6aece6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ac277502bad4540e7e0d70eb49c6aece6">boost::movelib::detail_adaptive::slow_stable_sort</a> (RandIt const first, RandIt const last, Compare comp)</td></tr>
+<tr class="separator:ac277502bad4540e7e0d70eb49c6aece6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb3e58c6dfad9f8ba0efa897e8060ce"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:aebb3e58c6dfad9f8ba0efa897e8060ce"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#aebb3e58c6dfad9f8ba0efa897e8060ce">boost::movelib::detail_adaptive::lblock_for_combine</a> (Unsigned const l_block, Unsigned const n_keys, Unsigned const l_data, bool &amp;use_buf)</td></tr>
+<tr class="separator:aebb3e58c6dfad9f8ba0efa897e8060ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52f7eecda5ab555dcff78be219ad6337"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class XBuf &gt; </td></tr>
+<tr class="memitem:a52f7eecda5ab555dcff78be219ad6337"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a52f7eecda5ab555dcff78be219ad6337">boost::movelib::detail_adaptive::stable_sort</a> (RandIt first, RandIt last, Compare comp, XBuf &amp;xbuf)</td></tr>
+<tr class="separator:a52f7eecda5ab555dcff78be219ad6337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fe7b535681419c6841be9bcc125558b"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Comp , class XBuf &gt; </td></tr>
+<tr class="memitem:a1fe7b535681419c6841be9bcc125558b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a1fe7b535681419c6841be9bcc125558b">boost::movelib::detail_adaptive::unstable_sort</a> (RandIt first, RandIt last, Comp comp, XBuf &amp;xbuf)</td></tr>
+<tr class="separator:a1fe7b535681419c6841be9bcc125558b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6451d441d24128373fcbbd25015b8789"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class XBuf &gt; </td></tr>
+<tr class="memitem:a6451d441d24128373fcbbd25015b8789"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a6451d441d24128373fcbbd25015b8789">boost::movelib::detail_adaptive::stable_merge</a> (RandIt first, RandIt const middle, RandIt last, Compare comp, XBuf &amp;xbuf)</td></tr>
+<tr class="separator:a6451d441d24128373fcbbd25015b8789"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f539e64a9e8aac8a38a51fbb206bb50"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Comp , class XBuf &gt; </td></tr>
+<tr class="memitem:a5f539e64a9e8aac8a38a51fbb206bb50"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a5f539e64a9e8aac8a38a51fbb206bb50">boost::movelib::detail_adaptive::initialize_keys</a> (RandIt first, RandIt last, Comp comp, XBuf &amp;xbuf)</td></tr>
+<tr class="separator:a5f539e64a9e8aac8a38a51fbb206bb50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94404d40b3c5b2879b8f906a60c7f89c"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class U &gt; </td></tr>
+<tr class="memitem:a94404d40b3c5b2879b8f906a60c7f89c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a94404d40b3c5b2879b8f906a60c7f89c">boost::movelib::detail_adaptive::initialize_keys</a> (RandIt first, RandIt last, less, U &amp;)</td></tr>
+<tr class="separator:a94404d40b3c5b2879b8f906a60c7f89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac81c6ae96566e205e725b4a3bbea808a"><td class="memTemplParams" colspan="2">template&lt;class Unsigned &gt; </td></tr>
+<tr class="memitem:ac81c6ae96566e205e725b4a3bbea808a"><td class="memTemplItemLeft" align="right" valign="top">Unsigned&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ac81c6ae96566e205e725b4a3bbea808a">boost::movelib::detail_adaptive::calculate_total_combined</a> (Unsigned const len, Unsigned const l_prev_merged, Unsigned *pl_irreg_combined=0)</td></tr>
+<tr class="separator:ac81c6ae96566e205e725b4a3bbea808a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb6602ec7c2bacd097e9b47e7c89b6a"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class SizeType , class XBuf &gt; </td></tr>
+<tr class="memitem:abcb6602ec7c2bacd097e9b47e7c89b6a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#abcb6602ec7c2bacd097e9b47e7c89b6a">boost::movelib::detail_adaptive::combine_params</a> (RandItKeys const keys, KeyCompare key_comp, SizeType l_combined, SizeType const l_prev_merged, SizeType const l_block, XBuf &amp;xbuf, SizeType &amp;n_block_a, SizeType &amp;n_block_b, SizeType &amp;l_irreg1, SizeType &amp;l_irreg2, bool do_initialize_keys=true)</td></tr>
+<tr class="separator:abcb6602ec7c2bacd097e9b47e7c89b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b53b5f0c58d715dd1960487fb1c73ca"><td class="memTemplParams" colspan="2">template&lt;class InputIt1 , class InputIt2 , class OutputIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a6b53b5f0c58d715dd1960487fb1c73ca"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a6b53b5f0c58d715dd1960487fb1c73ca">boost::movelib::detail_adaptive::op_partial_merge_impl</a> (InputIt1 &amp;r_first1, InputIt1 const last1, InputIt2 &amp;r_first2, InputIt2 const last2, OutputIt d_first, Compare comp, Op op)</td></tr>
+<tr class="separator:a6b53b5f0c58d715dd1960487fb1c73ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ff753e7d67812bfba9c4ed4f37df89"><td class="memTemplParams" colspan="2">template&lt;class InputIt1 , class InputIt2 , class OutputIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:ae6ff753e7d67812bfba9c4ed4f37df89"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#ae6ff753e7d67812bfba9c4ed4f37df89">boost::movelib::detail_adaptive::op_partial_merge</a> (InputIt1 &amp;r_first1, InputIt1 const last1, InputIt2 &amp;r_first2, InputIt2 const last2, OutputIt d_first, Compare comp, Op op, bool is_stable)</td></tr>
+<tr class="separator:ae6ff753e7d67812bfba9c4ed4f37df89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4dd9bab012148c8281e20a4cca048e81"><td class="memTemplParams" colspan="2">template&lt;class InputIt1 , class InputIt2 , class OutputIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a4dd9bab012148c8281e20a4cca048e81"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a4dd9bab012148c8281e20a4cca048e81">boost::movelib::detail_adaptive::op_partial_merge_and_swap_impl</a> (InputIt1 &amp;r_first1, InputIt1 const last1, InputIt2 &amp;r_first2, InputIt2 const last2, InputIt2 &amp;r_first_min, OutputIt d_first, Compare comp, Op op)</td></tr>
+<tr class="separator:a4dd9bab012148c8281e20a4cca048e81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a84b5386bb7ee95e2f45ae04b9a598aec"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class InputIt2 , class OutputIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a84b5386bb7ee95e2f45ae04b9a598aec"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a84b5386bb7ee95e2f45ae04b9a598aec">boost::movelib::detail_adaptive::op_partial_merge_and_swap</a> (RandIt &amp;r_first1, RandIt const last1, InputIt2 &amp;r_first2, InputIt2 const last2, InputIt2 &amp;r_first_min, OutputIt d_first, Compare comp, Op op, bool is_stable)</td></tr>
+<tr class="separator:a84b5386bb7ee95e2f45ae04b9a598aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba279f6df834c1a7f625ca01c3906ddb"><td class="memTemplParams" colspan="2">template&lt;class RandIt1 , class RandIt2 , class RandItB , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:aba279f6df834c1a7f625ca01c3906ddb"><td class="memTemplItemLeft" align="right" valign="top">RandItB&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#aba279f6df834c1a7f625ca01c3906ddb">boost::movelib::detail_adaptive::op_buffered_partial_merge_and_swap_to_range1_and_buffer</a> (RandIt1 first1, RandIt1 const last1, RandIt2 &amp;rfirst2, RandIt2 const last2, RandIt2 &amp;rfirst_min, RandItB &amp;rfirstb, Compare comp, Op op)</td></tr>
+<tr class="separator:aba279f6df834c1a7f625ca01c3906ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a366512ad08ff70b829150ee5ea4c3cc8"><td class="memTemplParams" colspan="2">template&lt;class RandIt1 , class RandIt2 , class RandItB , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a366512ad08ff70b829150ee5ea4c3cc8"><td class="memTemplItemLeft" align="right" valign="top">RandItB&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a366512ad08ff70b829150ee5ea4c3cc8">boost::movelib::detail_adaptive::op_buffered_partial_merge_to_range1_and_buffer</a> (RandIt1 first1, RandIt1 const last1, RandIt2 &amp;rfirst2, RandIt2 const last2, RandItB &amp;rfirstb, Compare comp, Op op)</td></tr>
+<tr class="separator:a366512ad08ff70b829150ee5ea4c3cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a937cc991831fae44da2750a0954246fe"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class RandItBuf , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a937cc991831fae44da2750a0954246fe"><td class="memTemplItemLeft" align="right" valign="top">RandIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a937cc991831fae44da2750a0954246fe">boost::movelib::detail_adaptive::op_partial_merge_and_save_impl</a> (RandIt first1, RandIt const last1, RandIt &amp;rfirst2, RandIt last2, RandIt first_min, RandItBuf &amp;buf_first1_in_out, RandItBuf &amp;buf_last1_in_out, Compare comp, Op op)</td></tr>
+<tr class="separator:a937cc991831fae44da2750a0954246fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5721e6124af0e9b5980c577cd9937155"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class RandItBuf , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a5721e6124af0e9b5980c577cd9937155"><td class="memTemplItemLeft" align="right" valign="top">RandIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a5721e6124af0e9b5980c577cd9937155">boost::movelib::detail_adaptive::op_partial_merge_and_save</a> (RandIt first1, RandIt const last1, RandIt &amp;rfirst2, RandIt last2, RandIt first_min, RandItBuf &amp;buf_first1_in_out, RandItBuf &amp;buf_last1_in_out, Compare comp, Op op, bool is_stable)</td></tr>
+<tr class="separator:a5721e6124af0e9b5980c577cd9937155"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27dee659480ce04ddf6c54e69bd2a6be"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class RandIt2 , class OutputIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a27dee659480ce04ddf6c54e69bd2a6be"><td class="memTemplItemLeft" align="right" valign="top">OutputIt&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a27dee659480ce04ddf6c54e69bd2a6be">boost::movelib::detail_adaptive::op_merge_blocks_with_irreg</a> (RandItKeys key_first, RandItKeys key_mid, KeyCompare key_comp, RandIt first_reg, RandIt2 &amp;first_irr, RandIt2 const last_irr, OutputIt dest, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type n_block_left, typename iter_size&lt; RandIt &gt;::type min_check, typename iter_size&lt; RandIt &gt;::type max_check, Compare comp, bool const is_stable, Op op)</td></tr>
+<tr class="separator:a27dee659480ce04ddf6c54e69bd2a6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a477f364aad90522635d2ce4734a715"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a8a477f364aad90522635d2ce4734a715"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a8a477f364aad90522635d2ce4734a715">boost::movelib::detail_adaptive::op_merge_blocks_left</a> (RandItKeys const key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const l_irreg1, typename iter_size&lt; RandIt &gt;::type const n_block_a, typename iter_size&lt; RandIt &gt;::type const n_block_b, typename iter_size&lt; RandIt &gt;::type const l_irreg2, Compare comp, Op op)</td></tr>
+<tr class="separator:a8a477f364aad90522635d2ce4734a715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a428ad600626a8177a67afd09a79cb787"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a428ad600626a8177a67afd09a79cb787"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a428ad600626a8177a67afd09a79cb787">boost::movelib::detail_adaptive::merge_blocks_left</a> (RandItKeys const key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const l_irreg1, typename iter_size&lt; RandIt &gt;::type const n_block_a, typename iter_size&lt; RandIt &gt;::type const n_block_b, typename iter_size&lt; RandIt &gt;::type const l_irreg2, Compare comp, bool const xbuf_used)</td></tr>
+<tr class="separator:a428ad600626a8177a67afd09a79cb787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f8360e79de2e88f3e15824aa974f06"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a11f8360e79de2e88f3e15824aa974f06"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a11f8360e79de2e88f3e15824aa974f06">boost::movelib::detail_adaptive::merge_blocks_right</a> (RandItKeys const key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const n_block_a, typename iter_size&lt; RandIt &gt;::type const n_block_b, typename iter_size&lt; RandIt &gt;::type const l_irreg2, Compare comp, bool const xbuf_used)</td></tr>
+<tr class="separator:a11f8360e79de2e88f3e15824aa974f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd8bf9b9ebd8047dcc5cbe391c7de306"><td class="memTemplParams" colspan="2">template&lt;class RandItKeys , class KeyCompare , class RandIt , class Compare , class Op , class RandItBuf &gt; </td></tr>
+<tr class="memitem:abd8bf9b9ebd8047dcc5cbe391c7de306"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#abd8bf9b9ebd8047dcc5cbe391c7de306">boost::movelib::detail_adaptive::op_merge_blocks_with_buf</a> (RandItKeys key_first, KeyCompare key_comp, RandIt const first, typename iter_size&lt; RandIt &gt;::type const l_block, typename iter_size&lt; RandIt &gt;::type const l_irreg1, typename iter_size&lt; RandIt &gt;::type const n_block_a, typename iter_size&lt; RandIt &gt;::type const n_block_b, typename iter_size&lt; RandIt &gt;::type const l_irreg2, Compare comp, Op op, RandItBuf const buf_first)</td></tr>
+<tr class="separator:abd8bf9b9ebd8047dcc5cbe391c7de306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1fc247479a641ee59a3f704ece3c4b2"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:af1fc247479a641ee59a3f704ece3c4b2"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; RandIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#af1fc247479a641ee59a3f704ece3c4b2">boost::movelib::detail_adaptive::op_insertion_sort_step_left</a> (RandIt const first, typename iter_size&lt; RandIt &gt;::type const length, typename iter_size&lt; RandIt &gt;::type const step, Compare comp, Op op)</td></tr>
+<tr class="separator:af1fc247479a641ee59a3f704ece3c4b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a352745f0383dd44624594bca6493171f"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a352745f0383dd44624594bca6493171f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a352745f0383dd44624594bca6493171f">boost::movelib::detail_adaptive::op_merge_right_step_once</a> (RandIt first_block, typename iter_size&lt; RandIt &gt;::type const elements_in_blocks, typename iter_size&lt; RandIt &gt;::type const l_build_buf, Compare comp, Op op)</td></tr>
+<tr class="separator:a352745f0383dd44624594bca6493171f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9245cd97ee7adffee9c532354a266221"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare &gt; </td></tr>
+<tr class="memitem:a9245cd97ee7adffee9c532354a266221"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; RandIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a9245cd97ee7adffee9c532354a266221">boost::movelib::detail_adaptive::insertion_sort_step</a> (RandIt const first, typename iter_size&lt; RandIt &gt;::type const length, typename iter_size&lt; RandIt &gt;::type const step, Compare comp)</td></tr>
+<tr class="separator:a9245cd97ee7adffee9c532354a266221"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57d584f9fe04fbe3e3a289ca3e0d0d5e"><td class="memTemplParams" colspan="2">template&lt;class RandIt , class Compare , class Op &gt; </td></tr>
+<tr class="memitem:a57d584f9fe04fbe3e3a289ca3e0d0d5e"><td class="memTemplItemLeft" align="right" valign="top">iter_size&lt; RandIt &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a57d584f9fe04fbe3e3a289ca3e0d0d5e">boost::movelib::detail_adaptive::op_merge_left_step_multiple</a> (RandIt first_block, typename iter_size&lt; RandIt &gt;::type const elements_in_blocks, typename iter_size&lt; RandIt &gt;::type l_merged, typename iter_size&lt; RandIt &gt;::type const l_build_buf, typename iter_size&lt; RandIt &gt;::type l_left_space, Compare comp, Op op)</td></tr>
+<tr class="separator:a57d584f9fe04fbe3e3a289ca3e0d0d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a5e0df790d67b87d1a7f55fd40f86ff85"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1movelib_1_1detail__adaptive.html#a5e0df790d67b87d1a7f55fd40f86ff85">boost::movelib::detail_adaptive::AdaptiveSortInsertionSortThreshold</a> = 16</td></tr>
+<tr class="separator:a5e0df790d67b87d1a7f55fd40f86ff85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ab55d644c459a68210dd88606dc7845a4" name="ab55d644c459a68210dd88606dc7845a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55d644c459a68210dd88606dc7845a4">&#9670;&#160;</a></span>BOOST_MOVE_ADAPTIVE_SORT_INVARIANT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_ADAPTIVE_SORT_INVARIANT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="adaptive__sort__merge_8hpp_source.html">adaptive_sort_merge.hpp</a> の <a class="el" href="adaptive__sort__merge_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2a4f170bceca989846495ebeb96bcef8" name="a2a4f170bceca989846495ebeb96bcef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a4f170bceca989846495ebeb96bcef8">&#9670;&#160;</a></span>BOOST_MOVE_ADAPTIVE_SORT_PRINT_L1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_ADAPTIVE_SORT_PRINT_L1</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">STR, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="adaptive__sort__merge_8hpp_source.html">adaptive_sort_merge.hpp</a> の <a class="el" href="adaptive__sort__merge_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6d286f8b073914ed948e286d5e109e7b" name="a6d286f8b073914ed948e286d5e109e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d286f8b073914ed948e286d5e109e7b">&#9670;&#160;</a></span>BOOST_MOVE_ADAPTIVE_SORT_PRINT_L2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_ADAPTIVE_SORT_PRINT_L2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">STR, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="adaptive__sort__merge_8hpp_source.html">adaptive_sort_merge.hpp</a> の <a class="el" href="adaptive__sort__merge_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d800a7c62db87932d10ebc7f06d2142" name="a0d800a7c62db87932d10ebc7f06d2142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d800a7c62db87932d10ebc7f06d2142">&#9670;&#160;</a></span>BOOST_MOVE_ADAPTIVE_SORT_STATS_LEVEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MOVE_ADAPTIVE_SORT_STATS_LEVEL&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="adaptive__sort__merge_8hpp_source.html">adaptive_sort_merge.hpp</a> の <a class="el" href="adaptive__sort__merge_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_bd26f2a9b666a6a4c805ff0dd2b8a2e0.html">move</a></li><li class="navelem"><a class="el" href="dir_77c6af990d2eaa30863d0ae59ce058dc.html">algo</a></li><li class="navelem"><a class="el" href="dir_6e8ae8e39946b0bb0c9fdfd8efe3df4c.html">detail</a></li><li class="navelem"><a class="el" href="adaptive__sort__merge_8hpp.html">adaptive_sort_merge.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -23,7 +23,7 @@ var classGameOverZone =
     [ "Initialize", "classGameOverZone.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classGameOverZone.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classGameOverZone.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classGameOverZone.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classGameOverZone.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classGameOverZone.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "Serialize", "classGameOverZone.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],
     [ "SetName", "classGameOverZone.html#af0b3630f3e49fde5433ef21cc243a235", null ],

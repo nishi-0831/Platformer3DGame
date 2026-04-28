@@ -1,0 +1,760 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: composite_key.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('composite__key_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">composite_key.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="container__hash_2hash__fwd_8hpp_source.html">boost/container_hash/hash_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2enable__if_8hpp_source.html">boost/core/enable_if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="access__specifier_8hpp_source.html">boost/multi_index/detail/access_specifier.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="eval__if_8hpp_source.html">boost/mpl/eval_if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2identity_8hpp_source.html">boost/mpl/identity.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2if_8hpp_source.html">boost/mpl/if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2or_8hpp_source.html">boost/mpl/or.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="control_2expr__if_8hpp_source.html">boost/preprocessor/control/expr_if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2list_2at_8hpp_source.html">boost/preprocessor/list/at.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2repetition_2enum_8hpp_source.html">boost/preprocessor/repetition/enum.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="repetition_2enum__params_8hpp_source.html">boost/preprocessor/repetition/enum_params.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="static__assert_8hpp_source.html">boost/static_assert.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_2tuple_8hpp_source.html">boost/tuple/tuple.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__traits_2is__same_8hpp_source.html">boost/type_traits/is_same.hpp</a>&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2ref_8hpp_source.html">boost/core/ref.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__convertible_8hpp_source.html">boost/type_traits/is_convertible.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cons__stdtuple_8hpp_source.html">boost/multi_index/detail/cons_stdtuple.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+composite_key.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="composite__key_8hpp__incl.svg" width="3964" height="652"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="composite__key_8hpp__dep__incl.svg" width="3991" height="418"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="composite__key_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1nth__key__from__value.html">boost::multi_index::detail::nth_key_from_value&lt; CompositeKey, N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1generic__operator__equal.html">boost::multi_index::detail::generic_operator_equal</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1generic__operator__less.html">boost::multi_index::detail::generic_operator_less</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__ckey__terminal.html">boost::multi_index::detail::equal_ckey_ckey_terminal&lt; KeyCons1, Value1, KeyCons2, Value2, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__ckey__normal.html">boost::multi_index::detail::equal_ckey_ckey_normal&lt; KeyCons1, Value1, KeyCons2, Value2, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__ckey.html">boost::multi_index::detail::equal_ckey_ckey&lt; KeyCons1, Value1, KeyCons2, Value2, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__cval__terminal.html">boost::multi_index::detail::equal_ckey_cval_terminal&lt; KeyCons, Value, ValCons, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__cval__normal.html">boost::multi_index::detail::equal_ckey_cval_normal&lt; KeyCons, Value, ValCons, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1equal__ckey__cval.html">boost::multi_index::detail::equal_ckey_cval&lt; KeyCons, Value, ValCons, EqualCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__ckey__terminal.html">boost::multi_index::detail::compare_ckey_ckey_terminal&lt; KeyCons1, Value1, KeyCons2, Value2, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__ckey__normal.html">boost::multi_index::detail::compare_ckey_ckey_normal&lt; KeyCons1, Value1, KeyCons2, Value2, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__ckey.html">boost::multi_index::detail::compare_ckey_ckey&lt; KeyCons1, Value1, KeyCons2, Value2, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__cval__terminal.html">boost::multi_index::detail::compare_ckey_cval_terminal&lt; KeyCons, Value, ValCons, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__cval__normal.html">boost::multi_index::detail::compare_ckey_cval_normal&lt; KeyCons, Value, ValCons, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1compare__ckey__cval.html">boost::multi_index::detail::compare_ckey_cval&lt; KeyCons, Value, ValCons, CompareCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__ckey__terminal.html">boost::multi_index::detail::hash_ckey_terminal&lt; KeyCons, Value, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__ckey__normal.html">boost::multi_index::detail::hash_ckey_normal&lt; KeyCons, Value, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__ckey.html">boost::multi_index::detail::hash_ckey&lt; KeyCons, Value, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__cval__terminal.html">boost::multi_index::detail::hash_cval_terminal&lt; ValCons, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__cval__normal.html">boost::multi_index::detail::hash_cval_normal&lt; ValCons, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hash__cval.html">boost::multi_index::detail::hash_cval&lt; ValCons, HashCons &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__result.html">boost::multi_index::composite_key_result&lt; CompositeKey &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key.html">boost::multi_index::composite_key&lt; Value &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__compare.html">boost::multi_index::composite_key_compare</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__hash.html">boost::multi_index::composite_key_hash</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__result__equal__to.html">boost::multi_index::composite_key_result_equal_to&lt; CompositeKeyResult &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__result__less.html">boost::multi_index::composite_key_result_less&lt; CompositeKeyResult &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__result__greater.html">boost::multi_index::composite_key_result_greater&lt; CompositeKeyResult &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1composite__key__result__hash.html">boost::multi_index::composite_key_result_hash&lt; CompositeKeyResult &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1equal__to_3_01boost_1_1multi__index_1_1composite__key__result_3_01CompositeKey_01_4_01_4.html">std::equal_to&lt; boost::multi_index::composite_key_result&lt; CompositeKey &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1less_3_01boost_1_1multi__index_1_1composite__key__result_3_01CompositeKey_01_4_01_4.html">std::less&lt; boost::multi_index::composite_key_result&lt; CompositeKey &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1greater_3_01boost_1_1multi__index_1_1composite__key__result_3_01CompositeKey_01_4_01_4.html">std::greater&lt; boost::multi_index::composite_key_result&lt; CompositeKey &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1hash_3_01boost_1_1multi__index_1_1composite__key__result_3_01CompositeKey_01_4_01_4.html">boost::hash&lt; boost::multi_index::composite_key_result&lt; CompositeKey &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1multi__index"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html">boost::multi_index</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1multi__index_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">boost::multi_index::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a3dd6be24efe4150c0c87299e535d0c0c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a3dd6be24efe4150c0c87299e535d0c0c">BOOST_MULTI_INDEX_LIMIT_COMPOSITE_KEY_SIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a3dd6be24efe4150c0c87299e535d0c0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad036a29291ae125f22c441037658f03"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#aad036a29291ae125f22c441037658f03">BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:aad036a29291ae125f22c441037658f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1bc0fb2a02ce4767a75aced54d76cff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#ae1bc0fb2a02ce4767a75aced54d76cff">BOOST_MULTI_INDEX_CK_ENUM</a>(macro,  data)&#160;&#160;&#160;  <a class="el" href="preprocessor_2repetition_2enum_8hpp.html#aced80a1acf93f81c9d9696339d32279d">BOOST_PP_ENUM</a>(<a class="el" href="composite__key_8hpp.html#aad036a29291ae125f22c441037658f03">BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</a>,macro,data)</td></tr>
+<tr class="separator:ae1bc0fb2a02ce4767a75aced54d76cff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ea22caad61e0689dbbc509f760c2a52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(param)&#160;&#160;&#160;  <a class="el" href="repetition_2enum__params_8hpp.html#a1b6aeff6f8b81735e93832b95ddb222c">BOOST_PP_ENUM_PARAMS</a>(<a class="el" href="composite__key_8hpp.html#aad036a29291ae125f22c441037658f03">BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</a>,param)</td></tr>
+<tr class="separator:a3ea22caad61e0689dbbc509f760c2a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe72cbe657938554d8a233bdf3991f60"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#afe72cbe657938554d8a233bdf3991f60">BOOST_MULTI_INDEX_CK_TEMPLATE_PARM</a>(z,  n,  text)&#160;&#160;&#160;  typename <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n) <a class="el" href="control_2expr__if_8hpp.html#a2236a32bb0ff6c12f299398f06b0f7f7">BOOST_PP_EXPR_IF</a>(n,=tuples::null_type)</td></tr>
+<tr class="separator:afe72cbe657938554d8a233bdf3991f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3292b3c3c05718211bc1f89344ca46a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a3292b3c3c05718211bc1f89344ca46a2">BOOST_MULTI_INDEX_CK_CTOR_ARG</a>(z,  n,  text)&#160;&#160;&#160;  const <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n)&amp; <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(k,n) = <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n)()</td></tr>
+<tr class="separator:a3292b3c3c05718211bc1f89344ca46a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af97304d3a38a4919a34ab1904b783719"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a>(z,  n,  list)</td></tr>
+<tr class="separator:af97304d3a38a4919a34ab1904b783719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4a7af73d321ab04c964ad7f0ee0b32a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#ad4a7af73d321ab04c964ad7f0ee0b32a">BOOST_MULTI_INDEX_CK_NTH_COMPOSITE_KEY_FUNCTOR</a>(name,  functor)</td></tr>
+<tr class="separator:ad4a7af73d321ab04c964ad7f0ee0b32a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4bb643c399b3d1a7ea28d50d3a0a25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a4d4bb643c399b3d1a7ea28d50d3a0a25">BOOST_MULTI_INDEX_CK_IDENTITY_ENUM_MACRO</a>(z,  n,  text)&#160;&#160;&#160;text</td></tr>
+<tr class="separator:a4d4bb643c399b3d1a7ea28d50d3a0a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f7073c5ed97c5029732cc2afb11af5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a16f7073c5ed97c5029732cc2afb11af5">BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS</a>(t1,  t2,  a1,  a2)</td></tr>
+<tr class="separator:a16f7073c5ed97c5029732cc2afb11af5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cb6afefd51c38ec1b99ded5992e1242"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#a0cb6afefd51c38ec1b99ded5992e1242">BOOST_MULTI_INDEX_CK_RESULT_EQUAL_TO_SUPER</a></td></tr>
+<tr class="separator:a0cb6afefd51c38ec1b99ded5992e1242"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa74773def7cc0de6c8cfb17de5322f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#aaa74773def7cc0de6c8cfb17de5322f7">BOOST_MULTI_INDEX_CK_RESULT_LESS_SUPER</a></td></tr>
+<tr class="separator:aaa74773def7cc0de6c8cfb17de5322f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed9a4ffed96905c7a6ae46af4e919b81"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#aed9a4ffed96905c7a6ae46af4e919b81">BOOST_MULTI_INDEX_CK_RESULT_GREATER_SUPER</a></td></tr>
+<tr class="separator:aed9a4ffed96905c7a6ae46af4e919b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa551e2ff7a72a7a151523697ec89072b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="composite__key_8hpp.html#aa551e2ff7a72a7a151523697ec89072b">BOOST_MULTI_INDEX_CK_RESULT_HASH_SUPER</a></td></tr>
+<tr class="separator:aa551e2ff7a72a7a151523697ec89072b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a3f1981fc343b87e89ab06562a6756617"><td class="memItemLeft" align="right" valign="top">typedef tuple&lt; <a class="el" href="composite__key_8hpp.html#ae1bc0fb2a02ce4767a75aced54d76cff">BOOST_MULTI_INDEX_CK_ENUM</a>(<a class="el" href="composite__key_8hpp.html#a4d4bb643c399b3d1a7ea28d50d3a0a25">BOOST_MULTI_INDEX_CK_IDENTITY_ENUM_MACRO</a>, detail::generic_operator_equal)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a3f1981fc343b87e89ab06562a6756617">boost::multi_index::detail::generic_operator_equal_tuple</a></td></tr>
+<tr class="separator:a3f1981fc343b87e89ab06562a6756617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4353a5ace5551dd67f74442b21ccd112"><td class="memItemLeft" align="right" valign="top">typedef tuple&lt; <a class="el" href="composite__key_8hpp.html#ae1bc0fb2a02ce4767a75aced54d76cff">BOOST_MULTI_INDEX_CK_ENUM</a>(<a class="el" href="composite__key_8hpp.html#a4d4bb643c399b3d1a7ea28d50d3a0a25">BOOST_MULTI_INDEX_CK_IDENTITY_ENUM_MACRO</a>, detail::generic_operator_less)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html#a4353a5ace5551dd67f74442b21ccd112">boost::multi_index::detail::generic_operator_less_tuple</a></td></tr>
+<tr class="separator:a4353a5ace5551dd67f74442b21ccd112"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a7df7b41facd80f4f4c702857bb5a4e5c"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey1 , typename CompositeKey2 &gt; </td></tr>
+<tr class="memitem:a7df7b41facd80f4f4c702857bb5a4e5c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a7df7b41facd80f4f4c702857bb5a4e5c">boost::multi_index::operator==</a> (const composite_key_result&lt; CompositeKey1 &gt; &amp;x, const composite_key_result&lt; CompositeKey2 &gt; &amp;y)</td></tr>
+<tr class="separator:a7df7b41facd80f4f4c702857bb5a4e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec9bf89d44e4d33defd9eba48748a785"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey &gt; </td></tr>
+<tr class="memitem:aec9bf89d44e4d33defd9eba48748a785"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#aec9bf89d44e4d33defd9eba48748a785">boost::multi_index::operator==</a> (const composite_key_result&lt; CompositeKey &gt; &amp;x, const tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt; &amp;y)</td></tr>
+<tr class="separator:aec9bf89d44e4d33defd9eba48748a785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab00acf01dc2b1203ccf93fa9bc8d92ae"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(typename Value) , typename CompositeKey &gt; </td></tr>
+<tr class="memitem:ab00acf01dc2b1203ccf93fa9bc8d92ae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#ab00acf01dc2b1203ccf93fa9bc8d92ae">boost::multi_index::operator==</a> (const tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt; &amp;x, const composite_key_result&lt; CompositeKey &gt; &amp;y)</td></tr>
+<tr class="separator:ab00acf01dc2b1203ccf93fa9bc8d92ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40307061825c19f470f14813bdd0ef12"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey , typename... Values&gt; </td></tr>
+<tr class="memitem:a40307061825c19f470f14813bdd0ef12"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a40307061825c19f470f14813bdd0ef12">boost::multi_index::operator==</a> (const composite_key_result&lt; CompositeKey &gt; &amp;x, const std::tuple&lt; Values... &gt; &amp;y)</td></tr>
+<tr class="separator:a40307061825c19f470f14813bdd0ef12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a257aa2e02c5d78bc6825c6b371efa160"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey , typename... Values&gt; </td></tr>
+<tr class="memitem:a257aa2e02c5d78bc6825c6b371efa160"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a257aa2e02c5d78bc6825c6b371efa160">boost::multi_index::operator==</a> (const std::tuple&lt; Values... &gt; &amp;x, const composite_key_result&lt; CompositeKey &gt; &amp;y)</td></tr>
+<tr class="separator:a257aa2e02c5d78bc6825c6b371efa160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e738f70d42af813b7bb371536302756"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey1 , typename CompositeKey2 &gt; </td></tr>
+<tr class="memitem:a1e738f70d42af813b7bb371536302756"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a1e738f70d42af813b7bb371536302756">boost::multi_index::operator&lt;</a> (const composite_key_result&lt; CompositeKey1 &gt; &amp;x, const composite_key_result&lt; CompositeKey2 &gt; &amp;y)</td></tr>
+<tr class="separator:a1e738f70d42af813b7bb371536302756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa95cb835b750a71aaa03f13aa18b136f"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey &gt; </td></tr>
+<tr class="memitem:aa95cb835b750a71aaa03f13aa18b136f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#aa95cb835b750a71aaa03f13aa18b136f">boost::multi_index::operator&lt;</a> (const composite_key_result&lt; CompositeKey &gt; &amp;x, const tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt; &amp;y)</td></tr>
+<tr class="separator:aa95cb835b750a71aaa03f13aa18b136f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9095bfd1c2e81a205b6f6b6ec3474544"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(typename Value) , typename CompositeKey &gt; </td></tr>
+<tr class="memitem:a9095bfd1c2e81a205b6f6b6ec3474544"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a9095bfd1c2e81a205b6f6b6ec3474544">boost::multi_index::operator&lt;</a> (const tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt; &amp;x, const composite_key_result&lt; CompositeKey &gt; &amp;y)</td></tr>
+<tr class="separator:a9095bfd1c2e81a205b6f6b6ec3474544"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac8a263b06ed4262778e1089737cc3f"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey , typename... Values&gt; </td></tr>
+<tr class="memitem:a6ac8a263b06ed4262778e1089737cc3f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a6ac8a263b06ed4262778e1089737cc3f">boost::multi_index::operator&lt;</a> (const composite_key_result&lt; CompositeKey &gt; &amp;x, const std::tuple&lt; Values... &gt; &amp;y)</td></tr>
+<tr class="separator:a6ac8a263b06ed4262778e1089737cc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a217844f3237821680e1ed196f8d06baa"><td class="memTemplParams" colspan="2">template&lt;typename CompositeKey , typename... Values&gt; </td></tr>
+<tr class="memitem:a217844f3237821680e1ed196f8d06baa"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a217844f3237821680e1ed196f8d06baa">boost::multi_index::operator&lt;</a> (const std::tuple&lt; Values... &gt; &amp;x, const composite_key_result&lt; CompositeKey &gt; &amp;y)</td></tr>
+<tr class="separator:a217844f3237821680e1ed196f8d06baa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bf5f127cd977970f924c9f0e594a6d9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a7bf5f127cd977970f924c9f0e594a6d9">boost::multi_index::BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS</a> (typename CompositeKey1, typename CompositeKey2, composite_key_result&lt; CompositeKey1 &gt;, composite_key_result&lt; CompositeKey2 &gt;) BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS(typename CompositeKey</td></tr>
+<tr class="separator:a7bf5f127cd977970f924c9f0e594a6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d394e668a76e616d5680f2bbd26cdbb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a9d394e668a76e616d5680f2bbd26cdbb">boost::multi_index::BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a> (typename Value)</td></tr>
+<tr class="separator:a9d394e668a76e616d5680f2bbd26cdbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a1572ed2ed3a5fe512a1f8262d79a3c43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a1572ed2ed3a5fe512a1f8262d79a3c43">boost::multi_index::composite_key_result&lt; CompositeKey &gt;</a></td></tr>
+<tr class="separator:a1572ed2ed3a5fe512a1f8262d79a3c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb7efe5956a7e2e485202a2761a7ddb"><td class="memItemLeft" align="right" valign="top">tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#affb7efe5956a7e2e485202a2761a7ddb">boost::multi_index::BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS</a> (<a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(typename Value), typename CompositeKey, tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt;, composite_key_result&lt; CompositeKey &gt;) BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS(typename CompositeKey</td></tr>
+<tr class="separator:affb7efe5956a7e2e485202a2761a7ddb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78969f34be17fb8d57cbff5ba8b96fb8"><td class="memItemLeft" align="right" valign="top">tuple&lt; <a class="el" href="composite__key_8hpp.html#a3ea22caad61e0689dbbc509f760c2a52">BOOST_MULTI_INDEX_CK_ENUM_PARAMS</a>(Value)&gt; typename&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1multi__index.html#a78969f34be17fb8d57cbff5ba8b96fb8">boost::multi_index::Values</a></td></tr>
+<tr class="separator:a78969f34be17fb8d57cbff5ba8b96fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="af97304d3a38a4919a34ab1904b783719" name="af97304d3a38a4919a34ab1904b783719"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af97304d3a38a4919a34ab1904b783719">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">  <a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> <a class="code hl_define" href="preprocessor_2list_2at_8hpp.html#a28c870195ac572171822702a5dd34e6c">BOOST_PP_LIST_AT</a>(list,0)&lt;                           \</div>
+<div class="line">    BOOST_PP_LIST_AT(list,1),n                                               \</div>
+<div class="line">  &gt;::type</div>
+<div class="ttc" id="apreprocessor_2list_2at_8hpp_html_a28c870195ac572171822702a5dd34e6c"><div class="ttname"><a href="preprocessor_2list_2at_8hpp.html#a28c870195ac572171822702a5dd34e6c">BOOST_PP_LIST_AT</a></div><div class="ttdeci">#define BOOST_PP_LIST_AT(list, index)</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2list_2at_8hpp_source.html#l00026">preprocessor/list/at.hpp:26</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a781d435c439be5109e8442d58a52d0a2"><div class="ttname"><a href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a></div><div class="ttdeci">#define BOOST_DEDUCED_TYPENAME</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l00483">suffix.hpp:483</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00101">101</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a16f7073c5ed97c5029732cc2afb11af5" name="a16f7073c5ed97c5029732cc2afb11af5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f7073c5ed97c5029732cc2afb11af5">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_COMPLETE_COMP_OPS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">t1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">t2, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a1, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a2&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;t1,t2&gt; <span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> a1&amp; x,<span class="keyword">const</span> a2&amp; y)              \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keywordflow">return</span> !(x==y);                                                            \</div>
+<div class="line">}                                                                            \</div>
+<div class="line">                                                                             \</div>
+<div class="line"><span class="keyword">template</span>&lt;t1,t2&gt; <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="mpl_2assert_8hpp.html#aea2a445fe2065bb24457fd23caf2c40d">operator&gt;</a>(<span class="keyword">const</span> a1&amp; x,<span class="keyword">const</span> a2&amp; y)               \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keywordflow">return</span> y&lt;x;                                                                \</div>
+<div class="line">}                                                                            \</div>
+<div class="line">                                                                             \</div>
+<div class="line"><span class="keyword">template</span>&lt;t1,t2&gt; <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="mpl_2assert_8hpp.html#a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e">operator&gt;=</a>(<span class="keyword">const</span> a1&amp; x,<span class="keyword">const</span> a2&amp; y)              \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keywordflow">return</span> !(x&lt;y);                                                             \</div>
+<div class="line">}                                                                            \</div>
+<div class="line">                                                                             \</div>
+<div class="line"><span class="keyword">template</span>&lt;t1,t2&gt; <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceboost.html#aa00b5a01d2dcc76e5f3f1a5d4e95ae4c">operator&lt;=</a>(<span class="keyword">const</span> a1&amp; x,<span class="keyword">const</span> a2&amp; y)              \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keywordflow">return</span> !(y&lt;x);                                                             \</div>
+<div class="line">}</div>
+<div class="ttc" id="ampl_2assert_8hpp_html_a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e"><div class="ttname"><a href="mpl_2assert_8hpp.html#a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e">operator&gt;=</a></div><div class="ttdeci">bool operator&gt;=(failed, failed)</div></div>
+<div class="ttc" id="ampl_2assert_8hpp_html_aea2a445fe2065bb24457fd23caf2c40d"><div class="ttname"><a href="mpl_2assert_8hpp.html#aea2a445fe2065bb24457fd23caf2c40d">operator&gt;</a></div><div class="ttdeci">bool operator&gt;(failed, failed)</div></div>
+<div class="ttc" id="anamespaceboost_html_aa00b5a01d2dcc76e5f3f1a5d4e95ae4c"><div class="ttname"><a href="namespaceboost.html#aa00b5a01d2dcc76e5f3f1a5d4e95ae4c">boost::operator&lt;=</a></div><div class="ttdeci">bool operator&lt;=(const blank &amp;, const blank &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="blank_8hpp_source.html#l00063">blank.hpp:63</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00876">876</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3292b3c3c05718211bc1f89344ca46a2" name="a3292b3c3c05718211bc1f89344ca46a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3292b3c3c05718211bc1f89344ca46a2">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_CTOR_ARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_CTOR_ARG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">text&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  const <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n)&amp; <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(k,n) = <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n)()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae1bc0fb2a02ce4767a75aced54d76cff" name="ae1bc0fb2a02ce4767a75aced54d76cff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1bc0fb2a02ce4767a75aced54d76cff">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_ENUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_ENUM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">macro, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  <a class="el" href="preprocessor_2repetition_2enum_8hpp.html#aced80a1acf93f81c9d9696339d32279d">BOOST_PP_ENUM</a>(<a class="el" href="composite__key_8hpp.html#aad036a29291ae125f22c441037658f03">BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</a>,macro,data)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3ea22caad61e0689dbbc509f760c2a52" name="a3ea22caad61e0689dbbc509f760c2a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ea22caad61e0689dbbc509f760c2a52">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_ENUM_PARAMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_ENUM_PARAMS</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">param</td><td>)</td>
+          <td>&#160;&#160;&#160;  <a class="el" href="repetition_2enum__params_8hpp.html#a1b6aeff6f8b81735e93832b95ddb222c">BOOST_PP_ENUM_PARAMS</a>(<a class="el" href="composite__key_8hpp.html#aad036a29291ae125f22c441037658f03">BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</a>,param)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4d4bb643c399b3d1a7ea28d50d3a0a25" name="a4d4bb643c399b3d1a7ea28d50d3a0a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d4bb643c399b3d1a7ea28d50d3a0a25">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_IDENTITY_ENUM_MACRO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_IDENTITY_ENUM_MACRO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">text&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;text</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad4a7af73d321ab04c964ad7f0ee0b32a" name="ad4a7af73d321ab04c964ad7f0ee0b32a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4a7af73d321ab04c964ad7f0ee0b32a">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_NTH_COMPOSITE_KEY_FUNCTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_NTH_COMPOSITE_KEY_FUNCTOR</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">functor&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> KeyFromValue&gt;                                              \</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(key_,name)                                               \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keyword">typedef</span> functor&lt;typename KeyFromValue::result_type&gt; type;                  \</div>
+<div class="line">};                                                                           \</div>
+<div class="line">                                                                             \</div>
+<div class="line"><span class="keyword">template</span>&lt;&gt;                                                                   \</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(key_,name)&lt;tuples::null_type&gt;                            \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keyword">typedef</span> tuples::null_type type;                                            \</div>
+<div class="line">};                                                                           \</div>
+<div class="line">                                                                             \</div>
+<div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> CompositeKey,<span class="keywordtype">int</span>  N&gt;                                       \</div>
+<div class="line"><span class="keyword">struct </span><a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(nth_composite_key_,name)                                 \</div>
+<div class="line">{                                                                            \</div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keyword">typename</span> nth_key_from_value&lt;CompositeKey,N&gt;::type key_from_value;  \</div>
+<div class="line">  <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(key_,name)&lt;key_from_value&gt;::type type;       \</div>
+<div class="line">};</div>
+<div class="ttc" id="acat_8hpp_html_ac796d6dcc22f521a9b7ee409c312f7c4"><div class="ttname"><a href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a></div><div class="ttdeci">#define BOOST_PP_CAT(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="cat_8hpp_source.html#l00024">cat.hpp:24</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00132">132</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0cb6afefd51c38ec1b99ded5992e1242" name="a0cb6afefd51c38ec1b99ded5992e1242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cb6afefd51c38ec1b99ded5992e1242">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_RESULT_EQUAL_TO_SUPER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_RESULT_EQUAL_TO_SUPER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">composite_key_equal_to&lt;                                                      \</div>
+<div class="line">    BOOST_MULTI_INDEX_CK_ENUM(                                               \</div>
+<div class="line">      <a class="code hl_define" href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a>,                             \</div>
+<div class="line">      <span class="comment">/* the argument is a PP list */</span>                                        \</div>
+<div class="line">      (detail::nth_composite_key_equal_to,                                   \</div>
+<div class="line">        (<a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> CompositeKeyResult::composite_key_type,      \</div>
+<div class="line">          BOOST_PP_NIL)))                                                    \</div>
+<div class="line">  &gt;</div>
+<div class="ttc" id="acomposite__key_8hpp_html_af97304d3a38a4919a34ab1904b783719"><div class="ttname"><a href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a></div><div class="ttdeci">#define BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N(z, n, list)</div><div class="ttdef"><b>Definition:</b> <a href="composite__key_8hpp_source.html#l00101">composite_key.hpp:101</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l01348">1348</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aed9a4ffed96905c7a6ae46af4e919b81" name="aed9a4ffed96905c7a6ae46af4e919b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed9a4ffed96905c7a6ae46af4e919b81">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_RESULT_GREATER_SUPER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_RESULT_GREATER_SUPER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">composite_key_compare&lt;                                                       \</div>
+<div class="line">    BOOST_MULTI_INDEX_CK_ENUM(                                               \</div>
+<div class="line">      <a class="code hl_define" href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a>,                             \</div>
+<div class="line">      <span class="comment">/* the argument is a PP list */</span>                                        \</div>
+<div class="line">      (detail::nth_composite_key_greater,                                    \</div>
+<div class="line">        (<a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> CompositeKeyResult::composite_key_type,      \</div>
+<div class="line">          BOOST_PP_NIL)))                                                    \</div>
+<div class="line">  &gt;</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l01400">1400</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa551e2ff7a72a7a151523697ec89072b" name="aa551e2ff7a72a7a151523697ec89072b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa551e2ff7a72a7a151523697ec89072b">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_RESULT_HASH_SUPER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_RESULT_HASH_SUPER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">composite_key_hash&lt;                                                          \</div>
+<div class="line">    BOOST_MULTI_INDEX_CK_ENUM(                                               \</div>
+<div class="line">      <a class="code hl_define" href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a>,                             \</div>
+<div class="line">      <span class="comment">/* the argument is a PP list */</span>                                        \</div>
+<div class="line">      (detail::nth_composite_key_hash,                                       \</div>
+<div class="line">        (<a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> CompositeKeyResult::composite_key_type,      \</div>
+<div class="line">          BOOST_PP_NIL)))                                                    \</div>
+<div class="line">  &gt;</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l01426">1426</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aaa74773def7cc0de6c8cfb17de5322f7" name="aaa74773def7cc0de6c8cfb17de5322f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa74773def7cc0de6c8cfb17de5322f7">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_RESULT_LESS_SUPER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_RESULT_LESS_SUPER</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">composite_key_compare&lt;                                                       \</div>
+<div class="line">    BOOST_MULTI_INDEX_CK_ENUM(                                               \</div>
+<div class="line">      <a class="code hl_define" href="composite__key_8hpp.html#af97304d3a38a4919a34ab1904b783719">BOOST_MULTI_INDEX_CK_APPLY_METAFUNCTION_N</a>,                             \</div>
+<div class="line">      <span class="comment">/* the argument is a PP list */</span>                                        \</div>
+<div class="line">      (detail::nth_composite_key_less,                                       \</div>
+<div class="line">        (<a class="code hl_define" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> CompositeKeyResult::composite_key_type,      \</div>
+<div class="line">          BOOST_PP_NIL)))                                                    \</div>
+<div class="line">  &gt;</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l01374">1374</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afe72cbe657938554d8a233bdf3991f60" name="afe72cbe657938554d8a233bdf3991f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe72cbe657938554d8a233bdf3991f60">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_CK_TEMPLATE_PARM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_CK_TEMPLATE_PARM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">text&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;  typename <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(text,n) <a class="el" href="control_2expr__if_8hpp.html#a2236a32bb0ff6c12f299398f06b0f7f7">BOOST_PP_EXPR_IF</a>(n,=tuples::null_type)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00091">91</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aad036a29291ae125f22c441037658f03" name="aad036a29291ae125f22c441037658f03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad036a29291ae125f22c441037658f03">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_COMPOSITE_KEY_SIZE&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3dd6be24efe4150c0c87299e535d0c0c" name="a3dd6be24efe4150c0c87299e535d0c0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd6be24efe4150c0c87299e535d0c0c">&#9670;&#160;</a></span>BOOST_MULTI_INDEX_LIMIT_COMPOSITE_KEY_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MULTI_INDEX_LIMIT_COMPOSITE_KEY_SIZE&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="composite__key_8hpp_source.html">composite_key.hpp</a> の <a class="el" href="composite__key_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_33344a8c4622a0ed72c2f532985429f7.html">multi_index</a></li><li class="navelem"><a class="el" href="composite__key_8hpp.html">composite_key.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,1146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::detail::spinlock::scoped_lock クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1detail_1_1spinlock_1_1scoped__lock.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1detail_1_1spinlock_1_1scoped__lock-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::detail::spinlock::scoped_lock クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::detail::spinlock::scoped_lock 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock__coll__graph.svg" width="222" height="1123"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c2bffd8623f79fb80e65cbacf7c9bac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a6c2bffd8623f79fb80e65cbacf7c9bac">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp) noexcept</td></tr>
+<tr class="separator:a6c2bffd8623f79fb80e65cbacf7c9bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc5355fe9175b05d221a0fcbf663e6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#affc5355fe9175b05d221a0fcbf663e6b">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;sp)</td></tr>
+<tr class="separator:affc5355fe9175b05d221a0fcbf663e6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a2da440d2b2882fdd13eb7f80aef3db9a">~scoped_lock</a> ()</td></tr>
+<tr class="separator:a2da440d2b2882fdd13eb7f80aef3db9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22ae65f82cb9c4b445e78c456b737963"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22ae65f82cb9c4b445e78c456b737963">scoped_lock</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22ae65f82cb9c4b445e78c456b737963"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a22e9b6f744e29087603f5c6aa4f30e53">operator=</a> (<a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;)</td></tr>
+<tr class="separator:a22e9b6f744e29087603f5c6aa4f30e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a4d3eef62599181926f708e0aa95b3575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a></td></tr>
+<tr class="separator:a4d3eef62599181926f708e0aa95b3575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a> の <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00097">97</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[1/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[2/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a> の <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">  109</span>        {</div>
+<div class="line"><span class="lineno">  110</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1spinlock_1_1scoped__lock_html_a4d3eef62599181926f708e0aa95b3575"><div class="ttname"><a href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">boost::detail::spinlock::scoped_lock::sp_</a></div><div class="ttdeci">spinlock &amp; sp_</div><div class="ttdef"><b>Definition:</b> <a href="spinlock__gcc__arm_8hpp_source.html#l00101">spinlock_gcc_arm.hpp:101</a></div></div>
+<div class="ttc" id="aclassboost_1_1detail_1_1spinlock_html_ad95b3190783c70e4bfeb5653186fb5ac"><div class="ttname"><a href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">boost::detail::spinlock::lock</a></div><div class="ttdeci">void lock()</div><div class="ttdef"><b>Definition:</b> <a href="spinlock__gcc__arm_8hpp_source.html#l00080">spinlock_gcc_arm.hpp:80</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a> の <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00113">113</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>        {</div>
+<div class="line"><span class="lineno">  115</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">  116</span>        }</div>
+<div class="ttc" id="aclassboost_1_1detail_1_1spinlock_html_a907cab55c836f34e0b7e915b725299df"><div class="ttname"><a href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">boost::detail::spinlock::unlock</a></div><div class="ttdeci">void unlock()</div><div class="ttdef"><b>Definition:</b> <a href="spinlock__gcc__arm_8hpp_source.html#l00088">spinlock_gcc_arm.hpp:88</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[3/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[4/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__gcc__atomic_8hpp_source.html">spinlock_gcc_atomic.hpp</a> の <a class="el" href="spinlock__gcc__atomic_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__gcc__atomic_8hpp_source.html">spinlock_gcc_atomic.hpp</a> の <a class="el" href="spinlock__gcc__atomic_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[5/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[6/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__nt_8hpp_source.html">spinlock_nt.hpp</a> の <a class="el" href="spinlock__nt_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">   80</span>        {</div>
+<div class="line"><span class="lineno">   81</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">   82</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__nt_8hpp_source.html">spinlock_nt.hpp</a> の <a class="el" href="spinlock__nt_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>        {</div>
+<div class="line"><span class="lineno">   86</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">   87</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[7/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[8/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__pt_8hpp_source.html">spinlock_pt.hpp</a> の <a class="el" href="spinlock__pt_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">   70</span>        {</div>
+<div class="line"><span class="lineno">   71</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">   72</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__pt_8hpp_source.html">spinlock_pt.hpp</a> の <a class="el" href="spinlock__pt_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>        {</div>
+<div class="line"><span class="lineno">   76</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">   77</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[9/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c2bffd8623f79fb80e65cbacf7c9bac" name="a6c2bffd8623f79fb80e65cbacf7c9bac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c2bffd8623f79fb80e65cbacf7c9bac">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[10/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__std__atomic_8hpp_source.html">spinlock_std_atomic.hpp</a> の <a class="el" href="spinlock__std__atomic_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                                      : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">   74</span>        {</div>
+<div class="line"><span class="lineno">   75</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">   76</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a6c2bffd8623f79fb80e65cbacf7c9bac_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__std__atomic_8hpp_source.html">spinlock_std_atomic.hpp</a> の <a class="el" href="spinlock__std__atomic_8hpp_source.html#l00078">78</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   79</span>        {</div>
+<div class="line"><span class="lineno">   80</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">   81</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[11/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[12/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__sync_8hpp_source.html">spinlock_sync.hpp</a> の <a class="el" href="spinlock__sync_8hpp_source.html#l00077">77</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">   80</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__sync_8hpp_source.html">spinlock_sync.hpp</a> の <a class="el" href="spinlock__sync_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>        {</div>
+<div class="line"><span class="lineno">   84</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a22ae65f82cb9c4b445e78c456b737963" name="a22ae65f82cb9c4b445e78c456b737963"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22ae65f82cb9c4b445e78c456b737963">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[13/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="affc5355fe9175b05d221a0fcbf663e6b" name="affc5355fe9175b05d221a0fcbf663e6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc5355fe9175b05d221a0fcbf663e6b">&#9670;&#160;</a></span>scoped_lock() <span class="overload">[14/14]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::scoped_lock </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp;&#160;</td>
+          <td class="paramname"><em>sp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__w32_8hpp_source.html">spinlock_w32.hpp</a> の <a class="el" href="spinlock__w32_8hpp_source.html#l00103">103</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  103</span>                                             : <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>( sp )</div>
+<div class="line"><span class="lineno">  104</span>        {</div>
+<div class="line"><span class="lineno">  105</span>            sp.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#ad95b3190783c70e4bfeb5653186fb5ac">lock</a>();</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00080">boost::detail::spinlock::lock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_affc5355fe9175b05d221a0fcbf663e6b_cgraph.svg" width="1280" height="136"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2da440d2b2882fdd13eb7f80aef3db9a" name="a2da440d2b2882fdd13eb7f80aef3db9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2da440d2b2882fdd13eb7f80aef3db9a">&#9670;&#160;</a></span>~scoped_lock() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::detail::spinlock::scoped_lock::~scoped_lock </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__w32_8hpp_source.html">spinlock_w32.hpp</a> の <a class="el" href="spinlock__w32_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>        {</div>
+<div class="line"><span class="lineno">  110</span>            <a class="code hl_variable" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html#a4d3eef62599181926f708e0aa95b3575">sp_</a>.<a class="code hl_function" href="classboost_1_1detail_1_1spinlock.html#a907cab55c836f34e0b7e915b725299df">unlock</a>();</div>
+<div class="line"><span class="lineno">  111</span>        }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">sp_</a>, <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00088">boost::detail::spinlock::unlock()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1detail_1_1spinlock_1_1scoped__lock_a2da440d2b2882fdd13eb7f80aef3db9a_cgraph.svg" width="434" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[1/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[2/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[3/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[4/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[5/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[6/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a22e9b6f744e29087603f5c6aa4f30e53" name="a22e9b6f744e29087603f5c6aa4f30e53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22e9b6f744e29087603f5c6aa4f30e53">&#9670;&#160;</a></span>operator=() <span class="overload">[7/7]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> &amp; boost::detail::spinlock::scoped_lock::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a> const &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a4d3eef62599181926f708e0aa95b3575" name="a4d3eef62599181926f708e0aa95b3575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d3eef62599181926f708e0aa95b3575">&#9670;&#160;</a></span>sp_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a> &amp; boost::detail::spinlock::scoped_lock::sp_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a> の <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00101">101</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="spinlock__gcc__arm_8hpp_source.html#l00113">~scoped_lock()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="spinlock__gcc__arm_8hpp_source.html">spinlock_gcc_arm.hpp</a></li>
+<li><a class="el" href="spinlock__gcc__atomic_8hpp_source.html">spinlock_gcc_atomic.hpp</a></li>
+<li><a class="el" href="spinlock__nt_8hpp_source.html">spinlock_nt.hpp</a></li>
+<li><a class="el" href="spinlock__pt_8hpp_source.html">spinlock_pt.hpp</a></li>
+<li><a class="el" href="spinlock__std__atomic_8hpp_source.html">spinlock_std_atomic.hpp</a></li>
+<li><a class="el" href="spinlock__sync_8hpp_source.html">spinlock_sync.hpp</a></li>
+<li><a class="el" href="spinlock__w32_8hpp_source.html">spinlock_w32.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1detail_1_1spinlock.html">spinlock</a></li><li class="navelem"><a class="el" href="classboost_1_1detail_1_1spinlock_1_1scoped__lock.html">scoped_lock</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

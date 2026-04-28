@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: allocate_shared_array.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('allocate__shared__array_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">allocate_shared_array.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="allocator__access_8hpp_source.html">boost/core/allocator_access.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="alloc__construct_8hpp_source.html">boost/core/alloc_construct.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="first__scalar_8hpp_source.html">boost/core/first_scalar.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html">boost/smart_ptr/shared_ptr.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sp__type__traits_8hpp_source.html">boost/smart_ptr/detail/sp_type_traits.hpp</a>&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+allocate_shared_array.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="allocate__shared__array_8hpp__incl.svg" width="3179" height="990"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="allocate__shared__array_8hpp__dep__incl.svg" width="539" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="allocate__shared__array_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__element.html">boost::detail::sp_array_element&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__count.html">boost::detail::sp_array_count&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__count_3_01T_0fN_0e_4.html">boost::detail::sp_array_count&lt; T[N]&gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__max__size.html">boost::detail::sp_max_size&lt; N, M &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__align__up.html">boost::detail::sp_align_up&lt; N, M &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1sp__array__state.html">boost::detail::sp_array_state&lt; A &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1sp__size__array__state.html">boost::detail::sp_size_array_state&lt; A, N &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__alignment.html">boost::detail::sp_array_alignment&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__offset.html">boost::detail::sp_array_offset&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1sp__array__creator.html">boost::detail::sp_array_creator&lt; A, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1sp__array__base.html">boost::detail::sp_array_base&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1sp__array__result.html">boost::detail::sp_array_result&lt; A, T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a3f1bc2ca7ff302ec761093c65c2cc8eb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3f1bc2ca7ff302ec761093c65c2cc8eb"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a3f1bc2ca7ff302ec761093c65c2cc8eb">boost::detail::sp_objects</a> (std::size_t size) noexcept</td></tr>
+<tr class="separator:a3f1bc2ca7ff302ec761093c65c2cc8eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52b27dbba03273486157efe725aacc0"><td class="memTemplParams" colspan="2">template&lt;class U , class T &gt; </td></tr>
+<tr class="memitem:ac52b27dbba03273486157efe725aacc0"><td class="memTemplItemLeft" align="right" valign="top">U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ac52b27dbba03273486157efe725aacc0">boost::detail::sp_array_start</a> (T *base) noexcept</td></tr>
+<tr class="separator:ac52b27dbba03273486157efe725aacc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adedd8bf013c70668ae38552d8a89e823"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:adedd8bf013c70668ae38552d8a89e823"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_unbounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#adedd8bf013c70668ae38552d8a89e823">boost::allocate_shared</a> (const <a class="el" href="classA.html">A</a> &amp;allocator, std::size_t <a class="el" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>)</td></tr>
+<tr class="separator:adedd8bf013c70668ae38552d8a89e823"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a638caac2f73d5d94be0ab08140618ef1"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a638caac2f73d5d94be0ab08140618ef1"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_bounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a638caac2f73d5d94be0ab08140618ef1">boost::allocate_shared</a> (const <a class="el" href="classA.html">A</a> &amp;allocator)</td></tr>
+<tr class="separator:a638caac2f73d5d94be0ab08140618ef1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab50d317168c08c74749008721c8fd897"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:ab50d317168c08c74749008721c8fd897"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_unbounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab50d317168c08c74749008721c8fd897">boost::allocate_shared</a> (const <a class="el" href="classA.html">A</a> &amp;allocator, std::size_t <a class="el" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>, const typename std::remove_extent&lt; T &gt;::type &amp;value)</td></tr>
+<tr class="separator:ab50d317168c08c74749008721c8fd897"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9907986e6113c5a0414d1ba5244c71fc"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a9907986e6113c5a0414d1ba5244c71fc"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_bounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a9907986e6113c5a0414d1ba5244c71fc">boost::allocate_shared</a> (const <a class="el" href="classA.html">A</a> &amp;allocator, const typename std::remove_extent&lt; T &gt;::type &amp;value)</td></tr>
+<tr class="separator:a9907986e6113c5a0414d1ba5244c71fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea05743dc0d6ab6b901d5a877d92c39f"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:aea05743dc0d6ab6b901d5a877d92c39f"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_unbounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aea05743dc0d6ab6b901d5a877d92c39f">boost::allocate_shared_noinit</a> (const <a class="el" href="classA.html">A</a> &amp;allocator, std::size_t <a class="el" href="forward__adapter_8hpp.html#ac74ae34e9c58234aacabb6867b245c58">count</a>)</td></tr>
+<tr class="separator:aea05743dc0d6ab6b901d5a877d92c39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adae7b92511b46252df6d47f4a0920e72"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:adae7b92511b46252df6d47f4a0920e72"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; detail::sp_is_bounded_array&lt; T &gt;::value, shared_ptr&lt; T &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#adae7b92511b46252df6d47f4a0920e72">boost::allocate_shared_noinit</a> (const <a class="el" href="classA.html">A</a> &amp;allocator)</td></tr>
+<tr class="separator:adae7b92511b46252df6d47f4a0920e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_dce58d0d071335e7b898537fe26149d3.html">smart_ptr</a></li><li class="navelem"><a class="el" href="allocate__shared__array_8hpp.html">allocate_shared_array.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

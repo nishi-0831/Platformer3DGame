@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: workaround.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('move_2detail_2workaround_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">move/detail/workaround.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="move_2detail_2workaround_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// (C) Copyright Ion Gaztanaga 2014-2014. Distributed under the Boost</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Software License, Version 1.0. (See accompanying file</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// See http://www.boost.org/libs/interprocess for documentation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"></span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef BOOST_MOVE_DETAIL_WORKAROUND_HPP</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define BOOST_MOVE_DETAIL_WORKAROUND_HPP</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef BOOST_CONFIG_HPP</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#  include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if defined(BOOST_HAS_PRAGMA_ONCE)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#  pragma once</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#if    !defined(BOOST_NO_CXX11_RVALUE_REFERENCES) &amp;&amp; !defined(BOOST_NO_CXX11_VARIADIC_TEMPLATES)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#ac84ea422e88fb2f3c3f3279edb2c94da">   23</a></span><span class="preprocessor">   #define BOOST_MOVE_PERFECT_FORWARDING</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#if defined(__has_feature)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">   #define BOOST_MOVE_HAS_FEATURE __has_feature</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a9bf4a6db72b3a636d6d3bc83e59e5a8a">   29</a></span><span class="preprocessor">   #define BOOST_MOVE_HAS_FEATURE(x) 0</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#if BOOST_MOVE_HAS_FEATURE(address_sanitizer) || defined(__SANITIZE_ADDRESS__)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">   #define BOOST_MOVE_ADDRESS_SANITIZER_ON</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment">//Macros for documentation purposes. For code, expands to the argument</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a4779b5d0f8ca2ace459e55d1ef9438d0">   37</a></span><span class="preprocessor">#define BOOST_MOVE_IMPDEF(TYPE) TYPE</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a733246a9bba655ea06f28ce061358ab3">   38</a></span><span class="preprocessor">#define BOOST_MOVE_SEEDOC(TYPE) TYPE</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">   39</a></span><span class="preprocessor">#define BOOST_MOVE_DOC0PTR(TYPE) TYPE</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a348abfd9da02c25bcaf80c04a9fab1a0">   40</a></span><span class="preprocessor">#define BOOST_MOVE_DOC1ST(TYPE1, TYPE2) TYPE2</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#abdd12c475d6e2af280cd0833ab32d4b4">   41</a></span><span class="preprocessor">#define BOOST_MOVE_I ,</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#ae43b49ea5baf706e23a919bec25e2f7a">   42</a></span><span class="preprocessor">#define BOOST_MOVE_DOCIGN(T1) T1</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#if defined(__GNUC__) &amp;&amp; (__GNUC__ == 4) &amp;&amp; (__GNUC_MINOR__ &lt; 5) &amp;&amp; !defined(__clang__)</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>   <span class="comment">//Pre-standard rvalue binding rules</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">   #define BOOST_MOVE_OLD_RVALUE_REF_BINDING_RULES</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="preprocessor">#elif defined(_MSC_VER) &amp;&amp; (_MSC_VER == 1600)</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   <span class="comment">//Standard rvalue binding rules but with some bugs</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="preprocessor">   #define BOOST_MOVE_MSVC_10_MEMBER_RVALUE_REF_BUG</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">   #define BOOST_MOVE_MSVC_AUTO_MOVE_RETURN_BUG</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#elif defined(_MSC_VER) &amp;&amp; (_MSC_VER == 1700)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">   #define BOOST_MOVE_MSVC_AUTO_MOVE_RETURN_BUG</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">//#define BOOST_MOVE_DISABLE_FORCEINLINE</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#if defined(BOOST_MOVE_DISABLE_FORCEINLINE)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">   #define BOOST_MOVE_FORCEINLINE inline</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#elif defined(BOOST_MOVE_FORCEINLINE_IS_BOOST_FORCELINE)</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">   #define BOOST_MOVE_FORCEINLINE BOOST_FORCEINLINE</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#elif defined(BOOST_MSVC) &amp;&amp; (_MSC_VER &lt; 1900 || defined(_DEBUG))</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   <span class="comment">//&quot;__forceinline&quot; and MSVC seems to have some bugs in old versions and in debug mode</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">   #define BOOST_MOVE_FORCEINLINE inline</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#elif defined(BOOST_CLANG) || (defined(BOOST_GCC) &amp;&amp; ((__GNUC__ &lt;= 5) || defined(__MINGW32__)))</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>   <span class="comment">//Older GCCs have problems with forceinline</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>   <span class="comment">//Clang can have code bloat issues with forceinline, see</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>   <span class="comment">//https://lists.boost.org/boost-users/2023/04/91445.php and</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>   <span class="comment">//https://github.com/llvm/llvm-project/issues/62202</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">   #define BOOST_MOVE_FORCEINLINE inline</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a252bd5612413600f4ee791c2f9a28fcb">   71</a></span><span class="preprocessor">   #define BOOST_MOVE_FORCEINLINE BOOST_FORCEINLINE</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="keyword">namespace </span>movelib {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T1&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="namespaceboost_1_1movelib.html#a9da34c9930e909d4c66033c4188f9d44">   78</a></span><a class="code hl_define" href="suffix_8hpp.html#a539436ab38a72bad2c7f8f0fb5eca9cf">BOOST_FORCEINLINE</a> <a class="code hl_define" href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a> <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceboost_1_1movelib.html#a9da34c9930e909d4c66033c4188f9d44">ignore</a>(T1 <span class="keyword">const</span>&amp;)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{}</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}} <span class="comment">//namespace boost::movelib {</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#if !(defined BOOST_NO_EXCEPTIONS)</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a28d5275523e54415e8175099855166cf">   84</a></span><span class="preprocessor">#    define BOOST_MOVE_TRY { try</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#adcfd6f21fc7bb2a81282909c0054b901">   85</a></span><span class="preprocessor">#    define BOOST_MOVE_CATCH(x) catch(x)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a4d8632f53defa633bdd086d35ad3d8cc">   86</a></span><span class="preprocessor">#    define BOOST_MOVE_RETHROW throw;</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a519cfa99427e4aacbea083bd8ee72e7e">   87</a></span><span class="preprocessor">#    define BOOST_MOVE_CATCH_END }</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#    if !defined(BOOST_MSVC) || BOOST_MSVC &gt;= 1900</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#        define BOOST_MOVE_TRY { if (true)</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#        define BOOST_MOVE_CATCH(x) else if (false)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#    else</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// warning C4127: conditional expression is constant</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#        define BOOST_MOVE_TRY { \</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">             __pragma(warning(push)) \</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">             __pragma(warning(disable: 4127)) \</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">             if (true) \</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">             __pragma(warning(pop))</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#        define BOOST_MOVE_CATCH(x) else \</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="preprocessor">             __pragma(warning(push)) \</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span><span class="preprocessor">             __pragma(warning(disable: 4127)) \</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">             if (false) \</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="preprocessor">             __pragma(warning(pop))</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#    endif</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="preprocessor">#    define BOOST_MOVE_RETHROW</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><span class="preprocessor">#    define BOOST_MOVE_CATCH_END }</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_STATIC_ASSERT</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#  ifndef BOOST_NO_CXX11_VARIADIC_MACROS</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">  111</a></span><span class="preprocessor">#     define BOOST_MOVE_STATIC_ASSERT( ... ) static_assert(__VA_ARGS__, #__VA_ARGS__)</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#  else</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#     define BOOST_MOVE_STATIC_ASSERT( B ) static_assert(B, #B)</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">namespace </span>move_detail {</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="keyword">template</span>&lt;<span class="keywordtype">bool</span> B&gt;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">struct </span>STATIC_ASSERTION_FAILURE;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="keyword">struct </span>STATIC_ASSERTION_FAILURE&lt;true&gt;{};</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">template</span>&lt;<span class="keywordtype">unsigned</span>&gt; <span class="keyword">struct </span>static_assert_test {};</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>}}</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">#define BOOST_MOVE_STATIC_ASSERT(B) \</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">         typedef ::boost::move_detail::static_assert_test&lt;\</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">            (unsigned)sizeof(::boost::move_detail::STATIC_ASSERTION_FAILURE&lt;bool(B)&gt;)&gt;\</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">               BOOST_JOIN(boost_move_static_assert_typedef_, __LINE__) BOOST_ATTRIBUTE_UNUSED</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#if !defined(__has_cpp_attribute) || defined(__CUDACC__)</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#aecb45852d1f803b103818f1f23da7cd7">  137</a></span><span class="preprocessor">#define BOOST_MOVE_HAS_MSVC_ATTRIBUTE(ATTR) 0</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="preprocessor">#define BOOST_MOVE_HAS_MSVC_ATTRIBUTE(ATTR) __has_cpp_attribute(msvc::ATTR)</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="comment">// See https://devblogs.microsoft.com/cppblog/improving-the-state-of-debug-performance-in-c/</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="comment">// for details on how MSVC has improved debug experience, specifically for move/forward-like utilities</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#if BOOST_MOVE_HAS_MSVC_ATTRIBUTE(intrinsic)</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#define BOOST_MOVE_INTRINSIC_CAST [[msvc::intrinsic]]</span></div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno"><a class="line" href="move_2detail_2workaround_8hpp.html#a08879c7fd7f04f37327742a3d8721e33">  147</a></span><span class="preprocessor">#define BOOST_MOVE_INTRINSIC_CAST BOOST_MOVE_FORCEINLINE</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="preprocessor">#if defined(__has_builtin)</span></div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span><span class="preprocessor">#if __has_builtin(__builtin_launder)</span></div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span><span class="preprocessor">   #define BOOST_MOVE_HAS_BUILTIN_LAUNDER</span></div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#endif   </span><span class="comment">//#ifndef BOOST_MOVE_DETAIL_WORKAROUND_HPP</span></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1movelib_html_a9da34c9930e909d4c66033c4188f9d44"><div class="ttname"><a href="namespaceboost_1_1movelib.html#a9da34c9930e909d4c66033c4188f9d44">boost::movelib::ignore</a></div><div class="ttdeci">BOOST_FORCEINLINE BOOST_CXX14_CONSTEXPR void ignore(T1 const &amp;)</div><div class="ttdef"><b>Definition:</b> <a href="move_2detail_2workaround_8hpp_source.html#l00078">move/detail/workaround.hpp:78</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a50b61a7451654c299733dff36f31af1b"><div class="ttname"><a href="suffix_8hpp.html#a50b61a7451654c299733dff36f31af1b">BOOST_CXX14_CONSTEXPR</a></div><div class="ttdeci">#define BOOST_CXX14_CONSTEXPR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01049">suffix.hpp:1049</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a539436ab38a72bad2c7f8f0fb5eca9cf"><div class="ttname"><a href="suffix_8hpp.html#a539436ab38a72bad2c7f8f0fb5eca9cf">BOOST_FORCEINLINE</a></div><div class="ttdeci">#define BOOST_FORCEINLINE</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l00636">suffix.hpp:636</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_bd26f2a9b666a6a4c805ff0dd2b8a2e0.html">move</a></li><li class="navelem"><a class="el" href="dir_babd67f6e662f25132d6618d374fbfc5.html">detail</a></li><li class="navelem"><a class="el" href="move_2detail_2workaround_8hpp.html">workaround.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

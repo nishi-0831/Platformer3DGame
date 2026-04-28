@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: adapt_assoc_adt.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('adapted_2adt_2adapt__assoc__adt_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">adapted/adt/adapt_assoc_adt.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="fusion_2support_2config_8hpp_source.html">boost/fusion/support/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2empty_8hpp_source.html">boost/preprocessor/empty.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2control_2if_8hpp_source.html">boost/preprocessor/control/if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="struct_2detail_2extension_8hpp_source.html">boost/fusion/adapted/struct/detail/extension.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="struct_2detail_2adapt__base_8hpp_source.html">boost/fusion/adapted/struct/detail/adapt_base.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2adapted_2struct_2detail_2at__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/at_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="struct_2detail_2is__view__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/is_view_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2proxy__type_8hpp_source.html">boost/fusion/adapted/struct/detail/proxy_type.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2is__sequence__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/is_sequence_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2value__at__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/value_at_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="struct_2detail_2category__of__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/category_of_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="fusion_2adapted_2struct_2detail_2size__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/size_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2begin__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/begin_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2end__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/end_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2value__of__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/value_of_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2deref__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/deref_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2deref__data__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/deref_data_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2key__of__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/key_of_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adapted_2struct_2detail_2value__of__data__impl_8hpp_source.html">boost/fusion/adapted/struct/detail/value_of_data_impl.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adt_2detail_2extension_8hpp_source.html">boost/fusion/adapted/adt/detail/extension.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adt_2detail_2adapt__base_8hpp_source.html">boost/fusion/adapted/adt/detail/adapt_base.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp_source.html">boost/fusion/adapted/adt/detail/adapt_base_assoc_attr_filler.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+adapted/adt/adapt_assoc_adt.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="adapted_2adt_2adapt__assoc__adt_8hpp__incl.svg" width="4018" height="520"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="adapted_2adt_2adapt__assoc__adt_8hpp__dep__incl.svg" width="494" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:aca19fd566e66b90d8404d6d2d8caa2a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#aca19fd566e66b90d8404d6d2d8caa2a9">BOOST_FUSION_ADAPT_ASSOC_ADT_C</a>( TEMPLATE_PARAMS_SEQ,  NAME_SEQ,  IS_VIEW,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>,  ATTRIBUTE)</td></tr>
+<tr class="separator:aca19fd566e66b90d8404d6d2d8caa2a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05efdb53d44340d518dccf10e4d1573"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#ae05efdb53d44340d518dccf10e4d1573">BOOST_FUSION_ADAPT_ASSOC_TPL_ADT</a>( TEMPLATE_PARAMS_SEQ,  NAME_SEQ,  ATTRIBUTES)</td></tr>
+<tr class="separator:ae05efdb53d44340d518dccf10e4d1573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac02e772d4310518f5ffe8be05028f7b9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#ac02e772d4310518f5ffe8be05028f7b9">BOOST_FUSION_ADAPT_ASSOC_ADT</a>(NAME,  ATTRIBUTES)</td></tr>
+<tr class="separator:ac02e772d4310518f5ffe8be05028f7b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ba46fa17a4b2c2737edf8842649b11b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#a5ba46fa17a4b2c2737edf8842649b11b">BOOST_FUSION_ADAPT_ASSOC_ADT_AS_VIEW</a>(NAME,  ATTRIBUTES)</td></tr>
+<tr class="separator:a5ba46fa17a4b2c2737edf8842649b11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ac02e772d4310518f5ffe8be05028f7b9" name="ac02e772d4310518f5ffe8be05028f7b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac02e772d4310518f5ffe8be05028f7b9">&#9670;&#160;</a></span>BOOST_FUSION_ADAPT_ASSOC_ADT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_ADAPT_ASSOC_ADT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ATTRIBUTES&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="struct_2detail_2adapt__base_8hpp.html#aeaa37b403ec4453ac42a9a7f921fdcb8">BOOST_FUSION_ADAPT_STRUCT_BASE</a>(                                             \</div>
+<div class="line">        (0),                                                                    \</div>
+<div class="line">        (0)(NAME),                                                              \</div>
+<div class="line">        assoc_struct_tag,                                                       \</div>
+<div class="line">        0,                                                                      \</div>
+<div class="line">        <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(                                                           \</div>
+<div class="line">            <a class="code hl_define" href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#a7d24528d3be19c4fd9a04812bb464c1e">BOOST_FUSION_ADAPT_ASSOC_ADT_FILLER_0</a>(0,0,0,0,0)ATTRIBUTES,_END),   \</div>
+<div class="line">        <a class="code hl_define" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#aca19fd566e66b90d8404d6d2d8caa2a9">BOOST_FUSION_ADAPT_ASSOC_ADT_C</a>)</div>
+<div class="ttc" id="aadapted_2adt_2adapt__assoc__adt_8hpp_html_aca19fd566e66b90d8404d6d2d8caa2a9"><div class="ttname"><a href="adapted_2adt_2adapt__assoc__adt_8hpp.html#aca19fd566e66b90d8404d6d2d8caa2a9">BOOST_FUSION_ADAPT_ASSOC_ADT_C</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_ASSOC_ADT_C( TEMPLATE_PARAMS_SEQ, NAME_SEQ, IS_VIEW, I, ATTRIBUTE)</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html#l00039">adapted/adt/adapt_assoc_adt.hpp:39</a></div></div>
+<div class="ttc" id="aadt_2detail_2adapt__base__assoc__attr__filler_8hpp_html_a7d24528d3be19c4fd9a04812bb464c1e"><div class="ttname"><a href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#a7d24528d3be19c4fd9a04812bb464c1e">BOOST_FUSION_ADAPT_ASSOC_ADT_FILLER_0</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_ASSOC_ADT_FILLER_0(A, B, C, D, E)</div><div class="ttdef"><b>Definition:</b> <a href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp_source.html#l00038">adt/detail/adapt_base_assoc_attr_filler.hpp:38</a></div></div>
+<div class="ttc" id="acat_8hpp_html_ac796d6dcc22f521a9b7ee409c312f7c4"><div class="ttname"><a href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a></div><div class="ttdeci">#define BOOST_PP_CAT(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="cat_8hpp_source.html#l00024">cat.hpp:24</a></div></div>
+<div class="ttc" id="astruct_2detail_2adapt__base_8hpp_html_aeaa37b403ec4453ac42a9a7f921fdcb8"><div class="ttname"><a href="struct_2detail_2adapt__base_8hpp.html#aeaa37b403ec4453ac42a9a7f921fdcb8">BOOST_FUSION_ADAPT_STRUCT_BASE</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_STRUCT_BASE( TEMPLATE_PARAMS_SEQ, NAME_SEQ, TAG, IS_VIEW, ATTRIBUTES_SEQ, ATTRIBUTES_CALLBACK)</div><div class="ttdef"><b>Definition:</b> <a href="struct_2detail_2adapt__base_8hpp_source.html#l00233">struct/detail/adapt_base.hpp:233</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html">adapted/adt/adapt_assoc_adt.hpp</a> の <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5ba46fa17a4b2c2737edf8842649b11b" name="a5ba46fa17a4b2c2737edf8842649b11b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ba46fa17a4b2c2737edf8842649b11b">&#9670;&#160;</a></span>BOOST_FUSION_ADAPT_ASSOC_ADT_AS_VIEW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_ADAPT_ASSOC_ADT_AS_VIEW</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ATTRIBUTES&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="struct_2detail_2adapt__base_8hpp.html#aeaa37b403ec4453ac42a9a7f921fdcb8">BOOST_FUSION_ADAPT_STRUCT_BASE</a>(                                             \</div>
+<div class="line">        (0),                                                                    \</div>
+<div class="line">        (0)(NAME),                                                              \</div>
+<div class="line">        assoc_struct_tag,                                                       \</div>
+<div class="line">        1,                                                                      \</div>
+<div class="line">        <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(                                                           \</div>
+<div class="line">            <a class="code hl_define" href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#a7d24528d3be19c4fd9a04812bb464c1e">BOOST_FUSION_ADAPT_ASSOC_ADT_FILLER_0</a>(0,0,0,0,0)ATTRIBUTES,_END),   \</div>
+<div class="line">        <a class="code hl_define" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#aca19fd566e66b90d8404d6d2d8caa2a9">BOOST_FUSION_ADAPT_ASSOC_ADT_C</a>)</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html">adapted/adt/adapt_assoc_adt.hpp</a> の <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aca19fd566e66b90d8404d6d2d8caa2a9" name="aca19fd566e66b90d8404d6d2d8caa2a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca19fd566e66b90d8404d6d2d8caa2a9">&#9670;&#160;</a></span>BOOST_FUSION_ADAPT_ASSOC_ADT_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_ADAPT_ASSOC_ADT_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TEMPLATE_PARAMS_SEQ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME_SEQ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IS_VIEW, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ATTRIBUTE&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">                                                                                \</div>
+<div class="line">        BOOST_FUSION_ADAPT_ADT_C_BASE(                                          \</div>
+<div class="line">            TEMPLATE_PARAMS_SEQ,                                                \</div>
+<div class="line">            NAME_SEQ,                                                           \</div>
+<div class="line">            <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>,                                                                  \</div>
+<div class="line">            <a class="code hl_define" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(IS_VIEW, <a class="code hl_define" href="adapted_2struct_2detail_2proxy__type_8hpp.html#a6e83524dbf97fbf69a543a059a1b0fe0">BOOST_FUSION_PROXY_PREFIX</a>, <a class="code hl_define" href="preprocessor_2facilities_2empty_8hpp.html#a89430b03da0bb58617e8f1ea93e449c1">BOOST_PP_EMPTY</a>),   \</div>
+<div class="line">            <a class="code hl_define" href="adt_2detail_2adapt__base__attr__filler_8hpp.html#aee0dc789af51d623811d67e7a81f0178">BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR</a>(ATTRIBUTE),                      \</div>
+<div class="line">            <a class="code hl_define" href="adt_2detail_2adapt__base__attr__filler_8hpp.html#a38cda0deb4e7693b261c38e1eece56c5">BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR_SIZE</a>(ATTRIBUTE),                 \</div>
+<div class="line">            <a class="code hl_define" href="preprocessor_2comparison_2less_8hpp.html#aed2980cddb29848e1fc322db7b528e0e">BOOST_PP_LESS</a>(                                                      \</div>
+<div class="line">                <a class="code hl_define" href="adt_2detail_2adapt__base__attr__filler_8hpp.html#a38cda0deb4e7693b261c38e1eece56c5">BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR_SIZE</a>(ATTRIBUTE), 5))         \</div>
+<div class="line">                                                                                \</div>
+<div class="line">    <span class="keyword">template</span>&lt;                                                                   \</div>
+<div class="line">        BOOST_FUSION_ADAPT_STRUCT_UNPACK_TEMPLATE_PARAMS(TEMPLATE_PARAMS_SEQ)   \</div>
+<div class="line">    &gt;                                                                           \</div>
+<div class="line">    <span class="keyword">struct </span>struct_assoc_key&lt;<a class="code hl_define" href="struct_2detail_2adapt__base_8hpp.html#a6d71bd5c27a8aee401a66f1ee732c144">BOOST_FUSION_ADAPT_STRUCT_UNPACK_NAME</a>(NAME_SEQ), <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">I</a>&gt; \</div>
+<div class="line">    {                                                                           \</div>
+<div class="line">        <span class="keyword">typedef</span> <a class="code hl_define" href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#af84a606114528245c78a921d1f0b8aa7">BOOST_FUSION_ADAPT_ASSOC_ADT_WRAPPEDATTR_GET_KEY</a>(ATTRIBUTE) type;\</div>
+<div class="line">    };</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574add7536794b63bf90eccfd37f9b147d7f">KeyCode::I</a></div><div class="ttdeci">@ I</div></div>
+<div class="ttc" id="aadapted_2struct_2detail_2proxy__type_8hpp_html_a6e83524dbf97fbf69a543a059a1b0fe0"><div class="ttname"><a href="adapted_2struct_2detail_2proxy__type_8hpp.html#a6e83524dbf97fbf69a543a059a1b0fe0">BOOST_FUSION_PROXY_PREFIX</a></div><div class="ttdeci">#define BOOST_FUSION_PROXY_PREFIX()</div><div class="ttdef"><b>Definition:</b> <a href="adapted_2struct_2detail_2proxy__type_8hpp_source.html#l00015">adapted/struct/detail/proxy_type.hpp:15</a></div></div>
+<div class="ttc" id="aadt_2detail_2adapt__base__assoc__attr__filler_8hpp_html_af84a606114528245c78a921d1f0b8aa7"><div class="ttname"><a href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#af84a606114528245c78a921d1f0b8aa7">BOOST_FUSION_ADAPT_ASSOC_ADT_WRAPPEDATTR_GET_KEY</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_ASSOC_ADT_WRAPPEDATTR_GET_KEY(ATTRIBUTE)</div><div class="ttdef"><b>Definition:</b> <a href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp_source.html#l00058">adt/detail/adapt_base_assoc_attr_filler.hpp:58</a></div></div>
+<div class="ttc" id="aadt_2detail_2adapt__base__attr__filler_8hpp_html_a38cda0deb4e7693b261c38e1eece56c5"><div class="ttname"><a href="adt_2detail_2adapt__base__attr__filler_8hpp.html#a38cda0deb4e7693b261c38e1eece56c5">BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR_SIZE</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR_SIZE(ATTRIBUTE)</div><div class="ttdef"><b>Definition:</b> <a href="adt_2detail_2adapt__base__attr__filler_8hpp_source.html#l00029">adt/detail/adapt_base_attr_filler.hpp:29</a></div></div>
+<div class="ttc" id="aadt_2detail_2adapt__base__attr__filler_8hpp_html_aee0dc789af51d623811d67e7a81f0178"><div class="ttname"><a href="adt_2detail_2adapt__base__attr__filler_8hpp.html#aee0dc789af51d623811d67e7a81f0178">BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_ADT_WRAPPEDATTR(ATTRIBUTE)</div><div class="ttdef"><b>Definition:</b> <a href="adt_2detail_2adapt__base__attr__filler_8hpp_source.html#l00032">adt/detail/adapt_base_attr_filler.hpp:32</a></div></div>
+<div class="ttc" id="aiif_8hpp_html_adf26de1282939d1dbca6fdf095b10fcf"><div class="ttname"><a href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a></div><div class="ttdeci">#define BOOST_PP_IIF(bit, t, f)</div><div class="ttdef"><b>Definition:</b> <a href="iif_8hpp_source.html#l00020">iif.hpp:20</a></div></div>
+<div class="ttc" id="apreprocessor_2comparison_2less_8hpp_html_aed2980cddb29848e1fc322db7b528e0e"><div class="ttname"><a href="preprocessor_2comparison_2less_8hpp.html#aed2980cddb29848e1fc322db7b528e0e">BOOST_PP_LESS</a></div><div class="ttdeci">#define BOOST_PP_LESS(x, y)</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2comparison_2less_8hpp_source.html#l00031">preprocessor/comparison/less.hpp:31</a></div></div>
+<div class="ttc" id="apreprocessor_2facilities_2empty_8hpp_html_a89430b03da0bb58617e8f1ea93e449c1"><div class="ttname"><a href="preprocessor_2facilities_2empty_8hpp.html#a89430b03da0bb58617e8f1ea93e449c1">BOOST_PP_EMPTY</a></div><div class="ttdeci">#define BOOST_PP_EMPTY()</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2facilities_2empty_8hpp_source.html#l00021">preprocessor/facilities/empty.hpp:21</a></div></div>
+<div class="ttc" id="astruct_2detail_2adapt__base_8hpp_html_a6d71bd5c27a8aee401a66f1ee732c144"><div class="ttname"><a href="struct_2detail_2adapt__base_8hpp.html#a6d71bd5c27a8aee401a66f1ee732c144">BOOST_FUSION_ADAPT_STRUCT_UNPACK_NAME</a></div><div class="ttdeci">#define BOOST_FUSION_ADAPT_STRUCT_UNPACK_NAME(SEQ)</div><div class="ttdef"><b>Definition:</b> <a href="struct_2detail_2adapt__base_8hpp_source.html#l00048">struct/detail/adapt_base.hpp:48</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html">adapted/adt/adapt_assoc_adt.hpp</a> の <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae05efdb53d44340d518dccf10e4d1573" name="ae05efdb53d44340d518dccf10e4d1573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05efdb53d44340d518dccf10e4d1573">&#9670;&#160;</a></span>BOOST_FUSION_ADAPT_ASSOC_TPL_ADT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_ADAPT_ASSOC_TPL_ADT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">TEMPLATE_PARAMS_SEQ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAME_SEQ, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">ATTRIBUTES&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">                                                                                \</div>
+<div class="line">    BOOST_FUSION_ADAPT_STRUCT_BASE(                                             \</div>
+<div class="line">        (1)TEMPLATE_PARAMS_SEQ,                                                 \</div>
+<div class="line">        (1)NAME_SEQ,                                                            \</div>
+<div class="line">        assoc_struct_tag,                                                       \</div>
+<div class="line">        0,                                                                      \</div>
+<div class="line">        <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(                                                           \</div>
+<div class="line">            <a class="code hl_define" href="adt_2detail_2adapt__base__assoc__attr__filler_8hpp.html#a7d24528d3be19c4fd9a04812bb464c1e">BOOST_FUSION_ADAPT_ASSOC_ADT_FILLER_0</a>(0,0,0,0,0)ATTRIBUTES,_END),   \</div>
+<div class="line">        <a class="code hl_define" href="adapted_2adt_2adapt__assoc__adt_8hpp.html#aca19fd566e66b90d8404d6d2d8caa2a9">BOOST_FUSION_ADAPT_ASSOC_ADT_C</a>)</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html">adapted/adt/adapt_assoc_adt.hpp</a> の <a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_704380e7be6172efd7d56f111ddb259e.html">adapted</a></li><li class="navelem"><a class="el" href="dir_771f1463bca6f81db425075930ef02b5.html">adt</a></li><li class="navelem"><a class="el" href="adapted_2adt_2adapt__assoc__adt_8hpp.html">adapt_assoc_adt.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

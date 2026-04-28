@@ -116,7 +116,7 @@ mtgb::ImageRenderer の継承関係図</div>
 <div class="dynheader">
 mtgb::ImageRenderer 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer__coll__graph.svg" width="1480" height="2808"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1ImageRenderer__coll__graph.svg" width="1480" height="2779"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -157,7 +157,7 @@ mtgb::ImageRenderer 連携図</div>
 <tr class="separator:af1eb4ba05a672953e5bf9f976695d2c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c254d764532f89c1e69ddca84a25e7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a6c254d764532f89c1e69ddca84a25e7b">Get</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId, Args &amp;&amp;... _args)</td></tr>
 <tr class="separator:a6c254d764532f89c1e69ddca84a25e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (size_t _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
+<tr class="memitem:ab07fa68485a5cf4425eebf1718c82e73"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#ab07fa68485a5cf4425eebf1718c82e73">Reuse</a> (<a class="el" href="structsize__t.html">size_t</a> _index, <a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
 <tr class="separator:ab07fa68485a5cf4425eebf1718c82e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a43753ff7c3ef1b19dd267096935f8a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1IComponent.html#a5a43753ff7c3ef1b19dd267096935f8a">Reuse</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _entityId)</td></tr>
 <tr class="separator:a5a43753ff7c3ef1b19dd267096935f8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,13 +266,21 @@ mtgb::ImageRenderer 連携図</div>
 <p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00008">8</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">    9</span>    : <a class="code hl_class" href="classmtgb_1_1IComponent.html">IComponent</a> { _entityId }</div>
 <div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a> { <a class="code hl_variable" href="namespacemtgb.html#a8d4b681135861ee2ebe4eda7b822e635">INVALID_HANDLE</a> }</div>
-<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a> { <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() }</div>
-<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#acb1de6a18089b9e710a8a683b067c157">color_</a> { <a class="code hl_enumvalue" href="structmtgb_1_1Color.html#ac5ba2aff0a58243f194579b54e0862acaf56aa40412b574bb5b3feba5b9e2be32">Color::WHITE</a> }</div>
-<div class="line"><span class="lineno">   13</span>{</div>
-<div class="line"><span class="lineno">   14</span>}</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#ac2026c29ea8da9fb2a1ce77666701cb5">imageFileName_</a> { <span class="stringliteral">&quot;&quot;</span> }</div>
+<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a> {}</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a6c9578e487c32d0162f6c052fd0aa47f">cutRect_</a> {}</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60">rotationZ_</a> { 0.0f }</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a> { <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() }</div>
+<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#acb1de6a18089b9e710a8a683b067c157">color_</a> { <a class="code hl_enumvalue" href="structmtgb_1_1Color.html#ac5ba2aff0a58243f194579b54e0862acaf56aa40412b574bb5b3feba5b9e2be32">Color::WHITE</a> }</div>
+<div class="line"><span class="lineno">   17</span>{</div>
+<div class="line"><span class="lineno">   18</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html"><div class="ttname"><a href="classmtgb_1_1IComponent.html">mtgb::IComponent</a></div><div class="ttdoc">ゲームオブジェクトにつけるコンポーネントのインタフェース</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00014">IComponent.h:15</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a463331948d351892356c0a42fd213d05"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">mtgb::ImageRenderer::handle_</a></div><div class="ttdeci">ImageHandle handle_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00034">ImageRenderer.h:34</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a6c9578e487c32d0162f6c052fd0aa47f"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a6c9578e487c32d0162f6c052fd0aa47f">mtgb::ImageRenderer::cutRect_</a></div><div class="ttdeci">RectF cutRect_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00037">ImageRenderer.h:37</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aa863cc3abc1f971e1d12c75239a5a584"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">mtgb::ImageRenderer::layer_</a></div><div class="ttdeci">GameObjectLayerFlag layer_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00040">ImageRenderer.h:40</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aa9417209e21f703c27c8e989e5505331"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">mtgb::ImageRenderer::drawRect_</a></div><div class="ttdeci">RectF drawRect_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00036">ImageRenderer.h:36</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_ac2026c29ea8da9fb2a1ce77666701cb5"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#ac2026c29ea8da9fb2a1ce77666701cb5">mtgb::ImageRenderer::imageFileName_</a></div><div class="ttdeci">std::string imageFileName_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00035">ImageRenderer.h:35</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_ad419747dc057c34e50631b2c0f7fae60"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#ad419747dc057c34e50631b2c0f7fae60">mtgb::ImageRenderer::rotationZ_</a></div><div class="ttdeci">float rotationZ_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00038">ImageRenderer.h:38</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a100fdeed4f1f4e5f27e7ffb97ee743ca"><div class="ttname"><a href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">mtgb::AllLayer</a></div><div class="ttdeci">GameObjectLayerFlag AllLayer()</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectLayer_8cpp_source.html#l00007">GameObjectLayer.cpp:7</a></div></div>
 <div class="ttc" id="anamespacemtgb_html_a8d4b681135861ee2ebe4eda7b822e635"><div class="ttname"><a href="namespacemtgb.html#a8d4b681135861ee2ebe4eda7b822e635">mtgb::INVALID_HANDLE</a></div><div class="ttdeci">constexpr int32_t INVALID_HANDLE</div><div class="ttdoc">無効なハンドル値</div><div class="ttdef"><b>Definition:</b> <a href="Handlers_8h_source.html#l00044">Handlers.h:44</a></div></div>
 </div><!-- fragment -->
@@ -307,10 +315,10 @@ mtgb::ImageRenderer 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IRenderable.html#a4e8551bc91bebf3b092b65d817f76068">mtgb::IRenderable</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00021">21</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a> != <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>;</div>
-<div class="line"><span class="lineno">   24</span>}</div>
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00025">25</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   26</span>{</div>
+<div class="line"><span class="lineno">   27</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a> != <a class="code hl_variable" href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">INVALID_ENTITY</a>;</div>
+<div class="line"><span class="lineno">   28</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_aba34bc7cb291bc67eadab098f1561087"><div class="ttname"><a href="namespacemtgb.html#aba34bc7cb291bc67eadab098f1561087">mtgb::INVALID_ENTITY</a></div><div class="ttdeci">constexpr EntityId INVALID_ENTITY</div><div class="ttdef"><b>Definition:</b> <a href="cmtgb_8h_source.html#l00011">cmtgb.h:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="cmtgb_8h_source.html#l00011">mtgb::INVALID_ENTITY</a>.</p>
@@ -349,10 +357,10 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00030">30</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   67</span>    {</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
-<div class="line"><span class="lineno">   69</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00027">27</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId);</div>
+<div class="line"><span class="lineno">   66</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -390,10 +398,10 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>    {</div>
-<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
-<div class="line"><span class="lineno">   63</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00028">28</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Get(_entityId, std::forward&lt;Args&gt;(_args)...);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,11 +428,11 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00041">41</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   42</span>        {</div>
-<div class="line"><span class="lineno">   43</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>;</div>
-<div class="line"><span class="lineno">   44</span>        }</div>
-<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; ImageRendererCP, ImageRenderer &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00047">IComponent.h:47</a></div></div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00038">38</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">entityId_</a>;</div>
+<div class="line"><span class="lineno">   41</span>        }</div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a8aa4f5300c39f9f4705a587fd0a72639"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a8aa4f5300c39f9f4705a587fd0a72639">mtgb::IComponent&lt; ImageRendererCP, ImageRenderer &gt;::entityId_</a></div><div class="ttdeci">EntityId entityId_</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00044">IComponent.h:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -456,10 +464,10 @@ mtgb::ImageRenderer 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IRenderable.html#a793729872ce00cc8d43de69abe99183b">mtgb::IRenderable</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a>;</div>
-<div class="line"><span class="lineno">   29</span>}</div>
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>{</div>
+<div class="line"><span class="lineno">   32</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa863cc3abc1f971e1d12c75239a5a584">layer_</a>;</div>
+<div class="line"><span class="lineno">   33</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照元 <a class="el" href="ImageRendererCP_8cpp_source.html#l00011">mtgb::ImageRendererCP::RenderLayer()</a>.</p>
 <div class="dynheader">
@@ -494,8 +502,8 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00035">35</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{}</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00032">32</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -586,13 +594,12 @@ mtgb::ImageRenderer 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1IRenderable.html#aed145aa67c27f506fd9346c091ead156">mtgb::IRenderable</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00016">16</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
-<div class="line"><span class="lineno">   18</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">Draw::Image</a>(<a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">uiParams_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#acb1de6a18089b9e710a8a683b067c157">color_</a>);</div>
-<div class="line"><span class="lineno">   19</span>}</div>
+<p class="definition"> <a class="el" href="ImageRenderer_8cpp_source.html">ImageRenderer.cpp</a> の <a class="el" href="ImageRenderer_8cpp_source.html#l00020">20</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">Draw::Image</a>(<a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a463331948d351892356c0a42fd213d05">handle_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">uiParams_</a>, <a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#acb1de6a18089b9e710a8a683b067c157">color_</a>);</div>
+<div class="line"><span class="lineno">   23</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Draw_html_a58181584ec06ddd3c786dada2327f86b"><div class="ttname"><a href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_, Color _color=Color::WHITE)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00051">Draw.cpp:51</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_a51326a3833672aec9459508d81bf2716"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716">mtgb::ImageRenderer::uiParams_</a></div><div class="ttdeci">UIParams uiParams_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00039">ImageRenderer.h:39</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1ImageRenderer_html_aa9417209e21f703c27c8e989e5505331"><div class="ttname"><a href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">mtgb::ImageRenderer::drawRect_</a></div><div class="ttdeci">RectF drawRect_</div><div class="ttdef"><b>Definition:</b> <a href="ImageRenderer_8h_source.html#l00036">ImageRenderer.h:36</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Draw_8cpp_source.html#l00051">mtgb::Draw::Image()</a>.</p>
 
@@ -637,8 +644,8 @@ mtgb::ImageRenderer 連携図</div>
 <p>ゲームオブジェクトから取り外されたときに呼ばれる </p>
 <p>コンポーネントの状態を初期化するのに使う </p>
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00040">40</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{}</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -666,17 +673,17 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00034">34</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   79</span>    {</div>
-<div class="line"><span class="lineno">   80</span>        ComponentT* result = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>        <span class="keyword">auto</span> componentIndex = Game::System&lt;ComponentRegistry&gt;().GetComponentIndex(_entityId, <span class="keyword">typeid</span>(ComponentT));</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">if</span> (componentIndex.has_value())</div>
-<div class="line"><span class="lineno">   84</span>        {</div>
-<div class="line"><span class="lineno">   85</span>            result = Game::System&lt;ComponentPoolT&gt;().Reuse(componentIndex.value(), _entityId);</div>
-<div class="line"><span class="lineno">   86</span>        }</div>
-<div class="line"><span class="lineno">   87</span>        <span class="keywordflow">return</span> result;</div>
-<div class="line"><span class="lineno">   88</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00031">31</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span>        ComponentT* result = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>        <span class="keyword">auto</span> componentIndex = Game::System&lt;ComponentRegistry&gt;().GetComponentIndex(_entityId, <span class="keyword">typeid</span>(ComponentT));</div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (componentIndex.has_value())</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span>            result = Game::System&lt;ComponentPoolT&gt;().Reuse(componentIndex.value(), _entityId);</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">   85</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -692,7 +699,7 @@ mtgb::ImageRenderer 連携図</div>
         <tr>
           <td class="memname"><a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  * <a class="el" href="classmtgb_1_1IComponent.html">mtgb::IComponent</a>&lt; <a class="el" href="classmtgb_1_1ImageRendererCP.html">ImageRendererCP</a> , <a class="el" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>  &gt;::Reuse </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype"><a class="el" href="structsize__t.html">size_t</a>&#160;</td>
           <td class="paramname"><em>_index</em>, </td>
         </tr>
         <tr>
@@ -714,10 +721,10 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00033">33</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
-<div class="line"><span class="lineno">   75</span>    }</div>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   70</span>    {</div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">return</span> Game::System&lt;ComponentPoolT&gt;().Reuse(_index, _entityId);</div>
+<div class="line"><span class="lineno">   72</span>    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -844,7 +851,7 @@ mtgb::ImageRenderer 連携図</div>
 
 <p class="definition"> <a class="el" href="IRenderable_8h_source.html">IRenderable.h</a> の <a class="el" href="IRenderable_8h_source.html#l00045">45</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="MeshRenderer_8cpp_source.html#l00009">mtgb::MeshRenderer::MeshRenderer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00010">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="Player_8cpp_source.html#l00364">Player::TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00071">Player::Update()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MeshRenderer_8cpp_source.html#l00009">mtgb::MeshRenderer::MeshRenderer()</a>, <a class="el" href="MeshRendererCP_8cpp_source.html#l00010">mtgb::MeshRendererCP::RenderLayer()</a>, <a class="el" href="Player_8cpp_source.html#l00363">Player::TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00071">Player::Update()</a>.</p>
 
 </div>
 </div>
@@ -868,7 +875,7 @@ mtgb::ImageRenderer 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00047">47</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="IComponent_8h_source.html">IComponent.h</a> の <a class="el" href="IComponent_8h_source.html#l00044">44</a> 行目に定義があります。</p>
 
 </div>
 </div>

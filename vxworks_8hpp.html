@@ -1,0 +1,1378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: vxworks.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('vxworks_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">vxworks.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="version_8h_source.html">version.h</a>&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;sys/time.h&gt;</code><br />
+<code>#include &lt;ioLib.h&gt;</code><br />
+<code>#include &lt;tickLib.h&gt;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="posix__features_8hpp_source.html">boost/config/detail/posix_features.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+vxworks.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="vxworks_8hpp__incl.svg" width="800" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="vxworks_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ada2b8c089a7d215b91eba5f2ee8624b3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ada2b8c089a7d215b91eba5f2ee8624b3">BOOST_PLATFORM</a>&#160;&#160;&#160;&quot;vxWorks&quot;</td></tr>
+<tr class="separator:ada2b8c089a7d215b91eba5f2ee8624b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e0564bc29933a6d3d3379834eb4bd2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a79e0564bc29933a6d3d3379834eb4bd2">BOOST_HAS_UNISTD_H</a></td></tr>
+<tr class="separator:a79e0564bc29933a6d3d3379834eb4bd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd18fc1de2313b8280730f5039d7139f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#acd18fc1de2313b8280730f5039d7139f">BOOST_HAS_STDINT_H</a></td></tr>
+<tr class="separator:acd18fc1de2313b8280730f5039d7139f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92797e3de36e2b5d28421de5d45a6a50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a92797e3de36e2b5d28421de5d45a6a50">BOOST_HAS_DIRENT_H</a></td></tr>
+<tr class="separator:a92797e3de36e2b5d28421de5d45a6a50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0465586079778e68b2d2f8dbf471face"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a0465586079778e68b2d2f8dbf471face">BOOST_LOCALE_WITH_ICU</a></td></tr>
+<tr class="separator:a0465586079778e68b2d2f8dbf471face"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31b9dd28ef52d211a35039d31a4e4827"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a31b9dd28ef52d211a35039d31a4e4827">BOOST_HAS_THREADS</a></td></tr>
+<tr class="separator:a31b9dd28ef52d211a35039d31a4e4827"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7d42525d4bbe7d4bc7b3275cff2196d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#aa7d42525d4bbe7d4bc7b3275cff2196d">BOOST_HAS_NANOSLEEP</a></td></tr>
+<tr class="separator:aa7d42525d4bbe7d4bc7b3275cff2196d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a991c14ee4092e592faa59c0b974c9846"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a991c14ee4092e592faa59c0b974c9846">BOOST_HAS_GETTIMEOFDAY</a></td></tr>
+<tr class="separator:a991c14ee4092e592faa59c0b974c9846"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74906024955003b2dd18c032c4adffc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a74906024955003b2dd18c032c4adffc9">BOOST_HAS_CLOCK_GETTIME</a></td></tr>
+<tr class="separator:a74906024955003b2dd18c032c4adffc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7c2f337068e7448af8ff650b1196b1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#aa7c2f337068e7448af8ff650b1196b1b">BOOST_HAS_MACRO_USE_FACET</a></td></tr>
+<tr class="separator:aa7c2f337068e7448af8ff650b1196b1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49216663554d2ad8e93fbcd7484527d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a49216663554d2ad8e93fbcd7484527d4">BOOST_HAS_PTHREADS</a></td></tr>
+<tr class="separator:a49216663554d2ad8e93fbcd7484527d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e7624f7fc20aa57ade1bdd6a6e7f8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a29e7624f7fc20aa57ade1bdd6a6e7f8d">BOOST_HAS_SCHED_YIELD</a></td></tr>
+<tr class="separator:a29e7624f7fc20aa57ade1bdd6a6e7f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6c56f667fae13b2b37c40fde16142b6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ae6c56f667fae13b2b37c40fde16142b6">BOOST_HAS_SIGACTION</a></td></tr>
+<tr class="separator:ae6c56f667fae13b2b37c40fde16142b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a106f23a33b1fc5e719d9b2d16f14054d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#aee745683ec4d9fa9baa9ab3897b5f2cb">VX_DO_JOIN</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)</td></tr>
+<tr class="separator:a106f23a33b1fc5e719d9b2d16f14054d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee745683ec4d9fa9baa9ab3897b5f2cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#aee745683ec4d9fa9baa9ab3897b5f2cb">VX_DO_JOIN</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#af35b6b2814d28307d3db3023d8c11fb8">VX_DO_JOIN2</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)</td></tr>
+<tr class="separator:aee745683ec4d9fa9baa9ab3897b5f2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af35b6b2814d28307d3db3023d8c11fb8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#af35b6b2814d28307d3db3023d8c11fb8">VX_DO_JOIN2</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>,  <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)&#160;&#160;&#160;<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>##<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a></td></tr>
+<tr class="separator:af35b6b2814d28307d3db3023d8c11fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad78650fb7726f4e99205406569ef403d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ad78650fb7726f4e99205406569ef403d">INT32_C</a>(x)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>)</td></tr>
+<tr class="separator:ad78650fb7726f4e99205406569ef403d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2451a7ede7ebd810357f1503e9898ea6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a2451a7ede7ebd810357f1503e9898ea6">UINT32_C</a>(x)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, UL)</td></tr>
+<tr class="separator:a2451a7ede7ebd810357f1503e9898ea6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d102802b35d3b8abae9bbe7f0fed75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a93d102802b35d3b8abae9bbe7f0fed75">INT64_C</a>(x)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, LL)</td></tr>
+<tr class="separator:a93d102802b35d3b8abae9bbe7f0fed75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a134ae84400d184ed2570e3270d5472c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a134ae84400d184ed2570e3270d5472c2">UINT64_C</a>(x)&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, ULL)</td></tr>
+<tr class="separator:a134ae84400d184ed2570e3270d5472c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be0283ee29147006fb07b9b1e09329b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a></td></tr>
+<tr class="separator:a9be0283ee29147006fb07b9b1e09329b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d192f88aeaef8c95cf7c375874541f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a83d192f88aeaef8c95cf7c375874541f">getpagesize</a>()&#160;&#160;&#160;sysconf(_SC_PAGESIZE)</td></tr>
+<tr class="separator:a83d192f88aeaef8c95cf7c375874541f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397ddd128980f1ee034653da2e9d8f6e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a397ddd128980f1ee034653da2e9d8f6e">S_ISSOCK</a>(mode)&#160;&#160;&#160;((mode &amp; S_IFMT) == S_IFSOCK)</td></tr>
+<tr class="separator:a397ddd128980f1ee034653da2e9d8f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4616f880b63120a93c1e4ac6a7aa3dae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a4616f880b63120a93c1e4ac6a7aa3dae">FPE_FLTINV</a>&#160;&#160;&#160;(FPE_FLTSUB+1)</td></tr>
+<tr class="separator:a4616f880b63120a93c1e4ac6a7aa3dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c632ef7896d821ec60f6fa2457cb1a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a5c632ef7896d821ec60f6fa2457cb1a9">BOOST_NO_CXX11_ADDRESSOF</a></td></tr>
+<tr class="separator:a5c632ef7896d821ec60f6fa2457cb1a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3adc8818104d1355ba12325f4a5159"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#abc3adc8818104d1355ba12325f4a5159">BOOST_NO_CXX11_ALLOCATOR</a></td></tr>
+<tr class="separator:abc3adc8818104d1355ba12325f4a5159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd68fb82fe3c5500ad7b2eb52ec985c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a0fd68fb82fe3c5500ad7b2eb52ec985c">BOOST_NO_CXX11_ATOMIC_SMART_PTR</a></td></tr>
+<tr class="separator:a0fd68fb82fe3c5500ad7b2eb52ec985c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2852469b7736150a6116c5bb10ad2816"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a2852469b7736150a6116c5bb10ad2816">BOOST_NO_CXX11_NUMERIC_LIMITS</a></td></tr>
+<tr class="separator:a2852469b7736150a6116c5bb10ad2816"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae23b24e85d04f74fdebd21fe0cc0ebcf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ae23b24e85d04f74fdebd21fe0cc0ebcf">BOOST_NO_CXX11_SMART_PTR</a></td></tr>
+<tr class="separator:ae23b24e85d04f74fdebd21fe0cc0ebcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80190d9d0e47e0859b8a04dd3c8737d5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a80190d9d0e47e0859b8a04dd3c8737d5">BOOST_NO_CXX11_STD_ALIGN</a></td></tr>
+<tr class="separator:a80190d9d0e47e0859b8a04dd3c8737d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6df32e65711226f3bbfb621701f95c8a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a6df32e65711226f3bbfb621701f95c8a">BOOST_NO_CXX11_HDR_ARRAY</a></td></tr>
+<tr class="separator:a6df32e65711226f3bbfb621701f95c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a735bc151ab7b301616d69ca05de02799"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a735bc151ab7b301616d69ca05de02799">BOOST_NO_CXX11_HDR_ATOMIC</a></td></tr>
+<tr class="separator:a735bc151ab7b301616d69ca05de02799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addbf6511b553639be9dd7f4155cd8bd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#addbf6511b553639be9dd7f4155cd8bd9">BOOST_NO_CXX11_HDR_CHRONO</a></td></tr>
+<tr class="separator:addbf6511b553639be9dd7f4155cd8bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ab2fdbd3363a3d2b486005d833265ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a0ab2fdbd3363a3d2b486005d833265ff">BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</a></td></tr>
+<tr class="separator:a0ab2fdbd3363a3d2b486005d833265ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20dbff9633831d4cdc7cb202920566a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a20dbff9633831d4cdc7cb202920566a9">BOOST_NO_CXX11_HDR_FORWARD_LIST</a></td></tr>
+<tr class="separator:a20dbff9633831d4cdc7cb202920566a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ce6d53fa915aa7614ba46c54c061bd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a3ce6d53fa915aa7614ba46c54c061bd9">BOOST_NO_CXX11_HDR_FUNCTIONAL</a></td></tr>
+<tr class="separator:a3ce6d53fa915aa7614ba46c54c061bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa78c24bb25fccb7f7fd5cf7314f5b96e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#aa78c24bb25fccb7f7fd5cf7314f5b96e">BOOST_NO_CXX11_HDR_FUTURE</a></td></tr>
+<tr class="separator:aa78c24bb25fccb7f7fd5cf7314f5b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74be47bdec9bf8a2559a9f9a9f0d2598"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a74be47bdec9bf8a2559a9f9a9f0d2598">BOOST_NO_CXX11_HDR_MUTEX</a></td></tr>
+<tr class="separator:a74be47bdec9bf8a2559a9f9a9f0d2598"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19104c24f82ea4bb484dcfa8afea2685"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a19104c24f82ea4bb484dcfa8afea2685">BOOST_NO_CXX11_HDR_RANDOM</a></td></tr>
+<tr class="separator:a19104c24f82ea4bb484dcfa8afea2685"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7682af1f1951af20581fcd7b88eb82c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a7682af1f1951af20581fcd7b88eb82c1">BOOST_NO_CXX11_HDR_RATIO</a></td></tr>
+<tr class="separator:a7682af1f1951af20581fcd7b88eb82c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a496e38ed7a6fb064cdf697c65e8f70df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a496e38ed7a6fb064cdf697c65e8f70df">BOOST_NO_CXX11_HDR_REGEX</a></td></tr>
+<tr class="separator:a496e38ed7a6fb064cdf697c65e8f70df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf66dfdd984ac23b83c75a2395e01e51"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#adf66dfdd984ac23b83c75a2395e01e51">BOOST_NO_CXX14_HDR_SHARED_MUTEX</a></td></tr>
+<tr class="separator:adf66dfdd984ac23b83c75a2395e01e51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a2b999c49760060681164f101d2d0b2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a9a2b999c49760060681164f101d2d0b2">BOOST_NO_CXX11_HDR_SYSTEM_ERROR</a></td></tr>
+<tr class="separator:a9a2b999c49760060681164f101d2d0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e36a594d88e2f05c56afe1a098bb635"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a1e36a594d88e2f05c56afe1a098bb635">BOOST_NO_CXX11_HDR_THREAD</a></td></tr>
+<tr class="separator:a1e36a594d88e2f05c56afe1a098bb635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dc0bc999363f9eeede49426be6bb2fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a3dc0bc999363f9eeede49426be6bb2fb">BOOST_NO_CXX11_HDR_TYPEINDEX</a></td></tr>
+<tr class="separator:a3dc0bc999363f9eeede49426be6bb2fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a617844b2f5d18b6957a9ac487e9bf336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a617844b2f5d18b6957a9ac487e9bf336">BOOST_NO_CXX11_HDR_TYPE_TRAITS</a></td></tr>
+<tr class="separator:a617844b2f5d18b6957a9ac487e9bf336"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0f012ee15e2f843c527a0544be3c474"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ae0f012ee15e2f843c527a0544be3c474">BOOST_NO_CXX11_HDR_TUPLE</a></td></tr>
+<tr class="separator:ae0f012ee15e2f843c527a0544be3c474"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86719f340370402d163f1ef0132d3128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a86719f340370402d163f1ef0132d3128">BOOST_NO_CXX11_HDR_UNORDERED_MAP</a></td></tr>
+<tr class="separator:a86719f340370402d163f1ef0132d3128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84cf65761bb2e6aa9bdc9e27cc0b72b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#af84cf65761bb2e6aa9bdc9e27cc0b72b">BOOST_NO_CXX11_HDR_UNORDERED_SET</a></td></tr>
+<tr class="separator:af84cf65761bb2e6aa9bdc9e27cc0b72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab939662dffd96b060ec189bc4402465f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ab939662dffd96b060ec189bc4402465f">BOOST_ASIO_DISABLE_SERIAL_PORT</a></td></tr>
+<tr class="separator:ab939662dffd96b060ec189bc4402465f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:acf7423b4f43f3749b4efd39753bc3285"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#acf7423b4f43f3749b4efd39753bc3285">locale_t</a></td></tr>
+<tr class="separator:acf7423b4f43f3749b4efd39753bc3285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:abd135a2d64367af32a6c5429f93633b0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#abd135a2d64367af32a6c5429f93633b0">truncate</a> (const char *p, off_t l)</td></tr>
+<tr class="separator:abd135a2d64367af32a6c5429f93633b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae117e92f93066f5c99b0b75bdc938c53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#ae117e92f93066f5c99b0b75bdc938c53">symlink</a> (const char *path1 <a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a>, const char *path2 <a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a>)</td></tr>
+<tr class="separator:ae117e92f93066f5c99b0b75bdc938c53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bee844bf66f6783743d56b3c8353e74"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a8bee844bf66f6783743d56b3c8353e74">readlink</a> (const char *path1 <a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a>, char *path2 <a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a>, <a class="el" href="structsize__t.html">size_t</a> size <a class="el" href="vxworks_8hpp.html#a9be0283ee29147006fb07b9b1e09329b">___unused</a>)</td></tr>
+<tr class="separator:a8bee844bf66f6783743d56b3c8353e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48aefbae729c4985339149c19a716a85"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a48aefbae729c4985339149c19a716a85">gettimeofday</a> (struct timeval *tv, void *)</td></tr>
+<tr class="separator:a48aefbae729c4985339149c19a716a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9e3de3b89b87e078eb072f580db71b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="vxworks_8hpp.html#a9d9e3de3b89b87e078eb072f580db71b">lstat</a> (p, b)</td></tr>
+<tr class="separator:a9d9e3de3b89b87e078eb072f580db71b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a9be0283ee29147006fb07b9b1e09329b" name="a9be0283ee29147006fb07b9b1e09329b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be0283ee29147006fb07b9b1e09329b">&#9670;&#160;</a></span>___unused</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ___unused</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00244">244</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab939662dffd96b060ec189bc4402465f" name="ab939662dffd96b060ec189bc4402465f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab939662dffd96b060ec189bc4402465f">&#9670;&#160;</a></span>BOOST_ASIO_DISABLE_SERIAL_PORT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_ASIO_DISABLE_SERIAL_PORT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00420">420</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a74906024955003b2dd18c032c4adffc9" name="a74906024955003b2dd18c032c4adffc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74906024955003b2dd18c032c4adffc9">&#9670;&#160;</a></span>BOOST_HAS_CLOCK_GETTIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_CLOCK_GETTIME</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00111">111</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a92797e3de36e2b5d28421de5d45a6a50" name="a92797e3de36e2b5d28421de5d45a6a50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92797e3de36e2b5d28421de5d45a6a50">&#9670;&#160;</a></span>BOOST_HAS_DIRENT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_DIRENT_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a991c14ee4092e592faa59c0b974c9846" name="a991c14ee4092e592faa59c0b974c9846"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a991c14ee4092e592faa59c0b974c9846">&#9670;&#160;</a></span>BOOST_HAS_GETTIMEOFDAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_GETTIMEOFDAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa7c2f337068e7448af8ff650b1196b1b" name="aa7c2f337068e7448af8ff650b1196b1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c2f337068e7448af8ff650b1196b1b">&#9670;&#160;</a></span>BOOST_HAS_MACRO_USE_FACET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_MACRO_USE_FACET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00112">112</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa7d42525d4bbe7d4bc7b3275cff2196d" name="aa7d42525d4bbe7d4bc7b3275cff2196d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7d42525d4bbe7d4bc7b3275cff2196d">&#9670;&#160;</a></span>BOOST_HAS_NANOSLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_NANOSLEEP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00109">109</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a49216663554d2ad8e93fbcd7484527d4" name="a49216663554d2ad8e93fbcd7484527d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49216663554d2ad8e93fbcd7484527d4">&#9670;&#160;</a></span>BOOST_HAS_PTHREADS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_PTHREADS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00115">115</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a29e7624f7fc20aa57ade1bdd6a6e7f8d" name="a29e7624f7fc20aa57ade1bdd6a6e7f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29e7624f7fc20aa57ade1bdd6a6e7f8d">&#9670;&#160;</a></span>BOOST_HAS_SCHED_YIELD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_SCHED_YIELD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00116">116</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae6c56f667fae13b2b37c40fde16142b6" name="ae6c56f667fae13b2b37c40fde16142b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6c56f667fae13b2b37c40fde16142b6">&#9670;&#160;</a></span>BOOST_HAS_SIGACTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_SIGACTION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00117">117</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acd18fc1de2313b8280730f5039d7139f" name="acd18fc1de2313b8280730f5039d7139f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd18fc1de2313b8280730f5039d7139f">&#9670;&#160;</a></span>BOOST_HAS_STDINT_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_STDINT_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a31b9dd28ef52d211a35039d31a4e4827" name="a31b9dd28ef52d211a35039d31a4e4827"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31b9dd28ef52d211a35039d31a4e4827">&#9670;&#160;</a></span>BOOST_HAS_THREADS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_THREADS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79e0564bc29933a6d3d3379834eb4bd2" name="a79e0564bc29933a6d3d3379834eb4bd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e0564bc29933a6d3d3379834eb4bd2">&#9670;&#160;</a></span>BOOST_HAS_UNISTD_H</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_UNISTD_H</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0465586079778e68b2d2f8dbf471face" name="a0465586079778e68b2d2f8dbf471face"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0465586079778e68b2d2f8dbf471face">&#9670;&#160;</a></span>BOOST_LOCALE_WITH_ICU</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_LOCALE_WITH_ICU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00104">104</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5c632ef7896d821ec60f6fa2457cb1a9" name="a5c632ef7896d821ec60f6fa2457cb1a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c632ef7896d821ec60f6fa2457cb1a9">&#9670;&#160;</a></span>BOOST_NO_CXX11_ADDRESSOF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_ADDRESSOF</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00371">371</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abc3adc8818104d1355ba12325f4a5159" name="abc3adc8818104d1355ba12325f4a5159"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc3adc8818104d1355ba12325f4a5159">&#9670;&#160;</a></span>BOOST_NO_CXX11_ALLOCATOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_ALLOCATOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00372">372</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0fd68fb82fe3c5500ad7b2eb52ec985c" name="a0fd68fb82fe3c5500ad7b2eb52ec985c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd68fb82fe3c5500ad7b2eb52ec985c">&#9670;&#160;</a></span>BOOST_NO_CXX11_ATOMIC_SMART_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_ATOMIC_SMART_PTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00373">373</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6df32e65711226f3bbfb621701f95c8a" name="a6df32e65711226f3bbfb621701f95c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6df32e65711226f3bbfb621701f95c8a">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_ARRAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_ARRAY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00379">379</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a735bc151ab7b301616d69ca05de02799" name="a735bc151ab7b301616d69ca05de02799"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a735bc151ab7b301616d69ca05de02799">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_ATOMIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_ATOMIC</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00380">380</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="addbf6511b553639be9dd7f4155cd8bd9" name="addbf6511b553639be9dd7f4155cd8bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addbf6511b553639be9dd7f4155cd8bd9">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_CHRONO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_CHRONO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00381">381</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0ab2fdbd3363a3d2b486005d833265ff" name="a0ab2fdbd3363a3d2b486005d833265ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab2fdbd3363a3d2b486005d833265ff">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_CONDITION_VARIABLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00382">382</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a20dbff9633831d4cdc7cb202920566a9" name="a20dbff9633831d4cdc7cb202920566a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20dbff9633831d4cdc7cb202920566a9">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_FORWARD_LIST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_FORWARD_LIST</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00383">383</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3ce6d53fa915aa7614ba46c54c061bd9" name="a3ce6d53fa915aa7614ba46c54c061bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ce6d53fa915aa7614ba46c54c061bd9">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_FUNCTIONAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_FUNCTIONAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00384">384</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa78c24bb25fccb7f7fd5cf7314f5b96e" name="aa78c24bb25fccb7f7fd5cf7314f5b96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa78c24bb25fccb7f7fd5cf7314f5b96e">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_FUTURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_FUTURE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00385">385</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a74be47bdec9bf8a2559a9f9a9f0d2598" name="a74be47bdec9bf8a2559a9f9a9f0d2598"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74be47bdec9bf8a2559a9f9a9f0d2598">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_MUTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_MUTEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00386">386</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a19104c24f82ea4bb484dcfa8afea2685" name="a19104c24f82ea4bb484dcfa8afea2685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19104c24f82ea4bb484dcfa8afea2685">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_RANDOM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_RANDOM</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00387">387</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7682af1f1951af20581fcd7b88eb82c1" name="a7682af1f1951af20581fcd7b88eb82c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7682af1f1951af20581fcd7b88eb82c1">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_RATIO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_RATIO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00388">388</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a496e38ed7a6fb064cdf697c65e8f70df" name="a496e38ed7a6fb064cdf697c65e8f70df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a496e38ed7a6fb064cdf697c65e8f70df">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_REGEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_REGEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00389">389</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9a2b999c49760060681164f101d2d0b2" name="a9a2b999c49760060681164f101d2d0b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a2b999c49760060681164f101d2d0b2">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_SYSTEM_ERROR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_SYSTEM_ERROR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00391">391</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1e36a594d88e2f05c56afe1a098bb635" name="a1e36a594d88e2f05c56afe1a098bb635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e36a594d88e2f05c56afe1a098bb635">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_THREAD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_THREAD</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00392">392</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae0f012ee15e2f843c527a0544be3c474" name="ae0f012ee15e2f843c527a0544be3c474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f012ee15e2f843c527a0544be3c474">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_TUPLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_TUPLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00395">395</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a617844b2f5d18b6957a9ac487e9bf336" name="a617844b2f5d18b6957a9ac487e9bf336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a617844b2f5d18b6957a9ac487e9bf336">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_TYPE_TRAITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_TYPE_TRAITS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00394">394</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3dc0bc999363f9eeede49426be6bb2fb" name="a3dc0bc999363f9eeede49426be6bb2fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dc0bc999363f9eeede49426be6bb2fb">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_TYPEINDEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_TYPEINDEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00393">393</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a86719f340370402d163f1ef0132d3128" name="a86719f340370402d163f1ef0132d3128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86719f340370402d163f1ef0132d3128">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_UNORDERED_MAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_UNORDERED_MAP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00396">396</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af84cf65761bb2e6aa9bdc9e27cc0b72b" name="af84cf65761bb2e6aa9bdc9e27cc0b72b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af84cf65761bb2e6aa9bdc9e27cc0b72b">&#9670;&#160;</a></span>BOOST_NO_CXX11_HDR_UNORDERED_SET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_HDR_UNORDERED_SET</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00397">397</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2852469b7736150a6116c5bb10ad2816" name="a2852469b7736150a6116c5bb10ad2816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2852469b7736150a6116c5bb10ad2816">&#9670;&#160;</a></span>BOOST_NO_CXX11_NUMERIC_LIMITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_NUMERIC_LIMITS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00374">374</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae23b24e85d04f74fdebd21fe0cc0ebcf" name="ae23b24e85d04f74fdebd21fe0cc0ebcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae23b24e85d04f74fdebd21fe0cc0ebcf">&#9670;&#160;</a></span>BOOST_NO_CXX11_SMART_PTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_SMART_PTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00375">375</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a80190d9d0e47e0859b8a04dd3c8737d5" name="a80190d9d0e47e0859b8a04dd3c8737d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80190d9d0e47e0859b8a04dd3c8737d5">&#9670;&#160;</a></span>BOOST_NO_CXX11_STD_ALIGN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_STD_ALIGN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00376">376</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="adf66dfdd984ac23b83c75a2395e01e51" name="adf66dfdd984ac23b83c75a2395e01e51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf66dfdd984ac23b83c75a2395e01e51">&#9670;&#160;</a></span>BOOST_NO_CXX14_HDR_SHARED_MUTEX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX14_HDR_SHARED_MUTEX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00390">390</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ada2b8c089a7d215b91eba5f2ee8624b3" name="ada2b8c089a7d215b91eba5f2ee8624b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2b8c089a7d215b91eba5f2ee8624b3">&#9670;&#160;</a></span>BOOST_PLATFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PLATFORM&#160;&#160;&#160;&quot;vxWorks&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00090">90</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4616f880b63120a93c1e4ac6a7aa3dae" name="a4616f880b63120a93c1e4ac6a7aa3dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4616f880b63120a93c1e4ac6a7aa3dae">&#9670;&#160;</a></span>FPE_FLTINV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FPE_FLTINV&#160;&#160;&#160;(FPE_FLTSUB+1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00354">354</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a83d192f88aeaef8c95cf7c375874541f" name="a83d192f88aeaef8c95cf7c375874541f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d192f88aeaef8c95cf7c375874541f">&#9670;&#160;</a></span>getpagesize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define getpagesize</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;sysconf(_SC_PAGESIZE)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00346">346</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad78650fb7726f4e99205406569ef403d" name="ad78650fb7726f4e99205406569ef403d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78650fb7726f4e99205406569ef403d">&#9670;&#160;</a></span>INT32_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT32_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00174">174</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a93d102802b35d3b8abae9bbe7f0fed75" name="a93d102802b35d3b8abae9bbe7f0fed75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d102802b35d3b8abae9bbe7f0fed75">&#9670;&#160;</a></span>INT64_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INT64_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, LL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00176">176</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a397ddd128980f1ee034653da2e9d8f6e" name="a397ddd128980f1ee034653da2e9d8f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397ddd128980f1ee034653da2e9d8f6e">&#9670;&#160;</a></span>S_ISSOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define S_ISSOCK</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">mode</td><td>)</td>
+          <td>&#160;&#160;&#160;((mode &amp; S_IFMT) == S_IFSOCK)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00351">351</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2451a7ede7ebd810357f1503e9898ea6" name="a2451a7ede7ebd810357f1503e9898ea6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2451a7ede7ebd810357f1503e9898ea6">&#9670;&#160;</a></span>UINT32_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UINT32_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, UL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00175">175</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a134ae84400d184ed2570e3270d5472c2" name="a134ae84400d184ed2570e3270d5472c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a134ae84400d184ed2570e3270d5472c2">&#9670;&#160;</a></span>UINT64_C</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UINT64_C</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#a106f23a33b1fc5e719d9b2d16f14054d">VX_JOIN</a>(x, ULL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aee745683ec4d9fa9baa9ab3897b5f2cb" name="aee745683ec4d9fa9baa9ab3897b5f2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee745683ec4d9fa9baa9ab3897b5f2cb">&#9670;&#160;</a></span>VX_DO_JOIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VX_DO_JOIN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#af35b6b2814d28307d3db3023d8c11fb8">VX_DO_JOIN2</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00166">166</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af35b6b2814d28307d3db3023d8c11fb8" name="af35b6b2814d28307d3db3023d8c11fb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af35b6b2814d28307d3db3023d8c11fb8">&#9670;&#160;</a></span>VX_DO_JOIN2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VX_DO_JOIN2</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>##<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00167">167</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a106f23a33b1fc5e719d9b2d16f14054d" name="a106f23a33b1fc5e719d9b2d16f14054d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a106f23a33b1fc5e719d9b2d16f14054d">&#9670;&#160;</a></span>VX_JOIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VX_JOIN</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="vxworks_8hpp.html#aee745683ec4d9fa9baa9ab3897b5f2cb">VX_DO_JOIN</a>(<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a02129bb861061d1a052c592e2dc6b383">X</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00165">165</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="acf7423b4f43f3749b4efd39753bc3285" name="acf7423b4f43f3749b4efd39753bc3285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf7423b4f43f3749b4efd39753bc3285">&#9670;&#160;</a></span>locale_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef int <a class="el" href="vxworks_8hpp.html#acf7423b4f43f3749b4efd39753bc3285">locale_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00359">359</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a48aefbae729c4985339149c19a716a85" name="a48aefbae729c4985339149c19a716a85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48aefbae729c4985339149c19a716a85">&#9670;&#160;</a></span>gettimeofday()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int gettimeofday </td>
+          <td>(</td>
+          <td class="paramtype">struct timeval *&#160;</td>
+          <td class="paramname"><em>tv</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00262">262</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  262</span>                                                      {</div>
+<div class="line"><span class="lineno">  263</span>  <span class="keyword">struct </span>timespec ts;</div>
+<div class="line"><span class="lineno">  264</span>  clock_gettime(CLOCK_MONOTONIC, &amp;ts);</div>
+<div class="line"><span class="lineno">  265</span>  tv-&gt;tv_sec  = ts.tv_sec;</div>
+<div class="line"><span class="lineno">  266</span>  tv-&gt;tv_usec = ts.tv_nsec / 1000;</div>
+<div class="line"><span class="lineno">  267</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  268</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9d9e3de3b89b87e078eb072f580db71b" name="a9d9e3de3b89b87e078eb072f580db71b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d9e3de3b89b87e078eb072f580db71b">&#9670;&#160;</a></span>lstat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int lstat </td>
+          <td>(</td>
+          <td class="paramtype">p&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">b&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00347">347</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>{ <span class="keywordflow">return</span> stat(p, b); }  <span class="comment">// lstat() == stat(), as vxWorks has no symlinks!</span></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8bee844bf66f6783743d56b3c8353e74" name="a8bee844bf66f6783743d56b3c8353e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bee844bf66f6783743d56b3c8353e74">&#9670;&#160;</a></span>readlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t readlink </td>
+          <td>(</td>
+          <td class="paramtype">const char *path1&#160;</td>
+          <td class="paramname"><em>___unused</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *path2&#160;</td>
+          <td class="paramname"><em>___unused</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structsize__t.html">size_t</a> size&#160;</td>
+          <td class="paramname"><em>___unused</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00254">254</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  254</span>                                                                                                  {</div>
+<div class="line"><span class="lineno">  255</span>  <span class="comment">// vxWorks has no symlinks -&gt; always return an error!</span></div>
+<div class="line"><span class="lineno">  256</span>  <a class="code hl_define" href="config_2compiler_2borland_8hpp.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a> = EACCES;</div>
+<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  258</span>}</div>
+<div class="ttc" id="aconfig_2compiler_2borland_8hpp_html_ad65a8842cc674e3ddf69355898c0ecbf"><div class="ttname"><a href="config_2compiler_2borland_8hpp.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a></div><div class="ttdeci">#define errno</div><div class="ttdoc">Contains the last error code.</div><div class="ttdef"><b>Definition:</b> <a href="config_2compiler_2borland_8hpp_source.html#l00085">config/compiler/borland.hpp:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="config_2compiler_2borland_8hpp_source.html#l00085">errno</a>.</p>
+
+</div>
+</div>
+<a id="ae117e92f93066f5c99b0b75bdc938c53" name="ae117e92f93066f5c99b0b75bdc938c53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae117e92f93066f5c99b0b75bdc938c53">&#9670;&#160;</a></span>symlink()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int symlink </td>
+          <td>(</td>
+          <td class="paramtype">const char *path1&#160;</td>
+          <td class="paramname"><em>___unused</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *path2&#160;</td>
+          <td class="paramname"><em>___unused</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00248">248</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  248</span>                                                                            {</div>
+<div class="line"><span class="lineno">  249</span>  <span class="comment">// vxWorks has no symlinks -&gt; always return an error!</span></div>
+<div class="line"><span class="lineno">  250</span>  <a class="code hl_define" href="config_2compiler_2borland_8hpp.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a> = EACCES;</div>
+<div class="line"><span class="lineno">  251</span>  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  252</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="config_2compiler_2borland_8hpp_source.html#l00085">errno</a>.</p>
+
+</div>
+</div>
+<a id="abd135a2d64367af32a6c5429f93633b0" name="abd135a2d64367af32a6c5429f93633b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd135a2d64367af32a6c5429f93633b0">&#9670;&#160;</a></span>truncate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int truncate </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&#160;</td>
+          <td class="paramname"><em>l</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="vxworks_8hpp_source.html">vxworks.hpp</a> の <a class="el" href="vxworks_8hpp_source.html#l00227">227</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>                                           {</div>
+<div class="line"><span class="lineno">  228</span>  <span class="keywordtype">int</span> fd = <a class="code hl_function" href="structcmd_8h.html#a2c4414339f388561554c2deab11a1a07">open</a>(p, O_WRONLY);</div>
+<div class="line"><span class="lineno">  229</span>  <span class="keywordflow">if</span> (fd == -1){</div>
+<div class="line"><span class="lineno">  230</span>    <a class="code hl_define" href="config_2compiler_2borland_8hpp.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a> = EACCES;</div>
+<div class="line"><span class="lineno">  231</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  232</span>  }</div>
+<div class="line"><span class="lineno">  233</span>  <span class="keywordflow">if</span> (ftruncate(fd, l) == -1){</div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_function" href="structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0">close</a>(fd);</div>
+<div class="line"><span class="lineno">  235</span>    <a class="code hl_define" href="config_2compiler_2borland_8hpp.html#ad65a8842cc674e3ddf69355898c0ecbf">errno</a> = EACCES;</div>
+<div class="line"><span class="lineno">  236</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  237</span>  }</div>
+<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0">close</a>(fd);</div>
+<div class="line"><span class="lineno">  239</span>}</div>
+<div class="ttc" id="astructcmd_8h_html_a2c4414339f388561554c2deab11a1a07"><div class="ttname"><a href="structcmd_8h.html#a2c4414339f388561554c2deab11a1a07">open</a></div><div class="ttdeci">int open(const char *, int)</div><div class="ttdoc">Opens a file descriptor.</div></div>
+<div class="ttc" id="astructcmd_8h_html_ae152484c890a24e4d9b4980e7b965be0"><div class="ttname"><a href="structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0">close</a></div><div class="ttdeci">int close(int)</div><div class="ttdoc">Closes the file descriptor fd.</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="structcmd_8h.html#ae152484c890a24e4d9b4980e7b965be0">close()</a>, <a class="el" href="config_2compiler_2borland_8hpp_source.html#l00085">errno</a>, <a class="el" href="structcmd_8h.html#a2c4414339f388561554c2deab11a1a07">open()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="vxworks_8hpp_abd135a2d64367af32a6c5429f93633b0_cgraph.svg" width="191" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_9f819e5a95b48ef443de9cf51f4bbd0a.html">config</a></li><li class="navelem"><a class="el" href="dir_e21786a3b5a197f5e9a6d896c8962f94.html">platform</a></li><li class="navelem"><a class="el" href="vxworks_8hpp.html">vxworks.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

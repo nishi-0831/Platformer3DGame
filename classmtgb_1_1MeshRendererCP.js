@@ -5,7 +5,7 @@ var classmtgb_1_1MeshRendererCP =
     [ "Deserialize", "classmtgb_1_1MeshRendererCP.html#ae94100391820ac4e8fae6e39706cf738", null ],
     [ "Get", "classmtgb_1_1MeshRendererCP.html#a3bbce3e830e89a68e4ae52ee655728b7", null ],
     [ "Initialize", "classmtgb_1_1MeshRendererCP.html#acbb23f2d6807f5ddd259567a67a1dc9a", null ],
-    [ "RegisterComponent", "classmtgb_1_1MeshRendererCP.html#a228bc6bfb0fd1f8f1e1dd7df86dbd084", null ],
+    [ "RegisterComponent", "classmtgb_1_1MeshRendererCP.html#a2a4238ed198e4a3ae024338094b6c034", null ],
     [ "RegisterCurrentScene", "classmtgb_1_1MeshRendererCP.html#a4d2d02ef42687005a44d0fb93b353182", null ],
     [ "RegisterImGuiIfExists", "classmtgb_1_1MeshRendererCP.html#a4f9e8e9a7a14625c83206da315a9697b", null ],
     [ "Release", "classmtgb_1_1MeshRendererCP.html#ae1beb41221e47868e09b1450cdee75fb", null ],

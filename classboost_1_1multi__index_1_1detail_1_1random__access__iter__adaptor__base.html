@@ -1,0 +1,615 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::random_access_iter_adaptor_base&lt; Derived, Base &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::random_access_iter_adaptor_base&lt; Derived, Base &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::random_access_iter_adaptor_base&lt; Derived, Base &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base__inherit__graph.svg" width="376" height="1734"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::random_access_iter_adaptor_base&lt; Derived, Base &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base__coll__graph.svg" width="376" height="1734"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:afed90375f5cc91a74c7ebd1032d8f745"><td class="memItemLeft" align="right" valign="top">typedef Base::reference&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#afed90375f5cc91a74c7ebd1032d8f745">reference</a></td></tr>
+<tr class="separator:afed90375f5cc91a74c7ebd1032d8f745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05b98b1eb54bbd135882ed544f9e48e7"><td class="memItemLeft" align="right" valign="top">typedef Base::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a></td></tr>
+<tr class="separator:a05b98b1eb54bbd135882ed544f9e48e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ada55280f7a782662bb8a672381ef37c1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#afed90375f5cc91a74c7ebd1032d8f745">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#ada55280f7a782662bb8a672381ef37c1">operator*</a> () const</td></tr>
+<tr class="separator:ada55280f7a782662bb8a672381ef37c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf58310874049746ab36c2a135e6ba9f"><td class="memItemLeft" align="right" valign="top">Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#aaf58310874049746ab36c2a135e6ba9f">operator++</a> ()</td></tr>
+<tr class="separator:aaf58310874049746ab36c2a135e6ba9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a441cb9c722797c86ea45f9aaa05a54"><td class="memItemLeft" align="right" valign="top">Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a7a441cb9c722797c86ea45f9aaa05a54">operator--</a> ()</td></tr>
+<tr class="separator:a7a441cb9c722797c86ea45f9aaa05a54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af25adc1d49aa7155d9d3b4a3762ab9c5"><td class="memItemLeft" align="right" valign="top">Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#af25adc1d49aa7155d9d3b4a3762ab9c5">operator+=</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a> n)</td></tr>
+<tr class="separator:af25adc1d49aa7155d9d3b4a3762ab9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab154e4aa9e39ba88609a711b889acea5"><td class="memItemLeft" align="right" valign="top">Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#ab154e4aa9e39ba88609a711b889acea5">operator-=</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a> n)</td></tr>
+<tr class="separator:ab154e4aa9e39ba88609a711b889acea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3a97bb5bc6c5e1053101609154dec8c0"><td class="memItemLeft" align="right" valign="top">Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a3a97bb5bc6c5e1053101609154dec8c0">final</a> ()</td></tr>
+<tr class="separator:a3a97bb5bc6c5e1053101609154dec8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d2dcdf5357ae814b47b43e9aa847f1"><td class="memItemLeft" align="right" valign="top">const Derived &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a12d2dcdf5357ae814b47b43e9aa847f1">final</a> () const</td></tr>
+<tr class="separator:a12d2dcdf5357ae814b47b43e9aa847f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:a6c85fa717c8dd0c3e31edeb777322a35"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a6c85fa717c8dd0c3e31edeb777322a35">operator==</a> (const Derived &amp;x, const Derived &amp;y)</td></tr>
+<tr class="separator:a6c85fa717c8dd0c3e31edeb777322a35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ac9e4167a6de3ea39bccbabf4652b71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a2ac9e4167a6de3ea39bccbabf4652b71">operator&lt;</a> (const Derived &amp;x, const Derived &amp;y)</td></tr>
+<tr class="separator:a2ac9e4167a6de3ea39bccbabf4652b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad82942b35390f0a633449dad9560728b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#ad82942b35390f0a633449dad9560728b">operator-</a> (const Derived &amp;x, const Derived &amp;y)</td></tr>
+<tr class="separator:ad82942b35390f0a633449dad9560728b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Derived, class Base&gt;<br />
+class boost::multi_index::detail::random_access_iter_adaptor_base&lt; Derived, Base &gt;</div>
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00193">193</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a05b98b1eb54bbd135882ed544f9e48e7" name="a05b98b1eb54bbd135882ed544f9e48e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05b98b1eb54bbd135882ed544f9e48e7">&#9670;&#160;</a></span>difference_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Base::difference_type <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::difference_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afed90375f5cc91a74c7ebd1032d8f745" name="afed90375f5cc91a74c7ebd1032d8f745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afed90375f5cc91a74c7ebd1032d8f745">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Base::reference <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::reference</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00202">202</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3a97bb5bc6c5e1053101609154dec8c0" name="a3a97bb5bc6c5e1053101609154dec8c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a97bb5bc6c5e1053101609154dec8c0">&#9670;&#160;</a></span>final() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::final </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00250">250</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>{<span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a12d2dcdf5357ae814b47b43e9aa847f1" name="a12d2dcdf5357ae814b47b43e9aa847f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d2dcdf5357ae814b47b43e9aa847f1">&#9670;&#160;</a></span>final() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::final </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00251">251</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>{<span class="keywordflow">return</span> *<span class="keyword">static_cast&lt;</span><span class="keyword">const </span>Derived*<span class="keyword">&gt;</span>(<span class="keyword">this</span>);}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ada55280f7a782662bb8a672381ef37c1" name="ada55280f7a782662bb8a672381ef37c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada55280f7a782662bb8a672381ef37c1">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#afed90375f5cc91a74c7ebd1032d8f745">reference</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00205">205</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>  {</div>
+<div class="line"><span class="lineno">  207</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a8adb432e3a31b3be1b0d81b16d0c2303">iter_adaptor_access::dereference</a>(<span class="keyword">final</span>());</div>
+<div class="line"><span class="lineno">  208</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_a8adb432e3a31b3be1b0d81b16d0c2303"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a8adb432e3a31b3be1b0d81b16d0c2303">boost::multi_index::detail::iter_adaptor_access::dereference</a></div><div class="ttdeci">static Class::reference dereference(const Class &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00042">iter_adaptor.hpp:42</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="iter__adaptor_8hpp_source.html#l00042">boost::multi_index::detail::iter_adaptor_access::dereference()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base_ada55280f7a782662bb8a672381ef37c1_cgraph.svg" width="434" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aaf58310874049746ab36c2a135e6ba9f" name="aaf58310874049746ab36c2a135e6ba9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf58310874049746ab36c2a135e6ba9f">&#9670;&#160;</a></span>operator++()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00220">220</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  221</span>  {</div>
+<div class="line"><span class="lineno">  222</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#afebf200d950a9fe9a09d3e7af77f3bca">iter_adaptor_access::increment</a>(<span class="keyword">final</span>());</div>
+<div class="line"><span class="lineno">  223</span>    <span class="keywordflow">return</span> <span class="keyword">final</span>();</div>
+<div class="line"><span class="lineno">  224</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_afebf200d950a9fe9a09d3e7af77f3bca"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#afebf200d950a9fe9a09d3e7af77f3bca">boost::multi_index::detail::iter_adaptor_access::increment</a></div><div class="ttdeci">static void increment(Class &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00054">iter_adaptor.hpp:54</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="iter__adaptor_8hpp_source.html#l00054">boost::multi_index::detail::iter_adaptor_access::increment()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base_aaf58310874049746ab36c2a135e6ba9f_cgraph.svg" width="444" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="af25adc1d49aa7155d9d3b4a3762ab9c5" name="af25adc1d49aa7155d9d3b4a3762ab9c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af25adc1d49aa7155d9d3b4a3762ab9c5">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00232">232</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>  {</div>
+<div class="line"><span class="lineno">  234</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a01654449c76d8de68787d31c997d5d4c">iter_adaptor_access::advance</a>(<span class="keyword">final</span>(),n);</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">return</span> <span class="keyword">final</span>();</div>
+<div class="line"><span class="lineno">  236</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_a01654449c76d8de68787d31c997d5d4c"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a01654449c76d8de68787d31c997d5d4c">boost::multi_index::detail::iter_adaptor_access::advance</a></div><div class="ttdeci">static void advance(Class &amp;x, typename Class::difference_type n)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00066">iter_adaptor.hpp:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="iter__adaptor_8hpp_source.html#l00066">boost::multi_index::detail::iter_adaptor_access::advance()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base_af25adc1d49aa7155d9d3b4a3762ab9c5_cgraph.svg" width="444" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7a441cb9c722797c86ea45f9aaa05a54" name="a7a441cb9c722797c86ea45f9aaa05a54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a441cb9c722797c86ea45f9aaa05a54">&#9670;&#160;</a></span>operator--()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00226">226</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  227</span>  {</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a048962bd66e2392bce915c1cbd5c83e9">iter_adaptor_access::decrement</a>(<span class="keyword">final</span>());</div>
+<div class="line"><span class="lineno">  229</span>    <span class="keywordflow">return</span> <span class="keyword">final</span>();</div>
+<div class="line"><span class="lineno">  230</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_a048962bd66e2392bce915c1cbd5c83e9"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a048962bd66e2392bce915c1cbd5c83e9">boost::multi_index::detail::iter_adaptor_access::decrement</a></div><div class="ttdeci">static void decrement(Class &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00060">iter_adaptor.hpp:60</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="iter__adaptor_8hpp_source.html#l00060">boost::multi_index::detail::iter_adaptor_access::decrement()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base_a7a441cb9c722797c86ea45f9aaa05a54_cgraph.svg" width="432" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab154e4aa9e39ba88609a711b889acea5" name="ab154e4aa9e39ba88609a711b889acea5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab154e4aa9e39ba88609a711b889acea5">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Derived &amp; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">boost::multi_index::detail::random_access_iter_adaptor_base</a>&lt; Derived, Base &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00238">238</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  239</span>  {</div>
+<div class="line"><span class="lineno">  240</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a01654449c76d8de68787d31c997d5d4c">iter_adaptor_access::advance</a>(<span class="keyword">final</span>(),-n);</div>
+<div class="line"><span class="lineno">  241</span>    <span class="keywordflow">return</span> <span class="keyword">final</span>();</div>
+<div class="line"><span class="lineno">  242</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="iter__adaptor_8hpp_source.html#l00066">boost::multi_index::detail::iter_adaptor_access::advance()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base_ab154e4aa9e39ba88609a711b889acea5_cgraph.svg" width="439" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="ad82942b35390f0a633449dad9560728b" name="ad82942b35390f0a633449dad9560728b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad82942b35390f0a633449dad9560728b">&#9670;&#160;</a></span>operator-</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html#a05b98b1eb54bbd135882ed544f9e48e7">difference_type</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00244">244</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  245</span>  {</div>
+<div class="line"><span class="lineno">  246</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a1a93338894664ee314ac8df0a743a215">iter_adaptor_access::distance_to</a>(y,x);</div>
+<div class="line"><span class="lineno">  247</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_a1a93338894664ee314ac8df0a743a215"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a1a93338894664ee314ac8df0a743a215">boost::multi_index::detail::iter_adaptor_access::distance_to</a></div><div class="ttdeci">static Class::difference_type distance_to(const Class &amp;x, const Class &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00072">iter_adaptor.hpp:72</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ac9e4167a6de3ea39bccbabf4652b71" name="a2ac9e4167a6de3ea39bccbabf4652b71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ac9e4167a6de3ea39bccbabf4652b71">&#9670;&#160;</a></span>operator&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00215">215</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  216</span>  {</div>
+<div class="line"><span class="lineno">  217</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a1a93338894664ee314ac8df0a743a215">iter_adaptor_access::distance_to</a>(x,y)&gt;0;</div>
+<div class="line"><span class="lineno">  218</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6c85fa717c8dd0c3e31edeb777322a35" name="a6c85fa717c8dd0c3e31edeb777322a35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c85fa717c8dd0c3e31edeb777322a35">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Derived , class Base &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Derived &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a> の <a class="el" href="iter__adaptor_8hpp_source.html#l00210">210</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  211</span>  {</div>
+<div class="line"><span class="lineno">  212</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a2c8e2fbed67ed03ffb327c7b44f5e539">iter_adaptor_access::equal</a>(x,y);</div>
+<div class="line"><span class="lineno">  213</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1iter__adaptor__access_html_a2c8e2fbed67ed03ffb327c7b44f5e539"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1iter__adaptor__access.html#a2c8e2fbed67ed03ffb327c7b44f5e539">boost::multi_index::detail::iter_adaptor_access::equal</a></div><div class="ttdeci">static bool equal(const Class &amp;x, const Class &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="iter__adaptor_8hpp_source.html#l00048">iter_adaptor.hpp:48</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="iter__adaptor_8hpp_source.html">iter_adaptor.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1random__access__iter__adaptor__base.html">random_access_iter_adaptor_base</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

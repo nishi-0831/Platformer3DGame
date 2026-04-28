@@ -1,0 +1,1455 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1movelib_1_1adaptive__xbuf.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1movelib_1_1adaptive__xbuf-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="merge_8hpp_source.html">merge.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf__coll__graph.svg" width="348" height="1023"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:abd88976efc8291b01659c0e1fe330632"><td class="memItemLeft" align="right" valign="top">typedef RandRawIt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a></td></tr>
+<tr class="separator:abd88976efc8291b01659c0e1fe330632"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fbcbab2f6ae5c5a41c0059c817d8114"><td class="memItemLeft" align="right" valign="top">typedef SizeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a></td></tr>
+<tr class="separator:a9fbcbab2f6ae5c5a41c0059c817d8114"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9876b1b1c088d06a0f4ceef1a0bf95fd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9876b1b1c088d06a0f4ceef1a0bf95fd">adaptive_xbuf</a> ()</td></tr>
+<tr class="separator:a9876b1b1c088d06a0f4ceef1a0bf95fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19170000c8be965225ed3f18aa56fe57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a19170000c8be965225ed3f18aa56fe57">adaptive_xbuf</a> (RandRawIt raw_memory, <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> cap)</td></tr>
+<tr class="separator:a19170000c8be965225ed3f18aa56fe57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2adcfffd27ebd5d0e88747b57777c70"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:ab2adcfffd27ebd5d0e88747b57777c70"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ab2adcfffd27ebd5d0e88747b57777c70">move_assign</a> (RandIt first, <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> n)</td></tr>
+<tr class="separator:ab2adcfffd27ebd5d0e88747b57777c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7fe7c48902d2c23ce55e9efd596b22"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:acc7fe7c48902d2c23ce55e9efd596b22"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#acc7fe7c48902d2c23ce55e9efd596b22">push_back</a> (RandIt first, <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> n)</td></tr>
+<tr class="separator:acc7fe7c48902d2c23ce55e9efd596b22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a004fb048db9f3a54fb3cda3cd1c3b806"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:a004fb048db9f3a54fb3cda3cd1c3b806"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a004fb048db9f3a54fb3cda3cd1c3b806">add</a> (RandIt it)</td></tr>
+<tr class="separator:a004fb048db9f3a54fb3cda3cd1c3b806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a903a96c94fd2b11cf0a76d2f192dd810"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:a903a96c94fd2b11cf0a76d2f192dd810"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a903a96c94fd2b11cf0a76d2f192dd810">insert</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a> pos, RandIt it)</td></tr>
+<tr class="separator:a903a96c94fd2b11cf0a76d2f192dd810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29aa691373b8382e4df49b627f5f63b0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a29aa691373b8382e4df49b627f5f63b0">set_size</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> sz)</td></tr>
+<tr class="separator:a29aa691373b8382e4df49b627f5f63b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad23235ca3ea82b09aaca4e72b3be34b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ad23235ca3ea82b09aaca4e72b3be34b4">shrink_to_fit</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> const sz)</td></tr>
+<tr class="separator:ad23235ca3ea82b09aaca4e72b3be34b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31c04c89604884768cd95f54848cd248"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a31c04c89604884768cd95f54848cd248">initialize_until</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> const sz, T &amp;t)</td></tr>
+<tr class="separator:a31c04c89604884768cd95f54848cd248"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a8f58431cc5af5d7c49932fba9ad9cd"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a0a8f58431cc5af5d7c49932fba9ad9cd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a0a8f58431cc5af5d7c49932fba9ad9cd">supports_aligned_trailing</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> sz, <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> trail_count) const</td></tr>
+<tr class="separator:a0a8f58431cc5af5d7c49932fba9ad9cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab29c33c46dee40da34115660c3770218"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:ab29c33c46dee40da34115660c3770218"><td class="memTemplItemLeft" align="right" valign="top">U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ab29c33c46dee40da34115660c3770218">aligned_trailing</a> () const</td></tr>
+<tr class="separator:ab29c33c46dee40da34115660c3770218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308fc3d7dcbd9e748d792cd8bcadfe1f"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a308fc3d7dcbd9e748d792cd8bcadfe1f"><td class="memTemplItemLeft" align="right" valign="top">U *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a308fc3d7dcbd9e748d792cd8bcadfe1f">aligned_trailing</a> (<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> pos) const</td></tr>
+<tr class="separator:a308fc3d7dcbd9e748d792cd8bcadfe1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a4478db4385dd06354f79b3bf4054f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a30a4478db4385dd06354f79b3bf4054f">~adaptive_xbuf</a> ()</td></tr>
+<tr class="separator:a30a4478db4385dd06354f79b3bf4054f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b1d62e4e9b124527252afd1a9576cae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a2b1d62e4e9b124527252afd1a9576cae">capacity</a> () const</td></tr>
+<tr class="separator:a2b1d62e4e9b124527252afd1a9576cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06e4d4fd10327703303af80853124d78"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">data</a> () const</td></tr>
+<tr class="separator:a06e4d4fd10327703303af80853124d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae04781178b5e56ef62d7bc0d3a0c9a30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ae04781178b5e56ef62d7bc0d3a0c9a30">begin</a> () const</td></tr>
+<tr class="separator:ae04781178b5e56ef62d7bc0d3a0c9a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0350bff11702be6821e8051db285e09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac0350bff11702be6821e8051db285e09">end</a> () const</td></tr>
+<tr class="separator:ac0350bff11702be6821e8051db285e09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213a134c828591eca4e55296be3f4004"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a213a134c828591eca4e55296be3f4004">size</a> () const</td></tr>
+<tr class="separator:a213a134c828591eca4e55296be3f4004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea74863f5dc0a8d41902b9516b5ac43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#acea74863f5dc0a8d41902b9516b5ac43">empty</a> () const</td></tr>
+<tr class="separator:acea74863f5dc0a8d41902b9516b5ac43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e926e7187729b4a3bfc09ae0d6a6483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a4e926e7187729b4a3bfc09ae0d6a6483">clear</a> ()</td></tr>
+<tr class="separator:a4e926e7187729b4a3bfc09ae0d6a6483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:af6017d200a7b7e491c067474eebba3b7"><td class="memItemLeft" align="right" valign="top">typedef std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a></td></tr>
+<tr class="separator:af6017d200a7b7e491c067474eebba3b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad0091ddbb07c9c6885c59fc907a850c6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ad0091ddbb07c9c6885c59fc907a850c6">adaptive_xbuf</a> (const <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a> &amp;)</td></tr>
+<tr class="separator:ad0091ddbb07c9c6885c59fc907a850c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a403fda44352682c6e68fc38bf919da7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a403fda44352682c6e68fc38bf919da7d">operator=</a> (const <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a> &amp;)</td></tr>
+<tr class="separator:a403fda44352682c6e68fc38bf919da7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a7874e8c3c135f0d3b4d216f0ddfb732c"><td class="memTemplParams" colspan="2">template&lt;class RIt &gt; </td></tr>
+<tr class="memitem:a7874e8c3c135f0d3b4d216f0ddfb732c"><td class="memTemplItemLeft" align="right" valign="top">static bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a7874e8c3c135f0d3b4d216f0ddfb732c">is_raw_ptr</a> (RIt)</td></tr>
+<tr class="separator:a7874e8c3c135f0d3b4d216f0ddfb732c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a092108005967310a1613cd510f285e62"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a092108005967310a1613cd510f285e62">is_raw_ptr</a> (T *)</td></tr>
+<tr class="separator:a092108005967310a1613cd510f285e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ac6a225b7b463cdcb184a76f2937bc73d"><td class="memItemLeft" align="right" valign="top">RandRawIt&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a></td></tr>
+<tr class="separator:ac6a225b7b463cdcb184a76f2937bc73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c947a70f485b1d520884ea2c8940f7c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a></td></tr>
+<tr class="separator:a8c947a70f485b1d520884ea2c8940f7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2d6ca83b32b66a8e57802c340b83ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a></td></tr>
+<tr class="separator:abd2d6ca83b32b66a8e57802c340b83ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class RandRawIt = T*, class SizeType = typename iter_size&lt;RandRawIt&gt;::type&gt;<br />
+class boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;</div>
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="abd88976efc8291b01659c0e1fe330632" name="abd88976efc8291b01659c0e1fe330632"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd88976efc8291b01659c0e1fe330632">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef RandRawIt <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00043">43</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9fbcbab2f6ae5c5a41c0059c817d8114" name="a9fbcbab2f6ae5c5a41c0059c817d8114"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fbcbab2f6ae5c5a41c0059c817d8114">&#9670;&#160;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef SizeType <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::size_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af6017d200a7b7e491c067474eebba3b7" name="af6017d200a7b7e491c067474eebba3b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6017d200a7b7e491c067474eebba3b7">&#9670;&#160;</a></span>uintptr_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::size_t <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::uintptr_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ad0091ddbb07c9c6885c59fc907a850c6" name="ad0091ddbb07c9c6885c59fc907a850c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0091ddbb07c9c6885c59fc907a850c6">&#9670;&#160;</a></span>adaptive_xbuf() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::adaptive_xbuf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9876b1b1c088d06a0f4ceef1a0bf95fd" name="a9876b1b1c088d06a0f4ceef1a0bf95fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9876b1b1c088d06a0f4ceef1a0bf95fd">&#9670;&#160;</a></span>adaptive_xbuf() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::adaptive_xbuf </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>(), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>(0), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>(0)</div>
+<div class="line"><span class="lineno">   48</span>   {}</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a8c947a70f485b1d520884ea2c8940f7c"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">boost::movelib::adaptive_xbuf::m_size</a></div><div class="ttdeci">size_type m_size</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00214">merge.hpp:214</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_abd2d6ca83b32b66a8e57802c340b83ce"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">boost::movelib::adaptive_xbuf::m_capacity</a></div><div class="ttdeci">size_type m_capacity</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00215">merge.hpp:215</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_ac6a225b7b463cdcb184a76f2937bc73d"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">boost::movelib::adaptive_xbuf::m_ptr</a></div><div class="ttdeci">RandRawIt m_ptr</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00213">merge.hpp:213</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a19170000c8be965225ed3f18aa56fe57" name="a19170000c8be965225ed3f18aa56fe57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19170000c8be965225ed3f18aa56fe57">&#9670;&#160;</a></span>adaptive_xbuf() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::adaptive_xbuf </td>
+          <td>(</td>
+          <td class="paramtype">RandRawIt&#160;</td>
+          <td class="paramname"><em>raw_memory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>cap</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   51</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>(raw_memory), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>(0), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>(cap)</div>
+<div class="line"><span class="lineno">   52</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a30a4478db4385dd06354f79b3bf4054f" name="a30a4478db4385dd06354f79b3bf4054f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a4478db4385dd06354f79b3bf4054f">&#9670;&#160;</a></span>~adaptive_xbuf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::~<a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00184">184</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  185</span>   {</div>
+<div class="line"><span class="lineno">  186</span>      this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a4e926e7187729b4a3bfc09ae0d6a6483">clear</a>();</div>
+<div class="line"><span class="lineno">  187</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a4e926e7187729b4a3bfc09ae0d6a6483"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a4e926e7187729b4a3bfc09ae0d6a6483">boost::movelib::adaptive_xbuf::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00207">merge.hpp:207</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00207">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::clear()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a30a4478db4385dd06354f79b3bf4054f_cgraph.svg" width="659" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a004fb048db9f3a54fb3cda3cd1c3b806" name="a004fb048db9f3a54fb3cda3cd1c3b806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004fb048db9f3a54fb3cda3cd1c3b806">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>   {</div>
+<div class="line"><span class="lineno">   84</span>      <a class="code hl_struct" href="structassert.html">assert</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> &lt; <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>);</div>
+<div class="line"><span class="lineno">   85</span>      RandRawIt p_ret = <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a> + <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;</div>
+<div class="line"><span class="lineno">   86</span>      ::new(&amp;*p_ret) <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>(<a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(*it));</div>
+<div class="line"><span class="lineno">   87</span>      ++<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;</div>
+<div class="line"><span class="lineno">   88</span>      <span class="keywordflow">return</span> p_ret;</div>
+<div class="line"><span class="lineno">   89</span>   }</div>
+<div class="ttc" id="anamespaceboost_html_aa745d64b580e12d06b1a28c9ff09a81d"><div class="ttname"><a href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a></div><div class="ttdeci">O move(I f, I l, O result)</div><div class="ttdef"><b>Definition:</b> <a href="move_2algo_2move_8hpp_source.html#l00056">move/algo/move.hpp:56</a></div></div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
+<div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00215">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_capacity</a>, <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00056">boost::move()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00092">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::insert()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a004fb048db9f3a54fb3cda3cd1c3b806_cgraph.svg" width="346" height="68"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a004fb048db9f3a54fb3cda3cd1c3b806_icgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab29c33c46dee40da34115660c3770218" name="ab29c33c46dee40da34115660c3770218"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab29c33c46dee40da34115660c3770218">&#9670;&#160;</a></span>aligned_trailing() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">U * <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::aligned_trailing </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00171">171</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>   {</div>
+<div class="line"><span class="lineno">  173</span>      <span class="keywordflow">return</span> this-&gt;aligned_trailing&lt;U&gt;(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a213a134c828591eca4e55296be3f4004">size</a>());</div>
+<div class="line"><span class="lineno">  174</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a213a134c828591eca4e55296be3f4004"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a213a134c828591eca4e55296be3f4004">boost::movelib::adaptive_xbuf::size</a></div><div class="ttdeci">size_type size() const</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00201">merge.hpp:201</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00201">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::size()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_ab29c33c46dee40da34115660c3770218_cgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a308fc3d7dcbd9e748d792cd8bcadfe1f" name="a308fc3d7dcbd9e748d792cd8bcadfe1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308fc3d7dcbd9e748d792cd8bcadfe1f">&#9670;&#160;</a></span>aligned_trailing() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">U * <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::aligned_trailing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>pos</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>   {</div>
+<div class="line"><span class="lineno">  179</span>      <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a> u_addr = <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a>(&amp;*(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">data</a>()+pos));</div>
+<div class="line"><span class="lineno">  180</span>      u_addr = ((u_addr + <span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>)-1)/<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>))*<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>);</div>
+<div class="line"><span class="lineno">  181</span>      <span class="keywordflow">return</span> (U*)u_addr;</div>
+<div class="line"><span class="lineno">  182</span>   }</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a06e4d4fd10327703303af80853124d78"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">boost::movelib::adaptive_xbuf::data</a></div><div class="ttdeci">iterator data() const</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00192">merge.hpp:192</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_af6017d200a7b7e491c067474eebba3b7"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">boost::movelib::adaptive_xbuf::uintptr_t</a></div><div class="ttdeci">std::size_t uintptr_t</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00039">merge.hpp:39</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00192">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::data()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a308fc3d7dcbd9e748d792cd8bcadfe1f_cgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae04781178b5e56ef62d7bc0d3a0c9a30" name="ae04781178b5e56ef62d7bc0d3a0c9a30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae04781178b5e56ef62d7bc0d3a0c9a30">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00195">195</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  196</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00861">boost::movelib::merge_adaptive_ONlogN()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_ae04781178b5e56ef62d7bc0d3a0c9a30_icgraph.svg" width="643" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2b1d62e4e9b124527252afd1a9576cae" name="a2b1d62e4e9b124527252afd1a9576cae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b1d62e4e9b124527252afd1a9576cae">&#9670;&#160;</a></span>capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00189">189</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  190</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00215">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_capacity</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00159">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::supports_aligned_trailing()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a2b1d62e4e9b124527252afd1a9576cae_icgraph.svg" width="427" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a4e926e7187729b4a3bfc09ae0d6a6483" name="a4e926e7187729b4a3bfc09ae0d6a6483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e926e7187729b4a3bfc09ae0d6a6483">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00207">207</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>   {</div>
+<div class="line"><span class="lineno">  209</span>      this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ad23235ca3ea82b09aaca4e72b3be34b4">shrink_to_fit</a>(0u);</div>
+<div class="line"><span class="lineno">  210</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_ad23235ca3ea82b09aaca4e72b3be34b4"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#ad23235ca3ea82b09aaca4e72b3be34b4">boost::movelib::adaptive_xbuf::shrink_to_fit</a></div><div class="ttdeci">void shrink_to_fit(size_type const sz)</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00110">merge.hpp:110</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00110">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::shrink_to_fit()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00184">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::~adaptive_xbuf()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a4e926e7187729b4a3bfc09ae0d6a6483_cgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a4e926e7187729b4a3bfc09ae0d6a6483_icgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a06e4d4fd10327703303af80853124d78" name="a06e4d4fd10327703303af80853124d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06e4d4fd10327703303af80853124d78">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00192">192</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00177">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::aligned_trailing()</a>, <a class="el" href="merge_8hpp_source.html#l00159">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::supports_aligned_trailing()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a06e4d4fd10327703303af80853124d78_icgraph.svg" width="427" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="acea74863f5dc0a8d41902b9516b5ac43" name="acea74863f5dc0a8d41902b9516b5ac43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acea74863f5dc0a8d41902b9516b5ac43">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>   {  <span class="keywordflow">return</span> !<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>.</p>
+
+</div>
+</div>
+<a id="ac0350bff11702be6821e8051db285e09" name="ac0350bff11702be6821e8051db285e09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0350bff11702be6821e8051db285e09">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00198">198</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  199</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>+<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>.</p>
+
+</div>
+</div>
+<a id="a31c04c89604884768cd95f54848cd248" name="a31c04c89604884768cd95f54848cd248"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31c04c89604884768cd95f54848cd248">&#9670;&#160;</a></span>initialize_until()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::initialize_until </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> const&#160;</td>
+          <td class="paramname"><em>sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>t</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00120">120</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  121</span>   {</div>
+<div class="line"><span class="lineno">  122</span>      <a class="code hl_struct" href="structassert.html">assert</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> &lt; <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>);</div>
+<div class="line"><span class="lineno">  123</span>      <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> &lt; sz){</div>
+<div class="line"><span class="lineno">  124</span>         <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a28d5275523e54415e8175099855166cf">BOOST_MOVE_TRY</a></div>
+<div class="line"><span class="lineno">  125</span>         {</div>
+<div class="line"><span class="lineno">  126</span>            ::new((<span class="keywordtype">void</span>*)&amp;<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>]) <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>(<a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(t));</div>
+<div class="line"><span class="lineno">  127</span>            ++<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;</div>
+<div class="line"><span class="lineno">  128</span>            <span class="keywordflow">for</span>(; <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> != sz; ++<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>){</div>
+<div class="line"><span class="lineno">  129</span>               ::new((<span class="keywordtype">void</span>*)&amp;<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>]) <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>(<a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>-1]));</div>
+<div class="line"><span class="lineno">  130</span>            }</div>
+<div class="line"><span class="lineno">  131</span>            t = <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>-1]);</div>
+<div class="line"><span class="lineno">  132</span>         }</div>
+<div class="line"><span class="lineno">  133</span>         <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#adcfd6f21fc7bb2a81282909c0054b901">BOOST_MOVE_CATCH</a>(...)</div>
+<div class="line"><span class="lineno">  134</span>         {</div>
+<div class="line"><span class="lineno">  135</span>            <span class="keywordflow">while</span>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>)</div>
+<div class="line"><span class="lineno">  136</span>            {</div>
+<div class="line"><span class="lineno">  137</span>               --<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;</div>
+<div class="line"><span class="lineno">  138</span>               <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>].~T();</div>
+<div class="line"><span class="lineno">  139</span>            }</div>
+<div class="line"><span class="lineno">  140</span>         }</div>
+<div class="line"><span class="lineno">  141</span>         <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a519cfa99427e4aacbea083bd8ee72e7e">BOOST_MOVE_CATCH_END</a></div>
+<div class="line"><span class="lineno">  142</span>      }</div>
+<div class="line"><span class="lineno">  143</span>   }</div>
+<div class="ttc" id="amove_2detail_2workaround_8hpp_html_a28d5275523e54415e8175099855166cf"><div class="ttname"><a href="move_2detail_2workaround_8hpp.html#a28d5275523e54415e8175099855166cf">BOOST_MOVE_TRY</a></div><div class="ttdeci">#define BOOST_MOVE_TRY</div><div class="ttdef"><b>Definition:</b> <a href="move_2detail_2workaround_8hpp_source.html#l00084">move/detail/workaround.hpp:84</a></div></div>
+<div class="ttc" id="amove_2detail_2workaround_8hpp_html_a519cfa99427e4aacbea083bd8ee72e7e"><div class="ttname"><a href="move_2detail_2workaround_8hpp.html#a519cfa99427e4aacbea083bd8ee72e7e">BOOST_MOVE_CATCH_END</a></div><div class="ttdeci">#define BOOST_MOVE_CATCH_END</div><div class="ttdef"><b>Definition:</b> <a href="move_2detail_2workaround_8hpp_source.html#l00087">move/detail/workaround.hpp:87</a></div></div>
+<div class="ttc" id="amove_2detail_2workaround_8hpp_html_adcfd6f21fc7bb2a81282909c0054b901"><div class="ttname"><a href="move_2detail_2workaround_8hpp.html#adcfd6f21fc7bb2a81282909c0054b901">BOOST_MOVE_CATCH</a></div><div class="ttdeci">#define BOOST_MOVE_CATCH(x)</div><div class="ttdef"><b>Definition:</b> <a href="move_2detail_2workaround_8hpp_source.html#l00085">move/detail/workaround.hpp:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00085">BOOST_MOVE_CATCH</a>, <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00087">BOOST_MOVE_CATCH_END</a>, <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00084">BOOST_MOVE_TRY</a>, <a class="el" href="merge_8hpp_source.html#l00215">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_capacity</a>, <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00056">boost::move()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00861">boost::movelib::merge_adaptive_ONlogN()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a31c04c89604884768cd95f54848cd248_cgraph.svg" width="346" height="68"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a31c04c89604884768cd95f54848cd248_icgraph.svg" width="643" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a903a96c94fd2b11cf0a76d2f192dd810" name="a903a96c94fd2b11cf0a76d2f192dd810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a903a96c94fd2b11cf0a76d2f192dd810">&#9670;&#160;</a></span>insert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::insert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd88976efc8291b01659c0e1fe330632">iterator</a>&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>it</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>   {</div>
+<div class="line"><span class="lineno">   94</span>      <span class="keywordflow">if</span>(pos == (<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a> + <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>)){</div>
+<div class="line"><span class="lineno">   95</span>         this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a004fb048db9f3a54fb3cda3cd1c3b806">add</a>(it);</div>
+<div class="line"><span class="lineno">   96</span>      }</div>
+<div class="line"><span class="lineno">   97</span>      <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   98</span>         this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a004fb048db9f3a54fb3cda3cd1c3b806">add</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>+<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>-1);</div>
+<div class="line"><span class="lineno">   99</span>         <span class="comment">//m_size updated</span></div>
+<div class="line"><span class="lineno">  100</span>         <a class="code hl_function" href="namespaceboost.html#aeebb703aa304e4f9543ff790828b9a3c">boost::move_backward</a>(pos, <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>+<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>-2, <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>+<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>-1);</div>
+<div class="line"><span class="lineno">  101</span>         *pos = <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a>(*it);</div>
+<div class="line"><span class="lineno">  102</span>      }</div>
+<div class="line"><span class="lineno">  103</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a004fb048db9f3a54fb3cda3cd1c3b806"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a004fb048db9f3a54fb3cda3cd1c3b806">boost::movelib::adaptive_xbuf::add</a></div><div class="ttdeci">iterator add(RandIt it)</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00082">merge.hpp:82</a></div></div>
+<div class="ttc" id="anamespaceboost_html_aeebb703aa304e4f9543ff790828b9a3c"><div class="ttname"><a href="namespaceboost.html#aeebb703aa304e4f9543ff790828b9a3c">boost::move_backward</a></div><div class="ttdeci">O move_backward(I f, I l, O result)</div><div class="ttdef"><b>Definition:</b> <a href="move_2algo_2move_8hpp_source.html#l00083">move/algo/move.hpp:83</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00082">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::add()</a>, <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00056">boost::move()</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00083">boost::move_backward()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a903a96c94fd2b11cf0a76d2f192dd810_cgraph.svg" width="578" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7874e8c3c135f0d3b4d216f0ddfb732c" name="a7874e8c3c135f0d3b4d216f0ddfb732c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7874e8c3c135f0d3b4d216f0ddfb732c">&#9670;&#160;</a></span>is_raw_ptr() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class RIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::is_raw_ptr </td>
+          <td>(</td>
+          <td class="paramtype">RIt&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00147">147</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  148</span>   {</div>
+<div class="line"><span class="lineno">  149</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  150</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00159">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::supports_aligned_trailing()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a7874e8c3c135f0d3b4d216f0ddfb732c_icgraph.svg" width="427" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a092108005967310a1613cd510f285e62" name="a092108005967310a1613cd510f285e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a092108005967310a1613cd510f285e62">&#9670;&#160;</a></span>is_raw_ptr() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::is_raw_ptr </td>
+          <td>(</td>
+          <td class="paramtype">T *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00152">152</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  153</span>   {</div>
+<div class="line"><span class="lineno">  154</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  155</span>   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab2adcfffd27ebd5d0e88747b57777c70" name="ab2adcfffd27ebd5d0e88747b57777c70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2adcfffd27ebd5d0e88747b57777c70">&#9670;&#160;</a></span>move_assign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::move_assign </td>
+          <td>(</td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>   {</div>
+<div class="line"><span class="lineno">   57</span>      <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1movelib_1_1iterator__traits.html#a6aae3d7924587f8a4ec65f7c5fa84406">iterator_traits&lt;RandIt&gt;::difference_type</a> rand_diff_t;</div>
+<div class="line"><span class="lineno">   58</span>      <span class="keywordflow">if</span>(n &lt;= <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>){</div>
+<div class="line"><span class="lineno">   59</span>         <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a>(first, first+rand_diff_t(n), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>);</div>
+<div class="line"><span class="lineno">   60</span>         <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> sz = <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;</div>
+<div class="line"><span class="lineno">   61</span>         <span class="keywordflow">while</span>(sz-- != n){</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[sz].~T();</div>
+<div class="line"><span class="lineno">   63</span>         }</div>
+<div class="line"><span class="lineno">   64</span>         <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> = n;</div>
+<div class="line"><span class="lineno">   65</span>      }</div>
+<div class="line"><span class="lineno">   66</span>      <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">   67</span>         RandRawIt result = <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a>(first, first+rand_diff_t(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>), <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>);</div>
+<div class="line"><span class="lineno">   68</span>         <a class="code hl_function" href="namespaceboost.html#aa154babb1903b8b411f0bc5f2488590b">boost::uninitialized_move</a>(first+rand_diff_t(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>), first+rand_diff_t(n), result);</div>
+<div class="line"><span class="lineno">   69</span>         <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> = n;</div>
+<div class="line"><span class="lineno">   70</span>      }</div>
+<div class="line"><span class="lineno">   71</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a9fbcbab2f6ae5c5a41c0059c817d8114"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">boost::movelib::adaptive_xbuf::size_type</a></div><div class="ttdeci">SizeType size_type</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00044">merge.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceboost_html_aa154babb1903b8b411f0bc5f2488590b"><div class="ttname"><a href="namespaceboost.html#aa154babb1903b8b411f0bc5f2488590b">boost::uninitialized_move</a></div><div class="ttdeci">F uninitialized_move(I f, I l, F r)</div><div class="ttdoc">defined(BOOST_MOVE_USE_STANDARD_LIBRARY_MOVE)</div><div class="ttdef"><b>Definition:</b> <a href="move_2algo_2move_8hpp_source.html#l00115">move/algo/move.hpp:115</a></div></div>
+<div class="ttc" id="astructboost_1_1movelib_1_1iterator__traits_html_a6aae3d7924587f8a4ec65f7c5fa84406"><div class="ttname"><a href="structboost_1_1movelib_1_1iterator__traits.html#a6aae3d7924587f8a4ec65f7c5fa84406">boost::movelib::iterator_traits::difference_type</a></div><div class="ttdeci">iter_difference&lt; Iterator &gt;::type difference_type</div><div class="ttdef"><b>Definition:</b> <a href="boost_2move_2detail_2iterator__traits_8hpp_source.html#l00133">boost/move/detail/iterator_traits.hpp:133</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00056">boost::move()</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00115">boost::uninitialized_move()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_ab2adcfffd27ebd5d0e88747b57777c70_cgraph.svg" width="868" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a403fda44352682c6e68fc38bf919da7d" name="a403fda44352682c6e68fc38bf919da7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a403fda44352682c6e68fc38bf919da7d">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a> &amp; <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc7fe7c48902d2c23ce55e9efd596b22" name="acc7fe7c48902d2c23ce55e9efd596b22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc7fe7c48902d2c23ce55e9efd596b22">&#9670;&#160;</a></span>push_back()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::push_back </td>
+          <td>(</td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>   {</div>
+<div class="line"><span class="lineno">   76</span>      <a class="code hl_struct" href="structassert.html">assert</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a> - <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> &gt;= n);</div>
+<div class="line"><span class="lineno">   77</span>      <a class="code hl_function" href="namespaceboost.html#aa154babb1903b8b411f0bc5f2488590b">boost::uninitialized_move</a>(first, first+n, <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>+<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>);</div>
+<div class="line"><span class="lineno">   78</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> += n;</div>
+<div class="line"><span class="lineno">   79</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00215">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_capacity</a>, <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00115">boost::uninitialized_move()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_acc7fe7c48902d2c23ce55e9efd596b22_cgraph.svg" width="868" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a29aa691373b8382e4df49b627f5f63b0" name="a29aa691373b8382e4df49b627f5f63b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29aa691373b8382e4df49b627f5f63b0">&#9670;&#160;</a></span>set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::set_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00105">105</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  106</span>   {</div>
+<div class="line"><span class="lineno">  107</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> = sz;</div>
+<div class="line"><span class="lineno">  108</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>.</p>
+
+</div>
+</div>
+<a id="ad23235ca3ea82b09aaca4e72b3be34b4" name="ad23235ca3ea82b09aaca4e72b3be34b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad23235ca3ea82b09aaca4e72b3be34b4">&#9670;&#160;</a></span>shrink_to_fit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::shrink_to_fit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> const&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>   {</div>
+<div class="line"><span class="lineno">  112</span>      <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> &gt; sz){</div>
+<div class="line"><span class="lineno">  113</span>         <span class="keywordflow">for</span>(<a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> szt_i = sz; szt_i != <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>; ++szt_i){</div>
+<div class="line"><span class="lineno">  114</span>            <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#ac6a225b7b463cdcb184a76f2937bc73d">m_ptr</a>[szt_i].~T();</div>
+<div class="line"><span class="lineno">  115</span>         }</div>
+<div class="line"><span class="lineno">  116</span>         <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a> = sz;</div>
+<div class="line"><span class="lineno">  117</span>      }</div>
+<div class="line"><span class="lineno">  118</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00213">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_ptr</a>, <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00207">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::clear()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_ad23235ca3ea82b09aaca4e72b3be34b4_icgraph.svg" width="659" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a213a134c828591eca4e55296be3f4004" name="a213a134c828591eca4e55296be3f4004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213a134c828591eca4e55296be3f4004">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00201">201</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a8c947a70f485b1d520884ea2c8940f7c">m_size</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00214">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_size</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00171">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::aligned_trailing()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a213a134c828591eca4e55296be3f4004_icgraph.svg" width="427" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0a8f58431cc5af5d7c49932fba9ad9cd" name="a0a8f58431cc5af5d7c49932fba9ad9cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a8f58431cc5af5d7c49932fba9ad9cd">&#9670;&#160;</a></span>supports_aligned_trailing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::supports_aligned_trailing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>sz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a>&#160;</td>
+          <td class="paramname"><em>trail_count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00159">159</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>   {</div>
+<div class="line"><span class="lineno">  161</span>      <span class="keywordflow">if</span>(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a7874e8c3c135f0d3b4d216f0ddfb732c">is_raw_ptr</a>(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">data</a>()) &amp;&amp; <a class="code hl_variable" href="classboost_1_1movelib_1_1adaptive__xbuf.html#abd2d6ca83b32b66a8e57802c340b83ce">m_capacity</a>){</div>
+<div class="line"><span class="lineno">  162</span>         <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a> u_addr_sz = <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a>(&amp;*(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">data</a>()+sz));</div>
+<div class="line"><span class="lineno">  163</span>         <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a> u_addr_cp = <a class="code hl_typedef" href="classboost_1_1movelib_1_1adaptive__xbuf.html#af6017d200a7b7e491c067474eebba3b7">uintptr_t</a>(&amp;*(this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a06e4d4fd10327703303af80853124d78">data</a>()+this-&gt;<a class="code hl_function" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a2b1d62e4e9b124527252afd1a9576cae">capacity</a>()));</div>
+<div class="line"><span class="lineno">  164</span>         u_addr_sz = ((u_addr_sz + <span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>)-1)/<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>))*<span class="keyword">sizeof</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>);</div>
+<div class="line"><span class="lineno">  165</span>         <span class="keywordflow">return</span> (u_addr_cp &gt;= u_addr_sz) &amp;&amp; ((u_addr_cp - u_addr_sz)/<span class="keyword">sizeof</span>(U) &gt;= trail_count);</div>
+<div class="line"><span class="lineno">  166</span>      }</div>
+<div class="line"><span class="lineno">  167</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  168</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a2b1d62e4e9b124527252afd1a9576cae"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a2b1d62e4e9b124527252afd1a9576cae">boost::movelib::adaptive_xbuf::capacity</a></div><div class="ttdeci">size_type capacity() const</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00189">merge.hpp:189</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1adaptive__xbuf_html_a7874e8c3c135f0d3b4d216f0ddfb732c"><div class="ttname"><a href="classboost_1_1movelib_1_1adaptive__xbuf.html#a7874e8c3c135f0d3b4d216f0ddfb732c">boost::movelib::adaptive_xbuf::is_raw_ptr</a></div><div class="ttdeci">static bool is_raw_ptr(RIt)</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00147">merge.hpp:147</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00189">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::capacity()</a>, <a class="el" href="merge_8hpp_source.html#l00192">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::data()</a>, <a class="el" href="merge_8hpp_source.html#l00147">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::is_raw_ptr()</a>, <a class="el" href="merge_8hpp_source.html#l00215">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::m_capacity</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1adaptive__xbuf_a0a8f58431cc5af5d7c49932fba9ad9cd_cgraph.svg" width="427" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="abd2d6ca83b32b66a8e57802c340b83ce" name="abd2d6ca83b32b66a8e57802c340b83ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2d6ca83b32b66a8e57802c340b83ce">&#9670;&#160;</a></span>m_capacity</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::m_capacity</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00215">215</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00082">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::add()</a>, <a class="el" href="merge_8hpp_source.html#l00189">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::capacity()</a>, <a class="el" href="merge_8hpp_source.html#l00120">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::initialize_until()</a>, <a class="el" href="merge_8hpp_source.html#l00074">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::push_back()</a>, <a class="el" href="merge_8hpp_source.html#l00159">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::supports_aligned_trailing()</a>.</p>
+
+</div>
+</div>
+<a id="ac6a225b7b463cdcb184a76f2937bc73d" name="ac6a225b7b463cdcb184a76f2937bc73d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6a225b7b463cdcb184a76f2937bc73d">&#9670;&#160;</a></span>m_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">RandRawIt <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::m_ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00213">213</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00082">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::add()</a>, <a class="el" href="merge_8hpp_source.html#l00195">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::begin()</a>, <a class="el" href="merge_8hpp_source.html#l00192">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::data()</a>, <a class="el" href="merge_8hpp_source.html#l00198">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::end()</a>, <a class="el" href="merge_8hpp_source.html#l00120">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::initialize_until()</a>, <a class="el" href="merge_8hpp_source.html#l00092">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::insert()</a>, <a class="el" href="merge_8hpp_source.html#l00055">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::move_assign()</a>, <a class="el" href="merge_8hpp_source.html#l00074">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::push_back()</a>, <a class="el" href="merge_8hpp_source.html#l00110">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::shrink_to_fit()</a>.</p>
+
+</div>
+</div>
+<a id="a8c947a70f485b1d520884ea2c8940f7c" name="a8c947a70f485b1d520884ea2c8940f7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c947a70f485b1d520884ea2c8940f7c">&#9670;&#160;</a></span>m_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class RandRawIt  = T*, class SizeType  = typename iter_size&lt;RandRawIt&gt;::type&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html#a9fbcbab2f6ae5c5a41c0059c817d8114">size_type</a> <a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">boost::movelib::adaptive_xbuf</a>&lt; T, RandRawIt, SizeType &gt;::m_size</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00214">214</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00082">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::add()</a>, <a class="el" href="merge_8hpp_source.html#l00204">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::empty()</a>, <a class="el" href="merge_8hpp_source.html#l00198">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::end()</a>, <a class="el" href="merge_8hpp_source.html#l00120">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::initialize_until()</a>, <a class="el" href="merge_8hpp_source.html#l00092">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::insert()</a>, <a class="el" href="merge_8hpp_source.html#l00055">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::move_assign()</a>, <a class="el" href="merge_8hpp_source.html#l00074">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::push_back()</a>, <a class="el" href="merge_8hpp_source.html#l00105">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::set_size()</a>, <a class="el" href="merge_8hpp_source.html#l00110">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::shrink_to_fit()</a>, <a class="el" href="merge_8hpp_source.html#l00201">boost::movelib::adaptive_xbuf&lt; T, RandRawIt, SizeType &gt;::size()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="merge_8hpp_source.html">merge.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1movelib.html">movelib</a></li><li class="navelem"><a class="el" href="classboost_1_1movelib_1_1adaptive__xbuf.html">adaptive_xbuf</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

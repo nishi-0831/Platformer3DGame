@@ -6,7 +6,7 @@ var classmtgb_1_1CameraResource =
     [ "GetHCamera", "classmtgb_1_1CameraResource.html#a1756949a704def2a4567a60aa45183ed", null ],
     [ "GetWindowContext", "classmtgb_1_1CameraResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],
     [ "NotRegisterCamera", "classmtgb_1_1CameraResource.html#ae22df30590c0fa16fde6b8e4483f0f37", null ],
-    [ "OnResize", "classmtgb_1_1CameraResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf", null ],
+    [ "OnResize", "classmtgb_1_1CameraResource.html#a756c8998345bc109275bdcdc60f6f44b", null ],
     [ "operator=", "classmtgb_1_1CameraResource.html#af6921f9f1b64959b45b319fb05004a73", null ],
     [ "Release", "classmtgb_1_1CameraResource.html#afaa8105ba7b7a783f42fd82b26824efa", null ],
     [ "Reset", "classmtgb_1_1CameraResource.html#af7a1be98828072a5924a3bd2240a7589", null ],

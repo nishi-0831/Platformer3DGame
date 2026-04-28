@@ -27,7 +27,7 @@ var classRespawnManager =
     [ "Initialize", "classRespawnManager.html#aed2d88f25ff20bd9f0068b119d867a8e", null ],
     [ "Instantiate", "classRespawnManager.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classRespawnManager.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
-    [ "IsToDestroy", "classRespawnManager.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classRespawnManager.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classRespawnManager.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "Serialize", "classRespawnManager.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],
     [ "SetName", "classRespawnManager.html#af0b3630f3e49fde5433ef21cc243a235", null ],

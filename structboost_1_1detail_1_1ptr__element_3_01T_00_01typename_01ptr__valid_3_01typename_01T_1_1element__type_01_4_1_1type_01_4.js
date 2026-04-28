@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1ptr__element_3_01T_00_01typename_01ptr__valid_3_01typename_01T_1_1element__type_01_4_1_1type_01_4 =
+[
+    [ "type", "structboost_1_1detail_1_1ptr__element_3_01T_00_01typename_01ptr__valid_3_01typename_01T_1_1element__type_01_4_1_1type_01_4.html#a09139ecf4acd5f7646021cefc1284734", null ]
+];

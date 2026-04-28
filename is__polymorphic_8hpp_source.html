@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: is_polymorphic.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('is__polymorphic_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">is_polymorphic.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="is__polymorphic_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//  (C) Copyright John Maddock 2000. </span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//  Use, modification and distribution are subject to the Boost Software License,</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">//  Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">//  http://www.boost.org/LICENSE_1_0.txt).</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//  See http://www.boost.org/libs/type_traits for most recent version including documentation.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef BOOST_TT_IS_POLYMORPHIC_HPP</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define BOOST_TT_IS_POLYMORPHIC_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="intrinsics_8hpp.html">boost/type_traits/intrinsics.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="integral__constant_8hpp.html">boost/type_traits/integral_constant.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef BOOST_IS_POLYMORPHIC</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="is__class_8hpp.html">boost/type_traits/is_class.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="detail_2workaround_8hpp.html">boost/detail/workaround.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#if defined(BOOST_MSVC) &amp;&amp; (BOOST_MSVC &gt;= 1700)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#pragma warning(push)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#pragma warning(disable:4250)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#ifndef BOOST_IS_POLYMORPHIC</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">   30</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor"># if BOOST_WORKAROUND(__MWERKS__, &lt;= 0x2407) </span><span class="comment">// CWPro7 should return false always.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">typedef</span> <span class="keywordtype">char</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a>, (&amp;<a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a>)[2];</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor"># else </span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">   35</a></span>   <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a> : <span class="keyword">public</span> T</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>   {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a4eaacab8cc57b3742796de3bc3677eb9">   37</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a4eaacab8cc57b3742796de3bc3677eb9">d1</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#  if !defined(__GNUC__) </span><span class="comment">// this raises warnings with some classes, and buys nothing with GCC</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#ad386fa1233be1afab98e02b399a4ed17">   39</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#ad386fa1233be1afab98e02b399a4ed17">~d1</a>()throw();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#  endif </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a301a9baa881b11a6789e0589b71b058d">   41</a></span>      <span class="keywordtype">char</span> <a class="code hl_variable" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a301a9baa881b11a6789e0589b71b058d">padding</a>[256];</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      <span class="comment">// keep some picky compilers happy:</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a16ad94768b2017fcc64852730c1a68c1">   44</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a16ad94768b2017fcc64852730c1a68c1">d1</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a>&amp;);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a2543eb4bc7dd37a6cf14b2597e0edd26">   45</a></span>      <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a>&amp; <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a2543eb4bc7dd37a6cf14b2597e0edd26">operator=</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a>&amp;);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>   };</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">   47</a></span>   <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a> : <span class="keyword">public</span> T</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>   {</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aea5ab8e1c386df0b9223d9edba34d411">   49</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aea5ab8e1c386df0b9223d9edba34d411">d2</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a2c0372d100253a76c9b9486a98536548">   50</a></span>      <span class="keyword">virtual</span> <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a2c0372d100253a76c9b9486a98536548">~d2</a>()throw();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#  if !defined(BOOST_MSVC) &amp;&amp; !defined(__ICL)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="comment">// for some reason this messes up VC++ when T has virtual bases,</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="comment">// probably likewise for compilers that use the same ABI:</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_1_1unique.html">   54</a></span>      <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_1_1unique.html">unique</a>{};</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a62273192ae762526fa70d981bdd61d84">   55</a></span>      <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a62273192ae762526fa70d981bdd61d84">unique_name_to_boost5487629</a>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_1_1unique.html">unique</a>*);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#  endif</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a54df9d551cdd8493ea9337b3b3372029">   57</a></span>      <span class="keywordtype">char</span> <a class="code hl_variable" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a54df9d551cdd8493ea9337b3b3372029">padding</a>[256];</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="comment">// keep some picky compilers happy:</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aaeff18a56b98a3dc471301cddda78949">   60</a></span>      <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aaeff18a56b98a3dc471301cddda78949">d2</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a>&amp;);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a5f9eb05f3720ebabcf6d5f51bd4e398b">   61</a></span>      <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a>&amp; <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a5f9eb05f3720ebabcf6d5f51bd4e398b">operator=</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a>&amp;);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>   };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor"># endif </span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1.html#a1eb17e4f5bbc4f7aaadf2d28bbf08d59">   64</a></span>   <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp1.html#a1eb17e4f5bbc4f7aaadf2d28bbf08d59">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, value = (<span class="keyword">sizeof</span>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">d2</a>) == <span class="keyword">sizeof</span>(<a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">d1</a>)));</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_3_01T_01const_01_4.html">   67</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T const&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T&gt;{};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_3_01T_01const_01volatile_01_4.html">   68</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T const volatile&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T&gt;{};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp1_3_01T_01volatile_01_4.html">   69</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T volatile&gt; : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1</a>&lt;T&gt;{};</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp2.html">   72</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp2.html">is_polymorphic_imp2</a></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>{</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp2.html#a46350f5fc9e86d339af34a66c92c4c00">   74</a></span>   <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp2.html#a46350f5fc9e86d339af34a66c92c4c00">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, value = <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> is_<span class="keyword">class</span>&gt;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector.html">   78</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__selector.html">is_polymorphic_selector</a></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>{</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>   <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html">   81</a></span>   <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html">rebind</a></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>   {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html#aa2ce61188bef40d012cb511042c098de">   83</a></span>      <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp2.html">is_polymorphic_imp2&lt;T&gt;</a> <a class="code hl_typedef" href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html#aa2ce61188bef40d012cb511042c098de">type</a>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>   };</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>};</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4.html">   88</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__selector.html">is_polymorphic_selector</a>&lt;true&gt;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>{</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>   <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4_1_1rebind.html">   91</a></span>   <span class="keyword">struct </span>rebind</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>   {</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4_1_1rebind.html#a0d608b143fa3033f87aaeb8a8b0345c9">   93</a></span>      <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp1.html">is_polymorphic_imp1&lt;T&gt;</a> <a class="code hl_typedef" href="structboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4_1_1rebind.html#a0d608b143fa3033f87aaeb8a8b0345c9">type</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>   };</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>};</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp.html">   98</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__imp.html">is_polymorphic_imp</a></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>{</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a9beee7645f73f02d77157c71e8890800">  100</a></span>   <span class="keyword">typedef</span> <a class="code hl_struct" href="structboost_1_1detail_1_1is__polymorphic__selector.html">is_polymorphic_selector&lt; ::boost::is_class&lt;T&gt;::value</a>&gt; <a class="code hl_typedef" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a9beee7645f73f02d77157c71e8890800">selector</a>;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp.html#aafa86de5c5c15a7c28968732df2d7a45">  101</a></span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> selector::template rebind&lt;T&gt; <a class="code hl_typedef" href="structboost_1_1detail_1_1is__polymorphic__imp.html#aafa86de5c5c15a7c28968732df2d7a45">binder</a>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a1bbd50b719f4dd8735b2086d767a831f">  102</a></span>   <span class="keyword">typedef</span> <span class="keyword">typename</span> binder::type <a class="code hl_typedef" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a1bbd50b719f4dd8735b2086d767a831f">imp_type</a>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a4aec26670d1ddbb704c4839f6440a9b7">  103</a></span>   <a class="code hl_function" href="structboost_1_1detail_1_1is__polymorphic__imp.html#a4aec26670d1ddbb704c4839f6440a9b7">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">bool</span>, value = imp_type::value);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>};</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>} <span class="comment">// namespace detail</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="structboost_1_1is__polymorphic.html">  108</a></span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__polymorphic.html">is_polymorphic</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">integral_constant</a>&lt;bool, ::boost::detail::is_polymorphic_imp&lt;T&gt;::value&gt; {};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#else </span><span class="comment">// BOOST_IS_POLYMORPHIC</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1is__polymorphic.html">is_polymorphic</a> : <span class="keyword">public</span> <a class="code hl_struct" href="structboost_1_1integral__constant.html">integral_constant</a>&lt;bool, BOOST_IS_POLYMORPHIC(T)&gt; {};</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span><span class="preprocessor">#if defined(BOOST_MSVC) &amp;&amp; (BOOST_MSVC &gt;= 1700)</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#pragma warning(pop)</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="adetail_2workaround_8hpp_html"><div class="ttname"><a href="detail_2workaround_8hpp.html">workaround.hpp</a></div></div>
+<div class="ttc" id="aintegral__constant_8hpp_html"><div class="ttname"><a href="integral__constant_8hpp.html">integral_constant.hpp</a></div></div>
+<div class="ttc" id="aintrinsics_8hpp_html"><div class="ttname"><a href="intrinsics_8hpp.html">intrinsics.hpp</a></div></div>
+<div class="ttc" id="ais__class_8hpp_html"><div class="ttname"><a href="is__class_8hpp.html">is_class.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html">boost::detail::is_polymorphic_imp1::d1</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00035">is_polymorphic.hpp:36</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html_a16ad94768b2017fcc64852730c1a68c1"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a16ad94768b2017fcc64852730c1a68c1">boost::detail::is_polymorphic_imp1::d1::d1</a></div><div class="ttdeci">d1(const d1 &amp;)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html_a2543eb4bc7dd37a6cf14b2597e0edd26"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a2543eb4bc7dd37a6cf14b2597e0edd26">boost::detail::is_polymorphic_imp1::d1::operator=</a></div><div class="ttdeci">d1 &amp; operator=(const d1 &amp;)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html_a301a9baa881b11a6789e0589b71b058d"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a301a9baa881b11a6789e0589b71b058d">boost::detail::is_polymorphic_imp1::d1::padding</a></div><div class="ttdeci">char padding[256]</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00041">is_polymorphic.hpp:41</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html_a4eaacab8cc57b3742796de3bc3677eb9"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#a4eaacab8cc57b3742796de3bc3677eb9">boost::detail::is_polymorphic_imp1::d1::d1</a></div><div class="ttdeci">d1()</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d1_html_ad386fa1233be1afab98e02b399a4ed17"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d1.html#ad386fa1233be1afab98e02b399a4ed17">boost::detail::is_polymorphic_imp1::d1::~d1</a></div><div class="ttdeci">~d1()</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_1_1unique_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_1_1unique.html">boost::detail::is_polymorphic_imp1::d2::unique</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00054">is_polymorphic.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html">boost::detail::is_polymorphic_imp1::d2</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00047">is_polymorphic.hpp:48</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_a2c0372d100253a76c9b9486a98536548"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a2c0372d100253a76c9b9486a98536548">boost::detail::is_polymorphic_imp1::d2::~d2</a></div><div class="ttdeci">virtual ~d2()</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_a54df9d551cdd8493ea9337b3b3372029"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a54df9d551cdd8493ea9337b3b3372029">boost::detail::is_polymorphic_imp1::d2::padding</a></div><div class="ttdeci">char padding[256]</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00057">is_polymorphic.hpp:57</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_a5f9eb05f3720ebabcf6d5f51bd4e398b"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a5f9eb05f3720ebabcf6d5f51bd4e398b">boost::detail::is_polymorphic_imp1::d2::operator=</a></div><div class="ttdeci">d2 &amp; operator=(const d2 &amp;)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_a62273192ae762526fa70d981bdd61d84"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#a62273192ae762526fa70d981bdd61d84">boost::detail::is_polymorphic_imp1::d2::unique_name_to_boost5487629</a></div><div class="ttdeci">virtual void unique_name_to_boost5487629(unique *)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_aaeff18a56b98a3dc471301cddda78949"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aaeff18a56b98a3dc471301cddda78949">boost::detail::is_polymorphic_imp1::d2::d2</a></div><div class="ttdeci">d2(const d2 &amp;)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_1_1d2_html_aea5ab8e1c386df0b9223d9edba34d411"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1_1_1d2.html#aea5ab8e1c386df0b9223d9edba34d411">boost::detail::is_polymorphic_imp1::d2::d2</a></div><div class="ttdeci">d2()</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1.html">boost::detail::is_polymorphic_imp1</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00030">is_polymorphic.hpp:31</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp1_html_a1eb17e4f5bbc4f7aaadf2d28bbf08d59"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp1.html#a1eb17e4f5bbc4f7aaadf2d28bbf08d59">boost::detail::is_polymorphic_imp1::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=(sizeof(d2)==sizeof(d1)))</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp2_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp2.html">boost::detail::is_polymorphic_imp2</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00072">is_polymorphic.hpp:73</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp2_html_a46350f5fc9e86d339af34a66c92c4c00"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp2.html#a46350f5fc9e86d339af34a66c92c4c00">boost::detail::is_polymorphic_imp2::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=false)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp.html">boost::detail::is_polymorphic_imp</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00098">is_polymorphic.hpp:99</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp_html_a1bbd50b719f4dd8735b2086d767a831f"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp.html#a1bbd50b719f4dd8735b2086d767a831f">boost::detail::is_polymorphic_imp::imp_type</a></div><div class="ttdeci">binder::type imp_type</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00102">is_polymorphic.hpp:102</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp_html_a4aec26670d1ddbb704c4839f6440a9b7"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp.html#a4aec26670d1ddbb704c4839f6440a9b7">boost::detail::is_polymorphic_imp::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(bool, value=imp_type::value)</div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp_html_a9beee7645f73f02d77157c71e8890800"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp.html#a9beee7645f73f02d77157c71e8890800">boost::detail::is_polymorphic_imp::selector</a></div><div class="ttdeci">is_polymorphic_selector&lt; ::boost::is_class&lt; T &gt;::value &gt; selector</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00100">is_polymorphic.hpp:100</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__imp_html_aafa86de5c5c15a7c28968732df2d7a45"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__imp.html#aafa86de5c5c15a7c28968732df2d7a45">boost::detail::is_polymorphic_imp::binder</a></div><div class="ttdeci">selector::template rebind&lt; T &gt; binder</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00101">is_polymorphic.hpp:101</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__selector_1_1rebind_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html">boost::detail::is_polymorphic_selector::rebind</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00081">is_polymorphic.hpp:82</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__selector_1_1rebind_html_aa2ce61188bef40d012cb511042c098de"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__selector_1_1rebind.html#aa2ce61188bef40d012cb511042c098de">boost::detail::is_polymorphic_selector::rebind::type</a></div><div class="ttdeci">is_polymorphic_imp2&lt; T &gt; type</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00083">is_polymorphic.hpp:83</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4_1_1rebind_html_a0d608b143fa3033f87aaeb8a8b0345c9"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__selector_3_01true_01_4_1_1rebind.html#a0d608b143fa3033f87aaeb8a8b0345c9">boost::detail::is_polymorphic_selector&lt; true &gt;::rebind::type</a></div><div class="ttdeci">is_polymorphic_imp1&lt; T &gt; type</div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00093">is_polymorphic.hpp:93</a></div></div>
+<div class="ttc" id="astructboost_1_1detail_1_1is__polymorphic__selector_html"><div class="ttname"><a href="structboost_1_1detail_1_1is__polymorphic__selector.html">boost::detail::is_polymorphic_selector</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00078">is_polymorphic.hpp:79</a></div></div>
+<div class="ttc" id="astructboost_1_1integral__constant_html"><div class="ttname"><a href="structboost_1_1integral__constant.html">boost::integral_constant</a></div><div class="ttdef"><b>Definition:</b> <a href="integral__constant_8hpp_source.html#l00053">integral_constant.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1is__polymorphic_html"><div class="ttname"><a href="structboost_1_1is__polymorphic.html">boost::is_polymorphic</a></div><div class="ttdef"><b>Definition:</b> <a href="is__polymorphic_8hpp_source.html#l00108">is_polymorphic.hpp:108</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_58e84a66c35a87b44d1654fe688cf24e.html">type_traits</a></li><li class="navelem"><a class="el" href="is__polymorphic_8hpp.html">is_polymorphic.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

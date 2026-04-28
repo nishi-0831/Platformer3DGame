@@ -1,0 +1,4 @@
+var structboost_1_1describe_1_1detail_1_1bases__descriptor__impl_3_01C_00_01list_3_01Bs_8_8_8_01_4_01_4 =
+[
+    [ "type", "structboost_1_1describe_1_1detail_1_1bases__descriptor__impl_3_01C_00_01list_3_01Bs_8_8_8_01_4_01_4.html#ab08e37c053d58a71e7efdd31ea9e79b4", null ]
+];

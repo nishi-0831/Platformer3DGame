@@ -1,0 +1,821 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: assert.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mpl_2assert_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">mpl/assert.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="mpl_2not_8hpp_source.html">boost/mpl/not.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="value__wknd_8hpp_source.html">boost/mpl/aux_/value_wknd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="nested__type__wknd_8hpp_source.html">boost/mpl/aux_/nested_type_wknd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="yes__no_8hpp_source.html">boost/mpl/aux_/yes_no.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="na_8hpp_source.html">boost/mpl/aux_/na.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="adl__barrier_8hpp_source.html">boost/mpl/aux_/adl_barrier.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="nttp_8hpp_source.html">boost/mpl/aux_/config/nttp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="dtp_8hpp_source.html">boost/mpl/aux_/config/dtp.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2gcc_8hpp_source.html">boost/mpl/aux_/config/gcc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2msvc_8hpp_source.html">boost/mpl/aux_/config/msvc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="gpu_8hpp_source.html">boost/mpl/aux_/config/gpu.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="static__constant_8hpp_source.html">boost/mpl/aux_/config/static_constant.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="pp__counter_8hpp_source.html">boost/mpl/aux_/config/pp_counter.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mpl_2aux___2config_2workaround_8hpp_source.html">boost/mpl/aux_/config/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mpl/assert.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mpl_2assert_8hpp__incl.svg" width="3035" height="1239"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mpl_2assert_8hpp__dep__incl.svg" width="3956" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mpl_2assert_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfailed.html">failed</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert.html">assert&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert_3_01false_01_4.html">assert&lt; false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassertion.html">assertion&lt; C &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassertion_3_01true_01_4.html">assertion&lt; true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__.html">assert_</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert___1_1types.html">assert_::types&lt; T1, T2, T3, T4 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__relation.html">assert_relation&lt;,, &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__arg__pred__impl.html">assert_arg_pred_impl&lt; bool &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__arg__pred__impl_3_01true_01_4.html">assert_arg_pred_impl&lt; true &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__arg__pred.html">assert_arg_pred&lt; P &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structassert__arg__pred__not.html">assert_arg_pred_not&lt; P &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a97fdfefe4e532fa8327eb8d26a603942"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a97fdfefe4e532fa8327eb8d26a603942">BOOST_MPL_AUX_ASSERT_CONSTANT</a>(T,  expr)&#160;&#160;&#160;<a class="el" href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a>(T, expr)</td></tr>
+<tr class="separator:a97fdfefe4e532fa8327eb8d26a603942"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c2cb0399559bd073638e7abb7de71f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a73c2cb0399559bd073638e7abb7de71f">AUX778076_ASSERT_ARG</a>(x)&#160;&#160;&#160;x</td></tr>
+<tr class="separator:a73c2cb0399559bd073638e7abb7de71f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ee8b02c6a58e141ee5a0567fc6b464"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a48ee8b02c6a58e141ee5a0567fc6b464">BOOST_MPL_AUX_ASSERT_RELATION</a>(x,  y,  r)&#160;&#160;&#160;<a class="el" href="structassert__relation.html">assert_relation</a>&lt;x,y,r&gt;</td></tr>
+<tr class="separator:a48ee8b02c6a58e141ee5a0567fc6b464"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadfd13928f0b4a19e218c54b0d4b3ccf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#aadfd13928f0b4a19e218c54b0d4b3ccf">BOOST_MPL_ASSERT</a>(pred)</td></tr>
+<tr class="separator:aadfd13928f0b4a19e218c54b0d4b3ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33baa33b762abf9234086442a0135a95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a33baa33b762abf9234086442a0135a95">BOOST_MPL_ASSERT_NOT</a>(pred)</td></tr>
+<tr class="separator:a33baa33b762abf9234086442a0135a95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d20563582c8780d1f640118c2c09995"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a0d20563582c8780d1f640118c2c09995">BOOST_MPL_ASSERT_RELATION</a>(x,  rel,  y)</td></tr>
+<tr class="separator:a0d20563582c8780d1f640118c2c09995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8877f019fed18f2b0d91e697cb458b38"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a8877f019fed18f2b0d91e697cb458b38">BOOST_MPL_ASSERT_MSG_IMPL</a>(counter,  c,  msg,  types_)</td></tr>
+<tr class="separator:a8877f019fed18f2b0d91e697cb458b38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fcad930fb67d1b2a8654686dbbf205b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a3fcad930fb67d1b2a8654686dbbf205b">BOOST_MPL_ASSERT_MSG</a>(c,  msg,  types_)&#160;&#160;&#160;<a class="el" href="mpl_2assert_8hpp.html#a8877f019fed18f2b0d91e697cb458b38">BOOST_MPL_ASSERT_MSG_IMPL</a>( <a class="el" href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a>(), c, msg, types_ ) \</td></tr>
+<tr class="separator:a3fcad930fb67d1b2a8654686dbbf205b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a302cf91db7bf46160f6e05de527097cc"><td class="memTemplParams" colspan="2">template&lt;bool C&gt; </td></tr>
+<tr class="memitem:a302cf91db7bf46160f6e05de527097cc"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a302cf91db7bf46160f6e05de527097cc">assertion_failed</a> (typename <a class="el" href="structassert.html">assert</a>&lt; <a class="el" href="classC.html">C</a> &gt;::type)</td></tr>
+<tr class="separator:a302cf91db7bf46160f6e05de527097cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a529aafccb315dad28bafe32df6f25d57"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a529aafccb315dad28bafe32df6f25d57">operator==</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:a529aafccb315dad28bafe32df6f25d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f7720d1fd96ab5245ea8b181c9c0e9c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a8f7720d1fd96ab5245ea8b181c9c0e9c">operator!=</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:a8f7720d1fd96ab5245ea8b181c9c0e9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea2a445fe2065bb24457fd23caf2c40d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#aea2a445fe2065bb24457fd23caf2c40d">operator&gt;</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:aea2a445fe2065bb24457fd23caf2c40d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e">operator&gt;=</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74c29c6c757e8befa44f09140e290e70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a74c29c6c757e8befa44f09140e290e70">operator&lt;</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:a74c29c6c757e8befa44f09140e290e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ad52830db37737d187c1d2f93cf1af4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a0ad52830db37737d187c1d2f93cf1af4">operator&lt;=</a> (<a class="el" href="structfailed.html">failed</a>, <a class="el" href="structfailed.html">failed</a>)</td></tr>
+<tr class="separator:a0ad52830db37737d187c1d2f93cf1af4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae28334062bdb51c1e941a86262e49a8f"><td class="memTemplParams" colspan="2">template&lt;typename Pred &gt; </td></tr>
+<tr class="memitem:ae28334062bdb51c1e941a86262e49a8f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structfailed.html">failed</a> ************Pred::************&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#ae28334062bdb51c1e941a86262e49a8f">assert_arg</a> (void(*)(Pred), typename <a class="el" href="structassert__arg__pred.html">assert_arg_pred</a>&lt; Pred &gt;::type)</td></tr>
+<tr class="separator:ae28334062bdb51c1e941a86262e49a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8452e3509ce332d6923da211c9c1ace9"><td class="memTemplParams" colspan="2">template&lt;typename Pred &gt; </td></tr>
+<tr class="memitem:a8452e3509ce332d6923da211c9c1ace9"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="structfailed.html">failed</a> ************<a class="el" href="structboost_1_1mpl_1_1not__.html">boost::mpl::not_</a>&lt; Pred &gt;::************&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a8452e3509ce332d6923da211c9c1ace9">assert_not_arg</a> (void(*)(Pred), typename <a class="el" href="structassert__arg__pred__not.html">assert_arg_pred_not</a>&lt; Pred &gt;::type)</td></tr>
+<tr class="separator:a8452e3509ce332d6923da211c9c1ace9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0976753c090d0d5cf25a7d7f34f7a500"><td class="memTemplParams" colspan="2">template&lt;typename Pred &gt; </td></tr>
+<tr class="memitem:a0976753c090d0d5cf25a7d7f34f7a500"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#a0976753c090d0d5cf25a7d7f34f7a500">assert_arg</a> (void(*)(Pred), typename <a class="el" href="structassert__arg__pred__not.html">assert_arg_pred_not</a>&lt; Pred &gt;::type)</td></tr>
+<tr class="separator:a0976753c090d0d5cf25a7d7f34f7a500"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6fb64eeecd206f4634a15cb92558abc"><td class="memTemplParams" colspan="2">template&lt;typename Pred &gt; </td></tr>
+<tr class="memitem:ab6fb64eeecd206f4634a15cb92558abc"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="mpl_2assert_8hpp.html#ab6fb64eeecd206f4634a15cb92558abc">assert_not_arg</a> (void(*)(Pred), typename <a class="el" href="structassert__arg__pred.html">assert_arg_pred</a>&lt; Pred &gt;::type)</td></tr>
+<tr class="separator:ab6fb64eeecd206f4634a15cb92558abc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a73c2cb0399559bd073638e7abb7de71f" name="a73c2cb0399559bd073638e7abb7de71f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73c2cb0399559bd073638e7abb7de71f">&#9670;&#160;</a></span>AUX778076_ASSERT_ARG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AUX778076_ASSERT_ARG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td>&#160;&#160;&#160;x</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00076">76</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aadfd13928f0b4a19e218c54b0d4b3ccf" name="aadfd13928f0b4a19e218c54b0d4b3ccf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadfd13928f0b4a19e218c54b0d4b3ccf">&#9670;&#160;</a></span>BOOST_MPL_ASSERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_ASSERT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pred</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><a class="code hl_define" href="mpl_2assert_8hpp.html#a97fdfefe4e532fa8327eb8d26a603942">BOOST_MPL_AUX_ASSERT_CONSTANT</a>( \</div>
+<div class="line">      std::size_t \</div>
+<div class="line">    , <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assertion_in_line_,<a class="code hl_define" href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a>()) = <span class="keyword">sizeof</span>( \</div>
+<div class="line">          boost::mpl::assertion_failed&lt;false&gt;( \</div>
+<div class="line">              boost::mpl::assert_arg( (<span class="keywordtype">void</span> (*) pred)<a class="code hl_define" href="suffix_8hpp.html#ada1671c934626938a65387952c0fa0e8">BOOST_NULLPTR</a>, 1 ) \</div>
+<div class="line">            ) \</div>
+<div class="line">        ) \</div>
+<div class="line">    ) \</div>
+<div class="ttc" id="acat_8hpp_html_ac796d6dcc22f521a9b7ee409c312f7c4"><div class="ttname"><a href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a></div><div class="ttdeci">#define BOOST_PP_CAT(a, b)</div><div class="ttdef"><b>Definition:</b> <a href="cat_8hpp_source.html#l00024">cat.hpp:24</a></div></div>
+<div class="ttc" id="ampl_2assert_8hpp_html_a97fdfefe4e532fa8327eb8d26a603942"><div class="ttname"><a href="mpl_2assert_8hpp.html#a97fdfefe4e532fa8327eb8d26a603942">BOOST_MPL_AUX_ASSERT_CONSTANT</a></div><div class="ttdeci">#define BOOST_MPL_AUX_ASSERT_CONSTANT(T, expr)</div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00062">mpl/assert.hpp:62</a></div></div>
+<div class="ttc" id="app__counter_8hpp_html_aa5358303ea1939303c1706f7d7034eec"><div class="ttname"><a href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a></div><div class="ttdeci">#define BOOST_MPL_AUX_PP_COUNTER()</div><div class="ttdef"><b>Definition:</b> <a href="pp__counter_8hpp_source.html#l00022">pp_counter.hpp:22</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_ada1671c934626938a65387952c0fa0e8"><div class="ttname"><a href="suffix_8hpp.html#ada1671c934626938a65387952c0fa0e8">BOOST_NULLPTR</a></div><div class="ttdeci">#define BOOST_NULLPTR</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l01122">suffix.hpp:1122</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00295">295</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3fcad930fb67d1b2a8654686dbbf205b" name="a3fcad930fb67d1b2a8654686dbbf205b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fcad930fb67d1b2a8654686dbbf205b">&#9670;&#160;</a></span>BOOST_MPL_ASSERT_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_ASSERT_MSG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">types_&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="mpl_2assert_8hpp.html#a8877f019fed18f2b0d91e697cb458b38">BOOST_MPL_ASSERT_MSG_IMPL</a>( <a class="el" href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a>(), c, msg, types_ ) \</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00454">454</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8877f019fed18f2b0d91e697cb458b38" name="a8877f019fed18f2b0d91e697cb458b38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8877f019fed18f2b0d91e697cb458b38">&#9670;&#160;</a></span>BOOST_MPL_ASSERT_MSG_IMPL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_ASSERT_MSG_IMPL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">counter, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">c, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">msg, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">types_&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><span class="keyword">struct </span>msg; \</div>
+<div class="line"><span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(msg,counter) : boost::mpl::assert_ \</div>
+<div class="line">{ \</div>
+<div class="line">    <span class="keyword">static</span> boost::mpl::failed ************ (msg::************ <a class="code hl_function" href="mpl_2assert_8hpp.html#ae28334062bdb51c1e941a86262e49a8f">assert_arg</a>()) types_ \</div>
+<div class="line">    { <span class="keywordflow">return</span> 0; } \</div>
+<div class="line">} <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assert_arg,counter); \</div>
+<div class="line">BOOST_MPL_AUX_ASSERT_CONSTANT( \</div>
+<div class="line">      std::size_t \</div>
+<div class="line">    , <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assertion_in_line_,counter) = <span class="keyword">sizeof</span>( \</div>
+<div class="line">        boost::mpl::assertion_failed&lt;(c)&gt;( <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assert_arg,counter)<a class="code hl_function" href="mpl_2assert_8hpp.html#ae28334062bdb51c1e941a86262e49a8f">::assert_arg</a>() ) \</div>
+<div class="line">        ) \</div>
+<div class="line">    ) \</div>
+<div class="ttc" id="ampl_2assert_8hpp_html_ae28334062bdb51c1e941a86262e49a8f"><div class="ttname"><a href="mpl_2assert_8hpp.html#ae28334062bdb51c1e941a86262e49a8f">assert_arg</a></div><div class="ttdeci">failed ************Pred::************ assert_arg(void(*)(Pred), typename assert_arg_pred&lt; Pred &gt;::type)</div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00430">430</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a33baa33b762abf9234086442a0135a95" name="a33baa33b762abf9234086442a0135a95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33baa33b762abf9234086442a0135a95">&#9670;&#160;</a></span>BOOST_MPL_ASSERT_NOT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_ASSERT_NOT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">pred</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><a class="code hl_define" href="mpl_2assert_8hpp.html#a97fdfefe4e532fa8327eb8d26a603942">BOOST_MPL_AUX_ASSERT_CONSTANT</a>( \</div>
+<div class="line">      std::size_t \</div>
+<div class="line">    , <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assertion_in_line_,<a class="code hl_define" href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a>()) = <span class="keyword">sizeof</span>( \</div>
+<div class="line">          boost::mpl::assertion_failed&lt;false&gt;( \</div>
+<div class="line">              boost::mpl::assert_not_arg( (<span class="keywordtype">void</span> (*) pred)<a class="code hl_define" href="suffix_8hpp.html#ada1671c934626938a65387952c0fa0e8">BOOST_NULLPTR</a>, 1 ) \</div>
+<div class="line">            ) \</div>
+<div class="line">        ) \</div>
+<div class="line">   ) \</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00319">319</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d20563582c8780d1f640118c2c09995" name="a0d20563582c8780d1f640118c2c09995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d20563582c8780d1f640118c2c09995">&#9670;&#160;</a></span>BOOST_MPL_ASSERT_RELATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_ASSERT_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rel, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line"><a class="code hl_define" href="mpl_2assert_8hpp.html#a97fdfefe4e532fa8327eb8d26a603942">BOOST_MPL_AUX_ASSERT_CONSTANT</a>( \</div>
+<div class="line">      std::size_t \</div>
+<div class="line">    , <a class="code hl_define" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(mpl_assertion_in_line_,<a class="code hl_define" href="pp__counter_8hpp.html#aa5358303ea1939303c1706f7d7034eec">BOOST_MPL_AUX_PP_COUNTER</a>()) = <span class="keyword">sizeof</span>( \</div>
+<div class="line">        boost::mpl::assertion_failed&lt;(x rel y)&gt;( (boost::mpl::failed ************ ( \</div>
+<div class="line">            boost::mpl::BOOST_MPL_AUX_ASSERT_RELATION(x,y,(&amp;boost::mpl::operator rel))::************))0 ) \</div>
+<div class="line">        ) \</div>
+<div class="line">    ) \</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00397">397</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a97fdfefe4e532fa8327eb8d26a603942" name="a97fdfefe4e532fa8327eb8d26a603942"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97fdfefe4e532fa8327eb8d26a603942">&#9670;&#160;</a></span>BOOST_MPL_AUX_ASSERT_CONSTANT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_AUX_ASSERT_CONSTANT</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">expr&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a>(T, expr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a48ee8b02c6a58e141ee5a0567fc6b464" name="a48ee8b02c6a58e141ee5a0567fc6b464"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ee8b02c6a58e141ee5a0567fc6b464">&#9670;&#160;</a></span>BOOST_MPL_AUX_ASSERT_RELATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MPL_AUX_ASSERT_RELATION</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">y, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="structassert__relation.html">assert_relation</a>&lt;x,y,r&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="mpl_2assert_8hpp_source.html">mpl/assert.hpp</a> の <a class="el" href="mpl_2assert_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ae28334062bdb51c1e941a86262e49a8f" name="ae28334062bdb51c1e941a86262e49a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae28334062bdb51c1e941a86262e49a8f">&#9670;&#160;</a></span>assert_arg() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfailed.html">failed</a> ************Pred::************ assert_arg </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(Pred)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structassert__arg__pred.html">assert_arg_pred</a>&lt; Pred &gt;::type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0976753c090d0d5cf25a7d7f34f7a500" name="a0976753c090d0d5cf25a7d7f34f7a500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0976753c090d0d5cf25a7d7f34f7a500">&#9670;&#160;</a></span>assert_arg() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">assert_arg </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(Pred)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structassert__arg__pred__not.html">assert_arg_pred_not</a>&lt; Pred &gt;::type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab6fb64eeecd206f4634a15cb92558abc" name="ab6fb64eeecd206f4634a15cb92558abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6fb64eeecd206f4634a15cb92558abc">&#9670;&#160;</a></span>assert_not_arg() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">assert_not_arg </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(Pred)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structassert__arg__pred.html">assert_arg_pred</a>&lt; Pred &gt;::type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8452e3509ce332d6923da211c9c1ace9" name="a8452e3509ce332d6923da211c9c1ace9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8452e3509ce332d6923da211c9c1ace9">&#9670;&#160;</a></span>assert_not_arg() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Pred &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structfailed.html">failed</a> ************<a class="el" href="structboost_1_1mpl_1_1not__.html">boost::mpl::not_</a>&lt; Pred &gt;::************ assert_not_arg </td>
+          <td>(</td>
+          <td class="paramtype">void(*)(Pred)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">typename <a class="el" href="structassert__arg__pred__not.html">assert_arg_pred_not</a>&lt; Pred &gt;::type&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a302cf91db7bf46160f6e05de527097cc" name="a302cf91db7bf46160f6e05de527097cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a302cf91db7bf46160f6e05de527097cc">&#9670;&#160;</a></span>assertion_failed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool C&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">int assertion_failed </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="structassert.html">assert</a>&lt; <a class="el" href="classC.html">C</a> &gt;::type&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f7720d1fd96ab5245ea8b181c9c0e9c" name="a8f7720d1fd96ab5245ea8b181c9c0e9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7720d1fd96ab5245ea8b181c9c0e9c">&#9670;&#160;</a></span>operator!=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a74c29c6c757e8befa44f09140e290e70" name="a74c29c6c757e8befa44f09140e290e70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74c29c6c757e8befa44f09140e290e70">&#9670;&#160;</a></span>operator&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="reference">参照先 <a class="el" href="Input_8cpp_source.html#l00059">operator&lt;()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mpl_2assert_8hpp_a74c29c6c757e8befa44f09140e290e70_cgraph.svg" width="235" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0ad52830db37737d187c1d2f93cf1af4" name="a0ad52830db37737d187c1d2f93cf1af4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad52830db37737d187c1d2f93cf1af4">&#9670;&#160;</a></span>operator&lt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a529aafccb315dad28bafe32df6f25d57" name="a529aafccb315dad28bafe32df6f25d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a529aafccb315dad28bafe32df6f25d57">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea2a445fe2065bb24457fd23caf2c40d" name="aea2a445fe2065bb24457fd23caf2c40d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea2a445fe2065bb24457fd23caf2c40d">&#9670;&#160;</a></span>operator&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e" name="a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c8a4b7ad2b650a8d5f3d9bc1dd5b28e">&#9670;&#160;</a></span>operator&gt;=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structfailed.html">failed</a>&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="mpl_2assert_8hpp.html">assert.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

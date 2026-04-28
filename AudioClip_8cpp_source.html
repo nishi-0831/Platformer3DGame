@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('AudioClip_8cpp_source.html',''); initR
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="comment">// 総PCMサンプル数を取得</span></div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <a class="code hl_typedef" href="dr__mp3_8h.html#ae8b9dce3662c113d9e33c7946bcef558">drmp3_uint64</a> total_samples = <a class="code hl_function" href="dr__mp3_8h.html#af1a2d71e97ba6a731df5c5186dbe8188">drmp3_get_pcm_frame_count</a>(&amp;config);</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="comment">// バッファサイズを計算</span></div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">size_t</span> pcm_sample_count = (size_t)(total_samples * config.<a class="code hl_variable" href="structdrmp3.html#ade030203edf619566625bd278421d4e7">channels</a>);</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keywordtype">size_t</span> pcm_sample_count = (<a class="code hl_struct" href="structsize__t.html">size_t</a>)(total_samples * config.<a class="code hl_variable" href="structdrmp3.html#ade030203edf619566625bd278421d4e7">channels</a>);</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordtype">size_t</span> pcm_bytes        = pcm_sample_count * <span class="keyword">sizeof</span>(short);</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span> </div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    <span class="comment">// PCM出力バッファ確保</span></div>
@@ -382,6 +382,7 @@ $(document).ready(function(){initNavTree('AudioClip_8cpp_source.html',''); initR
 <div class="ttc" id="astructdrmp3_html_a125a69b581af18055b9aced80a68ddea"><div class="ttname"><a href="structdrmp3.html#a125a69b581af18055b9aced80a68ddea">drmp3::sampleRate</a></div><div class="ttdeci">drmp3_uint32 sampleRate</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00373">dr_mp3.h:373</a></div></div>
 <div class="ttc" id="astructdrmp3_html_ade030203edf619566625bd278421d4e7"><div class="ttname"><a href="structdrmp3.html#ade030203edf619566625bd278421d4e7">drmp3::channels</a></div><div class="ttdeci">drmp3_uint32 channels</div><div class="ttdef"><b>Definition:</b> <a href="dr__mp3_8h_source.html#l00372">dr_mp3.h:372</a></div></div>
 <div class="ttc" id="astructmtgb_1_1WaveData_html"><div class="ttname"><a href="structmtgb_1_1WaveData.html">mtgb::WaveData</a></div><div class="ttdoc">Waveファイルのデータ格納構造体</div><div class="ttdef"><b>Definition:</b> <a href="WaveData_8h_source.html#l00009">WaveData.h:10</a></div></div>
+<div class="ttc" id="astructsize__t_html"><div class="ttname"><a href="structsize__t.html">size_t</a></div><div class="ttdef"><b>Definition:</b> <a href="size__t__fwd_8hpp_source.html#l00023">size_t_fwd.hpp:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

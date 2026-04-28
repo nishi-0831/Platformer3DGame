@@ -1,0 +1,4 @@
+var structboost_1_1__bi_1_1detail_1_1append__integer__sequence_3_01integer__sequence_3_01T_00_01I_8_b7e27f7917c694b92cf0a538b3d1ffb2 =
+[
+    [ "type", "structboost_1_1__bi_1_1detail_1_1append__integer__sequence_3_01integer__sequence_3_01T_00_01I_8_b7e27f7917c694b92cf0a538b3d1ffb2.html#a404d3dd01c208f2717008b7b08c8e830", null ]
+];

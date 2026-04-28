@@ -1,0 +1,1164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::bucket_array&lt; Allocator &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1bucket__array.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1bucket__array-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::bucket_array&lt; Allocator &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::bucket_array&lt; Allocator &gt; の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array__inherit__graph.svg" width="300" height="1650"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::bucket_array&lt; Allocator &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array__coll__graph.svg" width="640" height="1859"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a345d6f8a5b3e8b07443d26b16d7c33fa"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html#afdcea2455e342e741856035c95029592">base_node_impl_type::base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a></td></tr>
+<tr class="separator:a345d6f8a5b3e8b07443d26b16d7c33fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29453d675201ec4a4edfe38dd56d7dcc"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html#a3348e21e25daa188b79495d907c6bcdd">base_node_impl_type::pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a></td></tr>
+<tr class="separator:a29453d675201ec4a4edfe38dd56d7dcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a976508341bb5f1dd84689f2be8106436"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a976508341bb5f1dd84689f2be8106436">bucket_array</a> (const Allocator &amp;al, <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a> end_, std::size_t size_)</td></tr>
+<tr class="separator:a976508341bb5f1dd84689f2be8106436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc77b81c691ad1d85350de61d95f6a70"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#adc77b81c691ad1d85350de61d95f6a70">size</a> () const</td></tr>
+<tr class="separator:adc77b81c691ad1d85350de61d95f6a70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28622fb7f016c13e584a23057ef9e3f6"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a28622fb7f016c13e584a23057ef9e3f6">position</a> (std::size_t <a class="el" href="structboost_1_1hash.html">hash</a>) const</td></tr>
+<tr class="separator:a28622fb7f016c13e584a23057ef9e3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e011b277624f470c76d9d9bbda98ec"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a03e011b277624f470c76d9d9bbda98ec">begin</a> () const</td></tr>
+<tr class="separator:a03e011b277624f470c76d9d9bbda98ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75a1116971cbd81e481ede26e366811b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a75a1116971cbd81e481ede26e366811b">end</a> () const</td></tr>
+<tr class="separator:a75a1116971cbd81e481ede26e366811b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625d022fdd260614189a6f20589695ef"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a625d022fdd260614189a6f20589695ef">at</a> (std::size_t n) const</td></tr>
+<tr class="separator:a625d022fdd260614189a6f20589695ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a39336427986cf0178c14fcfb8aa872"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a2a39336427986cf0178c14fcfb8aa872">clear</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a> end_)</td></tr>
+<tr class="separator:a2a39336427986cf0178c14fcfb8aa872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a3f9eae12b50dde66a803a33020658a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3a3f9eae12b50dde66a803a33020658a">swap</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">bucket_array</a> &amp;x)</td></tr>
+<tr class="separator:a3a3f9eae12b50dde66a803a33020658a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f728595934c339b63c87ae334b170f8"><td class="memTemplParams" colspan="2">template&lt;typename BoolConstant &gt; </td></tr>
+<tr class="memitem:a8f728595934c339b63c87ae334b170f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a8f728595934c339b63c87ae334b170f8">swap</a> (<a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">bucket_array</a> &amp;x, BoolConstant swap_allocators)</td></tr>
+<tr class="separator:a8f728595934c339b63c87ae334b170f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a912c53ccd242497f867eb65823cccea2"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">bucket_array_base</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a912c53ccd242497f867eb65823cccea2">super</a></td></tr>
+<tr class="separator:a912c53ccd242497f867eb65823cccea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf6535928590f372d1d6f14ab5a151d8"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html">hashed_index_base_node_impl</a>&lt; typename <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, char &gt;::type &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#abf6535928590f372d1d6f14ab5a151d8">base_node_impl_type</a></td></tr>
+<tr class="separator:abf6535928590f372d1d6f14ab5a151d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5cfffcc5ba9edf0f27f8852c29dbe9f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#abf6535928590f372d1d6f14ab5a151d8">base_node_impl_type</a>, Allocator &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#af5cfffcc5ba9edf0f27f8852c29dbe9f">auto_space_type</a></td></tr>
+<tr class="separator:af5cfffcc5ba9edf0f27f8852c29dbe9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5c6051841f1a8bbb67768599edec18"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ae055ccd5c0ff03e7c45e649911a48ac2">auto_space_type::size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3d5c6051841f1a8bbb67768599edec18">auto_space_size_type</a></td></tr>
+<tr class="separator:a3d5c6051841f1a8bbb67768599edec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3936a94f8f23fe3dc6bdc1c9a173e9e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3936a94f8f23fe3dc6bdc1c9a173e9e2">buckets</a> () const</td></tr>
+<tr class="separator:a3936a94f8f23fe3dc6bdc1c9a173e9e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da50defdf3de8eba8190aef90deed9e"><td class="memTemplParams" colspan="2">template&lt;class Archive &gt; </td></tr>
+<tr class="memitem:a9da50defdf3de8eba8190aef90deed9e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a9da50defdf3de8eba8190aef90deed9e">serialize</a> (Archive &amp;, const unsigned int)</td></tr>
+<tr class="separator:a9da50defdf3de8eba8190aef90deed9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:afa3a236777f7fc79d0329ddab32a7720"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#afa3a236777f7fc79d0329ddab32a7720">size_index</a> (std::size_t n)</td></tr>
+<tr class="separator:afa3a236777f7fc79d0329ddab32a7720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6696de1f854c27f2949ffc1859e538ca"><td class="memItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#a6696de1f854c27f2949ffc1859e538ca">position</a> (std::size_t <a class="el" href="structboost_1_1hash.html">hash</a>, std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>)</td></tr>
+<tr class="separator:a6696de1f854c27f2949ffc1859e538ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a29a54fc8b14377ce5ac86415f572345f"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a></td></tr>
+<tr class="separator:a29a54fc8b14377ce5ac86415f572345f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1af917a90e704e58def54959bca9aca6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#af5cfffcc5ba9edf0f27f8852c29dbe9f">auto_space_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">spc</a></td></tr>
+<tr class="separator:a1af917a90e704e58def54959bca9aca6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:ae7b477ca3861696d0c02406b5140236a"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">sizes</a> [<a class="el" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(<a class="el" href="bucket__array_8hpp.html#a7aba0ad5d7b30e950f050c03171dfb60">BOOST_MULTI_INDEX_BA_SIZES</a>)]</td></tr>
+<tr class="separator:ae7b477ca3861696d0c02406b5140236a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad14ac69db9900d8fa14258ad88f39668"><td class="memItemLeft" align="right" valign="top">static const std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ad14ac69db9900d8fa14258ad88f39668">sizes_length</a></td></tr>
+<tr class="separator:ad14ac69db9900d8fa14258ad88f39668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#ac98d07dd8f7b70e16ccb9a01abf56b9c">boost::serialization::access</a></td></tr>
+<tr class="separator:ac98d07dd8f7b70e16ccb9a01abf56b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Allocator&gt;<br />
+class boost::multi_index::detail::bucket_array&lt; Allocator &gt;</div>
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00128">128</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a3d5c6051841f1a8bbb67768599edec18" name="a3d5c6051841f1a8bbb67768599edec18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5c6051841f1a8bbb67768599edec18">&#9670;&#160;</a></span>auto_space_size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ae055ccd5c0ff03e7c45e649911a48ac2">auto_space_type::size_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::auto_space_size_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00185">185</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af5cfffcc5ba9edf0f27f8852c29dbe9f" name="af5cfffcc5ba9edf0f27f8852c29dbe9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5cfffcc5ba9edf0f27f8852c29dbe9f">&#9670;&#160;</a></span>auto_space_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space</a>&lt;<a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#abf6535928590f372d1d6f14ab5a151d8">base_node_impl_type</a>,Allocator&gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::auto_space_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00184">184</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abf6535928590f372d1d6f14ab5a151d8" name="abf6535928590f372d1d6f14ab5a151d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf6535928590f372d1d6f14ab5a151d8">&#9670;&#160;</a></span>base_node_impl_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html">hashed_index_base_node_impl</a>&lt; typename <a class="el" href="structboost_1_1multi__index_1_1detail_1_1rebind__alloc__for.html">rebind_alloc_for</a>&lt; Allocator, char &gt;::type &gt; <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::base_node_impl_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00136">136</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a345d6f8a5b3e8b07443d26b16d7c33fa" name="a345d6f8a5b3e8b07443d26b16d7c33fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a345d6f8a5b3e8b07443d26b16d7c33fa">&#9670;&#160;</a></span>base_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html#afdcea2455e342e741856035c95029592">base_node_impl_type::base_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::base_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00139">139</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a29453d675201ec4a4edfe38dd56d7dcc" name="a29453d675201ec4a4edfe38dd56d7dcc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29453d675201ec4a4edfe38dd56d7dcc">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__base__node__impl.html#a3348e21e25daa188b79495d907c6bcdd">base_node_impl_type::pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00140">140</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a912c53ccd242497f867eb65823cccea2" name="a912c53ccd242497f867eb65823cccea2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a912c53ccd242497f867eb65823cccea2">&#9670;&#160;</a></span>super</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">bucket_array_base</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::super</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00130">130</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a976508341bb5f1dd84689f2be8106436" name="a976508341bb5f1dd84689f2be8106436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a976508341bb5f1dd84689f2be8106436">&#9670;&#160;</a></span>bucket_array()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::bucket_array </td>
+          <td>(</td>
+          <td class="paramtype">const Allocator &amp;&#160;</td>
+          <td class="paramname"><em>al</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a>&#160;</td>
+          <td class="paramname"><em>end_</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00142">142</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  142</span>                                                                :</div>
+<div class="line"><span class="lineno">  143</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#afa3a236777f7fc79d0329ddab32a7720">super::size_index</a>(size_)),</div>
+<div class="line"><span class="lineno">  144</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">spc</a>(al,<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3d5c6051841f1a8bbb67768599edec18">auto_space_size_type</a><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">super::sizes</a>[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>]+1))</div>
+<div class="line"><span class="lineno">  145</span>  {</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a2a39336427986cf0178c14fcfb8aa872">clear</a>(end_);</div>
+<div class="line"><span class="lineno">  147</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array__base_html_ae7b477ca3861696d0c02406b5140236a"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">boost::multi_index::detail::bucket_array_base::sizes</a></div><div class="ttdeci">static const std::size_t sizes[BOOST_PP_SEQ_SIZE(BOOST_MULTI_INDEX_BA_SIZES)]</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00081">bucket_array.hpp:82</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array__base_html_afa3a236777f7fc79d0329ddab32a7720"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#afa3a236777f7fc79d0329ddab32a7720">boost::multi_index::detail::bucket_array_base::size_index</a></div><div class="ttdeci">static std::size_t size_index(std::size_t n)</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00084">bucket_array.hpp:84</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a1af917a90e704e58def54959bca9aca6"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">boost::multi_index::detail::bucket_array::spc</a></div><div class="ttdeci">auto_space_type spc</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00188">bucket_array.hpp:188</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a29a54fc8b14377ce5ac86415f572345f"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">boost::multi_index::detail::bucket_array::size_index_</a></div><div class="ttdeci">std::size_t size_index_</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00187">bucket_array.hpp:187</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a2a39336427986cf0178c14fcfb8aa872"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a2a39336427986cf0178c14fcfb8aa872">boost::multi_index::detail::bucket_array::clear</a></div><div class="ttdeci">void clear(pointer end_)</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00163">bucket_array.hpp:163</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a3d5c6051841f1a8bbb67768599edec18"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3d5c6051841f1a8bbb67768599edec18">boost::multi_index::detail::bucket_array::auto_space_size_type</a></div><div class="ttdeci">auto_space_type::size_type auto_space_size_type</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00185">bucket_array.hpp:185</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00163">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::clear()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a976508341bb5f1dd84689f2be8106436_cgraph.svg" width="1090" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a625d022fdd260614189a6f20589695ef" name="a625d022fdd260614189a6f20589695ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a625d022fdd260614189a6f20589695ef">&#9670;&#160;</a></span>at()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::at </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00161">161</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  161</span>{<span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3936a94f8f23fe3dc6bdc1c9a173e9e2">buckets</a>()+n;}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a3936a94f8f23fe3dc6bdc1c9a173e9e2"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3936a94f8f23fe3dc6bdc1c9a173e9e2">boost::multi_index::detail::bucket_array::buckets</a></div><div class="ttdeci">base_pointer buckets() const</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00190">bucket_array.hpp:190</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00190">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::buckets()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="hashed__index_8hpp_source.html#l00692">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::begin()</a>, <a class="el" href="hashed__index_8hpp_source.html#l00672">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::bucket_size()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01725">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::count()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01758">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::equal_range()</a>, <a class="el" href="hashed__index_8hpp_source.html#l00376">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::erase()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01698">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::find()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01577">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::in_place()</a>, <a class="el" href="hashed__index_8hpp_source.html#l00934">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::insert_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01085">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::modify_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01147">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::modify_rollback_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01059">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::replace_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01459">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::unchecked_rehash()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a625d022fdd260614189a6f20589695ef_cgraph.svg" width="631" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a625d022fdd260614189a6f20589695ef_icgraph.svg" width="435" height="918"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a03e011b277624f470c76d9d9bbda98ec" name="a03e011b277624f470c76d9d9bbda98ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e011b277624f470c76d9d9bbda98ec">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00159">159</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  159</span>{<span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3936a94f8f23fe3dc6bdc1c9a173e9e2">buckets</a>();}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00190">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::buckets()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00163">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::clear()</a>, <a class="el" href="hashed__index_8hpp_source.html#l00849">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::copy_()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a03e011b277624f470c76d9d9bbda98ec_cgraph.svg" width="611" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a03e011b277624f470c76d9d9bbda98ec_icgraph.svg" width="596" height="183"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a3936a94f8f23fe3dc6bdc1c9a173e9e2" name="a3936a94f8f23fe3dc6bdc1c9a173e9e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3936a94f8f23fe3dc6bdc1c9a173e9e2">&#9670;&#160;</a></span>buckets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::buckets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00190">190</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>  {</div>
+<div class="line"><span class="lineno">  192</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">data</a>();</div>
+<div class="line"><span class="lineno">  193</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html_aaa30af0a9d3a5f2155ab80e3e89adfd4"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#aaa30af0a9d3a5f2155ab80e3e89adfd4">boost::multi_index::detail::auto_space::data</a></div><div class="ttdeci">pointer data() const</div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00064">auto_space.hpp:64</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="auto__space_8hpp_source.html#l00064">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::data()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00188">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::spc</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00161">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::at()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00159">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::begin()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00160">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::end()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a3936a94f8f23fe3dc6bdc1c9a173e9e2_cgraph.svg" width="404" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a3936a94f8f23fe3dc6bdc1c9a173e9e2_icgraph.svg" width="867" height="1075"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a2a39336427986cf0178c14fcfb8aa872" name="a2a39336427986cf0178c14fcfb8aa872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a39336427986cf0178c14fcfb8aa872">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::clear </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a>&#160;</td>
+          <td class="paramname"><em>end_</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00163">163</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  164</span>  {</div>
+<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">for</span>(<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a> x=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a03e011b277624f470c76d9d9bbda98ec">begin</a>(),y=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a75a1116971cbd81e481ede26e366811b">end</a>();x!=y;++x)x-&gt;prior()=<a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">pointer</a>(0);</div>
+<div class="line"><span class="lineno">  166</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a75a1116971cbd81e481ede26e366811b">end</a>()-&gt;prior()=end_-&gt;prior()=end_;</div>
+<div class="line"><span class="lineno">  167</span>    end_-&gt;next()=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a75a1116971cbd81e481ede26e366811b">end</a>();</div>
+<div class="line"><span class="lineno">  168</span> }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a03e011b277624f470c76d9d9bbda98ec"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a03e011b277624f470c76d9d9bbda98ec">boost::multi_index::detail::bucket_array::begin</a></div><div class="ttdeci">base_pointer begin() const</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00159">bucket_array.hpp:159</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a29453d675201ec4a4edfe38dd56d7dcc"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29453d675201ec4a4edfe38dd56d7dcc">boost::multi_index::detail::bucket_array::pointer</a></div><div class="ttdeci">base_node_impl_type::pointer pointer</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00140">bucket_array.hpp:140</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a345d6f8a5b3e8b07443d26b16d7c33fa"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">boost::multi_index::detail::bucket_array::base_pointer</a></div><div class="ttdeci">base_node_impl_type::base_pointer base_pointer</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00139">bucket_array.hpp:139</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_a75a1116971cbd81e481ede26e366811b"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a75a1116971cbd81e481ede26e366811b">boost::multi_index::detail::bucket_array::end</a></div><div class="ttdeci">base_pointer end() const</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00160">bucket_array.hpp:160</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00159">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::begin()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00160">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::end()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00142">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::bucket_array()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01015">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::clear_()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a2a39336427986cf0178c14fcfb8aa872_cgraph.svg" width="883" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a2a39336427986cf0178c14fcfb8aa872_icgraph.svg" width="383" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a75a1116971cbd81e481ede26e366811b" name="a75a1116971cbd81e481ede26e366811b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75a1116971cbd81e481ede26e366811b">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a345d6f8a5b3e8b07443d26b16d7c33fa">base_pointer</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00160">160</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  160</span>{<span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a3936a94f8f23fe3dc6bdc1c9a173e9e2">buckets</a>()+<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#adc77b81c691ad1d85350de61d95f6a70">size</a>();}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array_html_adc77b81c691ad1d85350de61d95f6a70"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#adc77b81c691ad1d85350de61d95f6a70">boost::multi_index::detail::bucket_array::size</a></div><div class="ttdeci">std::size_t size() const</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00149">bucket_array.hpp:149</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00190">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::buckets()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00149">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00163">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::clear()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a75a1116971cbd81e481ede26e366811b_cgraph.svg" width="676" height="131"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a75a1116971cbd81e481ede26e366811b_icgraph.svg" width="622" height="144"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a28622fb7f016c13e584a23057ef9e3f6" name="a28622fb7f016c13e584a23057ef9e3f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28622fb7f016c13e584a23057ef9e3f6">&#9670;&#160;</a></span>position() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::position </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>hash</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00154">154</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>  {</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#a6696de1f854c27f2949ffc1859e538ca">super::position</a>(hash,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>);</div>
+<div class="line"><span class="lineno">  157</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array__base_html_a6696de1f854c27f2949ffc1859e538ca"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#a6696de1f854c27f2949ffc1859e538ca">boost::multi_index::detail::bucket_array_base::position</a></div><div class="ttdeci">static std::size_t position(std::size_t hash, std::size_t size_index_)</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00094">bucket_array.hpp:94</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00094">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::position()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00187">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size_index_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="hashed__index_8hpp_source.html#l00682">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::bucket()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01725">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::count()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01758">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::equal_range()</a>, <a class="el" href="hashed__index_8hpp_source.html#l00376">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::erase()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01698">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::find()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01459">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::unchecked_rehash()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a28622fb7f016c13e584a23057ef9e3f6_cgraph.svg" width="376" height="66"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a28622fb7f016c13e584a23057ef9e3f6_icgraph.svg" width="842" height="603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a6696de1f854c27f2949ffc1859e538ca" name="a6696de1f854c27f2949ffc1859e538ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6696de1f854c27f2949ffc1859e538ca">&#9670;&#160;</a></span>position() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool _ = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">boost::multi_index::detail::bucket_array_base</a>&lt; <a class="el" href="pp__cc__loop_2master_8hpp.html#a9b7a4f9f7af9f0d1faa580df1c8167c3">_</a> &gt;::position </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>hash</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>size_index_</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>  {</div>
+<div class="line"><span class="lineno">   96</span>    <span class="comment">/* Accelerate hash%sizes[size_index_] by replacing with a switch on</span></div>
+<div class="line"><span class="lineno">   97</span><span class="comment">     * hash%Ci expressions, each Ci a compile-time constant, which the</span></div>
+<div class="line"><span class="lineno">   98</span><span class="comment">     * compiler can implement without using integer division.</span></div>
+<div class="line"><span class="lineno">   99</span><span class="comment">     */</span></div>
+<div class="line"><span class="lineno">  100</span> </div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">switch</span>(size_index_){</div>
+<div class="line"><span class="lineno">  102</span>      <span class="keywordflow">default</span>: <span class="comment">/* never used */</span></div>
+<div class="line"><span class="lineno">  103</span>      <a class="code hl_define" href="preprocessor_2repetition_2repeat_8hpp.html#ac938453293bcce58875187d0ef1561df">BOOST_PP_REPEAT</a>(</div>
+<div class="line"><span class="lineno">  104</span>        <a class="code hl_define" href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a>(<a class="code hl_define" href="bucket__array_8hpp.html#a7aba0ad5d7b30e950f050c03171dfb60">BOOST_MULTI_INDEX_BA_SIZES</a>),</div>
+<div class="line"><span class="lineno">  105</span>        <a class="code hl_define" href="bucket__array_8hpp.html#a04849ed2fb7b081adb56ad65c6913fc9">BOOST_MULTI_INDEX_BA_POSITION_CASE</a>,~)</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
+<div class="ttc" id="abucket__array_8hpp_html_a04849ed2fb7b081adb56ad65c6913fc9"><div class="ttname"><a href="bucket__array_8hpp.html#a04849ed2fb7b081adb56ad65c6913fc9">BOOST_MULTI_INDEX_BA_POSITION_CASE</a></div><div class="ttdeci">#define BOOST_MULTI_INDEX_BA_POSITION_CASE(z, n, _)</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00091">bucket_array.hpp:91</a></div></div>
+<div class="ttc" id="abucket__array_8hpp_html_a7aba0ad5d7b30e950f050c03171dfb60"><div class="ttname"><a href="bucket__array_8hpp.html#a7aba0ad5d7b30e950f050c03171dfb60">BOOST_MULTI_INDEX_BA_SIZES</a></div><div class="ttdeci">#define BOOST_MULTI_INDEX_BA_SIZES</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00052">bucket_array.hpp:52</a></div></div>
+<div class="ttc" id="apreprocessor_2repetition_2repeat_8hpp_html_ac938453293bcce58875187d0ef1561df"><div class="ttname"><a href="preprocessor_2repetition_2repeat_8hpp.html#ac938453293bcce58875187d0ef1561df">BOOST_PP_REPEAT</a></div><div class="ttdeci">#define BOOST_PP_REPEAT</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2repetition_2repeat_8hpp_source.html#l00030">preprocessor/repetition/repeat.hpp:30</a></div></div>
+<div class="ttc" id="apreprocessor_2seq_2size_8hpp_html_aeefbacdbf937338e9f7b67044c4a3c96"><div class="ttname"><a href="preprocessor_2seq_2size_8hpp.html#aeefbacdbf937338e9f7b67044c4a3c96">BOOST_PP_SEQ_SIZE</a></div><div class="ttdeci">#define BOOST_PP_SEQ_SIZE(seq)</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2seq_2size_8hpp_source.html#l00030">preprocessor/seq/size.hpp:30</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00091">BOOST_MULTI_INDEX_BA_POSITION_CASE</a>, <a class="el" href="bucket__array_8hpp_source.html#l00052">BOOST_MULTI_INDEX_BA_SIZES</a>, <a class="el" href="preprocessor_2repetition_2repeat_8hpp_source.html#l00030">BOOST_PP_REPEAT</a>, <a class="el" href="preprocessor_2seq_2size_8hpp_source.html#l00030">BOOST_PP_SEQ_SIZE</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00154">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::position()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array__base_a6696de1f854c27f2949ffc1859e538ca_icgraph.svg" width="1048" height="603"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a9da50defdf3de8eba8190aef90deed9e" name="a9da50defdf3de8eba8190aef90deed9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da50defdf3de8eba8190aef90deed9e">&#9670;&#160;</a></span>serialize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;class Archive &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::serialize </td>
+          <td>(</td>
+          <td class="paramtype">Archive &amp;&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const unsigned int&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  205</span>  {</div>
+<div class="line"><span class="lineno">  206</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adc77b81c691ad1d85350de61d95f6a70" name="adc77b81c691ad1d85350de61d95f6a70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc77b81c691ad1d85350de61d95f6a70">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00149">149</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>  {</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">super::sizes</a>[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>];</div>
+<div class="line"><span class="lineno">  152</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00187">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size_index_</a>, <a class="el" href="bucket__array_8hpp_source.html#l00082">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::sizes</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="hashed__index_8hpp_source.html#l00665">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::bucket_count()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00160">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::end()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_adc77b81c691ad1d85350de61d95f6a70_icgraph.svg" width="898" height="528"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="afa3a236777f7fc79d0329ddab32a7720" name="afa3a236777f7fc79d0329ddab32a7720"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa3a236777f7fc79d0329ddab32a7720">&#9670;&#160;</a></span>size_index()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool _ = true&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">boost::multi_index::detail::bucket_array_base</a>&lt; <a class="el" href="pp__cc__loop_2master_8hpp.html#a9b7a4f9f7af9f0d1faa580df1c8167c3">_</a> &gt;::size_index </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00084">84</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   85</span>  {</div>
+<div class="line"><span class="lineno">   86</span>    <span class="keyword">const</span> std::size_t *bound=std::lower_bound(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">sizes</a>,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">sizes</a>+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ad14ac69db9900d8fa14258ad88f39668">sizes_length</a>,n);</div>
+<div class="line"><span class="lineno">   87</span>    <span class="keywordflow">if</span>(bound==<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">sizes</a>+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ad14ac69db9900d8fa14258ad88f39668">sizes_length</a>)--bound;</div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> bound-<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">sizes</a>;</div>
+<div class="line"><span class="lineno">   89</span>  }</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1bucket__array__base_html_ad14ac69db9900d8fa14258ad88f39668"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ad14ac69db9900d8fa14258ad88f39668">boost::multi_index::detail::bucket_array_base::sizes_length</a></div><div class="ttdeci">static const std::size_t sizes_length</div><div class="ttdef"><b>Definition:</b> <a href="bucket__array_8hpp_source.html#l00110">bucket_array.hpp:110</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00082">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::sizes</a>, <a class="el" href="bucket__array_8hpp_source.html#l00110">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::sizes_length</a>.</p>
+
+</div>
+</div>
+<a id="a3a3f9eae12b50dde66a803a33020658a" name="a3a3f9eae12b50dde66a803a33020658a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a3f9eae12b50dde66a803a33020658a">&#9670;&#160;</a></span>swap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">bucket_array</a>&lt; Allocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00170">170</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>  {</div>
+<div class="line"><span class="lineno">  172</span>    <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>,x.size_index_);</div>
+<div class="line"><span class="lineno">  173</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ab66bbc2786a7094c28f6cefbf6c0ab10">swap</a>(x.spc);</div>
+<div class="line"><span class="lineno">  174</span>  }</div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html_ab66bbc2786a7094c28f6cefbf6c0ab10"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ab66bbc2786a7094c28f6cefbf6c0ab10">boost::multi_index::detail::auto_space::swap</a></div><div class="ttdeci">void swap(auto_space &amp;x)</div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00066">auto_space.hpp:66</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00187">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size_index_</a>, <a class="el" href="bucket__array_8hpp_source.html#l00188">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::spc</a>, <a class="el" href="auto__space_8hpp_source.html#l00066">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::swap()</a>, <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00211">boost::multi_index::detail::swap()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01026">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::swap_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01044">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::swap_elements_()</a>, <a class="el" href="hashed__index_8hpp_source.html#l01459">boost::multi_index::detail::hashed_index&lt; KeyFromValue, Hash, Pred, SuperMeta, TagList, Category &gt;::unchecked_rehash()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a3a3f9eae12b50dde66a803a33020658a_cgraph.svg" width="450" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a3a3f9eae12b50dde66a803a33020658a_icgraph.svg" width="424" height="288"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a8f728595934c339b63c87ae334b170f8" name="a8f728595934c339b63c87ae334b170f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f728595934c339b63c87ae334b170f8">&#9670;&#160;</a></span>swap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<div class="memtemplate">
+template&lt;typename BoolConstant &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">bucket_array</a>&lt; Allocator &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BoolConstant&#160;</td>
+          <td class="paramname"><em>swap_allocators</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00177">177</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>  {</div>
+<div class="line"><span class="lineno">  179</span>    <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a29a54fc8b14377ce5ac86415f572345f">size_index_</a>,x.size_index_);</div>
+<div class="line"><span class="lineno">  180</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#a1af917a90e704e58def54959bca9aca6">spc</a>.<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html#ab66bbc2786a7094c28f6cefbf6c0ab10">swap</a>(x.spc,swap_allocators);</div>
+<div class="line"><span class="lineno">  181</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="bucket__array_8hpp_source.html#l00187">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size_index_</a>, <a class="el" href="bucket__array_8hpp_source.html#l00188">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::spc</a>, <a class="el" href="auto__space_8hpp_source.html#l00066">boost::multi_index::detail::auto_space&lt; T, Allocator &gt;::swap()</a>, <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1bucket__array_a8f728595934c339b63c87ae334b170f8_cgraph.svg" width="450" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="ac98d07dd8f7b70e16ccb9a01abf56b9c" name="ac98d07dd8f7b70e16ccb9a01abf56b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac98d07dd8f7b70e16ccb9a01abf56b9c">&#9670;&#160;</a></span>boost::serialization::access</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class boost::serialization::access</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00196">196</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a29a54fc8b14377ce5ac86415f572345f" name="a29a54fc8b14377ce5ac86415f572345f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29a54fc8b14377ce5ac86415f572345f">&#9670;&#160;</a></span>size_index_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::size_index_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00187">187</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00154">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::position()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00149">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00170">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::swap()</a>.</p>
+
+</div>
+</div>
+<a id="ae7b477ca3861696d0c02406b5140236a" name="ae7b477ca3861696d0c02406b5140236a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b477ca3861696d0c02406b5140236a">&#9670;&#160;</a></span>sizes</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool _&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">boost::multi_index::detail::bucket_array_base</a>&lt; <a class="el" href="pp__cc__loop_2master_8hpp.html#a9b7a4f9f7af9f0d1faa580df1c8167c3">_</a> &gt;::sizes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初期値:</b><div class="fragment"><div class="line">={</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00081">81</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00149">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::size()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00084">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::size_index()</a>.</p>
+
+</div>
+</div>
+<a id="ad14ac69db9900d8fa14258ad88f39668" name="ad14ac69db9900d8fa14258ad88f39668"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad14ac69db9900d8fa14258ad88f39668">&#9670;&#160;</a></span>sizes_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;bool _&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::size_t <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html">boost::multi_index::detail::bucket_array_base</a>&lt; <a class="el" href="pp__cc__loop_2master_8hpp.html#a9b7a4f9f7af9f0d1faa580df1c8167c3">_</a> &gt;::sizes_length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初期値:</b><div class="fragment"><div class="line">=</div>
+<div class="line">  <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">bucket_array_base&lt;_&gt;::sizes</a>)/</div>
+<div class="line">  <span class="keyword">sizeof</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1bucket__array__base.html#ae7b477ca3861696d0c02406b5140236a">bucket_array_base&lt;_&gt;::sizes</a>[0])</div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00084">boost::multi_index::detail::bucket_array_base&lt; _ &gt;::size_index()</a>.</p>
+
+</div>
+</div>
+<a id="a1af917a90e704e58def54959bca9aca6" name="a1af917a90e704e58def54959bca9aca6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1af917a90e704e58def54959bca9aca6">&#9670;&#160;</a></span>spc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Allocator &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html#af5cfffcc5ba9edf0f27f8852c29dbe9f">auto_space_type</a> <a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">boost::multi_index::detail::bucket_array</a>&lt; Allocator &gt;::spc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a> の <a class="el" href="bucket__array_8hpp_source.html#l00188">188</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="bucket__array_8hpp_source.html#l00190">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::buckets()</a>, <a class="el" href="bucket__array_8hpp_source.html#l00170">boost::multi_index::detail::bucket_array&lt; Allocator &gt;::swap()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="bucket__array_8hpp_source.html">bucket_array.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1bucket__array.html">bucket_array</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

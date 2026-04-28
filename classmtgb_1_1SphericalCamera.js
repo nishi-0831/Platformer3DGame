@@ -33,7 +33,7 @@ var classmtgb_1_1SphericalCamera =
     [ "Instantiate", "classmtgb_1_1SphericalCamera.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9", null ],
     [ "IsNotCalledStart", "classmtgb_1_1SphericalCamera.html#a5390eff1b7a8dab3fd920b9375ada0dc", null ],
     [ "IsTargetOffDeadZone", "classmtgb_1_1SphericalCamera.html#ab5009f5f63f04abe5e0af1e533a39774", null ],
-    [ "IsToDestroy", "classmtgb_1_1SphericalCamera.html#ab2b2a8a84b4380a17f62a71f0208825b", null ],
+    [ "IsToDestroy", "classmtgb_1_1SphericalCamera.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classmtgb_1_1SphericalCamera.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "MoveCameraSpherical", "classmtgb_1_1SphericalCamera.html#a4391ded3741615f7a0464cdd1720fd9c", null ],
     [ "Serialize", "classmtgb_1_1SphericalCamera.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],

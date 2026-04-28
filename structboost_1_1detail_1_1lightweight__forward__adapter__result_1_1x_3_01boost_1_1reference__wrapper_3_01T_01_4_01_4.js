@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1lightweight__forward__adapter__result_1_1x_3_01boost_1_1reference__wrapper_3_01T_01_4_01_4 =
+[
+    [ "t", "structboost_1_1detail_1_1lightweight__forward__adapter__result_1_1x_3_01boost_1_1reference__wrapper_3_01T_01_4_01_4.html#aba6f019e9a3ad916c80ad1a1b6e120dd", null ]
+];

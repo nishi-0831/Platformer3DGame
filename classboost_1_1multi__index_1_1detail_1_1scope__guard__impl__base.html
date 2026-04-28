@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::scope_guard_impl_base クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-static-methods">静的限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::scope_guard_impl_base クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::scope_guard_impl_base の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base__inherit__graph.svg" width="2287" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+boost::multi_index::detail::scope_guard_impl_base 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base__coll__graph.svg" width="214" height="294"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a57bfa6af580395fcef9edcce74530959"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a57bfa6af580395fcef9edcce74530959">scope_guard_impl_base</a> ()</td></tr>
+<tr class="separator:a57bfa6af580395fcef9edcce74530959"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0c8c22330e65e62a2612ac9fc20ebf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#ad0c8c22330e65e62a2612ac9fc20ebf6">dismiss</a> () const</td></tr>
+<tr class="separator:ad0c8c22330e65e62a2612ac9fc20ebf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbe22e4d642f9e77a25ee7c433d0760"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a0bbe22e4d642f9e77a25ee7c433d0760">touch</a> () const</td></tr>
+<tr class="separator:a0bbe22e4d642f9e77a25ee7c433d0760"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:affbb074bda5c63c507fd68127092036b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#affbb074bda5c63c507fd68127092036b">~scope_guard_impl_base</a> ()</td></tr>
+<tr class="separator:affbb074bda5c63c507fd68127092036b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a582c69fe7bf7d7497d643fb1ba6fe7f3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a582c69fe7bf7d7497d643fb1ba6fe7f3">scope_guard_impl_base</a> (const <a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp;other)</td></tr>
+<tr class="separator:a582c69fe7bf7d7497d643fb1ba6fe7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
+静的限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4d1ad746bc1bc3890dc784d92ebca06e"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a> &gt; </td></tr>
+<tr class="memitem:a4d1ad746bc1bc3890dc784d92ebca06e"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a4d1ad746bc1bc3890dc784d92ebca06e">safe_execute</a> (<a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a> &amp;j)</td></tr>
+<tr class="separator:a4d1ad746bc1bc3890dc784d92ebca06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a29ee9dc93666053a3c778313b7281f01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a29ee9dc93666053a3c778313b7281f01">dismissed_</a></td></tr>
+<tr class="separator:a29ee9dc93666053a3c778313b7281f01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a286fb1a416d664206df8999632f89fe6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a286fb1a416d664206df8999632f89fe6">operator=</a> (const <a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp;)</td></tr>
+<tr class="separator:a286fb1a416d664206df8999632f89fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock">
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a57bfa6af580395fcef9edcce74530959" name="a57bfa6af580395fcef9edcce74530959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57bfa6af580395fcef9edcce74530959">&#9670;&#160;</a></span>scope_guard_impl_base() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::multi_index::detail::scope_guard_impl_base::scope_guard_impl_base </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>:<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a29ee9dc93666053a3c778313b7281f01">dismissed_</a>(<span class="keyword">false</span>){}</div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base_html_a29ee9dc93666053a3c778313b7281f01"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a29ee9dc93666053a3c778313b7281f01">boost::multi_index::detail::scope_guard_impl_base::dismissed_</a></div><div class="ttdeci">bool dismissed_</div><div class="ttdef"><b>Definition:</b> <a href="scope__guard_8hpp_source.html#l00089">scope_guard.hpp:89</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="affbb074bda5c63c507fd68127092036b" name="affbb074bda5c63c507fd68127092036b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affbb074bda5c63c507fd68127092036b">&#9670;&#160;</a></span>~scope_guard_impl_base()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::multi_index::detail::scope_guard_impl_base::~scope_guard_impl_base </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00072">72</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a582c69fe7bf7d7497d643fb1ba6fe7f3" name="a582c69fe7bf7d7497d643fb1ba6fe7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a582c69fe7bf7d7497d643fb1ba6fe7f3">&#9670;&#160;</a></span>scope_guard_impl_base() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">boost::multi_index::detail::scope_guard_impl_base::scope_guard_impl_base </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                           :</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a29ee9dc93666053a3c778313b7281f01">dismissed_</a>(other.dismissed_)</div>
+<div class="line"><span class="lineno">   76</span>  {</div>
+<div class="line"><span class="lineno">   77</span>    other.dismiss();</div>
+<div class="line"><span class="lineno">   78</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="scope__guard_8hpp_source.html#l00064">dismiss()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base_a582c69fe7bf7d7497d643fb1ba6fe7f3_cgraph.svg" width="403" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ad0c8c22330e65e62a2612ac9fc20ebf6" name="ad0c8c22330e65e62a2612ac9fc20ebf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0c8c22330e65e62a2612ac9fc20ebf6">&#9670;&#160;</a></span>dismiss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::multi_index::detail::scope_guard_impl_base::dismiss </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>{<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html#a29ee9dc93666053a3c778313b7281f01">dismissed_</a>=<span class="keyword">true</span>;}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="scope__guard_8hpp_source.html#l00089">dismissed_</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="scope__guard_8hpp_source.html#l00074">scope_guard_impl_base()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base_ad0c8c22330e65e62a2612ac9fc20ebf6_icgraph.svg" width="403" height="80"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a286fb1a416d664206df8999632f89fe6" name="a286fb1a416d664206df8999632f89fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286fb1a416d664206df8999632f89fe6">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp; boost::multi_index::detail::scope_guard_impl_base::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4d1ad746bc1bc3890dc784d92ebca06e" name="a4d1ad746bc1bc3890dc784d92ebca06e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d1ad746bc1bc3890dc784d92ebca06e">&#9670;&#160;</a></span>safe_execute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void boost::multi_index::detail::scope_guard_impl_base::safe_execute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574aff44570aca8241914870afbc310cdb85">J</a> &amp;&#160;</td>
+          <td class="paramname"><em>j</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00081">81</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   81</span>                                {</div>
+<div class="line"><span class="lineno">   82</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a42e8c335be0add08138e06271e9dbdab">BOOST_TRY</a>{</div>
+<div class="line"><span class="lineno">   83</span>      <span class="keywordflow">if</span>(!j.dismissed_)j.execute();</div>
+<div class="line"><span class="lineno">   84</span>    }</div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a1526a9264a34938307510dc0f0553806">BOOST_CATCH</a>(...){}</div>
+<div class="line"><span class="lineno">   86</span>    <a class="code hl_define" href="core_2no__exceptions__support_8hpp.html#a3f65b89d68c413cd045f332643e4798d">BOOST_CATCH_END</a></div>
+<div class="line"><span class="lineno">   87</span>  }</div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a1526a9264a34938307510dc0f0553806"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a1526a9264a34938307510dc0f0553806">BOOST_CATCH</a></div><div class="ttdeci">#define BOOST_CATCH(x)</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00028">core/no_exceptions_support.hpp:28</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a3f65b89d68c413cd045f332643e4798d"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a3f65b89d68c413cd045f332643e4798d">BOOST_CATCH_END</a></div><div class="ttdeci">#define BOOST_CATCH_END</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00030">core/no_exceptions_support.hpp:30</a></div></div>
+<div class="ttc" id="acore_2no__exceptions__support_8hpp_html_a42e8c335be0add08138e06271e9dbdab"><div class="ttname"><a href="core_2no__exceptions__support_8hpp.html#a42e8c335be0add08138e06271e9dbdab">BOOST_TRY</a></div><div class="ttdeci">#define BOOST_TRY</div><div class="ttdef"><b>Definition:</b> <a href="core_2no__exceptions__support_8hpp_source.html#l00027">core/no_exceptions_support.hpp:27</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00028">BOOST_CATCH</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00030">BOOST_CATCH_END</a>, <a class="el" href="core_2no__exceptions__support_8hpp_source.html#l00027">BOOST_TRY</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="scope__guard_8hpp_source.html#l00306">boost::multi_index::detail::obj_scope_guard_impl0&lt; Obj, MemFun &gt;::~obj_scope_guard_impl0()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00340">boost::multi_index::detail::obj_scope_guard_impl1&lt; Obj, MemFun, P1 &gt;::~obj_scope_guard_impl1()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00377">boost::multi_index::detail::obj_scope_guard_impl2&lt; Obj, MemFun, P1, P2 &gt;::~obj_scope_guard_impl2()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00415">boost::multi_index::detail::obj_scope_guard_impl3&lt; Obj, MemFun, P1, P2, P3 &gt;::~obj_scope_guard_impl3()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00131">boost::multi_index::detail::scope_guard_impl0&lt; F &gt;::~scope_guard_impl0()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00164">boost::multi_index::detail::scope_guard_impl1&lt; F, P1 &gt;::~scope_guard_impl1()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00197">boost::multi_index::detail::scope_guard_impl2&lt; F, P1, P2 &gt;::~scope_guard_impl2()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00231">boost::multi_index::detail::scope_guard_impl3&lt; F, P1, P2, P3 &gt;::~scope_guard_impl3()</a>, <a class="el" href="scope__guard_8hpp_source.html#l00267">boost::multi_index::detail::scope_guard_impl4&lt; F, P1, P2, P3, P4 &gt;::~scope_guard_impl4()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base_a4d1ad746bc1bc3890dc784d92ebca06e_icgraph.svg" width="460" height="755"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a0bbe22e4d642f9e77a25ee7c433d0760" name="a0bbe22e4d642f9e77a25ee7c433d0760"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbe22e4d642f9e77a25ee7c433d0760">&#9670;&#160;</a></span>touch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void boost::multi_index::detail::scope_guard_impl_base::touch </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00069">69</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>{}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a29ee9dc93666053a3c778313b7281f01" name="a29ee9dc93666053a3c778313b7281f01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29ee9dc93666053a3c778313b7281f01">&#9670;&#160;</a></span>dismissed_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool boost::multi_index::detail::scope_guard_impl_base::dismissed_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">mutable</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a> の <a class="el" href="scope__guard_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="scope__guard_8hpp_source.html#l00064">dismiss()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="scope__guard_8hpp_source.html">scope_guard.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="classboost_1_1multi__index_1_1detail_1_1scope__guard__impl__base.html">scope_guard_impl_base</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

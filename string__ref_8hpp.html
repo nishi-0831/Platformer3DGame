@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: string_ref.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('string__ref_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">string_ref.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="config_8hpp_source.html">boost/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="detail_2workaround_8hpp_source.html">boost/detail/workaround.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="ostream__put_8hpp_source.html">boost/io/ostream_put.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="string__ref__fwd_8hpp_source.html">boost/utility/string_ref_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="throw__exception_8hpp_source.html">boost/throw_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;iosfwd&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+string_ref.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="string__ref_8hpp__incl.svg" width="1700" height="682"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="string__ref_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1detail_1_1string__ref__traits__eq.html">boost::detail::string_ref_traits_eq&lt; charT, traits &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1basic__string__ref.html">boost::basic_string_ref&lt; charT, traits &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ac2d854c0cbc9ebdff701dd7f233d8a06"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:ac2d854c0cbc9ebdff701dd7f233d8a06"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ac2d854c0cbc9ebdff701dd7f233d8a06">boost::operator==</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:ac2d854c0cbc9ebdff701dd7f233d8a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac51538077e431dd9be727fe483898ccb"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:ac51538077e431dd9be727fe483898ccb"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ac51538077e431dd9be727fe483898ccb">boost::operator==</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:ac51538077e431dd9be727fe483898ccb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab984b6790b4c2785bedb9c20be71194f"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:ab984b6790b4c2785bedb9c20be71194f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab984b6790b4c2785bedb9c20be71194f">boost::operator==</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:ab984b6790b4c2785bedb9c20be71194f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a95940652d21d44a1def85e46e772c7"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a8a95940652d21d44a1def85e46e772c7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a8a95940652d21d44a1def85e46e772c7">boost::operator==</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:a8a95940652d21d44a1def85e46e772c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa20459fd362e5b11b5782901c23ebe6"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:aaa20459fd362e5b11b5782901c23ebe6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aaa20459fd362e5b11b5782901c23ebe6">boost::operator==</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:aaa20459fd362e5b11b5782901c23ebe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30379936087b4fe8cd3f655a69b67de0"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a30379936087b4fe8cd3f655a69b67de0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a30379936087b4fe8cd3f655a69b67de0">boost::operator!=</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a30379936087b4fe8cd3f655a69b67de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a190e537ca386bc5d88735243fb5a06f7"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a190e537ca386bc5d88735243fb5a06f7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a190e537ca386bc5d88735243fb5a06f7">boost::operator!=</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:a190e537ca386bc5d88735243fb5a06f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05cca4d4f8930ea56f7e1d605c742a9f"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a05cca4d4f8930ea56f7e1d605c742a9f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a05cca4d4f8930ea56f7e1d605c742a9f">boost::operator!=</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a05cca4d4f8930ea56f7e1d605c742a9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2238faa3aebc184bf9f57f91bd8dcf2"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:af2238faa3aebc184bf9f57f91bd8dcf2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#af2238faa3aebc184bf9f57f91bd8dcf2">boost::operator!=</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:af2238faa3aebc184bf9f57f91bd8dcf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3652f1067bd4e3585eeb3944388f838"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:ad3652f1067bd4e3585eeb3944388f838"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ad3652f1067bd4e3585eeb3944388f838">boost::operator!=</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:ad3652f1067bd4e3585eeb3944388f838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bdaecc95ac8ed90d1f26c5472969994"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a7bdaecc95ac8ed90d1f26c5472969994"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a7bdaecc95ac8ed90d1f26c5472969994">boost::operator&lt;</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a7bdaecc95ac8ed90d1f26c5472969994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7cc8f1ba4f8622f6cdd0cb0a769c386"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:aa7cc8f1ba4f8622f6cdd0cb0a769c386"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aa7cc8f1ba4f8622f6cdd0cb0a769c386">boost::operator&lt;</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:aa7cc8f1ba4f8622f6cdd0cb0a769c386"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886e96377338d8dec4fc5c73f621f1e7"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a886e96377338d8dec4fc5c73f621f1e7"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a886e96377338d8dec4fc5c73f621f1e7">boost::operator&lt;</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a886e96377338d8dec4fc5c73f621f1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6489cf12d6b7c66a803f05da59f8fc0b"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a6489cf12d6b7c66a803f05da59f8fc0b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a6489cf12d6b7c66a803f05da59f8fc0b">boost::operator&lt;</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:a6489cf12d6b7c66a803f05da59f8fc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1eff9e1dc4bb1cea544f31ce42fb2364"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a1eff9e1dc4bb1cea544f31ce42fb2364"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a1eff9e1dc4bb1cea544f31ce42fb2364">boost::operator&lt;</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a1eff9e1dc4bb1cea544f31ce42fb2364"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5df7ff849d867697ac0816f2a84529c6"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a5df7ff849d867697ac0816f2a84529c6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a5df7ff849d867697ac0816f2a84529c6">boost::operator&gt;</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a5df7ff849d867697ac0816f2a84529c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20efdf744ea36bdc8bccf4c7666792b2"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a20efdf744ea36bdc8bccf4c7666792b2"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a20efdf744ea36bdc8bccf4c7666792b2">boost::operator&gt;</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:a20efdf744ea36bdc8bccf4c7666792b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a9119bf360bd1a2a7694d57302b23de"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a4a9119bf360bd1a2a7694d57302b23de"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a4a9119bf360bd1a2a7694d57302b23de">boost::operator&gt;</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a4a9119bf360bd1a2a7694d57302b23de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d83b7e06a0126255ecc6f6ad792d92"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:ab3d83b7e06a0126255ecc6f6ad792d92"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab3d83b7e06a0126255ecc6f6ad792d92">boost::operator&gt;</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:ab3d83b7e06a0126255ecc6f6ad792d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8b1338571c710606feb58b34b93b63"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:afd8b1338571c710606feb58b34b93b63"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#afd8b1338571c710606feb58b34b93b63">boost::operator&gt;</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:afd8b1338571c710606feb58b34b93b63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67df0cc7d5b0b120632c84396035d427"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a67df0cc7d5b0b120632c84396035d427"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a67df0cc7d5b0b120632c84396035d427">boost::operator&lt;=</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a67df0cc7d5b0b120632c84396035d427"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a999a93295277013359b12296c5291bba"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a999a93295277013359b12296c5291bba"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a999a93295277013359b12296c5291bba">boost::operator&lt;=</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:a999a93295277013359b12296c5291bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dfc3892736041e8675fec3812fac286"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a3dfc3892736041e8675fec3812fac286"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a3dfc3892736041e8675fec3812fac286">boost::operator&lt;=</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a3dfc3892736041e8675fec3812fac286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acea484605dda1278c91d3e162ad98161"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:acea484605dda1278c91d3e162ad98161"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#acea484605dda1278c91d3e162ad98161">boost::operator&lt;=</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:acea484605dda1278c91d3e162ad98161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8a200b7946f4d38a445962da76e12f1"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:ab8a200b7946f4d38a445962da76e12f1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab8a200b7946f4d38a445962da76e12f1">boost::operator&lt;=</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:ab8a200b7946f4d38a445962da76e12f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75c882b4b6cef09368d37e960c2981aa"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a75c882b4b6cef09368d37e960c2981aa"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a75c882b4b6cef09368d37e960c2981aa">boost::operator&gt;=</a> (basic_string_ref&lt; charT, traits &gt; x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a75c882b4b6cef09368d37e960c2981aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08cc7984b948b3e12166976c49322297"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a08cc7984b948b3e12166976c49322297"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a08cc7984b948b3e12166976c49322297">boost::operator&gt;=</a> (basic_string_ref&lt; charT, traits &gt; x, const std::basic_string&lt; charT, traits, Allocator &gt; &amp;y)</td></tr>
+<tr class="separator:a08cc7984b948b3e12166976c49322297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82479b8a71bee82038a25fe31df27d3f"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits , typename Allocator &gt; </td></tr>
+<tr class="memitem:a82479b8a71bee82038a25fe31df27d3f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a82479b8a71bee82038a25fe31df27d3f">boost::operator&gt;=</a> (const std::basic_string&lt; charT, traits, Allocator &gt; &amp;x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a82479b8a71bee82038a25fe31df27d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4266e4a2405c575758c74379848d96c"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:ae4266e4a2405c575758c74379848d96c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ae4266e4a2405c575758c74379848d96c">boost::operator&gt;=</a> (basic_string_ref&lt; charT, traits &gt; x, const charT *y)</td></tr>
+<tr class="separator:ae4266e4a2405c575758c74379848d96c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55025bd5bea3b9bc93dd13c8dc222f13"><td class="memTemplParams" colspan="2">template&lt;typename charT , typename traits &gt; </td></tr>
+<tr class="memitem:a55025bd5bea3b9bc93dd13c8dc222f13"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a55025bd5bea3b9bc93dd13c8dc222f13">boost::operator&gt;=</a> (const charT *x, basic_string_ref&lt; charT, traits &gt; y)</td></tr>
+<tr class="separator:a55025bd5bea3b9bc93dd13c8dc222f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d0f7feeee514c0d65c1f4c950c8717b"><td class="memTemplParams" colspan="2">template&lt;class charT , class traits &gt; </td></tr>
+<tr class="memitem:a0d0f7feeee514c0d65c1f4c950c8717b"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; charT, traits &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a0d0f7feeee514c0d65c1f4c950c8717b">boost::operator&lt;&lt;</a> (std::basic_ostream&lt; charT, traits &gt; &amp;os, const basic_string_ref&lt; charT, traits &gt; &amp;str)</td></tr>
+<tr class="separator:a0d0f7feeee514c0d65c1f4c950c8717b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f82e3993800472d682c7acac1f370454.html">utility</a></li><li class="navelem"><a class="el" href="string__ref_8hpp.html">string_ref.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

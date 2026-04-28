@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: local_shared_ptr.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('local__shared__ptr_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">local_shared_ptr.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="smart__ptr_2shared__ptr_8hpp_source.html">boost/smart_ptr/shared_ptr.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="sp__noexcept_8hpp_source.html">boost/smart_ptr/detail/sp_noexcept.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="assert_8hpp_source.html">boost/assert.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+local_shared_ptr.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="local__shared__ptr_8hpp__incl.svg" width="3072" height="1092"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="local__shared__ptr_8hpp__dep__incl.svg" width="472" height="271"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="local__shared__ptr_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1detail_1_1lsp__internal__constructor__tag.html">boost::detail::lsp_internal_constructor_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_01_1_1boost_1_1local__shared__ptr_3_01T_01_4_01_4.html">std::hash&lt; ::boost::local_shared_ptr&lt; T &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html">boost::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacestd"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacestd.html">std</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ab05fc6c16258bed49e048f5edb3cf1ca"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:ab05fc6c16258bed49e048f5edb3cf1ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ab05fc6c16258bed49e048f5edb3cf1ca">boost::detail::lsp_pointer_construct</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; <a class="el" href="classE.html">E</a> &gt; *, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&amp;pn)</td></tr>
+<tr class="separator:ab05fc6c16258bed49e048f5edb3cf1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad95717ec320d66fd6d2d01e77891336a"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:ad95717ec320d66fd6d2d01e77891336a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#ad95717ec320d66fd6d2d01e77891336a">boost::detail::lsp_pointer_construct</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; <a class="el" href="classE.html">E</a>[] &gt; *, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&amp;pn)</td></tr>
+<tr class="separator:ad95717ec320d66fd6d2d01e77891336a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af80cec9e640188e32fbdf394e58c1935"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , std::size_t N, class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:af80cec9e640188e32fbdf394e58c1935"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#af80cec9e640188e32fbdf394e58c1935">boost::detail::lsp_pointer_construct</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; <a class="el" href="classE.html">E</a>[<a class="el" href="forward__adapter_8hpp.html#a0240ac851181b84ac374872dc5434ee4">N</a>] &gt; *, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> *p, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&amp;pn)</td></tr>
+<tr class="separator:af80cec9e640188e32fbdf394e58c1935"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a199ce455d3f8a7913647523194ab34e1"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a44c29edb103a2872f519ad0c9a0fdaaa">P</a> , class <a class="el" href="classD.html">D</a> &gt; </td></tr>
+<tr class="memitem:a199ce455d3f8a7913647523194ab34e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a199ce455d3f8a7913647523194ab34e1">boost::detail::lsp_deleter_construct</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; <a class="el" href="classE.html">E</a> &gt; *, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a44c29edb103a2872f519ad0c9a0fdaaa">P</a> p, <a class="el" href="classD.html">D</a> const &amp;d, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&amp;pn)</td></tr>
+<tr class="separator:a199ce455d3f8a7913647523194ab34e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e4770179813b92f024475210e2c65d6"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a44c29edb103a2872f519ad0c9a0fdaaa">P</a> , class <a class="el" href="classD.html">D</a> , class <a class="el" href="classA.html">A</a> &gt; </td></tr>
+<tr class="memitem:a5e4770179813b92f024475210e2c65d6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1detail.html#a5e4770179813b92f024475210e2c65d6">boost::detail::lsp_allocator_construct</a> (<a class="el" href="classboost_1_1local__shared__ptr.html">boost::local_shared_ptr</a>&lt; <a class="el" href="classE.html">E</a> &gt; *, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a44c29edb103a2872f519ad0c9a0fdaaa">P</a> p, <a class="el" href="classD.html">D</a> const &amp;d, <a class="el" href="classA.html">A</a> const &amp;a, <a class="el" href="classboost_1_1detail_1_1local__counted__base.html">boost::detail::local_counted_base</a> *&amp;pn)</td></tr>
+<tr class="separator:a5e4770179813b92f024475210e2c65d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024a6bdc8be7953b3f5e04a5be07a048"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a024a6bdc8be7953b3f5e04a5be07a048"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a024a6bdc8be7953b3f5e04a5be07a048">boost::operator==</a> (local_shared_ptr&lt; T &gt; const &amp;a, local_shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:a024a6bdc8be7953b3f5e04a5be07a048"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95890b9ba8894bc6376778a5dca51781"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a95890b9ba8894bc6376778a5dca51781"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a95890b9ba8894bc6376778a5dca51781">boost::operator!=</a> (local_shared_ptr&lt; T &gt; const &amp;a, local_shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:a95890b9ba8894bc6376778a5dca51781"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7261365b70d975fa385d8ab3f574b6e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ab7261365b70d975fa385d8ab3f574b6e"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab7261365b70d975fa385d8ab3f574b6e">boost::operator==</a> (local_shared_ptr&lt; T &gt; const &amp;p, std::nullptr_t) noexcept</td></tr>
+<tr class="separator:ab7261365b70d975fa385d8ab3f574b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4591a9c87537cfb5bcbdb0ce6a45cbf1"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a4591a9c87537cfb5bcbdb0ce6a45cbf1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a4591a9c87537cfb5bcbdb0ce6a45cbf1">boost::operator==</a> (std::nullptr_t, local_shared_ptr&lt; T &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:a4591a9c87537cfb5bcbdb0ce6a45cbf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a261092116fe8c38edc7352ec3924da9b"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a261092116fe8c38edc7352ec3924da9b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a261092116fe8c38edc7352ec3924da9b">boost::operator!=</a> (local_shared_ptr&lt; T &gt; const &amp;p, std::nullptr_t) noexcept</td></tr>
+<tr class="separator:a261092116fe8c38edc7352ec3924da9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2502c4396a7626eb4af26e65449fb61f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a2502c4396a7626eb4af26e65449fb61f"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a2502c4396a7626eb4af26e65449fb61f">boost::operator!=</a> (std::nullptr_t, local_shared_ptr&lt; T &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:a2502c4396a7626eb4af26e65449fb61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87cb96b07bc6d844c74b7b81c0f29725"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a87cb96b07bc6d844c74b7b81c0f29725"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a87cb96b07bc6d844c74b7b81c0f29725">boost::operator==</a> (local_shared_ptr&lt; T &gt; const &amp;a, shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:a87cb96b07bc6d844c74b7b81c0f29725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1808bb9468694ce56d2cb81194aefd1b"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a1808bb9468694ce56d2cb81194aefd1b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a1808bb9468694ce56d2cb81194aefd1b">boost::operator!=</a> (local_shared_ptr&lt; T &gt; const &amp;a, shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:a1808bb9468694ce56d2cb81194aefd1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2477ba96e8ff1922e1e1c381f7644852"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a2477ba96e8ff1922e1e1c381f7644852"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a2477ba96e8ff1922e1e1c381f7644852">boost::operator==</a> (shared_ptr&lt; T &gt; const &amp;a, local_shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:a2477ba96e8ff1922e1e1c381f7644852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb20cba11fd8110c6e084a4c4ddd0aae"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:adb20cba11fd8110c6e084a4c4ddd0aae"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#adb20cba11fd8110c6e084a4c4ddd0aae">boost::operator!=</a> (shared_ptr&lt; T &gt; const &amp;a, local_shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:adb20cba11fd8110c6e084a4c4ddd0aae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af43ce84c057e049a22f3424415227972"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:af43ce84c057e049a22f3424415227972"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#af43ce84c057e049a22f3424415227972">boost::operator&lt;</a> (local_shared_ptr&lt; T &gt; const &amp;a, local_shared_ptr&lt; U &gt; const &amp;b) noexcept</td></tr>
+<tr class="separator:af43ce84c057e049a22f3424415227972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ac706cf3a6c17a4893a2c11d6ba33c6"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a6ac706cf3a6c17a4893a2c11d6ba33c6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a6ac706cf3a6c17a4893a2c11d6ba33c6">boost::swap</a> (local_shared_ptr&lt; T &gt; &amp;a, local_shared_ptr&lt; T &gt; &amp;b) noexcept</td></tr>
+<tr class="separator:a6ac706cf3a6c17a4893a2c11d6ba33c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad62a2fad1da1b22f1560cf52194e6b60"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ad62a2fad1da1b22f1560cf52194e6b60"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ad62a2fad1da1b22f1560cf52194e6b60">boost::static_pointer_cast</a> (local_shared_ptr&lt; U &gt; const &amp;r) noexcept</td></tr>
+<tr class="separator:ad62a2fad1da1b22f1560cf52194e6b60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96dd435b8ab6fcb8028447e2d4240c8d"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a96dd435b8ab6fcb8028447e2d4240c8d"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a96dd435b8ab6fcb8028447e2d4240c8d">boost::const_pointer_cast</a> (local_shared_ptr&lt; U &gt; const &amp;r) noexcept</td></tr>
+<tr class="separator:a96dd435b8ab6fcb8028447e2d4240c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195c0228a56e659f8d4f61e004fd9530"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a195c0228a56e659f8d4f61e004fd9530"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a195c0228a56e659f8d4f61e004fd9530">boost::dynamic_pointer_cast</a> (local_shared_ptr&lt; U &gt; const &amp;r) noexcept</td></tr>
+<tr class="separator:a195c0228a56e659f8d4f61e004fd9530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4d41b183adef033457e7b809a405983"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:ab4d41b183adef033457e7b809a405983"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab4d41b183adef033457e7b809a405983">boost::reinterpret_pointer_cast</a> (local_shared_ptr&lt; U &gt; const &amp;r) noexcept</td></tr>
+<tr class="separator:ab4d41b183adef033457e7b809a405983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3390b55f57c7c951c6093e03fe73a452"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a3390b55f57c7c951c6093e03fe73a452"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a3390b55f57c7c951c6093e03fe73a452">boost::static_pointer_cast</a> (local_shared_ptr&lt; U &gt; &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:a3390b55f57c7c951c6093e03fe73a452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb51166e737afc410f34b69b022e2f6"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:acfb51166e737afc410f34b69b022e2f6"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#acfb51166e737afc410f34b69b022e2f6">boost::const_pointer_cast</a> (local_shared_ptr&lt; U &gt; &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:acfb51166e737afc410f34b69b022e2f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e89e6f3b8723ab6f3b78fde8be5bd75"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:a1e89e6f3b8723ab6f3b78fde8be5bd75"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a1e89e6f3b8723ab6f3b78fde8be5bd75">boost::dynamic_pointer_cast</a> (local_shared_ptr&lt; U &gt; &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:a1e89e6f3b8723ab6f3b78fde8be5bd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb53aa4690d6942efc85af89804a75d7"><td class="memTemplParams" colspan="2">template&lt;class T , class U &gt; </td></tr>
+<tr class="memitem:adb53aa4690d6942efc85af89804a75d7"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#adb53aa4690d6942efc85af89804a75d7">boost::reinterpret_pointer_cast</a> (local_shared_ptr&lt; U &gt; &amp;&amp;r) noexcept</td></tr>
+<tr class="separator:adb53aa4690d6942efc85af89804a75d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad69c5a30a54497e317ff7f396be04ed9"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad69c5a30a54497e317ff7f396be04ed9"><td class="memTemplItemLeft" align="right" valign="top">local_shared_ptr&lt; T &gt;::element_type *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ad69c5a30a54497e317ff7f396be04ed9">boost::get_pointer</a> (local_shared_ptr&lt; T &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:ad69c5a30a54497e317ff7f396be04ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa143fdd918a0660f2d4eab56177f0f41"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classE.html">E</a> , class T , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; </td></tr>
+<tr class="memitem:aa143fdd918a0660f2d4eab56177f0f41"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; <a class="el" href="classE.html">E</a>, T &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aa143fdd918a0660f2d4eab56177f0f41">boost::operator&lt;&lt;</a> (std::basic_ostream&lt; <a class="el" href="classE.html">E</a>, T &gt; &amp;os, local_shared_ptr&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a57cec4137b614c87cb4e24a3d003a3e0">Y</a> &gt; const &amp;p)</td></tr>
+<tr class="separator:aa143fdd918a0660f2d4eab56177f0f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a78b6b799758ee309056395a4fb2775"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classD.html">D</a> , class T &gt; </td></tr>
+<tr class="memitem:a6a78b6b799758ee309056395a4fb2775"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classD.html">D</a> *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">boost::get_deleter</a> (local_shared_ptr&lt; T &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:a6a78b6b799758ee309056395a4fb2775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0531d12f61588763f59dc4b508dae1fe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0531d12f61588763f59dc4b508dae1fe"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a0531d12f61588763f59dc4b508dae1fe">boost::hash_value</a> (local_shared_ptr&lt; T &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:a0531d12f61588763f59dc4b508dae1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_dce58d0d071335e7b898537fe26149d3.html">smart_ptr</a></li><li class="navelem"><a class="el" href="local__shared__ptr_8hpp.html">local_shared_ptr.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

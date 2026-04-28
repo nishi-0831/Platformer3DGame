@@ -127,23 +127,27 @@ $(document).ready(function(){initNavTree('GameTime_8cpp_source.html',''); initRe
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    {</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        deltaTime_ = (current_.QuadPart - previous_.QuadPart) * MICRO_TO_SEC;</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        previous_  = current_;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (waitFrame_ != 0)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">if</span> (deltaTime_ &gt; MAX_DELTA_TIME)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            waitFrame_--;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>            deltaTime_ = MAX_DELTA_TIME;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (waitFrame_ != 0)</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            <a class="code hl_function" href="classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c">Game::UpdateFrame</a>();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            waitFrame_--;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    }</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    timeEndPeriod(1);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>}</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keywordtype">double</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">mtgb::Time::deltaTime_</a> {};</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">const</span> LONGLONG <a class="code hl_variable" href="classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646">mtgb::Time::SEC_TO_MICRO</a> { 1000000 };</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">mtgb::Time::MICRO_TO_SEC</a> { 0.0000001 };</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">mtgb::Time::waitFrame_</a> { 0 };</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            <a class="code hl_function" href="classmtgb_1_1Game.html#af3e67eb32ff2dca48fa29ab66123e71c">Game::UpdateFrame</a>();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    timeEndPeriod(1);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>}</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keywordtype">double</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#a576b6e83d6cc29ba19aa8d671f8e608d">mtgb::Time::deltaTime_</a> {};</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">const</span> LONGLONG <a class="code hl_variable" href="classmtgb_1_1Time.html#a5acad02423449acca0f6ad975e054646">mtgb::Time::SEC_TO_MICRO</a> { 1000000 };</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">mtgb::Time::MICRO_TO_SEC</a> { 0.0000001 };</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">mtgb::Time::waitFrame_</a> { 0 };</div>
 <div class="ttc" id="aDebug_8h_html"><div class="ttname"><a href="Debug_8h.html">Debug.h</a></div></div>
 <div class="ttc" id="aGameTime_8h_html"><div class="ttname"><a href="GameTime_8h.html">GameTime.h</a></div></div>
 <div class="ttc" id="aGame_8h_html"><div class="ttname"><a href="Game_8h.html">Game.h</a></div></div>
@@ -157,7 +161,7 @@ $(document).ready(function(){initNavTree('GameTime_8cpp_source.html',''); initRe
 <div class="ttc" id="aclassmtgb_1_1Time_html_a96233c8e9dbb2fe07cfc51a0285c91bf"><div class="ttname"><a href="classmtgb_1_1Time.html#a96233c8e9dbb2fe07cfc51a0285c91bf">mtgb::Time::Time</a></div><div class="ttdeci">Time()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8cpp_source.html#l00007">GameTime.cpp:7</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_abe2f8ab31a0ed55ff7de7b793557461f"><div class="ttname"><a href="classmtgb_1_1Time.html#abe2f8ab31a0ed55ff7de7b793557461f">mtgb::Time::~Time</a></div><div class="ttdeci">~Time()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8cpp_source.html#l00013">GameTime.cpp:13</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_ac6a43af3667cc1ec543134dbea8718f9"><div class="ttname"><a href="classmtgb_1_1Time.html#ac6a43af3667cc1ec543134dbea8718f9">mtgb::Time::MICRO_TO_SEC</a></div><div class="ttdeci">static const double MICRO_TO_SEC</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00036">GameTime.h:36</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Time_html_ad57daec756b799bafc2050c2654b33ad"><div class="ttname"><a href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">mtgb::Time::waitFrame_</a></div><div class="ttdeci">static unsigned int waitFrame_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00042">GameTime.h:42</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_ad57daec756b799bafc2050c2654b33ad"><div class="ttname"><a href="classmtgb_1_1Time.html#ad57daec756b799bafc2050c2654b33ad">mtgb::Time::waitFrame_</a></div><div class="ttdeci">static unsigned int waitFrame_</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00043">GameTime.h:43</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

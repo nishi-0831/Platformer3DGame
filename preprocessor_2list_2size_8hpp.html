@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: size.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('preprocessor_2list_2size_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">preprocessor/list/size.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="preprocessor_2config_2config_8hpp_source.html">boost/preprocessor/config/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="arithmetic_2inc_8hpp_source.html">boost/preprocessor/arithmetic/inc.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iif_8hpp_source.html">boost/preprocessor/control/iif.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="control_2while_8hpp_source.html">boost/preprocessor/control/while.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2facilities_2identity_8hpp_source.html">boost/preprocessor/facilities/identity.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2list_2adt_8hpp_source.html">boost/preprocessor/list/adt.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="tuple_2elem_8hpp_source.html">boost/preprocessor/tuple/elem.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="rem_8hpp_source.html">boost/preprocessor/tuple/rem.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+preprocessor/list/size.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="preprocessor_2list_2size_8hpp__incl.svg" width="3204" height="1019"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="preprocessor_2list_2size_8hpp__dep__incl.svg" width="144" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="preprocessor_2list_2size_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a560d5ae7da2b912f3a641523fbc62cc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a560d5ae7da2b912f3a641523fbc62cc5">BOOST_PP_LIST_SIZE</a>(list)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(list),<a class="el" href="preprocessor_2list_2size_8hpp.html#a91d7f2c04ea3e18d468b3d5b57e513ed">BOOST_PP_LIST_SIZE_S</a>,<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(0,1))(list)</td></tr>
+<tr class="separator:a560d5ae7da2b912f3a641523fbc62cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d7f2c04ea3e18d468b3d5b57e513ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a91d7f2c04ea3e18d468b3d5b57e513ed">BOOST_PP_LIST_SIZE_S</a>(list)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a12869e4a83ac7f0180651a3276f00993">BOOST_PP_LIST_SIZE_DO</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(list))</td></tr>
+<tr class="separator:a91d7f2c04ea3e18d468b3d5b57e513ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12869e4a83ac7f0180651a3276f00993"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a12869e4a83ac7f0180651a3276f00993">BOOST_PP_LIST_SIZE_DO</a>(list)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a94c29d7382719beb5edb551f1a2452c1">BOOST_PP_LIST_SIZE_I</a>(list)</td></tr>
+<tr class="separator:a12869e4a83ac7f0180651a3276f00993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94c29d7382719beb5edb551f1a2452c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a94c29d7382719beb5edb551f1a2452c1">BOOST_PP_LIST_SIZE_I</a>(list)&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 0, BOOST_PP_WHILE(<a class="el" href="preprocessor_2list_2size_8hpp.html#a9eccabe1c0a3abeccafadee3c5735dbb">BOOST_PP_LIST_SIZE_P</a>, <a class="el" href="preprocessor_2list_2size_8hpp.html#aa2cf1b6e2225784d32c7214125a82cc2">BOOST_PP_LIST_SIZE_O</a>, (1, list)))</td></tr>
+<tr class="separator:a94c29d7382719beb5edb551f1a2452c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eccabe1c0a3abeccafadee3c5735dbb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a9eccabe1c0a3abeccafadee3c5735dbb">BOOST_PP_LIST_SIZE_P</a>(d,  rl)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#ae7a0c715dc069eb18a34ac35d3c5d828">BOOST_PP_LIST_SIZE_P_I</a>(<a class="el" href="rem_8hpp.html#a611384ba10b938e57f394bd5608751e5">BOOST_PP_TUPLE_REM_2</a> rl)</td></tr>
+<tr class="separator:a9eccabe1c0a3abeccafadee3c5735dbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a0c715dc069eb18a34ac35d3c5d828"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#ae7a0c715dc069eb18a34ac35d3c5d828">BOOST_PP_LIST_SIZE_P_I</a>(im)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a4f223878c9f7f7263bae40fdd8457b5a">BOOST_PP_LIST_SIZE_P_II</a>(im)</td></tr>
+<tr class="separator:ae7a0c715dc069eb18a34ac35d3c5d828"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f223878c9f7f7263bae40fdd8457b5a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a4f223878c9f7f7263bae40fdd8457b5a">BOOST_PP_LIST_SIZE_P_II</a>(r,  l)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(l)</td></tr>
+<tr class="separator:a4f223878c9f7f7263bae40fdd8457b5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2cf1b6e2225784d32c7214125a82cc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#aa2cf1b6e2225784d32c7214125a82cc2">BOOST_PP_LIST_SIZE_O</a>(d,  rl)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a55613e2a66c99b6907790918bcbae0f9">BOOST_PP_LIST_SIZE_O_I</a>(<a class="el" href="rem_8hpp.html#a611384ba10b938e57f394bd5608751e5">BOOST_PP_TUPLE_REM_2</a> rl)</td></tr>
+<tr class="separator:aa2cf1b6e2225784d32c7214125a82cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55613e2a66c99b6907790918bcbae0f9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a55613e2a66c99b6907790918bcbae0f9">BOOST_PP_LIST_SIZE_O_I</a>(im)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a26da1ec0a6cb60ee493142f1bedd307a">BOOST_PP_LIST_SIZE_O_II</a>(im)</td></tr>
+<tr class="separator:a55613e2a66c99b6907790918bcbae0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26da1ec0a6cb60ee493142f1bedd307a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a26da1ec0a6cb60ee493142f1bedd307a">BOOST_PP_LIST_SIZE_O_II</a>(r,  l)&#160;&#160;&#160;(<a class="el" href="arithmetic_2inc_8hpp.html#aef3bad1b60f54cf20acf665029f6b458">BOOST_PP_INC</a>(r), <a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(l))</td></tr>
+<tr class="separator:a26da1ec0a6cb60ee493142f1bedd307a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af233a1487c4b14ced6ca3f3b7db2bb1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#af233a1487c4b14ced6ca3f3b7db2bb1f">BOOST_PP_LIST_SIZE_D</a>(d,  list)&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(list),<a class="el" href="preprocessor_2list_2size_8hpp.html#a4b6a37a4a92ffb7b617f899661b3fe47">BOOST_PP_LIST_SIZE_S_D</a>,<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(0,2))(d,list)</td></tr>
+<tr class="separator:af233a1487c4b14ced6ca3f3b7db2bb1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b6a37a4a92ffb7b617f899661b3fe47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a4b6a37a4a92ffb7b617f899661b3fe47">BOOST_PP_LIST_SIZE_S_D</a>(d,  list)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a12d405f34f893b6dad591a57083ad3ac">BOOST_PP_LIST_SIZE_DO_D</a>(d,<a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(list))</td></tr>
+<tr class="separator:a4b6a37a4a92ffb7b617f899661b3fe47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12d405f34f893b6dad591a57083ad3ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a12d405f34f893b6dad591a57083ad3ac">BOOST_PP_LIST_SIZE_DO_D</a>(d,  list)&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a8fc3010c66efd60b6312a66794e5b206">BOOST_PP_LIST_SIZE_D_I</a>(d, list)</td></tr>
+<tr class="separator:a12d405f34f893b6dad591a57083ad3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc3010c66efd60b6312a66794e5b206"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="preprocessor_2list_2size_8hpp.html#a8fc3010c66efd60b6312a66794e5b206">BOOST_PP_LIST_SIZE_D_I</a>(d,  list)&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 0, BOOST_PP_WHILE_ ## d(<a class="el" href="preprocessor_2list_2size_8hpp.html#a9eccabe1c0a3abeccafadee3c5735dbb">BOOST_PP_LIST_SIZE_P</a>, <a class="el" href="preprocessor_2list_2size_8hpp.html#aa2cf1b6e2225784d32c7214125a82cc2">BOOST_PP_LIST_SIZE_O</a>, (1, list)))</td></tr>
+<tr class="separator:a8fc3010c66efd60b6312a66794e5b206"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a560d5ae7da2b912f3a641523fbc62cc5" name="a560d5ae7da2b912f3a641523fbc62cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560d5ae7da2b912f3a641523fbc62cc5">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(list),<a class="el" href="preprocessor_2list_2size_8hpp.html#a91d7f2c04ea3e18d468b3d5b57e513ed">BOOST_PP_LIST_SIZE_S</a>,<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(0,1))(list)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00073">73</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af233a1487c4b14ced6ca3f3b7db2bb1f" name="af233a1487c4b14ced6ca3f3b7db2bb1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af233a1487c4b14ced6ca3f3b7db2bb1f">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="iif_8hpp.html#adf26de1282939d1dbca6fdf095b10fcf">BOOST_PP_IIF</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(list),<a class="el" href="preprocessor_2list_2size_8hpp.html#a4b6a37a4a92ffb7b617f899661b3fe47">BOOST_PP_LIST_SIZE_S_D</a>,<a class="el" href="preprocessor_2facilities_2identity_8hpp.html#a339b06d0088941fc7d726324c6477e6b">BOOST_PP_IDENTITY_N</a>(0,2))(d,list)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00101">101</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8fc3010c66efd60b6312a66794e5b206" name="a8fc3010c66efd60b6312a66794e5b206"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fc3010c66efd60b6312a66794e5b206">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_D_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_D_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 0, BOOST_PP_WHILE_ ## d(<a class="el" href="preprocessor_2list_2size_8hpp.html#a9eccabe1c0a3abeccafadee3c5735dbb">BOOST_PP_LIST_SIZE_P</a>, <a class="el" href="preprocessor_2list_2size_8hpp.html#aa2cf1b6e2225784d32c7214125a82cc2">BOOST_PP_LIST_SIZE_O</a>, (1, list)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00108">108</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a12869e4a83ac7f0180651a3276f00993" name="a12869e4a83ac7f0180651a3276f00993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12869e4a83ac7f0180651a3276f00993">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_DO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_DO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a94c29d7382719beb5edb551f1a2452c1">BOOST_PP_LIST_SIZE_I</a>(list)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00079">79</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a12d405f34f893b6dad591a57083ad3ac" name="a12d405f34f893b6dad591a57083ad3ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12d405f34f893b6dad591a57083ad3ac">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_DO_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_DO_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a8fc3010c66efd60b6312a66794e5b206">BOOST_PP_LIST_SIZE_D_I</a>(d, list)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a94c29d7382719beb5edb551f1a2452c1" name="a94c29d7382719beb5edb551f1a2452c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94c29d7382719beb5edb551f1a2452c1">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="tuple_2elem_8hpp.html#a9ef444fea4d15a0e92e2515ea08578c1">BOOST_PP_TUPLE_ELEM</a>(2, 0, BOOST_PP_WHILE(<a class="el" href="preprocessor_2list_2size_8hpp.html#a9eccabe1c0a3abeccafadee3c5735dbb">BOOST_PP_LIST_SIZE_P</a>, <a class="el" href="preprocessor_2list_2size_8hpp.html#aa2cf1b6e2225784d32c7214125a82cc2">BOOST_PP_LIST_SIZE_O</a>, (1, list)))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00080">80</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa2cf1b6e2225784d32c7214125a82cc2" name="aa2cf1b6e2225784d32c7214125a82cc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cf1b6e2225784d32c7214125a82cc2">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_O</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_O</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rl&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a55613e2a66c99b6907790918bcbae0f9">BOOST_PP_LIST_SIZE_O_I</a>(<a class="el" href="rem_8hpp.html#a611384ba10b938e57f394bd5608751e5">BOOST_PP_TUPLE_REM_2</a> rl)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00094">94</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a55613e2a66c99b6907790918bcbae0f9" name="a55613e2a66c99b6907790918bcbae0f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55613e2a66c99b6907790918bcbae0f9">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_O_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_O_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">im</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a26da1ec0a6cb60ee493142f1bedd307a">BOOST_PP_LIST_SIZE_O_II</a>(im)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a26da1ec0a6cb60ee493142f1bedd307a" name="a26da1ec0a6cb60ee493142f1bedd307a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26da1ec0a6cb60ee493142f1bedd307a">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_O_II</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_O_II</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">l&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(<a class="el" href="arithmetic_2inc_8hpp.html#aef3bad1b60f54cf20acf665029f6b458">BOOST_PP_INC</a>(r), <a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(l))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9eccabe1c0a3abeccafadee3c5735dbb" name="a9eccabe1c0a3abeccafadee3c5735dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eccabe1c0a3abeccafadee3c5735dbb">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_P</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_P</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">rl&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#ae7a0c715dc069eb18a34ac35d3c5d828">BOOST_PP_LIST_SIZE_P_I</a>(<a class="el" href="rem_8hpp.html#a611384ba10b938e57f394bd5608751e5">BOOST_PP_TUPLE_REM_2</a> rl)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae7a0c715dc069eb18a34ac35d3c5d828" name="ae7a0c715dc069eb18a34ac35d3c5d828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a0c715dc069eb18a34ac35d3c5d828">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_P_I</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_P_I</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">im</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a4f223878c9f7f7263bae40fdd8457b5a">BOOST_PP_LIST_SIZE_P_II</a>(im)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00087">87</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4f223878c9f7f7263bae40fdd8457b5a" name="a4f223878c9f7f7263bae40fdd8457b5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f223878c9f7f7263bae40fdd8457b5a">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_P_II</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_P_II</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">r, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">l&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2adt_8hpp.html#a617a8ce125ab59cd614f0ba9b1855626">BOOST_PP_LIST_IS_CONS</a>(l)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00088">88</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a91d7f2c04ea3e18d468b3d5b57e513ed" name="a91d7f2c04ea3e18d468b3d5b57e513ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91d7f2c04ea3e18d468b3d5b57e513ed">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_S</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_S</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a12869e4a83ac7f0180651a3276f00993">BOOST_PP_LIST_SIZE_DO</a>(<a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(list))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4b6a37a4a92ffb7b617f899661b3fe47" name="a4b6a37a4a92ffb7b617f899661b3fe47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b6a37a4a92ffb7b617f899661b3fe47">&#9670;&#160;</a></span>BOOST_PP_LIST_SIZE_S_D</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_LIST_SIZE_S_D</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">d, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">list&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;<a class="el" href="preprocessor_2list_2size_8hpp.html#a12d405f34f893b6dad591a57083ad3ac">BOOST_PP_LIST_SIZE_DO_D</a>(d,<a class="el" href="preprocessor_2list_2adt_8hpp.html#a6ecb4ffadd1254099691e830b81bfcf2">BOOST_PP_LIST_REST</a>(list))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="preprocessor_2list_2size_8hpp_source.html">preprocessor/list/size.hpp</a> の <a class="el" href="preprocessor_2list_2size_8hpp_source.html#l00102">102</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f59814f4c9a8c50c3d3ea0e21fb94ec2.html">preprocessor</a></li><li class="navelem"><a class="el" href="dir_ed019332e517b7f4576cf9f5cb78bac0.html">list</a></li><li class="navelem"><a class="el" href="preprocessor_2list_2size_8hpp.html">size.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

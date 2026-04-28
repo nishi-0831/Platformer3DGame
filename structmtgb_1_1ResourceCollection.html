@@ -375,9 +375,10 @@ template&lt;typename Type &gt; </div>
 <p class="definition"> <a class="el" href="ResourceCollection_8h_source.html">ResourceCollection.h</a> の <a class="el" href="ResourceCollection_8h_source.html#l00033">33</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   34</span>        {</div>
 <div class="line"><span class="lineno">   35</span>            <span class="keyword">auto</span> itr = <a class="code hl_variable" href="structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f">resourceCollection_</a>.find(<span class="keyword">typeid</span>(Type));</div>
-<div class="line"><span class="lineno">   36</span>            assert(itr != <a class="code hl_variable" href="structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f">resourceCollection_</a>.end() &amp;&amp; <span class="stringliteral">&quot;指定された型のリソースが見つかりません&quot;</span>);</div>
+<div class="line"><span class="lineno">   36</span>            <a class="code hl_struct" href="structassert.html">assert</a>(itr != <a class="code hl_variable" href="structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f">resourceCollection_</a>.end() &amp;&amp; <span class="stringliteral">&quot;指定された型のリソースが見つかりません&quot;</span>);</div>
 <div class="line"><span class="lineno">   37</span>            <span class="keywordflow">return</span> *<span class="keyword">dynamic_cast&lt;</span>Type*<span class="keyword">&gt;</span>(itr-&gt;second);</div>
 <div class="line"><span class="lineno">   38</span>        }</div>
+<div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ResourceCollection_8h_source.html#l00016">resourceCollection_</a>.</p>
 
@@ -527,10 +528,17 @@ template&lt;typename Type &gt; </div>
 
 <p class="definition"> <a class="el" href="ResourceCollection_8cpp_source.html">ResourceCollection.cpp</a> の <a class="el" href="ResourceCollection_8cpp_source.html#l00014">14</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
-<div class="line"><span class="lineno">   16</span>    std::swap(<a class="code hl_variable" href="structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f">resourceCollection_</a>, _other.resourceCollection_);</div>
+<div class="line"><span class="lineno">   16</span>    <a class="code hl_function" href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a>(<a class="code hl_variable" href="structmtgb_1_1ResourceCollection.html#ae21dc31217fa735224b4d4abe198268f">resourceCollection_</a>, _other.resourceCollection_);</div>
 <div class="line"><span class="lineno">   17</span>}</div>
+<div class="ttc" id="anamespacestd_html_a4874fd00297ff5aef2872379cb521783"><div class="ttname"><a href="namespacestd.html#a4874fd00297ff5aef2872379cb521783">std::swap</a></div><div class="ttdeci">NLOHMANN_BASIC_JSON_TPL_DECLARATION void swap(nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j1, nlohmann::NLOHMANN_BASIC_JSON_TPL &amp;j2) noexcept(//NOLINT(readability-inconsistent-declaration-parameter-name, cert-dcl58-cpp) is_nothrow_move_constructible&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value &amp;&amp;//NOLINT(misc-redundant-expression, cppcoreguidelines-noexcept-swap, performance-noexcept-swap) is_nothrow_move_assignable&lt; nlohmann::NLOHMANN_BASIC_JSON_TPL &gt;::value)</div><div class="ttdoc">exchanges the values of two JSON objects</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l05283">json.hpp:5283</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="ResourceCollection_8h_source.html#l00016">resourceCollection_</a>.</p>
+<p class="reference">参照先 <a class="el" href="ResourceCollection_8h_source.html#l00016">resourceCollection_</a>, <a class="el" href="json_8hpp_source.html#l05283">std::swap()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structmtgb_1_1ResourceCollection_a1b5be1d185c1db86b4b34584f6156d10_cgraph.svg" width="332" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
 
 </div>
 </div>

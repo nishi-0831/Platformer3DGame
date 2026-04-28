@@ -1,0 +1,188 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: hash_range.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('hash__range_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">hash_range.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="container__hash_2hash__fwd_8hpp_source.html">boost/container_hash/hash_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mulx_8hpp_source.html">boost/container_hash/detail/mulx.hpp</a>&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;climits&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+hash_range.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hash__range_8hpp__incl.svg" width="938" height="198"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="hash__range_8hpp__dep__incl.svg" width="532" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="hash__range_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1hash__detail_1_1is__char__type.html">boost::hash_detail::is_char_type&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1hash__detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html">boost::hash_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a91929eef39b590b66b2413f132231378"><td class="memTemplParams" colspan="2">template&lt;class It &gt; </td></tr>
+<tr class="memitem:a91929eef39b590b66b2413f132231378"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt;!is_char_type&lt; typenamestd::iterator_traits&lt; It &gt;::value_type &gt;::value, std::size_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a91929eef39b590b66b2413f132231378">boost::hash_detail::hash_range</a> (std::size_t seed, It first, It last)</td></tr>
+<tr class="separator:a91929eef39b590b66b2413f132231378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47aa5de5800a6f7c1d71fc6ca531cb1"><td class="memTemplParams" colspan="2">template&lt;class It &gt; </td></tr>
+<tr class="memitem:ab47aa5de5800a6f7c1d71fc6ca531cb1"><td class="memTemplItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#ab47aa5de5800a6f7c1d71fc6ca531cb1">boost::hash_detail::read32le</a> (It p)</td></tr>
+<tr class="separator:ab47aa5de5800a6f7c1d71fc6ca531cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba53e57b27bd3142e51fc9aa4bb2fd82"><td class="memItemLeft" align="right" valign="top">std::uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#aba53e57b27bd3142e51fc9aa4bb2fd82">boost::hash_detail::mul32</a> (std::uint32_t x, std::uint32_t y)</td></tr>
+<tr class="separator:aba53e57b27bd3142e51fc9aa4bb2fd82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5475ff87bc370f19702ed9f529109141"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a5475ff87bc370f19702ed9f529109141">boost::hash_detail::while</a> (n &gt;=4)</td></tr>
+<tr class="separator:a5475ff87bc370f19702ed9f529109141"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa938ef101433e63895c68f40e335008c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#aa938ef101433e63895c68f40e335008c">boost::hash_detail::if</a> (n &gt;=1)</td></tr>
+<tr class="separator:aa938ef101433e63895c68f40e335008c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e15810598b8050c13aae72af67c1a79"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a8e15810598b8050c13aae72af67c1a79">boost::hash_detail::for</a> (;;)</td></tr>
+<tr class="separator:a8e15810598b8050c13aae72af67c1a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6453d917bd9af506d67e76ff007cb775"><td class="memTemplParams" colspan="2">template&lt;class It &gt; </td></tr>
+<tr class="memitem:a6453d917bd9af506d67e76ff007cb775"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; is_char_type&lt; typenamestd::iterator_traits&lt; It &gt;::value_type &gt;::value &amp;&amp;std::is_same&lt; typenamestd::iterator_traits&lt; It &gt;::iterator_category, std::random_access_iterator_tag &gt;::value &amp;&amp;(std::numeric_limits&lt; std::size_t &gt;::digits &gt;32), std::size_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a6453d917bd9af506d67e76ff007cb775">boost::hash_detail::hash_range</a> (std::size_t seed, It first, It last)</td></tr>
+<tr class="separator:a6453d917bd9af506d67e76ff007cb775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb34985be8638bc0f103badd3046dea2"><td class="memTemplParams" colspan="2">template&lt;class It &gt; </td></tr>
+<tr class="memitem:adb34985be8638bc0f103badd3046dea2"><td class="memTemplItemLeft" align="right" valign="top">std::enable_if&lt; is_char_type&lt; typenamestd::iterator_traits&lt; It &gt;::value_type &gt;::value &amp;&amp;!std::is_same&lt; typenamestd::iterator_traits&lt; It &gt;::iterator_category, std::random_access_iterator_tag &gt;::value &amp;&amp;(std::numeric_limits&lt; std::size_t &gt;::digits &gt;32), std::size_t &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#adb34985be8638bc0f103badd3046dea2">boost::hash_detail::hash_range</a> (std::size_t seed, It first, It last)</td></tr>
+<tr class="separator:adb34985be8638bc0f103badd3046dea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a49cd3b1067609348df873b31222e19f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a49cd3b1067609348df873b31222e19f9">boost::hash_detail::h</a> = n</td></tr>
+<tr class="separator:a49cd3b1067609348df873b31222e19f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc951ca79def56a6773440e881d77f1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#adc951ca79def56a6773440e881d77f1f">boost::hash_detail::w</a> = q</td></tr>
+<tr class="separator:adc951ca79def56a6773440e881d77f1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a586d09931002455071d139c927bfbbe0"><td class="memItemLeft" align="right" valign="top">std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a586d09931002455071d139c927bfbbe0">boost::hash_detail::v1</a> = 0</td></tr>
+<tr class="separator:a586d09931002455071d139c927bfbbe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33efab4619827a9aa67b5200b5d3b1fa"><td class="memTemplParams" colspan="2">template&lt;class It &gt; </td></tr>
+<tr class="memitem:a33efab4619827a9aa67b5200b5d3b1fa"><td class="memTemplItemLeft" align="right" valign="top">return static_cast&lt; std::uint32_t &gt;(h &amp;0xFFFFFFFF) ^ static_cast&lt; std std::uint64_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1hash__detail.html#a33efab4619827a9aa67b5200b5d3b1fa">boost::hash_detail::read64le</a> (It p)</td></tr>
+<tr class="separator:a33efab4619827a9aa67b5200b5d3b1fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f22d1f35eb71861118a330e99c4db1c2.html">container_hash</a></li><li class="navelem"><a class="el" href="dir_7c5b119d8e278b00b8652c1d4e2d9bec.html">detail</a></li><li class="navelem"><a class="el" href="hash__range_8hpp.html">hash_range.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

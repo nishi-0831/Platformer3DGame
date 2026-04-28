@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1poly__at_1_1result_3_01poly__at_3_01N1_01_4_07SeqRef_08_4 =
+[
+    [ "BOOST_MPL_ASSERT", "structboost_1_1fusion_1_1detail_1_1poly__at_1_1result_3_01poly__at_3_01N1_01_4_07SeqRef_08_4.html#a5cd646cd563c3b7ecbb6483e7bf08f68", null ]
+];

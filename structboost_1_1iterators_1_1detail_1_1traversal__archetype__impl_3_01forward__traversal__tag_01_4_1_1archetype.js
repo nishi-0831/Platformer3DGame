@@ -1,0 +1,5 @@
+var structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01forward__traversal__tag_01_4_1_1archetype =
+[
+    [ "base", "structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01forward__traversal__tag_01_4_1_1archetype.html#ad8710eb2f6f94905e3c8d7aaeecd82d7", null ],
+    [ "archetype", "structboost_1_1iterators_1_1detail_1_1traversal__archetype__impl_3_01forward__traversal__tag_01_4_1_1archetype.html#a2ce0af44946a2b7f7fae17e902b82587", null ]
+];

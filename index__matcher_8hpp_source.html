@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: index_matcher.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index__matcher_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">index_matcher.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="index__matcher_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2003-2022 Joaquin M Lopez Munoz.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Distributed under the Boost Software License, Version 1.0.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * See http://www.boost.org/libs/multi_index for library home page.</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef BOOST_MULTI_INDEX_DETAIL_INDEX_MATCHER_HPP</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define BOOST_MULTI_INDEX_DETAIL_INDEX_MATCHER_HPP</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span> <span class="comment">/* keep it first to prevent nasty warns in MSVC */</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;algorithm&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="core_2noncopyable_8hpp.html">boost/core/noncopyable.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="auto__space_8hpp.html">boost/multi_index/detail/auto_space.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="raw__ptr_8hpp.html">boost/multi_index/detail/raw_ptr.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a>{</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">namespace </span>multi_index{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a>{</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment">/* index_matcher compares a sequence of elements against a</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * base sequence, identifying those elements that belong to the</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * longest subsequence which is ordered with respect to the base.</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * For instance, if the base sequence is:</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> *   0 1 2 3 4 5 6 7 8 9</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="comment"> * and the compared sequence (not necesarilly the same length):</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment"> *   1 4 2 3 0 7 8 9</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="comment"> * the elements of the longest ordered subsequence are:</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> *   1 2 3 7 8 9</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * </span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> * The algorithm for obtaining such a subsequence is called</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> * Patience Sorting, described in ch. 1 of:</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment"> *   Aldous, D., Diaconis, P.: &quot;Longest increasing subsequences: from</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"> *   patience sorting to the Baik-Deift-Johansson Theorem&quot;, Bulletin</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> *   of the American Mathematical Society, vol. 36, no 4, pp. 413-432,</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> *   July 1999.</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> *   http://www.ams.org/bull/1999-36-04/S0273-0979-99-00796-X/</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> *   S0273-0979-99-00796-X.pdf</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment"> * This implementation is not fully generic since it assumes that</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment"> * the sequences given are pointed to by index iterators (having a</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment"> * get_node() memfun.)</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="namespaceboost_1_1multi__index_1_1detail_1_1index__matcher.html">   59</a></span><span class="keyword">namespace </span>index_matcher{</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">/* The algorithm stores the nodes of the base sequence and a number</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment"> * of &quot;piles&quot; that are dynamically updated during the calculation</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"> * stage. From a logical point of view, nodes form an independent</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment"> * sequence from piles. They are stored together so as to minimize</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"> * allocated memory.</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">   68</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ac36a3378eb22e429cc0871dc7f176853">   70</a></span>  <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ac36a3378eb22e429cc0871dc7f176853">entry</a>(<span class="keywordtype">void</span>* node_,std::size_t pos_=0):<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">node</a>(node_),<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a1c27a4ccaaa54d4b9a6a4f810110cc01">pos</a>(pos_){}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">/* node stuff */</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">   74</a></span>  <span class="keywordtype">void</span>*       <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">node</a>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a1c27a4ccaaa54d4b9a6a4f810110cc01">   75</a></span>  std::size_t <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a1c27a4ccaaa54d4b9a6a4f810110cc01">pos</a>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#aa6c4deafaa671395ed57776d454f19e1">   76</a></span>  <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>*      <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#aa6c4deafaa671395ed57776d454f19e1">previous</a>;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">   77</a></span>  <span class="keywordtype">bool</span>        <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">ordered</a>;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">   79</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">less_by_node</a></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html#ad28dd9a52156f4b963ce1974cdac519e">   81</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html#ad28dd9a52156f4b963ce1974cdac519e">operator()</a>(</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>&amp; x,<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>&amp; y)<span class="keyword">const</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">return</span> std::less&lt;void*&gt;()(x.<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">node</a>,y.<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">node</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    }</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  };</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="comment">/* pile stuff */</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">   90</a></span>  std::size_t <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">pile_top</a>;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">   91</a></span>  <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>*      <a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">pile_top_entry</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html">   93</a></span>  <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html">less_by_pile_top</a></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno"><a class="line" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html#ae304e51df6d099d16ca199e3870de0e4">   95</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html#ae304e51df6d099d16ca199e3870de0e4">operator()</a>(</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      <span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>&amp; x,<span class="keyword">const</span> <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>&amp; y)<span class="keyword">const</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keyword">    </span>{</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">return</span> x.<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">pile_top</a>&lt;y.<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">pile_top</a>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  };</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>};</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">/* common code operating on void *&#39;s */</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Allocator&gt;</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">  106</a></span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">algorithm_base</a>:<span class="keyword">private</span> <a class="code hl_class" href="classboost_1_1noncopyable___1_1noncopyable.html">noncopyable</a></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>{</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a3843285efe4e56c7ef22b508b8e515be">  109</a></span>  <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a3843285efe4e56c7ef22b508b8e515be">algorithm_base</a>(<span class="keyword">const</span> Allocator&amp; al,std::size_t <a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>):</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a>(al,<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>(<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>(0),<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>(false)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a578adcab6dd477de668231503cf330c9">  114</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a578adcab6dd477de668231503cf330c9">add</a>(<span class="keywordtype">void</span>* node)</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>]=<a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>(node,<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    ++<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a71b6cf2407bf7ad192ed0ccf7e9e8989">  120</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a71b6cf2407bf7ad192ed0ccf7e9e8989">begin_algorithm</a>()<span class="keyword">const</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">if</span>(!<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>){</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      std::sort(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,<a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">entry::less_by_node</a>());</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>=0;</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a7dc9bc0d57054e7c30c3afc691238737">  129</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a7dc9bc0d57054e7c30c3afc691238737">add_node_to_algorithm</a>(<span class="keywordtype">void</span>* node)<span class="keyword">const</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>* ent=</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>      std::lower_bound(</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>(node),<a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">entry::less_by_node</a>()); <span class="comment">/* localize entry */</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">ordered</a>=<span class="keyword">false</span>;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    std::size_t n=ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a1c27a4ccaaa54d4b9a6a4f810110cc01">pos</a>;                 <span class="comment">/* get its position */</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a> dummy(0);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    dummy.<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">pile_top</a>=n;</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>* pile_ent=                        <span class="comment">/* find the first available pile */</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>      std::lower_bound(                     <span class="comment">/* to stack the entry            */</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        dummy,<a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html">entry::less_by_pile_top</a>());</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    pile_ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">pile_top</a>=n;                   <span class="comment">/* stack the entry */</span></div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    pile_ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">pile_top_entry</a>=ent;        </div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="comment">/* if not the first pile, link entry to top of the preceding pile */</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    <span class="keywordflow">if</span>(pile_ent&gt;&amp;<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[0]){ </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#aa6c4deafaa671395ed57776d454f19e1">previous</a>=(pile_ent-1)-&gt;pile_top_entry;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    }</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    <span class="keywordflow">if</span>(pile_ent==&amp;<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>]){    <span class="comment">/* new pile? */</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>      ++<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">  159</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">finish_algorithm</a>()<span class="keyword">const</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>&gt;0){</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>      <span class="comment">/* Mark those elements which are in their correct position, i.e. those</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span><span class="comment">       * belonging to the longest increasing subsequence. These are those</span></div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="comment">       * elements linked from the top of the last pile.</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">       */</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>      <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>* ent=<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()[<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>-1].<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">pile_top_entry</a>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      <span class="keywordflow">for</span>(std::size_t n=<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>;n--;){</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">ordered</a>=<span class="keyword">true</span>;</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        ent=ent-&gt;<a class="code hl_variable" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#aa6c4deafaa671395ed57776d454f19e1">previous</a>;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      }</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    }</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ade119d34b5bdf6c54679d10ef3e9430e">  175</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ade119d34b5bdf6c54679d10ef3e9430e">is_ordered</a>(<span class="keywordtype">void</span> * node)<span class="keyword">const</span></div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="keywordflow">return</span> std::lower_bound(</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>(),<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()+<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>      <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>(node),<a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">entry::less_by_node</a>())-&gt;ordered;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">  183</a></span>  <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">entry</a>* <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">entries</a>()<span class="keyword">const</span>{<span class="keywordflow">return</span> raw_ptr&lt;entry*&gt;(<a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a>.data());}</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">  185</a></span>  <a class="code hl_struct" href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">auto_space&lt;entry,Allocator&gt;</a> <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">spc</a>;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">  186</a></span>  std::size_t                 <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">size_</a>;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">  187</a></span>  std::size_t                 <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">n_</a>;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">  188</a></span>  <span class="keyword">mutable</span> <span class="keywordtype">bool</span>                <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">sorted</a>;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">  189</a></span>  <span class="keyword">mutable</span> std::size_t         <a class="code hl_variable" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">num_piles</a>;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>};</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span><span class="comment">/* The algorithm has three phases:</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span><span class="comment"> *   - Initialization, during which the nodes of the base sequence are added.</span></div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment"> *   - Execution.</span></div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span><span class="comment"> *   - Results querying, through the is_ordered memfun.</span></div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> Node,<span class="keyword">typename</span> Allocator&gt;</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html">  199</a></span><span class="keyword">class </span><a class="code hl_class" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html">algorithm</a>:<span class="keyword">private</span> <a class="code hl_class" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">algorithm_base</a>&lt;Allocator&gt;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a5f3d1f88ef84911d39b6153663cd5a16">  201</a></span>  <span class="keyword">typedef</span> <a class="code hl_class" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">algorithm_base&lt;Allocator&gt;</a> <a class="code hl_typedef" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a5f3d1f88ef84911d39b6153663cd5a16">super</a>;</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a0125d9051e5d0edfc7b40667b784a0f0">  204</a></span>  <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a0125d9051e5d0edfc7b40667b784a0f0">algorithm</a>(<span class="keyword">const</span> Allocator&amp; al,std::size_t <a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>):<a class="code hl_class" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">super</a>(al,<a class="code hl_function" href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">size</a>){}</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29c254f6af67f96e36b085de5c568141">  206</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29c254f6af67f96e36b085de5c568141">add</a>(Node* node)</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  {</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a578adcab6dd477de668231503cf330c9">super::add</a>(node);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> IndexIterator&gt;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29e05ae2442dfabb75263a6378c4561a">  212</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29e05ae2442dfabb75263a6378c4561a">execute</a>(IndexIterator first,IndexIterator last)<span class="keyword">const</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a71b6cf2407bf7ad192ed0ccf7e9e8989">super::begin_algorithm</a>();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="keywordflow">for</span>(IndexIterator it=first;it!=last;++it){</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>      <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#ae881b8cffdc163e11511d0d53cb84789">add_node_to_algorithm</a>(<a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#aaafeb14f66822972f83c90b88ad2de5c">get_node</a>(it));</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    }</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">super::finish_algorithm</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a635748916964ebe2fd57268ee80ad197">  223</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a635748916964ebe2fd57268ee80ad197">is_ordered</a>(Node* node)<span class="keyword">const</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ade119d34b5bdf6c54679d10ef3e9430e">super::is_ordered</a>(node);</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  }</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#ae881b8cffdc163e11511d0d53cb84789">  229</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#ae881b8cffdc163e11511d0d53cb84789">add_node_to_algorithm</a>(Node* node)<span class="keyword">const</span></div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span><span class="keyword">  </span>{</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a7dc9bc0d57054e7c30c3afc691238737">super::add_node_to_algorithm</a>(node);</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>  }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="keyword">template</span>&lt;<span class="keyword">typename</span> IndexIterator&gt;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno"><a class="line" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#aaafeb14f66822972f83c90b88ad2de5c">  235</a></span>  <span class="keyword">static</span> Node* <a class="code hl_function" href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#aaafeb14f66822972f83c90b88ad2de5c">get_node</a>(IndexIterator it)</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  {</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>Node*<span class="keyword">&gt;</span>(it.get_node());</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>};</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>} <span class="comment">/* namespace multi_index::detail::index_matcher */</span></div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>} <span class="comment">/* namespace multi_index::detail */</span></div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>} <span class="comment">/* namespace multi_index */</span></div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>} <span class="comment">/* namespace boost */</span></div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aauto__space_8hpp_html"><div class="ttname"><a href="auto__space_8hpp.html">auto_space.hpp</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html">boost::multi_index::detail::index_matcher::algorithm_base</a></div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00106">index_matcher.hpp:107</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a3843285efe4e56c7ef22b508b8e515be"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a3843285efe4e56c7ef22b508b8e515be">boost::multi_index::detail::index_matcher::algorithm_base::algorithm_base</a></div><div class="ttdeci">algorithm_base(const Allocator &amp;al, std::size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00109">index_matcher.hpp:109</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a4a09f642212e5de142d1df8610a4a535"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a4a09f642212e5de142d1df8610a4a535">boost::multi_index::detail::index_matcher::algorithm_base::n_</a></div><div class="ttdeci">std::size_t n_</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00187">index_matcher.hpp:187</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a578adcab6dd477de668231503cf330c9"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a578adcab6dd477de668231503cf330c9">boost::multi_index::detail::index_matcher::algorithm_base::add</a></div><div class="ttdeci">void add(void *node)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00114">index_matcher.hpp:114</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a6bc1ab18c607ea05d26bc9c9fcfc8f0e"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a6bc1ab18c607ea05d26bc9c9fcfc8f0e">boost::multi_index::detail::index_matcher::algorithm_base::size_</a></div><div class="ttdeci">std::size_t size_</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00186">index_matcher.hpp:186</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a71b6cf2407bf7ad192ed0ccf7e9e8989"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a71b6cf2407bf7ad192ed0ccf7e9e8989">boost::multi_index::detail::index_matcher::algorithm_base::begin_algorithm</a></div><div class="ttdeci">void begin_algorithm() const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00120">index_matcher.hpp:120</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_a7dc9bc0d57054e7c30c3afc691238737"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#a7dc9bc0d57054e7c30c3afc691238737">boost::multi_index::detail::index_matcher::algorithm_base::add_node_to_algorithm</a></div><div class="ttdeci">void add_node_to_algorithm(void *node) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00129">index_matcher.hpp:129</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_aafb0f89e070d4b28aa8798a4bb55adba"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#aafb0f89e070d4b28aa8798a4bb55adba">boost::multi_index::detail::index_matcher::algorithm_base::spc</a></div><div class="ttdeci">auto_space&lt; entry, Allocator &gt; spc</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00185">index_matcher.hpp:185</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_ad2b3c9ca08cfc54d958a583748a660e8"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ad2b3c9ca08cfc54d958a583748a660e8">boost::multi_index::detail::index_matcher::algorithm_base::num_piles</a></div><div class="ttdeci">std::size_t num_piles</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00189">index_matcher.hpp:189</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_ade119d34b5bdf6c54679d10ef3e9430e"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ade119d34b5bdf6c54679d10ef3e9430e">boost::multi_index::detail::index_matcher::algorithm_base::is_ordered</a></div><div class="ttdeci">bool is_ordered(void *node) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00175">index_matcher.hpp:175</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_ae8fa3fbc9a5f8ccc5b5203ef00bf5277"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#ae8fa3fbc9a5f8ccc5b5203ef00bf5277">boost::multi_index::detail::index_matcher::algorithm_base::finish_algorithm</a></div><div class="ttdeci">void finish_algorithm() const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00159">index_matcher.hpp:159</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_af9c2228b98b8490875355ad2d36f3424"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#af9c2228b98b8490875355ad2d36f3424">boost::multi_index::detail::index_matcher::algorithm_base::sorted</a></div><div class="ttdeci">bool sorted</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00188">index_matcher.hpp:188</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base_html_afe43262c853209eccdf85fd6e69660cb"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm__base.html#afe43262c853209eccdf85fd6e69660cb">boost::multi_index::detail::index_matcher::algorithm_base::entries</a></div><div class="ttdeci">entry * entries() const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00183">index_matcher.hpp:183</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html">boost::multi_index::detail::index_matcher::algorithm</a></div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00199">index_matcher.hpp:200</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_a0125d9051e5d0edfc7b40667b784a0f0"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a0125d9051e5d0edfc7b40667b784a0f0">boost::multi_index::detail::index_matcher::algorithm::algorithm</a></div><div class="ttdeci">algorithm(const Allocator &amp;al, std::size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00204">index_matcher.hpp:204</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_a29c254f6af67f96e36b085de5c568141"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29c254f6af67f96e36b085de5c568141">boost::multi_index::detail::index_matcher::algorithm::add</a></div><div class="ttdeci">void add(Node *node)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00206">index_matcher.hpp:206</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_a29e05ae2442dfabb75263a6378c4561a"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a29e05ae2442dfabb75263a6378c4561a">boost::multi_index::detail::index_matcher::algorithm::execute</a></div><div class="ttdeci">void execute(IndexIterator first, IndexIterator last) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00212">index_matcher.hpp:212</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_a5f3d1f88ef84911d39b6153663cd5a16"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a5f3d1f88ef84911d39b6153663cd5a16">boost::multi_index::detail::index_matcher::algorithm::super</a></div><div class="ttdeci">algorithm_base&lt; Allocator &gt; super</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00201">index_matcher.hpp:201</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_a635748916964ebe2fd57268ee80ad197"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#a635748916964ebe2fd57268ee80ad197">boost::multi_index::detail::index_matcher::algorithm::is_ordered</a></div><div class="ttdeci">bool is_ordered(Node *node) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00223">index_matcher.hpp:223</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_aaafeb14f66822972f83c90b88ad2de5c"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#aaafeb14f66822972f83c90b88ad2de5c">boost::multi_index::detail::index_matcher::algorithm::get_node</a></div><div class="ttdeci">static Node * get_node(IndexIterator it)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00235">index_matcher.hpp:235</a></div></div>
+<div class="ttc" id="aclassboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm_html_ae881b8cffdc163e11511d0d53cb84789"><div class="ttname"><a href="classboost_1_1multi__index_1_1detail_1_1index__matcher_1_1algorithm.html#ae881b8cffdc163e11511d0d53cb84789">boost::multi_index::detail::index_matcher::algorithm::add_node_to_algorithm</a></div><div class="ttdeci">void add_node_to_algorithm(Node *node) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00229">index_matcher.hpp:229</a></div></div>
+<div class="ttc" id="aclassboost_1_1noncopyable___1_1noncopyable_html"><div class="ttname"><a href="classboost_1_1noncopyable___1_1noncopyable.html">boost::noncopyable_::noncopyable</a></div><div class="ttdef"><b>Definition:</b> <a href="core_2noncopyable_8hpp_source.html#l00038">core/noncopyable.hpp:39</a></div></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="acore_2noncopyable_8hpp_html"><div class="ttname"><a href="core_2noncopyable_8hpp.html">noncopyable.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a6fba56e63fab408320679073cd64ce9d"><div class="ttname"><a href="namespaceboost.html#a6fba56e63fab408320679073cd64ce9d">boost::size</a></div><div class="ttdeci">constexpr auto size(const C &amp;c) noexcept(noexcept(c.size())) -&gt; decltype(c.size())</div><div class="ttdef"><b>Definition:</b> <a href="core_2size_8hpp_source.html#l00017">core/size.hpp:17</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="araw__ptr_8hpp_html"><div class="ttname"><a href="raw__ptr_8hpp.html">raw_ptr.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1auto__space_html"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1auto__space.html">boost::multi_index::detail::auto_space</a></div><div class="ttdef"><b>Definition:</b> <a href="auto__space_8hpp_source.html#l00047">auto_space.hpp:48</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node_html"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html">boost::multi_index::detail::index_matcher::entry::less_by_node</a></div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00079">index_matcher.hpp:80</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node_html_ad28dd9a52156f4b963ce1974cdac519e"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__node.html#ad28dd9a52156f4b963ce1974cdac519e">boost::multi_index::detail::index_matcher::entry::less_by_node::operator()</a></div><div class="ttdeci">bool operator()(const entry &amp;x, const entry &amp;y) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00081">index_matcher.hpp:81</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top_html"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html">boost::multi_index::detail::index_matcher::entry::less_by_pile_top</a></div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00093">index_matcher.hpp:94</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top_html_ae304e51df6d099d16ca199e3870de0e4"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_1_1less__by__pile__top.html#ae304e51df6d099d16ca199e3870de0e4">boost::multi_index::detail::index_matcher::entry::less_by_pile_top::operator()</a></div><div class="ttdeci">bool operator()(const entry &amp;x, const entry &amp;y) const</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00095">index_matcher.hpp:95</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html">boost::multi_index::detail::index_matcher::entry</a></div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00068">index_matcher.hpp:69</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_a1c27a4ccaaa54d4b9a6a4f810110cc01"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a1c27a4ccaaa54d4b9a6a4f810110cc01">boost::multi_index::detail::index_matcher::entry::pos</a></div><div class="ttdeci">std::size_t pos</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00075">index_matcher.hpp:75</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_a2781b14354e195989a080442c0fc627f"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a2781b14354e195989a080442c0fc627f">boost::multi_index::detail::index_matcher::entry::ordered</a></div><div class="ttdeci">bool ordered</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00077">index_matcher.hpp:77</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_a35023922fc15eb8140641ac399c326ad"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a35023922fc15eb8140641ac399c326ad">boost::multi_index::detail::index_matcher::entry::node</a></div><div class="ttdeci">void * node</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00074">index_matcher.hpp:74</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_a73686a10d7859492ecc0179a405c8950"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#a73686a10d7859492ecc0179a405c8950">boost::multi_index::detail::index_matcher::entry::pile_top</a></div><div class="ttdeci">std::size_t pile_top</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00090">index_matcher.hpp:90</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_aa6c4deafaa671395ed57776d454f19e1"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#aa6c4deafaa671395ed57776d454f19e1">boost::multi_index::detail::index_matcher::entry::previous</a></div><div class="ttdeci">entry * previous</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00076">index_matcher.hpp:76</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_ab328c71e958a1a11b09cfd997b05cf88"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ab328c71e958a1a11b09cfd997b05cf88">boost::multi_index::detail::index_matcher::entry::pile_top_entry</a></div><div class="ttdeci">entry * pile_top_entry</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00091">index_matcher.hpp:91</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry_html_ac36a3378eb22e429cc0871dc7f176853"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1index__matcher_1_1entry.html#ac36a3378eb22e429cc0871dc7f176853">boost::multi_index::detail::index_matcher::entry::entry</a></div><div class="ttdeci">entry(void *node_, std::size_t pos_=0)</div><div class="ttdef"><b>Definition:</b> <a href="index__matcher_8hpp_source.html#l00070">index_matcher.hpp:70</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_33344a8c4622a0ed72c2f532985429f7.html">multi_index</a></li><li class="navelem"><a class="el" href="dir_4ae83286c6065fe423b4c7db3ae1343c.html">detail</a></li><li class="navelem"><a class="el" href="index__matcher_8hpp.html">index_matcher.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -4,7 +4,7 @@ var classmtgb_1_1WindowContextResource =
     [ "WindowContextResource", "classmtgb_1_1WindowContextResource.html#a4ba279c7ed594388ea5c73153a9a9e94", null ],
     [ "WindowContextResource", "classmtgb_1_1WindowContextResource.html#abb4c7e26f02e99bd32fac7c731fd7ea1", null ],
     [ "GetWindowContext", "classmtgb_1_1WindowContextResource.html#ae3c7d963d4b5d3d5ca59483bff874a98", null ],
-    [ "OnResize", "classmtgb_1_1WindowContextResource.html#aa1afb0355af2bb60bf6a971fee7bf2cf", null ],
+    [ "OnResize", "classmtgb_1_1WindowContextResource.html#a756c8998345bc109275bdcdc60f6f44b", null ],
     [ "operator=", "classmtgb_1_1WindowContextResource.html#a9e53037c77c27b3ee0e8310601c8b4fd", null ],
     [ "Release", "classmtgb_1_1WindowContextResource.html#a7291eab4bf997c9faf22903a78a2956d", null ],
     [ "Reset", "classmtgb_1_1WindowContextResource.html#af7a1be98828072a5924a3bd2240a7589", null ],

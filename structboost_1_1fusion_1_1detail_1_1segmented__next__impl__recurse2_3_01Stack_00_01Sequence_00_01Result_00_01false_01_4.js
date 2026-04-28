@@ -1,0 +1,5 @@
+var structboost_1_1fusion_1_1detail_1_1segmented__next__impl__recurse2_3_01Stack_00_01Sequence_00_01Result_00_01false_01_4 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1segmented__next__impl__recurse2_3_01Stack_00_01Sequence_00_01Result_00_01false_01_4.html#aaff4c2618f0c154b5253d673709c9286", null ],
+    [ "call", "structboost_1_1fusion_1_1detail_1_1segmented__next__impl__recurse2_3_01Stack_00_01Sequence_00_01Result_00_01false_01_4.html#a614ee89eb4847f7500dbae876d1c01c6", null ]
+];

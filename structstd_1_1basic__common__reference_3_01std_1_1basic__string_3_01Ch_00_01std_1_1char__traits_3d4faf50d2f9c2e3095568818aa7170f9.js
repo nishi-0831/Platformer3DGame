@@ -1,0 +1,4 @@
+var structstd_1_1basic__common__reference_3_01std_1_1basic__string_3_01Ch_00_01std_1_1char__traits_3d4faf50d2f9c2e3095568818aa7170f9 =
+[
+    [ "type", "structstd_1_1basic__common__reference_3_01std_1_1basic__string_3_01Ch_00_01std_1_1char__traits_3d4faf50d2f9c2e3095568818aa7170f9.html#ac9423bc985e333d06c1b97d85a8e59f8", null ]
+];

@@ -198,7 +198,7 @@ mtgb::Game 連携図</div>
 <tr class="separator:ae512bb97ff6fdd2af8122b2d3c854389"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a315f86a443273ccc0c278f75620a7d18"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#a315f86a443273ccc0c278f75620a7d18">~Game</a> ()</td></tr>
 <tr class="separator:a315f86a443273ccc0c278f75620a7d18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1de12b363a5f77117915799c3a67e6c"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:aa1de12b363a5f77117915799c3a67e6c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa1de12b363a5f77117915799c3a67e6c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#aa1de12b363a5f77117915799c3a67e6c">Set</a> (<a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a> _systemUpdateType)</td></tr>
 <tr class="separator:aa1de12b363a5f77117915799c3a67e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbe3ba3323b5ad0730d9e9f09ad7f923"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">SetupSystems</a> (const <a class="el" href="classmtgb_1_1Game_1_1RegisterSystemFuncHolder.html">RegisterSystemFuncHolder</a> &amp;_registerSystem)=0</td></tr>
@@ -1113,7 +1113,7 @@ template&lt;typename GameT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">  264</span>                  <span class="keyword">const</span> <span class="keywordtype">bool</span> _isComponentPool,</div>
 <div class="line"><span class="lineno">  265</span>                  <span class="keyword">const</span> <a class="code hl_enumeration" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">SystemUpdateType</a> _systemUpdateType)</div>
 <div class="line"><span class="lineno">  266</span>              {</div>
-<div class="line"><span class="lineno">  267</span>                  assert(</div>
+<div class="line"><span class="lineno">  267</span>                  <a class="code hl_struct" href="structassert.html">assert</a>(</div>
 <div class="line"><span class="lineno">  268</span>                      _pSystem != <span class="keyword">nullptr</span> &amp;&amp; <span class="stringliteral">&quot;ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。&quot;</span></div>
 <div class="line"><span class="lineno">  269</span>                  );</div>
 <div class="line"><span class="lineno">  270</span> </div>
@@ -1159,6 +1159,7 @@ template&lt;typename GameT , typename... Args&gt; </div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_acd5aa6dfc99569b487836ee990a9686b"><div class="ttname"><a href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b">mtgb::Game::SystemUpdateType</a></div><div class="ttdeci">SystemUpdateType</div><div class="ttdoc">システムの更新タイミングタイプ</div><div class="ttdef"><b>Definition:</b> <a href="Game_8h_source.html#l00035">Game.h:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_adfad8bdb99eb4f86de29ac4b7bf22a7f"><div class="ttname"><a href="classmtgb_1_1Game.html#adfad8bdb99eb4f86de29ac4b7bf22a7f">mtgb::Game::ReleaseSystems</a></div><div class="ttdeci">static void ReleaseSystems()</div><div class="ttdoc">システムの解放処理をする</div><div class="ttdef"><b>Definition:</b> <a href="Game_8cpp_source.html#l00142">Game.cpp:142</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Game_html_afbe3ba3323b5ad0730d9e9f09ad7f923"><div class="ttname"><a href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">mtgb::Game::SetupSystems</a></div><div class="ttdeci">virtual void SetupSystems(const RegisterSystemFuncHolder &amp;_registerSystem)=0</div></div>
+<div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078">CYCLE</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5">DONT_CALL_ME</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7">FIXED</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184">FRAME</a>, <a class="el" href="Game_8cpp_source.html#l00134">InitializeSystems()</a>, <a class="el" href="Game_8h_source.html#l00099">pComponentPools_</a>, <a class="el" href="Game_8h_source.html#l00096">pCycleUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00098">pFixedUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00097">pFrameUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00214">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00095">pRegisterSystems_</a>, <a class="el" href="Game_8cpp_source.html#l00142">ReleaseSystems()</a>, <a class="el" href="Game_8cpp_source.html#l00152">RunLoopGameCycle()</a>, <a class="el" href="classmtgb_1_1Game.html#afbe3ba3323b5ad0730d9e9f09ad7f923">SetupSystems()</a>.</p>
 <div class="dynheader">
@@ -1307,7 +1308,7 @@ template&lt;typename GameT , typename... Args&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1331,8 +1332,8 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="fragment"><div class="line"><span class="lineno">  219</span>    {</div>
 <div class="line"><span class="lineno">  220</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;ISystem, T&gt;);</div>
 <div class="line"><span class="lineno">  221</span> </div>
-<div class="line"><span class="lineno">  222</span>        ISystem* pSystem = <span class="keyword">new</span> <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>();</div>
-<div class="line"><span class="lineno">  223</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.push_back(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">  222</span>        ISystem* pSystem = <span class="keyword">new</span> <a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>();</div>
+<div class="line"><span class="lineno">  223</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a35d40f252beb4df4acafd37c7b5255a8">registerOrder_</a>.push_back(<span class="keyword">typeid</span>(T));</div>
 <div class="line"><span class="lineno">  224</span> </div>
 <div class="line"><span class="lineno">  225</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;IComponentPool, T&gt;)</div>
 <div class="line"><span class="lineno">  226</span>        {</div>
@@ -1344,7 +1345,7 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">  232</span>            <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a673c637d5c84d84def22c034967aba5e">pRenderablePools_</a>.push_back(<span class="keyword">dynamic_cast&lt;</span>IRenderableCP*<span class="keyword">&gt;</span>(pSystem));</div>
 <div class="line"><span class="lineno">  233</span>        }</div>
 <div class="line"><span class="lineno">  234</span> </div>
-<div class="line"><span class="lineno">  235</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.insert({ <span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>), pSystem });</div>
+<div class="line"><span class="lineno">  235</span>        <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>.insert({ <span class="keyword">typeid</span>(<a class="code hl_variable" href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">T</a>), pSystem });</div>
 <div class="line"><span class="lineno">  236</span>        <span class="keywordflow">switch</span> (_systemUpdateType)</div>
 <div class="line"><span class="lineno">  237</span>        {</div>
 <div class="line"><span class="lineno">  238</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078">SystemUpdateType::CYCLE</a> :</div>
@@ -1361,10 +1362,10 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 <div class="line"><span class="lineno">  249</span>                <span class="keywordflow">break</span>;</div>
 <div class="line"><span class="lineno">  250</span>        }</div>
 <div class="line"><span class="lineno">  251</span>    }</div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 <div class="ttc" id="aclassmtgb_1_1ComponentFactory_html_a3ba7025f5a17b1c0fc4208eb368ed7bc"><div class="ttname"><a href="classmtgb_1_1ComponentFactory.html#a3ba7025f5a17b1c0fc4208eb368ed7bc">mtgb::ComponentFactory::RegisterComponent</a></div><div class="ttdeci">void RegisterComponent()</div><div class="ttdef"><b>Definition:</b> <a href="ComponentFactory_8h_source.html#l00042">ComponentFactory.h:42</a></div></div>
+<div class="ttc" id="anamespacerun-clang-tidy_html_a445c0c9dc04b69a01f81522656c511e5"><div class="ttname"><a href="namespacerun-clang-tidy.html#a445c0c9dc04b69a01f81522656c511e5">run-clang-tidy.T</a></div><div class="ttdeci">TypeVar T</div><div class="ttdef"><b>Definition:</b> <a href="run-clang-tidy_8py_source.html#l00214">run-clang-tidy.py:214</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00103">componentFactory_</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078">CYCLE</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5">DONT_CALL_ME</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7">FIXED</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184">FRAME</a>, <a class="el" href="Game_8h_source.html#l00099">pComponentPools_</a>, <a class="el" href="Game_8h_source.html#l00096">pCycleUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00098">pFixedUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00097">pFrameUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00214">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00095">pRegisterSystems_</a>, <a class="el" href="Game_8h_source.html#l00100">pRenderablePools_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00042">mtgb::ComponentFactory::RegisterComponent()</a>, <a class="el" href="Game_8h_source.html#l00101">registerOrder_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> (計15項目).</p>
+<p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00103">componentFactory_</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba11729ccb73dc5f4f62d40435e8a0c078">CYCLE</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686ba6c3bc398fab8a28ec70599e05ea901a5">DONT_CALL_ME</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac6e6dc18b53b4c2681394b9d8aefcec7">FIXED</a>, <a class="el" href="classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686bac57e921596445b99ab85558984966184">FRAME</a>, <a class="el" href="Game_8h_source.html#l00099">pComponentPools_</a>, <a class="el" href="Game_8h_source.html#l00096">pCycleUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00098">pFixedUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00097">pFrameUpdateSystems_</a>, <a class="el" href="Game_8h_source.html#l00214">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00095">pRegisterSystems_</a>, <a class="el" href="Game_8h_source.html#l00100">pRenderablePools_</a>, <a class="el" href="ComponentFactory_8h_source.html#l00042">mtgb::ComponentFactory::RegisterComponent()</a>, <a class="el" href="Game_8h_source.html#l00101">registerOrder_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1445,19 +1446,17 @@ template&lt;typename SystemT &gt; </div>
 
 <p class="definition"> <a class="el" href="Game_8h_source.html">Game.h</a> の <a class="el" href="Game_8h_source.html#l00308">308</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">  309</span>    {</div>
-<div class="line"><span class="lineno">  310</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* t = <span class="keyword">typeid</span>(SystemT).name();</div>
+<div class="line"><span class="lineno">  310</span>        ISystem* pSystem { <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>[<span class="keyword">typeid</span>(SystemT)] };</div>
 <div class="line"><span class="lineno">  311</span> </div>
-<div class="line"><span class="lineno">  312</span>        ISystem* pSystem { <a class="code hl_variable" href="classmtgb_1_1Game.html#a75f42d44b202e2ea92bff2b2d9acadf8">pInstance_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Game.html#a111253becac127941567038874d0ea63">pRegisterSystems_</a>[<span class="keyword">typeid</span>(SystemT)] };</div>
+<div class="line"><span class="lineno">  312</span>        <a class="code hl_struct" href="structassert.html">assert</a>(pSystem != <span class="keyword">nullptr</span>);</div>
 <div class="line"><span class="lineno">  313</span> </div>
-<div class="line"><span class="lineno">  314</span>        assert(pSystem != <span class="keyword">nullptr</span>);</div>
-<div class="line"><span class="lineno">  315</span> </div>
-<div class="line"><span class="lineno">  316</span>        <span class="comment">// 基底クラスがISystemであるか</span></div>
-<div class="line"><span class="lineno">  317</span>        <span class="keyword">static_assert</span>(</div>
-<div class="line"><span class="lineno">  318</span>            std::is_base_of&lt;ISystem, SystemT&gt;().value &amp;&amp;</div>
-<div class="line"><span class="lineno">  319</span>            <span class="stringliteral">&quot;ISystemクラスを継承していないクラスのインスタンスは取得できません。&quot;</span></div>
-<div class="line"><span class="lineno">  320</span>        );</div>
-<div class="line"><span class="lineno">  321</span>        <span class="keywordflow">return</span> *(<span class="keyword">dynamic_cast&lt;</span>SystemT*<span class="keyword">&gt;</span>(pSystem));</div>
-<div class="line"><span class="lineno">  322</span>    }</div>
+<div class="line"><span class="lineno">  314</span>        <span class="comment">// 基底クラスがISystemであるか</span></div>
+<div class="line"><span class="lineno">  315</span>        <span class="keyword">static_assert</span>(</div>
+<div class="line"><span class="lineno">  316</span>            std::is_base_of&lt;ISystem, SystemT&gt;().value &amp;&amp;</div>
+<div class="line"><span class="lineno">  317</span>            <span class="stringliteral">&quot;ISystemクラスを継承していないクラスのインスタンスは取得できません。&quot;</span></div>
+<div class="line"><span class="lineno">  318</span>        );</div>
+<div class="line"><span class="lineno">  319</span>        <span class="keywordflow">return</span> *(<span class="keyword">dynamic_cast&lt;</span>SystemT*<span class="keyword">&gt;</span>(pSystem));</div>
+<div class="line"><span class="lineno">  320</span>    }</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Game_8h_source.html#l00214">pInstance_</a>, <a class="el" href="Game_8h_source.html#l00095">pRegisterSystems_</a>.</p>
 

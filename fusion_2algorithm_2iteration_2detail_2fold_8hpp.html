@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: fold.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('fusion_2algorithm_2iteration_2detail_2fold_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">fusion/algorithm/iteration/detail/fold.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+fusion/algorithm/iteration/detail/fold.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="fusion_2algorithm_2iteration_2detail_2fold_8hpp__incl.svg" width="158" height="212"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1fusion_1_1result__of_1_1BOOST__FUSION__FOLD__NAME.html">boost::fusion::result_of::BOOST_FUSION_FOLD_NAME&lt; Seq, State, F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1fusion"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion.html">boost::fusion</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1fusion_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html">boost::fusion::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1fusion_1_1result__of"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1result__of.html">boost::fusion::result_of</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a271f9e57db9b67f794f3efd2d82ef61d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a271f9e57db9b67f794f3efd2d82ef61d">FUSION_HASH</a>&#160;&#160;&#160;#</td></tr>
+<tr class="separator:a271f9e57db9b67f794f3efd2d82ef61d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac060b937352cdab754c1644325546d8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>&#160;&#160;&#160;fold</td></tr>
+<tr class="separator:ac060b937352cdab754c1644325546d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c6c61bdce1efa80c8ddeb031d3a542f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a3c6c61bdce1efa80c8ddeb031d3a542f">BOOST_FUSION_FOLD_IMPL_FIRST_IT_FUNCTION</a>&#160;&#160;&#160;begin</td></tr>
+<tr class="separator:a3c6c61bdce1efa80c8ddeb031d3a542f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae981641d1196617cc8b69fa9e9987b3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ae981641d1196617cc8b69fa9e9987b3d">BOOST_FUSION_FOLD_IMPL_NEXT_IT_FUNCTION</a>&#160;&#160;&#160;next</td></tr>
+<tr class="separator:ae981641d1196617cc8b69fa9e9987b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a588c4cfd787dd61185ac5e422aee6e11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a588c4cfd787dd61185ac5e422aee6e11">BOOST_FUSION_FOLD_IMPL_FIRST_IT_META_TRANSFORM</a>(IT)&#160;&#160;&#160;IT</td></tr>
+<tr class="separator:a588c4cfd787dd61185ac5e422aee6e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ca9e8c7611b8a0458baf18d4d3429d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a50ca9e8c7611b8a0458baf18d4d3429d">BOOST_FUSION_FOLD_IMPL_FIRST_IT_TRANSFORM</a>(IT)&#160;&#160;&#160;IT</td></tr>
+<tr class="separator:a50ca9e8c7611b8a0458baf18d4d3429d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2608c5e5b1eb533b8472f842c153f941"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a2608c5e5b1eb533b8472f842c153f941">BOOST_FUSION_FOLD_IMPL_INVOKE_IT_META_TRANSFORM</a>(IT)&#160;&#160;&#160;        typename fusion::result_of::deref&lt;IT&gt;::type</td></tr>
+<tr class="separator:a2608c5e5b1eb533b8472f842c153f941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac52a62e42f2cba822a6f6fd702754d89"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac52a62e42f2cba822a6f6fd702754d89">BOOST_FUSION_FOLD_IMPL_INVOKE_IT_TRANSFORM</a>(IT)&#160;&#160;&#160;fusion::deref(IT)</td></tr>
+<tr class="separator:ac52a62e42f2cba822a6f6fd702754d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3cc67ba73001b5d744473ac8e4b1f99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ad3cc67ba73001b5d744473ac8e4b1f99">BOOST_FUSION_FOLD_IMPL_ENABLER</a>(T)&#160;&#160;&#160;typename T::type</td></tr>
+<tr class="separator:ad3cc67ba73001b5d744473ac8e4b1f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a199fc64c8ede6fbe5ff79be1bfa05104"><td class="memTemplParams" colspan="2">template&lt;int SeqSize, typename It , typename State , typename F , typename  = void&gt; </td></tr>
+<tr class="memitem:a199fc64c8ede6fbe5ff79be1bfa05104"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a199fc64c8ede6fbe5ff79be1bfa05104">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)</td></tr>
+<tr class="separator:a199fc64c8ede6fbe5ff79be1bfa05104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5657a006cf77c0c9127429ea3766e17d"><td class="memTemplParams" colspan="2">template&lt;typename It , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a5657a006cf77c0c9127429ea3766e17d"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a5657a006cf77c0c9127429ea3766e17d">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; 0</td></tr>
+<tr class="separator:a5657a006cf77c0c9127429ea3766e17d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad646934bc6e48e76a8953f5a14f0bb92"><td class="memTemplParams" colspan="2">template&lt;int SeqSize, typename It , typename State , typename F &gt; </td></tr>
+<tr class="memitem:ad646934bc6e48e76a8953f5a14f0bb92"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ad646934bc6e48e76a8953f5a14f0bb92">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; SeqSize</td></tr>
+<tr class="separator:ad646934bc6e48e76a8953f5a14f0bb92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af39155067388171250d6b69300bf7b7c"><td class="memTemplParams" colspan="2">template&lt;typename It , typename State , typename F &gt; </td></tr>
+<tr class="memitem:af39155067388171250d6b69300bf7b7c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#af39155067388171250d6b69300bf7b7c">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; 0</td></tr>
+<tr class="separator:af39155067388171250d6b69300bf7b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c26f937460956965cc1a600b3b27378"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> F ::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a1c26f937460956965cc1a600b3b27378">boost::fusion::detail::BOOST_PP_CAT</a> (it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)(mpl</td></tr>
+<tr class="separator:a1c26f937460956965cc1a600b3b27378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79cb3ce6c58e42ecc4ab744f1db1f6f8"><td class="memTemplParams" colspan="2">template&lt;typename It , typename State , typename F , int SeqSize&gt; </td></tr>
+<tr class="memitem:a79cb3ce6c58e42ecc4ab744f1db1f6f8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> lazy_enable_if_c&lt; SeqSize!=0, BOOST_PP_CAT(result_of_it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; SeqSize, It, State, F &gt; &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a79cb3ce6c58e42ecc4ab744f1db1f6f8">boost::fusion::detail::BOOST_PP_CAT</a> (it_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)(mpl</td></tr>
+<tr class="separator:a79cb3ce6c58e42ecc4ab744f1db1f6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addba02a055591f5286ad821ae45b1e32"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F , bool  = traits::is_sequence&lt;Seq&gt;::value, bool  = traits::is_segmented&lt;Seq&gt;::value&gt; </td></tr>
+<tr class="memitem:addba02a055591f5286ad821ae45b1e32"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#addba02a055591f5286ad821ae45b1e32">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)</td></tr>
+<tr class="separator:addba02a055591f5286ad821ae45b1e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42288b5d9537d9efa479bf1952e6de23"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a42288b5d9537d9efa479bf1952e6de23"><td class="memTemplItemLeft" align="right" valign="top">struct&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a42288b5d9537d9efa479bf1952e6de23">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; Seq</td></tr>
+<tr class="separator:a42288b5d9537d9efa479bf1952e6de23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48c12308f8d224613c010cc6d1488ebd"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>&lt; result_of::size&lt; Seq &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a48c12308f8d224613c010cc6d1488ebd">boost::fusion::detail::BOOST_FUSION_FOLD_IMPL_FIRST_IT_META_TRANSFORM</a> (typename <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#a3c6c61bdce1efa80c8ddeb031d3a542f">result_of::BOOST_FUSION_FOLD_IMPL_FIRST_IT_FUNCTION</a>&lt; Seq &gt;::type)</td></tr>
+<tr class="separator:a48c12308f8d224613c010cc6d1488ebd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec71672b7c85be47630ae066017fe34"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a4ec71672b7c85be47630ae066017fe34"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a4ec71672b7c85be47630ae066017fe34">boost::fusion::detail::BOOST_PP_CAT</a> (result_of_, <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>)&lt; Seq</td></tr>
+<tr class="separator:a4ec71672b7c85be47630ae066017fe34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ea0861a30a8cb1509c27a591d38e6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> F ::type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ae6ea0861a30a8cb1509c27a591d38e6f">boost::fusion::detail::BOOST_FUSION_FOLD_NAME</a> (Seq &amp;seq, State &amp;state, F &amp;f)</td></tr>
+<tr class="separator:ae6ea0861a30a8cb1509c27a591d38e6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a761621674dbc347559ba5a6d0b2bfbd3"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a761621674dbc347559ba5a6d0b2bfbd3"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> result_of::BOOST_FUSION_FOLD_NAME&lt; Seq, Stateconst, F &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion.html#a761621674dbc347559ba5a6d0b2bfbd3">boost::fusion::BOOST_FUSION_FOLD_NAME</a> (Seq &amp;seq, State const &amp;state, F f)</td></tr>
+<tr class="separator:a761621674dbc347559ba5a6d0b2bfbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c9900d8d99f834b3c54fdc59b6da88f"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a8c9900d8d99f834b3c54fdc59b6da88f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> result_of::BOOST_FUSION_FOLD_NAME&lt; Seqconst, Stateconst, F &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion.html#a8c9900d8d99f834b3c54fdc59b6da88f">boost::fusion::BOOST_FUSION_FOLD_NAME</a> (Seq const &amp;seq, State const &amp;state, F f)</td></tr>
+<tr class="separator:a8c9900d8d99f834b3c54fdc59b6da88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a285897fae4f02c725aa7a9d9aa7b7a58"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a285897fae4f02c725aa7a9d9aa7b7a58"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> result_of::BOOST_FUSION_FOLD_NAME&lt; Seq, State, F &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion.html#a285897fae4f02c725aa7a9d9aa7b7a58">boost::fusion::BOOST_FUSION_FOLD_NAME</a> (Seq &amp;seq, State &amp;state, F f)</td></tr>
+<tr class="separator:a285897fae4f02c725aa7a9d9aa7b7a58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ecce3d90209a90f3e2fb4069a57e35a"><td class="memTemplParams" colspan="2">template&lt;typename Seq , typename State , typename F &gt; </td></tr>
+<tr class="memitem:a9ecce3d90209a90f3e2fb4069a57e35a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a> result_of::BOOST_FUSION_FOLD_NAME&lt; Seqconst, State, F &gt;::type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion.html#a9ecce3d90209a90f3e2fb4069a57e35a">boost::fusion::BOOST_FUSION_FOLD_NAME</a> (Seq const &amp;seq, State &amp;state, F f)</td></tr>
+<tr class="separator:a9ecce3d90209a90f3e2fb4069a57e35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:a9572308aa07b72299c859ad864bbad7b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>&lt; SeqSize-1, typename <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ae981641d1196617cc8b69fa9e9987b3d">result_of::BOOST_FUSION_FOLD_IMPL_NEXT_IT_FUNCTION</a>&lt; It &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a9572308aa07b72299c859ad864bbad7b">boost::fusion::detail::F</a> {}</td></tr>
+<tr class="separator:a9572308aa07b72299c859ad864bbad7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44cce26630bbb3b8a78f70715c89105a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a44cce26630bbb3b8a78f70715c89105a">boost::fusion::detail::It</a></td></tr>
+<tr class="separator:a44cce26630bbb3b8a78f70715c89105a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac10897133562698916f210696bd89cba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#ac10897133562698916f210696bd89cba">boost::fusion::detail::State</a></td></tr>
+<tr class="separator:ac10897133562698916f210696bd89cba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa26824b9f31f1415a18bd0fbfdbe8d"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html#ac060b937352cdab754c1644325546d8f">BOOST_FUSION_FOLD_NAME</a>&lt; result_of::size&lt; Seq &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1fusion_1_1detail.html#a6aa26824b9f31f1415a18bd0fbfdbe8d">boost::fusion::detail::add_reference&lt; State &gt;</a></td></tr>
+<tr class="separator:a6aa26824b9f31f1415a18bd0fbfdbe8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="ad3cc67ba73001b5d744473ac8e4b1f99" name="ad3cc67ba73001b5d744473ac8e4b1f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3cc67ba73001b5d744473ac8e4b1f99">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_ENABLER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_ENABLER</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T</td><td>)</td>
+          <td>&#160;&#160;&#160;typename T::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3c6c61bdce1efa80c8ddeb031d3a542f" name="a3c6c61bdce1efa80c8ddeb031d3a542f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c6c61bdce1efa80c8ddeb031d3a542f">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_FIRST_IT_FUNCTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_FIRST_IT_FUNCTION&#160;&#160;&#160;begin</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00033">33</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a588c4cfd787dd61185ac5e422aee6e11" name="a588c4cfd787dd61185ac5e422aee6e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588c4cfd787dd61185ac5e422aee6e11">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_FIRST_IT_META_TRANSFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_FIRST_IT_META_TRANSFORM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td>&#160;&#160;&#160;IT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00035">35</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a50ca9e8c7611b8a0458baf18d4d3429d" name="a50ca9e8c7611b8a0458baf18d4d3429d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ca9e8c7611b8a0458baf18d4d3429d">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_FIRST_IT_TRANSFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_FIRST_IT_TRANSFORM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td>&#160;&#160;&#160;IT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00036">36</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2608c5e5b1eb533b8472f842c153f941" name="a2608c5e5b1eb533b8472f842c153f941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2608c5e5b1eb533b8472f842c153f941">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_INVOKE_IT_META_TRANSFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_INVOKE_IT_META_TRANSFORM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td>&#160;&#160;&#160;        typename fusion::result_of::deref&lt;IT&gt;::type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac52a62e42f2cba822a6f6fd702754d89" name="ac52a62e42f2cba822a6f6fd702754d89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac52a62e42f2cba822a6f6fd702754d89">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_INVOKE_IT_TRANSFORM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_INVOKE_IT_TRANSFORM</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">IT</td><td>)</td>
+          <td>&#160;&#160;&#160;fusion::deref(IT)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae981641d1196617cc8b69fa9e9987b3d" name="ae981641d1196617cc8b69fa9e9987b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae981641d1196617cc8b69fa9e9987b3d">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_IMPL_NEXT_IT_FUNCTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_IMPL_NEXT_IT_FUNCTION&#160;&#160;&#160;next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac060b937352cdab754c1644325546d8f" name="ac060b937352cdab754c1644325546d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac060b937352cdab754c1644325546d8f">&#9670;&#160;</a></span>BOOST_FUSION_FOLD_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUSION_FOLD_NAME&#160;&#160;&#160;fold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00030">30</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a271f9e57db9b67f794f3efd2d82ef61d" name="a271f9e57db9b67f794f3efd2d82ef61d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271f9e57db9b67f794f3efd2d82ef61d">&#9670;&#160;</a></span>FUSION_HASH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FUSION_HASH&#160;&#160;&#160;#</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html">fusion/algorithm/iteration/detail/fold.hpp</a> の <a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp_source.html#l00012">12</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_7dd17c6ed4a0bbe9f73acb7dfec1be90.html">algorithm</a></li><li class="navelem"><a class="el" href="dir_9efa65075e2dbc7104bb3389990cde05.html">iteration</a></li><li class="navelem"><a class="el" href="dir_b39dfd60cab7fe4ed4253914e252cd99.html">detail</a></li><li class="navelem"><a class="el" href="fusion_2algorithm_2iteration_2detail_2fold_8hpp.html">fold.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,5 @@
+var structboost_1_1mpl_1_1aux_1_1iter__fold__chunk_3_011_01_4_1_1result___3_01int_00_01int_00_01int_00_01int_01_4 =
+[
+    [ "iterator", "structboost_1_1mpl_1_1aux_1_1iter__fold__chunk_3_011_01_4_1_1result___3_01int_00_01int_00_01int_00_01int_01_4.html#a19709c48ed2dc1189a25911dc5f07b56", null ],
+    [ "state", "structboost_1_1mpl_1_1aux_1_1iter__fold__chunk_3_011_01_4_1_1result___3_01int_00_01int_00_01int_00_01int_01_4.html#a0c68a3e2c5278d00df705c8381c99870", null ]
+];

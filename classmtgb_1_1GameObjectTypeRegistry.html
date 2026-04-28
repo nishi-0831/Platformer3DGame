@@ -123,7 +123,7 @@ mtgb::GameObjectTypeRegistry 連携図</div>
 <tr class="separator:a7be03e7e3e7709c153162c63dee7659f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbdabdb4962e9932405db05c1916f8b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectTypeRegistry.html#a4dbdabdb4962e9932405db05c1916f8b">Update</a> () override</td></tr>
 <tr class="separator:a4dbdabdb4962e9932405db05c1916f8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab82453b5043fa7143ebdc7822922384f"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </td></tr>
+<tr class="memitem:ab82453b5043fa7143ebdc7822922384f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab82453b5043fa7143ebdc7822922384f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmtgb_1_1GameObjectTypeRegistry.html#ab82453b5043fa7143ebdc7822922384f">Register</a> (std::string_view _typeName)</td></tr>
 <tr class="memdesc:ab82453b5043fa7143ebdc7822922384f"><td class="mdescLeft">&#160;</td><td class="mdescRight">型を登録し、名前と紐付ける  <br /></td></tr>
 <tr class="separator:ab82453b5043fa7143ebdc7822922384f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -391,7 +391,7 @@ mtgb::GameObjectTypeRegistry 連携図</div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a> &gt; </div>
+template&lt;typename T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -427,12 +427,11 @@ template&lt;typename <a class="el" href="InputKeyCode_8h.html#a0607c9301fb391993
 
 <p class="definition"> <a class="el" href="GameObjectTypeRegistry_8h_source.html">GameObjectTypeRegistry.h</a> の <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00021">21</a> 行目に定義があります。</p>
 <div class="fragment"><div class="line"><span class="lineno">   22</span>        {</div>
-<div class="line"><span class="lineno">   23</span>            <a class="code hl_variable" href="classmtgb_1_1GameObjectTypeRegistry.html#a415098ed6f41deab45ef1cf12eefa9f6">typeToName_</a>.emplace(<span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>), std::string(_typeName));</div>
-<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="classmtgb_1_1GameObjectTypeRegistry.html#a9195ce0f9b60c6e1cafc3fa8904a31e0">nameToType_</a>.emplace(std::string(_typeName), <span class="keyword">typeid</span>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>));</div>
+<div class="line"><span class="lineno">   23</span>            <a class="code hl_variable" href="classmtgb_1_1GameObjectTypeRegistry.html#a415098ed6f41deab45ef1cf12eefa9f6">typeToName_</a>.emplace(<span class="keyword">typeid</span>(T), std::string(_typeName));</div>
+<div class="line"><span class="lineno">   24</span>            <a class="code hl_variable" href="classmtgb_1_1GameObjectTypeRegistry.html#a9195ce0f9b60c6e1cafc3fa8904a31e0">nameToType_</a>.emplace(std::string(_typeName), <span class="keyword">typeid</span>(T));</div>
 <div class="line"><span class="lineno">   25</span>        }</div>
-<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">KeyCode::T</a></div><div class="ttdeci">@ T</div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00072">nameToType_</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ab9ece18c950afbfa6b0fdbfa4ff731d3">T</a>, <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00071">typeToName_</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00072">nameToType_</a>, <a class="el" href="GameObjectTypeRegistry_8h_source.html#l00071">typeToName_</a>.</p>
 
 </div>
 </div>

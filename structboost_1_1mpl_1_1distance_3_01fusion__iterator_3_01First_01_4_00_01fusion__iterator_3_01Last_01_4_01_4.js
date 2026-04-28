@@ -1,0 +1,5 @@
+var structboost_1_1mpl_1_1distance_3_01fusion__iterator_3_01First_01_4_00_01fusion__iterator_3_01Last_01_4_01_4 =
+[
+    [ "distance_application", "structboost_1_1mpl_1_1distance_3_01fusion__iterator_3_01First_01_4_00_01fusion__iterator_3_01Last_01_4_01_4.html#a2b08cfee57ca9c48a915ae1ca014d2cb", null ],
+    [ "BOOST_STATIC_CONSTANT", "structboost_1_1mpl_1_1distance_3_01fusion__iterator_3_01First_01_4_00_01fusion__iterator_3_01Last_01_4_01_4.html#a5e9ccbd314a1f3dce2b528260d5380cb", null ]
+];

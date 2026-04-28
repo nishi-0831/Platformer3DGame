@@ -1,0 +1,4 @@
+var structboost_1_1type__traits__detail_1_1composite__member__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4 =
+[
+    [ "type", "structboost_1_1type__traits__detail_1_1composite__member__pointer__type_3_01std_1_1nullptr__t_00_01std_1_1nullptr__t_01_4.html#a8cdd87830d0d6f90c468e915f99d179a", null ]
+];

@@ -1,0 +1,767 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1movelib_1_1range__xbuf.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1movelib_1_1range__xbuf-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="merge_8hpp_source.html">merge.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1range__xbuf__coll__graph.svg" width="238" height="396"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a0d5851e01adc2b68eea34840545599a2"><td class="memItemLeft" align="right" valign="top">typedef SizeType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a></td></tr>
+<tr class="separator:a0d5851e01adc2b68eea34840545599a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b767db00de759eef033716212c3d6b6"><td class="memItemLeft" align="right" valign="top">typedef Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a7b767db00de759eef033716212c3d6b6">iterator</a></td></tr>
+<tr class="separator:a7b767db00de759eef033716212c3d6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a118b1bdadc246e67336ea036190877df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a118b1bdadc246e67336ea036190877df">range_xbuf</a> (Iterator first, Iterator last)</td></tr>
+<tr class="separator:a118b1bdadc246e67336ea036190877df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab81eef0cf63bcdf105626b65912f35fe"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:ab81eef0cf63bcdf105626b65912f35fe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#ab81eef0cf63bcdf105626b65912f35fe">move_assign</a> (RandIt first, <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a> n)</td></tr>
+<tr class="separator:ab81eef0cf63bcdf105626b65912f35fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd11157ae7a0e6848cd6eba9ba83ddd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a8cd11157ae7a0e6848cd6eba9ba83ddd">~range_xbuf</a> ()</td></tr>
+<tr class="separator:a8cd11157ae7a0e6848cd6eba9ba83ddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16ad7bd407d68095a8c17cb568d8a62f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a16ad7bd407d68095a8c17cb568d8a62f">capacity</a> () const</td></tr>
+<tr class="separator:a16ad7bd407d68095a8c17cb568d8a62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45ab82fbd7914e88db2564a1ab7da690"><td class="memItemLeft" align="right" valign="top">Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a45ab82fbd7914e88db2564a1ab7da690">data</a> () const</td></tr>
+<tr class="separator:a45ab82fbd7914e88db2564a1ab7da690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fbc97cd08ad43d97d50e3771d3104f9"><td class="memItemLeft" align="right" valign="top">Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a5fbc97cd08ad43d97d50e3771d3104f9">end</a> () const</td></tr>
+<tr class="separator:a5fbc97cd08ad43d97d50e3771d3104f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9ea76e797ae463f2a772294c9ebb18"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#aef9ea76e797ae463f2a772294c9ebb18">size</a> () const</td></tr>
+<tr class="separator:aef9ea76e797ae463f2a772294c9ebb18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e2e3fd197a412a76a53e91faca6a0f5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a9e2e3fd197a412a76a53e91faca6a0f5">empty</a> () const</td></tr>
+<tr class="separator:a9e2e3fd197a412a76a53e91faca6a0f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a720aeca17dfae996951e4e1ae6987d70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a720aeca17dfae996951e4e1ae6987d70">clear</a> ()</td></tr>
+<tr class="separator:a720aeca17dfae996951e4e1ae6987d70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a247d3590e3062aaf5d23b912d9d5ada8"><td class="memTemplParams" colspan="2">template&lt;class RandIt &gt; </td></tr>
+<tr class="memitem:a247d3590e3062aaf5d23b912d9d5ada8"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a7b767db00de759eef033716212c3d6b6">iterator</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a247d3590e3062aaf5d23b912d9d5ada8">add</a> (RandIt it)</td></tr>
+<tr class="separator:a247d3590e3062aaf5d23b912d9d5ada8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace8bf3e8c0b73198a8a876704e8e2bda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#ace8bf3e8c0b73198a8a876704e8e2bda">set_size</a> (<a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a> sz)</td></tr>
+<tr class="separator:ace8bf3e8c0b73198a8a876704e8e2bda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0785d74c44f2def159a23d352674370c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0785d74c44f2def159a23d352674370c">range_xbuf</a> (const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a> &amp;)</td></tr>
+<tr class="separator:a0785d74c44f2def159a23d352674370c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56f98b1bd2da46b6f76eaa66ceb26a4f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a56f98b1bd2da46b6f76eaa66ceb26a4f">operator=</a> (const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a> &amp;)</td></tr>
+<tr class="separator:a56f98b1bd2da46b6f76eaa66ceb26a4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a70ce62428974527fb82b899024f28582"><td class="memItemLeft" align="right" valign="top">Iterator const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a></td></tr>
+<tr class="separator:a70ce62428974527fb82b899024f28582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadc38b2fd2a368e390dfc80e1b3e673e"><td class="memItemLeft" align="right" valign="top">Iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a></td></tr>
+<tr class="separator:aadc38b2fd2a368e390dfc80e1b3e673e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9688a454f27771306e9de00b933c8f9e"><td class="memItemLeft" align="right" valign="top">Iterator const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a9688a454f27771306e9de00b933c8f9e">m_cap</a></td></tr>
+<tr class="separator:a9688a454f27771306e9de00b933c8f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Iterator, class SizeType, class Op&gt;<br />
+class boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;</div>
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00219">219</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a7b767db00de759eef033716212c3d6b6" name="a7b767db00de759eef033716212c3d6b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b767db00de759eef033716212c3d6b6">&#9670;&#160;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Iterator <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00226">226</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0d5851e01adc2b68eea34840545599a2" name="a0d5851e01adc2b68eea34840545599a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5851e01adc2b68eea34840545599a2">&#9670;&#160;</a></span>size_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef SizeType <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::size_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00225">225</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a0785d74c44f2def159a23d352674370c" name="a0785d74c44f2def159a23d352674370c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0785d74c44f2def159a23d352674370c">&#9670;&#160;</a></span>range_xbuf() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::range_xbuf </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a>&lt; Iterator, SizeType, Op &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a118b1bdadc246e67336ea036190877df" name="a118b1bdadc246e67336ea036190877df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a118b1bdadc246e67336ea036190877df">&#9670;&#160;</a></span>range_xbuf() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::range_xbuf </td>
+          <td>(</td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Iterator&#160;</td>
+          <td class="paramname"><em>last</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00228">228</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>(first), <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>(first), <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a9688a454f27771306e9de00b933c8f9e">m_cap</a>(last)</div>
+<div class="line"><span class="lineno">  230</span>   {}</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1range__xbuf_html_a70ce62428974527fb82b899024f28582"><div class="ttname"><a href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">boost::movelib::range_xbuf::m_first</a></div><div class="ttdeci">Iterator const m_first</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00279">merge.hpp:279</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1range__xbuf_html_a9688a454f27771306e9de00b933c8f9e"><div class="ttname"><a href="classboost_1_1movelib_1_1range__xbuf.html#a9688a454f27771306e9de00b933c8f9e">boost::movelib::range_xbuf::m_cap</a></div><div class="ttdeci">Iterator const m_cap</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00281">merge.hpp:281</a></div></div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1range__xbuf_html_aadc38b2fd2a368e390dfc80e1b3e673e"><div class="ttname"><a href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">boost::movelib::range_xbuf::m_last</a></div><div class="ttdeci">Iterator m_last</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00280">merge.hpp:280</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8cd11157ae7a0e6848cd6eba9ba83ddd" name="a8cd11157ae7a0e6848cd6eba9ba83ddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd11157ae7a0e6848cd6eba9ba83ddd">&#9670;&#160;</a></span>~range_xbuf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::~<a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00240">240</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  241</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a247d3590e3062aaf5d23b912d9d5ada8" name="a247d3590e3062aaf5d23b912d9d5ada8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a247d3590e3062aaf5d23b912d9d5ada8">&#9670;&#160;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a7b767db00de759eef033716212c3d6b6">iterator</a> <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::add </td>
+          <td>(</td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00264">264</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  265</span>   {</div>
+<div class="line"><span class="lineno">  266</span>      Iterator pos(<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>);</div>
+<div class="line"><span class="lineno">  267</span>      *pos = <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a>(*it);</div>
+<div class="line"><span class="lineno">  268</span>      ++<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>;</div>
+<div class="line"><span class="lineno">  269</span>      <span class="keywordflow">return</span> pos;</div>
+<div class="line"><span class="lineno">  270</span>   }</div>
+<div class="ttc" id="anamespaceboost_html_aa745d64b580e12d06b1a28c9ff09a81d"><div class="ttname"><a href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a></div><div class="ttdeci">O move(I f, I l, O result)</div><div class="ttdef"><b>Definition:</b> <a href="move_2algo_2move_8hpp_source.html#l00056">move/algo/move.hpp:56</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>, <a class="el" href="move_2algo_2move_8hpp_source.html#l00056">boost::move()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1range__xbuf_a247d3590e3062aaf5d23b912d9d5ada8_cgraph.svg" width="326" height="68"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a16ad7bd407d68095a8c17cb568d8a62f" name="a16ad7bd407d68095a8c17cb568d8a62f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ad7bd407d68095a8c17cb568d8a62f">&#9670;&#160;</a></span>capacity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a> <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::capacity </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00243">243</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  244</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a9688a454f27771306e9de00b933c8f9e">m_cap</a>-<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00281">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_cap</a>, <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>.</p>
+
+</div>
+</div>
+<a id="a720aeca17dfae996951e4e1ae6987d70" name="a720aeca17dfae996951e4e1ae6987d70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a720aeca17dfae996951e4e1ae6987d70">&#9670;&#160;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00258">258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  259</span>   {</div>
+<div class="line"><span class="lineno">  260</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a> = <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>;</div>
+<div class="line"><span class="lineno">  261</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>, <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<a id="a45ab82fbd7914e88db2564a1ab7da690" name="a45ab82fbd7914e88db2564a1ab7da690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45ab82fbd7914e88db2564a1ab7da690">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Iterator <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::data </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00246">246</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  247</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>.</p>
+
+</div>
+</div>
+<a id="a9e2e3fd197a412a76a53e91faca6a0f5" name="a9e2e3fd197a412a76a53e91faca6a0f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e2e3fd197a412a76a53e91faca6a0f5">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00255">255</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  256</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a> == <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>, <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<a id="a5fbc97cd08ad43d97d50e3771d3104f9" name="a5fbc97cd08ad43d97d50e3771d3104f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fbc97cd08ad43d97d50e3771d3104f9">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Iterator <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00249">249</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  250</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<a id="ab81eef0cf63bcdf105626b65912f35fe" name="ab81eef0cf63bcdf105626b65912f35fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab81eef0cf63bcdf105626b65912f35fe">&#9670;&#160;</a></span>move_assign()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<div class="memtemplate">
+template&lt;class RandIt &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::move_assign </td>
+          <td>(</td>
+          <td class="paramtype">RandIt&#160;</td>
+          <td class="paramname"><em>first</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  234</span>   {</div>
+<div class="line"><span class="lineno">  235</span>      <a class="code hl_struct" href="structassert.html">assert</a>(<a class="code hl_typedef" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>(n) &lt;= <a class="code hl_typedef" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>(<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a9688a454f27771306e9de00b933c8f9e">m_cap</a>-<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>));</div>
+<div class="line"><span class="lineno">  236</span>      <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1movelib_1_1iter__difference.html#a06324e4822ed3f9295955d5560af96bc">iter_difference&lt;RandIt&gt;::type</a> d_type;</div>
+<div class="line"><span class="lineno">  237</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a> = Op()(forward_t(), first, first+d_type(n), <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>);</div>
+<div class="line"><span class="lineno">  238</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1range__xbuf_html_a0d5851e01adc2b68eea34840545599a2"><div class="ttname"><a href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">boost::movelib::range_xbuf::size_type</a></div><div class="ttdeci">SizeType size_type</div><div class="ttdef"><b>Definition:</b> <a href="merge_8hpp_source.html#l00225">merge.hpp:225</a></div></div>
+<div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
+<div class="ttc" id="astructboost_1_1movelib_1_1iter__difference_html_a06324e4822ed3f9295955d5560af96bc"><div class="ttname"><a href="structboost_1_1movelib_1_1iter__difference.html#a06324e4822ed3f9295955d5560af96bc">boost::movelib::iter_difference::type</a></div><div class="ttdeci">T::difference_type type</div><div class="ttdef"><b>Definition:</b> <a href="boost_2move_2detail_2iterator__traits_8hpp_source.html#l00090">boost/move/detail/iterator_traits.hpp:90</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00281">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_cap</a>, <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>, <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<a id="a56f98b1bd2da46b6f76eaa66ceb26a4f" name="a56f98b1bd2da46b6f76eaa66ceb26a4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f98b1bd2da46b6f76eaa66ceb26a4f">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a> &amp; <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a>&lt; Iterator, SizeType, Op &gt; &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ace8bf3e8c0b73198a8a876704e8e2bda" name="ace8bf3e8c0b73198a8a876704e8e2bda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace8bf3e8c0b73198a8a876704e8e2bda">&#9670;&#160;</a></span>set_size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::set_size </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a>&#160;</td>
+          <td class="paramname"><em>sz</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00272">272</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>   {</div>
+<div class="line"><span class="lineno">  274</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>  = <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>;</div>
+<div class="line"><span class="lineno">  275</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a> += sz;</div>
+<div class="line"><span class="lineno">  276</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>, <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<a id="aef9ea76e797ae463f2a772294c9ebb18" name="aef9ea76e797ae463f2a772294c9ebb18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9ea76e797ae463f2a772294c9ebb18">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html#a0d5851e01adc2b68eea34840545599a2">size_type</a> <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00252">252</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  253</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#aadc38b2fd2a368e390dfc80e1b3e673e">m_last</a>-<a class="code hl_variable" href="classboost_1_1movelib_1_1range__xbuf.html#a70ce62428974527fb82b899024f28582">m_first</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="merge_8hpp_source.html#l00279">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_first</a>, <a class="el" href="merge_8hpp_source.html#l00280">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::m_last</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a9688a454f27771306e9de00b933c8f9e" name="a9688a454f27771306e9de00b933c8f9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9688a454f27771306e9de00b933c8f9e">&#9670;&#160;</a></span>m_cap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Iterator const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::m_cap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00281">281</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00243">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::capacity()</a>, <a class="el" href="merge_8hpp_source.html#l00233">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::move_assign()</a>.</p>
+
+</div>
+</div>
+<a id="a70ce62428974527fb82b899024f28582" name="a70ce62428974527fb82b899024f28582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70ce62428974527fb82b899024f28582">&#9670;&#160;</a></span>m_first</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Iterator const <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::m_first</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00279">279</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00243">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::capacity()</a>, <a class="el" href="merge_8hpp_source.html#l00258">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::clear()</a>, <a class="el" href="merge_8hpp_source.html#l00246">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::data()</a>, <a class="el" href="merge_8hpp_source.html#l00255">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::empty()</a>, <a class="el" href="merge_8hpp_source.html#l00233">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::move_assign()</a>, <a class="el" href="merge_8hpp_source.html#l00272">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::set_size()</a>, <a class="el" href="merge_8hpp_source.html#l00252">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::size()</a>.</p>
+
+</div>
+</div>
+<a id="aadc38b2fd2a368e390dfc80e1b3e673e" name="aadc38b2fd2a368e390dfc80e1b3e673e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc38b2fd2a368e390dfc80e1b3e673e">&#9670;&#160;</a></span>m_last</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Iterator , class SizeType , class Op &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Iterator <a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">boost::movelib::range_xbuf</a>&lt; Iterator, SizeType, Op &gt;::m_last</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="merge_8hpp_source.html">merge.hpp</a> の <a class="el" href="merge_8hpp_source.html#l00280">280</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="merge_8hpp_source.html#l00264">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::add()</a>, <a class="el" href="merge_8hpp_source.html#l00258">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::clear()</a>, <a class="el" href="merge_8hpp_source.html#l00255">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::empty()</a>, <a class="el" href="merge_8hpp_source.html#l00249">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::end()</a>, <a class="el" href="merge_8hpp_source.html#l00233">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::move_assign()</a>, <a class="el" href="merge_8hpp_source.html#l00272">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::set_size()</a>, <a class="el" href="merge_8hpp_source.html#l00252">boost::movelib::range_xbuf&lt; Iterator, SizeType, Op &gt;::size()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="merge_8hpp_source.html">merge.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1movelib.html">movelib</a></li><li class="navelem"><a class="el" href="classboost_1_1movelib_1_1range__xbuf.html">range_xbuf</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

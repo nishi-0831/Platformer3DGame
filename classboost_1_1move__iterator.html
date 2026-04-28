@@ -1,0 +1,1140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::move_iterator&lt; It &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1move__iterator.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#friends">フレンド</a> &#124;
+<a href="classboost_1_1move__iterator-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::move_iterator&lt; It &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="move_2iterator_8hpp_source.html">iterator.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::move_iterator&lt; It &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1move__iterator__coll__graph.svg" width="246" height="499"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a0b9506d6e1a86cf7177ad8dfcbfef130"><td class="memItemLeft" align="right" valign="top">typedef It&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a></td></tr>
+<tr class="separator:a0b9506d6e1a86cf7177ad8dfcbfef130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b86dca4c6204b385e0d22f8888a8d3e"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;::value_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a8b86dca4c6204b385e0d22f8888a8d3e">value_type</a></td></tr>
+<tr class="separator:a8b86dca4c6204b385e0d22f8888a8d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad92e9dea3c3c82cb29528131fda52d1f"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classboost_1_1move__iterator.html#a8b86dca4c6204b385e0d22f8888a8d3e">value_type</a> &amp;&amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#ad92e9dea3c3c82cb29528131fda52d1f">reference</a></td></tr>
+<tr class="separator:ad92e9dea3c3c82cb29528131fda52d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef15dc941d8d9dd7bb59e119caa7c1e"><td class="memItemLeft" align="right" valign="top">typedef It&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a9ef15dc941d8d9dd7bb59e119caa7c1e">pointer</a></td></tr>
+<tr class="separator:a9ef15dc941d8d9dd7bb59e119caa7c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22c53e88917ab25cdc2b88d81cd3480a"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;::difference_type&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a></td></tr>
+<tr class="separator:a22c53e88917ab25cdc2b88d81cd3480a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd8a7aff08ea0181bfe35a31174142bb"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;::iterator_category&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#afd8a7aff08ea0181bfe35a31174142bb">iterator_category</a></td></tr>
+<tr class="separator:afd8a7aff08ea0181bfe35a31174142bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:abb3d298a585c6baed7d09cd3a418784d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#abb3d298a585c6baed7d09cd3a418784d">move_iterator</a> ()</td></tr>
+<tr class="separator:abb3d298a585c6baed7d09cd3a418784d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18cdf4977dced83c5c969644c3ecd175"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a18cdf4977dced83c5c969644c3ecd175">move_iterator</a> (const It &amp;i)</td></tr>
+<tr class="separator:a18cdf4977dced83c5c969644c3ecd175"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a515cb3392a671cf7ae6577316571d1c0"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a515cb3392a671cf7ae6577316571d1c0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a515cb3392a671cf7ae6577316571d1c0">move_iterator</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; U &gt; &amp;u)</td></tr>
+<tr class="separator:a515cb3392a671cf7ae6577316571d1c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c07225df9a0f52c2b4846cfa96a80db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html#ad92e9dea3c3c82cb29528131fda52d1f">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a4c07225df9a0f52c2b4846cfa96a80db">operator*</a> () const</td></tr>
+<tr class="separator:a4c07225df9a0f52c2b4846cfa96a80db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37aed0c38d9ed53d17ebb238d79b191c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html#a9ef15dc941d8d9dd7bb59e119caa7c1e">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a37aed0c38d9ed53d17ebb238d79b191c">operator-&gt;</a> () const</td></tr>
+<tr class="separator:a37aed0c38d9ed53d17ebb238d79b191c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5a627c8844e4fb6d85ff96dceeab04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a9d5a627c8844e4fb6d85ff96dceeab04">operator++</a> ()</td></tr>
+<tr class="separator:a9d5a627c8844e4fb6d85ff96dceeab04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acab5f3c73103cae073f762a8b0c4d574"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#acab5f3c73103cae073f762a8b0c4d574">operator++</a> (int)</td></tr>
+<tr class="separator:acab5f3c73103cae073f762a8b0c4d574"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aeed0d54573924e896793ca2ee9a158"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a9aeed0d54573924e896793ca2ee9a158">operator--</a> ()</td></tr>
+<tr class="separator:a9aeed0d54573924e896793ca2ee9a158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48e3229555fe07cdd0991c8d6f96be5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a48e3229555fe07cdd0991c8d6f96be5e">operator--</a> (int)</td></tr>
+<tr class="separator:a48e3229555fe07cdd0991c8d6f96be5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd86508e08017b3f02f57471df13cd60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#acd86508e08017b3f02f57471df13cd60">operator+</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n) const</td></tr>
+<tr class="separator:acd86508e08017b3f02f57471df13cd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55d6f29e6e9005057b995a9ea195e2f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a55d6f29e6e9005057b995a9ea195e2f0">operator+=</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n)</td></tr>
+<tr class="separator:a55d6f29e6e9005057b995a9ea195e2f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58ea91c01c77d6d9d0383cc6ed78a6c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a58ea91c01c77d6d9d0383cc6ed78a6c3">operator-</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n) const</td></tr>
+<tr class="separator:a58ea91c01c77d6d9d0383cc6ed78a6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac79c17a4e6c85b48cbd4508c972bf7e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#ac79c17a4e6c85b48cbd4508c972bf7e3">operator-=</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n)</td></tr>
+<tr class="separator:ac79c17a4e6c85b48cbd4508c972bf7e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd111354a856852eea11585f875f7f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html#ad92e9dea3c3c82cb29528131fda52d1f">reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a4fd111354a856852eea11585f875f7f3">operator[]</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n) const</td></tr>
+<tr class="separator:a4fd111354a856852eea11585f875f7f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a5a0b6b42572bb12ae9b02089ca616f72"><td class="memItemLeft" align="right" valign="top">It&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a></td></tr>
+<tr class="separator:a5a0b6b42572bb12ae9b02089ca616f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+フレンド</h2></td></tr>
+<tr class="memitem:aed11fd63c6c7afddfd4d3e03736c792f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#aed11fd63c6c7afddfd4d3e03736c792f">operator==</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:aed11fd63c6c7afddfd4d3e03736c792f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab334a74e3642604a4738999ba24650b9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#ab334a74e3642604a4738999ba24650b9">operator!=</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:ab334a74e3642604a4738999ba24650b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3761a5c56739a7e6aee81d24095a377"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#aa3761a5c56739a7e6aee81d24095a377">operator&lt;</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:aa3761a5c56739a7e6aee81d24095a377"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97de3c9bc6819056e238f88ac22df32"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#ad97de3c9bc6819056e238f88ac22df32">operator&lt;=</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:ad97de3c9bc6819056e238f88ac22df32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25d51f47055adf95404b90a54b9985fe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a25d51f47055adf95404b90a54b9985fe">operator&gt;</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:a25d51f47055adf95404b90a54b9985fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5e22837d209f2c441144219ae75952"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#adc5e22837d209f2c441144219ae75952">operator&gt;=</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:adc5e22837d209f2c441144219ae75952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a813f39126edb0d3283d97a57f2dc72d3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a813f39126edb0d3283d97a57f2dc72d3">operator-</a> (const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;y)</td></tr>
+<tr class="separator:a813f39126edb0d3283d97a57f2dc72d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65d284e7c29e0f41155a9e070ce1b20a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1move__iterator.html#a65d284e7c29e0f41155a9e070ce1b20a">operator+</a> (<a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> n, const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp;x)</td></tr>
+<tr class="separator:a65d284e7c29e0f41155a9e070ce1b20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class It&gt;<br />
+class boost::move_iterator&lt; It &gt;</div><p>Class template <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> is an iterator adaptor with the same behavior as the underlying iterator except that its dereference operator implicitly converts the value returned by the underlying iterator's dereference operator to an rvalue reference. Some generic algorithms can be called with move iterators to replace copying with moving. </p>
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00044">44</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a22c53e88917ab25cdc2b88d81cd3480a" name="a22c53e88917ab25cdc2b88d81cd3480a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22c53e88917ab25cdc2b88d81cd3480a">&#9670;&#160;</a></span>difference_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt;<a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a>&gt;::difference_type <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::difference_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00058">58</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afd8a7aff08ea0181bfe35a31174142bb" name="afd8a7aff08ea0181bfe35a31174142bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd8a7aff08ea0181bfe35a31174142bb">&#9670;&#160;</a></span>iterator_category</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt;<a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a>&gt;::iterator_category <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::iterator_category</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00059">59</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0b9506d6e1a86cf7177ad8dfcbfef130" name="a0b9506d6e1a86cf7177ad8dfcbfef130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b9506d6e1a86cf7177ad8dfcbfef130">&#9670;&#160;</a></span>iterator_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef It <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::iterator_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00047">47</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9ef15dc941d8d9dd7bb59e119caa7c1e" name="a9ef15dc941d8d9dd7bb59e119caa7c1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ef15dc941d8d9dd7bb59e119caa7c1e">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef It <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00057">57</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad92e9dea3c3c82cb29528131fda52d1f" name="ad92e9dea3c3c82cb29528131fda52d1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad92e9dea3c3c82cb29528131fda52d1f">&#9670;&#160;</a></span>reference</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1move__iterator.html#a8b86dca4c6204b385e0d22f8888a8d3e">value_type</a>&amp;&amp; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::reference</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00050">50</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8b86dca4c6204b385e0d22f8888a8d3e" name="a8b86dca4c6204b385e0d22f8888a8d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b86dca4c6204b385e0d22f8888a8d3e">&#9670;&#160;</a></span>value_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1movelib_1_1iterator__traits.html">boost::movelib::iterator_traits</a>&lt;<a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a>&gt;::value_type <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::value_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00048">48</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="abb3d298a585c6baed7d09cd3a418784d" name="abb3d298a585c6baed7d09cd3a418784d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3d298a585c6baed7d09cd3a418784d">&#9670;&#160;</a></span>move_iterator() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::move_iterator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00061">61</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>      : <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>()</div>
+<div class="line"><span class="lineno">   63</span>   {}</div>
+<div class="ttc" id="aclassboost_1_1move__iterator_html_a5a0b6b42572bb12ae9b02089ca616f72"><div class="ttname"><a href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">boost::move_iterator::m_it</a></div><div class="ttdeci">It m_it</div><div class="ttdef"><b>Definition:</b> <a href="move_2iterator_8hpp_source.html#l00144">move/iterator.hpp:144</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a18cdf4977dced83c5c969644c3ecd175" name="a18cdf4977dced83c5c969644c3ecd175"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18cdf4977dced83c5c969644c3ecd175">&#9670;&#160;</a></span>move_iterator() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::move_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const It &amp;&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>      :  <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>(i)</div>
+<div class="line"><span class="lineno">   67</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a515cb3392a671cf7ae6577316571d1c0" name="a515cb3392a671cf7ae6577316571d1c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a515cb3392a671cf7ae6577316571d1c0">&#9670;&#160;</a></span>move_iterator() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<div class="memtemplate">
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::move_iterator </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; U &gt; &amp;&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00070">70</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>      :  <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>(u.m_it)</div>
+<div class="line"><span class="lineno">   72</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a4c07225df9a0f52c2b4846cfa96a80db" name="a4c07225df9a0f52c2b4846cfa96a80db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c07225df9a0f52c2b4846cfa96a80db">&#9670;&#160;</a></span>operator*()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html#ad92e9dea3c3c82cb29528131fda52d1f">reference</a> <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator* </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00074">74</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>   {</div>
+<div class="line"><span class="lineno">   76</span><span class="preprocessor">      #if defined(BOOST_NO_CXX11_RVALUE_REFERENCES) || defined(BOOST_MOVE_OLD_RVALUE_REF_BINDING_RULES)</span></div>
+<div class="line"><span class="lineno">   77</span>      <span class="keywordflow">return</span> *<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>;</div>
+<div class="line"><span class="lineno">   78</span><span class="preprocessor">      #else</span></div>
+<div class="line"><span class="lineno">   79</span>      return ::boost::move(*<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>);</div>
+<div class="line"><span class="lineno">   80</span><span class="preprocessor">      #endif</span></div>
+<div class="line"><span class="lineno">   81</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="acd86508e08017b3f02f57471df13cd60" name="acd86508e08017b3f02f57471df13cd60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd86508e08017b3f02f57471df13cd60">&#9670;&#160;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00098">98</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   99</span>   {  <span class="keywordflow">return</span> move_iterator&lt;iterator_type&gt;(<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a> + n);  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a9d5a627c8844e4fb6d85ff96dceeab04" name="a9d5a627c8844e4fb6d85ff96dceeab04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5a627c8844e4fb6d85ff96dceeab04">&#9670;&#160;</a></span>operator++() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00086">86</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   87</span>   {  ++<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="acab5f3c73103cae073f762a8b0c4d574" name="acab5f3c73103cae073f762a8b0c4d574"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acab5f3c73103cae073f762a8b0c4d574">&#9670;&#160;</a></span>operator++() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator++ </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00089">89</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>   {  move_iterator&lt;iterator_type&gt; tmp(*<span class="keyword">this</span>); ++(*this); <span class="keywordflow">return</span> tmp;   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a55d6f29e6e9005057b995a9ea195e2f0" name="a55d6f29e6e9005057b995a9ea195e2f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55d6f29e6e9005057b995a9ea195e2f0">&#9670;&#160;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00101">101</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>   {  <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a> += n; <span class="keywordflow">return</span> *<span class="keyword">this</span>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a58ea91c01c77d6d9d0383cc6ed78a6c3" name="a58ea91c01c77d6d9d0383cc6ed78a6c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ea91c01c77d6d9d0383cc6ed78a6c3">&#9670;&#160;</a></span>operator-()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator- </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00104">104</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>   {  <span class="keywordflow">return</span> move_iterator&lt;iterator_type&gt;(<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a> - n);  }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a9aeed0d54573924e896793ca2ee9a158" name="a9aeed0d54573924e896793ca2ee9a158"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aeed0d54573924e896793ca2ee9a158">&#9670;&#160;</a></span>operator--() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00092">92</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>   {  --<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>; <span class="keywordflow">return</span> *<span class="keyword">this</span>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a48e3229555fe07cdd0991c8d6f96be5e" name="a48e3229555fe07cdd0991c8d6f96be5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48e3229555fe07cdd0991c8d6f96be5e">&#9670;&#160;</a></span>operator--() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; <a class="el" href="classboost_1_1move__iterator.html#a0b9506d6e1a86cf7177ad8dfcbfef130">iterator_type</a> &gt; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator-- </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00095">95</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>   {  move_iterator&lt;iterator_type&gt; tmp(*<span class="keyword">this</span>); --(*this); <span class="keywordflow">return</span> tmp;   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac79c17a4e6c85b48cbd4508c972bf7e3" name="ac79c17a4e6c85b48cbd4508c972bf7e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac79c17a4e6c85b48cbd4508c972bf7e3">&#9670;&#160;</a></span>operator-=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> &amp; <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator-= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00107">107</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>   {  <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a> -= n; <span class="keywordflow">return</span> *<span class="keyword">this</span>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a37aed0c38d9ed53d17ebb238d79b191c" name="a37aed0c38d9ed53d17ebb238d79b191c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37aed0c38d9ed53d17ebb238d79b191c">&#9670;&#160;</a></span>operator-&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html#a9ef15dc941d8d9dd7bb59e119caa7c1e">pointer</a> <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00083">83</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>   {  <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>;   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<a id="a4fd111354a856852eea11585f875f7f3" name="a4fd111354a856852eea11585f875f7f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd111354a856852eea11585f875f7f3">&#9670;&#160;</a></span>operator[]()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html#ad92e9dea3c3c82cb29528131fda52d1f">reference</a> <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00110">110</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>   {</div>
+<div class="line"><span class="lineno">  112</span><span class="preprocessor">      #if defined(BOOST_NO_CXX11_RVALUE_REFERENCES) || defined(BOOST_MOVE_OLD_RVALUE_REF_BINDING_RULES)</span></div>
+<div class="line"><span class="lineno">  113</span>      <span class="keywordflow">return</span> <a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>[n];</div>
+<div class="line"><span class="lineno">  114</span><span class="preprocessor">      #else</span></div>
+<div class="line"><span class="lineno">  115</span>      return ::boost::move(<a class="code hl_variable" href="classboost_1_1move__iterator.html#a5a0b6b42572bb12ae9b02089ca616f72">m_it</a>[n]);</div>
+<div class="line"><span class="lineno">  116</span><span class="preprocessor">      #endif</span></div>
+<div class="line"><span class="lineno">  117</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2iterator_8hpp_source.html#l00144">boost::move_iterator&lt; It &gt;::m_it</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">フレンドと関連関数の詳解</h2>
+<a id="ab334a74e3642604a4738999ba24650b9" name="ab334a74e3642604a4738999ba24650b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab334a74e3642604a4738999ba24650b9">&#9670;&#160;</a></span>operator!=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>   {  <span class="keywordflow">return</span> x.m_it != y.m_it;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a65d284e7c29e0f41155a9e070ce1b20a" name="a65d284e7c29e0f41155a9e070ce1b20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65d284e7c29e0f41155a9e070ce1b20a">&#9670;&#160;</a></span>operator+</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a> operator+ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a>&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00140">140</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>   {  <span class="keywordflow">return</span> <a class="code hl_function" href="classboost_1_1move__iterator.html#abb3d298a585c6baed7d09cd3a418784d">move_iterator</a>(x.m_it + n);   }</div>
+<div class="ttc" id="aclassboost_1_1move__iterator_html_abb3d298a585c6baed7d09cd3a418784d"><div class="ttname"><a href="classboost_1_1move__iterator.html#abb3d298a585c6baed7d09cd3a418784d">boost::move_iterator::move_iterator</a></div><div class="ttdeci">move_iterator()</div><div class="ttdef"><b>Definition:</b> <a href="move_2iterator_8hpp_source.html#l00061">move/iterator.hpp:61</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a813f39126edb0d3283d97a57f2dc72d3" name="a813f39126edb0d3283d97a57f2dc72d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a813f39126edb0d3283d97a57f2dc72d3">&#9670;&#160;</a></span>operator-</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1move__iterator.html#a22c53e88917ab25cdc2b88d81cd3480a">difference_type</a> operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00137">137</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  138</span>   {  <span class="keywordflow">return</span> x.m_it - y.m_it;   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa3761a5c56739a7e6aee81d24095a377" name="aa3761a5c56739a7e6aee81d24095a377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3761a5c56739a7e6aee81d24095a377">&#9670;&#160;</a></span>operator&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00125">125</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  126</span>   {  <span class="keywordflow">return</span> x.m_it &lt; y.m_it;   }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad97de3c9bc6819056e238f88ac22df32" name="ad97de3c9bc6819056e238f88ac22df32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad97de3c9bc6819056e238f88ac22df32">&#9670;&#160;</a></span>operator&lt;=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00128">128</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>   {  <span class="keywordflow">return</span> x.m_it &lt;= y.m_it;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aed11fd63c6c7afddfd4d3e03736c792f" name="aed11fd63c6c7afddfd4d3e03736c792f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed11fd63c6c7afddfd4d3e03736c792f">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00119">119</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>   {  <span class="keywordflow">return</span> x.m_it == y.m_it;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a25d51f47055adf95404b90a54b9985fe" name="a25d51f47055adf95404b90a54b9985fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25d51f47055adf95404b90a54b9985fe">&#9670;&#160;</a></span>operator&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00131">131</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  132</span>   {  <span class="keywordflow">return</span> x.m_it &gt; y.m_it;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="adc5e22837d209f2c441144219ae75952" name="adc5e22837d209f2c441144219ae75952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc5e22837d209f2c441144219ae75952">&#9670;&#160;</a></span>operator&gt;=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classboost_1_1move__iterator.html">move_iterator</a>&lt; It &gt; &amp;&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00134">134</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  135</span>   {  <span class="keywordflow">return</span> x.m_it &gt;= y.m_it;  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5a0b6b42572bb12ae9b02089ca616f72" name="a5a0b6b42572bb12ae9b02089ca616f72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a0b6b42572bb12ae9b02089ca616f72">&#9670;&#160;</a></span>m_it</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class It &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">It <a class="el" href="classboost_1_1move__iterator.html">boost::move_iterator</a>&lt; It &gt;::m_it</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a> の <a class="el" href="move_2iterator_8hpp_source.html#l00144">144</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="move_2iterator_8hpp_source.html#l00074">boost::move_iterator&lt; It &gt;::operator*()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00098">boost::move_iterator&lt; It &gt;::operator+()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00086">boost::move_iterator&lt; It &gt;::operator++()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00101">boost::move_iterator&lt; It &gt;::operator+=()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00104">boost::move_iterator&lt; It &gt;::operator-()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00092">boost::move_iterator&lt; It &gt;::operator--()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00107">boost::move_iterator&lt; It &gt;::operator-=()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00083">boost::move_iterator&lt; It &gt;::operator-&gt;()</a>, <a class="el" href="move_2iterator_8hpp_source.html#l00110">boost::move_iterator&lt; It &gt;::operator[]()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="move_2iterator_8hpp_source.html">move/iterator.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="classboost_1_1move__iterator.html">move_iterator</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

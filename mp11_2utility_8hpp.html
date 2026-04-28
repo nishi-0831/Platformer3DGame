@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: utility.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('mp11_2utility_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#typedef-members">型定義</a>  </div>
+  <div class="headertitle"><div class="title">mp11/utility.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="mp11_2integral_8hpp_source.html">boost/mp11/integral.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp__list_8hpp_source.html">boost/mp11/detail/mp_list.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp__fold_8hpp_source.html">boost/mp11/detail/mp_fold.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp__front_8hpp_source.html">boost/mp11/detail/mp_front.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp__rename_8hpp_source.html">boost/mp11/detail/mp_rename.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp11_2detail_2mp__defer_8hpp_source.html">boost/mp11/detail/mp_defer.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mp11_2detail_2config_8hpp_source.html">boost/mp11/detail/config.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mp11/utility.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mp11_2utility_8hpp__incl.svg" width="735" height="550"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="mp11_2utility_8hpp__dep__incl.svg" width="2920" height="696"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="mp11_2utility_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__identity.html">boost::mp11::mp_identity&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__inherit.html">boost::mp11::mp_inherit&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1detail_1_1mp__eval__if__c__impl_3_01true_00_01T_00_01F_00_01U_8_8_8_01_4.html">boost::mp11::detail::mp_eval_if_c_impl&lt; true, T, F, U... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1detail_1_1mp__eval__if__c__impl_3_01false_00_01T_00_01F_00_01U_8_8_8_01_4.html">boost::mp11::detail::mp_eval_if_c_impl&lt; false, T, F, U... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1detail_1_1mp__cond__impl.html">boost::mp11::detail::mp_cond_impl&lt; C, T, E &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__quote.html">boost::mp11::mp_quote&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__quote__trait.html">boost::mp11::mp_quote_trait&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__not__fn.html">boost::mp11::mp_not_fn&lt; P &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__compose.html">boost::mp11::mp_compose&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1mp11_1_1mp__compose__q.html">boost::mp11::mp_compose_q&lt; Q &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1mp11"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html">boost::mp11</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1mp11_1_1detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11_1_1detail.html">boost::mp11::detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:a04288b756d2353781b7b352918b45100"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a04288b756d2353781b7b352918b45100"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a04288b756d2353781b7b352918b45100">boost::mp11::mp_identity_t</a> = typename mp_identity&lt; T &gt;::type</td></tr>
+<tr class="separator:a04288b756d2353781b7b352918b45100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42eb950f7427ceacf90b1eaae28bc205"><td class="memTemplParams" colspan="2">template&lt;bool C, class T , template&lt; class... &gt; class F, class... U&gt; </td></tr>
+<tr class="memitem:a42eb950f7427ceacf90b1eaae28bc205"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a42eb950f7427ceacf90b1eaae28bc205">boost::mp11::mp_eval_if_c</a> = typename detail::mp_eval_if_c_impl&lt; <a class="el" href="classC.html">C</a>, T, F, U... &gt;::type</td></tr>
+<tr class="separator:a42eb950f7427ceacf90b1eaae28bc205"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a461ec04c2298a51f446ce7816504503f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , template&lt; class... &gt; class F, class... U&gt; </td></tr>
+<tr class="memitem:a461ec04c2298a51f446ce7816504503f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a461ec04c2298a51f446ce7816504503f">boost::mp11::mp_eval_if</a> = typename detail::mp_eval_if_c_impl&lt; static_cast&lt; bool &gt;(C::value), T, F, U... &gt;::type</td></tr>
+<tr class="separator:a461ec04c2298a51f446ce7816504503f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e689bdaeea644326715ed8b4ee5f34"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> , class... U&gt; </td></tr>
+<tr class="memitem:a79e689bdaeea644326715ed8b4ee5f34"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a79e689bdaeea644326715ed8b4ee5f34">boost::mp11::mp_eval_if_q</a> = typename detail::mp_eval_if_c_impl&lt; static_cast&lt; bool &gt;(C::value), T, Q::template fn, U... &gt;::type</td></tr>
+<tr class="separator:a79e689bdaeea644326715ed8b4ee5f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcfc989a51261680cb79028829949fdb"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , template&lt; class... &gt; class F, class... U&gt; </td></tr>
+<tr class="memitem:abcfc989a51261680cb79028829949fdb"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#abcfc989a51261680cb79028829949fdb">boost::mp11::mp_eval_if_not</a> = mp_eval_if&lt; mp_not&lt; <a class="el" href="classC.html">C</a> &gt;, T, F, U... &gt;</td></tr>
+<tr class="separator:abcfc989a51261680cb79028829949fdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25c43cb18e60d3e9fe1afbf88cfe5f31"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> , class... U&gt; </td></tr>
+<tr class="memitem:a25c43cb18e60d3e9fe1afbf88cfe5f31"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a25c43cb18e60d3e9fe1afbf88cfe5f31">boost::mp11::mp_eval_if_not_q</a> = mp_eval_if&lt; mp_not&lt; <a class="el" href="classC.html">C</a> &gt;, T, Q::template fn, U... &gt;</td></tr>
+<tr class="separator:a25c43cb18e60d3e9fe1afbf88cfe5f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ca2e6af952b08864426de669c74a056"><td class="memTemplParams" colspan="2">template&lt;class T , template&lt; class... &gt; class F, class... U&gt; </td></tr>
+<tr class="memitem:a3ca2e6af952b08864426de669c74a056"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a3ca2e6af952b08864426de669c74a056">boost::mp11::mp_eval_or</a> = mp_eval_if_not&lt; mp_valid&lt; F, U... &gt;, T, F, U... &gt;</td></tr>
+<tr class="separator:a3ca2e6af952b08864426de669c74a056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31cb6c231028e901b17d2e1746c8521"><td class="memTemplParams" colspan="2">template&lt;class T , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> , class... U&gt; </td></tr>
+<tr class="memitem:ad31cb6c231028e901b17d2e1746c8521"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#ad31cb6c231028e901b17d2e1746c8521">boost::mp11::mp_eval_or_q</a> = mp_eval_or&lt; T, Q::template fn, U... &gt;</td></tr>
+<tr class="separator:ad31cb6c231028e901b17d2e1746c8521"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ff99b29b64c5ff63cbdc86956341295"><td class="memTemplParams" colspan="2">template&lt;template&lt; class... &gt; class F, class... T&gt; </td></tr>
+<tr class="memitem:a2ff99b29b64c5ff63cbdc86956341295"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a2ff99b29b64c5ff63cbdc86956341295">boost::mp11::mp_valid_and_true</a> = mp_eval_or&lt; mp_false, F, T... &gt;</td></tr>
+<tr class="separator:a2ff99b29b64c5ff63cbdc86956341295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a188c940cd9e14ae7484dcc30192263"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> , class... T&gt; </td></tr>
+<tr class="memitem:a0a188c940cd9e14ae7484dcc30192263"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a0a188c940cd9e14ae7484dcc30192263">boost::mp11::mp_valid_and_true_q</a> = mp_valid_and_true&lt; Q::template fn, T... &gt;</td></tr>
+<tr class="separator:a0a188c940cd9e14ae7484dcc30192263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cb006e0f9c19da25098ac84c0a46719"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , class... E&gt; </td></tr>
+<tr class="memitem:a6cb006e0f9c19da25098ac84c0a46719"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a6cb006e0f9c19da25098ac84c0a46719">boost::mp11::mp_cond</a> = typename detail::mp_cond_impl&lt; <a class="el" href="classC.html">C</a>, T, E... &gt;::type</td></tr>
+<tr class="separator:a6cb006e0f9c19da25098ac84c0a46719"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc89b3e49ee9450c6a4ab39feafaec88"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classC.html">C</a> , class T , class... E&gt; </td></tr>
+<tr class="memitem:afc89b3e49ee9450c6a4ab39feafaec88"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11_1_1detail.html#afc89b3e49ee9450c6a4ab39feafaec88">boost::mp11::detail::mp_cond_</a> = mp_eval_if&lt; <a class="el" href="classC.html">C</a>, T, mp_cond, E... &gt;</td></tr>
+<tr class="separator:afc89b3e49ee9450c6a4ab39feafaec88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c74a355f39023d2e54109b3bdd32b6f"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> , class... T&gt; </td></tr>
+<tr class="memitem:a1c74a355f39023d2e54109b3bdd32b6f"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a1c74a355f39023d2e54109b3bdd32b6f">boost::mp11::mp_invoke_q</a> = typename Q::template fn&lt; T... &gt;</td></tr>
+<tr class="separator:a1c74a355f39023d2e54109b3bdd32b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43abc0f43d38cf95800b79bc6d252520"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> &gt; </td></tr>
+<tr class="memitem:a43abc0f43d38cf95800b79bc6d252520"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11.html#a43abc0f43d38cf95800b79bc6d252520">boost::mp11::mp_not_fn_q</a> = mp_not_fn&lt; Q::template fn &gt;</td></tr>
+<tr class="separator:a43abc0f43d38cf95800b79bc6d252520"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b6a31771b64f93295aa829225cf178"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a> , class <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a> &gt; </td></tr>
+<tr class="memitem:aa4b6a31771b64f93295aa829225cf178"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1mp11_1_1detail.html#aa4b6a31771b64f93295aa829225cf178">boost::mp11::detail::mp_compose_helper</a> = mp_list&lt; mp_apply_q&lt; <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574af09564c9ca56850d4cd6b3319e541aee">Q</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a> &gt; &gt;</td></tr>
+<tr class="separator:aa4b6a31771b64f93295aa829225cf178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_ae448cbf0b60ec142440a2a25fe29c82.html">mp11</a></li><li class="navelem"><a class="el" href="mp11_2utility_8hpp.html">utility.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

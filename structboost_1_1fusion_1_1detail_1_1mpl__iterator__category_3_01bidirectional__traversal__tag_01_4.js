@@ -1,0 +1,4 @@
+var structboost_1_1fusion_1_1detail_1_1mpl__iterator__category_3_01bidirectional__traversal__tag_01_4 =
+[
+    [ "type", "structboost_1_1fusion_1_1detail_1_1mpl__iterator__category_3_01bidirectional__traversal__tag_01_4.html#aacfacaa7418469269f840fdf461fa9b9", null ]
+];

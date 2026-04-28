@@ -1,0 +1,4 @@
+var structboost_1_1detail_1_1span__data_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__point2591c1aa10b795e9a497cd05f3c6bf78 =
+[
+    [ "type", "structboost_1_1detail_1_1span__data_3_01T_00_01typename_01std_1_1enable__if_3_01std_1_1is__point2591c1aa10b795e9a497cd05f3c6bf78.html#af7670f3892d98eb11d64c78d195e396a", null ]
+];

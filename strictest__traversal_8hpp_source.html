@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: strictest_traversal.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('strictest__traversal_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">strictest_traversal.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="strictest__traversal_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    Copyright (c) 2001-2011 Joel de Guzman</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    Copyright (c) 2006 Dan Marsden</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"></span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">    Distributed under the Boost Software License, Version 1.0. (See accompanying</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">    file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">==============================================================================*/</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#if !defined(FUSION_STRICTEST_TRAVERSAL_20060123_2101)</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define FUSION_STRICTEST_TRAVERSAL_20060123_2101</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2support_2config_8hpp.html">boost/fusion/support/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;<a class="code" href="config_8hpp.html">boost/config.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2or_8hpp.html">boost/mpl/or.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2if_8hpp.html">boost/mpl/if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="support_2category__of_8hpp.html">boost/fusion/support/category_of.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2mpl_8hpp.html">boost/fusion/mpl.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="fusion_2algorithm_2iteration_2fold_8hpp.html">boost/fusion/algorithm/iteration/fold.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="remove__reference_8hpp.html">boost/type_traits/remove_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="is__convertible_8hpp.html">boost/type_traits/is_convertible.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span>fusion</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">struct </span>forward_traversal_tag;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">struct </span>bidirectional_traversal_tag;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">struct </span>random_access_traversal_tag;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">namespace </span><a class="code hl_namespace" href="namespacedetail.html">detail</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tag1, <span class="keyword">typename</span> Tag2,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            <span class="keywordtype">bool</span> Tag1Stricter = <a class="code hl_struct" href="structboost_1_1is__convertible.html">boost::is_convertible&lt;Tag2,Tag1&gt;::value</a>&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html">   31</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html">stricter_traversal</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html#ac1bd8a2989ec33a281c7fef1c6bafaaf">   33</a></span>            <span class="keyword">typedef</span> Tag1 <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html#ac1bd8a2989ec33a281c7fef1c6bafaaf">type</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        };</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Tag1, <span class="keyword">typename</span> Tag2&gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4.html">   37</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html">stricter_traversal</a>&lt;Tag1,Tag2,false&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4.html#aed2d24a0a230826c6d20f1f03949a417">   39</a></span>            <span class="keyword">typedef</span> Tag2 <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4.html#aed2d24a0a230826c6d20f1f03949a417">type</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html">   42</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html">strictest_traversal_impl</a></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sig&gt;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result.html">   45</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result.html">result</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> StrictestSoFar, <span class="keyword">typename</span> Next&gt;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html">   48</a></span>            <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result.html">result</a>&lt;<a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html">strictest_traversal_impl</a>(StrictestSoFar, Next)&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>            {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#afc2cdf2b253fb167ffdd8c35b7d4698d">   50</a></span>                <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">remove_reference&lt;Next&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#afc2cdf2b253fb167ffdd8c35b7d4698d">next_value</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a2f4f78308a4f012332583f8ae9dd6c7a">   51</a></span>                <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">remove_reference&lt;StrictestSoFar&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a2f4f78308a4f012332583f8ae9dd6c7a">strictest_so_far</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#adc587dbae957ea0be60f33b49252329d">   53</a></span>                <span class="keyword">typedef</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a2f4f78308a4f012332583f8ae9dd6c7a">strictest_so_far</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#adc587dbae957ea0be60f33b49252329d">tag1</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#af1e8e1e26fb9d85b29de18df2ea15ac7">   54</a></span>                <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1traits_1_1category__of.html">traits::category_of&lt;next_value&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#af1e8e1e26fb9d85b29de18df2ea15ac7">tag2</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a452a129079e6147e06c7eea9a1e4f218">   56</a></span>                <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html#ac1bd8a2989ec33a281c7fef1c6bafaaf">stricter_traversal&lt;tag1,tag2&gt;::type</a> <a class="code hl_typedef" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a452a129079e6147e06c7eea9a1e4f218">type</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>            };</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <span class="comment">// never called, but needed for decltype-based result_of (C++0x)</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#ifndef BOOST_NO_CXX11_RVALUE_REFERENCES</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keyword">template</span>&lt;<span class="keyword">typename</span> StrictestSoFar, <span class="keyword">typename</span> Next&gt;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            <a class="code hl_define" href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>            <span class="keyword">typename</span> <a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result.html">result</a>&lt;<a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html">strictest_traversal_impl</a>(StrictestSoFar, Next)&gt;::type</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html#a1aa87c89d3386f3653d3c2a14a89a32c">   64</a></span>            <a class="code hl_function" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html#a1aa87c89d3386f3653d3c2a14a89a32c">operator()</a>(StrictestSoFar&amp;&amp;, Next&amp;&amp;) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        };</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Sequence&gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal.html">   69</a></span>        <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1fusion_1_1detail_1_1strictest__traversal.html">strictest_traversal</a></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>            : <a class="code hl_struct" href="structboost_1_1fusion_1_1result__of_1_1fold.html">result_of::fold</a>&lt;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            Sequence, fusion::random_access_traversal_tag,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>            strictest_traversal_impl&gt;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        {};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>}}</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aconfig_8hpp_html"><div class="ttname"><a href="config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2algorithm_2iteration_2fold_8hpp_html"><div class="ttname"><a href="fusion_2algorithm_2iteration_2fold_8hpp.html">fold.hpp</a></div></div>
+<div class="ttc" id="afusion_2mpl_8hpp_html"><div class="ttname"><a href="fusion_2mpl_8hpp.html">mpl.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html"><div class="ttname"><a href="fusion_2support_2config_8hpp.html">config.hpp</a></div></div>
+<div class="ttc" id="afusion_2support_2config_8hpp_html_a5d0d2e1c552ae0a9192b5c0bb04ab43f"><div class="ttname"><a href="fusion_2support_2config_8hpp.html#a5d0d2e1c552ae0a9192b5c0bb04ab43f">BOOST_FUSION_GPU_ENABLED</a></div><div class="ttdeci">#define BOOST_FUSION_GPU_ENABLED</div><div class="ttdef"><b>Definition:</b> <a href="fusion_2support_2config_8hpp_source.html#l00016">fusion/support/config.hpp:16</a></div></div>
+<div class="ttc" id="ais__convertible_8hpp_html"><div class="ttname"><a href="is__convertible_8hpp.html">is_convertible.hpp</a></div></div>
+<div class="ttc" id="ampl_2if_8hpp_html"><div class="ttname"><a href="mpl_2if_8hpp.html">if.hpp</a></div></div>
+<div class="ttc" id="ampl_2or_8hpp_html"><div class="ttname"><a href="mpl_2or_8hpp.html">or.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespacedetail_html"><div class="ttname"><a href="namespacedetail.html">detail</a></div><div class="ttdoc">detail namespace with internal helper functions</div><div class="ttdef"><b>Definition:</b> <a href="utf8__codecvt__facet_8ipp_source.html#l00033">utf8_codecvt_facet.ipp:33</a></div></div>
+<div class="ttc" id="aremove__reference_8hpp_html"><div class="ttname"><a href="remove__reference_8hpp.html">remove_reference.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4_html_aed2d24a0a230826c6d20f1f03949a417"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4.html#aed2d24a0a230826c6d20f1f03949a417">boost::fusion::detail::stricter_traversal&lt; Tag1, Tag2, false &gt;::type</a></div><div class="ttdeci">Tag2 type</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00039">strictest_traversal.hpp:39</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1stricter__traversal_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html">boost::fusion::detail::stricter_traversal</a></div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00031">strictest_traversal.hpp:32</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1stricter__traversal_html_ac1bd8a2989ec33a281c7fef1c6bafaaf"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1stricter__traversal.html#ac1bd8a2989ec33a281c7fef1c6bafaaf">boost::fusion::detail::stricter_traversal::type</a></div><div class="ttdeci">Tag1 type</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00033">strictest_traversal.hpp:33</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918_html_a2f4f78308a4f012332583f8ae9dd6c7a"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a2f4f78308a4f012332583f8ae9dd6c7a">boost::fusion::detail::strictest_traversal_impl::result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::strictest_so_far</a></div><div class="ttdeci">remove_reference&lt; StrictestSoFar &gt;::type strictest_so_far</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00051">strictest_traversal.hpp:51</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918_html_a452a129079e6147e06c7eea9a1e4f218"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#a452a129079e6147e06c7eea9a1e4f218">boost::fusion::detail::strictest_traversal_impl::result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::type</a></div><div class="ttdeci">stricter_traversal&lt; tag1, tag2 &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00056">strictest_traversal.hpp:56</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918_html_adc587dbae957ea0be60f33b49252329d"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#adc587dbae957ea0be60f33b49252329d">boost::fusion::detail::strictest_traversal_impl::result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::tag1</a></div><div class="ttdeci">strictest_so_far tag1</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00053">strictest_traversal.hpp:53</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918_html_af1e8e1e26fb9d85b29de18df2ea15ac7"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#af1e8e1e26fb9d85b29de18df2ea15ac7">boost::fusion::detail::strictest_traversal_impl::result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::tag2</a></div><div class="ttdeci">traits::category_of&lt; next_value &gt;::type tag2</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00054">strictest_traversal.hpp:54</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918_html_afc2cdf2b253fb167ffdd8c35b7d4698d"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_3_01strictest__traversale7d60914815da60a663dbdeca132e918.html#afc2cdf2b253fb167ffdd8c35b7d4698d">boost::fusion::detail::strictest_traversal_impl::result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::next_value</a></div><div class="ttdeci">remove_reference&lt; Next &gt;::type next_value</div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00050">strictest_traversal.hpp:50</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_1_1result.html">boost::fusion::detail::strictest_traversal_impl::result</a></div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00045">strictest_traversal.hpp:45</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html">boost::fusion::detail::strictest_traversal_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00042">strictest_traversal.hpp:43</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal__impl_html_a1aa87c89d3386f3653d3c2a14a89a32c"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal__impl.html#a1aa87c89d3386f3653d3c2a14a89a32c">boost::fusion::detail::strictest_traversal_impl::operator()</a></div><div class="ttdeci">BOOST_FUSION_GPU_ENABLED result&lt; strictest_traversal_impl(StrictestSoFar, Next)&gt;::type operator()(StrictestSoFar &amp;&amp;, Next &amp;&amp;) const</div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1detail_1_1strictest__traversal_html"><div class="ttname"><a href="structboost_1_1fusion_1_1detail_1_1strictest__traversal.html">boost::fusion::detail::strictest_traversal</a></div><div class="ttdef"><b>Definition:</b> <a href="strictest__traversal_8hpp_source.html#l00069">strictest_traversal.hpp:73</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1result__of_1_1fold_html"><div class="ttname"><a href="structboost_1_1fusion_1_1result__of_1_1fold.html">boost::fusion::result_of::fold</a></div><div class="ttdef"><b>Definition:</b> <a href="fusion_2algorithm_2iteration_2detail_2preprocessed_2fold_8hpp_source.html#l00141">fusion/algorithm/iteration/detail/preprocessed/fold.hpp:143</a></div></div>
+<div class="ttc" id="astructboost_1_1fusion_1_1traits_1_1category__of_html"><div class="ttname"><a href="structboost_1_1fusion_1_1traits_1_1category__of.html">boost::fusion::traits::category_of</a></div><div class="ttdef"><b>Definition:</b> <a href="support_2category__of_8hpp_source.html#l00068">support/category_of.hpp:71</a></div></div>
+<div class="ttc" id="astructboost_1_1is__convertible_html"><div class="ttname"><a href="structboost_1_1is__convertible.html">boost::is_convertible</a></div><div class="ttdef"><b>Definition:</b> <a href="is__convertible_8hpp_source.html#l00481">is_convertible.hpp:482</a></div></div>
+<div class="ttc" id="astructboost_1_1remove__reference_html_a00b79ae7d1eea1480973d3b2f3695493"><div class="ttname"><a href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">boost::remove_reference::type</a></div><div class="ttdeci">boost::detail::remove_rvalue_ref&lt; T &gt;::type type</div><div class="ttdef"><b>Definition:</b> <a href="remove__reference_8hpp_source.html#l00038">remove_reference.hpp:38</a></div></div>
+<div class="ttc" id="asupport_2category__of_8hpp_html"><div class="ttname"><a href="support_2category__of_8hpp.html">category_of.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_c6336bbc78e8935064747a73a39db18c.html">fusion</a></li><li class="navelem"><a class="el" href="dir_ba32822e37d317bbec069ec2fa1baf76.html">view</a></li><li class="navelem"><a class="el" href="dir_26000d23185fc0537c388aff34ae32f1.html">detail</a></li><li class="navelem"><a class="el" href="strictest__traversal_8hpp.html">strictest_traversal.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

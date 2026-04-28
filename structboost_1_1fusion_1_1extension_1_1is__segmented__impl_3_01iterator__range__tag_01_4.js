@@ -1,0 +1,8 @@
+var structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4 =
+[
+    [ "apply", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1apply.html", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1apply" ],
+    [ "is_segmented_iterator", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1is__segmented__iterator.html", null ],
+    [ "is_segmented_iterator< Iterator & >", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1is__s449abd66089ad17a8abc91becc892c3d.html", null ],
+    [ "is_segmented_iterator< Iterator const >", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1is__sbd8eeb7e1662dae74933b495c350c6a0.html", null ],
+    [ "is_segmented_iterator< segmented_iterator< Context > >", "structboost_1_1fusion_1_1extension_1_1is__segmented__impl_3_01iterator__range__tag_01_4_1_1is__sc50884fcdc441af777d7523446fc0a95.html", null ]
+];

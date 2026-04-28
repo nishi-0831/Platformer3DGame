@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: base.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('functional_2overloaded__function_2detail_2base_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">functional/overloaded_function/detail/base.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="functional_2overloaded__function_2config_8hpp_source.html">boost/functional/overloaded_function/config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="function_8hpp_source.html">boost/function.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="iteration_2iterate_8hpp_source.html">boost/preprocessor/iteration/iterate.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="preprocessor_2repetition_2enum_8hpp_source.html">boost/preprocessor/repetition/enum.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="cat_8hpp_source.html">boost/preprocessor/cat.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="comma__if_8hpp_source.html">boost/preprocessor/comma_if.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+functional/overloaded_function/detail/base.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="functional_2overloaded__function_2detail_2base_8hpp__incl.svg" width="4478" height="755"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="functional_2overloaded__function_2detail_2base_8hpp__dep__incl.svg" width="194" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="functional_2overloaded__function_2detail_2base_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1overloaded__function__detail_1_1base.html">boost::overloaded_function_detail::base&lt; F &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1overloaded__function__detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1overloaded__function__detail.html">boost::overloaded_function_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a1f91dedb00cd842f9df1585c59241286"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a>(z,  n,  unused)&#160;&#160;&#160;    <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="classA.html">A</a>, n)</td></tr>
+<tr class="separator:a1f91dedb00cd842f9df1585c59241286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef1fcbd539acb8063a73c02d9e498f7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#aef1fcbd539acb8063a73c02d9e498f7a">BOOST_FUNCTIONAL_DETAIL_arg_name</a>(z,  n,  unused)&#160;&#160;&#160;    <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(a, n)</td></tr>
+<tr class="separator:aef1fcbd539acb8063a73c02d9e498f7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac471dc56e5b2bd30e3b47f5a3663507f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#ac471dc56e5b2bd30e3b47f5a3663507f">BOOST_FUNCTIONAL_DETAIL_arg_tparam</a>(z,  n,  unused)&#160;&#160;&#160;    typename <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a>(z, n, unused)</td></tr>
+<tr class="separator:ac471dc56e5b2bd30e3b47f5a3663507f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19357997efaa15ed3a551f408fec0d4b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a19357997efaa15ed3a551f408fec0d4b">BOOST_FUNCTIONAL_DETAIL_arg</a>(z,  n,  unused)</td></tr>
+<tr class="separator:a19357997efaa15ed3a551f408fec0d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79e1e2b8d59ff68a6335720e473f61cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a79e1e2b8d59ff68a6335720e473f61cb">BOOST_FUNCTIONAL_DETAIL_f</a></td></tr>
+<tr class="separator:a79e1e2b8d59ff68a6335720e473f61cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04db94d718693bbf251bbd7eca12be84"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a04db94d718693bbf251bbd7eca12be84">BOOST_PP_ITERATION_PARAMS_1</a></td></tr>
+<tr class="separator:a04db94d718693bbf251bbd7eca12be84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a19357997efaa15ed3a551f408fec0d4b" name="a19357997efaa15ed3a551f408fec0d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19357997efaa15ed3a551f408fec0d4b">&#9670;&#160;</a></span>BOOST_FUNCTIONAL_DETAIL_arg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTIONAL_DETAIL_arg</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">unused&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_define" href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a>(z, n, unused) \</div>
+<div class="line">    BOOST_FUNCTIONAL_DETAIL_arg_name(z, n, unused)</div>
+<div class="ttc" id="afunctional_2overloaded__function_2detail_2base_8hpp_html_a1f91dedb00cd842f9df1585c59241286"><div class="ttname"><a href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a></div><div class="ttdeci">#define BOOST_FUNCTIONAL_DETAIL_arg_type(z, n, unused)</div><div class="ttdef"><b>Definition:</b> <a href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00019">functional/overloaded_function/detail/base.hpp:19</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00028">28</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aef1fcbd539acb8063a73c02d9e498f7a" name="aef1fcbd539acb8063a73c02d9e498f7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef1fcbd539acb8063a73c02d9e498f7a">&#9670;&#160;</a></span>BOOST_FUNCTIONAL_DETAIL_arg_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTIONAL_DETAIL_arg_name</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">unused&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(a, n)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00022">22</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac471dc56e5b2bd30e3b47f5a3663507f" name="ac471dc56e5b2bd30e3b47f5a3663507f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac471dc56e5b2bd30e3b47f5a3663507f">&#9670;&#160;</a></span>BOOST_FUNCTIONAL_DETAIL_arg_tparam</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTIONAL_DETAIL_arg_tparam</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">unused&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    typename <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a>(z, n, unused)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00025">25</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1f91dedb00cd842f9df1585c59241286" name="a1f91dedb00cd842f9df1585c59241286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f91dedb00cd842f9df1585c59241286">&#9670;&#160;</a></span>BOOST_FUNCTIONAL_DETAIL_arg_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTIONAL_DETAIL_arg_type</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">z, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">n, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">unused&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;    <a class="el" href="cat_8hpp.html#ac796d6dcc22f521a9b7ee409c312f7c4">BOOST_PP_CAT</a>(<a class="el" href="classA.html">A</a>, n)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00019">19</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a79e1e2b8d59ff68a6335720e473f61cb" name="a79e1e2b8d59ff68a6335720e473f61cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79e1e2b8d59ff68a6335720e473f61cb">&#9670;&#160;</a></span>BOOST_FUNCTIONAL_DETAIL_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_FUNCTIONAL_DETAIL_f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">    <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6">R</a> (<a class="code hl_define" href="preprocessor_2repetition_2enum_8hpp.html#aced80a1acf93f81c9d9696339d32279d">BOOST_PP_ENUM</a>(BOOST_FUNCTIONAL_DETAIL_arity, \</div>
+<div class="line">            <a class="code hl_define" href="functional_2overloaded__function_2detail_2base_8hpp.html#a1f91dedb00cd842f9df1585c59241286">BOOST_FUNCTIONAL_DETAIL_arg_type</a>, ~))</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ae1e1d3d40573127e9ee0480caf1283d6">KeyCode::R</a></div><div class="ttdeci">@ R</div></div>
+<div class="ttc" id="apreprocessor_2repetition_2enum_8hpp_html_aced80a1acf93f81c9d9696339d32279d"><div class="ttname"><a href="preprocessor_2repetition_2enum_8hpp.html#aced80a1acf93f81c9d9696339d32279d">BOOST_PP_ENUM</a></div><div class="ttdeci">#define BOOST_PP_ENUM</div><div class="ttdef"><b>Definition:</b> <a href="preprocessor_2repetition_2enum_8hpp_source.html#l00032">preprocessor/repetition/enum.hpp:32</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00032">32</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a04db94d718693bbf251bbd7eca12be84" name="a04db94d718693bbf251bbd7eca12be84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04db94d718693bbf251bbd7eca12be84">&#9670;&#160;</a></span>BOOST_PP_ITERATION_PARAMS_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_PP_ITERATION_PARAMS_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">                (3, (0, <a class="code hl_define" href="functional_2overloaded__function_2config_8hpp.html#a6150439db31104237467d86322c78939">BOOST_FUNCTIONAL_OVERLOADED_FUNCTION_CONFIG_ARITY_MAX</a>, \</div>
+<div class="line">                <span class="stringliteral">&quot;boost/functional/overloaded_function/detail/base.hpp&quot;</span>))</div>
+<div class="ttc" id="afunctional_2overloaded__function_2config_8hpp_html_a6150439db31104237467d86322c78939"><div class="ttname"><a href="functional_2overloaded__function_2config_8hpp.html#a6150439db31104237467d86322c78939">BOOST_FUNCTIONAL_OVERLOADED_FUNCTION_CONFIG_ARITY_MAX</a></div><div class="ttdeci">#define BOOST_FUNCTIONAL_OVERLOADED_FUNCTION_CONFIG_ARITY_MAX</div><div class="ttdoc">Specify the maximum number of arguments of the functions being overloaded.</div><div class="ttdef"><b>Definition:</b> <a href="functional_2overloaded__function_2config_8hpp_source.html#l00027">functional/overloaded_function/config.hpp:27</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html">functional/overloaded_function/detail/base.hpp</a> の <a class="el" href="functional_2overloaded__function_2detail_2base_8hpp_source.html#l00042">42</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_4d8cd63fc6304420307137fa088f2812.html">functional</a></li><li class="navelem"><a class="el" href="dir_a31514920e0970cbf496173ed26342a4.html">overloaded_function</a></li><li class="navelem"><a class="el" href="dir_76b2a3422eed5c9b93af15a1d9f15272.html">detail</a></li><li class="navelem"><a class="el" href="functional_2overloaded__function_2detail_2base_8hpp.html">base.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

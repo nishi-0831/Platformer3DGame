@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: count_impl.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('multiset_2aux___2count__impl_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">multiset/aux_/count_impl.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="multiset_2aux___2count__impl_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef BOOST_MPL_MULTISET_AUX_COUNT_IMPL_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define BOOST_MPL_MULTISET_AUX_COUNT_IMPL_HPP_INCLUDED</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// Copyright Aleksey Gurtovoy 2003-2004</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// Distributed under the Boost Software License, Version 1.0. </span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// (See accompanying file LICENSE_1_0.txt or copy at </span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// See http://www.boost.org/libs/mpl for documentation.</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// $Id$</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">// $Date$</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// $Revision$</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2multiset_2aux___2tag_8hpp.html">boost/mpl/multiset/aux_/tag.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="count__fwd_8hpp.html">boost/mpl/count_fwd.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="int_8hpp.html">boost/mpl/int.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="type__wrapper_8hpp.html">boost/mpl/aux_/type_wrapper.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="static__cast_8hpp.html">boost/mpl/aux_/static_cast.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="static__constant_8hpp.html">boost/mpl/aux_/config/static_constant.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2aux___2config_2workaround_8hpp.html">boost/mpl/aux_/config/workaround.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;<a class="code" href="mpl_2aux___2config_2msvc_8hpp.html">boost/mpl/aux_/config/msvc.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#if BOOST_WORKAROUND(BOOST_MSVC, &lt;= 1300)</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#   include &lt;<a class="code" href="mpl_2if_8hpp.html">boost/mpl/if.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#   include &lt;<a class="code" href="is__reference_8hpp.html">boost/type_traits/is_reference.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> { <span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost_1_1mpl.html">mpl</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if BOOST_WORKAROUND(BOOST_MSVC, &lt;= 1300)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">namespace </span>aux {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> S, <span class="keyword">typename</span> U &gt;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">struct </span>multiset_count_impl</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    : <a class="code hl_struct" href="structint__.html">int_</a>&lt; sizeof(S::key_count(BOOST_MPL_AUX_STATIC_CAST(U*,0))) - 1 &gt;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>{</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">template</span>&lt; <span class="keyword">typename</span> S, <span class="keyword">typename</span> U &gt;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">struct </span>multiset_count_ref_impl</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">typedef</span> <a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">U</a> (* u_)();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">typedef</span> <a class="code hl_struct" href="structint__.html">int_</a>&lt; <span class="keyword">sizeof</span>(S::ref_key_count(<a class="code hl_define" href="static__cast_8hpp.html#ae37b75a7b986c8f7b9015added7ba25e">BOOST_MPL_AUX_STATIC_CAST</a>(u_,0))) - 1 &gt; type_;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_define" href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">int</span>, value = type_::value);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keyword">typedef</span> type_ type;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">struct </span>count_impl&lt; aux::multiset_tag &gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>{</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Set, <span class="keyword">typename</span> Key &gt; <span class="keyword">struct </span>apply</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        : if_&lt; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>              is_reference&lt;Key&gt;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>            , aux::multiset_count_ref_impl&lt;Set,Key&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            , aux::multiset_count_impl&lt;Set,Key&gt;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            &gt;::type</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    };</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keyword">template</span>&lt;&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4.html">   68</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1count__impl.html">count_impl</a>&lt; aux::multiset_tag &gt;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>{</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html">   70</a></span>    <span class="keyword">template</span>&lt; <span class="keyword">typename</span> Set, <span class="keyword">typename</span> Key &gt; <span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1mpl_1_1apply.html">apply</a></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#ad9329258a7d18256e6893e2dd7be4aafaaeeddca25a4755a94a62e77f579750fe">   72</a></span>        <span class="keyword">enum</span> { msvc71_wknd_ = <span class="keyword">sizeof</span>(Set::key_count(<a class="code hl_define" href="static__cast_8hpp.html#ae37b75a7b986c8f7b9015added7ba25e">BOOST_MPL_AUX_STATIC_CAST</a>(<a class="code hl_struct" href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">aux::type_wrapper&lt;Key&gt;</a>*,0))) - 1 };</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a8b603aeff0bf420789bf7c0042e50066">   73</a></span>        <span class="keyword">typedef</span> int_&lt; msvc71_wknd_ &gt; <a class="code hl_typedef" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a8b603aeff0bf420789bf7c0042e50066">type</a>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a95446717bd2899383c49a19b74b779fd">   74</a></span>        <a class="code hl_function" href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a95446717bd2899383c49a19b74b779fd">BOOST_STATIC_CONSTANT</a>(<span class="keywordtype">int</span>, value = msvc71_wknd_);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    };</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_WORKAROUND(BOOST_MSVC, &lt;= 1300)</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="preprocessor">#endif </span><span class="comment">// BOOST_MPL_MULTISET_AUX_COUNT_IMPL_HPP_INCLUDED</span></div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574a4c614360da93c0a041b22e537de151eb">KeyCode::U</a></div><div class="ttdeci">@ U</div></div>
+<div class="ttc" id="acount__fwd_8hpp_html"><div class="ttname"><a href="count__fwd_8hpp.html">count_fwd.hpp</a></div></div>
+<div class="ttc" id="aint_8hpp_html"><div class="ttname"><a href="int_8hpp.html">int.hpp</a></div></div>
+<div class="ttc" id="ais__reference_8hpp_html"><div class="ttname"><a href="is__reference_8hpp.html">is_reference.hpp</a></div></div>
+<div class="ttc" id="ampl_2aux___2config_2msvc_8hpp_html"><div class="ttname"><a href="mpl_2aux___2config_2msvc_8hpp.html">msvc.hpp</a></div></div>
+<div class="ttc" id="ampl_2aux___2config_2workaround_8hpp_html"><div class="ttname"><a href="mpl_2aux___2config_2workaround_8hpp.html">workaround.hpp</a></div></div>
+<div class="ttc" id="ampl_2if_8hpp_html"><div class="ttname"><a href="mpl_2if_8hpp.html">if.hpp</a></div></div>
+<div class="ttc" id="ampl_2multiset_2aux___2tag_8hpp_html"><div class="ttname"><a href="mpl_2multiset_2aux___2tag_8hpp.html">tag.hpp</a></div></div>
+<div class="ttc" id="anamespaceboost_1_1mpl_html"><div class="ttname"><a href="namespaceboost_1_1mpl.html">boost::mpl</a></div><div class="ttdef"><b>Definition:</b> <a href="components__as__mpl__sequence_8hpp_source.html#l00024">components_as_mpl_sequence.hpp:24</a></div></div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="astatic__cast_8hpp_html"><div class="ttname"><a href="static__cast_8hpp.html">static_cast.hpp</a></div></div>
+<div class="ttc" id="astatic__cast_8hpp_html_ae37b75a7b986c8f7b9015added7ba25e"><div class="ttname"><a href="static__cast_8hpp.html#ae37b75a7b986c8f7b9015added7ba25e">BOOST_MPL_AUX_STATIC_CAST</a></div><div class="ttdeci">#define BOOST_MPL_AUX_STATIC_CAST(T, expr)</div><div class="ttdef"><b>Definition:</b> <a href="static__cast_8hpp_source.html#l00024">static_cast.hpp:24</a></div></div>
+<div class="ttc" id="astatic__constant_8hpp_html"><div class="ttname"><a href="static__constant_8hpp.html">static_constant.hpp</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1apply_html"><div class="ttname"><a href="structboost_1_1mpl_1_1apply.html">boost::mpl::apply</a></div><div class="ttdoc">primary template (not a specialization!)</div><div class="ttdef"><b>Definition:</b> <a href="mpl_2aux___2preprocessed_2bcc_2apply_8hpp_source.html#l00163">mpl/aux_/preprocessed/bcc/apply.hpp:165</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1aux_1_1type__wrapper_html"><div class="ttname"><a href="structboost_1_1mpl_1_1aux_1_1type__wrapper.html">boost::mpl::aux::type_wrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="type__wrapper_8hpp_source.html#l00022">type_wrapper.hpp:23</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply_html_a8b603aeff0bf420789bf7c0042e50066"><div class="ttname"><a href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a8b603aeff0bf420789bf7c0042e50066">boost::mpl::count_impl&lt; aux::multiset_tag &gt;::apply::type</a></div><div class="ttdeci">int_&lt; msvc71_wknd_ &gt; type</div><div class="ttdef"><b>Definition:</b> <a href="multiset_2aux___2count__impl_8hpp_source.html#l00073">multiset/aux_/count_impl.hpp:73</a></div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply_html_a95446717bd2899383c49a19b74b779fd"><div class="ttname"><a href="structboost_1_1mpl_1_1count__impl_3_01aux_1_1multiset__tag_01_4_1_1apply.html#a95446717bd2899383c49a19b74b779fd">boost::mpl::count_impl&lt; aux::multiset_tag &gt;::apply::BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">BOOST_STATIC_CONSTANT(int, value=msvc71_wknd_)</div></div>
+<div class="ttc" id="astructboost_1_1mpl_1_1count__impl_html"><div class="ttname"><a href="structboost_1_1mpl_1_1count__impl.html">boost::mpl::count_impl</a></div><div class="ttdef"><b>Definition:</b> <a href="aux___2count__impl_8hpp_source.html#l00026">aux_/count_impl.hpp:27</a></div></div>
+<div class="ttc" id="astructint___html"><div class="ttname"><a href="structint__.html">int_</a></div><div class="ttdef"><b>Definition:</b> <a href="int__fwd_8hpp_source.html#l00022">int_fwd.hpp:22</a></div></div>
+<div class="ttc" id="asuffix_8hpp_html_a347deb9f70eeef37f8c718d30c9c98b6"><div class="ttname"><a href="suffix_8hpp.html#a347deb9f70eeef37f8c718d30c9c98b6">BOOST_STATIC_CONSTANT</a></div><div class="ttdeci">#define BOOST_STATIC_CONSTANT(type, assignment)</div><div class="ttdef"><b>Definition:</b> <a href="suffix_8hpp_source.html#l00410">suffix.hpp:410</a></div></div>
+<div class="ttc" id="atype__wrapper_8hpp_html"><div class="ttname"><a href="type__wrapper_8hpp.html">type_wrapper.hpp</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_213f1e5fc7f62ee28ee632d4c984f7c1.html">mpl</a></li><li class="navelem"><a class="el" href="dir_19868e0575fe5b35da90440023bd0975.html">multiset</a></li><li class="navelem"><a class="el" href="dir_001ed704940cd75b72d9907b76390eeb.html">aux_</a></li><li class="navelem"><a class="el" href="multiset_2aux___2count__impl_8hpp.html">count_impl.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

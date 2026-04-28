@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: Transform.gen.cpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('Transform_8gen_8cpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Transform.gen.cpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="Transform_8gen_8cpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Transform.generated.h</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="Transform_8h.html">Transform.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="MTImGui_8h.html">MTImGui.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// TransformとTransformMementoの相互変換処理を実装</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// ============================================================================</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_class" href="classmtgb_1_1ComponentMemento.html">TransformMemento</a>* mtgb::Transform::SaveToMemento()</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    { </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_function" href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">OnPreSave</a>(); </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_struct" href="structTransformState.html">TransformState</a> state;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        state.<a class="code hl_variable" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">parent</a> = this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        state.<a class="code hl_variable" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">position</a> = this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        state.<a class="code hl_variable" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">scale</a> = this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        state.<a class="code hl_variable" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">rotate</a> = this-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Memento(<a class="code hl_function" href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">GetEntityId</a>(), state);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    } </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> mtgb::Transform::RestoreFromMemento(<span class="keyword">const</span> Memento&amp; _memento) </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    { </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structTransformState.html">TransformState</a>&amp; state = _memento.GetState();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        this-&gt;parent = state.<a class="code hl_variable" href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">parent</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        this-&gt;position = state.<a class="code hl_variable" href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">position</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        this-&gt;scale = state.<a class="code hl_variable" href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">scale</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        this-&gt;rotate = state.<a class="code hl_variable" href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">rotate</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        OnPostRestore(); </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    } </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> mtgb::to_json(nlohmann::json&amp; _j,<span class="keyword">const</span> <a class="code hl_class" href="classmtgb_1_1Transform.html">mtgb::Transform</a>&amp; _target) </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        _j[<span class="stringliteral">&quot;parent&quot;</span>] = JsonConverter::Serialize&lt;mtgb::EntityId&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        _j[<span class="stringliteral">&quot;position&quot;</span>] = JsonConverter::Serialize&lt;mtgb::Vector3&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        _j[<span class="stringliteral">&quot;scale&quot;</span>] = JsonConverter::Serialize&lt;mtgb::Vector3&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _j[<span class="stringliteral">&quot;rotate&quot;</span>] = JsonConverter::Serialize&lt;mtgb::Quaternion&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    } </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> mtgb::from_json(<span class="keyword">const</span> nlohmann::json&amp; _j, <a class="code hl_class" href="classmtgb_1_1Transform.html">mtgb::Transform</a>&amp; _target) </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        JsonConverter::Deserialize&lt;mtgb::EntityId&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">parent</a>, _j,<span class="stringliteral">&quot;parent&quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        JsonConverter::Deserialize&lt;mtgb::Vector3&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>, _j,<span class="stringliteral">&quot;position&quot;</span>);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        JsonConverter::Deserialize&lt;mtgb::Vector3&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">scale</a>, _j,<span class="stringliteral">&quot;scale&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        JsonConverter::Deserialize&lt;mtgb::Quaternion&gt;(_target.<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>, _j,<span class="stringliteral">&quot;rotate&quot;</span>);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        _target.<a class="code hl_function" href="classmtgb_1_1Transform.html#a5ace1530f04c63eed66eba461800436d">OnPostRestore</a>(); </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    } </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">/* ImGui表示処理の登録 */</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> mtgb::Transform::RegisterImGui() </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    { </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <span class="keyword">static</span> <span class="keywordtype">bool</span> registered = <span class="keyword">false</span>; </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">if</span> (registered) <span class="keywordflow">return</span>; </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        registered = <span class="keyword">true</span>; </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        RegisterShowFuncHolder::Set&lt;Transform&gt;([]( Transform* _target, <span class="keyword">const</span> <span class="keywordtype">char</span>* _name)</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>            {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;_target-&gt;parent, <span class="stringliteral">&quot;parent&quot;</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>                <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;_target-&gt;position, <span class="stringliteral">&quot;position&quot;</span>);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;_target-&gt;scale, <span class="stringliteral">&quot;scale&quot;</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;_target-&gt;rotate, <span class="stringliteral">&quot;rotate&quot;</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            });</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        MTImGui::RegisterComponentViewer&lt;Transform&gt;();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="ttc" id="aMTImGui_8h_html"><div class="ttname"><a href="MTImGui_8h.html">MTImGui.h</a></div></div>
+<div class="ttc" id="aTransform_8h_html"><div class="ttname"><a href="Transform_8h.html">Transform.h</a></div></div>
+<div class="ttc" id="aclassISerializableObject_html_a86fe7f4e0ab2a86787b52d34ac5b6ec8"><div class="ttname"><a href="classISerializableObject.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8">ISerializableObject::OnPreSave</a></div><div class="ttdeci">virtual void OnPreSave()</div><div class="ttdef"><b>Definition:</b> <a href="ISerializableObject_8h_source.html#l00005">ISerializableObject.h:5</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_ab2a2ac6dfa70ef1c52e281c1e11552d3"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">PropertyDisplayRegistry::ShowProperty</a></div><div class="ttdeci">void ShowProperty(T *_instance, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8h_source.html#l00060">PropertyDisplayRegistry.h:60</a></div></div>
+<div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry.cpp:5</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1ComponentMemento_html"><div class="ttname"><a href="classmtgb_1_1ComponentMemento.html">mtgb::ComponentMemento</a></div><div class="ttdef"><b>Definition:</b> <a href="IComponentMemento_8h_source.html#l00015">IComponentMemento.h:16</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IComponent_html_a7c5ec3a0bbee0b1441ed353a543a5cf6"><div class="ttname"><a href="classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6">mtgb::IComponent&lt; TransformCP, Transform &gt;::GetEntityId</a></div><div class="ttdeci">EntityId GetEntityId() const</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00038">IComponent.h:38</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html"><div class="ttname"><a href="classmtgb_1_1Transform.html">mtgb::Transform</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00016">Transform.h:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a0e4b47a931e7ef521e3265c8d9413966"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">mtgb::Transform::rotate</a></div><div class="ttdeci">Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00154">Transform.h:154</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a5ace1530f04c63eed66eba461800436d"><div class="ttname"><a href="classmtgb_1_1Transform.html#a5ace1530f04c63eed66eba461800436d">mtgb::Transform::OnPostRestore</a></div><div class="ttdeci">void OnPostRestore() override</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00178">Transform.cpp:178</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00150">Transform.h:150</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_aa8373f7a6e81f61498f8ca020a5a5c31"><div class="ttname"><a href="classmtgb_1_1Transform.html#aa8373f7a6e81f61498f8ca020a5a5c31">mtgb::Transform::scale</a></div><div class="ttdeci">Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00152">Transform.h:152</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_af0999d4fa78d99e9436e11f0f71e7f98"><div class="ttname"><a href="classmtgb_1_1Transform.html#af0999d4fa78d99e9436e11f0f71e7f98">mtgb::Transform::parent</a></div><div class="ttdeci">EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00148">Transform.h:148</a></div></div>
+<div class="ttc" id="astructTransformState_html"><div class="ttname"><a href="structTransformState.html">TransformState</a></div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00013">Transform.generated.h:14</a></div></div>
+<div class="ttc" id="astructTransformState_html_a734c2e2d2753fe9cbb51550a719bea2f"><div class="ttname"><a href="structTransformState.html#a734c2e2d2753fe9cbb51550a719bea2f">TransformState::scale</a></div><div class="ttdeci">mtgb::Vector3 scale</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00017">Transform.generated.h:17</a></div></div>
+<div class="ttc" id="astructTransformState_html_a8f5b322eed85e573b7561980de4da931"><div class="ttname"><a href="structTransformState.html#a8f5b322eed85e573b7561980de4da931">TransformState::position</a></div><div class="ttdeci">mtgb::Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00016">Transform.generated.h:16</a></div></div>
+<div class="ttc" id="astructTransformState_html_aaa0e9f1423ef8bbcba38aa03692c280e"><div class="ttname"><a href="structTransformState.html#aaa0e9f1423ef8bbcba38aa03692c280e">TransformState::rotate</a></div><div class="ttdeci">mtgb::Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00018">Transform.generated.h:18</a></div></div>
+<div class="ttc" id="astructTransformState_html_ac00cdd977742fcc9eed3a1970b57db80"><div class="ttname"><a href="structTransformState.html#ac00cdd977742fcc9eed3a1970b57db80">TransformState::parent</a></div><div class="ttdeci">mtgb::EntityId parent</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8generated_8h_source.html#l00015">Transform.generated.h:15</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_8057a39e363412049449a1e615dabfc3.html">Generated</a></li><li class="navelem"><a class="el" href="Transform_8gen_8cpp.html">Transform.gen.cpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

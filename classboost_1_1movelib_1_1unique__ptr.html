@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::movelib::unique_ptr&lt; T, D &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classboost_1_1movelib_1_1unique__ptr.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classboost_1_1movelib_1_1unique__ptr-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::movelib::unique_ptr&lt; T, D &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::movelib::unique_ptr&lt; T, D &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classboost_1_1movelib_1_1unique__ptr__coll__graph.svg" width="279" height="719"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a88953b7bdf7aff47b00da6b707282283"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classD.html">D</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a88953b7bdf7aff47b00da6b707282283">deleter_type</a></td></tr>
+<tr class="separator:a88953b7bdf7aff47b00da6b707282283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:af551be5dabc82d220ff45d1fedf56c17"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a> (<a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html#a0d5986e794cd69f46cf4508e0973ec30">pointer_type_obtainer::type</a>) pointer</td></tr>
+<tr class="separator:af551be5dabc82d220ff45d1fedf56c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74a2fd40af42e6fe43e4e005b296c20a"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a74a2fd40af42e6fe43e4e005b296c20a">BOOST_MOVE_SEEDOC</a> (<a class="el" href="structboost_1_1move__upmu_1_1remove__extent.html">bmupmu::remove_extent</a>&lt; T &gt;::type) element_type</td></tr>
+<tr class="separator:a74a2fd40af42e6fe43e4e005b296c20a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3ce4628fc0d9e3db4f3f0c7b4b483f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#aac3ce4628fc0d9e3db4f3f0c7b4b483f">unique_ptr</a> () <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:aac3ce4628fc0d9e3db4f3f0c7b4b483f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58917a6b2755be17e0fe6a89be830142"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a58917a6b2755be17e0fe6a89be830142">unique_ptr</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a58917a6b2755be17e0fe6a89be830142"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a410a5e4bb1da200be259cc61100fabca"><td class="memTemplParams" colspan="2">template&lt;class Pointer &gt; </td></tr>
+<tr class="memitem:a410a5e4bb1da200be259cc61100fabca"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a410a5e4bb1da200be259cc61100fabca">unique_ptr</a> (Pointer p) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a410a5e4bb1da200be259cc61100fabca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08d8cd90b9343ba7277713a064b96a3b"><td class="memTemplParams" colspan="2">template&lt;class Pointer &gt; </td></tr>
+<tr class="memitem:a08d8cd90b9343ba7277713a064b96a3b"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a08d8cd90b9343ba7277713a064b96a3b">unique_ptr</a> (Pointer p, <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a0185efcf7dd752c1d2d024538a772118">deleter_arg_type1</a>) d1) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a08d8cd90b9343ba7277713a064b96a3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48dd7065e82a629737d177e2c2883b8d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a48dd7065e82a629737d177e2c2883b8d">unique_ptr</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a0185efcf7dd752c1d2d024538a772118">deleter_arg_type1</a>) d1) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a48dd7065e82a629737d177e2c2883b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefbf93938bbf78f375043de6fa4dcba8"><td class="memTemplParams" colspan="2">template&lt;class Pointer &gt; </td></tr>
+<tr class="memitem:aefbf93938bbf78f375043de6fa4dcba8"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#aefbf93938bbf78f375043de6fa4dcba8">unique_ptr</a> (Pointer p, <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a44f996e7d1eb7c82126b62a210d93e61">deleter_arg_type2</a>) d2) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:aefbf93938bbf78f375043de6fa4dcba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad09c8899fd03f1dd3fa2bd9d54a88b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#aad09c8899fd03f1dd3fa2bd9d54a88b9">unique_ptr</a> (<a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type), <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a44f996e7d1eb7c82126b62a210d93e61">deleter_arg_type2</a>) d2) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:aad09c8899fd03f1dd3fa2bd9d54a88b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7c6a72e1ecf1e3bcdccd55f52ca4aff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af7c6a72e1ecf1e3bcdccd55f52ca4aff">unique_ptr</a> (<a class="el" href="core_8hpp.html#a41dbf698e587e2adc7f518a2b8625436">BOOST_RV_REF</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>) u) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:af7c6a72e1ecf1e3bcdccd55f52ca4aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a056cfa3c6bf295756072a996fc920124"><td class="memTemplParams" colspan="2">template&lt;class U , class <a class="el" href="classE.html">E</a> &gt; </td></tr>
+<tr class="memitem:a056cfa3c6bf295756072a996fc920124"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a056cfa3c6bf295756072a996fc920124">unique_ptr</a> (<a class="el" href="core_8hpp.html#a3a33a2f3b6add665b5897a10c5e481d2">BOOST_RV_REF_BEG_IF_CXX11</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>&lt; U, <a class="el" href="classE.html">E</a> &gt; <a class="el" href="core_8hpp.html#abfa9516be94a3d8a740a92aed6b8f0f1">BOOST_RV_REF_END_IF_CXX11</a> u) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a056cfa3c6bf295756072a996fc920124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0e26e68cf88040959ad6bb8a6504e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#aff0e26e68cf88040959ad6bb8a6504e3">~unique_ptr</a> ()</td></tr>
+<tr class="separator:aff0e26e68cf88040959ad6bb8a6504e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e878aa6e286f1d312150e8d21fcccde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a4e878aa6e286f1d312150e8d21fcccde">operator=</a> (<a class="el" href="core_8hpp.html#a41dbf698e587e2adc7f518a2b8625436">BOOST_RV_REF</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>) u) <a class="el" href="suffix_8hpp.html#a4d781068d6cffecf41fc152a40463fc1">BOOST_NOEXCEPT</a></td></tr>
+<tr class="separator:a4e878aa6e286f1d312150e8d21fcccde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a58ba7900f75032e0f27dc486f542f279"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html">bmupmu::pointer_type</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a58ba7900f75032e0f27dc486f542f279">pointer_type_obtainer</a></td></tr>
+<tr class="separator:a58ba7900f75032e0f27dc486f542f279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b95aba0ba1a58a483615a28ae87cfb5"><td class="memItemLeft" align="right" valign="top">typedef bmupd::unique_ptr_data&lt; typename <a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html#a0d5986e794cd69f46cf4508e0973ec30">pointer_type_obtainer::type</a>, <a class="el" href="classD.html">D</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a4b95aba0ba1a58a483615a28ae87cfb5">data_type</a></td></tr>
+<tr class="separator:a4b95aba0ba1a58a483615a28ae87cfb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0185efcf7dd752c1d2d024538a772118"><td class="memItemLeft" align="right" valign="top">typedef bmupd::deleter_types&lt; <a class="el" href="classD.html">D</a> &gt;::deleter_arg_type1&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a0185efcf7dd752c1d2d024538a772118">deleter_arg_type1</a></td></tr>
+<tr class="separator:a0185efcf7dd752c1d2d024538a772118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44f996e7d1eb7c82126b62a210d93e61"><td class="memItemLeft" align="right" valign="top">typedef bmupd::deleter_types&lt; <a class="el" href="classD.html">D</a> &gt;::deleter_arg_type2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a44f996e7d1eb7c82126b62a210d93e61">deleter_arg_type2</a></td></tr>
+<tr class="separator:a44f996e7d1eb7c82126b62a210d93e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:a1db3e104c02d1916d77b7c49c9fe6706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a4b95aba0ba1a58a483615a28ae87cfb5">data_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a></td></tr>
+<tr class="separator:a1db3e104c02d1916d77b7c49c9fe6706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class T, class <a class="el" href="classD.html">D</a> = default_delete&lt;T&gt;&gt;<br />
+class boost::movelib::unique_ptr&lt; T, D &gt;</div><p><a class="el" href="classA.html">A</a> unique pointer is an object that owns another object and manages that other object through a pointer.</p>
+<p>More precisely, a unique pointer is an object u that stores a pointer to a second object p and will dispose of p when u is itself destroyed (e.g., when leaving block scope). In this context, u is said to own p.</p>
+<p>The mechanism by which u disposes of p is known as p's associated deleter, a function object whose correct invocation results in p's appropriate disposition (typically its deletion).</p>
+<p>Let the notation u.p denote the pointer stored by u, and let u.d denote the associated deleter. Upon request, u can reset (replace) u.p and u.d with another pointer and deleter, but must properly dispose of its owned object via the associated deleter before such replacement is considered completed.</p>
+<p>Additionally, u can, upon request, transfer ownership to another unique pointer u2. Upon completion of such a transfer, the following postconditions hold:</p><ul>
+<li>u2.p is equal to the pre-transfer u.p,</li>
+<li>u.p is equal to nullptr, and</li>
+<li>if the pre-transfer u.d maintained state, such state has been transferred to u2.d.</li>
+</ul>
+<p>As in the case of a reset, u2 must properly dispose of its pre-transfer owned object via the pre-transfer associated deleter before the ownership transfer is considered complete.</p>
+<p>Each object of a type U instantiated from the <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> template specified in this subclause has the strict ownership semantics, specified above, of a unique pointer. In partial satisfaction of these semantics, each such U is MoveConstructible and MoveAssignable, but is not CopyConstructible nor CopyAssignable. The template parameter T of <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> may be an incomplete type.</p>
+<p>The uses of <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> include providing exception safety for dynamically allocated memory, passing ownership of dynamically allocated memory to a function, and returning dynamically allocated memory from a function.</p>
+<p>If T is an array type (e.g. unique_ptr&lt;MyType[]&gt;) the interface is slightly altered:</p><ul>
+<li>Pointers to types derived from T are rejected by the constructors, and by reset.</li>
+<li>The observers <code>operator*</code> and <code>operator-&gt;</code> are not provided.</li>
+<li>The indexing observer <code>operator[]</code> is provided.</li>
+</ul>
+<dl class="tparams"><dt>テンプレート引数</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Provides the type of the stored pointer. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classD.html">D</a></td><td>The deleter type:<ul>
+<li>The default type for the template parameter <a class="el" href="classD.html">D</a> is <a class="el" href="structboost_1_1movelib_1_1default__delete.html">default_delete</a>. <a class="el" href="classA.html">A</a> client-supplied template argument <a class="el" href="classD.html">D</a> shall be a function object type, lvalue-reference to function, or lvalue-reference to function object type for which, given a value d of type <a class="el" href="classD.html">D</a> and a value ptr of type unique_ptr&lt;T, D&gt;::pointer, the expression d(ptr) is valid and has the effect of disposing of the pointer as appropriate for that deleter.</li>
+<li>If the deleter's type <a class="el" href="classD.html">D</a> is not a reference type, <a class="el" href="classD.html">D</a> shall satisfy the requirements of Destructible.</li>
+<li>If the type <code>remove_reference&lt;D&gt;::type::pointer</code> exists, it shall satisfy the requirements of NullablePointer. </li>
+</ul>
+</td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00353">353</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a4b95aba0ba1a58a483615a28ae87cfb5" name="a4b95aba0ba1a58a483615a28ae87cfb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b95aba0ba1a58a483615a28ae87cfb5">&#9670;&#160;</a></span>data_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bmupd::unique_ptr_data&lt;typename <a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html#a0d5986e794cd69f46cf4508e0973ec30">pointer_type_obtainer::type</a>, <a class="el" href="classD.html">D</a>&gt; <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::data_type</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00365">365</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0185efcf7dd752c1d2d024538a772118" name="a0185efcf7dd752c1d2d024538a772118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0185efcf7dd752c1d2d024538a772118">&#9670;&#160;</a></span>deleter_arg_type1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bmupd::deleter_types&lt;<a class="el" href="classD.html">D</a>&gt;::deleter_arg_type1 <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::deleter_arg_type1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00366">366</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a44f996e7d1eb7c82126b62a210d93e61" name="a44f996e7d1eb7c82126b62a210d93e61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44f996e7d1eb7c82126b62a210d93e61">&#9670;&#160;</a></span>deleter_arg_type2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef bmupd::deleter_types&lt;<a class="el" href="classD.html">D</a>&gt;::deleter_arg_type2 <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::deleter_arg_type2</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00367">367</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a88953b7bdf7aff47b00da6b707282283" name="a88953b7bdf7aff47b00da6b707282283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88953b7bdf7aff47b00da6b707282283">&#9670;&#160;</a></span>deleter_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classD.html">D</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::deleter_type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00379">379</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a58ba7900f75032e0f27dc486f542f279" name="a58ba7900f75032e0f27dc486f542f279"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58ba7900f75032e0f27dc486f542f279">&#9670;&#160;</a></span>pointer_type_obtainer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html">bmupmu::pointer_type</a>&lt;T, <a class="el" href="classD.html">D</a> &gt; <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::pointer_type_obtainer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00363">363</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="aac3ce4628fc0d9e3db4f3f0c7b4b483f" name="aac3ce4628fc0d9e3db4f3f0c7b4b483f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac3ce4628fc0d9e3db4f3f0c7b4b483f">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[1/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: <a class="el" href="classD.html">D</a> shall satisfy the requirements of DefaultConstructible, and that construction shall not throw an exception.</p>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> object that owns nothing, value-initializing the stored pointer and the stored deleter.</p>
+<p><b>Postconditions</b>: <code>get() == nullptr</code>. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter.</p>
+<p><b>Remarks</b>: If this constructor is instantiated with a pointer type or reference type for the template argument <a class="el" href="classD.html">D</a>, the program is ill-formed. <br  />
+ </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00391">391</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  392</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>()</div>
+<div class="line"><span class="lineno">  393</span>   {</div>
+<div class="line"><span class="lineno">  394</span>      <span class="comment">//If this constructor is instantiated with a pointer type or reference type</span></div>
+<div class="line"><span class="lineno">  395</span>      <span class="comment">//for the template argument D, the program is ill-formed.</span></div>
+<div class="line"><span class="lineno">  396</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__pointer.html">bmupmu::is_pointer&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  397</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__reference.html">bmupmu::is_reference&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  398</span>   }</div>
+<div class="ttc" id="aclassboost_1_1movelib_1_1unique__ptr_html_a1db3e104c02d1916d77b7c49c9fe6706"><div class="ttname"><a href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">boost::movelib::unique_ptr::m_data</a></div><div class="ttdeci">data_type m_data</div><div class="ttdef"><b>Definition:</b> <a href="unique__ptr_8hpp_source.html#l00368">unique_ptr.hpp:368</a></div></div>
+<div class="ttc" id="amove_2detail_2workaround_8hpp_html_a4f02632a29ad41ddb7e27ba6fdd9a880"><div class="ttname"><a href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a></div><div class="ttdeci">#define BOOST_MOVE_STATIC_ASSERT(...)</div><div class="ttdef"><b>Definition:</b> <a href="move_2detail_2workaround_8hpp_source.html#l00111">move/detail/workaround.hpp:111</a></div></div>
+<div class="ttc" id="astructboost_1_1move__upmu_1_1is__pointer_html"><div class="ttname"><a href="structboost_1_1move__upmu_1_1is__pointer.html">boost::move_upmu::is_pointer</a></div><div class="ttdef"><b>Definition:</b> <a href="unique__ptr__meta__utils_8hpp_source.html#l00304">unique_ptr_meta_utils.hpp:305</a></div></div>
+<div class="ttc" id="astructboost_1_1move__upmu_1_1is__reference_html"><div class="ttname"><a href="structboost_1_1move__upmu_1_1is__reference.html">boost::move_upmu::is_reference</a></div><div class="ttdef"><b>Definition:</b> <a href="unique__ptr__meta__utils_8hpp_source.html#l00319">unique_ptr_meta_utils.hpp:320</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a58917a6b2755be17e0fe6a89be830142" name="a58917a6b2755be17e0fe6a89be830142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58917a6b2755be17e0fe6a89be830142">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[2/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="suffix_8hpp.html#aa02e911ac6c4e5abc85276284b9801aa">BOOST_CONSTEXPR</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Effects</b>: Same as <code><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#aac3ce4628fc0d9e3db4f3f0c7b4b483f">unique_ptr()</a></code> (default constructor). </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00402">402</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  403</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>()</div>
+<div class="line"><span class="lineno">  404</span>   {</div>
+<div class="line"><span class="lineno">  405</span>      <span class="comment">//If this constructor is instantiated with a pointer type or reference type</span></div>
+<div class="line"><span class="lineno">  406</span>      <span class="comment">//for the template argument D, the program is ill-formed.</span></div>
+<div class="line"><span class="lineno">  407</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__pointer.html">bmupmu::is_pointer&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  408</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__reference.html">bmupmu::is_reference&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  409</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a410a5e4bb1da200be259cc61100fabca" name="a410a5e4bb1da200be259cc61100fabca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a410a5e4bb1da200be259cc61100fabca">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[3/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class Pointer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype">Pointer&#160;</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: <a class="el" href="classD.html">D</a> shall satisfy the requirements of DefaultConstructible, and that construction shall not throw an exception.</p>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> which owns p, initializing the stored pointer with p and value initializing the stored deleter.</p>
+<p><b>Postconditions</b>: <code>get() == p</code>. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter.</p>
+<p><b>Remarks</b>: If this constructor is instantiated with a pointer type or reference type for the template argument <a class="el" href="classD.html">D</a>, the program is ill-formed. This constructor shall not participate in overload resolution unless:</p><ul>
+<li>If T is not an array type and Pointer is implicitly convertible to pointer.</li>
+<li>If T is an array type and Pointer is a more CV qualified pointer to element_type. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00425">425</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  428</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(p)</div>
+<div class="line"><span class="lineno">  429</span>   {</div>
+<div class="line"><span class="lineno">  430</span>      <span class="comment">//If T is not an array type, element_type_t&lt;Pointer&gt; derives from T</span></div>
+<div class="line"><span class="lineno">  431</span>      <span class="comment">//it uses the default deleter and T has no virtual destructor, then you have a problem</span></div>
+<div class="line"><span class="lineno">  432</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(( !bmupd::missing_virtual_destructor</div>
+<div class="line"><span class="lineno">  433</span>                            &lt;<a class="code hl_class" href="classD.html">D</a>, <span class="keyword">typename</span> bmupd::get_element_type&lt;Pointer&gt;::type&gt;::value ));</div>
+<div class="line"><span class="lineno">  434</span>      <span class="comment">//If this constructor is instantiated with a pointer type or reference type</span></div>
+<div class="line"><span class="lineno">  435</span>      <span class="comment">//for the template argument D, the program is ill-formed.</span></div>
+<div class="line"><span class="lineno">  436</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__pointer.html">bmupmu::is_pointer&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  437</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(!<a class="code hl_struct" href="structboost_1_1move__upmu_1_1is__reference.html">bmupmu::is_reference&lt;D&gt;::value</a>);</div>
+<div class="line"><span class="lineno">  438</span>   }</div>
+<div class="ttc" id="aclassD_html"><div class="ttname"><a href="classD.html">D</a></div><div class="ttdef"><b>Definition:</b> <a href="diagrams__d_8h_source.html#l00006">diagrams_d.h:6</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a08d8cd90b9343ba7277713a064b96a3b" name="a08d8cd90b9343ba7277713a064b96a3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08d8cd90b9343ba7277713a064b96a3b">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[4/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class Pointer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype">Pointer&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a0185efcf7dd752c1d2d024538a772118">deleter_arg_type1</a>)&#160;</td>
+          <td class="paramname"><em>d1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The signature of this constructor depends upon whether <a class="el" href="classD.html">D</a> is a reference type.</p><ul>
+<li>If <a class="el" href="classD.html">D</a> is non-reference type <a class="el" href="classA.html">A</a>, then the signature is <code>unique_ptr(pointer p, const A&amp; d)</code>.</li>
+<li>If <a class="el" href="classD.html">D</a> is an lvalue-reference type <a class="el" href="classA.html">A</a>&amp;, then the signature is <code>unique_ptr(pointer p, A&amp; d)</code>.</li>
+<li>If <a class="el" href="classD.html">D</a> is an lvalue-reference type const <a class="el" href="classA.html">A</a>&amp;, then the signature is <code>unique_ptr(pointer p, const A&amp; d)</code>.</li>
+</ul>
+<p><b>Requires</b>: Either</p><ul>
+<li><a class="el" href="classD.html">D</a> is not an lvalue-reference type and d is an lvalue or const rvalue. <a class="el" href="classD.html">D</a> shall satisfy the requirements of CopyConstructible, and the copy constructor of <a class="el" href="classD.html">D</a> shall not throw an exception. This <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> will hold a copy of d.</li>
+<li><a class="el" href="classD.html">D</a> is an lvalue-reference type and d is an lvalue. the type which <a class="el" href="classD.html">D</a> references need not be CopyConstructible nor MoveConstructible. This <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> will hold a <a class="el" href="classD.html">D</a> which refers to the lvalue d.</li>
+</ul>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> object which owns p, initializing the stored pointer with p and initializing the deleter as described above.</p>
+<p><b>Postconditions</b>: <code>get() == p</code>. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter. If <a class="el" href="classD.html">D</a> is a reference type then <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the lvalue d.</p>
+<p><b>Remarks</b>: This constructor shall not participate in overload resolution unless:</p><ul>
+<li>If T is not an array type and Pointer is implicitly convertible to pointer.</li>
+<li>If T is an array type and Pointer is a more CV qualified pointer to element_type. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00463">463</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  466</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(p, d1)</div>
+<div class="line"><span class="lineno">  467</span>   {</div>
+<div class="line"><span class="lineno">  468</span>      <span class="comment">//If T is not an array type, element_type_t&lt;Pointer&gt; derives from T</span></div>
+<div class="line"><span class="lineno">  469</span>      <span class="comment">//it uses the default deleter and T has no virtual destructor, then you have a problem</span></div>
+<div class="line"><span class="lineno">  470</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(( !bmupd::missing_virtual_destructor</div>
+<div class="line"><span class="lineno">  471</span>                            &lt;<a class="code hl_class" href="classD.html">D</a>, <span class="keyword">typename</span> bmupd::get_element_type&lt;Pointer&gt;::type&gt;::value ));</div>
+<div class="line"><span class="lineno">  472</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="a48dd7065e82a629737d177e2c2883b8d" name="a48dd7065e82a629737d177e2c2883b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48dd7065e82a629737d177e2c2883b8d">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[5/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a0185efcf7dd752c1d2d024538a772118">deleter_arg_type1</a>)&#160;</td>
+          <td class="paramname"><em>d1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Effects</b>: Same effects as <code>template&lt;class Pointer&gt; unique_ptr(Pointer p, deleter_arg_type1 d1)</code> and additionally <code>get() == nullptr</code> </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00476">476</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  477</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(pointer(), d1)</div>
+<div class="line"><span class="lineno">  478</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aefbf93938bbf78f375043de6fa4dcba8" name="aefbf93938bbf78f375043de6fa4dcba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefbf93938bbf78f375043de6fa4dcba8">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[6/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class Pointer &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype">Pointer&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a44f996e7d1eb7c82126b62a210d93e61">deleter_arg_type2</a>)&#160;</td>
+          <td class="paramname"><em>d2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The signature of this constructor depends upon whether <a class="el" href="classD.html">D</a> is a reference type.</p><ul>
+<li>If <a class="el" href="classD.html">D</a> is non-reference type <a class="el" href="classA.html">A</a>, then the signature is <code>unique_ptr(pointer p, A&amp;&amp; d)</code>.</li>
+<li>If <a class="el" href="classD.html">D</a> is an lvalue-reference type <a class="el" href="classA.html">A</a>&amp;, then the signature is <code>unique_ptr(pointer p, A&amp;&amp; d)</code>.</li>
+<li>If <a class="el" href="classD.html">D</a> is an lvalue-reference type const <a class="el" href="classA.html">A</a>&amp;, then the signature is <code>unique_ptr(pointer p, const A&amp;&amp; d)</code>.</li>
+</ul>
+<p><b>Requires</b>: Either</p><ul>
+<li><a class="el" href="classD.html">D</a> is not an lvalue-reference type and d is a non-const rvalue. <a class="el" href="classD.html">D</a> shall satisfy the requirements of MoveConstructible, and the move constructor of <a class="el" href="classD.html">D</a> shall not throw an exception. This <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> will hold a value move constructed from d.</li>
+<li><a class="el" href="classD.html">D</a> is an lvalue-reference type and d is an rvalue, the program is ill-formed.</li>
+</ul>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> object which owns p, initializing the stored pointer with p and initializing the deleter as described above.</p>
+<p><b>Postconditions</b>: <code>get() == p</code>. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter. If <a class="el" href="classD.html">D</a> is a reference type then <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the lvalue d.</p>
+<p><b>Remarks</b>: This constructor shall not participate in overload resolution unless:</p><ul>
+<li>If T is not an array type and Pointer is implicitly convertible to pointer.</li>
+<li>If T is an array type and Pointer is a more CV qualified pointer to element_type. </li>
+</ul>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00501">501</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  504</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(p, <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(d2))</div>
+<div class="line"><span class="lineno">  505</span>   {</div>
+<div class="line"><span class="lineno">  506</span>      <span class="comment">//If T is not an array type, element_type_t&lt;Pointer&gt; derives from T</span></div>
+<div class="line"><span class="lineno">  507</span>      <span class="comment">//it uses the default deleter and T has no virtual destructor, then you have a problem</span></div>
+<div class="line"><span class="lineno">  508</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(( !bmupd::missing_virtual_destructor</div>
+<div class="line"><span class="lineno">  509</span>                            &lt;<a class="code hl_class" href="classD.html">D</a>, <span class="keyword">typename</span> bmupd::get_element_type&lt;Pointer&gt;::type&gt;::value ));</div>
+<div class="line"><span class="lineno">  510</span>   }</div>
+<div class="ttc" id="anamespaceboost_html_aa745d64b580e12d06b1a28c9ff09a81d"><div class="ttname"><a href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">boost::move</a></div><div class="ttdeci">O move(I f, I l, O result)</div><div class="ttdef"><b>Definition:</b> <a href="move_2algo_2move_8hpp_source.html#l00056">move/algo/move.hpp:56</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="aad09c8899fd03f1dd3fa2bd9d54a88b9" name="aad09c8899fd03f1dd3fa2bd9d54a88b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad09c8899fd03f1dd3fa2bd9d54a88b9">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[7/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="move_2detail_2workaround_8hpp.html#ac27fb91a03b55ea09a40d46857a074fc">BOOST_MOVE_DOC0PTR</a>(bmupd::nullptr_type)&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#af551be5dabc82d220ff45d1fedf56c17">BOOST_MOVE_SEEDOC</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a44f996e7d1eb7c82126b62a210d93e61">deleter_arg_type2</a>)&#160;</td>
+          <td class="paramname"><em>d2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Effects</b>: Same effects as <code>template&lt;class Pointer&gt; unique_ptr(Pointer p, deleter_arg_type2 d2)</code> and additionally <code>get() == nullptr</code> </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00514">514</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  515</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(pointer(), <a class="code hl_function" href="namespaceboost.html#aa745d64b580e12d06b1a28c9ff09a81d">::boost::move</a>(d2))</div>
+<div class="line"><span class="lineno">  516</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af7c6a72e1ecf1e3bcdccd55f52ca4aff" name="af7c6a72e1ecf1e3bcdccd55f52ca4aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7c6a72e1ecf1e3bcdccd55f52ca4aff">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[8/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="core_8hpp.html#a41dbf698e587e2adc7f518a2b8625436">BOOST_RV_REF</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;)&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: If <a class="el" href="classD.html">D</a> is not a reference type, <a class="el" href="classD.html">D</a> shall satisfy the requirements of MoveConstructible. Construction of the deleter from an rvalue of type <a class="el" href="classD.html">D</a> shall not throw an exception.</p>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> by transferring ownership from u to *this. If <a class="el" href="classD.html">D</a> is a reference type, this deleter is copy constructed from u's deleter; otherwise, this deleter is move constructed from u's deleter.</p>
+<p><b>Postconditions</b>: <code>get()</code> yields the value u.get() yielded before the construction. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter that was constructed from u.get_deleter(). If <a class="el" href="classD.html">D</a> is a reference type then <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> and <code>u.get_deleter()</code> both reference the same lvalue deleter. </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00528">528</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  529</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(u.release(), ::boost::move_if_not_lvalue_reference&lt;D&gt;(u.get_deleter()))</div>
+<div class="line"><span class="lineno">  530</span>   {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a056cfa3c6bf295756072a996fc920124" name="a056cfa3c6bf295756072a996fc920124"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056cfa3c6bf295756072a996fc920124">&#9670;&#160;</a></span>unique_ptr() <span class="overload">[9/9]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<div class="memtemplate">
+template&lt;class U , class <a class="el" href="classE.html">E</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::unique_ptr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="core_8hpp.html#a3a33a2f3b6add665b5897a10c5e481d2">BOOST_RV_REF_BEG_IF_CXX11</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>&lt; U, <a class="el" href="classE.html">E</a> &gt; <a class="el" href="core_8hpp.html#abfa9516be94a3d8a740a92aed6b8f0f1">BOOST_RV_REF_END_IF_CXX11</a>&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: If <a class="el" href="classE.html">E</a> is not a reference type, construction of the deleter from an rvalue of type <a class="el" href="classE.html">E</a> shall be well formed and shall not throw an exception. Otherwise, <a class="el" href="classE.html">E</a> is a reference type and construction of the deleter from an lvalue of type <a class="el" href="classE.html">E</a> shall be well formed and shall not throw an exception.</p>
+<p><b>Remarks</b>: This constructor shall not participate in overload resolution unless:</p><ul>
+<li><code>unique_ptr&lt;U, E&gt;::pointer</code> is implicitly convertible to pointer,</li>
+<li>U is not an array type, and</li>
+<li>either <a class="el" href="classD.html">D</a> is a reference type and <a class="el" href="classE.html">E</a> is the same type as <a class="el" href="classD.html">D</a>, or <a class="el" href="classD.html">D</a> is not a reference type and <a class="el" href="classE.html">E</a> is implicitly convertible to <a class="el" href="classD.html">D</a>.</li>
+</ul>
+<p><b>Effects</b>: Constructs a <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> by transferring ownership from u to *this. If <a class="el" href="classE.html">E</a> is a reference type, this deleter is copy constructed from u's deleter; otherwise, this deleter is move constructed from u's deleter.</p>
+<p><b>Postconditions</b>: <code>get()</code> yields the value <code>u.get()</code> yielded before the construction. <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a></code> returns a reference to the stored deleter that was constructed from <code>u.get_deleter()</code>. </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00548">548</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  551</span>      : <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>(u.release(), ::boost::move_if_not_lvalue_reference&lt;E&gt;(u.get_deleter()))</div>
+<div class="line"><span class="lineno">  552</span>   {</div>
+<div class="line"><span class="lineno">  553</span>      <span class="comment">//If T is not an array type, U derives from T</span></div>
+<div class="line"><span class="lineno">  554</span>      <span class="comment">//it uses the default deleter and T has no virtual destructor, then you have a problem</span></div>
+<div class="line"><span class="lineno">  555</span>      <a class="code hl_define" href="move_2detail_2workaround_8hpp.html#a4f02632a29ad41ddb7e27ba6fdd9a880">BOOST_MOVE_STATIC_ASSERT</a>(( !bmupd::missing_virtual_destructor</div>
+<div class="line"><span class="lineno">  556</span>                            &lt;<a class="code hl_class" href="classD.html">D</a>, <span class="keyword">typename</span> unique_ptr&lt;U, E&gt;::pointer&gt;::value ));</div>
+<div class="line"><span class="lineno">  557</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="move_2detail_2workaround_8hpp_source.html#l00111">BOOST_MOVE_STATIC_ASSERT</a>.</p>
+
+</div>
+</div>
+<a id="aff0e26e68cf88040959ad6bb8a6504e3" name="aff0e26e68cf88040959ad6bb8a6504e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0e26e68cf88040959ad6bb8a6504e3">&#9670;&#160;</a></span>~unique_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::~<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: The expression <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a>(get())</code> shall be well formed, shall have well-defined behavior, and shall not throw exceptions.</p>
+<p><b>Effects</b>: If <code>get() == nullpt1r</code> there are no effects. Otherwise <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a>(get())</code>.</p>
+<p><b>Note</b>: The use of <a class="el" href="structboost_1_1movelib_1_1default__delete.html">default_delete</a> requires T to be a complete type </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00565">565</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  566</span>   {  <span class="keywordflow">if</span>(<a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>.m_p) <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>.deleter()(<a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>.m_p);   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="unique__ptr_8hpp_source.html#l00368">boost::movelib::unique_ptr&lt; T, D &gt;::m_data</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a74a2fd40af42e6fe43e4e005b296c20a" name="a74a2fd40af42e6fe43e4e005b296c20a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74a2fd40af42e6fe43e4e005b296c20a">&#9670;&#160;</a></span>BOOST_MOVE_SEEDOC() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::BOOST_MOVE_SEEDOC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1move__upmu_1_1remove__extent.html">bmupmu::remove_extent</a>&lt; T &gt;::type&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If T is an array type, then element_type is equal to T. Otherwise, if T is a type in the form U[], element_type is equal to U. </p>
+
+</div>
+</div>
+<a id="af551be5dabc82d220ff45d1fedf56c17" name="af551be5dabc82d220ff45d1fedf56c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af551be5dabc82d220ff45d1fedf56c17">&#9670;&#160;</a></span>BOOST_MOVE_SEEDOC() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::BOOST_MOVE_SEEDOC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1move__upmu_1_1pointer__type.html#a0d5986e794cd69f46cf4508e0973ec30">pointer_type_obtainer::type</a>&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If the type <code>remove_reference&lt;D&gt;::type::pointer</code> exists, then it shall be a synonym for <code>remove_reference&lt;D&gt;::type::pointer</code>. Otherwise it shall be a synonym for T*. </p>
+
+</div>
+</div>
+<a id="a4e878aa6e286f1d312150e8d21fcccde" name="a4e878aa6e286f1d312150e8d21fcccde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e878aa6e286f1d312150e8d21fcccde">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a> &amp; <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="core_8hpp.html#a41dbf698e587e2adc7f518a2b8625436">BOOST_RV_REF</a>(<a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;)&#160;</td>
+          <td class="paramname"><em>u</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p><b>Requires</b>: If <a class="el" href="classD.html">D</a> is not a reference type, <a class="el" href="classD.html">D</a> shall satisfy the requirements of MoveAssignable and assignment of the deleter from an rvalue of type <a class="el" href="classD.html">D</a> shall not throw an exception. Otherwise, <a class="el" href="classD.html">D</a> is a reference type; <code><a class="el" href="structboost_1_1remove__reference.html#a00b79ae7d1eea1480973d3b2f3695493">remove_reference&lt;D&gt;::type</a></code> shall satisfy the CopyAssignable requirements and assignment of the deleter from an lvalue of type <a class="el" href="classD.html">D</a> shall not throw an exception.</p>
+<p><b>Effects</b>: Transfers ownership from u to *this as if by calling <code>reset(u.release())</code> followed by <code><a class="el" href="namespaceboost.html#a6a78b6b799758ee309056395a4fb2775">get_deleter()</a> = std::forward&lt;D&gt;(u.get_deleter())</code>.</p>
+<p><b>Returns</b>: *this. </p>
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00577">577</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  578</span>   {</div>
+<div class="line"><span class="lineno">  579</span>      this-&gt;reset(u.release());</div>
+<div class="line"><span class="lineno">  580</span>      <a class="code hl_variable" href="classboost_1_1movelib_1_1unique__ptr.html#a1db3e104c02d1916d77b7c49c9fe6706">m_data</a>.deleter() = ::boost::move_if_not_lvalue_reference&lt;D&gt;(u.get_deleter());</div>
+<div class="line"><span class="lineno">  581</span>      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">  582</span>   }</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="unique__ptr_8hpp_source.html#l00368">boost::movelib::unique_ptr&lt; T, D &gt;::m_data</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a1db3e104c02d1916d77b7c49c9fe6706" name="a1db3e104c02d1916d77b7c49c9fe6706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db3e104c02d1916d77b7c49c9fe6706">&#9670;&#160;</a></span>m_data</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , class <a class="el" href="classD.html">D</a>  = default_delete&lt;T&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html#a4b95aba0ba1a58a483615a28ae87cfb5">data_type</a> <a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">boost::movelib::unique_ptr</a>&lt; T, <a class="el" href="classD.html">D</a> &gt;::m_data</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a> の <a class="el" href="unique__ptr_8hpp_source.html#l00368">368</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="unique__ptr_8hpp_source.html#l00577">boost::movelib::unique_ptr&lt; T, D &gt;::operator=()</a>, <a class="el" href="unique__ptr_8hpp_source.html#l00565">boost::movelib::unique_ptr&lt; T, D &gt;::~unique_ptr()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="unique__ptr_8hpp_source.html">unique_ptr.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1movelib.html">movelib</a></li><li class="navelem"><a class="el" href="classboost_1_1movelib_1_1unique__ptr.html">unique_ptr</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

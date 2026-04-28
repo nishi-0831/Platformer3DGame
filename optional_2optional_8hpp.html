@@ -1,0 +1,311 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: optional.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('optional_2optional_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#namespaces">名前空間</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">optional/optional.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;new&gt;</code><br />
+<code>#include &lt;iosfwd&gt;</code><br />
+<code>#include &lt;<a class="el" href="assert_8hpp_source.html">boost/assert.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2addressof_8hpp_source.html">boost/core/addressof.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2enable__if_8hpp_source.html">boost/core/enable_if.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="invoke__swap_8hpp_source.html">boost/core/invoke_swap.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="core_2launder_8hpp_source.html">boost/core/launder.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="bad__optional__access_8hpp_source.html">boost/optional/bad_optional_access.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="throw__exception_8hpp_source.html">boost/throw_exception.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="alignment__of_8hpp_source.html">boost/type_traits/alignment_of.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="conditional_8hpp_source.html">boost/type_traits/conditional.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__traits_2conjunction_8hpp_source.html">boost/type_traits/conjunction.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__traits_2disjunction_8hpp_source.html">boost/type_traits/disjunction.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="has__nothrow__constructor_8hpp_source.html">boost/type_traits/has_nothrow_constructor.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__with__alignment_8hpp_source.html">boost/type_traits/type_with_alignment.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="remove__const_8hpp_source.html">boost/type_traits/remove_const.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="remove__reference_8hpp_source.html">boost/type_traits/remove_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="decay_8hpp_source.html">boost/type_traits/decay.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__assignable_8hpp_source.html">boost/type_traits/is_assignable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__base__of_8hpp_source.html">boost/type_traits/is_base_of.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__const_8hpp_source.html">boost/type_traits/is_const.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__constructible_8hpp_source.html">boost/type_traits/is_constructible.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__convertible_8hpp_source.html">boost/type_traits/is_convertible.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__lvalue__reference_8hpp_source.html">boost/type_traits/is_lvalue_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__nothrow__move__assignable_8hpp_source.html">boost/type_traits/is_nothrow_move_assignable.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__nothrow__move__constructible_8hpp_source.html">boost/type_traits/is_nothrow_move_constructible.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__rvalue__reference_8hpp_source.html">boost/type_traits/is_rvalue_reference.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="type__traits_2is__same_8hpp_source.html">boost/type_traits/is_same.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__volatile_8hpp_source.html">boost/type_traits/is_volatile.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="is__scalar_8hpp_source.html">boost/type_traits/is_scalar.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="none_8hpp_source.html">boost/none.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__fwd_8hpp_source.html">boost/optional/optional_fwd.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__config_8hpp_source.html">boost/optional/detail/optional_config.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__factory__support_8hpp_source.html">boost/optional/detail/optional_factory_support.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__aligned__storage_8hpp_source.html">boost/optional/detail/optional_aligned_storage.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__hash_8hpp_source.html">boost/optional/detail/optional_hash.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__utility_8hpp_source.html">boost/optional/detail/optional_utility.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__trivially__copyable__base_8hpp_source.html">boost/optional/detail/optional_trivially_copyable_base.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__reference__spec_8hpp_source.html">boost/optional/detail/optional_reference_spec.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__relops_8hpp_source.html">boost/optional/detail/optional_relops.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="optional__swap_8hpp_source.html">boost/optional/detail/optional_swap.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+optional/optional.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="optional_2optional_8hpp__incl.svg" width="5774" height="388"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="optional_2optional_8hpp__dep__incl.svg" width="483" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="optional_2optional_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1optional__value__type.html">boost::optional_detail::optional_value_type&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1optional__value__type_3_01_1_1boost_1_1optional_3_01U_01_4_01_4.html">boost::optional_detail::optional_value_type&lt; ::boost::optional&lt; U &gt; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1result__of.html">boost::optional_detail::result_of&lt; F, Ref, Rslt &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1result__value__type.html">boost::optional_detail::result_value_type&lt; F, Ref, Rslt &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__ns_1_1in__place__init__t.html">boost::optional_ns::in_place_init_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__ns_1_1in__place__init__t_1_1init__tag.html">boost::optional_ns::in_place_init_t::init_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__ns_1_1in__place__init__if__t.html">boost::optional_ns::in_place_init_if_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__ns_1_1in__place__init__if__t_1_1init__tag.html">boost::optional_ns::in_place_init_if_t::init_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1init__value__tag.html">boost::optional_detail::init_value_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1optional__tag.html">boost::optional_detail::optional_tag</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1optional__detail_1_1optional__base.html">boost::optional_detail::optional_base&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__or__tag.html">boost::optional_detail::is_optional_or_tag&lt; U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1has__dedicated__constructor.html">boost::optional_detail::has_dedicated_constructor&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__in__place__factory.html">boost::optional_detail::is_in_place_factory&lt; U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__factory__or__constructible__to__T.html">boost::optional_detail::is_factory_or_constructible_to_T&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__constructible.html">boost::optional_detail::is_optional_constructible&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__opt__assignable.html">boost::optional_detail::is_opt_assignable&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__factory__or__opt__assignable__to__T.html">boost::optional_detail::is_factory_or_opt_assignable_to_T&lt; T, U &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__val__init__candidate.html">boost::optional_detail::is_optional_val_init_candidate&lt; T, U, bool &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__val__init__candidate_3_01T_00_01U_00_01false_01_4.html">boost::optional_detail::is_optional_val_init_candidate&lt; T, U, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__val__assign__candidate.html">boost::optional_detail::is_optional_val_assign_candidate&lt; T, U, bool &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__detail_1_1is__optional__val__assign__candidate_3_01T_00_01U_00_01false_01_4.html">boost::optional_detail::is_optional_val_assign_candidate&lt; T, U, false &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1optional__config_1_1optional__uses__direct__storage__for.html">boost::optional_config::optional_uses_direct_storage_for&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1optional.html">boost::optional&lt; T &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classboost_1_1optional_3_01T_01_6_6_01_4.html">boost::optional&lt; T &amp;&amp; &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+名前空間</h2></td></tr>
+<tr class="memitem:namespaceboost"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost.html">boost</a></td></tr>
+<tr class="memdesc:namespaceboost"><td class="mdescLeft">&#160;</td><td class="mdescRight">defined(BOOST_MOVE_DOXYGEN_INVOKED) <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1optional__detail"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__detail.html">boost::optional_detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1optional__ns"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__ns.html">boost::optional_ns</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceboost_1_1optional__config"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__config.html">boost::optional_config</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a83af2a1f7597b9ce03a4ce1e6e120094"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="optional_2optional_8hpp.html#a83af2a1f7597b9ce03a4ce1e6e120094">BOOST_OPTIONAL_BASE_TYPE</a>(T)</td></tr>
+<tr class="separator:a83af2a1f7597b9ce03a4ce1e6e120094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a0dcaf7fbb9f1fb64cd0d7a5ad215b530"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a0dcaf7fbb9f1fb64cd0d7a5ad215b530"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__detail.html#a0dcaf7fbb9f1fb64cd0d7a5ad215b530">boost::optional_detail::declval</a> ()</td></tr>
+<tr class="separator:a0dcaf7fbb9f1fb64cd0d7a5ad215b530"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b8bc62e86f7ebcedb3020c985fdfd3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a11971aa9a38819edef70901cc53d0ed0">BOOST_INLINE_CONSTEXPR</a> in_place_init_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__ns.html#a56b8bc62e86f7ebcedb3020c985fdfd3">boost::optional_ns::in_place_init</a> ((in_place_init_t::init_tag()))</td></tr>
+<tr class="separator:a56b8bc62e86f7ebcedb3020c985fdfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe8afc1990a65b5c13fc6ee179fe9f61"><td class="memItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a11971aa9a38819edef70901cc53d0ed0">BOOST_INLINE_CONSTEXPR</a> in_place_init_if_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceboost_1_1optional__ns.html#abe8afc1990a65b5c13fc6ee179fe9f61">boost::optional_ns::in_place_init_if</a> ((in_place_init_if_t::init_tag()))</td></tr>
+<tr class="separator:abe8afc1990a65b5c13fc6ee179fe9f61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c1c67ac11c1fd2c4ac6b1d10e7d2a8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a52c1c67ac11c1fd2c4ac6b1d10e7d2a8"><td class="memTemplItemLeft" align="right" valign="top">optional&lt; <a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> <a class="el" href="structboost_1_1decay.html">boost::decay</a>&lt; T &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a52c1c67ac11c1fd2c4ac6b1d10e7d2a8">boost::make_optional</a> (T &amp;&amp;v)</td></tr>
+<tr class="separator:a52c1c67ac11c1fd2c4ac6b1d10e7d2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea0103d0618382a2ff6b69c540569f14"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aea0103d0618382a2ff6b69c540569f14"><td class="memTemplItemLeft" align="right" valign="top">optional&lt; <a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> <a class="el" href="structboost_1_1decay.html">boost::decay</a>&lt; T &gt;::type &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aea0103d0618382a2ff6b69c540569f14">boost::make_optional</a> (bool cond, T &amp;&amp;v)</td></tr>
+<tr class="separator:aea0103d0618382a2ff6b69c540569f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc3d16ad987b43d95ba679ca15bd2dcb"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:abc3d16ad987b43d95ba679ca15bd2dcb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_const_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#abc3d16ad987b43d95ba679ca15bd2dcb">boost::get</a> (optional&lt; T &gt; const &amp;opt)</td></tr>
+<tr class="separator:abc3d16ad987b43d95ba679ca15bd2dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3aa79321edf21167673e50eaabc42325"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a3aa79321edf21167673e50eaabc42325"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a3aa79321edf21167673e50eaabc42325">boost::get</a> (optional&lt; T &gt; &amp;opt)</td></tr>
+<tr class="separator:a3aa79321edf21167673e50eaabc42325"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a838e5c557c091369c1390fdd72cd004d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a838e5c557c091369c1390fdd72cd004d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::pointer_const_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a838e5c557c091369c1390fdd72cd004d">boost::get</a> (optional&lt; T &gt; const *opt)</td></tr>
+<tr class="separator:a838e5c557c091369c1390fdd72cd004d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab26586e71de32238fb55a14efaac626f"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ab26586e71de32238fb55a14efaac626f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::pointer_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#ab26586e71de32238fb55a14efaac626f">boost::get</a> (optional&lt; T &gt; *opt)</td></tr>
+<tr class="separator:ab26586e71de32238fb55a14efaac626f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfc4be38479426a3cbd350de996a2ac"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:aedfc4be38479426a3cbd350de996a2ac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_const_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#aedfc4be38479426a3cbd350de996a2ac">boost::get_optional_value_or</a> (optional&lt; T &gt; const &amp;opt, <a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_const_type v)</td></tr>
+<tr class="separator:aedfc4be38479426a3cbd350de996a2ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74e705c659bf3b321415c7d47229eb4c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a74e705c659bf3b321415c7d47229eb4c"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a74e705c659bf3b321415c7d47229eb4c">boost::get_optional_value_or</a> (optional&lt; T &gt; &amp;opt, <a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::reference_type v)</td></tr>
+<tr class="separator:a74e705c659bf3b321415c7d47229eb4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02fde0c96f433893d9a06e20b0941e79"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a02fde0c96f433893d9a06e20b0941e79"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::pointer_const_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a02fde0c96f433893d9a06e20b0941e79">boost::get_pointer</a> (optional&lt; T &gt; const &amp;opt)</td></tr>
+<tr class="separator:a02fde0c96f433893d9a06e20b0941e79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30ea7e7071b80153cc799e58544fd5ec"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a30ea7e7071b80153cc799e58544fd5ec"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="suffix_8hpp.html#a781d435c439be5109e8442d58a52d0a2">BOOST_DEDUCED_TYPENAME</a> optional&lt; T &gt;::pointer_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#a30ea7e7071b80153cc799e58544fd5ec">boost::get_pointer</a> (optional&lt; T &gt; &amp;opt)</td></tr>
+<tr class="separator:a30ea7e7071b80153cc799e58544fd5ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afffda37c0dfff2fa033e522f59845334"><td class="memTemplParams" colspan="2">template&lt;class CharType , class CharTrait &gt; </td></tr>
+<tr class="memitem:afffda37c0dfff2fa033e522f59845334"><td class="memTemplItemLeft" align="right" valign="top">std::basic_ostream&lt; CharType, CharTrait &gt; &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceboost.html#afffda37c0dfff2fa033e522f59845334">boost::operator&lt;&lt;</a> (std::basic_ostream&lt; CharType, CharTrait &gt; &amp;os, optional_detail::optional_tag const &amp;)</td></tr>
+<tr class="separator:afffda37c0dfff2fa033e522f59845334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a83af2a1f7597b9ce03a4ce1e6e120094" name="a83af2a1f7597b9ce03a4ce1e6e120094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83af2a1f7597b9ce03a4ce1e6e120094">&#9670;&#160;</a></span>BOOST_OPTIONAL_BASE_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_OPTIONAL_BASE_TYPE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">T</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>値:</b><div class="fragment"><div class="line">                                      <a class="code hl_struct" href="structboost_1_1conditional.html">boost::conditional&lt; optional_config::optional_uses_direct_storage_for&lt;T&gt;::value</a>, \</div>
+<div class="line">                                      optional_detail::tc_optional_base&lt;T&gt;, \</div>
+<div class="line">                                      optional_detail::optional_base&lt;T&gt; \</div>
+<div class="line">                                      &gt;::type</div>
+<div class="ttc" id="astructboost_1_1conditional_html"><div class="ttname"><a href="structboost_1_1conditional.html">boost::conditional</a></div><div class="ttdef"><b>Definition:</b> <a href="conditional_8hpp_source.html#l00016">conditional.hpp:16</a></div></div>
+</div><!-- fragment -->
+<p class="definition"> <a class="el" href="optional_2optional_8hpp_source.html">optional/optional.hpp</a> の <a class="el" href="optional_2optional_8hpp_source.html#l00637">637</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_bb65e2fd4fce110dfeec61195dd8c1b7.html">optional</a></li><li class="navelem"><a class="el" href="optional_2optional_8hpp.html">optional.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: compare_pointees.hpp ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('compare__pointees_8hpp_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">compare_pointees.hpp</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="compare__pointees_8hpp.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// Copyright (C) 2003, Fernando Luis Cacciola Carballal.</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Use, modification, and distribution is subject to the Boost Software</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// http://www.boost.org/LICENSE_1_0.txt)</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// See http://www.boost.org/libs/optional for documentation.</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">// You are welcome to contact the author at:</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//  fernando_cacciola@hotmail.com</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef BOOST_UTILITY_COMPARE_POINTEES_25AGO2003_HPP</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define BOOST_UTILITY_COMPARE_POINTEES_25AGO2003_HPP</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include&lt;functional&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceboost.html">boost</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">// template&lt;class OP&gt; bool equal_pointees(OP const&amp; x, OP const&amp; y);</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// template&lt;class OP&gt; struct equal_pointees_t;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// Being OP a model of OptionalPointee (either a pointer or an optional):</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment">// If both x and y have valid pointees, returns the result of (*x == *y)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// If only one has a valid pointee, returns false.</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// If none have valid pointees, returns true.</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// No-throw</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> OptionalPo<span class="keywordtype">int</span>ee&gt;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">inline</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="namespaceboost.html#a1e04d9a7f209570d507d982bed8040eb">   30</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceboost.html#a1e04d9a7f209570d507d982bed8040eb">equal_pointees</a> ( OptionalPointee <span class="keyword">const</span>&amp; x, OptionalPointee <span class="keyword">const</span>&amp; y )</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keywordflow">return</span> (!x) != (!y) ? <span class="keyword">false</span> : ( !x ? <span class="keyword">true</span> : (*x) == (*y) ) ;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> OptionalPo<span class="keywordtype">int</span>ee&gt;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structboost_1_1equal__pointees__t.html">   36</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1equal__pointees__t.html">equal_pointees_t</a></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structboost_1_1equal__pointees__t.html#aabf68ddc4bb1b87e7772e18fd92decbb">   38</a></span>  <span class="keyword">typedef</span> <span class="keywordtype">bool</span> <a class="code hl_typedef" href="structboost_1_1equal__pointees__t.html#aabf68ddc4bb1b87e7772e18fd92decbb">result_type</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structboost_1_1equal__pointees__t.html#a820d85686cab7fff9bdafb628c964c2a">   39</a></span>  <span class="keyword">typedef</span> OptionalPointee <a class="code hl_typedef" href="structboost_1_1equal__pointees__t.html#a820d85686cab7fff9bdafb628c964c2a">first_argument_type</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structboost_1_1equal__pointees__t.html#a8869bb8397ab76d0b1cf92b116bdcd8d">   40</a></span>  <span class="keyword">typedef</span> OptionalPointee <a class="code hl_typedef" href="structboost_1_1equal__pointees__t.html#a8869bb8397ab76d0b1cf92b116bdcd8d">second_argument_type</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="structboost_1_1equal__pointees__t.html#ab3b2747993d24c01aea90dd16cf61eac">   42</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structboost_1_1equal__pointees__t.html#ab3b2747993d24c01aea90dd16cf61eac">operator() </a>( OptionalPointee <span class="keyword">const</span>&amp; x, OptionalPointee <span class="keyword">const</span>&amp; y )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">    </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceboost.html#a1e04d9a7f209570d507d982bed8040eb">equal_pointees</a>(x,y) ; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>} ;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment">// template&lt;class OP&gt; bool less_pointees(OP const&amp; x, OP const&amp; y);</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="comment">// template&lt;class OP&gt; struct less_pointees_t;</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// Being OP a model of OptionalPointee (either a pointer or an optional):</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment">//</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">// If y has not a valid pointee, returns false.</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">// ElseIf x has not a valid pointee, returns true.</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// ElseIf both x and y have valid pointees, returns the result of (*x &lt; *y)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="comment">// No-throw</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> OptionalPo<span class="keywordtype">int</span>ee&gt;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="keyword">inline</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="namespaceboost.html#a0b6efe71a2b2b8ff4a4987bd188f4d49">   57</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceboost.html#a0b6efe71a2b2b8ff4a4987bd188f4d49">less_pointees</a> ( OptionalPointee <span class="keyword">const</span>&amp; x, OptionalPointee <span class="keyword">const</span>&amp; y )</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>{</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordflow">return</span> !y ? false : ( !x ? true : (*x) &lt; (*y) ) ;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> OptionalPo<span class="keywordtype">int</span>ee&gt;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="structboost_1_1less__pointees__t.html">   63</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structboost_1_1less__pointees__t.html">less_pointees_t</a></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>{</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="structboost_1_1less__pointees__t.html#a251c7c95da70adab153d100184a92a52">   65</a></span>  <span class="keyword">typedef</span> <span class="keywordtype">bool</span> <a class="code hl_typedef" href="structboost_1_1less__pointees__t.html#a251c7c95da70adab153d100184a92a52">result_type</a>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="structboost_1_1less__pointees__t.html#aba80b189e91f013c5c2520eddfa15045">   66</a></span>  <span class="keyword">typedef</span> OptionalPointee <a class="code hl_typedef" href="structboost_1_1less__pointees__t.html#aba80b189e91f013c5c2520eddfa15045">first_argument_type</a>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="structboost_1_1less__pointees__t.html#a77c53df69c728e9706040b29268d9ef9">   67</a></span>  <span class="keyword">typedef</span> OptionalPointee <a class="code hl_typedef" href="structboost_1_1less__pointees__t.html#a77c53df69c728e9706040b29268d9ef9">second_argument_type</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="structboost_1_1less__pointees__t.html#affa16a0bec1e3b7944f56382f8f48d5f">   69</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="structboost_1_1less__pointees__t.html#affa16a0bec1e3b7944f56382f8f48d5f">operator() </a>( OptionalPointee <span class="keyword">const</span>&amp; x, OptionalPointee <span class="keyword">const</span>&amp; y )<span class="keyword"> const</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keyword">    </span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="namespaceboost.html#a0b6efe71a2b2b8ff4a4987bd188f4d49">less_pointees</a>(x,y) ; }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>} ;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>} <span class="comment">// namespace boost</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="ttc" id="anamespaceboost_html"><div class="ttname"><a href="namespaceboost.html">boost</a></div><div class="ttdoc">defined(BOOST_MOVE_DOXYGEN_INVOKED)</div><div class="ttdef"><b>Definition:</b> <a href="source__location_8hpp_source.html#l00024">source_location.hpp:25</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a0b6efe71a2b2b8ff4a4987bd188f4d49"><div class="ttname"><a href="namespaceboost.html#a0b6efe71a2b2b8ff4a4987bd188f4d49">boost::less_pointees</a></div><div class="ttdeci">bool less_pointees(OptionalPointee const &amp;x, OptionalPointee const &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00057">compare_pointees.hpp:57</a></div></div>
+<div class="ttc" id="anamespaceboost_html_a1e04d9a7f209570d507d982bed8040eb"><div class="ttname"><a href="namespaceboost.html#a1e04d9a7f209570d507d982bed8040eb">boost::equal_pointees</a></div><div class="ttdeci">bool equal_pointees(OptionalPointee const &amp;x, OptionalPointee const &amp;y)</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00030">compare_pointees.hpp:30</a></div></div>
+<div class="ttc" id="astructboost_1_1equal__pointees__t_html"><div class="ttname"><a href="structboost_1_1equal__pointees__t.html">boost::equal_pointees_t</a></div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00036">compare_pointees.hpp:37</a></div></div>
+<div class="ttc" id="astructboost_1_1equal__pointees__t_html_a820d85686cab7fff9bdafb628c964c2a"><div class="ttname"><a href="structboost_1_1equal__pointees__t.html#a820d85686cab7fff9bdafb628c964c2a">boost::equal_pointees_t::first_argument_type</a></div><div class="ttdeci">OptionalPointee first_argument_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00039">compare_pointees.hpp:39</a></div></div>
+<div class="ttc" id="astructboost_1_1equal__pointees__t_html_a8869bb8397ab76d0b1cf92b116bdcd8d"><div class="ttname"><a href="structboost_1_1equal__pointees__t.html#a8869bb8397ab76d0b1cf92b116bdcd8d">boost::equal_pointees_t::second_argument_type</a></div><div class="ttdeci">OptionalPointee second_argument_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00040">compare_pointees.hpp:40</a></div></div>
+<div class="ttc" id="astructboost_1_1equal__pointees__t_html_aabf68ddc4bb1b87e7772e18fd92decbb"><div class="ttname"><a href="structboost_1_1equal__pointees__t.html#aabf68ddc4bb1b87e7772e18fd92decbb">boost::equal_pointees_t::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00038">compare_pointees.hpp:38</a></div></div>
+<div class="ttc" id="astructboost_1_1equal__pointees__t_html_ab3b2747993d24c01aea90dd16cf61eac"><div class="ttname"><a href="structboost_1_1equal__pointees__t.html#ab3b2747993d24c01aea90dd16cf61eac">boost::equal_pointees_t::operator()</a></div><div class="ttdeci">bool operator()(OptionalPointee const &amp;x, OptionalPointee const &amp;y) const</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00042">compare_pointees.hpp:42</a></div></div>
+<div class="ttc" id="astructboost_1_1less__pointees__t_html"><div class="ttname"><a href="structboost_1_1less__pointees__t.html">boost::less_pointees_t</a></div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00063">compare_pointees.hpp:64</a></div></div>
+<div class="ttc" id="astructboost_1_1less__pointees__t_html_a251c7c95da70adab153d100184a92a52"><div class="ttname"><a href="structboost_1_1less__pointees__t.html#a251c7c95da70adab153d100184a92a52">boost::less_pointees_t::result_type</a></div><div class="ttdeci">bool result_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00065">compare_pointees.hpp:65</a></div></div>
+<div class="ttc" id="astructboost_1_1less__pointees__t_html_a77c53df69c728e9706040b29268d9ef9"><div class="ttname"><a href="structboost_1_1less__pointees__t.html#a77c53df69c728e9706040b29268d9ef9">boost::less_pointees_t::second_argument_type</a></div><div class="ttdeci">OptionalPointee second_argument_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00067">compare_pointees.hpp:67</a></div></div>
+<div class="ttc" id="astructboost_1_1less__pointees__t_html_aba80b189e91f013c5c2520eddfa15045"><div class="ttname"><a href="structboost_1_1less__pointees__t.html#aba80b189e91f013c5c2520eddfa15045">boost::less_pointees_t::first_argument_type</a></div><div class="ttdeci">OptionalPointee first_argument_type</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00066">compare_pointees.hpp:66</a></div></div>
+<div class="ttc" id="astructboost_1_1less__pointees__t_html_affa16a0bec1e3b7944f56382f8f48d5f"><div class="ttname"><a href="structboost_1_1less__pointees__t.html#affa16a0bec1e3b7944f56382f8f48d5f">boost::less_pointees_t::operator()</a></div><div class="ttdeci">bool operator()(OptionalPointee const &amp;x, OptionalPointee const &amp;y) const</div><div class="ttdef"><b>Definition:</b> <a href="compare__pointees_8hpp_source.html#l00069">compare_pointees.hpp:69</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_f82e3993800472d682c7acac1f370454.html">utility</a></li><li class="navelem"><a class="el" href="compare__pointees_8hpp.html">compare_pointees.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

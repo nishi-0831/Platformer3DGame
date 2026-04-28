@@ -1,0 +1,757 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt; 構造体テンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">公開型</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pri-static-methods">静的非公開メンバ関数</a> &#124;
+<a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt; 構造体テンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &quot;<a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a>&quot;</code></p>
+<div class="dynheader">
+boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4__coll__graph.svg" width="251" height="484"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+公開型</h2></td></tr>
+<tr class="memitem:a76d6f06d86712742ece81f173dc27a33"><td class="memItemLeft" align="right" valign="top">typedef Node::base_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a></td></tr>
+<tr class="separator:a76d6f06d86712742ece81f173dc27a33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4e63248c0c8d0e1782ac8636ce8275"><td class="memItemLeft" align="right" valign="top">typedef Node::const_base_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#afd4e63248c0c8d0e1782ac8636ce8275">const_base_pointer</a></td></tr>
+<tr class="separator:afd4e63248c0c8d0e1782ac8636ce8275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cf53b011dd974bdf3f5da7d36578a7f"><td class="memItemLeft" align="right" valign="top">typedef Node::pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a></td></tr>
+<tr class="separator:a3cf53b011dd974bdf3f5da7d36578a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df57174c78234dea6da42513d8c03bd"><td class="memItemLeft" align="right" valign="top">typedef Node::const_pointer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a9df57174c78234dea6da42513d8c03bd">const_pointer</a></td></tr>
+<tr class="separator:a9df57174c78234dea6da42513d8c03bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7a3e6c4d7fea59dd752045c32b51352"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">unlink_undo_assigner</a>&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7a3e6c4d7fea59dd752045c32b51352">unlink_undo</a></td></tr>
+<tr class="separator:ab7a3e6c4d7fea59dd752045c32b51352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a4e90e1abb60be18f1db440d73f603353"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a4e90e1abb60be18f1db440d73f603353">is_first_of_bucket</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a4e90e1abb60be18f1db440d73f603353"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140077ac45c288d4fd7876b9087e4670"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a140077ac45c288d4fd7876b9087e4670">after</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a140077ac45c288d4fd7876b9087e4670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664be5f933e7bd2395054be746835ab9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a664be5f933e7bd2395054be746835ab9">after_local</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a664be5f933e7bd2395054be746835ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2369610e8848e34c0d612226eebc4715"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a2369610e8848e34c0d612226eebc4715">next_to_inspect</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a2369610e8848e34c0d612226eebc4715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b5e00de2607516d667f0b7edfcdf0d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ad3b5e00de2607516d667f0b7edfcdf0d">link</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a> buc, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> end)</td></tr>
+<tr class="separator:ad3b5e00de2607516d667f0b7edfcdf0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ae091b28a750717c90f106d23f2f388"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a2ae091b28a750717c90f106d23f2f388">unlink</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a2ae091b28a750717c90f106d23f2f388"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5a5c037df8bae7587c2bc2ea17c2ca0"><td class="memTemplParams" colspan="2">template&lt;typename Assigner &gt; </td></tr>
+<tr class="memitem:ac5a5c037df8bae7587c2bc2ea17c2ca0"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac5a5c037df8bae7587c2bc2ea17c2ca0">unlink</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x, Assigner &amp;assign)</td></tr>
+<tr class="separator:ac5a5c037df8bae7587c2bc2ea17c2ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa285315d2b2dee8ab4553efe0f5d9054"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#aa285315d2b2dee8ab4553efe0f5d9054">append</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> end)</td></tr>
+<tr class="separator:aa285315d2b2dee8ab4553efe0f5d9054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf3882a905a9431c8626d832392be5db"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#abf3882a905a9431c8626d832392be5db">unlink_last</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> end)</td></tr>
+<tr class="separator:abf3882a905a9431c8626d832392be5db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-methods" name="pri-static-methods"></a>
+静的非公開メンバ関数</h2></td></tr>
+<tr class="memitem:ab7b78b151f9cb1debbaa86ca3c480b83"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">pointer_from</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a> x)</td></tr>
+<tr class="separator:ab7b78b151f9cb1debbaa86ca3c480b83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a899a06f86b9636fbc6db3dd2f144dd6c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">base_pointer_from</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:a899a06f86b9636fbc6db3dd2f144dd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2495f60317edd241c643c7aa9ddc146"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a> (<a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x)</td></tr>
+<tr class="separator:ac2495f60317edd241c643c7aa9ddc146"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename Node&gt;<br />
+struct boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;</div>
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00228">228</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a76d6f06d86712742ece81f173dc27a33" name="a76d6f06d86712742ece81f173dc27a33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76d6f06d86712742ece81f173dc27a33">&#9670;&#160;</a></span>base_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::base_pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::base_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00230">230</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afd4e63248c0c8d0e1782ac8636ce8275" name="afd4e63248c0c8d0e1782ac8636ce8275"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4e63248c0c8d0e1782ac8636ce8275">&#9670;&#160;</a></span>const_base_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::const_base_pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::const_base_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00231">231</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9df57174c78234dea6da42513d8c03bd" name="a9df57174c78234dea6da42513d8c03bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df57174c78234dea6da42513d8c03bd">&#9670;&#160;</a></span>const_pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::const_pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::const_pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3cf53b011dd974bdf3f5da7d36578a7f" name="a3cf53b011dd974bdf3f5da7d36578a7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cf53b011dd974bdf3f5da7d36578a7f">&#9670;&#160;</a></span>pointer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef Node::pointer <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::pointer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab7a3e6c4d7fea59dd752045c32b51352" name="ab7a3e6c4d7fea59dd752045c32b51352"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7a3e6c4d7fea59dd752045c32b51352">&#9670;&#160;</a></span>unlink_undo</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structboost_1_1multi__index_1_1detail_1_1unlink__undo__assigner.html">unlink_undo_assigner</a>&lt;Node&gt; <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::unlink_undo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00278">278</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a140077ac45c288d4fd7876b9087e4670" name="a140077ac45c288d4fd7876b9087e4670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140077ac45c288d4fd7876b9087e4670">&#9670;&#160;</a></span>after()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::after </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00240">240</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  241</span>  {</div>
+<div class="line"><span class="lineno">  242</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a>(x)?x-&gt;next()-&gt;prior():<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">pointer_from</a>(x-&gt;next());</div>
+<div class="line"><span class="lineno">  243</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_ab7b78b151f9cb1debbaa86ca3c480b83"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::pointer_from</a></div><div class="ttdeci">static pointer pointer_from(base_pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00333">hash_index_node.hpp:333</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_ac2495f60317edd241c643c7aa9ddc146"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::is_last_of_bucket</a></div><div class="ttdeci">static bool is_last_of_bucket(pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00343">hash_index_node.hpp:343</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a664be5f933e7bd2395054be746835ab9" name="a664be5f933e7bd2395054be746835ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664be5f933e7bd2395054be746835ab9">&#9670;&#160;</a></span>after_local()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::after_local </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00245">245</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  246</span>  {</div>
+<div class="line"><span class="lineno">  247</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a>(x)?<a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>(0):<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">pointer_from</a>(x-&gt;<a class="code hl_function" href="namespaceboost.html#a4521f4e27a3fa7b59748756a9c4fb7b9">next</a>());</div>
+<div class="line"><span class="lineno">  248</span>  }</div>
+<div class="ttc" id="anamespaceboost_html_a4521f4e27a3fa7b59748756a9c4fb7b9"><div class="ttname"><a href="namespaceboost.html#a4521f4e27a3fa7b59748756a9c4fb7b9">boost::next</a></div><div class="ttdeci">T next(T x)</div><div class="ttdef"><b>Definition:</b> <a href="next__prior_8hpp_source.html#l00135">next_prior.hpp:135</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_a3cf53b011dd974bdf3f5da7d36578a7f"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::pointer</a></div><div class="ttdeci">Node::pointer pointer</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00232">hash_index_node.hpp:232</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa285315d2b2dee8ab4553efe0f5d9054" name="aa285315d2b2dee8ab4553efe0f5d9054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa285315d2b2dee8ab4553efe0f5d9054">&#9670;&#160;</a></span>append()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::append </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00306">306</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  307</span>  {</div>
+<div class="line"><span class="lineno">  308</span>    x-&gt;prior()=<a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior();</div>
+<div class="line"><span class="lineno">  309</span>    x-&gt;next()=<a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()-&gt;next();</div>
+<div class="line"><span class="lineno">  310</span>    x-&gt;prior()-&gt;next()=<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">base_pointer_from</a>(x);</div>
+<div class="line"><span class="lineno">  311</span>    <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  312</span>  }</div>
+<div class="ttc" id="anamespaceboost_1_1fusion_html_a0c376d2cd96d6e2e6d173905bb95afb6"><div class="ttname"><a href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">boost::fusion::end</a></div><div class="ttdeci">BOOST_CONSTEXPR BOOST_FUSION_GPU_ENABLED lazy_enable_if&lt; traits::is_sequence&lt; Sequence &gt;, result_of::end&lt; Sequence &gt; &gt;::type const end(Sequence &amp;seq)</div><div class="ttdef"><b>Definition:</b> <a href="boost_2fusion_2sequence_2intrinsic_2end_8hpp_source.html#l00080">boost/fusion/sequence/intrinsic/end.hpp:80</a></div></div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_a899a06f86b9636fbc6db3dd2f144dd6c"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::base_pointer_from</a></div><div class="ttdeci">static base_pointer base_pointer_from(pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00338">hash_index_node.hpp:338</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a899a06f86b9636fbc6db3dd2f144dd6c" name="a899a06f86b9636fbc6db3dd2f144dd6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a899a06f86b9636fbc6db3dd2f144dd6c">&#9670;&#160;</a></span>base_pointer_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::base_pointer_from </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00338">338</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  339</span>  {</div>
+<div class="line"><span class="lineno">  340</span>    <span class="keywordflow">return</span> Node::base_pointer_from(x);</div>
+<div class="line"><span class="lineno">  341</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4e90e1abb60be18f1db440d73f603353" name="a4e90e1abb60be18f1db440d73f603353"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e90e1abb60be18f1db440d73f603353">&#9670;&#160;</a></span>is_first_of_bucket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::is_first_of_bucket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00235">235</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  236</span>  {</div>
+<div class="line"><span class="lineno">  237</span>    <span class="keywordflow">return</span> x-&gt;prior()-&gt;next()!=<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">base_pointer_from</a>(x);</div>
+<div class="line"><span class="lineno">  238</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac2495f60317edd241c643c7aa9ddc146" name="ac2495f60317edd241c643c7aa9ddc146"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2495f60317edd241c643c7aa9ddc146">&#9670;&#160;</a></span>is_last_of_bucket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::is_last_of_bucket </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00343">343</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  344</span>  {</div>
+<div class="line"><span class="lineno">  345</span>    <span class="keywordflow">return</span> x-&gt;next()-&gt;prior()!=x;</div>
+<div class="line"><span class="lineno">  346</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad3b5e00de2607516d667f0b7edfcdf0d" name="ad3b5e00de2607516d667f0b7edfcdf0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3b5e00de2607516d667f0b7edfcdf0d">&#9670;&#160;</a></span>link()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::link </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a>&#160;</td>
+          <td class="paramname"><em>buc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00255">255</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  256</span>  {</div>
+<div class="line"><span class="lineno">  257</span>    <span class="keywordflow">if</span>(buc-&gt;prior()==<a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>(0)){ <span class="comment">/* empty bucket */</span></div>
+<div class="line"><span class="lineno">  258</span>      x-&gt;prior()=<a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior();</div>
+<div class="line"><span class="lineno">  259</span>      x-&gt;next()=<a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()-&gt;next();</div>
+<div class="line"><span class="lineno">  260</span>      x-&gt;prior()-&gt;next()=buc;</div>
+<div class="line"><span class="lineno">  261</span>      buc-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  262</span>      <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  263</span>    }</div>
+<div class="line"><span class="lineno">  264</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  265</span>      x-&gt;prior()=buc-&gt;prior()-&gt;prior();</div>
+<div class="line"><span class="lineno">  266</span>      x-&gt;next()=<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">base_pointer_from</a>(buc-&gt;prior());</div>
+<div class="line"><span class="lineno">  267</span>      buc-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  268</span>      x-&gt;next()-&gt;prior()=x;</div>
+<div class="line"><span class="lineno">  269</span>    }</div>
+<div class="line"><span class="lineno">  270</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2369610e8848e34c0d612226eebc4715" name="a2369610e8848e34c0d612226eebc4715"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2369610e8848e34c0d612226eebc4715">&#9670;&#160;</a></span>next_to_inspect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::next_to_inspect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00250">250</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>  {</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a>(x)?<a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>(0):<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">pointer_from</a>(x-&gt;<a class="code hl_function" href="namespaceboost.html#a4521f4e27a3fa7b59748756a9c4fb7b9">next</a>());</div>
+<div class="line"><span class="lineno">  253</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab7b78b151f9cb1debbaa86ca3c480b83" name="ab7b78b151f9cb1debbaa86ca3c480b83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7b78b151f9cb1debbaa86ca3c480b83">&#9670;&#160;</a></span>pointer_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::pointer_from </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a76d6f06d86712742ece81f173dc27a33">base_pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00333">333</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  334</span>  {</div>
+<div class="line"><span class="lineno">  335</span>    <span class="keywordflow">return</span> Node::pointer_from(x);</div>
+<div class="line"><span class="lineno">  336</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2ae091b28a750717c90f106d23f2f388" name="a2ae091b28a750717c90f106d23f2f388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ae091b28a750717c90f106d23f2f388">&#9670;&#160;</a></span>unlink() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::unlink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00272">272</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  273</span>  {</div>
+<div class="line"><span class="lineno">  274</span>    default_assigner assign;</div>
+<div class="line"><span class="lineno">  275</span>    <a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a2ae091b28a750717c90f106d23f2f388">unlink</a>(x,assign);</div>
+<div class="line"><span class="lineno">  276</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_a2ae091b28a750717c90f106d23f2f388"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a2ae091b28a750717c90f106d23f2f388">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::unlink</a></div><div class="ttdeci">static void unlink(pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00272">hash_index_node.hpp:272</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac5a5c037df8bae7587c2bc2ea17c2ca0" name="ac5a5c037df8bae7587c2bc2ea17c2ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5a5c037df8bae7587c2bc2ea17c2ca0">&#9670;&#160;</a></span>unlink() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<div class="memtemplate">
+template&lt;typename Assigner &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::unlink </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Assigner &amp;&#160;</td>
+          <td class="paramname"><em>assign</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00281">281</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  282</span>  {</div>
+<div class="line"><span class="lineno">  283</span>    <span class="keywordflow">if</span>(<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a4e90e1abb60be18f1db440d73f603353">is_first_of_bucket</a>(x)){</div>
+<div class="line"><span class="lineno">  284</span>      <span class="keywordflow">if</span>(<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a>(x)){</div>
+<div class="line"><span class="lineno">  285</span>        assign(x-&gt;prior()-&gt;next()-&gt;prior(),<a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>(0));</div>
+<div class="line"><span class="lineno">  286</span>        assign(x-&gt;prior()-&gt;next(),x-&gt;next());</div>
+<div class="line"><span class="lineno">  287</span>        assign(x-&gt;next()-&gt;prior()-&gt;prior(),x-&gt;prior());</div>
+<div class="line"><span class="lineno">  288</span>      }</div>
+<div class="line"><span class="lineno">  289</span>      <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  290</span>        assign(x-&gt;prior()-&gt;next()-&gt;prior(),<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ab7b78b151f9cb1debbaa86ca3c480b83">pointer_from</a>(x-&gt;next()));</div>
+<div class="line"><span class="lineno">  291</span>        assign(x-&gt;next()-&gt;prior(),x-&gt;prior());</div>
+<div class="line"><span class="lineno">  292</span>      }</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
+<div class="line"><span class="lineno">  294</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#ac2495f60317edd241c643c7aa9ddc146">is_last_of_bucket</a>(x)){</div>
+<div class="line"><span class="lineno">  295</span>      assign(x-&gt;prior()-&gt;next(),x-&gt;next());</div>
+<div class="line"><span class="lineno">  296</span>      assign(x-&gt;next()-&gt;prior()-&gt;prior(),x-&gt;prior());</div>
+<div class="line"><span class="lineno">  297</span>    }</div>
+<div class="line"><span class="lineno">  298</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  299</span>      assign(x-&gt;prior()-&gt;next(),x-&gt;next());</div>
+<div class="line"><span class="lineno">  300</span>      assign(x-&gt;next()-&gt;prior(),x-&gt;prior());</div>
+<div class="line"><span class="lineno">  301</span>    }</div>
+<div class="line"><span class="lineno">  302</span>  }</div>
+<div class="ttc" id="astructboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4_html_a4e90e1abb60be18f1db440d73f603353"><div class="ttname"><a href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a4e90e1abb60be18f1db440d73f603353">boost::multi_index::detail::hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;::is_first_of_bucket</a></div><div class="ttdeci">static bool is_first_of_bucket(pointer x)</div><div class="ttdef"><b>Definition:</b> <a href="hash__index__node_8hpp_source.html#l00235">hash_index_node.hpp:235</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="abf3882a905a9431c8626d832392be5db" name="abf3882a905a9431c8626d832392be5db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf3882a905a9431c8626d832392be5db">&#9670;&#160;</a></span>unlink_last()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Node &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg.html">boost::multi_index::detail::hashed_index_node_alg</a>&lt; Node, <a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__unique__tag.html">hashed_unique_tag</a> &gt;::unlink_last </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>&#160;</td>
+          <td class="paramname"><em>end</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a> の <a class="el" href="hash__index__node_8hpp_source.html#l00314">314</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  315</span>  {</div>
+<div class="line"><span class="lineno">  316</span>    <span class="comment">/* returns true iff bucket is emptied */</span></div>
+<div class="line"><span class="lineno">  317</span> </div>
+<div class="line"><span class="lineno">  318</span>    <a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a> x=<a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior();</div>
+<div class="line"><span class="lineno">  319</span>    <span class="keywordflow">if</span>(x-&gt;prior()-&gt;next()==<a class="code hl_function" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a899a06f86b9636fbc6db3dd2f144dd6c">base_pointer_from</a>(x)){</div>
+<div class="line"><span class="lineno">  320</span>      x-&gt;prior()-&gt;next()=x-&gt;next();</div>
+<div class="line"><span class="lineno">  321</span>      <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()=x-&gt;prior();</div>
+<div class="line"><span class="lineno">  322</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  323</span>    }</div>
+<div class="line"><span class="lineno">  324</span>    <span class="keywordflow">else</span>{</div>
+<div class="line"><span class="lineno">  325</span>      x-&gt;prior()-&gt;next()-&gt;prior()=<a class="code hl_typedef" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html#a3cf53b011dd974bdf3f5da7d36578a7f">pointer</a>(0);</div>
+<div class="line"><span class="lineno">  326</span>      x-&gt;prior()-&gt;next()=x-&gt;next();</div>
+<div class="line"><span class="lineno">  327</span>      <a class="code hl_function" href="namespaceboost_1_1fusion.html#a0c376d2cd96d6e2e6d173905bb95afb6">end</a>-&gt;prior()=x-&gt;prior();</div>
+<div class="line"><span class="lineno">  328</span>      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  329</span>    }</div>
+<div class="line"><span class="lineno">  330</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="hash__index__node_8hpp_source.html">hash_index_node.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceboost.html">boost</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index.html">multi_index</a></li><li class="navelem"><a class="el" href="namespaceboost_1_1multi__index_1_1detail.html">detail</a></li><li class="navelem"><a class="el" href="structboost_1_1multi__index_1_1detail_1_1hashed__index__node__alg_3_01Node_00_01hashed__unique__tag_01_4.html">hashed_index_node_alg&lt; Node, hashed_unique_tag &gt;</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

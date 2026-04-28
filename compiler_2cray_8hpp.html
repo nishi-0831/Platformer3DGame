@@ -1,0 +1,1035 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: cray.hpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('compiler_2cray_8hpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">compiler/cray.hpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;<a class="el" href="common__edg_8hpp_source.html">boost/config/compiler/common_edg.hpp</a>&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+compiler/cray.hpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="compiler_2cray_8hpp__incl.svg" width="174" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+</div>
+<p><a href="compiler_2cray_8hpp_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a56e7495187829796cc8f00ff3c95c27e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a56e7495187829796cc8f00ff3c95c27e">BOOST_CRAY_x</a>&#160;&#160;&#160;9867657</td></tr>
+<tr class="separator:a56e7495187829796cc8f00ff3c95c27e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8a0872b6e89953de3e8020d2ccba69"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#acd8a0872b6e89953de3e8020d2ccba69">BOOST_CRAY_APPEND</a>(MACRO)&#160;&#160;&#160;<a class="el" href="compiler_2cray_8hpp.html#a2f2a1c7ab529a425df886abf13ef3a48">BOOST_CRAY_APPEND_INTERNAL</a>(MACRO)</td></tr>
+<tr class="separator:acd8a0872b6e89953de3e8020d2ccba69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f2a1c7ab529a425df886abf13ef3a48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a2f2a1c7ab529a425df886abf13ef3a48">BOOST_CRAY_APPEND_INTERNAL</a>(MACRO)&#160;&#160;&#160;BOOST_CRAY_##MACRO</td></tr>
+<tr class="separator:a2f2a1c7ab529a425df886abf13ef3a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae31140e088cd79f97e807b7f38c212f5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ae31140e088cd79f97e807b7f38c212f5">BOOST_CRAY_VERSION</a>&#160;&#160;&#160;(_RELEASE_MAJOR * 10000 + _RELEASE_MINOR * 100 + _RELEASE_PATCHLEVEL)</td></tr>
+<tr class="separator:ae31140e088cd79f97e807b7f38c212f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78005f877b1cc90480de16ddfd9a0def"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a78005f877b1cc90480de16ddfd9a0def">BOOST_COMPILER</a>&#160;&#160;&#160;&quot;Cray <a class="el" href="classC.html">C</a>++ version &quot; BOOST_STRINGIZE(_RELEASE_MAJOR) &quot;.&quot; <a class="el" href="helper__macros_8hpp.html#a49132cc5bde61fd5c333f26dd0ea52d6">BOOST_STRINGIZE</a>(_RELEASE_MINOR) &quot;.&quot; <a class="el" href="helper__macros_8hpp.html#a49132cc5bde61fd5c333f26dd0ea52d6">BOOST_STRINGIZE</a>(_RELEASE_PATCHLEVEL)</td></tr>
+<tr class="separator:a78005f877b1cc90480de16ddfd9a0def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede545b6ee9ac012d10b43e533834127"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#aede545b6ee9ac012d10b43e533834127">BOOST_HAS_NRVO</a></td></tr>
+<tr class="separator:aede545b6ee9ac012d10b43e533834127"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8362230957f5055eac60910faa6c0990"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a8362230957f5055eac60910faa6c0990">BOOST_NO_COMPLETE_VALUE_INITIALIZATION</a></td></tr>
+<tr class="separator:a8362230957f5055eac60910faa6c0990"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb3b29c1c8551e141487a1d7d1b52a09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#abb3b29c1c8551e141487a1d7d1b52a09">BOOST_NO_CXX11_AUTO_DECLARATIONS</a></td></tr>
+<tr class="separator:abb3b29c1c8551e141487a1d7d1b52a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac895f55b93d21bf61b00ec2d450d0c71"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ac895f55b93d21bf61b00ec2d450d0c71">BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS</a></td></tr>
+<tr class="separator:ac895f55b93d21bf61b00ec2d450d0c71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb19b9d0dd23cae6bfc397e63a7aaa8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#aafb19b9d0dd23cae6bfc397e63a7aaa8">BOOST_NO_CXX11_CHAR16_T</a></td></tr>
+<tr class="separator:aafb19b9d0dd23cae6bfc397e63a7aaa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a758a58939fb60dfc045ce2ddcd9fb0e6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a758a58939fb60dfc045ce2ddcd9fb0e6">BOOST_NO_CXX11_CHAR32_T</a></td></tr>
+<tr class="separator:a758a58939fb60dfc045ce2ddcd9fb0e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa650061f37f514724c70c1f3f8b0b319"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#aa650061f37f514724c70c1f3f8b0b319">BOOST_NO_CXX11_CONSTEXPR</a></td></tr>
+<tr class="separator:aa650061f37f514724c70c1f3f8b0b319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11dd99e2e5ea2411271d27aae871e128"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a11dd99e2e5ea2411271d27aae871e128">BOOST_NO_CXX11_DECLTYPE</a></td></tr>
+<tr class="separator:a11dd99e2e5ea2411271d27aae871e128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1ea489c7eade5659c82a4512904d02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a7e1ea489c7eade5659c82a4512904d02">BOOST_NO_CXX11_DECLTYPE_N3276</a></td></tr>
+<tr class="separator:a7e1ea489c7eade5659c82a4512904d02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a024ed2070ff36e2ba52d0ba11f521311"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a024ed2070ff36e2ba52d0ba11f521311">BOOST_NO_CXX11_DEFAULTED_FUNCTIONS</a></td></tr>
+<tr class="separator:a024ed2070ff36e2ba52d0ba11f521311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71bdf7949a6fa976e913a54ac150f0c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a71bdf7949a6fa976e913a54ac150f0c7">BOOST_NO_CXX11_DELETED_FUNCTIONS</a></td></tr>
+<tr class="separator:a71bdf7949a6fa976e913a54ac150f0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab671742e65aca07e8bdc6119c88bbca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ab671742e65aca07e8bdc6119c88bbca0">BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS</a></td></tr>
+<tr class="separator:ab671742e65aca07e8bdc6119c88bbca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b6f5041de347e484f64c9bf6c737667"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a8b6f5041de347e484f64c9bf6c737667">BOOST_NO_CXX11_FINAL</a></td></tr>
+<tr class="separator:a8b6f5041de347e484f64c9bf6c737667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d39fd1b439297500ed4acd3abc21810"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a6d39fd1b439297500ed4acd3abc21810">BOOST_NO_CXX11_OVERRIDE</a></td></tr>
+<tr class="separator:a6d39fd1b439297500ed4acd3abc21810"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b3117d9311937d2b7656e11f0fb00cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a1b3117d9311937d2b7656e11f0fb00cf">BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS</a></td></tr>
+<tr class="separator:a1b3117d9311937d2b7656e11f0fb00cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94736e70641b2134e03d21614194b97a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a94736e70641b2134e03d21614194b97a">BOOST_NO_CXX11_LAMBDAS</a></td></tr>
+<tr class="separator:a94736e70641b2134e03d21614194b97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a207f76fd1126130d6438931603a8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#af5a207f76fd1126130d6438931603a8e">BOOST_NO_CXX11_LOCAL_CLASS_TEMPLATE_PARAMETERS</a></td></tr>
+<tr class="separator:af5a207f76fd1126130d6438931603a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2405c2ff28fe990911fd2e3ac1cd354d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a2405c2ff28fe990911fd2e3ac1cd354d">BOOST_NO_CXX11_NOEXCEPT</a></td></tr>
+<tr class="separator:a2405c2ff28fe990911fd2e3ac1cd354d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64c8d0ff50327226cdc327c9227eb453"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a64c8d0ff50327226cdc327c9227eb453">BOOST_NO_CXX11_NULLPTR</a></td></tr>
+<tr class="separator:a64c8d0ff50327226cdc327c9227eb453"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd1a4e0544ec56309a0d89a285875b61"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#afd1a4e0544ec56309a0d89a285875b61">BOOST_NO_CXX11_RANGE_BASED_FOR</a></td></tr>
+<tr class="separator:afd1a4e0544ec56309a0d89a285875b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67f2e05e95e0d9107ced9a9e05e60461"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a67f2e05e95e0d9107ced9a9e05e60461">BOOST_NO_CXX11_RAW_LITERALS</a></td></tr>
+<tr class="separator:a67f2e05e95e0d9107ced9a9e05e60461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c27e5fc668c4187b9ff4e06d21c7d8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a7c27e5fc668c4187b9ff4e06d21c7d8f">BOOST_NO_CXX11_REF_QUALIFIERS</a></td></tr>
+<tr class="separator:a7c27e5fc668c4187b9ff4e06d21c7d8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7368d116cbcd96be55341d7908d9e161"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a7368d116cbcd96be55341d7908d9e161">BOOST_NO_CXX11_RVALUE_REFERENCES</a></td></tr>
+<tr class="separator:a7368d116cbcd96be55341d7908d9e161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c13e1c5e5f8172c1cea7d5830431849"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a1c13e1c5e5f8172c1cea7d5830431849">BOOST_NO_CXX11_SCOPED_ENUMS</a></td></tr>
+<tr class="separator:a1c13e1c5e5f8172c1cea7d5830431849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd6094e786c24b2d161d79446a4acc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a8fd6094e786c24b2d161d79446a4acc5">BOOST_NO_CXX11_SFINAE_EXPR</a></td></tr>
+<tr class="separator:a8fd6094e786c24b2d161d79446a4acc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1127bc117a7a0ff62d668247f027412"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ac1127bc117a7a0ff62d668247f027412">BOOST_NO_CXX11_STATIC_ASSERT</a></td></tr>
+<tr class="separator:ac1127bc117a7a0ff62d668247f027412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad348164abf2675e7635f5e1111ca6bfb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ad348164abf2675e7635f5e1111ca6bfb">BOOST_NO_CXX11_TEMPLATE_ALIASES</a></td></tr>
+<tr class="separator:ad348164abf2675e7635f5e1111ca6bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a505aa2ebd261ead73dc83deb6c7d0d3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a505aa2ebd261ead73dc83deb6c7d0d3d">BOOST_NO_CXX11_THREAD_LOCAL</a></td></tr>
+<tr class="separator:a505aa2ebd261ead73dc83deb6c7d0d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0">BOOST_NO_CXX11_UNICODE_LITERALS</a></td></tr>
+<tr class="separator:aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4fb272cc8504427ae6c1352338a0349"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ad4fb272cc8504427ae6c1352338a0349">BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX</a></td></tr>
+<tr class="separator:ad4fb272cc8504427ae6c1352338a0349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7f935c0690c469fd4d28b857c7fe97a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#ae7f935c0690c469fd4d28b857c7fe97a">BOOST_NO_CXX11_USER_DEFINED_LITERALS</a></td></tr>
+<tr class="separator:ae7f935c0690c469fd4d28b857c7fe97a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af240e937851b4cc613ccf8b884f4da50"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#af240e937851b4cc613ccf8b884f4da50">BOOST_NO_CXX11_VARIADIC_MACROS</a></td></tr>
+<tr class="separator:af240e937851b4cc613ccf8b884f4da50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71397ed7a502ff6c2756d1cf145a58b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a71397ed7a502ff6c2756d1cf145a58b8">BOOST_NO_CXX11_VARIADIC_TEMPLATES</a></td></tr>
+<tr class="separator:a71397ed7a502ff6c2756d1cf145a58b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f734b65380659c36f25c0d4e4a7615a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a6f734b65380659c36f25c0d4e4a7615a">BOOST_NO_CXX11_UNRESTRICTED_UNION</a></td></tr>
+<tr class="separator:a6f734b65380659c36f25c0d4e4a7615a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff4c6e7a6a9d7bad9905ce7b9c100ae9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#aff4c6e7a6a9d7bad9905ce7b9c100ae9">BOOST_NO_SFINAE_EXPR</a></td></tr>
+<tr class="separator:aff4c6e7a6a9d7bad9905ce7b9c100ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9203431bad3691de147b7584c284cd1f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a9203431bad3691de147b7584c284cd1f">BOOST_NO_TWO_PHASE_NAME_LOOKUP</a></td></tr>
+<tr class="separator:a9203431bad3691de147b7584c284cd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9c0b823e5559dd1110d644433986647"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#af9c0b823e5559dd1110d644433986647">BOOST_MATH_DISABLE_STD_FPCLASSIFY</a></td></tr>
+<tr class="separator:af9c0b823e5559dd1110d644433986647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7252d82df053c8a1fbd8fddf5104115b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a7252d82df053c8a1fbd8fddf5104115b">BOOST_SP_USE_PTHREADS</a></td></tr>
+<tr class="separator:a7252d82df053c8a1fbd8fddf5104115b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f67f368f9f446cddbf323b8ce8c6f8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a00f67f368f9f446cddbf323b8ce8c6f8">BOOST_AC_USE_PTHREADS</a></td></tr>
+<tr class="separator:a00f67f368f9f446cddbf323b8ce8c6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8faf1f097f05558889df4c44d052d35e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a8faf1f097f05558889df4c44d052d35e">__ATOMIC_RELAXED</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a8faf1f097f05558889df4c44d052d35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762c3361bcfeccc1f2742cc94b1ab65b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a762c3361bcfeccc1f2742cc94b1ab65b">__ATOMIC_CONSUME</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a762c3361bcfeccc1f2742cc94b1ab65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72e3c30a05bd2bb63d76550e451a438e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a72e3c30a05bd2bb63d76550e451a438e">__ATOMIC_ACQUIRE</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a72e3c30a05bd2bb63d76550e451a438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5822cf04414d99e0ee81e8bbe182226b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a5822cf04414d99e0ee81e8bbe182226b">__ATOMIC_RELEASE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a5822cf04414d99e0ee81e8bbe182226b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdfdd67de0664b690c42bba327cf7da1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#acdfdd67de0664b690c42bba327cf7da1">__ATOMIC_ACQ_REL</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:acdfdd67de0664b690c42bba327cf7da1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0609dc2b702d5980de44c01bd373136a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="compiler_2cray_8hpp.html#a0609dc2b702d5980de44c01bd373136a">__ATOMIC_SEQ_CST</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a0609dc2b702d5980de44c01bd373136a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="acdfdd67de0664b690c42bba327cf7da1" name="acdfdd67de0664b690c42bba327cf7da1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdfdd67de0664b690c42bba327cf7da1">&#9670;&#160;</a></span>__ATOMIC_ACQ_REL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_ACQ_REL&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00250">250</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a72e3c30a05bd2bb63d76550e451a438e" name="a72e3c30a05bd2bb63d76550e451a438e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72e3c30a05bd2bb63d76550e451a438e">&#9670;&#160;</a></span>__ATOMIC_ACQUIRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_ACQUIRE&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00248">248</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a762c3361bcfeccc1f2742cc94b1ab65b" name="a762c3361bcfeccc1f2742cc94b1ab65b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762c3361bcfeccc1f2742cc94b1ab65b">&#9670;&#160;</a></span>__ATOMIC_CONSUME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_CONSUME&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00247">247</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8faf1f097f05558889df4c44d052d35e" name="a8faf1f097f05558889df4c44d052d35e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8faf1f097f05558889df4c44d052d35e">&#9670;&#160;</a></span>__ATOMIC_RELAXED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_RELAXED&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00246">246</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a5822cf04414d99e0ee81e8bbe182226b" name="a5822cf04414d99e0ee81e8bbe182226b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5822cf04414d99e0ee81e8bbe182226b">&#9670;&#160;</a></span>__ATOMIC_RELEASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_RELEASE&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00249">249</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a0609dc2b702d5980de44c01bd373136a" name="a0609dc2b702d5980de44c01bd373136a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0609dc2b702d5980de44c01bd373136a">&#9670;&#160;</a></span>__ATOMIC_SEQ_CST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __ATOMIC_SEQ_CST&#160;&#160;&#160;5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00251">251</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a00f67f368f9f446cddbf323b8ce8c6f8" name="a00f67f368f9f446cddbf323b8ce8c6f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00f67f368f9f446cddbf323b8ce8c6f8">&#9670;&#160;</a></span>BOOST_AC_USE_PTHREADS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_AC_USE_PTHREADS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00233">233</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a78005f877b1cc90480de16ddfd9a0def" name="a78005f877b1cc90480de16ddfd9a0def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78005f877b1cc90480de16ddfd9a0def">&#9670;&#160;</a></span>BOOST_COMPILER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_COMPILER&#160;&#160;&#160;&quot;Cray <a class="el" href="classC.html">C</a>++ version &quot; BOOST_STRINGIZE(_RELEASE_MAJOR) &quot;.&quot; <a class="el" href="helper__macros_8hpp.html#a49132cc5bde61fd5c333f26dd0ea52d6">BOOST_STRINGIZE</a>(_RELEASE_MINOR) &quot;.&quot; <a class="el" href="helper__macros_8hpp.html#a49132cc5bde61fd5c333f26dd0ea52d6">BOOST_STRINGIZE</a>(_RELEASE_PATCHLEVEL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00155">155</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="acd8a0872b6e89953de3e8020d2ccba69" name="acd8a0872b6e89953de3e8020d2ccba69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8a0872b6e89953de3e8020d2ccba69">&#9670;&#160;</a></span>BOOST_CRAY_APPEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CRAY_APPEND</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">MACRO</td><td>)</td>
+          <td>&#160;&#160;&#160;<a class="el" href="compiler_2cray_8hpp.html#a2f2a1c7ab529a425df886abf13ef3a48">BOOST_CRAY_APPEND_INTERNAL</a>(MACRO)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00121">121</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2f2a1c7ab529a425df886abf13ef3a48" name="a2f2a1c7ab529a425df886abf13ef3a48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f2a1c7ab529a425df886abf13ef3a48">&#9670;&#160;</a></span>BOOST_CRAY_APPEND_INTERNAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CRAY_APPEND_INTERNAL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">MACRO</td><td>)</td>
+          <td>&#160;&#160;&#160;BOOST_CRAY_##MACRO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00122">122</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae31140e088cd79f97e807b7f38c212f5" name="ae31140e088cd79f97e807b7f38c212f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae31140e088cd79f97e807b7f38c212f5">&#9670;&#160;</a></span>BOOST_CRAY_VERSION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CRAY_VERSION&#160;&#160;&#160;(_RELEASE_MAJOR * 10000 + _RELEASE_MINOR * 100 + _RELEASE_PATCHLEVEL)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00141">141</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a56e7495187829796cc8f00ff3c95c27e" name="a56e7495187829796cc8f00ff3c95c27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56e7495187829796cc8f00ff3c95c27e">&#9670;&#160;</a></span>BOOST_CRAY_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_CRAY_x&#160;&#160;&#160;9867657</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00120">120</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aede545b6ee9ac012d10b43e533834127" name="aede545b6ee9ac012d10b43e533834127"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede545b6ee9ac012d10b43e533834127">&#9670;&#160;</a></span>BOOST_HAS_NRVO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_HAS_NRVO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00191">191</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af9c0b823e5559dd1110d644433986647" name="af9c0b823e5559dd1110d644433986647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9c0b823e5559dd1110d644433986647">&#9670;&#160;</a></span>BOOST_MATH_DISABLE_STD_FPCLASSIFY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_MATH_DISABLE_STD_FPCLASSIFY</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00229">229</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8362230957f5055eac60910faa6c0990" name="a8362230957f5055eac60910faa6c0990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8362230957f5055eac60910faa6c0990">&#9670;&#160;</a></span>BOOST_NO_COMPLETE_VALUE_INITIALIZATION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_COMPLETE_VALUE_INITIALIZATION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00192">192</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="abb3b29c1c8551e141487a1d7d1b52a09" name="abb3b29c1c8551e141487a1d7d1b52a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb3b29c1c8551e141487a1d7d1b52a09">&#9670;&#160;</a></span>BOOST_NO_CXX11_AUTO_DECLARATIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_AUTO_DECLARATIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00193">193</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac895f55b93d21bf61b00ec2d450d0c71" name="ac895f55b93d21bf61b00ec2d450d0c71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac895f55b93d21bf61b00ec2d450d0c71">&#9670;&#160;</a></span>BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_AUTO_MULTIDECLARATIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00194">194</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aafb19b9d0dd23cae6bfc397e63a7aaa8" name="aafb19b9d0dd23cae6bfc397e63a7aaa8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb19b9d0dd23cae6bfc397e63a7aaa8">&#9670;&#160;</a></span>BOOST_NO_CXX11_CHAR16_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_CHAR16_T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00195">195</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a758a58939fb60dfc045ce2ddcd9fb0e6" name="a758a58939fb60dfc045ce2ddcd9fb0e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a758a58939fb60dfc045ce2ddcd9fb0e6">&#9670;&#160;</a></span>BOOST_NO_CXX11_CHAR32_T</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_CHAR32_T</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00196">196</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa650061f37f514724c70c1f3f8b0b319" name="aa650061f37f514724c70c1f3f8b0b319"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa650061f37f514724c70c1f3f8b0b319">&#9670;&#160;</a></span>BOOST_NO_CXX11_CONSTEXPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_CONSTEXPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00197">197</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a11dd99e2e5ea2411271d27aae871e128" name="a11dd99e2e5ea2411271d27aae871e128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11dd99e2e5ea2411271d27aae871e128">&#9670;&#160;</a></span>BOOST_NO_CXX11_DECLTYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_DECLTYPE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00198">198</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7e1ea489c7eade5659c82a4512904d02" name="a7e1ea489c7eade5659c82a4512904d02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e1ea489c7eade5659c82a4512904d02">&#9670;&#160;</a></span>BOOST_NO_CXX11_DECLTYPE_N3276</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_DECLTYPE_N3276</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00199">199</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a024ed2070ff36e2ba52d0ba11f521311" name="a024ed2070ff36e2ba52d0ba11f521311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a024ed2070ff36e2ba52d0ba11f521311">&#9670;&#160;</a></span>BOOST_NO_CXX11_DEFAULTED_FUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_DEFAULTED_FUNCTIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00200">200</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a71bdf7949a6fa976e913a54ac150f0c7" name="a71bdf7949a6fa976e913a54ac150f0c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71bdf7949a6fa976e913a54ac150f0c7">&#9670;&#160;</a></span>BOOST_NO_CXX11_DELETED_FUNCTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_DELETED_FUNCTIONS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00201">201</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab671742e65aca07e8bdc6119c88bbca0" name="ab671742e65aca07e8bdc6119c88bbca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab671742e65aca07e8bdc6119c88bbca0">&#9670;&#160;</a></span>BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_EXPLICIT_CONVERSION_OPERATORS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00202">202</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8b6f5041de347e484f64c9bf6c737667" name="a8b6f5041de347e484f64c9bf6c737667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b6f5041de347e484f64c9bf6c737667">&#9670;&#160;</a></span>BOOST_NO_CXX11_FINAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_FINAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00203">203</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1b3117d9311937d2b7656e11f0fb00cf" name="a1b3117d9311937d2b7656e11f0fb00cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b3117d9311937d2b7656e11f0fb00cf">&#9670;&#160;</a></span>BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_FUNCTION_TEMPLATE_DEFAULT_ARGS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00205">205</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a94736e70641b2134e03d21614194b97a" name="a94736e70641b2134e03d21614194b97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94736e70641b2134e03d21614194b97a">&#9670;&#160;</a></span>BOOST_NO_CXX11_LAMBDAS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_LAMBDAS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00206">206</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af5a207f76fd1126130d6438931603a8e" name="af5a207f76fd1126130d6438931603a8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5a207f76fd1126130d6438931603a8e">&#9670;&#160;</a></span>BOOST_NO_CXX11_LOCAL_CLASS_TEMPLATE_PARAMETERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_LOCAL_CLASS_TEMPLATE_PARAMETERS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00207">207</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a2405c2ff28fe990911fd2e3ac1cd354d" name="a2405c2ff28fe990911fd2e3ac1cd354d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2405c2ff28fe990911fd2e3ac1cd354d">&#9670;&#160;</a></span>BOOST_NO_CXX11_NOEXCEPT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_NOEXCEPT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00208">208</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a64c8d0ff50327226cdc327c9227eb453" name="a64c8d0ff50327226cdc327c9227eb453"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c8d0ff50327226cdc327c9227eb453">&#9670;&#160;</a></span>BOOST_NO_CXX11_NULLPTR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_NULLPTR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00209">209</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6d39fd1b439297500ed4acd3abc21810" name="a6d39fd1b439297500ed4acd3abc21810"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d39fd1b439297500ed4acd3abc21810">&#9670;&#160;</a></span>BOOST_NO_CXX11_OVERRIDE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_OVERRIDE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00204">204</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="afd1a4e0544ec56309a0d89a285875b61" name="afd1a4e0544ec56309a0d89a285875b61"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd1a4e0544ec56309a0d89a285875b61">&#9670;&#160;</a></span>BOOST_NO_CXX11_RANGE_BASED_FOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_RANGE_BASED_FOR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00210">210</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a67f2e05e95e0d9107ced9a9e05e60461" name="a67f2e05e95e0d9107ced9a9e05e60461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67f2e05e95e0d9107ced9a9e05e60461">&#9670;&#160;</a></span>BOOST_NO_CXX11_RAW_LITERALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_RAW_LITERALS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00211">211</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7c27e5fc668c4187b9ff4e06d21c7d8f" name="a7c27e5fc668c4187b9ff4e06d21c7d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c27e5fc668c4187b9ff4e06d21c7d8f">&#9670;&#160;</a></span>BOOST_NO_CXX11_REF_QUALIFIERS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_REF_QUALIFIERS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00212">212</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7368d116cbcd96be55341d7908d9e161" name="a7368d116cbcd96be55341d7908d9e161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7368d116cbcd96be55341d7908d9e161">&#9670;&#160;</a></span>BOOST_NO_CXX11_RVALUE_REFERENCES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_RVALUE_REFERENCES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00213">213</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a1c13e1c5e5f8172c1cea7d5830431849" name="a1c13e1c5e5f8172c1cea7d5830431849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c13e1c5e5f8172c1cea7d5830431849">&#9670;&#160;</a></span>BOOST_NO_CXX11_SCOPED_ENUMS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_SCOPED_ENUMS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00214">214</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8fd6094e786c24b2d161d79446a4acc5" name="a8fd6094e786c24b2d161d79446a4acc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fd6094e786c24b2d161d79446a4acc5">&#9670;&#160;</a></span>BOOST_NO_CXX11_SFINAE_EXPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_SFINAE_EXPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00215">215</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ac1127bc117a7a0ff62d668247f027412" name="ac1127bc117a7a0ff62d668247f027412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1127bc117a7a0ff62d668247f027412">&#9670;&#160;</a></span>BOOST_NO_CXX11_STATIC_ASSERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_STATIC_ASSERT</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00216">216</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad348164abf2675e7635f5e1111ca6bfb" name="ad348164abf2675e7635f5e1111ca6bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad348164abf2675e7635f5e1111ca6bfb">&#9670;&#160;</a></span>BOOST_NO_CXX11_TEMPLATE_ALIASES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_TEMPLATE_ALIASES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00217">217</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a505aa2ebd261ead73dc83deb6c7d0d3d" name="a505aa2ebd261ead73dc83deb6c7d0d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a505aa2ebd261ead73dc83deb6c7d0d3d">&#9670;&#160;</a></span>BOOST_NO_CXX11_THREAD_LOCAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_THREAD_LOCAL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00218">218</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0" name="aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2d9eb1d1cd07d8c9a53a19b9f3f3ca0">&#9670;&#160;</a></span>BOOST_NO_CXX11_UNICODE_LITERALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_UNICODE_LITERALS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00219">219</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad4fb272cc8504427ae6c1352338a0349" name="ad4fb272cc8504427ae6c1352338a0349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4fb272cc8504427ae6c1352338a0349">&#9670;&#160;</a></span>BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_UNIFIED_INITIALIZATION_SYNTAX</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00220">220</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6f734b65380659c36f25c0d4e4a7615a" name="a6f734b65380659c36f25c0d4e4a7615a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f734b65380659c36f25c0d4e4a7615a">&#9670;&#160;</a></span>BOOST_NO_CXX11_UNRESTRICTED_UNION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_UNRESTRICTED_UNION</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00224">224</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae7f935c0690c469fd4d28b857c7fe97a" name="ae7f935c0690c469fd4d28b857c7fe97a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7f935c0690c469fd4d28b857c7fe97a">&#9670;&#160;</a></span>BOOST_NO_CXX11_USER_DEFINED_LITERALS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_USER_DEFINED_LITERALS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00221">221</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="af240e937851b4cc613ccf8b884f4da50" name="af240e937851b4cc613ccf8b884f4da50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af240e937851b4cc613ccf8b884f4da50">&#9670;&#160;</a></span>BOOST_NO_CXX11_VARIADIC_MACROS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_VARIADIC_MACROS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00222">222</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a71397ed7a502ff6c2756d1cf145a58b8" name="a71397ed7a502ff6c2756d1cf145a58b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71397ed7a502ff6c2756d1cf145a58b8">&#9670;&#160;</a></span>BOOST_NO_CXX11_VARIADIC_TEMPLATES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_CXX11_VARIADIC_TEMPLATES</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00223">223</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="aff4c6e7a6a9d7bad9905ce7b9c100ae9" name="aff4c6e7a6a9d7bad9905ce7b9c100ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff4c6e7a6a9d7bad9905ce7b9c100ae9">&#9670;&#160;</a></span>BOOST_NO_SFINAE_EXPR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_SFINAE_EXPR</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00225">225</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a9203431bad3691de147b7584c284cd1f" name="a9203431bad3691de147b7584c284cd1f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9203431bad3691de147b7584c284cd1f">&#9670;&#160;</a></span>BOOST_NO_TWO_PHASE_NAME_LOOKUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_NO_TWO_PHASE_NAME_LOOKUP</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00226">226</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7252d82df053c8a1fbd8fddf5104115b" name="a7252d82df053c8a1fbd8fddf5104115b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7252d82df053c8a1fbd8fddf5104115b">&#9670;&#160;</a></span>BOOST_SP_USE_PTHREADS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BOOST_SP_USE_PTHREADS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="compiler_2cray_8hpp_source.html">compiler/cray.hpp</a> の <a class="el" href="compiler_2cray_8hpp_source.html#l00232">232</a> 行目に定義があります。</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_ca6cabe6faa89642a99ddef30fe3d137.html">ThirdParty</a></li><li class="navelem"><a class="el" href="dir_3f22a70058e2586c43dfde2782986b2c.html">boost</a></li><li class="navelem"><a class="el" href="dir_9f819e5a95b48ef443de9cf51f4bbd0a.html">config</a></li><li class="navelem"><a class="el" href="dir_99c6be3141cb748698e6aa8374bfb86e.html">compiler</a></li><li class="navelem"><a class="el" href="compiler_2cray_8hpp.html">cray.hpp</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>

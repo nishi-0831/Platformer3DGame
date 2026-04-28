@@ -1,0 +1,1282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.6"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Game: detail::parser&lt; BasicJsonType, InputAdapterType &gt; クラステンプレート</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+  $(document).ready(function() { init_search(); });
+/* @license-end */
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Game
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect"                onmouseover="return searchBox.OnSearchSelectShow()"                onmouseout="return searchBox.OnSearchSelectHide()">&#160;</span>
+          <input type="text" id="MSearchField" value="" placeholder="検索" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.svg" alt=""/></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.6 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('classdetail_1_1parser.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">読み取り中…</div>
+<div class="SRStatus" id="Searching">検索中…</div>
+<div class="SRStatus" id="NoMatches">一致する文字列を見つけられません</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pri-types">非公開型</a> &#124;
+<a href="#pri-methods">非公開メンバ関数</a> &#124;
+<a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="classdetail_1_1parser-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">detail::parser&lt; BasicJsonType, InputAdapterType &gt; クラステンプレート</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>syntax analysis  
+ <a href="classdetail_1_1parser.html#details">[詳解]</a></p>
+
+<p><code>#include &quot;<a class="el" href="parser_8hpp_source.html">parser.hpp</a>&quot;</code></p>
+<div class="dynheader">
+detail::parser&lt; BasicJsonType, InputAdapterType &gt; 連携図</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser__coll__graph.svg" width="307" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ae6dea6f2ecbd5ac3f2b66573f34fc063"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#ae6dea6f2ecbd5ac3f2b66573f34fc063">parser</a> (InputAdapterType &amp;&amp;adapter, <a class="el" href="namespacedetail.html#a20a6b9b232b9f47ce057fe5cc5bbf511">parser_callback_t</a>&lt; BasicJsonType &gt; cb=nullptr, const bool allow_exceptions_=true, const bool skip_comments=false)</td></tr>
+<tr class="memdesc:ae6dea6f2ecbd5ac3f2b66573f34fc063"><td class="mdescLeft">&#160;</td><td class="mdescRight">a parser reading from an input adapter  <br /></td></tr>
+<tr class="separator:ae6dea6f2ecbd5ac3f2b66573f34fc063"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59f4b745d4aa146bf7a60a30060f592f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a59f4b745d4aa146bf7a60a30060f592f">parse</a> (const bool <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a>, BasicJsonType &amp;result)</td></tr>
+<tr class="memdesc:a59f4b745d4aa146bf7a60a30060f592f"><td class="mdescLeft">&#160;</td><td class="mdescRight">public parser interface  <br /></td></tr>
+<tr class="separator:a59f4b745d4aa146bf7a60a30060f592f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac46da3262cbe66ade670c5b4782451e6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#ac46da3262cbe66ade670c5b4782451e6">accept</a> (const bool <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a>=true)</td></tr>
+<tr class="memdesc:ac46da3262cbe66ade670c5b4782451e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">public accept interface  <br /></td></tr>
+<tr class="separator:ac46da3262cbe66ade670c5b4782451e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9084759356689163fee9ae37e69b050"><td class="memTemplParams" colspan="2">template&lt;typename SAX &gt; </td></tr>
+<tr class="memitem:ae9084759356689163fee9ae37e69b050"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#ae9084759356689163fee9ae37e69b050">sax_parse</a> (SAX *sax, const bool <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a>=true)</td></tr>
+<tr class="separator:ae9084759356689163fee9ae37e69b050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-types" name="pri-types"></a>
+非公開型</h2></td></tr>
+<tr class="memitem:a7683a9158ce4bce1230abf48d15c1da0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a7683a9158ce4bce1230abf48d15c1da0">number_integer_t</a> = typename BasicJsonType::number_integer_t</td></tr>
+<tr class="separator:a7683a9158ce4bce1230abf48d15c1da0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6acd62446c1f88b574fb4d7e27b887ab"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a6acd62446c1f88b574fb4d7e27b887ab">number_unsigned_t</a> = typename BasicJsonType::number_unsigned_t</td></tr>
+<tr class="separator:a6acd62446c1f88b574fb4d7e27b887ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad763b74978590fc53a665b2a78ca766d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#ad763b74978590fc53a665b2a78ca766d">number_float_t</a> = typename BasicJsonType::number_float_t</td></tr>
+<tr class="separator:ad763b74978590fc53a665b2a78ca766d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89e265606bf20dc438962e81fd457e24"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a89e265606bf20dc438962e81fd457e24">string_t</a> = typename BasicJsonType::string_t</td></tr>
+<tr class="separator:a89e265606bf20dc438962e81fd457e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd26815b29691d1f9f28f13695e28ca4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#abd26815b29691d1f9f28f13695e28ca4">lexer_t</a> = <a class="el" href="classdetail_1_1lexer.html">lexer</a>&lt; BasicJsonType, InputAdapterType &gt;</td></tr>
+<tr class="separator:abd26815b29691d1f9f28f13695e28ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51f4e69ac70697f34de5e02e670cc057"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a> = typename <a class="el" href="classdetail_1_1lexer.html#a74052693c02be1a1e245295b62e5fcb6">lexer_t::token_type</a></td></tr>
+<tr class="separator:a51f4e69ac70697f34de5e02e670cc057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+非公開メンバ関数</h2></td></tr>
+<tr class="memitem:a362fc204b9a1027d6288deabc3b3360a"><td class="memTemplParams" colspan="2">template&lt;typename SAX &gt; </td></tr>
+<tr class="memitem:a362fc204b9a1027d6288deabc3b3360a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a362fc204b9a1027d6288deabc3b3360a">sax_parse_internal</a> (SAX *sax)</td></tr>
+<tr class="separator:a362fc204b9a1027d6288deabc3b3360a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea40f4e5d5dd7f2860282804e1df5a6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a> ()</td></tr>
+<tr class="memdesc:aea40f4e5d5dd7f2860282804e1df5a6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">get next token from lexer  <br /></td></tr>
+<tr class="separator:aea40f4e5d5dd7f2860282804e1df5a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13621f12e55437efd6c1af970f071a92"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a> (const <a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a> expected, const std::string &amp;context)</td></tr>
+<tr class="separator:a13621f12e55437efd6c1af970f071a92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+非公開変数類</h2></td></tr>
+<tr class="memitem:ad8f31cd8002b1c56177afcaa9726a9cf"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacedetail.html#a20a6b9b232b9f47ce057fe5cc5bbf511">parser_callback_t</a>&lt; BasicJsonType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#ad8f31cd8002b1c56177afcaa9726a9cf">callback</a> = nullptr</td></tr>
+<tr class="memdesc:ad8f31cd8002b1c56177afcaa9726a9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">callback function  <br /></td></tr>
+<tr class="separator:ad8f31cd8002b1c56177afcaa9726a9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a654297c0dc3afa4674f41d729d97bcc8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> = token_type::uninitialized</td></tr>
+<tr class="memdesc:a654297c0dc3afa4674f41d729d97bcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">the type of the last read token  <br /></td></tr>
+<tr class="separator:a654297c0dc3afa4674f41d729d97bcc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e00bbaea167a7c7c4e6cb7b5b6ebba6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classdetail_1_1parser.html#abd26815b29691d1f9f28f13695e28ca4">lexer_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a></td></tr>
+<tr class="memdesc:a9e00bbaea167a7c7c4e6cb7b5b6ebba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">the lexer  <br /></td></tr>
+<tr class="separator:a9e00bbaea167a7c7c4e6cb7b5b6ebba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1726af146ce25841f857250fb4c832f8"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdetail_1_1parser.html#a1726af146ce25841f857250fb4c832f8">allow_exceptions</a> = true</td></tr>
+<tr class="memdesc:a1726af146ce25841f857250fb4c832f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to throw exceptions in case of errors  <br /></td></tr>
+<tr class="separator:a1726af146ce25841f857250fb4c832f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename BasicJsonType, typename InputAdapterType&gt;<br />
+class detail::parser&lt; BasicJsonType, InputAdapterType &gt;</div><p>syntax analysis </p>
+<p>This class implements a recursive descent parser. </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00060">60</a> 行目に定義があります。</p>
+</div><h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="abd26815b29691d1f9f28f13695e28ca4" name="abd26815b29691d1f9f28f13695e28ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd26815b29691d1f9f28f13695e28ca4">&#9670;&#160;</a></span>lexer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::lexer_t =  <a class="el" href="classdetail_1_1lexer.html">lexer</a>&lt;BasicJsonType, InputAdapterType&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00066">66</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ad763b74978590fc53a665b2a78ca766d" name="ad763b74978590fc53a665b2a78ca766d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad763b74978590fc53a665b2a78ca766d">&#9670;&#160;</a></span>number_float_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_float_t =  typename BasicJsonType::number_float_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00064">64</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a7683a9158ce4bce1230abf48d15c1da0" name="a7683a9158ce4bce1230abf48d15c1da0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7683a9158ce4bce1230abf48d15c1da0">&#9670;&#160;</a></span>number_integer_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_integer_t =  typename BasicJsonType::number_integer_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00062">62</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6acd62446c1f88b574fb4d7e27b887ab" name="a6acd62446c1f88b574fb4d7e27b887ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6acd62446c1f88b574fb4d7e27b887ab">&#9670;&#160;</a></span>number_unsigned_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::number_unsigned_t =  typename BasicJsonType::number_unsigned_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00063">63</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a89e265606bf20dc438962e81fd457e24" name="a89e265606bf20dc438962e81fd457e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89e265606bf20dc438962e81fd457e24">&#9670;&#160;</a></span>string_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::string_t =  typename BasicJsonType::string_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00065">65</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a51f4e69ac70697f34de5e02e670cc057" name="a51f4e69ac70697f34de5e02e670cc057"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51f4e69ac70697f34de5e02e670cc057">&#9670;&#160;</a></span>token_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::token_type =  typename <a class="el" href="classdetail_1_1lexer.html#a74052693c02be1a1e245295b62e5fcb6">lexer_t::token_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00067">67</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ae6dea6f2ecbd5ac3f2b66573f34fc063" name="ae6dea6f2ecbd5ac3f2b66573f34fc063"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6dea6f2ecbd5ac3f2b66573f34fc063">&#9670;&#160;</a></span>parser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::parser </td>
+          <td>(</td>
+          <td class="paramtype">InputAdapterType &amp;&amp;&#160;</td>
+          <td class="paramname"><em>adapter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedetail.html#a20a6b9b232b9f47ce057fe5cc5bbf511">parser_callback_t</a>&lt; BasicJsonType &gt;&#160;</td>
+          <td class="paramname"><em>cb</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>allow_exceptions_</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>skip_comments</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a parser reading from an input adapter </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00071">71</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   75</span>        : <a class="code hl_variable" href="classdetail_1_1parser.html#ad8f31cd8002b1c56177afcaa9726a9cf">callback</a>(std::move(cb))</div>
+<div class="line"><span class="lineno">   76</span>        , <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>(std::move(adapter), skip_comments)</div>
+<div class="line"><span class="lineno">   77</span>        , <a class="code hl_variable" href="classdetail_1_1parser.html#a1726af146ce25841f857250fb4c832f8">allow_exceptions</a>(allow_exceptions_)</div>
+<div class="line"><span class="lineno">   78</span>    {</div>
+<div class="line"><span class="lineno">   79</span>        <span class="comment">// read first token</span></div>
+<div class="line"><span class="lineno">   80</span>        <a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>();</div>
+<div class="line"><span class="lineno">   81</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1parser_html_a1726af146ce25841f857250fb4c832f8"><div class="ttname"><a href="classdetail_1_1parser.html#a1726af146ce25841f857250fb4c832f8">detail::parser::allow_exceptions</a></div><div class="ttdeci">const bool allow_exceptions</div><div class="ttdoc">whether to throw exceptions in case of errors</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00515">parser.hpp:515</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_a9e00bbaea167a7c7c4e6cb7b5b6ebba6"><div class="ttname"><a href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">detail::parser::m_lexer</a></div><div class="ttdeci">lexer_t m_lexer</div><div class="ttdoc">the lexer</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00513">parser.hpp:513</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_ad8f31cd8002b1c56177afcaa9726a9cf"><div class="ttname"><a href="classdetail_1_1parser.html#ad8f31cd8002b1c56177afcaa9726a9cf">detail::parser::callback</a></div><div class="ttdeci">const parser_callback_t&lt; BasicJsonType &gt; callback</div><div class="ttdoc">callback function</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00509">parser.hpp:509</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_aea40f4e5d5dd7f2860282804e1df5a6d"><div class="ttname"><a href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">detail::parser::get_token</a></div><div class="ttdeci">token_type get_token()</div><div class="ttdoc">get next token from lexer</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00473">parser.hpp:473</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_ae6dea6f2ecbd5ac3f2b66573f34fc063_cgraph.svg" width="1128" height="686"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ac46da3262cbe66ade670c5b4782451e6" name="ac46da3262cbe66ade670c5b4782451e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac46da3262cbe66ade670c5b4782451e6">&#9670;&#160;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::accept </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em> = <code>true</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>public accept interface </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strict</td><td>whether to expect the last token to be EOF </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>whether the input is a proper JSON text </dd></dl>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00153">153</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  154</span>    {</div>
+<div class="line"><span class="lineno">  155</span>        json_sax_acceptor&lt;BasicJsonType&gt; sax_acceptor;</div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="classdetail_1_1parser.html#ae9084759356689163fee9ae37e69b050">sax_parse</a>(&amp;sax_acceptor, <a class="code hl_enumvalue" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a>);</div>
+<div class="line"><span class="lineno">  157</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1parser_html_ae9084759356689163fee9ae37e69b050"><div class="ttname"><a href="classdetail_1_1parser.html#ae9084759356689163fee9ae37e69b050">detail::parser::sax_parse</a></div><div class="ttdeci">bool sax_parse(SAX *sax, const bool strict=true)</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00161">parser.hpp:161</a></div></div>
+<div class="ttc" id="anamespacedetail_html_abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792"><div class="ttname"><a href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">detail::error_handler_t::strict</a></div><div class="ttdeci">@ strict</div><div class="ttdoc">throw a type_error exception in case of invalid UTF-8</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="parser_8hpp_source.html#l00161">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse()</a>, <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">detail::strict</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_ac46da3262cbe66ade670c5b4782451e6_cgraph.svg" width="1599" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a13621f12e55437efd6c1af970f071a92" name="a13621f12e55437efd6c1af970f071a92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13621f12e55437efd6c1af970f071a92">&#9670;&#160;</a></span>exception_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::exception_message </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a>&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00478">478</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  479</span>    {</div>
+<div class="line"><span class="lineno">  480</span>        std::string error_msg = <span class="stringliteral">&quot;syntax error &quot;</span>;</div>
+<div class="line"><span class="lineno">  481</span> </div>
+<div class="line"><span class="lineno">  482</span>        <span class="keywordflow">if</span> (!context.empty())</div>
+<div class="line"><span class="lineno">  483</span>        {</div>
+<div class="line"><span class="lineno">  484</span>            error_msg += <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;while parsing &quot;</span>, context, <span class="charliteral">&#39; &#39;</span>);</div>
+<div class="line"><span class="lineno">  485</span>        }</div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>        error_msg += <span class="stringliteral">&quot;- &quot;</span>;</div>
+<div class="line"><span class="lineno">  488</span> </div>
+<div class="line"><span class="lineno">  489</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> == token_type::parse_error)</div>
+<div class="line"><span class="lineno">  490</span>        {</div>
+<div class="line"><span class="lineno">  491</span>            error_msg += <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a412c108d8b931630d54e42fbbf764fc4">get_error_message</a>(), <span class="stringliteral">&quot;; last read: &#39;&quot;</span>,</div>
+<div class="line"><span class="lineno">  492</span>                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(), <span class="charliteral">&#39;\&#39;&#39;</span>);</div>
+<div class="line"><span class="lineno">  493</span>        }</div>
+<div class="line"><span class="lineno">  494</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  495</span>        {</div>
+<div class="line"><span class="lineno">  496</span>            error_msg += <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;unexpected &quot;</span>, <a class="code hl_function" href="classdetail_1_1lexer__base.html#aadef66e89ad828e5f69479c85887fa6d">lexer_t::token_type_name</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a>));</div>
+<div class="line"><span class="lineno">  497</span>        }</div>
+<div class="line"><span class="lineno">  498</span> </div>
+<div class="line"><span class="lineno">  499</span>        <span class="keywordflow">if</span> (expected != token_type::uninitialized)</div>
+<div class="line"><span class="lineno">  500</span>        {</div>
+<div class="line"><span class="lineno">  501</span>            error_msg += <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;; expected &quot;</span>, <a class="code hl_function" href="classdetail_1_1lexer__base.html#aadef66e89ad828e5f69479c85887fa6d">lexer_t::token_type_name</a>(expected));</div>
+<div class="line"><span class="lineno">  502</span>        }</div>
+<div class="line"><span class="lineno">  503</span> </div>
+<div class="line"><span class="lineno">  504</span>        <span class="keywordflow">return</span> error_msg;</div>
+<div class="line"><span class="lineno">  505</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1lexer__base_html_aadef66e89ad828e5f69479c85887fa6d"><div class="ttname"><a href="classdetail_1_1lexer__base.html#aadef66e89ad828e5f69479c85887fa6d">detail::lexer_base::token_type_name</a></div><div class="ttdeci">JSON_HEDLEY_RETURNS_NON_NULL static JSON_HEDLEY_CONST const char * token_type_name(const token_type t) noexcept</div><div class="ttdoc">return name of values of type token_type (only used for errors)</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l00063">lexer.hpp:63</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a412c108d8b931630d54e42fbbf764fc4"><div class="ttname"><a href="classdetail_1_1lexer.html#a412c108d8b931630d54e42fbbf764fc4">detail::lexer::get_error_message</a></div><div class="ttdeci">JSON_HEDLEY_RETURNS_NON_NULL constexpr const char * get_error_message() const noexcept</div><div class="ttdoc">return syntax error message</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01482">lexer.hpp:1482</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a41481d87dc1bcaaf532f529fbc0e690b"><div class="ttname"><a href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">detail::lexer::get_token_string</a></div><div class="ttdeci">std::string get_token_string() const</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01457">lexer.hpp:1457</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_a654297c0dc3afa4674f41d729d97bcc8"><div class="ttname"><a href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">detail::parser::last_token</a></div><div class="ttdeci">token_type last_token</div><div class="ttdoc">the type of the last read token</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00511">parser.hpp:511</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a266fb3d4bf633ad6c506434cc91164da"><div class="ttname"><a href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">detail::concat</a></div><div class="ttdeci">OutStringType concat(Args &amp;&amp;... args)</div><div class="ttdef"><b>Definition:</b> <a href="string__concat_8hpp_source.html#l00137">string_concat.hpp:137</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="string__concat_8hpp_source.html#l00137">detail::concat()</a>, <a class="el" href="lexer_8hpp_source.html#l01482">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_error_message()</a>, <a class="el" href="lexer_8hpp_source.html#l01457">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_token_string()</a>, <a class="el" href="parser_8hpp_source.html#l00511">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::last_token</a>, <a class="el" href="parser_8hpp_source.html#l00513">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</a>, <a class="el" href="lexer_8hpp_source.html#l00063">detail::lexer_base&lt; BasicJsonType &gt;::token_type_name()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>, <a class="el" href="parser_8hpp_source.html#l00161">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse()</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_a13621f12e55437efd6c1af970f071a92_cgraph.svg" width="592" height="254"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_a13621f12e55437efd6c1af970f071a92_icgraph.svg" width="784" height="116"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="aea40f4e5d5dd7f2860282804e1df5a6d" name="aea40f4e5d5dd7f2860282804e1df5a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea40f4e5d5dd7f2860282804e1df5a6d">&#9670;&#160;</a></span>get_token()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a> <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::get_token </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get next token from lexer </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00473">473</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  474</span>    {</div>
+<div class="line"><span class="lineno">  475</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> = <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a6497d12a0c35b355b3e22da69d6819f9">scan</a>();</div>
+<div class="line"><span class="lineno">  476</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a6497d12a0c35b355b3e22da69d6819f9"><div class="ttname"><a href="classdetail_1_1lexer.html#a6497d12a0c35b355b3e22da69d6819f9">detail::lexer::scan</a></div><div class="ttdeci">token_type scan()</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01518">lexer.hpp:1518</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="parser_8hpp_source.html#l00511">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::last_token</a>, <a class="el" href="parser_8hpp_source.html#l00513">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</a>, <a class="el" href="lexer_8hpp_source.html#l01518">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::scan()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>, <a class="el" href="parser_8hpp_source.html#l00071">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parser()</a>, <a class="el" href="parser_8hpp_source.html#l00161">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse()</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_aea40f4e5d5dd7f2860282804e1df5a6d_cgraph.svg" width="923" height="686"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_aea40f4e5d5dd7f2860282804e1df5a6d_icgraph.svg" width="760" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a59f4b745d4aa146bf7a60a30060f592f" name="a59f4b745d4aa146bf7a60a30060f592f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59f4b745d4aa146bf7a60a30060f592f">&#9670;&#160;</a></span>parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::parse </td>
+          <td>(</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BasicJsonType &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>public parser interface </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">strict</td><td>whether to expect the last token to be EOF </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">result</td><td>parsed JSON value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>例外</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">parse_error.101</td><td>in case of an unexpected token </td></tr>
+    <tr><td class="paramname">parse_error.102</td><td>if to_unicode fails or surrogate error </td></tr>
+    <tr><td class="paramname">parse_error.103</td><td>if to_unicode fails </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00093">93</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   94</span>    {</div>
+<div class="line"><span class="lineno">   95</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="classdetail_1_1parser.html#ad8f31cd8002b1c56177afcaa9726a9cf">callback</a>)</div>
+<div class="line"><span class="lineno">   96</span>        {</div>
+<div class="line"><span class="lineno">   97</span>            json_sax_dom_callback_parser&lt;BasicJsonType, InputAdapterType&gt; sdp(result, <a class="code hl_variable" href="classdetail_1_1parser.html#ad8f31cd8002b1c56177afcaa9726a9cf">callback</a>, <a class="code hl_variable" href="classdetail_1_1parser.html#a1726af146ce25841f857250fb4c832f8">allow_exceptions</a>, &amp;<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>);</div>
+<div class="line"><span class="lineno">   98</span>            <a class="code hl_function" href="classdetail_1_1parser.html#a362fc204b9a1027d6288deabc3b3360a">sax_parse_internal</a>(&amp;sdp);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>            <span class="comment">// in strict mode, input must be completely read</span></div>
+<div class="line"><span class="lineno">  101</span>            <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a> &amp;&amp; (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::end_of_input))</div>
+<div class="line"><span class="lineno">  102</span>            {</div>
+<div class="line"><span class="lineno">  103</span>                sdp.parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  104</span>                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  105</span>                                <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  106</span>                                                    <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  107</span>            }</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>            <span class="comment">// in case of an error, return discarded value</span></div>
+<div class="line"><span class="lineno">  110</span>            <span class="keywordflow">if</span> (sdp.is_errored())</div>
+<div class="line"><span class="lineno">  111</span>            {</div>
+<div class="line"><span class="lineno">  112</span>                result = <a class="code hl_enumvalue" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
+<div class="line"><span class="lineno">  113</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  114</span>            }</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>            <span class="comment">// set top-level value to null if it was discarded by the callback</span></div>
+<div class="line"><span class="lineno">  117</span>            <span class="comment">// function</span></div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordflow">if</span> (result.is_discarded())</div>
+<div class="line"><span class="lineno">  119</span>            {</div>
+<div class="line"><span class="lineno">  120</span>                result = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  121</span>            }</div>
+<div class="line"><span class="lineno">  122</span>        }</div>
+<div class="line"><span class="lineno">  123</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  124</span>        {</div>
+<div class="line"><span class="lineno">  125</span>            json_sax_dom_parser&lt;BasicJsonType, InputAdapterType&gt; sdp(result, <a class="code hl_variable" href="classdetail_1_1parser.html#a1726af146ce25841f857250fb4c832f8">allow_exceptions</a>, &amp;<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>);</div>
+<div class="line"><span class="lineno">  126</span>            <a class="code hl_function" href="classdetail_1_1parser.html#a362fc204b9a1027d6288deabc3b3360a">sax_parse_internal</a>(&amp;sdp);</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>            <span class="comment">// in strict mode, input must be completely read</span></div>
+<div class="line"><span class="lineno">  129</span>            <span class="keywordflow">if</span> (<a class="code hl_enumvalue" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a> &amp;&amp; (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::end_of_input))</div>
+<div class="line"><span class="lineno">  130</span>            {</div>
+<div class="line"><span class="lineno">  131</span>                sdp.parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  132</span>                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  133</span>                                <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  134</span>            }</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>            <span class="comment">// in case of an error, return discarded value</span></div>
+<div class="line"><span class="lineno">  137</span>            <span class="keywordflow">if</span> (sdp.is_errored())</div>
+<div class="line"><span class="lineno">  138</span>            {</div>
+<div class="line"><span class="lineno">  139</span>                result = <a class="code hl_enumvalue" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">value_t::discarded</a>;</div>
+<div class="line"><span class="lineno">  140</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  141</span>            }</div>
+<div class="line"><span class="lineno">  142</span>        }</div>
+<div class="line"><span class="lineno">  143</span> </div>
+<div class="line"><span class="lineno">  144</span>        result.assert_invariant();</div>
+<div class="line"><span class="lineno">  145</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a569266654a88a2dc6f0e9a587067fc9d"><div class="ttname"><a href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">detail::lexer::get_position</a></div><div class="ttdeci">constexpr position_t get_position() const noexcept</div><div class="ttdoc">return position of last read token</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01449">lexer.hpp:1449</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parse__error_html_a07046ea9f33d28f120af188ed674d6df"><div class="ttname"><a href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">detail::parse_error::create</a></div><div class="ttdeci">static parse_error create(int id_, const position_t &amp;pos, const std::string &amp;what_arg, BasicJsonContext context)</div><div class="ttdoc">create a parse error exception</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8hpp_source.html#l00179">exceptions.hpp:179</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_a13621f12e55437efd6c1af970f071a92"><div class="ttname"><a href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">detail::parser::exception_message</a></div><div class="ttdeci">std::string exception_message(const token_type expected, const std::string &amp;context)</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00478">parser.hpp:478</a></div></div>
+<div class="ttc" id="aclassdetail_1_1parser_html_a362fc204b9a1027d6288deabc3b3360a"><div class="ttname"><a href="classdetail_1_1parser.html#a362fc204b9a1027d6288deabc3b3360a">detail::parser::sax_parse_internal</a></div><div class="ttdeci">bool sax_parse_internal(SAX *sax)</div><div class="ttdef"><b>Definition:</b> <a href="parser_8hpp_source.html#l00180">parser.hpp:180</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46"><div class="ttname"><a href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::value_t::discarded</a></div><div class="ttdeci">@ discarded</div><div class="ttdoc">discarded by the parser callback function</div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="parser_8hpp_source.html#l00515">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::allow_exceptions</a>, <a class="el" href="parser_8hpp_source.html#l00509">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::callback</a>, <a class="el" href="exceptions_8hpp_source.html#l00179">detail::parse_error::create()</a>, <a class="el" href="namespacedetail.html#a917c3efabea8a20dc72d9ae2c673d632a94708897ec9db8647dfe695714c98e46">detail::discarded</a>, <a class="el" href="parser_8hpp_source.html#l00478">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::exception_message()</a>, <a class="el" href="lexer_8hpp_source.html#l01449">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_position()</a>, <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>, <a class="el" href="lexer_8hpp_source.html#l01457">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_token_string()</a>, <a class="el" href="json__sax_8hpp_source.html#l00338">detail::json_sax_dom_parser&lt; BasicJsonType, InputAdapterType &gt;::is_errored()</a>, <a class="el" href="json__sax_8hpp_source.html#l00733">detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt;::is_errored()</a>, <a class="el" href="parser_8hpp_source.html#l00513">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</a>, <a class="el" href="json__sax_8hpp_source.html#l00326">detail::json_sax_dom_parser&lt; BasicJsonType, InputAdapterType &gt;::parse_error()</a>, <a class="el" href="json__sax_8hpp_source.html#l00721">detail::json_sax_dom_callback_parser&lt; BasicJsonType, InputAdapterType &gt;::parse_error()</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>, <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">detail::strict</a> (計15項目).</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_a59f4b745d4aa146bf7a60a30060f592f_cgraph.svg" width="1480" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae9084759356689163fee9ae37e69b050" name="ae9084759356689163fee9ae37e69b050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9084759356689163fee9ae37e69b050">&#9670;&#160;</a></span>sax_parse()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<div class="memtemplate">
+template&lt;typename SAX &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::sax_parse </td>
+          <td>(</td>
+          <td class="paramtype">SAX *&#160;</td>
+          <td class="paramname"><em>sax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>strict</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00161">161</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>        (void)<a class="code hl_struct" href="structdetail_1_1is__sax__static__asserts.html">detail::is_sax_static_asserts&lt;SAX, BasicJsonType&gt;</a> {};</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keyword">const</span> <span class="keywordtype">bool</span> result = <a class="code hl_function" href="classdetail_1_1parser.html#a362fc204b9a1027d6288deabc3b3360a">sax_parse_internal</a>(sax);</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>        <span class="comment">// strict mode: next byte must be EOF</span></div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordflow">if</span> (result &amp;&amp; <a class="code hl_enumvalue" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">strict</a> &amp;&amp; (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::end_of_input))</div>
+<div class="line"><span class="lineno">  168</span>        {</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  170</span>                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  171</span>                                    <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::end_of_input, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  172</span>        }</div>
+<div class="line"><span class="lineno">  173</span> </div>
+<div class="line"><span class="lineno">  174</span>        <span class="keywordflow">return</span> result;</div>
+<div class="line"><span class="lineno">  175</span>    }</div>
+<div class="ttc" id="astructdetail_1_1is__sax__static__asserts_html"><div class="ttname"><a href="structdetail_1_1is__sax__static__asserts.html">detail::is_sax_static_asserts</a></div><div class="ttdef"><b>Definition:</b> <a href="is__sax_8hpp_source.html#l00105">is_sax.hpp:106</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="exceptions_8hpp_source.html#l00179">detail::parse_error::create()</a>, <a class="el" href="parser_8hpp_source.html#l00478">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::exception_message()</a>, <a class="el" href="lexer_8hpp_source.html#l01449">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_position()</a>, <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>, <a class="el" href="lexer_8hpp_source.html#l01457">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_token_string()</a>, <a class="el" href="parser_8hpp_source.html#l00513">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>, <a class="el" href="namespacedetail.html#abe7cfa1fd8fa706ff4392bff9d1a8298a2133fd717402a7966ee88d06f9e0b792">detail::strict</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00153">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::accept()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_ae9084759356689163fee9ae37e69b050_cgraph.svg" width="1392" height="1058"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_ae9084759356689163fee9ae37e69b050_icgraph.svg" width="356" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a362fc204b9a1027d6288deabc3b3360a" name="a362fc204b9a1027d6288deabc3b3360a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a362fc204b9a1027d6288deabc3b3360a">&#9670;&#160;</a></span>sax_parse_internal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<div class="memtemplate">
+template&lt;typename SAX &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal </td>
+          <td>(</td>
+          <td class="paramtype">SAX *&#160;</td>
+          <td class="paramname"><em>sax</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00180">180</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>    {</div>
+<div class="line"><span class="lineno">  182</span>        <span class="comment">// stack to remember the hierarchy of structured values we are parsing</span></div>
+<div class="line"><span class="lineno">  183</span>        <span class="comment">// true = array; false = object</span></div>
+<div class="line"><span class="lineno">  184</span>        std::vector&lt;bool&gt; states;</div>
+<div class="line"><span class="lineno">  185</span>        <span class="comment">// value to avoid a goto (see comment where set to true)</span></div>
+<div class="line"><span class="lineno">  186</span>        <span class="keywordtype">bool</span> skip_to_state_evaluation = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  189</span>        {</div>
+<div class="line"><span class="lineno">  190</span>            <span class="keywordflow">if</span> (!skip_to_state_evaluation)</div>
+<div class="line"><span class="lineno">  191</span>            {</div>
+<div class="line"><span class="lineno">  192</span>                <span class="comment">// invariant: get_token() was called before each iteration</span></div>
+<div class="line"><span class="lineno">  193</span>                <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a>)</div>
+<div class="line"><span class="lineno">  194</span>                {</div>
+<div class="line"><span class="lineno">  195</span>                    <span class="keywordflow">case</span> token_type::begin_object:</div>
+<div class="line"><span class="lineno">  196</span>                    {</div>
+<div class="line"><span class="lineno">  197</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;start_object(<a class="code hl_function" href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a>())))</div>
+<div class="line"><span class="lineno">  198</span>                        {</div>
+<div class="line"><span class="lineno">  199</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  200</span>                        }</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>                        <span class="comment">// closing } -&gt; we are done</span></div>
+<div class="line"><span class="lineno">  203</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() == token_type::end_object)</div>
+<div class="line"><span class="lineno">  204</span>                        {</div>
+<div class="line"><span class="lineno">  205</span>                            <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;end_object()))</div>
+<div class="line"><span class="lineno">  206</span>                            {</div>
+<div class="line"><span class="lineno">  207</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  208</span>                            }</div>
+<div class="line"><span class="lineno">  209</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  210</span>                        }</div>
+<div class="line"><span class="lineno">  211</span> </div>
+<div class="line"><span class="lineno">  212</span>                        <span class="comment">// parse key</span></div>
+<div class="line"><span class="lineno">  213</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> != token_type::value_string))</div>
+<div class="line"><span class="lineno">  214</span>                        {</div>
+<div class="line"><span class="lineno">  215</span>                            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  216</span>                                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  217</span>                                                    <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::value_string, <span class="stringliteral">&quot;object key&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  218</span>                        }</div>
+<div class="line"><span class="lineno">  219</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;key(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281">get_string</a>())))</div>
+<div class="line"><span class="lineno">  220</span>                        {</div>
+<div class="line"><span class="lineno">  221</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  222</span>                        }</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>                        <span class="comment">// parse separator (:)</span></div>
+<div class="line"><span class="lineno">  225</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::name_separator))</div>
+<div class="line"><span class="lineno">  226</span>                        {</div>
+<div class="line"><span class="lineno">  227</span>                            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  228</span>                                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  229</span>                                                    <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::name_separator, <span class="stringliteral">&quot;object separator&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  230</span>                        }</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>                        <span class="comment">// remember we are now inside an object</span></div>
+<div class="line"><span class="lineno">  233</span>                        states.push_back(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  234</span> </div>
+<div class="line"><span class="lineno">  235</span>                        <span class="comment">// parse values</span></div>
+<div class="line"><span class="lineno">  236</span>                        <a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>();</div>
+<div class="line"><span class="lineno">  237</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  238</span>                    }</div>
+<div class="line"><span class="lineno">  239</span> </div>
+<div class="line"><span class="lineno">  240</span>                    <span class="keywordflow">case</span> token_type::begin_array:</div>
+<div class="line"><span class="lineno">  241</span>                    {</div>
+<div class="line"><span class="lineno">  242</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;start_array(<a class="code hl_function" href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a>())))</div>
+<div class="line"><span class="lineno">  243</span>                        {</div>
+<div class="line"><span class="lineno">  244</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  245</span>                        }</div>
+<div class="line"><span class="lineno">  246</span> </div>
+<div class="line"><span class="lineno">  247</span>                        <span class="comment">// closing ] -&gt; we are done</span></div>
+<div class="line"><span class="lineno">  248</span>                        <span class="keywordflow">if</span> (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() == token_type::end_array)</div>
+<div class="line"><span class="lineno">  249</span>                        {</div>
+<div class="line"><span class="lineno">  250</span>                            <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;end_array()))</div>
+<div class="line"><span class="lineno">  251</span>                            {</div>
+<div class="line"><span class="lineno">  252</span>                                <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  253</span>                            }</div>
+<div class="line"><span class="lineno">  254</span>                            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  255</span>                        }</div>
+<div class="line"><span class="lineno">  256</span> </div>
+<div class="line"><span class="lineno">  257</span>                        <span class="comment">// remember we are now inside an array</span></div>
+<div class="line"><span class="lineno">  258</span>                        states.push_back(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span>                        <span class="comment">// parse values (no need to call get_token)</span></div>
+<div class="line"><span class="lineno">  261</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  262</span>                    }</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>                    <span class="keywordflow">case</span> token_type::value_float:</div>
+<div class="line"><span class="lineno">  265</span>                    {</div>
+<div class="line"><span class="lineno">  266</span>                        <span class="keyword">const</span> <span class="keyword">auto</span> res = <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#af2e903d32a7e3705c66539ea1e30ce59">get_number_float</a>();</div>
+<div class="line"><span class="lineno">  267</span> </div>
+<div class="line"><span class="lineno">  268</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!std::isfinite(res)))</div>
+<div class="line"><span class="lineno">  269</span>                        {</div>
+<div class="line"><span class="lineno">  270</span>                            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  271</span>                                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  272</span>                                                    <a class="code hl_function" href="classdetail_1_1out__of__range.html#a79ea0d3ec02a853629dc827e045ecff5">out_of_range::create</a>(406, <a class="code hl_function" href="namespacedetail.html#a266fb3d4bf633ad6c506434cc91164da">concat</a>(<span class="stringliteral">&quot;number overflow parsing &#39;&quot;</span>, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(), <span class="charliteral">&#39;\&#39;&#39;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  273</span>                        }</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;number_float(res, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281">get_string</a>())))</div>
+<div class="line"><span class="lineno">  276</span>                        {</div>
+<div class="line"><span class="lineno">  277</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  278</span>                        }</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  281</span>                    }</div>
+<div class="line"><span class="lineno">  282</span> </div>
+<div class="line"><span class="lineno">  283</span>                    <span class="keywordflow">case</span> token_type::literal_false:</div>
+<div class="line"><span class="lineno">  284</span>                    {</div>
+<div class="line"><span class="lineno">  285</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;boolean(<span class="keyword">false</span>)))</div>
+<div class="line"><span class="lineno">  286</span>                        {</div>
+<div class="line"><span class="lineno">  287</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  288</span>                        }</div>
+<div class="line"><span class="lineno">  289</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  290</span>                    }</div>
+<div class="line"><span class="lineno">  291</span> </div>
+<div class="line"><span class="lineno">  292</span>                    <span class="keywordflow">case</span> token_type::literal_null:</div>
+<div class="line"><span class="lineno">  293</span>                    {</div>
+<div class="line"><span class="lineno">  294</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;null()))</div>
+<div class="line"><span class="lineno">  295</span>                        {</div>
+<div class="line"><span class="lineno">  296</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  297</span>                        }</div>
+<div class="line"><span class="lineno">  298</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  299</span>                    }</div>
+<div class="line"><span class="lineno">  300</span> </div>
+<div class="line"><span class="lineno">  301</span>                    <span class="keywordflow">case</span> token_type::literal_true:</div>
+<div class="line"><span class="lineno">  302</span>                    {</div>
+<div class="line"><span class="lineno">  303</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;boolean(<span class="keyword">true</span>)))</div>
+<div class="line"><span class="lineno">  304</span>                        {</div>
+<div class="line"><span class="lineno">  305</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  306</span>                        }</div>
+<div class="line"><span class="lineno">  307</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  308</span>                    }</div>
+<div class="line"><span class="lineno">  309</span> </div>
+<div class="line"><span class="lineno">  310</span>                    <span class="keywordflow">case</span> token_type::value_integer:</div>
+<div class="line"><span class="lineno">  311</span>                    {</div>
+<div class="line"><span class="lineno">  312</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;number_integer(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a4227de7d0382fb4d3e18b119f0cc87d7">get_number_integer</a>())))</div>
+<div class="line"><span class="lineno">  313</span>                        {</div>
+<div class="line"><span class="lineno">  314</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  315</span>                        }</div>
+<div class="line"><span class="lineno">  316</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  317</span>                    }</div>
+<div class="line"><span class="lineno">  318</span> </div>
+<div class="line"><span class="lineno">  319</span>                    <span class="keywordflow">case</span> token_type::value_string:</div>
+<div class="line"><span class="lineno">  320</span>                    {</div>
+<div class="line"><span class="lineno">  321</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;string(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281">get_string</a>())))</div>
+<div class="line"><span class="lineno">  322</span>                        {</div>
+<div class="line"><span class="lineno">  323</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  324</span>                        }</div>
+<div class="line"><span class="lineno">  325</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  326</span>                    }</div>
+<div class="line"><span class="lineno">  327</span> </div>
+<div class="line"><span class="lineno">  328</span>                    <span class="keywordflow">case</span> token_type::value_unsigned:</div>
+<div class="line"><span class="lineno">  329</span>                    {</div>
+<div class="line"><span class="lineno">  330</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;number_unsigned(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a65495d5d60a279adb009efa728708441">get_number_unsigned</a>())))</div>
+<div class="line"><span class="lineno">  331</span>                        {</div>
+<div class="line"><span class="lineno">  332</span>                            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  333</span>                        }</div>
+<div class="line"><span class="lineno">  334</span>                        <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  335</span>                    }</div>
+<div class="line"><span class="lineno">  336</span> </div>
+<div class="line"><span class="lineno">  337</span>                    <span class="keywordflow">case</span> token_type::parse_error:</div>
+<div class="line"><span class="lineno">  338</span>                    {</div>
+<div class="line"><span class="lineno">  339</span>                        <span class="comment">// using &quot;uninitialized&quot; to avoid &quot;expected&quot; message</span></div>
+<div class="line"><span class="lineno">  340</span>                        <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  341</span>                                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  342</span>                                                <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::uninitialized, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  343</span>                    }</div>
+<div class="line"><span class="lineno">  344</span>                    <span class="keywordflow">case</span> token_type::end_of_input:</div>
+<div class="line"><span class="lineno">  345</span>                    {</div>
+<div class="line"><span class="lineno">  346</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>().<a class="code hl_variable" href="structdetail_1_1position__t.html#ac4d220d61ce61eeffbea40985727a3b0">chars_read_total</a> == 1))</div>
+<div class="line"><span class="lineno">  347</span>                        {</div>
+<div class="line"><span class="lineno">  348</span>                            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  349</span>                                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  350</span>                                                    <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  351</span>                                                            <span class="stringliteral">&quot;attempting to parse an empty input; check that your input string or stream contains the expected JSON&quot;</span>, <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  352</span>                        }</div>
+<div class="line"><span class="lineno">  353</span> </div>
+<div class="line"><span class="lineno">  354</span>                        <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  355</span>                                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  356</span>                                                <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::literal_or_value, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  357</span>                    }</div>
+<div class="line"><span class="lineno">  358</span>                    <span class="keywordflow">case</span> token_type::uninitialized:</div>
+<div class="line"><span class="lineno">  359</span>                    <span class="keywordflow">case</span> token_type::end_array:</div>
+<div class="line"><span class="lineno">  360</span>                    <span class="keywordflow">case</span> token_type::end_object:</div>
+<div class="line"><span class="lineno">  361</span>                    <span class="keywordflow">case</span> token_type::name_separator:</div>
+<div class="line"><span class="lineno">  362</span>                    <span class="keywordflow">case</span> token_type::value_separator:</div>
+<div class="line"><span class="lineno">  363</span>                    <span class="keywordflow">case</span> token_type::literal_or_value:</div>
+<div class="line"><span class="lineno">  364</span>                    <span class="keywordflow">default</span>: <span class="comment">// the last token was unexpected</span></div>
+<div class="line"><span class="lineno">  365</span>                    {</div>
+<div class="line"><span class="lineno">  366</span>                        <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  367</span>                                                <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  368</span>                                                <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::literal_or_value, <span class="stringliteral">&quot;value&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  369</span>                    }</div>
+<div class="line"><span class="lineno">  370</span>                }</div>
+<div class="line"><span class="lineno">  371</span>            }</div>
+<div class="line"><span class="lineno">  372</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  373</span>            {</div>
+<div class="line"><span class="lineno">  374</span>                skip_to_state_evaluation = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  375</span>            }</div>
+<div class="line"><span class="lineno">  376</span> </div>
+<div class="line"><span class="lineno">  377</span>            <span class="comment">// we reached this line after we successfully parsed a value</span></div>
+<div class="line"><span class="lineno">  378</span>            <span class="keywordflow">if</span> (states.empty())</div>
+<div class="line"><span class="lineno">  379</span>            {</div>
+<div class="line"><span class="lineno">  380</span>                <span class="comment">// empty stack: we reached the end of the hierarchy: done</span></div>
+<div class="line"><span class="lineno">  381</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  382</span>            }</div>
+<div class="line"><span class="lineno">  383</span> </div>
+<div class="line"><span class="lineno">  384</span>            <span class="keywordflow">if</span> (states.back())  <span class="comment">// array</span></div>
+<div class="line"><span class="lineno">  385</span>            {</div>
+<div class="line"><span class="lineno">  386</span>                <span class="comment">// comma -&gt; next value</span></div>
+<div class="line"><span class="lineno">  387</span>                <span class="keywordflow">if</span> (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() == token_type::value_separator)</div>
+<div class="line"><span class="lineno">  388</span>                {</div>
+<div class="line"><span class="lineno">  389</span>                    <span class="comment">// parse a new value</span></div>
+<div class="line"><span class="lineno">  390</span>                    <a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>();</div>
+<div class="line"><span class="lineno">  391</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  392</span>                }</div>
+<div class="line"><span class="lineno">  393</span> </div>
+<div class="line"><span class="lineno">  394</span>                <span class="comment">// closing ]</span></div>
+<div class="line"><span class="lineno">  395</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> == token_type::end_array))</div>
+<div class="line"><span class="lineno">  396</span>                {</div>
+<div class="line"><span class="lineno">  397</span>                    <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;end_array()))</div>
+<div class="line"><span class="lineno">  398</span>                    {</div>
+<div class="line"><span class="lineno">  399</span>                        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  400</span>                    }</div>
+<div class="line"><span class="lineno">  401</span> </div>
+<div class="line"><span class="lineno">  402</span>                    <span class="comment">// We are done with this array. Before we can parse a</span></div>
+<div class="line"><span class="lineno">  403</span>                    <span class="comment">// new value, we need to evaluate the new state first.</span></div>
+<div class="line"><span class="lineno">  404</span>                    <span class="comment">// By setting skip_to_state_evaluation to false, we</span></div>
+<div class="line"><span class="lineno">  405</span>                    <span class="comment">// are effectively jumping to the beginning of this if.</span></div>
+<div class="line"><span class="lineno">  406</span>                    <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!states.empty());</div>
+<div class="line"><span class="lineno">  407</span>                    states.pop_back();</div>
+<div class="line"><span class="lineno">  408</span>                    skip_to_state_evaluation = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  409</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  410</span>                }</div>
+<div class="line"><span class="lineno">  411</span> </div>
+<div class="line"><span class="lineno">  412</span>                <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  413</span>                                        <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  414</span>                                        <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::end_array, <span class="stringliteral">&quot;array&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  415</span>            }</div>
+<div class="line"><span class="lineno">  416</span> </div>
+<div class="line"><span class="lineno">  417</span>            <span class="comment">// states.back() is false -&gt; object</span></div>
+<div class="line"><span class="lineno">  418</span> </div>
+<div class="line"><span class="lineno">  419</span>            <span class="comment">// comma -&gt; next value</span></div>
+<div class="line"><span class="lineno">  420</span>            <span class="keywordflow">if</span> (<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() == token_type::value_separator)</div>
+<div class="line"><span class="lineno">  421</span>            {</div>
+<div class="line"><span class="lineno">  422</span>                <span class="comment">// parse key</span></div>
+<div class="line"><span class="lineno">  423</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::value_string))</div>
+<div class="line"><span class="lineno">  424</span>                {</div>
+<div class="line"><span class="lineno">  425</span>                    <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  426</span>                                            <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  427</span>                                            <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::value_string, <span class="stringliteral">&quot;object key&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  428</span>                }</div>
+<div class="line"><span class="lineno">  429</span> </div>
+<div class="line"><span class="lineno">  430</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;key(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281">get_string</a>())))</div>
+<div class="line"><span class="lineno">  431</span>                {</div>
+<div class="line"><span class="lineno">  432</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  433</span>                }</div>
+<div class="line"><span class="lineno">  434</span> </div>
+<div class="line"><span class="lineno">  435</span>                <span class="comment">// parse separator (:)</span></div>
+<div class="line"><span class="lineno">  436</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(<a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>() != token_type::name_separator))</div>
+<div class="line"><span class="lineno">  437</span>                {</div>
+<div class="line"><span class="lineno">  438</span>                    <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  439</span>                                            <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  440</span>                                            <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::name_separator, <span class="stringliteral">&quot;object separator&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  441</span>                }</div>
+<div class="line"><span class="lineno">  442</span> </div>
+<div class="line"><span class="lineno">  443</span>                <span class="comment">// parse values</span></div>
+<div class="line"><span class="lineno">  444</span>                <a class="code hl_function" href="classdetail_1_1parser.html#aea40f4e5d5dd7f2860282804e1df5a6d">get_token</a>();</div>
+<div class="line"><span class="lineno">  445</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  446</span>            }</div>
+<div class="line"><span class="lineno">  447</span> </div>
+<div class="line"><span class="lineno">  448</span>            <span class="comment">// closing }</span></div>
+<div class="line"><span class="lineno">  449</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a>(<a class="code hl_variable" href="classdetail_1_1parser.html#a654297c0dc3afa4674f41d729d97bcc8">last_token</a> == token_type::end_object))</div>
+<div class="line"><span class="lineno">  450</span>            {</div>
+<div class="line"><span class="lineno">  451</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a>(!sax-&gt;end_object()))</div>
+<div class="line"><span class="lineno">  452</span>                {</div>
+<div class="line"><span class="lineno">  453</span>                    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  454</span>                }</div>
+<div class="line"><span class="lineno">  455</span> </div>
+<div class="line"><span class="lineno">  456</span>                <span class="comment">// We are done with this object. Before we can parse a</span></div>
+<div class="line"><span class="lineno">  457</span>                <span class="comment">// new value, we need to evaluate the new state first.</span></div>
+<div class="line"><span class="lineno">  458</span>                <span class="comment">// By setting skip_to_state_evaluation to false, we</span></div>
+<div class="line"><span class="lineno">  459</span>                <span class="comment">// are effectively jumping to the beginning of this if.</span></div>
+<div class="line"><span class="lineno">  460</span>                <a class="code hl_define" href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a>(!states.empty());</div>
+<div class="line"><span class="lineno">  461</span>                states.pop_back();</div>
+<div class="line"><span class="lineno">  462</span>                skip_to_state_evaluation = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  463</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  464</span>            }</div>
+<div class="line"><span class="lineno">  465</span> </div>
+<div class="line"><span class="lineno">  466</span>            <span class="keywordflow">return</span> sax-&gt;parse_error(<a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(),</div>
+<div class="line"><span class="lineno">  467</span>                                    <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a41481d87dc1bcaaf532f529fbc0e690b">get_token_string</a>(),</div>
+<div class="line"><span class="lineno">  468</span>                                    <a class="code hl_function" href="classdetail_1_1parse__error.html#a07046ea9f33d28f120af188ed674d6df">parse_error::create</a>(101, <a class="code hl_variable" href="classdetail_1_1parser.html#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">m_lexer</a>.<a class="code hl_function" href="classdetail_1_1lexer.html#a569266654a88a2dc6f0e9a587067fc9d">get_position</a>(), <a class="code hl_function" href="classdetail_1_1parser.html#a13621f12e55437efd6c1af970f071a92">exception_message</a>(token_type::end_object, <span class="stringliteral">&quot;object&quot;</span>), <span class="keyword">nullptr</span>));</div>
+<div class="line"><span class="lineno">  469</span>        }</div>
+<div class="line"><span class="lineno">  470</span>    }</div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a4227de7d0382fb4d3e18b119f0cc87d7"><div class="ttname"><a href="classdetail_1_1lexer.html#a4227de7d0382fb4d3e18b119f0cc87d7">detail::lexer::get_number_integer</a></div><div class="ttdeci">constexpr number_integer_t get_number_integer() const noexcept</div><div class="ttdoc">return integer value</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01416">lexer.hpp:1416</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_a65495d5d60a279adb009efa728708441"><div class="ttname"><a href="classdetail_1_1lexer.html#a65495d5d60a279adb009efa728708441">detail::lexer::get_number_unsigned</a></div><div class="ttdeci">constexpr number_unsigned_t get_number_unsigned() const noexcept</div><div class="ttdoc">return unsigned integer value</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01422">lexer.hpp:1422</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_aae63a63a83ae7e7bd5dc1a83669ba281"><div class="ttname"><a href="classdetail_1_1lexer.html#aae63a63a83ae7e7bd5dc1a83669ba281">detail::lexer::get_string</a></div><div class="ttdeci">string_t &amp; get_string()</div><div class="ttdoc">return current string value (implicitly resets the token; useful only once)</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01434">lexer.hpp:1434</a></div></div>
+<div class="ttc" id="aclassdetail_1_1lexer_html_af2e903d32a7e3705c66539ea1e30ce59"><div class="ttname"><a href="classdetail_1_1lexer.html#af2e903d32a7e3705c66539ea1e30ce59">detail::lexer::get_number_float</a></div><div class="ttdeci">constexpr number_float_t get_number_float() const noexcept</div><div class="ttdoc">return floating-point value</div><div class="ttdef"><b>Definition:</b> <a href="lexer_8hpp_source.html#l01428">lexer.hpp:1428</a></div></div>
+<div class="ttc" id="aclassdetail_1_1out__of__range_html_a79ea0d3ec02a853629dc827e045ecff5"><div class="ttname"><a href="classdetail_1_1out__of__range.html#a79ea0d3ec02a853629dc827e045ecff5">detail::out_of_range::create</a></div><div class="ttdeci">static out_of_range create(int id_, const std::string &amp;what_arg, BasicJsonContext context)</div><div class="ttdef"><b>Definition:</b> <a href="exceptions_8hpp_source.html#l00258">exceptions.hpp:258</a></div></div>
+<div class="ttc" id="ahedley_8hpp_html_a355f2770653ff7bdd5c74b204b5a3ad0"><div class="ttname"><a href="hedley_8hpp.html#a355f2770653ff7bdd5c74b204b5a3ad0">JSON_HEDLEY_LIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_LIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="hedley_8hpp_source.html#l01395">hedley.hpp:1395</a></div></div>
+<div class="ttc" id="ahedley_8hpp_html_a8df7de76ab3c9445f46f6994ec205bcd"><div class="ttname"><a href="hedley_8hpp.html#a8df7de76ab3c9445f46f6994ec205bcd">JSON_HEDLEY_UNLIKELY</a></div><div class="ttdeci">#define JSON_HEDLEY_UNLIKELY(expr)</div><div class="ttdef"><b>Definition:</b> <a href="hedley_8hpp_source.html#l01396">hedley.hpp:1396</a></div></div>
+<div class="ttc" id="amacro__scope_8hpp_html_a69f131cff49da1989667220173fbeae6"><div class="ttname"><a href="macro__scope_8hpp.html#a69f131cff49da1989667220173fbeae6">JSON_ASSERT</a></div><div class="ttdeci">#define JSON_ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="macro__scope_8hpp_source.html#l00205">macro_scope.hpp:205</a></div></div>
+<div class="ttc" id="anamespacedetail_html_a93d9378fbe8786072ec07745cbb4cc0b"><div class="ttname"><a href="namespacedetail.html#a93d9378fbe8786072ec07745cbb4cc0b">detail::unknown_size</a></div><div class="ttdeci">constexpr std::size_t unknown_size()</div><div class="ttdef"><b>Definition:</b> <a href="json__sax_8hpp_source.html#l00148">json_sax.hpp:148</a></div></div>
+<div class="ttc" id="astructdetail_1_1position__t_html_ac4d220d61ce61eeffbea40985727a3b0"><div class="ttname"><a href="structdetail_1_1position__t.html#ac4d220d61ce61eeffbea40985727a3b0">detail::position_t::chars_read_total</a></div><div class="ttdeci">std::size_t chars_read_total</div><div class="ttdoc">the total number of characters read</div><div class="ttdef"><b>Definition:</b> <a href="position__t_8hpp_source.html#l00023">position_t.hpp:23</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="position__t_8hpp_source.html#l00023">detail::position_t::chars_read_total</a>, <a class="el" href="string__concat_8hpp_source.html#l00137">detail::concat()</a>, <a class="el" href="exceptions_8hpp_source.html#l00179">detail::parse_error::create()</a>, <a class="el" href="exceptions_8hpp_source.html#l00258">detail::out_of_range::create()</a>, <a class="el" href="parser_8hpp_source.html#l00478">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::exception_message()</a>, <a class="el" href="lexer_8hpp_source.html#l01428">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_number_float()</a>, <a class="el" href="lexer_8hpp_source.html#l01416">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_number_integer()</a>, <a class="el" href="lexer_8hpp_source.html#l01422">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_number_unsigned()</a>, <a class="el" href="lexer_8hpp_source.html#l01449">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_position()</a>, <a class="el" href="lexer_8hpp_source.html#l01434">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_string()</a>, <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>, <a class="el" href="lexer_8hpp_source.html#l01457">detail::lexer&lt; BasicJsonType, InputAdapterType &gt;::get_token_string()</a>, <a class="el" href="macro__scope_8hpp_source.html#l00205">JSON_ASSERT</a>, <a class="el" href="hedley_8hpp_source.html#l01395">JSON_HEDLEY_LIKELY</a>, <a class="el" href="hedley_8hpp_source.html#l01396">JSON_HEDLEY_UNLIKELY</a>, <a class="el" href="parser_8hpp_source.html#l00511">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::last_token</a>, <a class="el" href="parser_8hpp_source.html#l00513">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</a>, <a class="el" href="json__sax_8hpp_source.html#l00148">detail::unknown_size()</a> (計18項目).</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>, <a class="el" href="parser_8hpp_source.html#l00161">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_a362fc204b9a1027d6288deabc3b3360a_cgraph.svg" width="1206" height="1372"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classdetail_1_1parser_a362fc204b9a1027d6288deabc3b3360a_icgraph.svg" width="556" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a1726af146ce25841f857250fb4c832f8" name="a1726af146ce25841f857250fb4c832f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1726af146ce25841f857250fb4c832f8">&#9670;&#160;</a></span>allow_exceptions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::allow_exceptions = true</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>whether to throw exceptions in case of errors </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00515">515</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>.</p>
+
+</div>
+</div>
+<a id="ad8f31cd8002b1c56177afcaa9726a9cf" name="ad8f31cd8002b1c56177afcaa9726a9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8f31cd8002b1c56177afcaa9726a9cf">&#9670;&#160;</a></span>callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="namespacedetail.html#a20a6b9b232b9f47ce057fe5cc5bbf511">parser_callback_t</a>&lt;BasicJsonType&gt; <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::callback = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>callback function </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00509">509</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>.</p>
+
+</div>
+</div>
+<a id="a654297c0dc3afa4674f41d729d97bcc8" name="a654297c0dc3afa4674f41d729d97bcc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a654297c0dc3afa4674f41d729d97bcc8">&#9670;&#160;</a></span>last_token</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1parser.html#a51f4e69ac70697f34de5e02e670cc057">token_type</a> <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::last_token = token_type::uninitialized</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the type of the last read token </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00511">511</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00478">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::exception_message()</a>, <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>.</p>
+
+</div>
+</div>
+<a id="a9e00bbaea167a7c7c4e6cb7b5b6ebba6" name="a9e00bbaea167a7c7c4e6cb7b5b6ebba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e00bbaea167a7c7c4e6cb7b5b6ebba6">&#9670;&#160;</a></span>m_lexer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename BasicJsonType , typename InputAdapterType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classdetail_1_1parser.html#abd26815b29691d1f9f28f13695e28ca4">lexer_t</a> <a class="el" href="classdetail_1_1parser.html">detail::parser</a>&lt; BasicJsonType, InputAdapterType &gt;::m_lexer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the lexer </p>
+
+<p class="definition"> <a class="el" href="parser_8hpp_source.html">parser.hpp</a> の <a class="el" href="parser_8hpp_source.html#l00513">513</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="parser_8hpp_source.html#l00478">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::exception_message()</a>, <a class="el" href="parser_8hpp_source.html#l00473">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::get_token()</a>, <a class="el" href="parser_8hpp_source.html#l00093">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::parse()</a>, <a class="el" href="parser_8hpp_source.html#l00161">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse()</a>, <a class="el" href="parser_8hpp_source.html#l00180">detail::parser&lt; BasicJsonType, InputAdapterType &gt;::sax_parse_internal()</a>.</p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li><a class="el" href="parser_8hpp_source.html">parser.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespacedetail.html">detail</a></li><li class="navelem"><a class="el" href="classdetail_1_1parser.html">parser</a></li>
+    <li class="footer">構築: <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
+  </ul>
+</div>
+</body>
+</html>
