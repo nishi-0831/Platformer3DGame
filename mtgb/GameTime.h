@@ -49,6 +49,9 @@ namespace mtgb
 		static const double MICRO_TO_SEC;	// 1秒をマイクロ秒に変換する
 		static double deltaTime_;			// フレーム間時間 (秒)
 
+		static inline constexpr double MAX_DELTA_TIME { 0.1 };
+
+	  private:
 		LARGE_INTEGER current_;	 // 現在のCPU時間 (マイクロ秒)
 		LARGE_INTEGER previous_; // 前回のCPU時間 (マイクロ秒)
 		static unsigned int waitFrame_;

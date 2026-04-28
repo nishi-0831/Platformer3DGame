@@ -27,6 +27,10 @@ void mtgb::Time::Update()
 	{
 		deltaTime_ = (current_.QuadPart - previous_.QuadPart) * MICRO_TO_SEC;
 		previous_  = current_;
+		if (deltaTime_ > MAX_DELTA_TIME)
+		{
+			deltaTime_ = MAX_DELTA_TIME;
+		}
 		if (waitFrame_ != 0)
 		{
 			waitFrame_--;
