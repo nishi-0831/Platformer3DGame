@@ -27,7 +27,7 @@ var classPlayer =
     [ "FindGameObjects", "classPlayer.html#a6528ee5991a4f830c4730fb538c52ba0", null ],
     [ "FindGameObjects", "classPlayer.html#a3fc1888ffcabb393d47b094980aad73f", null ],
     [ "GetClassTypeName", "classPlayer.html#ae98ecf286d6e93064a967ef02c41a438", null ],
-    [ "GetEntityId", "classPlayer.html#a7f534d8f54f1d8bd4e6e0a6902ba7736", null ],
+    [ "GetEntityId", "classPlayer.html#a9fb3f98676d0ab770dad414ad6bbc029", null ],
     [ "GetId", "classPlayer.html#a788d01e1e3c5042eeeb7d13ba7feeef9", null ],
     [ "GetLayerFlag", "classPlayer.html#a280a1f04d01a4044b50fa7fc3b040873", null ],
     [ "GetMoveDir", "classPlayer.html#afb382e07f77c9ccf410a19220a5c9fc7", null ],

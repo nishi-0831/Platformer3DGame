@@ -155,7 +155,7 @@ var searchData=
   ['geteffectdata_152',['GetEffectData',['../classmtgb_1_1EffectInstance.html#aaa132e8dc5c460f4d25223711cbb58e1',1,'mtgb::EffectInstance']]],
   ['geteffectref_153',['GetEffectRef',['../classmtgb_1_1EffectData.html#a7d3863acbd9463e938456fe7eb77c245',1,'mtgb::EffectData']]],
   ['getend_154',['GetEnd',['../structmtgb_1_1RectT.html#af624f5aac86411b2752a6bf0e3a5ef63',1,'mtgb::RectT']]],
-  ['getentityid_155',['GetEntityId',['../classmtgb_1_1Entity.html#a7f534d8f54f1d8bd4e6e0a6902ba7736',1,'mtgb::Entity::GetEntityId()'],['../classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6',1,'mtgb::IComponent::GetEntityId()'],['../classmtgb_1_1IComponentMemento.html#a217e78787b05c757216c4a396214da96',1,'mtgb::IComponentMemento::GetEntityId()'],['../classmtgb_1_1ComponentMemento.html#af63e0ec935bfdcf468efe0b2b80d2647',1,'mtgb::ComponentMemento::GetEntityId()']]],
+  ['getentityid_155',['GetEntityId',['../classmtgb_1_1Entity.html#a9fb3f98676d0ab770dad414ad6bbc029',1,'mtgb::Entity::GetEntityId()'],['../classmtgb_1_1IComponent.html#a7c5ec3a0bbee0b1441ed353a543a5cf6',1,'mtgb::IComponent::GetEntityId()'],['../classmtgb_1_1IComponentMemento.html#a217e78787b05c757216c4a396214da96',1,'mtgb::IComponentMemento::GetEntityId()'],['../classmtgb_1_1ComponentMemento.html#af63e0ec935bfdcf468efe0b2b80d2647',1,'mtgb::ComponentMemento::GetEntityId()']]],
   ['getevent_156',['GetEvent',['../classmtgb_1_1EventManager.html#a3e2dbf917fa89229d4382f44753208d4',1,'mtgb::EventManager']]],
   ['getextents_157',['GetExtents',['../classmtgb_1_1Collider.html#a046c8a7448751a642c450e5e8e00c485',1,'mtgb::Collider']]],
   ['getfar_158',['GetFar',['../classmtgb_1_1CameraSystem.html#a64e47b7c8dcce95f8c93f077f054f1d5',1,'mtgb::CameraSystem']]],
