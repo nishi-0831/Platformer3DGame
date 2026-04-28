@@ -19,6 +19,8 @@ class Goal : public mtgb::GameObject, public ImGuiShowable
 	RigidBody* pRigidBody_;
 	MeshRenderer* pMeshRenderer_;
 	static unsigned int generateCounter_;
+	// ゴールの3Dモデルと一緒に描画するエフェクト
 	std::weak_ptr<EffectParameters> pEffect_;
+	// ゴールに触れてからリザルトシーンに遷移するまでの猶予
 	float transitionSceneDelay_;
 };
