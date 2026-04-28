@@ -9,7 +9,7 @@ ScoreItem::ScoreItem()
 	, pCollider_ { Component<Collider>() }
 	, pRigidBody_ { Component<RigidBody>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
-	, addScore_ { 100 }
+	, addScore_ { 1 }
 {
 	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pCollider_->isStatic_	  = false;
@@ -19,9 +19,13 @@ ScoreItem::ScoreItem()
 		[this](EntityId _entityId)
 		{
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
+			// 自身に触れたのがプレイヤーだった場合
 			if (tag == GameObjectTag::PLAYER)
 			{
+				// スコアを追加
 				Game::System<ScoreManager>().AddScore(addScore_);
+
+				// エフェクト描画
 				EffectParameters params;
 				params.isLoop = false;
 				Matrix4x4 worldMat;
@@ -29,7 +33,10 @@ ScoreItem::ScoreItem()
 				params.worldMat = worldMat;
 				Game::System<EffectManager>().Play("ScoreItem", params);
 
+				// SE再生
 				Game::System<Audio>().Play("ItemGet");
+
+				// 破棄を要請
 				DestroyMe();
 			}
 		}

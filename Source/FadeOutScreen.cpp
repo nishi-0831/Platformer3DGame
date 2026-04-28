@@ -37,7 +37,7 @@ void FadeOutScreen::Update()
 	elapsed_ += Time::DeltaTimeF();
 	float progress = elapsed_ / duration_;
 	float alpha	   = (progress * static_cast<float>(UINT8_MAX));
-	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = static_cast<int32_t>(alpha);
+	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = static_cast<uint8_t>(alpha);
 
 	if (progress >= 1.0f)
 	{

@@ -3,7 +3,6 @@
 
 #include <nlohmann/json.hpp>
 #include "JsonConverter.h"
-#include "MTImGui.h"
 #include <string>
 
 
@@ -38,65 +37,17 @@ using InterpolatorMemento = mtgb::ComponentMemento<mtgb::Interpolator, Interpola
 #define MT_GENERATED_BODY_Interpolator() \
 	public: \
 	using Memento = InterpolatorMemento; \
-	InterpolatorMemento* SaveToMemento() \
-	{ \
-	OnPreSave(); \
-		InterpolatorState state; \
-		state.dir_ = this->dir_; \
-		state.elapsed_ = this->elapsed_; \
-		state.duration_ = this->duration_; \
-		state.startPos_ = this->startPos_; \
-		state.endPos_ = this->endPos_; \
-		return new Memento(GetEntityId(), state); \
-	} \
+	InterpolatorMemento* SaveToMemento(); \
 	\
-	void RestoreFromMemento(const Memento& _memento) \
-	{ \
-		const InterpolatorState& state = _memento.GetState(); \
-		this->dir_ = state.dir_; \
-		this->elapsed_ = state.elapsed_; \
-		this->duration_ = state.duration_; \
-		this->startPos_ = state.startPos_; \
-		this->endPos_ = state.endPos_; \
-		OnPostRestore(); \
-	} \
+	void RestoreFromMemento(const Memento& _memento); \
 	\
 	friend struct Interpolator_Register; \
-	friend void to_json(nlohmann::json& _j,const Interpolator& _target) \
-	{ \
-		_j["dir_"] = JsonConverter::Serialize<float>(_target.dir_); \
-		_j["elapsed_"] = JsonConverter::Serialize<float>(_target.elapsed_); \
-		_j["duration_"] = JsonConverter::Serialize<float>(_target.duration_); \
-		_j["startPos_"] = JsonConverter::Serialize<mtgb::Vector3>(_target.startPos_); \
-		_j["endPos_"] = JsonConverter::Serialize<mtgb::Vector3>(_target.endPos_); \
-	} \
-	friend void from_json(const nlohmann::json& _j, Interpolator& _target) \
-	{ \
-		JsonConverter::Deserialize<float>(_target.dir_, _j,"dir_"); \
-		JsonConverter::Deserialize<float>(_target.elapsed_, _j,"elapsed_"); \
-		JsonConverter::Deserialize<float>(_target.duration_, _j,"duration_"); \
-		JsonConverter::Deserialize<mtgb::Vector3>(_target.startPos_, _j,"startPos_"); \
-		JsonConverter::Deserialize<mtgb::Vector3>(_target.endPos_, _j,"endPos_"); \
-		_target.OnPostRestore(); \
-	} \
+	friend void to_json(nlohmann::json& _j,const Interpolator& _target); \
+	friend void from_json(const nlohmann::json& _j, Interpolator& _target); \
+	\
 	static std::string TypeName(){ return "Interpolator" ;} \
 	/* ImGui表示処理の登録 */ \
-	static void RegisterImGui() \
-	{ \
-		static bool registered = false; \
-		if (registered) return; \
-		registered = true; \
-		\
-		RegisterShowFuncHolder::Set<Interpolator>([]( Interpolator* _target, const char* _name) \
-			{ \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->dir_, "dir_"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->elapsed_, "elapsed_"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->duration_, "duration_"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->startPos_, "startPos_"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->endPos_, "endPos_"); \
-			}); \
-		MTImGui::RegisterComponentViewer<Interpolator>(); \
-	}
+	static void RegisterImGui(); \
 
 #pragma warning(push)
 #pragma warning(disable:4005)

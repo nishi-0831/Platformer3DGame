@@ -79,7 +79,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_x">座標 x</param>
 		/// <param name="_y">座標 y</param>
-		void UpdateMousePositionData(const int32_t _x, const int32_t _y);
+		void UpdateMousePositionData(int32_t _x, int32_t _y);
 
 		void CreateKeyDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppKeyDevice);
 		void CreateMouseDevice(HWND _hWnd, LPDIRECTINPUTDEVICE8* _ppMouseDevice);
@@ -176,7 +176,7 @@ namespace mtgb
 		/// <returns>デバイス名</returns>
 		std::string GetDeviceProductName(ComPtr<IDirectInputDevice8> _pInputDevice);
 		std::string GetDeviceProductName(GUID _guid);
-		std::string ConvertHResultToMessage(HRESULT _hr) const;
+		std::string_view ConvertHResultToMessage(HRESULT _hr) const;
 
 		/// <summary>
 		/// デバイスのタイプを判別
@@ -195,7 +195,7 @@ namespace mtgb
 		/// <param name="_devType">要求するデバイスの種類</param>
 		/// <returns></returns>
 		int FindReservationIndexForDevice(DeviceType _devType) const;
-		const std::string GetJoystickStatusMessage(GUID _guid) const;
+		std::string_view GetJoystickStatusMessage(GUID _guid) const;
 		bool IsJoystickConnected(GUID _guid) const;
 		bool IsJoystickAssigned(GUID _guid) const;
 

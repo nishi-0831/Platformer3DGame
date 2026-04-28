@@ -64,7 +64,7 @@ namespace mtgb
 		/// エンティティを登録する
 		/// </summary>
 		/// <param name="_entityId"></param>
-		void RegisterComponent(EntityId _entityId, int _poolIndex);
+		void RegisterComponent(EntityId _entityId, size_t _poolIndex);
 		/// <summary>
 		/// ComponentにRegisterImGuiを持っている場合、それを呼ぶ
 		/// </summary>
@@ -272,7 +272,7 @@ namespace mtgb
 		}
 	}
 	template <typename ComponentT, typename DerivedT>
-	inline void ComponentPool<ComponentT, DerivedT>::RegisterComponent(EntityId _entityId, int _poolIndex)
+	inline void ComponentPool<ComponentT, DerivedT>::RegisterComponent(EntityId _entityId, size_t _poolIndex)
 	{
 		// インデックスを記録
 

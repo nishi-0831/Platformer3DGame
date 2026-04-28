@@ -2,7 +2,7 @@
 #include "ReflectionMacro.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
-#include <set>
+#include "IComponent.h"
 #include <unordered_set>
 #include <DirectXCollision.h>
 #include "Vector3.h"

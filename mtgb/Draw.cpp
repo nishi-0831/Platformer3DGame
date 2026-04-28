@@ -98,7 +98,7 @@ void mtgb::Draw::Text(
 {
 	uiDrawCommands_.emplace(
 		_uiParams,
-		[&]()
+		[=]()
 		{
 			DirectX11Draw::SetIsWriteToDepthBuffer(false);
 			CheckSetShader(ShaderType::SPRITE2_D);
@@ -143,7 +143,7 @@ void mtgb::Draw::ImmediateTextW(
 {
 	uiDrawCommands_.emplace(
 		_uiParams,
-		[=]()
+		[text = std::wstring { _text }, _rect, _size, _alignment]()
 		{
 			DirectX11Draw::SetIsWriteToDepthBuffer(false);
 			CheckSetShader(ShaderType::SPRITE2_D);
@@ -154,7 +154,7 @@ void mtgb::Draw::ImmediateTextW(
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 
 			Game::System<DirectWrite>().ImmediateDraw(
-				_text,
+				text,
 				formatData->format,
 				formatData->pixelFontMetrics,
 				_rect.x * ratio.x,
@@ -194,7 +194,7 @@ void mtgb::Draw::ImmediateText(
 {
 	uiDrawCommands_.emplace(
 		_uiParams,
-		[=]()
+		[text = std::string { _text }, _rect, _size, _alignment]()
 		{
 			DirectX11Draw::SetIsWriteToDepthBuffer(false);
 			CheckSetShader(ShaderType::SPRITE2_D);
@@ -205,7 +205,7 @@ void mtgb::Draw::ImmediateText(
 
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 			Game::System<DirectWrite>().ImmediateDraw(
-				MultiToWide(_text.data()),
+				MultiToWide(text.c_str()),
 				formatData->format,
 				formatData->pixelFontMetrics,
 				_rect.x * ratio.x,
@@ -233,7 +233,7 @@ void mtgb::Draw::OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTr
 {
 	CheckSetShader(ShaderType::FBX_PARTS);
 
-	Game::System<mtgb::OBJ>().Draw((int)_hOBJModel, _pTransform);
+	Game::System<mtgb::OBJ>().Draw(static_cast<int>(_hOBJModel), _pTransform);
 }
 
 void mtgb::Draw::FBXModel(

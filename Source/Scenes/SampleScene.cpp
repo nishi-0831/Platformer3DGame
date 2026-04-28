@@ -1,9 +1,6 @@
 #include <mtgb.h>
 #include "SampleScene.h"
-#include "../mtgb/Box3D.h"
 #include "../Source/StageManager.h"
-#include "../Source/Player.h"
-#include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
 #include "../Source/SkySphere.h"
 

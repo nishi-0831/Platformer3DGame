@@ -33,7 +33,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_width">幅</param>
 		/// <param name="_height">高さ</param>
-		virtual void OnResize(UINT _width, UINT _height) {}
+		virtual void OnResize(UINT /*_width*/, UINT /*_height*/) {}
 		virtual void Release() = 0;
 
 		/// <summary>

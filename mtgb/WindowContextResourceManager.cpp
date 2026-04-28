@@ -56,8 +56,7 @@ void mtgb::WindowContextResourceManager::ChangeActiveResource(WindowContext _win
 
 void mtgb::WindowContextResourceManager::OnResizeAll(WindowContext _windowContext, UINT _width, UINT _height)
 {
-	auto itr = collectionMap_.find(_windowContext);
-	if (itr == collectionMap_.end())
+	if (collectionMap_.contains(_windowContext) == false)
 		return;
 
 	// サイズ変更対象のウィンドウのリソース群を取得

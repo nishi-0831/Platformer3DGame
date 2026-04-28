@@ -76,7 +76,7 @@ namespace mtgb
 		/// このオブジェクトは削除予定か
 		/// </summary>
 		/// <returns>削除予定 true / false</returns>
-		inline const bool IsToDestroy() const
+		inline bool IsToDestroy() const
 		{
 			return status_.toDestroy_;
 		}

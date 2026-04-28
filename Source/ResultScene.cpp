@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "ResultScene.h"
-// #include "../Source/ScoreViewer.h"
 #include "../Source/TitleScene.h"
 #include "../Source/StageManager.h"
 namespace
 {
 	// 118,90 , 565,100
-	ImageHandle hImage;
+	ImageHandle hTitleImage;
+	ImageHandle hBackgroundImage;
 	RectF draw { 118, 90, 565, 100 };
-	RectF textDrawRect { 118, 300, 565, 100 };
+	RectF textDrawRect { 118, 400, 565, 100 };
 	UIParams params { .depth = 0, .layerFlag = AllLayer() };
 } // namespace
 ResultScene::ResultScene() {}
@@ -29,7 +29,6 @@ void ResultScene::Initialize()
 	// スコアを表示
 	RectF rect { 0, 0, 800, 600 };
 	int fontSize { 36 };
-	// Instantiate<ScoreViewer>(rect, fontSize,TextAlignment::center);
 
 	// カメラを管理クラスに登録
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
@@ -41,12 +40,13 @@ void ResultScene::Initialize()
 	// クリアしているかによって表示する画像を変える
 	if (clearedStage)
 	{
-		hImage = Image::Load("Image/ClearImage.png");
+		hTitleImage = Image::Load("Image/ClearImage.png");
 	}
 	else
 	{
-		hImage = Image::Load("Image/GameOverImage.png");
+		hTitleImage = Image::Load("Image/GameOverImage.png");
 	}
+	hBackgroundImage = Image::Load("Image/Black.png");
 }
 
 void ResultScene::Update()
@@ -59,8 +59,16 @@ void ResultScene::Update()
 
 void ResultScene::Draw() const
 {
-	Draw::Image(hImage, draw);
+	Draw::Image(hTitleImage, draw);
+	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 127));
 	Draw::ImmediateText("push P Key to return title...", textDrawRect);
+
+	Draw::Image(hBackgroundImage, mtgb::RectF { 120, 305, 310, 40 }, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 127));
+
+	int32_t itemCount = Game::System<ScoreManager>().GetScore();
+	Draw::ImmediateText("Items Collected", mtgb::RectF { 120, 320, 300, 30 }, 36, mtgb::TextAlignment::MIDDLE_LEFT);
+	std::string scoreText(std::to_string(itemCount));
+	Draw::ImmediateText(scoreText, mtgb::RectF { 400, 320, 80, 30 }, 36, mtgb::TextAlignment::MIDDLE_LEFT);
 }
 
 void ResultScene::End() {}

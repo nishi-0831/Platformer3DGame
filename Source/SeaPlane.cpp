@@ -15,9 +15,9 @@ SeaPlane::SeaPlane()
 	pCollider_->isTrigger_	  = true;
 	pCollider_->SetExtents(pTransform_->scale * 0.5f);
 	pMeshRenderer_->meshFileName = "Model/Box.fbx";
-	// pMeshRenderer_->meshHandle = Fbx::Load(pMeshRenderer_->meshFileName);
-	pMeshRenderer_->layer	   = AllLayer();
-	pMeshRenderer_->shaderType = ShaderType::SEA;
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::SEA;
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(SeaPlane));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);

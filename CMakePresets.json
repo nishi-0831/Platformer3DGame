@@ -8,7 +8,7 @@
             "displayName": "default-debug",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                
                 "CMAKE_C_COMPILER": "clang-cl.exe",
                 "CMAKE_CXX_COMPILER": "clang-cl.exe",
                 "CMAKE_BUILD_TYPE": "Debug"
@@ -26,7 +26,7 @@
             "displayName": "default-release",
             "binaryDir": "${sourceDir}/out/build/${presetName}",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+                
                 "CMAKE_C_COMPILER": "clang-cl.exe",
                 "CMAKE_CXX_COMPILER": "clang-cl.exe",
                 "CMAKE_BUILD_TYPE": "Release"
@@ -38,20 +38,33 @@
                 }
             }
         },
-        {
-            "name": "vs2022-msvc",
-            "displayName": "vs2022-msvc",
-            "generator": "Visual Studio 17 2022",
-            "architecture": "x64",
-            "toolset": "v143",
-            "binaryDir": "${sourceDir}/out/build/${presetName}",
-            "cacheVariables": {
-                "CMAKE_C_COMPILER": "cl",
-                "CMAKE_CXX_COMPILER": "cl",
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-            }
+      {
+        "name": "vs2022-msvc",
+        "displayName": "vs2022-msvc",
+        "generator": "Visual Studio 17 2022",
+        "architecture": "x64",
+        "toolset": "v143",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "cl",
+          "CMAKE_CXX_COMPILER": "cl",
+          "CMAKE_BUILD_TYPE": "Debug"
 
         }
+      },
+      {
+        "name": "vs2026-msvc",
+        "displayName": "vs2026-msvc",
+        "generator": "Visual Studio 18 2026",
+        "architecture": "x64",
+        "toolset": "v145",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "cl",
+          "CMAKE_CXX_COMPILER": "cl",
+          "CMAKE_BUILD_TYPE": "Debug"
+
+        }
+      }
     ]
 }

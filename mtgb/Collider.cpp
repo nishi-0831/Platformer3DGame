@@ -201,8 +201,6 @@ bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _
 		default :
 			return false;
 	}
-
-	return false;
 }
 
 bool mtgb::Collider::IsHit(const Vector3& _center, float _radius) const

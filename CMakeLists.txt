@@ -852,6 +852,10 @@ set(MSVC_COMMON_OPTIONS
     /Zc:__cplusplus;
     /sdl;
     /W4;
+    # 無名共用体/構造体を定義した際の警告を抑制
+    /wd4201;
+    # 認識されない属性を付与した際の警告を抑制
+    /wd5030;
     # 警告をエラーとして扱う
     # /WX;
     /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
@@ -1037,6 +1041,15 @@ endif()
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/RunClangTidy.cmake")
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/GeneratePch.cmake")
 
+ if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Generated")
+    file(GLOB_RECURSE GENERATED_SOURCE CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/Generated/*.gen.cpp")
+    target_sources(${PROJECT_NAME}
+        PRIVATE ${GENERATED_SOURCE})
+    source_group("Generated" FILES ${GENERATED_SOURCE})
+    target_include_directories(${PROJECT_NAME} PUBLIC
+        "${CMAKE_CURRENT_SOURCE_DIR}/Generated"
+    )
+ endif()
 
 ################################################################################
 # Dependencies (リンク先)
@@ -1056,7 +1069,7 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     )
 endif()
 
-find_package(nlohmann_json CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
-find_package(boost_multi_index CONFIG REQUIRED)
-target_link_libraries(${PROJECT_NAME} PRIVATE Boost::multi_index)
+# find_package(nlohmann_json CONFIG REQUIRED)
+# target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
+# find_package(boost_multi_index CONFIG REQUIRED)
+# target_link_libraries(${PROJECT_NAME} PRIVATE Boost::multi_index)

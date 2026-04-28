@@ -307,8 +307,6 @@ namespace mtgb
 
 	template <typename SystemT> inline SystemT& Game::System()
 	{
-		const char* t = typeid(SystemT).name();
-
 		ISystem* pSystem { pInstance_->pRegisterSystems_[typeid(SystemT)] };
 
 		assert(pSystem != nullptr);

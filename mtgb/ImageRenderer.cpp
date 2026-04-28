@@ -8,6 +8,10 @@ mtgb::ImageRenderer::ImageRenderer()
 mtgb::ImageRenderer::ImageRenderer(EntityId _entityId)
 	: IComponent { _entityId }
 	, handle_ { INVALID_HANDLE }
+	, imageFileName_ { "" }
+	, drawRect_ {}
+	, cutRect_ {}
+	, rotationZ_ { 0.0f }
 	, layer_ { AllLayer() }
 	, color_ { Color::WHITE }
 {

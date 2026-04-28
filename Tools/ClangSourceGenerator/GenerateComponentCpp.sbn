@@ -1,0 +1,74 @@
+// {{ class_name }}.generated.h
+#include "{{ class_name }}.h"
+#include "MTImGui.h"
+
+{{ # 名前空間を含む型名を返す }}
+{{- func get_fully_qualified_type(member)
+	if member.name_space == ""
+		ret member.type_name
+	else
+		ret member.name_space + "::" + member.type_name
+	end
+end
+}}
+
+{{ # 名前空間付きの完全名 }}
+{{ fully_qualified_name = "" }}
+{{- if name_space == "" }}
+	{{ fully_qualified_name = $"{ class_name }" }}
+{{- else }}
+	{{ fully_qualified_name = $"{name_space}::{ class_name }" }}
+{{- end }}
+
+// ============================================================================
+// {{ class_name }}と{{ class_name }}Mementoの相互変換処理を実装
+// ============================================================================
+
+
+	{{ class_name }}Memento* {{fully_qualified_name}}::SaveToMemento()
+	{ 
+	OnPreSave(); 
+		{{ class_name }}State state; 
+{{- for member in properties }}
+		state.{{ member.name }} = this->{{ member.name }};
+{{- end }}
+		return new Memento(GetEntityId(), state);
+	} 
+	
+	void {{fully_qualified_name}}::RestoreFromMemento(const Memento& _memento) 
+	{ 
+		const {{ class_name }}State& state = _memento.GetState(); 
+{{- for member in properties }}
+		this->{{ member.name }} = state.{{ member.name }};
+{{- end }}
+		OnPostRestore(); 
+	} 
+	
+	void {{name_space}}::to_json(nlohmann::json& _j,const {{fully_qualified_name}}& _target) 
+	{ 
+{{- for member in properties }}
+		_j["{{ member.name }}"] = JsonConverter::Serialize<{{  get_fully_qualified_type(member) }}>(_target.{{ member.name }});
+{{- end }}
+	} 
+	void {{name_space}}::from_json(const nlohmann::json& _j, {{fully_qualified_name}}& _target) 
+	{ 
+{{- for member in properties }}
+		JsonConverter::Deserialize<{{ get_fully_qualified_type(member) }}>(_target.{{ member.name }}, _j,"{{ member.name }}"); 
+{{- end }}
+		_target.OnPostRestore(); 
+	} 
+	/* ImGui表示処理の登録 */ 
+	void {{fully_qualified_name}}::RegisterImGui() 
+	{ 
+		static bool registered = false; 
+		if (registered) return; 
+		registered = true; 
+	
+		RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name)
+			{ 
+{{- for member in properties }}
+				PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}");
+{{- end }}
+			});
+		MTImGui::RegisterComponentViewer<{{ class_name }}>();
+	}

@@ -9,14 +9,16 @@
 #include "ImGuiUtil.h"
 
 mtgb::ImGuiRenderer::ImGuiRenderer()
-	: pRenderTargetView_ { nullptr }
+	: winWidth_ { 800 }
+	, winHeight_ { 600 }
+	, pRenderTargetView_ { nullptr }
 	, pSRV_ { nullptr }
 	, pSRVTexture_ { nullptr }
 	, pTexture_ { nullptr }
 	, pDepthStencil_ { nullptr }
 	, pDepthStencilView_ { nullptr }
 	, gameViewRectValid_ { false }
-
+	, viewport_ {}
 {
 }
 mtgb::ImGuiRenderer::~ImGuiRenderer() {}
@@ -45,25 +47,11 @@ void mtgb::ImGuiRenderer::Initialize()
 		io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\meiryo.ttc", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
 	IM_ASSERT(font != nullptr);
 
-	// ImGui_ImplWin32_EnableDpiAwareness();
-	// float main_scale = ImGui_ImplWin32_GetDpiScaleForMonitor(::MonitorFromPoint(POINT{ 0, 0 },
-	// MONITOR_DEFAULTTOPRIMARY));
-	//// Setup scaling
-	// ImGuiStyle& style = ImGui::GetStyle();
-	// style.ScaleAllSizes(main_scale);        // Bake a fixed style scale. (until we have a solution for dynamic style
-	// scaling, changing this requires resetting Style + calling this again) style.FontScaleDpi = main_scale;        //
-	// Set initial font scale. (using
-
-	// io.ConfigDpiScaleFonts = true;
-	// io.ConfigDpiScaleViewports = true;
-
-	// Setup Dear ImGui style
 	ImGui::StyleColorsDark();
 
 	ImGui::SetCurrentContext(ImGui::GetCurrentContext());
 
 	ImGui_ImplWin32_Init(WinCtxRes::GetHWND(WindowContext::FIRST));
-	const auto& ctx						= ImGui::GetCurrentContext();
 	ComPtr<ID3D11Device> device			= mtgb::DirectX11Draw::pDevice_;
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
@@ -100,12 +88,6 @@ void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _fla
 
 void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
 {
-	// ID3D11ShaderResourceView* nullSRV[16]{};
-	//// 全スロットのSRVをクリア
-	// DirectX11Draw::pContext_->PSSetShaderResources(0, 16, nullSRV);
-
-	// DirectX11Draw::pContext_->PSSetShaderResources(0, 0, pSRV_.GetAddressOf());
-	// Game::System<DirectX11Manager>().ChangeViewport(viewport_);
 	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);
 }
 
@@ -198,11 +180,6 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	hResult = device->CreateRenderTargetView(pTexture_.Get(), nullptr, pRenderTargetView_.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "CreateRenderTargetViewに失敗 @ImGuiRenderer::CreateD3DResources");
 
-	// SRV用テクスチャ作成
-	// desc.BindFlags = D3D11_BIND_SHADER_RESOURCE;
-	// hResult = device->CreateTexture2D(&desc, nullptr, pTexture_.GetAddressOf());
-	// massert(SUCCEEDED(hResult) && "CreateTexture2Dに失敗 @ImGuiRenderer::CreateD3DResources");
-
 	hResult = device->CreateShaderResourceView(pTexture_.Get(), nullptr, pSRV_.ReleaseAndGetAddressOf());
 	massert(SUCCEEDED(hResult) && "CreateShaderResourceViewに失敗 @ImGuiRenderer::CreateD3DResources");
 
@@ -212,6 +189,4 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 		pTexture_.GetAddressOf(),
 		pDepthStencilView_.ReleaseAndGetAddressOf()
 	);
-
-	// ImGui_ImplDX11_CreateDeviceObjects();
 }

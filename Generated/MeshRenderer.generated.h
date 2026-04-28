@@ -3,7 +3,6 @@
 
 #include <nlohmann/json.hpp>
 #include "JsonConverter.h"
-#include "MTImGui.h"
 #include <string>
 
 
@@ -37,60 +36,17 @@ using MeshRendererMemento = mtgb::ComponentMemento<mtgb::MeshRenderer, MeshRende
 #define MT_GENERATED_BODY_MeshRenderer() \
 	public: \
 	using Memento = MeshRendererMemento; \
-	MeshRendererMemento* SaveToMemento() \
-	{ \
-	OnPreSave(); \
-		MeshRendererState state; \
-		state.meshFileName = this->meshFileName; \
-		state.meshHandle = this->meshHandle; \
-		state.layer = this->layer; \
-		state.shaderType = this->shaderType; \
-		return new Memento(GetEntityId(), state); \
-	} \
+	MeshRendererMemento* SaveToMemento(); \
 	\
-	void RestoreFromMemento(const Memento& _memento) \
-	{ \
-		const MeshRendererState& state = _memento.GetState(); \
-		this->meshFileName = state.meshFileName; \
-		this->meshHandle = state.meshHandle; \
-		this->layer = state.layer; \
-		this->shaderType = state.shaderType; \
-		OnPostRestore(); \
-	} \
+	void RestoreFromMemento(const Memento& _memento); \
 	\
 	friend struct MeshRenderer_Register; \
-	friend void to_json(nlohmann::json& _j,const MeshRenderer& _target) \
-	{ \
-		_j["meshFileName"] = JsonConverter::Serialize<std::string>(_target.meshFileName); \
-		_j["meshHandle"] = JsonConverter::Serialize<mtgb::FBXModelHandle>(_target.meshHandle); \
-		_j["layer"] = JsonConverter::Serialize<mtgb::GameObjectLayerFlag>(_target.layer); \
-		_j["shaderType"] = JsonConverter::Serialize<mtgb::ShaderType>(_target.shaderType); \
-	} \
-	friend void from_json(const nlohmann::json& _j, MeshRenderer& _target) \
-	{ \
-		JsonConverter::Deserialize<std::string>(_target.meshFileName, _j,"meshFileName"); \
-		JsonConverter::Deserialize<mtgb::FBXModelHandle>(_target.meshHandle, _j,"meshHandle"); \
-		JsonConverter::Deserialize<mtgb::GameObjectLayerFlag>(_target.layer, _j,"layer"); \
-		JsonConverter::Deserialize<mtgb::ShaderType>(_target.shaderType, _j,"shaderType"); \
-		_target.OnPostRestore(); \
-	} \
+	friend void to_json(nlohmann::json& _j,const MeshRenderer& _target); \
+	friend void from_json(const nlohmann::json& _j, MeshRenderer& _target); \
+	\
 	static std::string TypeName(){ return "MeshRenderer" ;} \
 	/* ImGui表示処理の登録 */ \
-	static void RegisterImGui() \
-	{ \
-		static bool registered = false; \
-		if (registered) return; \
-		registered = true; \
-		\
-		RegisterShowFuncHolder::Set<MeshRenderer>([]( MeshRenderer* _target, const char* _name) \
-			{ \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshFileName, "meshFileName"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshHandle, "meshHandle"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer, "layer"); \
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType"); \
-			}); \
-		MTImGui::RegisterComponentViewer<MeshRenderer>(); \
-	}
+	static void RegisterImGui(); \
 
 #pragma warning(push)
 #pragma warning(disable:4005)
