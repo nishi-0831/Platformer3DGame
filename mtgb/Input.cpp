@@ -13,7 +13,7 @@ namespace
 {
 	static const size_t KEY_BUFFER_SIZE { 256 };
 
-	const float ACQUIRE_INTERVAL { 3.0f };
+	const float ENUM_INTERVAL { 3.0f };
 
 	const DWORD VENDOR_ID_DUAL_SHOCK { 0x54c };
 	const DWORD VENDOR_ID_XBOX { 0x45E };
@@ -89,11 +89,11 @@ void mtgb::Input::Initialize()
 		&& "DirectInput8のデバイス作成に失敗 @Input::Initialize"
 	);
 	// 起動時、遷移時のシーンで定期的にジョイスティックの取得を試みるよう設定
-	Game::System<Input>().ScheduleJoystickAcquire();
+	Game::System<Input>().ScheduleJoystickEnum();
 	Game::System<SceneSystem>().OnMove(
 		[]
 		{
-			Game::System<Input>().ScheduleJoystickAcquire();
+			Game::System<Input>().ScheduleJoystickEnum();
 		}
 	);
 }
@@ -407,13 +407,11 @@ void mtgb::Input::EnumJoystick()
 void mtgb::Input::RequestJoystickDevice(const JoystickReservation& _reservation)
 {
 	requestedJoystickDevices_.push_back(_reservation);
-	StartEnumTimer();
 }
 
 void mtgb::Input::RequestJoystickDevice(JoystickReservation&& _reservation)
 {
 	requestedJoystickDevices_.push_back(std::move(_reservation));
-	StartEnumTimer();
 }
 
 void mtgb::Input::AssignJoystickToReservation(
@@ -454,19 +452,19 @@ bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 	return assignedJoystickGuids_.insert(_guid).second;
 }
 
-void mtgb::Input::ScheduleJoystickAcquire()
+void mtgb::Input::ScheduleJoystickEnum()
 {
-	for (auto& [guid, context] : joystickContext_)
+	if (enumTimerHandle_)
 	{
-		TimerHandle hTimer = Timer::AddInterval(
-			ACQUIRE_INTERVAL,
-			[&]()
-			{
-				AcquireJoystick(context.device);
-			}
-		);
-		context.timerHandle = hTimer;
+		Timer::Remove(enumTimerHandle_);
 	}
+	enumTimerHandle_ = Timer::AddInterval(
+		ENUM_INTERVAL,
+		[this]()
+		{
+			EnumJoystick();
+		}
+	);
 }
 
 bool mtgb::Input::IsNotSubscribed()
@@ -645,38 +643,6 @@ bool mtgb::Input::IsJoystickConnected(GUID _guid) const
 bool mtgb::Input::IsJoystickAssigned(GUID _guid) const
 {
 	return (joystickContext_.find(_guid) != joystickContext_.end());
-}
-
-void mtgb::Input::StartEnumTimer()
-{
-	if (!enumTimerHandle_ || IsNotSubscribed())
-		return;
-
-	enumTimerHandle_ = Timer::AddInterval(
-		enumInterval_,
-		[this]()
-		{
-			AutoEnum();
-		}
-	);
-}
-
-void mtgb::Input::StopEnumTimer()
-{
-	if (!enumTimerHandle_)
-		return;
-	Timer::Remove(enumTimerHandle_);
-	enumTimerHandle_ = nullptr;
-}
-
-void mtgb::Input::AutoEnum()
-{
-	if (IsNotSubscribed())
-	{
-		StopEnumTimer();
-		return;
-	}
-	EnumJoystick();
 }
 
 void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, InputConfig _inputConfig)

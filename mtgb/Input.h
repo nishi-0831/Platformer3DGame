@@ -162,9 +162,9 @@ namespace mtgb
 		bool RegisterJoystickGuid(GUID _guid);
 
 		/// <summary>
-		/// 一定間隔でジョイスティックの接続確認をするよう設定する
+		/// 一定間隔でジョイスティックの取得をするよう設定する
 		/// </summary>
-		void ScheduleJoystickAcquire();
+		void ScheduleJoystickEnum();
 		/// <summary>
 		/// 割り当て予約がされていないか否か
 		/// </summary>
@@ -216,12 +216,7 @@ namespace mtgb
 		bool IsJoystickAssigned(GUID _guid) const;
 
 	  private:
-		void StartEnumTimer();
-		void StopEnumTimer();
-		void AutoEnum();
-		// 定期的にデバイス列挙をタイマー
 		TimerHandle enumTimerHandle_ { nullptr };
-		float enumInterval_ { 1.0f };
 
 		/// <summary>
 		/// アクティブなコントローラのIDを調べる
