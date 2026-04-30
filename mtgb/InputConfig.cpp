@@ -28,7 +28,7 @@ void mtgb::InputConfig::SetDeadZone(float _deadZone)
 	deadZone = _deadZone;
 }
 
-float mtgb::InputConfig::ApplyDeadZone(const float _value) const
+float mtgb::InputConfig::ApplyDeadZone(float _value) const
 {
 	// 絶対値がデッドゾーンに満たないなら0
 	if (std::abs(_value) < deadZone)
@@ -38,4 +38,23 @@ float mtgb::InputConfig::ApplyDeadZone(const float _value) const
 	// 0～1の範囲に正規化する
 	float sign = (_value > 0) ? 1.0f : -1.0f;
 	return sign * (std::abs(_value) - deadZone) / (1.0f - deadZone);
+}
+
+void mtgb::InputConfig::SetMaxMouseMovement(float _value)
+{
+	maxMouseMovement = _value;
+}
+
+float mtgb::InputConfig::NormalizeMouseMovement(float _movement) const
+{
+	if (_movement >= maxMouseMovement)
+	{
+		return 1.0f;
+	}
+	else if (_movement <= -maxMouseMovement)
+	{
+		return -1.0f;
+	}
+
+	return _movement / maxMouseMovement;
 }

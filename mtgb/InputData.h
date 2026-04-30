@@ -46,7 +46,6 @@ namespace mtgb
 			const FlightStickCode _flightStickCode,
 			WindowContext _context = mtgb::WindowContext::FIRST
 		);
-		// static inline const size_t* GetActiveGamePadID() { return activeGamepadID.data(); }
 
 		static float GetTrigger(
 			FlightStickAxisCode _flightStickCode,
@@ -58,6 +57,7 @@ namespace mtgb
 
 		static Vector2Int GetMousePosition(WindowContext _context = mtgb::WindowContext::FIRST);
 		static Vector3 GetMouseMove(WindowContext _context = mtgb::WindowContext::FIRST);
+		static Vector3 GetMouseAxis(WindowContext _context = mtgb::WindowContext::FIRST);
 
 	  private:								   // Utilities
 		static const size_t KEY_COUNT { 256 }; // キーの数
@@ -124,14 +124,6 @@ namespace mtgb
 		{
 			return _padStateCurrent.rgbButtons[Index(_padCode)] ^ _padStatePrevious.rgbButtons[Index(_padCode)];
 		}
-		// static inline const int padXOR(const PadCode _padCode, const _XINPUT_STATE& _padStateCurrent, const
-		// _XINPUT_STATE& _padStatePrevious)
-		//{
-		//	WORD buttonPrev = _padStatePrevious.Gamepad.wButtons; // 0000
-		//	WORD buttonCurr = _padStateCurrent.Gamepad.wButtons;  // 1000
-		//	WORD padCode    = static_cast<WORD>(_padCode);        // 0x08
-		//	return (buttonCurr & padCode) ^ (buttonPrev & padCode); // 1 ^ 0 = 1
-		// }
 
 		static inline bool GetGamePadImpl(size_t _index, WindowContext _context);
 		static inline bool GetGamePadUpImpl(size_t _index, WindowContext _context);

@@ -31,15 +31,21 @@ void mtgb::QuaternionCamera::Update()
 	{
 			// マウス
 		case InputType::MOUSE :
-			movement = InputUtil::GetMouseMove();
+		{
+			movement   = InputUtil::GetMouseAxis();
+			float tmp  = movement.x;
+			movement.x = movement.y;
+			movement.y = tmp;
 			break;
-
+		}
 			// ゲームパッド
 		case InputType::JOYPAD :
+		{
 			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
 			movement.x	  = vec2.y;
 			movement.y	  = vec2.x;
 			break;
+		}
 	}
 	Quaternion& rotate		= pTransform_->rotate;
 	Quaternion worldRotateY = Quaternion::AngleAxis(
