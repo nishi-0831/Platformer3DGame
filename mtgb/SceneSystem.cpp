@@ -22,13 +22,6 @@ mtgb::SceneSystem::~SceneSystem()
 
 void mtgb::SceneSystem::Initialize()
 {
-	OnMove(
-		[]()
-		{
-			Game::System<Timer>().Clear();
-		}
-	);
-
 	mtgb::GameObjectGenerator::Initialize();
 	PropertyDisplayRegistry::Instance();
 	PropertyDisplayRegistry::Instance().Initialize();
@@ -110,6 +103,9 @@ void mtgb::SceneSystem::ExecutePendingCallbacks()
 
 void mtgb::SceneSystem::ChangeScene()
 {
+	// 登録されたコールバックを削除
+	Game::System<Timer>().Clear();
+
 	// シーン遷移イベントを発動していく
 	for (auto& onMove : onMoveListener_)
 	{

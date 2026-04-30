@@ -2,22 +2,18 @@
 #include "IncludingWindows.h"
 #include "IncludingInput.h"
 #include "InputData.h"
-#include "ReleaseUtility.h"
 #include "MTAssert.h"
-#include "DoubleWindow.h"
-#include "InputResource.h"
 #include <algorithm>
 #include "Game.h"
-#include "ISystem.h"
+#include "SceneSystem.h"
 #include "Debug.h"
-#include "ImGui/imgui.h"
 #include "Timer.h"
 
 namespace
 {
 	static const size_t KEY_BUFFER_SIZE { 256 };
 
-	float acquireInterval = 10.0f;
+	const float ACQUIRE_INTERVAL { 3.0f };
 
 	const DWORD VENDOR_ID_DUAL_SHOCK { 0x54c };
 	const DWORD VENDOR_ID_XBOX { 0x45E };
@@ -35,6 +31,7 @@ void mtgb::Input::AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 	{
 		case DI_OK :   // 取得できた
 		case S_FALSE : // 他のアプリも許可を取得している
+			LOGIMGUI("Acquire Joystick");
 			break;
 		case DIERR_OTHERAPPHASPRIO : // 他のアプリが優先権を持っている
 			return;
@@ -90,6 +87,14 @@ void mtgb::Input::Initialize()
 	massert(
 		SUCCEEDED(hResult) // DirectInput8のデバイス作成に成功
 		&& "DirectInput8のデバイス作成に失敗 @Input::Initialize"
+	);
+	// 起動時、遷移時のシーンで定期的にジョイスティックの取得を試みるよう設定
+	Game::System<Input>().ScheduleJoystickAcquire();
+	Game::System<SceneSystem>().OnMove(
+		[]
+		{
+			Game::System<Input>().ScheduleJoystickAcquire();
+		}
 	);
 }
 
@@ -436,8 +441,6 @@ void mtgb::Input::AssignJoystickToReservation(
 
 	if (reservation.onAssign)
 		reservation.onAssign(itr->second.device, guid);
-
-	// SetAcquireInterval(guid, itr->second.device);
 }
 
 void mtgb::Input::UnregisterJoystickGuid(GUID _guid)
@@ -451,16 +454,19 @@ bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 	return assignedJoystickGuids_.insert(_guid).second;
 }
 
-void mtgb::Input::SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device)
+void mtgb::Input::ScheduleJoystickAcquire()
 {
-	TimerHandle hTimer = Timer::AddInterval(
-		acquireInterval,
-		[&]()
-		{
-			AcquireJoystick(_device);
-		}
-	);
-	joystickContext_[_guid].timerHandle = hTimer;
+	for (auto& [guid, context] : joystickContext_)
+	{
+		TimerHandle hTimer = Timer::AddInterval(
+			ACQUIRE_INTERVAL,
+			[&]()
+			{
+				AcquireJoystick(context.device);
+			}
+		);
+		context.timerHandle = hTimer;
+	}
 }
 
 bool mtgb::Input::IsNotSubscribed()
