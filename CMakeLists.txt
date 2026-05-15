@@ -698,6 +698,12 @@ set(Unfiltered
     "Source/JumpController.h"
     "Source/RespawnManager.cpp"
     "Source/RespawnManager.h"
+    "Source/MenuItem.cpp"
+    "Source/MenuItem.h"
+    "Source/Panel.h"
+    "Source/Panel.cpp"
+    "Source/PanelManager.h"
+    "Source/PanelManager.cpp"
 )
 source_group("Unfiltered" FILES ${Unfiltered})
 
