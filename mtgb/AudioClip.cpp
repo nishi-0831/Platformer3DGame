@@ -71,7 +71,7 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 		_ms.Seek(0);
 		LoadWave(_ms);
 	}
-	else if (CompareId<3>(header, "ID3") || (header[0] == 0xFF && (header[1] % 0xE0) == 0xE0))
+	else if (CompareId<3>(header, "ID3") || (header[0] == 0xFF && (header[1] == 0xFA || header[1] == 0xFB)))
 	{
 		_ms.Seek(0);
 		LoadMp3(_ms);

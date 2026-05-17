@@ -22,6 +22,7 @@ namespace mtgb
 		audio.Register("Stomp", "Sound/Stomp.mp3");
 		audio.Register("Jump", "Sound/Jump.mp3");
 		audio.Register("ItemGet", "Sound/ItemGetSound.mp3");
+		audio.Register("MoveCursor", "Sound/MoveCursor.mp3");
 	}
 } // namespace mtgb
 

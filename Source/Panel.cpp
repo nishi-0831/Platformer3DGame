@@ -1,20 +1,21 @@
 #include "Panel.h"
 
 Panel::Panel()
-	: currIdx_ {-1}
-{}
+	: currIdx_ { -1 }
+{
+}
 
 void Panel::IncrementIndex()
 {
 	MoveCurrIndex(1);
 }
 
-void Panel::DecrementIndex() 
+void Panel::DecrementIndex()
 {
 	MoveCurrIndex(-1);
 }
 
-void Panel::Press() 
+void Panel::Press()
 {
 	if (currIdx_ < 0 || currIdx_ >= menuItems_.size())
 		massert(false && "currIdx_が不正");
@@ -22,7 +23,7 @@ void Panel::Press()
 	menuItems_[currIdx_]->OnPressed();
 }
 
-void Panel::AddMenuItem(MenuItem* _pMenuItem) 
+void Panel::AddMenuItem(MenuItem* _pMenuItem)
 {
 	if (_pMenuItem == nullptr)
 	{
@@ -36,7 +37,6 @@ void Panel::AddMenuItem(MenuItem* _pMenuItem)
 		currIdx_ = menuItems_.size() - 1;
 		menuItems_[currIdx_]->OnSelected();
 	}
-
 }
 
 void Panel::Enable()
@@ -55,8 +55,10 @@ void Panel::Disable()
 	}
 }
 
-void Panel::MoveCurrIndex(int _movement) 
+void Panel::MoveCurrIndex(int _movement)
 {
+	Game::System<Audio>().Play("MoveCursor");
+
 	menuItems_[currIdx_]->OnDeselected();
 	currIdx_ += _movement;
 	currIdx_ = (currIdx_ + menuItems_.size()) % menuItems_.size();
