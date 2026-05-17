@@ -11,7 +11,7 @@
 
 namespace
 {
-	static const size_t KEY_BUFFER_SIZE { 256 };
+	const size_t KEY_BUFFER_SIZE { 256 };
 
 	const float ENUM_INTERVAL { 3.0f };
 
@@ -197,39 +197,6 @@ void mtgb::Input::UpdateJoystickDevice()
 	}
 }
 
-void mtgb::Input::UpdateGamePadDevice()
-{
-	// アクティブなコントローラがなければ、リターン。
-	{
-		bool IS_GAMEPAD_DETECTED = std::any_of(
-			pInputData_->activeGamePadID.begin(),
-			pInputData_->activeGamePadID.end(),
-			[](std::pair<const PadIDState, int> _id)
-			{
-				return _id.second != -1;
-			}
-		);
-		if (not(IS_GAMEPAD_DETECTED))
-		{
-			CheckValidPadID();
-		}
-	}
-
-	// コントローラの割り当て
-	// 無効なIDであれば書き換え
-	// 割り当てたIDのキーをASSIGNEDにする
-	//
-
-	for (int i = 0; i < XUSER_MAX_COUNT; i++)
-	{
-		// PreviousにCurrentの状態をコピー
-		memcpy(&pInputData_->gamePadStatePrevious_[i], &pInputData_->gamePadStateCurrent_[i], sizeof(_XINPUT_STATE));
-
-		// 現在のコントローラーの状態を取得
-		XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]); // ここでエラー処理!
-	}
-}
-
 void mtgb::Input::Release()
 {
 	pMouseDevice_.Reset();
@@ -325,23 +292,6 @@ void mtgb::Input::ChangeMouseDevice(ComPtr<IDirectInputDevice8> _pMouseDevice)
 void mtgb::Input::ChangeInputData(InputData* _pInputData)
 {
 	pInputData_ = _pInputData;
-}
-
-void mtgb::Input::CheckValidPadID()
-{
-	for (int i = 0; i < XUSER_MAX_COUNT; i++)
-	{
-		DWORD result = XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]);
-
-		if (result == ERROR_SUCCESS)
-		{
-			pInputData_->activeGamePadID.insert(std::make_pair(PadIDState::UNASSIGNED, i));
-		}
-		else
-		{
-			pInputData_->activeGamePadID.insert(std::make_pair(PadIDState::INVALID, i));
-		}
-	}
 }
 
 void mtgb::Input::ChangeJoystickDevice(ComPtr<IDirectInputDevice8> _pJoystickDevice)

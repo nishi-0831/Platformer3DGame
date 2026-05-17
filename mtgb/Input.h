@@ -86,7 +86,6 @@ namespace mtgb
 		void UpdateKeyDevice();
 		void UpdateMouseDevice();
 		void UpdateJoystickDevice();
-		void UpdateGamePadDevice();
 
 		void Release() override;
 
@@ -217,11 +216,6 @@ namespace mtgb
 
 	  private:
 		TimerHandle enumTimerHandle_ { nullptr };
-
-		/// <summary>
-		/// アクティブなコントローラのIDを調べる
-		/// </summary>
-		void CheckValidPadID();
 
 		void AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice);
 		GUID GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice);

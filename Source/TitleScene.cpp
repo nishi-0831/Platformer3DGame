@@ -13,7 +13,7 @@ namespace
 	ImageHandle hBackgroundImage;
 	FBXModelHandle hModel;
 	RectF draw { 118, 90, 565, 100 };
-	
+
 	RectF draw2 { 236, 90, 665, 100 };
 	RectF textDrawRect { 118, 450, 565, 80 };
 	PanelManager panelManager;
@@ -48,11 +48,13 @@ void TitleScene::Initialize()
 
 void TitleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::DOWN))
+	if (InputUtil::GetKeyDown(KeyCode::DOWN) ||
+		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
 	{
 		panelManager.MoveForcusBackward();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::UP))
+	if (InputUtil::GetKeyDown(KeyCode::UP) ||
+		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
 	{
 		panelManager.MoveForcusForward();
 	}
@@ -73,13 +75,13 @@ void TitleScene::End() {}
 
 void CreatePanel()
 {
-	GameScene* pCurrScene = Game::System<SceneSystem>().GetActiveScene();
+	GameScene* pCurrScene		  = Game::System<SceneSystem>().GetActiveScene();
 	GameObject* howToPlayImageObj = new GameObject(GameObjectBuilder().SetName("HowToPlayImage").Build());
 	pCurrScene->RegisterGameObject(howToPlayImageObj);
 	ImageRenderer* pImgRenderer = howToPlayImageObj->Component<ImageRenderer>();
-	pImgRenderer->handle_		  = Image::Load("Image/HowToPlay.png");
-	pImgRenderer->drawRect_		  = RectF { 0, 0, 800, 700 };
-	pImgRenderer->enabled_		  = false;
+	pImgRenderer->handle_		= Image::Load("Image/HowToPlay.png");
+	pImgRenderer->drawRect_		= RectF { 0, 0, 800, 700 };
+	pImgRenderer->enabled_		= false;
 
 	{
 		MenuItem* pItem1 = pCurrScene->Instantiate<MenuItem>();
@@ -92,7 +94,7 @@ void CreatePanel()
 		pItem1->SetText("Start Game");
 		RectF rect1 { 300, 300, 100, 100 };
 		pItem1->SetRect(draw);
-	
+
 		MenuItem* pItem2 = pCurrScene->Instantiate<MenuItem>();
 		pItem2->SetOnPressed(
 			[]()
@@ -126,17 +128,16 @@ void CreatePanel()
 					return;
 
 				pGameObj->Component<ImageRenderer>()->enabled_ = false;
-				panelManager.EnablePanel("TitleMenu");		
+				panelManager.EnablePanel("TitleMenu");
 			}
 		);
 		pItem1->SetText("Close");
 		RectF rect1 { 300, 500, 100, 100 };
 		pItem1->SetRect(rect1);
-	
+
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
 		pPanel->AddMenuItem(pItem1);
 		panelManager.AddPanel("HowToPlay", pPanel);
-
 	}
-		panelManager.EnablePanel("TitleMenu");
+	panelManager.EnablePanel("TitleMenu");
 }
