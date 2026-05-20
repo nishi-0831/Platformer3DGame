@@ -12,6 +12,7 @@ class PanelManager
 	void MoveForcusForward();
 	void MoveForcusBackward();
 	void PressCurrentPanel();
+	void UpdatePanel();
   private:
 	std::unordered_map<std::string, Panel*, mtgb::TransparentStringHash, mtgb::TransparentStringEq> panelMap_;
 	Panel* pCurrPanel_;

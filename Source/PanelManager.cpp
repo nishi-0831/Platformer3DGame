@@ -1,5 +1,5 @@
 #include "PanelManager.h"
-
+#include <InputData.h>
 PanelManager::PanelManager() 
 	: pCurrPanel_ {nullptr}
 {
@@ -57,4 +57,23 @@ void PanelManager::MoveForcusForward()
 void PanelManager::PressCurrentPanel()
 {
 	pCurrPanel_->Press();
+}
+
+void PanelManager::UpdatePanel() 
+{
+	using namespace mtgb;
+	if (InputUtil::GetKeyDown(KeyCode::DOWN) ||
+		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
+	{
+		MoveForcusBackward();
+	}
+	if (InputUtil::GetKeyDown(KeyCode::UP) ||
+		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
+	{
+		MoveForcusForward();
+	}
+	if (InputUtil::GetKeyDown(KeyCode::ENTER) || InputUtil::GetGamePadDown(PadCode::CIRCLE))
+	{
+		PressCurrentPanel();
+	}
 }

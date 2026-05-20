@@ -1,14 +1,14 @@
 #include "stdafx.h"
 #include "ResultScene.h"
-#include "../Source/TitleScene.h"
-#include "../Source/SkySphere.h"
-
-#include "../Source/StageManager.h"
+#include "TitleScene.h"
+#include "SkySphere.h"
+#include "StageManager.h"
 namespace
 {
 	// 118,90 , 565,100
 	ImageHandle hTitleImage;
 	ImageHandle hBackgroundImage;
+	ImageHandle hEastButtonImg;
 	RectF draw { 118, 90, 565, 100 };
 	RectF textDrawRect { 118, 450, 565, 80 };
 	UIParams params { .depth = 0, .layerFlag = AllLayer() };
@@ -52,6 +52,7 @@ void ResultScene::Initialize()
 		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
 	}
 	hBackgroundImage = Image::Load("Image/Black.png");
+	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
 
 	if (json.has_value())
 	{
@@ -60,21 +61,19 @@ void ResultScene::Initialize()
 	}
 
 	Instantiate<mtgb::SkySphere>();
+
+	CreatePanel();
 }
 
 void ResultScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::P))
-	{
-		Game::System<SceneSystem>().Move<TitleScene>();
-	}
+	panelManager_.UpdatePanel();
 }
 
 void ResultScene::Draw() const
 {
 	Draw::Image(hTitleImage, draw);
 	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
-	Draw::ImmediateText("push P Key to return title...", textDrawRect);
 
 	Draw::Image(hBackgroundImage, mtgb::RectF { 120, 305, 310, 40 }, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
 
@@ -85,3 +84,23 @@ void ResultScene::Draw() const
 }
 
 void ResultScene::End() {}
+
+void ResultScene::CreatePanel() 
+{
+	GameScene* pCurrScene = Game::System<SceneSystem>().GetActiveScene();
+
+	MenuItem* pItem = pCurrScene->Instantiate<MenuItem>();
+	pItem->SetOnPressed(
+		[]()
+		{
+			Game::System<SceneSystem>().Move<TitleScene>();
+		}
+	);
+	pItem->SetText("Return To Title");
+	pItem->SetRect({ 290, 490, 220, 60 });
+	Panel* pPanel = pCurrScene->Instantiate<Panel>();
+	pPanel->AddMenuItem(pItem);
+
+	panelManager_.AddPanel("ResultMenu", pPanel);
+	panelManager_.EnablePanel("ResultMenu");
+}

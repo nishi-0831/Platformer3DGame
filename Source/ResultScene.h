@@ -1,5 +1,6 @@
 #pragma once
 #include "GameScene.h"
+#include "PanelManager.h"
 
 class ResultScene : public mtgb::GameScene
 {
@@ -11,4 +12,8 @@ class ResultScene : public mtgb::GameScene
 	void Update() override;
 	void Draw() const override;
 	void End() override;
+
+  private:
+	void CreatePanel();
+	PanelManager panelManager_;
 };

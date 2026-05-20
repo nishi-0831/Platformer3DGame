@@ -9,6 +9,8 @@ namespace
 {
 	// 118,90 , 565,100
 	ImageHandle hTitleImage;
+	ImageHandle hLeftStickImg;
+	ImageHandle hEastButtonImg;
 	ImageHandle hBackgroundImage;
 	FBXModelHandle hModel;
 	RectF draw { 118, 90, 565, 100 };
@@ -27,6 +29,8 @@ void TitleScene::Initialize()
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 	hTitleImage		 = Image::Load("Image/TitleImage.png");
 	hBackgroundImage = Image::Load("Image/Black.png");
+	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
+	hLeftStickImg	 = Image::Load("Image/LeftStick.png");
 
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
@@ -44,27 +48,19 @@ void TitleScene::Initialize()
 
 void TitleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::DOWN) ||
-		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
-	{
-		panelManager_.MoveForcusBackward();
-	}
-	if (InputUtil::GetKeyDown(KeyCode::UP) ||
-		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
-	{
-		panelManager_.MoveForcusForward();
-	}
-	if (InputUtil::GetKeyDown(KeyCode::ENTER) || InputUtil::GetGamePadDown(PadCode::CIRCLE))
-	{
-		panelManager_.PressCurrentPanel();
-	}
+	panelManager_.UpdatePanel();
 }
 
 void TitleScene::Draw() const
 {
 	Draw::Image(hTitleImage, draw);
-	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
-	Draw::ImmediateText("push P Key to start game...", textDrawRect);
+	Draw::Image(hBackgroundImage, { 50, 550, 200, 50 });
+	Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
+	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 },24);
+
+	Draw::Image(hBackgroundImage, { 500, 550, 150, 50 });
+	Draw::Image(hEastButtonImg, { 500, 550, 50, 50 });
+	Draw::ImmediateTextW(L"決定", { 550, 550, 100, 50 });
 }
 
 void TitleScene::End() {}
@@ -89,7 +85,7 @@ void TitleScene::CreatePanel()
 			}
 		);
 		pItem1->SetText("Start Game");
-		pItem1->SetRect(draw);
+		pItem1->SetRect({ 290, 360, 220, 60 });
 
 		MenuItem* pItem2 = pCurrScene->Instantiate<MenuItem>();
 		pItem2->SetOnPressed(
@@ -104,7 +100,7 @@ void TitleScene::CreatePanel()
 			}
 		);
 		pItem2->SetText("How to Play");
-		pItem2->SetRect({ 118, 500, 565, 100 });
+		pItem2->SetRect({ 290, 490, 220, 60 });
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
 		pPanel->AddMenuItem(pItem1);
