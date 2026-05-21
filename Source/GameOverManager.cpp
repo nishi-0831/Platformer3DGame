@@ -45,5 +45,5 @@ void GameOverManager::OnGameOver()
 			pFadeOutScreen_->StartFadeOut();
 		}
 	);
-	Game::System<Audio>().Play("GameOver");
+	Game::System<Audio>().Play("PlayerDeath");
 }
