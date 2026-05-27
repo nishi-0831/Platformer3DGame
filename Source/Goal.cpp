@@ -76,7 +76,7 @@ void Goal::ShowImGui()
 
 void Goal::OnClear()
 {
-	Game::System<Audio>().Play("GameClear");
+	Game::System<Audio>().Play("GetTreasure");
 
 	Timer::AddAram(
 		transitionSceneDelay_,

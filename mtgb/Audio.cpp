@@ -18,8 +18,12 @@ namespace mtgb
 	void RegisterAudios()
 	{
 		mtgb::Audio& audio = Game::System<Audio>();
-		audio.Register("GameOver", "Sound/GameOverSound.mp3");
-		audio.Register("GameClear", "Sound/ClearScene.mp3");
+		audio.Register("PlayerDeath", "Sound/GameOverSound.mp3");
+		audio.Register("GameOver", "Sound/maou_game_jingle08.mp3");
+		audio.Register("GameClear", "Sound/clear2.mp3");
+		audio.Register("PlayScene", "Sound/kouyaoiku.mp3");
+		audio.Register("TitleScene", "Sound/opening.mp3");
+		audio.Register("GetTreasure", "Sound/ClearScene.mp3");
 		audio.Register("Stomp", "Sound/Stomp.mp3");
 		audio.Register("Jump", "Sound/Jump.mp3");
 		audio.Register("ItemGet", "Sound/ItemGetSound.mp3");
