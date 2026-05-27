@@ -51,10 +51,17 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	InitializeState();
 
 	animController_.value().SetEventCallback(
-		"Footstep",
+		"FootstepRun",
 		[this](const AnimationEvent& _evt)
 		{
-			OnFootStep(_evt);
+			OnFootstepRun(_evt);
+		}
+	);
+	animController_.value().SetEventCallback(
+		"FootstepWalk",
+		[this](const AnimationEvent& _evt)
+		{
+			OnFootstepWalk(_evt);
 		}
 	);
 }
@@ -351,7 +358,7 @@ bool PatrolChargerEnemy::Search()
 
 void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId) {}
 
-void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
+void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 {
 	// ボーンの名前を取得
 	std::string boneName = _event.boneName;
@@ -368,5 +375,10 @@ void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
 
-	Game::System<Audio>().Play("MonsterFootstep");
+	Game::System<Audio>().Play("FootstepMonsterRun");
+}
+
+void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event) 
+{
+	Game::System<Audio>().Play("FootstepMonsterWalk");
 }

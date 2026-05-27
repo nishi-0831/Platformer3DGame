@@ -29,8 +29,9 @@ namespace mtgb
 		audio.Register("ItemGet", "Sound/ItemGetSound.mp3");
 		audio.Register("MoveCursor", "Sound/MoveCursor.mp3");
 		audio.Register("MinerFootstep", "Sound/MinerFootstep.mp3");
-		audio.Register("MonsterFootstep", "Sound/MonsterFootstep.mp3");
-		audio.SetClipVolume("MonsterFootstep", 0.5f);
+		audio.Register("FootstepMonsterWalk", "Sound/FootstepMonsterWalk.mp3");
+		audio.Register("FootstepMonsterRun", "Sound/FootstepMonsterRun.mp3");
+		audio.SetClipVolume("FootstepMonsterRun", 0.5f);
 		audio.SetMasterVolume(0.5f);
 	}
 } // namespace mtgb
