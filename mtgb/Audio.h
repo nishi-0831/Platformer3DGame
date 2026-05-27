@@ -6,6 +6,8 @@
 #include <map>
 #include <functional>
 #include <wrl/client.h>
+
+#pragma comment(lib, "xaudio2_8.lib")
 struct IXAudio2;
 struct IXAudio2MasteringVoice;
 struct IXAudio2SourceVoice;
@@ -40,6 +42,22 @@ namespace mtgb
 		/// <param name="_soundName">Registerで登録した識別子</param>
 		void Play(std::string_view _soundName);
 
+		/// <summary>
+		/// <para> 指定した音声クリップの音量を設定 </para>
+		/// <para> 0.0～1.0の範囲を指定</para>
+		/// <para> 既定では1.0</para>
+		/// </summary>
+		/// <param name="_soundName"></param>
+		/// <param name="_volume"></param>
+		void SetClipVolume(std::string_view _soundName, float _volume);
+
+		/// <summary>
+		/// <para> 最終的な音量を設定 </para>
+		/// <para> 0.0～1.0の範囲を指定</para>
+		/// <para> 既定では1.0</para>
+		/// </summary>
+		/// <param name="_volume"></param>
+		void SetMasterVolume(float _volume);
 	  private:
 		/// <summary>
 		/// 音声ファイルをロードする

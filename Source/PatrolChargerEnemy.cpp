@@ -367,4 +367,6 @@ void PatrolChargerEnemy::OnFootStep(const AnimationEvent& _event)
 	params.isLoop		 = false;
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
+
+	Game::System<Audio>().Play("MonsterFootstep");
 }

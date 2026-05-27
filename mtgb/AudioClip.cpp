@@ -200,6 +200,11 @@ float mtgb::AudioClip::GetTotalTimeSec() const
 	return pWaveData_->bufferSize / static_cast<float>(pWaveData_->waveFormat.nAvgBytesPerSec);
 }
 
+void mtgb::AudioClip::SetVolume(float _volume) 
+{
+	pSourceVoice_->SetVolume(_volume);
+}
+
 std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_view _filePath)
 {
 	//  REF: https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-createfilea

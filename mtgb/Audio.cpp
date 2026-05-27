@@ -1,5 +1,6 @@
 #include "Audio.h"
 #include <xaudio2.h>
+#include <xaudio2fx.h>
 #include <fileapi.h>
 #include "MTAssert.h"
 #include "AudioClip.h"
@@ -23,6 +24,10 @@ namespace mtgb
 		audio.Register("Jump", "Sound/Jump.mp3");
 		audio.Register("ItemGet", "Sound/ItemGetSound.mp3");
 		audio.Register("MoveCursor", "Sound/MoveCursor.mp3");
+		audio.Register("MinerFootstep", "Sound/MinerFootstep.mp3");
+		audio.Register("MonsterFootstep", "Sound/MonsterFootstep.mp3");
+		audio.SetClipVolume("MonsterFootstep", 0.5f);
+		audio.SetMasterVolume(0.5f);
 	}
 } // namespace mtgb
 
@@ -66,12 +71,29 @@ void mtgb::Audio::Initialize()
 		&& "XAudio2の作成に失敗 @Audio::Initialize"
 	);
 
-	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_);
+	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_,2);
 	massert(
 		SUCCEEDED(hResult) // MasteringVoiceの作成に成功
 		&& "MasteringVoiceの作成に失敗 @Audio::Initialize"
 	);
+	
+	XAUDIO2_VOICE_DETAILS voiceDetails;
+	pMasteringVoice_->GetVoiceDetails(&voiceDetails);
+	UINT channelCnt = voiceDetails.InputChannels;
 
+	// 音量制限用のAPOを作成
+	IUnknown* pLimiterAPO;
+	hResult = XAudio2CreateVolumeMeter(&pLimiterAPO);
+	massert(SUCCEEDED(hResult) && "VolumeMeterAPOの作成に失敗");
+
+	XAUDIO2_EFFECT_DESCRIPTOR desc {
+		.pEffect		= pLimiterAPO,
+		.InitialState	= TRUE,
+		.OutputChannels = 2, // ステレオ
+	};
+	XAUDIO2_EFFECT_CHAIN chain { .EffectCount = 1, .pEffectDescriptors = &desc };
+	hResult = pMasteringVoice_->SetEffectChain(&chain);
+	massert(SUCCEEDED(hResult) && "SetEffectChainに失敗");
 	RegisterAudios();
 }
 
@@ -84,6 +106,11 @@ void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePa
 		return;
 
 	audioClipMap_.emplace(_soundName, Load(_filePath));
+}
+
+void mtgb::Audio::SetMasterVolume(float _volume) 
+{
+	pMasteringVoice_->SetVolume(_volume);
 }
 
 mtgb::AudioClip* mtgb::Audio::Load(std::string_view _filePath)
@@ -100,4 +127,13 @@ void mtgb::Audio::Play(std::string_view _soundName)
 		return;
 
 	itr->second->Play();
+}
+
+void mtgb::Audio::SetClipVolume(std::string_view _soundName, float _volume) 
+{
+	auto itr = audioClipMap_.find(_soundName);
+	if (itr == audioClipMap_.end())
+		return;
+
+	itr->second->SetVolume(_volume);
 }

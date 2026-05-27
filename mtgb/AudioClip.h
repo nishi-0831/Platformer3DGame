@@ -34,7 +34,11 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		float GetTotalTimeSec() const;
-
+		/// <summary>
+		/// 音量を設定
+		/// </summary>
+		/// <param name="_volume"></param>
+		void SetVolume(float _volume);
 	  private:
 		AudioClip() = delete;
 		std::optional<mtbin::MemoryStream> GetMemoryStream(std::string_view _filePath);
