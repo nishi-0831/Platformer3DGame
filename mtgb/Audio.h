@@ -6,6 +6,8 @@
 #include <map>
 #include <functional>
 #include <wrl/client.h>
+#include <x3daudio.h>
+
 
 #pragma comment(lib, "xaudio2_8.lib")
 struct IXAudio2;
@@ -58,6 +60,9 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_volume"></param>
 		void SetMasterVolume(float _volume);
+
+		void SetListenerEntityId(EntityId _id);
+		void SetEmitter(EntityId _id, std::string_view _soundName);
 	  private:
 		/// <summary>
 		/// 音声ファイルをロードする
@@ -66,9 +71,16 @@ namespace mtgb
 		/// <returns>音声クリップ</returns>
 		AudioClip* Load(std::string_view _filePath);
 
+		void UpdateEmitter();
+		void UpdateListener();
+
 	  private:
 		ComPtr<IXAudio2> pXAudio2_;				  // XAudio2のインタフェース
+		X3DAUDIO_HANDLE x3DInstance_;
 		IXAudio2MasteringVoice* pMasteringVoice_; // 主ボイス
 		std::unordered_map<std::string, AudioClip*, TransparentStringHash, TransparentStringEq> audioClipMap_;
+		std::unordered_map<std::string, X3DAUDIO_EMITTER, TransparentStringHash, TransparentStringEq> emitterMap_;
+		X3DAUDIO_LISTENER listener_;
+		Transform* pListenerTransform_;
 	};
 } // namespace mtgb

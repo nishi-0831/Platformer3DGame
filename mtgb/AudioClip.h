@@ -11,7 +11,6 @@ using Microsoft::WRL::ComPtr;
 namespace mtgb
 {
 	struct WaveData;
-	class Audio;
 
 	/// <summary>
 	/// <para>音声クリップ (=音声データ)</para>
@@ -19,6 +18,7 @@ namespace mtgb
 	class AudioClip
 	{
 
+		friend class Audio;
 	  public:
 		AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2);
 		~AudioClip();

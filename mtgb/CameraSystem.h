@@ -46,10 +46,7 @@ namespace mtgb
 		/// 描画対象となるカメラを指定する
 		/// </summary>
 		/// <param name="_hCamera">指定するカメラのハンドル</param>
-		void SetDrawCamera(CameraHandleInScene _hCamera)
-		{
-			hCurrentCamera_ = _hCamera;
-		}
+		void SetDrawCamera(CameraHandleInScene _hCamera);
 		/// <summary>
 		/// 現在描画対象となっているカメラのハンドルを取得
 		/// </summary>

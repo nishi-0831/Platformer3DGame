@@ -9,7 +9,7 @@
 #include "WaveData.h"
 #include "GameTime.h"
 #include "Debug.h"
-
+#include "Transform.h"
 namespace mtgb
 {
 	/// <summary>
@@ -39,6 +39,7 @@ namespace mtgb
 mtgb::Audio::Audio()
 	: pXAudio2_ { nullptr }
 	, pMasteringVoice_ { nullptr }
+	, pListenerTransform_ {nullptr}
 {
 }
 
@@ -76,16 +77,12 @@ void mtgb::Audio::Initialize()
 		&& "XAudio2の作成に失敗 @Audio::Initialize"
 	);
 
-	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_,2);
+	hResult = pXAudio2_->CreateMasteringVoice(&pMasteringVoice_,1);
 	massert(
 		SUCCEEDED(hResult) // MasteringVoiceの作成に成功
 		&& "MasteringVoiceの作成に失敗 @Audio::Initialize"
 	);
 	
-	XAUDIO2_VOICE_DETAILS voiceDetails;
-	pMasteringVoice_->GetVoiceDetails(&voiceDetails);
-	UINT channelCnt = voiceDetails.InputChannels;
-
 	// 音量制限用のAPOを作成
 	IUnknown* pLimiterAPO;
 	hResult = XAudio2CreateVolumeMeter(&pLimiterAPO);
@@ -94,15 +91,24 @@ void mtgb::Audio::Initialize()
 	XAUDIO2_EFFECT_DESCRIPTOR desc {
 		.pEffect		= pLimiterAPO,
 		.InitialState	= TRUE,
-		.OutputChannels = 2, // ステレオ
+		.OutputChannels = 1, // モノラル
 	};
 	XAUDIO2_EFFECT_CHAIN chain { .EffectCount = 1, .pEffectDescriptors = &desc };
 	hResult = pMasteringVoice_->SetEffectChain(&chain);
 	massert(SUCCEEDED(hResult) && "SetEffectChainに失敗");
+
+	DWORD dwChannelMask;
+	pMasteringVoice_->GetChannelMask(&dwChannelMask);
+	X3DAudioInitialize(dwChannelMask, X3DAUDIO_SPEED_OF_SOUND, x3DInstance_);
+
 	RegisterAudios();
 }
 
-void mtgb::Audio::Update() {}
+void mtgb::Audio::Update() 
+{
+	UpdateListener();
+	UpdateEmitter();
+}
 
 void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {
@@ -118,11 +124,71 @@ void mtgb::Audio::SetMasterVolume(float _volume)
 	pMasteringVoice_->SetVolume(_volume);
 }
 
+void mtgb::Audio::SetListenerEntityId(EntityId _id) 
+{
+	pListenerTransform_ = &(Game::System<TransformCP>().Get(_id));
+}
+
+void mtgb::Audio::SetEmitter(EntityId _id, std::string_view _soundName) 
+{
+	auto itr = audioClipMap_.find(_soundName);
+	if (itr == audioClipMap_.end())
+		return;
+
+	Transform& transform = Game::System<TransformCP>().Get(_id);
+	X3DAUDIO_EMITTER* pEmitter = nullptr;
+	auto emitterItr			   = emitterMap_.find(_soundName);
+	if (emitterItr == emitterMap_.end())
+	{
+		pEmitter = &emitterItr->second;
+	}
+	else
+	{
+		pEmitter = &emitterMap_[std::string(_soundName)];
+	}
+
+	pEmitter->Position		   = transform.GetWorldPosition();
+	pEmitter->OrientFront	   = transform.Forward();
+	pEmitter->OrientTop		   = transform.Up();
+}
+
 mtgb::AudioClip* mtgb::Audio::Load(std::string_view _filePath)
 {
 	AudioClip* audioClip = new AudioClip(_filePath, pXAudio2_);
 
 	return audioClip;
+}
+
+void mtgb::Audio::UpdateEmitter() 
+{
+	XAUDIO2_VOICE_DETAILS voiceDetails;
+	pMasteringVoice_->GetVoiceDetails(&voiceDetails);
+
+	X3DAUDIO_DSP_SETTINGS dspSettings;
+	dspSettings.SrcChannelCount = voiceDetails.InputChannels;
+
+	for (auto [name, emitter] : emitterMap_)
+	{
+		AudioClip* clip					= audioClipMap_[name];
+		dspSettings.DstChannelCount		= clip->pWaveData_->waveFormat.nChannels;
+		FLOAT32* mat					= new FLOAT32[dspSettings.DstChannelCount * dspSettings.SrcChannelCount];
+		dspSettings.pMatrixCoefficients = mat;
+		X3DAudioCalculate(x3DInstance_, &listener_, &emitter, X3DAUDIO_CALCULATE_MATRIX, &dspSettings);
+		clip->pSourceVoice_
+			->SetOutputMatrix(pMasteringVoice_, 1, dspSettings.DstChannelCount, dspSettings.pMatrixCoefficients);
+		clip->pSourceVoice_->SetFrequencyRatio(dspSettings.DopplerFactor);
+	}
+}
+
+void mtgb::Audio::UpdateListener() 
+{
+	if (pListenerTransform_ == nullptr)
+		return;
+	listener_.OrientFront = pListenerTransform_->Forward();
+	listener_.OrientTop	  = pListenerTransform_->Up();
+	listener_.Position	  = pListenerTransform_->GetWorldPosition();
+
+	
 }
 
 void mtgb::Audio::Play(std::string_view _soundName)
