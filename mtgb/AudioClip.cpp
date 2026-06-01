@@ -32,7 +32,7 @@ mtgb::AudioClip::~AudioClip()
 	}
 }
 
-void mtgb::AudioClip::Play()
+void mtgb::AudioClip::Play(bool _loop)
 {
 	// 音声の再生を停止。そうしないとFlushSourceBuffersで消えない
 	pSourceVoice_->Stop(0, 0);
@@ -43,6 +43,11 @@ void mtgb::AudioClip::Play()
 							.pAudioData = pWaveData_->pBuffer,
 							.LoopCount	= 0 };
 
+	if (_loop)
+	{
+		buffer.LoopCount = XAUDIO2_LOOP_INFINITE;
+	}
+
 	HRESULT hResult = pSourceVoice_->SubmitSourceBuffer(&buffer);
 	if (FAILED(hResult))
 	{
@@ -51,6 +56,12 @@ void mtgb::AudioClip::Play()
 	}
 
 	pSourceVoice_->Start();
+}
+
+void mtgb::AudioClip::Stop() 
+{
+	pSourceVoice_->Stop(0, 0);
+	pSourceVoice_->FlushSourceBuffers();
 }
 
 void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)

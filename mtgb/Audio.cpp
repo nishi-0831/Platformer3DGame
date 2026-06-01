@@ -31,7 +31,12 @@ namespace mtgb
 		audio.Register("MinerFootstep", "Sound/MinerFootstep.mp3");
 		audio.Register("FootstepMonsterWalk", "Sound/FootstepMonsterWalk.mp3");
 		audio.Register("FootstepMonsterRun", "Sound/FootstepMonsterRun.mp3");
-		audio.SetClipVolume("FootstepMonsterRun", 0.7f);
+		audio.SetClipVolume("FootstepMonsterRun", 0.5f);
+		audio.SetClipVolume("TitleScene", 0.2f);
+		audio.SetClipVolume("PlayScene", 0.1f);
+		audio.SetClipVolume("GameOver", 0.5f);
+		audio.SetClipVolume("GameClear", 0.5f);
+
 		audio.SetMasterVolume(0.5f);
 	}
 } // namespace mtgb
@@ -222,13 +227,13 @@ void mtgb::Audio::UpdateListener()
 	listener_.Position	  = pListenerTransform_->GetWorldPosition();
 }
 
-void mtgb::Audio::Play(std::string_view _soundName)
+void mtgb::Audio::Stop(std::string_view _soundName)
 {
 	auto itr = audioClipMap_.find(_soundName);
 	if (itr == audioClipMap_.end())
 		return;
 
-	itr->second->Play();
+	itr->second->Stop();
 }
 
 void mtgb::Audio::SetClipVolume(std::string_view _soundName, float _volume)

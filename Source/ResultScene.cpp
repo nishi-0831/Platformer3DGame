@@ -43,11 +43,13 @@ void ResultScene::Initialize()
 	// クリアしているかによって表示する画像を変える
 	if (clearedStage)
 	{
+		Game::System<Audio>().Play("GameClear");
 		hTitleImage = Image::Load("Image/ClearImage.png");
 		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_CLEAR_SCENE);
 	}
 	else
 	{
+		Game::System<Audio>().Play("GameOver");
 		hTitleImage = Image::Load("Image/GameOverImage.png");
 		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
 	}
