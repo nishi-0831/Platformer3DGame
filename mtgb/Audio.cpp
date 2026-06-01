@@ -227,6 +227,15 @@ void mtgb::Audio::UpdateListener()
 	listener_.Position	  = pListenerTransform_->GetWorldPosition();
 }
 
+void mtgb::Audio::Play(std::string_view _soundName, bool _loop)
+{
+	auto itr = audioClipMap_.find(_soundName);
+	if (itr == audioClipMap_.end())
+		return;
+
+	itr->second->Play(_loop);
+}
+
 void mtgb::Audio::Stop(std::string_view _soundName)
 {
 	auto itr = audioClipMap_.find(_soundName);
