@@ -378,9 +378,8 @@ void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 	Game::System<Audio>().Play("FootstepMonsterRun");
 }
 
-void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event) 
+void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event)
 {
 	Game::System<Audio>().Play("FootstepMonsterWalk");
-
-	Game::System<Audio>().SetEmitter(GetEntityId(), "MonsterFootstep");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk");
 }

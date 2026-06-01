@@ -85,10 +85,9 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* _pCameraTransform
 	}
 }
 
-void mtgb::CameraSystem::SetDrawCamera(CameraHandleInScene _hCamera) 
+void mtgb::CameraSystem::SetDrawCamera(CameraHandleInScene _hCamera)
 {
 	hCurrentCamera_ = _hCamera;
-	Game::System<Audio>().SetListenerEntityId(GetTransform().GetEntityId());
 }
 
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, const WorldToScreenData& _data) const
@@ -142,7 +141,7 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCamera) const
 {
-	//massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
+	// massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
 
 	Transform* pTransform { pTransforms_[_hCamera] };
 

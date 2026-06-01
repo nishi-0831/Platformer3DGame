@@ -8,7 +8,6 @@
 #include <wrl/client.h>
 #include <x3daudio.h>
 
-
 #pragma comment(lib, "xaudio2_8.lib")
 struct IXAudio2;
 struct IXAudio2MasteringVoice;
@@ -18,6 +17,12 @@ namespace mtgb
 {
 	class AudioClip;
 	struct WaveData;
+
+	struct AudioEmitter
+	{
+		X3DAUDIO_EMITTER x3DEmitter;
+		EntityId emitterId;
+	};
 
 	class Audio : public ISystem
 	{
@@ -63,6 +68,7 @@ namespace mtgb
 
 		void SetListenerEntityId(EntityId _id);
 		void SetEmitter(EntityId _id, std::string_view _soundName);
+
 	  private:
 		/// <summary>
 		/// 音声ファイルをロードする
@@ -75,12 +81,20 @@ namespace mtgb
 		void UpdateListener();
 
 	  private:
-		ComPtr<IXAudio2> pXAudio2_;				  // XAudio2のインタフェース
+		ComPtr<IXAudio2> pXAudio2_; // XAudio2のインタフェース
 		X3DAUDIO_HANDLE x3DInstance_;
 		IXAudio2MasteringVoice* pMasteringVoice_; // 主ボイス
 		std::unordered_map<std::string, AudioClip*, TransparentStringHash, TransparentStringEq> audioClipMap_;
-		std::unordered_map<std::string, X3DAUDIO_EMITTER, TransparentStringHash, TransparentStringEq> emitterMap_;
+		std::unordered_map<std::string, AudioEmitter, TransparentStringHash, TransparentStringEq> emitterMap_;
 		X3DAUDIO_LISTENER listener_;
+		// 音量減衰の度合い。曲線で定義する
+		X3DAUDIO_DISTANCE_CURVE volumeCurve_;
 		Transform* pListenerTransform_;
+		// 音量の減衰計算に使う距離。この値を1.0として音量を減衰させる
+
+		inline static constexpr int CONTROL_POINT_COUNT { 3 };
+		float attenuationVolumeDistance_;
+		float volumeControlPointCount_;
+		X3DAUDIO_DISTANCE_CURVE_POINT volumePoints[CONTROL_POINT_COUNT];
 	};
 } // namespace mtgb
