@@ -31,6 +31,8 @@ namespace mtgb
 		audio.Register("MinerFootstep", "Sound/MinerFootstep.mp3");
 		audio.Register("FootstepMonsterWalk", "Sound/FootstepMonsterWalk.mp3");
 		audio.Register("FootstepMonsterRun", "Sound/FootstepMonsterRun.mp3");
+		audio.Register("Saw", "Sound/Saw.mp3");
+		audio.SetClipVolume("Saw", 0.5f);
 		audio.SetClipVolume("FootstepMonsterRun", 0.5f);
 		audio.SetClipVolume("TitleScene", 0.2f);
 		audio.SetClipVolume("PlayScene", 0.1f);
@@ -243,6 +245,14 @@ void mtgb::Audio::Stop(std::string_view _soundName)
 		return;
 
 	itr->second->Stop();
+}
+
+void mtgb::Audio::StopAll()
+{
+	for (auto itr = audioClipMap_.begin(); itr != audioClipMap_.end(); itr++)
+	{
+		itr->second->Stop();
+	}
 }
 
 void mtgb::Audio::SetClipVolume(std::string_view _soundName, float _volume)

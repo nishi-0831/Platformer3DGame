@@ -55,6 +55,10 @@ namespace mtgb
 		/// <param name="_soundName"></param>
 		void Stop(std::string_view _soundName);
 		/// <summary>
+		/// 再生中の全音声を停止する
+		/// </summary>
+		void StopAll();
+		/// <summary>
 		/// <para> 指定した音声クリップの音量を設定 </para>
 		/// <para> 0.0～1.0の範囲を指定</para>
 		/// <para> 既定では1.0</para>

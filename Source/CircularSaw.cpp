@@ -27,6 +27,7 @@ mtgb::CircularSaw::CircularSaw()
 
 mtgb::CircularSaw::~CircularSaw()
 {
+	Game::System<Audio>().Stop("Saw");
 	pSaw_->DestroyMe();
 }
 
@@ -96,11 +97,16 @@ void mtgb::Saw::Update()
 	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
 	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
+
+	Game::System<Audio>().SetEmitter(GetEntityId(), "Saw");
 }
 
 void mtgb::Saw::Draw() const {}
 
-void mtgb::Saw::Start() {}
+void mtgb::Saw::Start()
+{
+	Game::System<Audio>().Play("Saw", true);
+}
 
 void mtgb::Saw::ShowImGui()
 {

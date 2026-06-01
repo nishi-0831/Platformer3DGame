@@ -76,6 +76,7 @@ void Goal::ShowImGui()
 
 void Goal::OnClear()
 {
+	Game::System<Audio>().StopAll();
 	Game::System<Audio>().Play("GetTreasure");
 
 	Timer::AddAram(
