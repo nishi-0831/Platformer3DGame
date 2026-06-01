@@ -26,6 +26,13 @@ SampleScene::~SampleScene() {}
 void SampleScene::Initialize()
 {
 	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
+	mtgb::Game::System<mtgb::Audio>().Play("PlayScene", true);
+	mtgb::Game::System<mtgb::SceneSystem>().OnMove(
+		[]()
+		{
+			mtgb::Game::System<mtgb::Audio>().Stop("PlayScene");
+		}
+	);
 
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();

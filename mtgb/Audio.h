@@ -42,8 +42,13 @@ namespace mtgb
 		/// <para> 登録されていない識別子が渡された場合は何も起こらない </para>
 		/// </summary>
 		/// <param name="_soundName">Registerで登録した識別子</param>
-		void Play(std::string_view _soundName);
-
+		/// <param name="_loop">ループをするか否か</param>
+		void Play(std::string_view _soundName,bool _loop = false);
+		/// <summary>
+		/// 指定した音声の再生を停止する
+		/// </summary>
+		/// <param name="_soundName"></param>
+		void Stop(std::string_view _soundName);
 		/// <summary>
 		/// <para> 指定した音声クリップの音量を設定 </para>
 		/// <para> 0.0～1.0の範囲を指定</para>
