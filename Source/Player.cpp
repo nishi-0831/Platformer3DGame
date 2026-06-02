@@ -70,6 +70,8 @@ Player::~Player() {}
 
 void Player::Update()
 {
+	Game::System<Audio>().SetListenerEntityId(GetEntityId());
+
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
 		UpdatePosition();
@@ -260,10 +262,13 @@ void Player::Start()
 	state_.Change(STATE::IDLE);
 	pHPViewer_ = Instantiate<HPViewer>(hp_);
 
-	animController_.value().SetEventCallback("Footstep", [this](const AnimationEvent& _evt) 
+	animController_.value().SetEventCallback(
+		"Footstep",
+		[this](const AnimationEvent& _evt)
 		{
 			OnFootstep(_evt);
-		});
+		}
+	);
 }
 
 void Player::ShowImGui()
@@ -361,7 +366,7 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	}
 }
 
-void Player::OnFootstep(const AnimationEvent& _event) 
+void Player::OnFootstep(const AnimationEvent& _event)
 {
 	Game::System<Audio>().Play("MinerFootstep");
 }
