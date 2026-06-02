@@ -11,7 +11,6 @@ using Microsoft::WRL::ComPtr;
 namespace mtgb
 {
 	struct WaveData;
-	class Audio;
 
 	/// <summary>
 	/// <para>音声クリップ (=音声データ)</para>
@@ -19,6 +18,7 @@ namespace mtgb
 	class AudioClip
 	{
 
+		friend class Audio;
 	  public:
 		AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2);
 		~AudioClip();
@@ -27,8 +27,12 @@ namespace mtgb
 		/// <para> 音声を再生する </para>
 		/// <para> 再生中の音声は停止、削除される </para>
 		/// </summary>
-		void Play();
-
+		/// <param name="_loop"> ループ再生をするか否か </param>
+		void Play(bool _loop);
+		/// <summary>
+		/// 音声の再生を停止する
+		/// </summary>
+		void Stop();
 		/// <summary>
 		/// 音声データの総再生時間(秒)を取得
 		/// </summary>

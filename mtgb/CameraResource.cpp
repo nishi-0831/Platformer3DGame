@@ -16,6 +16,8 @@ mtgb::CameraResource::~CameraResource() {}
 
 void mtgb::CameraResource::SetResource()
 {
+	if (hCamera_ == INVALID_HANDLE)
+		return;
 	// カメラ管理クラスに、カメラのハンドルを登録
 	Game::System<CameraSystem>().SetDrawCamera(hCamera_);
 }

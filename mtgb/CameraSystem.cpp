@@ -11,6 +11,7 @@
 #include "Direct3DResource.h"
 #include "CameraResource.h"
 #include "MTImGui.h"
+#include "Audio.h"
 namespace
 {
 	constexpr float DEFAULT_FOV { 60.0f };	   // デフォルトの視野角 (Field Of View)
@@ -45,8 +46,8 @@ mtgb::CameraHandleInScene mtgb::CameraSystem::RegisterDrawCamera(Transform* _pCa
 	if (pTransforms_.size() == 0)
 	{
 		handle = 0;
-		SetDrawCamera(handle);
 		pTransforms_.push_back(_pCameraTransform);
+		SetDrawCamera(handle);
 		return handle;
 	}
 
@@ -82,6 +83,11 @@ void mtgb::CameraSystem::UnregisterDrawCamera(const Transform* _pCameraTransform
 			return; // 一致したらnullptrにして回帰
 		}
 	}
+}
+
+void mtgb::CameraSystem::SetDrawCamera(CameraHandleInScene _hCamera)
+{
+	hCurrentCamera_ = _hCamera;
 }
 
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, const WorldToScreenData& _data) const
@@ -135,7 +141,7 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCamera) const
 {
-	massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
+	// massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
 
 	Transform* pTransform { pTransforms_[_hCamera] };
 
