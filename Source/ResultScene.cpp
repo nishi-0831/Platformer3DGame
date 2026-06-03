@@ -91,7 +91,7 @@ void ResultScene::CreatePanel()
 {
 	GameScene* pCurrScene = Game::System<SceneSystem>().GetActiveScene();
 
-	MenuItem* pItem = pCurrScene->Instantiate<MenuItem>();
+	Button* pItem = pCurrScene->Instantiate<Button>();
 	pItem->SetOnPressed(
 		[]()
 		{
@@ -101,7 +101,7 @@ void ResultScene::CreatePanel()
 	pItem->SetText("Return To Title");
 	pItem->SetRect({ 290, 490, 220, 60 });
 	Panel* pPanel = pCurrScene->Instantiate<Panel>();
-	pPanel->AddMenuItem(pItem);
+	pPanel->AddUIComponent(pItem);
 
 	panelManager_.AddPanel("ResultMenu", pPanel);
 	panelManager_.EnablePanel("ResultMenu");

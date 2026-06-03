@@ -54,11 +54,6 @@ void PanelManager::MoveForcusForward()
 	pCurrPanel_->DecrementIndex();
 }
 
-void PanelManager::PressCurrentPanel()
-{
-	pCurrPanel_->Press();
-}
-
 void PanelManager::UpdatePanel() 
 {
 	using namespace mtgb;
@@ -72,8 +67,5 @@ void PanelManager::UpdatePanel()
 	{
 		MoveForcusForward();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::ENTER) || InputUtil::GetGamePadDown(PadCode::CIRCLE))
-	{
-		PressCurrentPanel();
-	}
+	pCurrPanel_->UpdateUI();
 }

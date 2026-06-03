@@ -3,23 +3,26 @@
 #include <string>
 #include <type_traits>
 #include <mtgb.h>
-class MenuItem : public GameObject
+#include "UIComponent.h"
+class Button : public UIComponent
 {
   public:
-	MenuItem();
+	Button();
+
 	void SetRect(const RectF& _rect);
 	void OnPressed();
 	void SetText(std::string_view _text);
-	void OnSelected();
-	void OnDeselected();
+	virtual void OnSelected();
+	virtual void OnDeselected();
 	template <typename T>
 		requires std::is_invocable_v<T>
 	void SetOnPressed(T&& _func)
 	{
 		onPressed_ = std::forward<T>(_func);
 	}
-	void Enable();
-	void Disable();
+	void UpdateUI() override;
+	void OnEnable() override;
+	void OnDisable() override;
   private:
 	mtgb::ImageRenderer* pImageRenderer_;
 	mtgb::TextRenderer* pTextRenderer_;

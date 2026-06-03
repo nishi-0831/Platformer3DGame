@@ -50,6 +50,8 @@ void TitleScene::Initialize()
 	Instantiate<mtgb::SkySphere>();
 
 	CreatePanel();
+
+	
 }
 
 void TitleScene::Update()
@@ -83,7 +85,7 @@ void TitleScene::CreatePanel()
 	Vector2F screenSize		= Game::System<Screen>().GetSizeF();
 	pImgRenderer->drawRect_ = RectF { 0, 0, screenSize.x, 500 };
 	{
-		MenuItem* pItem1 = pCurrScene->Instantiate<MenuItem>();
+		Button* pItem1 = pCurrScene->Instantiate<Button>();
 		pItem1->SetOnPressed(
 			[]()
 			{
@@ -93,7 +95,7 @@ void TitleScene::CreatePanel()
 		pItem1->SetText("Start Game");
 		pItem1->SetRect({ 290, 360, 220, 60 });
 
-		MenuItem* pItem2 = pCurrScene->Instantiate<MenuItem>();
+		Button* pItem2 = pCurrScene->Instantiate<Button>();
 		pItem2->SetOnPressed(
 			[this]()
 			{
@@ -109,14 +111,14 @@ void TitleScene::CreatePanel()
 		pItem2->SetRect({ 290, 490, 220, 60 });
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
-		pPanel->AddMenuItem(pItem1);
-		pPanel->AddMenuItem(pItem2);
+		pPanel->AddUIComponent(pItem1);
+		pPanel->AddUIComponent(pItem2);
 
 		panelManager_.AddPanel("TitleMenu", pPanel);
 	}
 
 	{
-		MenuItem* pItem1 = pCurrScene->Instantiate<MenuItem>();
+		Button* pItem1 = pCurrScene->Instantiate<Button>();
 		pItem1->SetOnPressed(
 			[this]()
 			{
@@ -132,7 +134,7 @@ void TitleScene::CreatePanel()
 		pItem1->SetRect({ 118, 500, 565, 100 });
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
-		pPanel->AddMenuItem(pItem1);
+		pPanel->AddUIComponent(pItem1);
 		panelManager_.AddPanel("HowToPlay", pPanel);
 	}
 	panelManager_.EnablePanel("TitleMenu");
