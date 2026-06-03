@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "QuaternionCamera.h"
+#include "ProfileUtlity.h"
 
 mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	: GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("Camera").Build())
@@ -9,7 +10,7 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, lookAtPositionOffset_ { Vector3 { 0, 2, 0 } }
 	, rotationSpeedDegPerSec_ { 60.0f }
 	, distance_ { 8.0f }
-	, inputType_ { InputType::JOYPAD }
+	, inputType_ { InputType::MOUSE }
 	, minPitchAngleDeg_ { -5.0f }
 	, maxPitchAngleDeg_ { 80.0f }
 	, currentLerpSpeed_ { 0.01f }
@@ -17,9 +18,13 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, lerpSpeedOnDescending_ { 0.1f }
 	, lerpSpeedOnGrounded_ { 0.3f }
 {
+	rotationSpeedDegPerSec_ = ProfileInt::Load().Section("GAME").Param("CameraSpeed").InitValue(60).Get();
 }
 
-mtgb::QuaternionCamera::~QuaternionCamera() {}
+mtgb::QuaternionCamera::~QuaternionCamera() 
+{
+	ProfileInt::Load().Section("Game").Param("CameraSpeed").Write(static_cast<int>(rotationSpeedDegPerSec_));
+}
 
 void mtgb::QuaternionCamera::Update()
 {

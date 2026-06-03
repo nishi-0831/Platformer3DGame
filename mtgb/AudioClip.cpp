@@ -26,6 +26,7 @@ mtgb::AudioClip::~AudioClip()
 	if (pSourceVoice_ != nullptr)
 	{
 		pSourceVoice_->Stop(0);
+		pSourceVoice_->SetOutputVoices(nullptr);
 		pSourceVoice_->FlushSourceBuffers();
 		pSourceVoice_->DestroyVoice();
 		pSourceVoice_ = nullptr;

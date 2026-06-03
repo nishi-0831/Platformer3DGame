@@ -1,6 +1,6 @@
 #pragma once
 #include "IncludingWindows.h"
-
+#include <string>
 namespace mtgb
 {
 	template <typename T, class ExtendT> class IProfile
@@ -26,7 +26,7 @@ namespace mtgb
 			return Extend();
 		}
 		virtual inline const T Get() const = 0;
-
+		virtual void Write(T _value) = 0;
 		static inline ExtendT Load()
 		{
 			return ExtendT {};
@@ -52,6 +52,13 @@ namespace mtgb
 		inline const int Get() const override
 		{
 			return GetPrivateProfileInt(section_, param_, initValue_, PATH);
+		}
+		void Write(int _value) override
+		{
+			WritePrivateProfileString(section_,
+				param_,
+				std::to_string(_value).data(),
+				PATH);
 		}
 	};
 
