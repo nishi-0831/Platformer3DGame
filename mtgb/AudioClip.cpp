@@ -22,7 +22,6 @@ mtgb::AudioClip::AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio
 
 mtgb::AudioClip::~AudioClip()
 {
-	SAFE_DELETE(pWaveData_);
 	if (pSourceVoice_ != nullptr)
 	{
 		pSourceVoice_->Stop(0);
@@ -31,6 +30,7 @@ mtgb::AudioClip::~AudioClip()
 		pSourceVoice_->DestroyVoice();
 		pSourceVoice_ = nullptr;
 	}
+	SAFE_DELETE(pWaveData_);
 }
 
 void mtgb::AudioClip::Play(bool _loop)
@@ -59,7 +59,7 @@ void mtgb::AudioClip::Play(bool _loop)
 	pSourceVoice_->Start();
 }
 
-void mtgb::AudioClip::Stop() 
+void mtgb::AudioClip::Stop()
 {
 	pSourceVoice_->Stop(0, 0);
 	pSourceVoice_->FlushSourceBuffers();
@@ -212,7 +212,7 @@ float mtgb::AudioClip::GetTotalTimeSec() const
 	return pWaveData_->bufferSize / static_cast<float>(pWaveData_->waveFormat.nAvgBytesPerSec);
 }
 
-void mtgb::AudioClip::SetVolume(float _volume) 
+void mtgb::AudioClip::SetVolume(float _volume)
 {
 	pSourceVoice_->SetVolume(_volume);
 }

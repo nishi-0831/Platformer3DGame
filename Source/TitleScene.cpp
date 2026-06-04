@@ -5,6 +5,7 @@
 #include "../Source/SkySphere.h"
 #include "../Source/StageManager.h"
 #include "../Source/ResultScene.h"
+#include "Slider.h"
 namespace
 {
 	// 118,90 , 565,100
@@ -50,8 +51,6 @@ void TitleScene::Initialize()
 	Instantiate<mtgb::SkySphere>();
 
 	CreatePanel();
-
-	
 }
 
 void TitleScene::Update()
@@ -64,7 +63,7 @@ void TitleScene::Draw() const
 	Draw::Image(hTitleImage, draw);
 	Draw::Image(hBackgroundImage, { 50, 550, 200, 50 });
 	Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
-	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 },24);
+	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 }, 24);
 
 	Draw::Image(hBackgroundImage, { 500, 550, 150, 50 });
 	Draw::Image(hEastButtonImg, { 500, 550, 50, 50 });
@@ -113,6 +112,10 @@ void TitleScene::CreatePanel()
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
 		pPanel->AddUIComponent(pItem1);
 		pPanel->AddUIComponent(pItem2);
+
+		Slider* pSlider = pCurrScene->Instantiate<Slider>();
+		pSlider->SetRect({ 60, 100, 50, 50 });
+		pPanel->AddUIComponent(pSlider);
 
 		panelManager_.AddPanel("TitleMenu", pPanel);
 	}

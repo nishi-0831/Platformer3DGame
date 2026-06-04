@@ -23,11 +23,11 @@ class Button : public UIComponent
 	void UpdateUI() override;
 	void OnEnable() override;
 	void OnDisable() override;
+
   private:
 	mtgb::ImageRenderer* pImageRenderer_;
 	mtgb::TextRenderer* pTextRenderer_;
 	std::function<void()> onPressed_;
-	bool isSelected_;
 	RectF rect_;
 	static ImageHandle hImageOnSelected_;
 	static ImageHandle hImageOnNotSelected_;
