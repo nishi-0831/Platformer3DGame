@@ -6,6 +6,7 @@
 #include "../Source/StageManager.h"
 #include "../Source/ResultScene.h"
 #include "Slider.h"
+#include "Button.h"
 namespace
 {
 	// 118,90 , 565,100
@@ -114,7 +115,8 @@ void TitleScene::CreatePanel()
 		pPanel->AddUIComponent(pItem2);
 
 		Slider* pSlider = pCurrScene->Instantiate<Slider>();
-		pSlider->SetRect({ 60, 100, 50, 50 });
+		pSlider->SetRect({ 60, 60, 300, 50 });
+		pSlider->SetLabel("Slider");
 		pPanel->AddUIComponent(pSlider);
 
 		panelManager_.AddPanel("TitleMenu", pPanel);

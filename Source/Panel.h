@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 #include <vector>
-#include "MenuItem.h"
+#include "UIComponent.h"
 
 class Panel : public GameObject
 {
