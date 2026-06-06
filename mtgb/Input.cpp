@@ -2,22 +2,18 @@
 #include "IncludingWindows.h"
 #include "IncludingInput.h"
 #include "InputData.h"
-#include "ReleaseUtility.h"
 #include "MTAssert.h"
-#include "DoubleWindow.h"
-#include "InputResource.h"
 #include <algorithm>
 #include "Game.h"
-#include "ISystem.h"
+#include "SceneSystem.h"
 #include "Debug.h"
-#include "ImGui/imgui.h"
 #include "Timer.h"
 
 namespace
 {
-	static const size_t KEY_BUFFER_SIZE { 256 };
+	const size_t KEY_BUFFER_SIZE { 256 };
 
-	float acquireInterval = 10.0f;
+	const float ENUM_INTERVAL { 3.0f };
 
 	const DWORD VENDOR_ID_DUAL_SHOCK { 0x54c };
 	const DWORD VENDOR_ID_XBOX { 0x45E };
@@ -35,6 +31,7 @@ void mtgb::Input::AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 	{
 		case DI_OK :   // 取得できた
 		case S_FALSE : // 他のアプリも許可を取得している
+			LOGIMGUI("Acquire Joystick");
 			break;
 		case DIERR_OTHERAPPHASPRIO : // 他のアプリが優先権を持っている
 			return;
@@ -90,6 +87,14 @@ void mtgb::Input::Initialize()
 	massert(
 		SUCCEEDED(hResult) // DirectInput8のデバイス作成に成功
 		&& "DirectInput8のデバイス作成に失敗 @Input::Initialize"
+	);
+	// 起動時、遷移時のシーンで定期的にジョイスティックの取得を試みるよう設定
+	Game::System<Input>().ScheduleJoystickEnum();
+	Game::System<SceneSystem>().OnMove(
+		[]
+		{
+			Game::System<Input>().ScheduleJoystickEnum();
+		}
 	);
 }
 
@@ -192,39 +197,6 @@ void mtgb::Input::UpdateJoystickDevice()
 	}
 }
 
-void mtgb::Input::UpdateGamePadDevice()
-{
-	// アクティブなコントローラがなければ、リターン。
-	{
-		bool IS_GAMEPAD_DETECTED = std::any_of(
-			pInputData_->activeGamePadID.begin(),
-			pInputData_->activeGamePadID.end(),
-			[](std::pair<const PadIDState, int> _id)
-			{
-				return _id.second != -1;
-			}
-		);
-		if (not(IS_GAMEPAD_DETECTED))
-		{
-			CheckValidPadID();
-		}
-	}
-
-	// コントローラの割り当て
-	// 無効なIDであれば書き換え
-	// 割り当てたIDのキーをASSIGNEDにする
-	//
-
-	for (int i = 0; i < XUSER_MAX_COUNT; i++)
-	{
-		// PreviousにCurrentの状態をコピー
-		memcpy(&pInputData_->gamePadStatePrevious_[i], &pInputData_->gamePadStateCurrent_[i], sizeof(_XINPUT_STATE));
-
-		// 現在のコントローラーの状態を取得
-		XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]); // ここでエラー処理!
-	}
-}
-
 void mtgb::Input::Release()
 {
 	pMouseDevice_.Reset();
@@ -322,23 +294,6 @@ void mtgb::Input::ChangeInputData(InputData* _pInputData)
 	pInputData_ = _pInputData;
 }
 
-void mtgb::Input::CheckValidPadID()
-{
-	for (int i = 0; i < XUSER_MAX_COUNT; i++)
-	{
-		DWORD result = XInputGetState(i, &pInputData_->gamePadStateCurrent_[i]);
-
-		if (result == ERROR_SUCCESS)
-		{
-			pInputData_->activeGamePadID.insert(std::make_pair(PadIDState::UNASSIGNED, i));
-		}
-		else
-		{
-			pInputData_->activeGamePadID.insert(std::make_pair(PadIDState::INVALID, i));
-		}
-	}
-}
-
 void mtgb::Input::ChangeJoystickDevice(ComPtr<IDirectInputDevice8> _pJoystickDevice)
 {
 	pJoystickDevice_ = _pJoystickDevice;
@@ -402,13 +357,11 @@ void mtgb::Input::EnumJoystick()
 void mtgb::Input::RequestJoystickDevice(const JoystickReservation& _reservation)
 {
 	requestedJoystickDevices_.push_back(_reservation);
-	StartEnumTimer();
 }
 
 void mtgb::Input::RequestJoystickDevice(JoystickReservation&& _reservation)
 {
 	requestedJoystickDevices_.push_back(std::move(_reservation));
-	StartEnumTimer();
 }
 
 void mtgb::Input::AssignJoystickToReservation(
@@ -436,8 +389,6 @@ void mtgb::Input::AssignJoystickToReservation(
 
 	if (reservation.onAssign)
 		reservation.onAssign(itr->second.device, guid);
-
-	// SetAcquireInterval(guid, itr->second.device);
 }
 
 void mtgb::Input::UnregisterJoystickGuid(GUID _guid)
@@ -451,16 +402,19 @@ bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 	return assignedJoystickGuids_.insert(_guid).second;
 }
 
-void mtgb::Input::SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device)
+void mtgb::Input::ScheduleJoystickEnum()
 {
-	TimerHandle hTimer = Timer::AddInterval(
-		acquireInterval,
-		[&]()
+	if (enumTimerHandle_)
+	{
+		Timer::Remove(enumTimerHandle_);
+	}
+	enumTimerHandle_ = Timer::AddInterval(
+		ENUM_INTERVAL,
+		[this]()
 		{
-			AcquireJoystick(_device);
+			EnumJoystick();
 		}
 	);
-	joystickContext_[_guid].timerHandle = hTimer;
 }
 
 bool mtgb::Input::IsNotSubscribed()
@@ -639,38 +593,6 @@ bool mtgb::Input::IsJoystickConnected(GUID _guid) const
 bool mtgb::Input::IsJoystickAssigned(GUID _guid) const
 {
 	return (joystickContext_.find(_guid) != joystickContext_.end());
-}
-
-void mtgb::Input::StartEnumTimer()
-{
-	if (!enumTimerHandle_ || IsNotSubscribed())
-		return;
-
-	enumTimerHandle_ = Timer::AddInterval(
-		enumInterval_,
-		[this]()
-		{
-			AutoEnum();
-		}
-	);
-}
-
-void mtgb::Input::StopEnumTimer()
-{
-	if (!enumTimerHandle_)
-		return;
-	Timer::Remove(enumTimerHandle_);
-	enumTimerHandle_ = nullptr;
-}
-
-void mtgb::Input::AutoEnum()
-{
-	if (IsNotSubscribed())
-	{
-		StopEnumTimer();
-		return;
-	}
-	EnumJoystick();
 }
 
 void mtgb::Input::SetProperty(ComPtr<IDirectInputDevice8> _pJoystickDevice, InputConfig _inputConfig)

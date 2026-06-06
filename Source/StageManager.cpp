@@ -1,26 +1,36 @@
 #include "stdafx.h"
 #include "StageManager.h"
+
 #include <fstream>
 
-void StageManger::Initialize()
+nlohmann::json GetJson(const char* _path)
 {
-	std::string fileName = "data9.json";
-	std::ifstream inputFile(fileName);
-	nlohmann::json j;
+	std::ifstream inputFile(_path);
+	massert(inputFile.is_open() && "failed to open JSON");
+
+	nlohmann::json ret;
 	try
 	{
-		inputFile >> j;
+		inputFile >> ret;
 	}
 	catch (const nlohmann::json::parse_error& e)
 	{
-		assert(false);
+		massert(false && e.what());
 	}
-	stageJsons_[StageID::STAGE_ONE] = j;
+	return ret;
 }
 
-void StageManger::Update() {}
+void StageManager::Initialize()
+{
+	stageJsons_[StageID::STAGE_ONE]				= GetJson("data9.json");
+	stageJsons_[StageID::STAGE_CLEAR_SCENE]		= GetJson("result_scene.json");
+	stageJsons_[StageID::STAGE_GAME_OVER_SCENE] = GetJson("game_over_scene.json");
+	stageJsons_[StageID::STAGE_TITLE_SCENE]		= GetJson("title_scene.json");
+}
 
-std::optional<nlohmann::json> StageManger::GetStageJson(StageID _stageID)
+void StageManager::Update() {}
+
+std::optional<nlohmann::json> StageManager::GetStageJson(StageID _stageID)
 {
 	if (stageJsons_.contains(_stageID))
 	{
@@ -29,38 +39,38 @@ std::optional<nlohmann::json> StageManger::GetStageJson(StageID _stageID)
 	return std::nullopt;
 }
 
-void StageManger::InitializeStage(StageID _stageID)
+void StageManager::InitializeStage(StageID _stageID)
 {
 	stageCleared_[_stageID] = false;
 }
 
-void StageManger::StartStage(StageID _stageID)
+void StageManager::StartStage(StageID _stageID)
 {
 	InitializeStage(_stageID);
 	currStage_ = _stageID;
 }
 
-bool StageManger::IsCleared(StageID _stageID)
+bool StageManager::IsCleared(StageID _stageID)
 {
 	return stageCleared_[_stageID];
 }
 
-bool StageManger::IsClearedCurrentStage()
+bool StageManager::IsClearedCurrentStage()
 {
 	return stageCleared_[currStage_];
 }
 
-void StageManger::ClearStage(StageID _stageID)
+void StageManager::ClearStage(StageID _stageID)
 {
 	stageCleared_[_stageID] = true;
 }
 
-void StageManger::ClearCurrentStage()
+void StageManager::ClearCurrentStage()
 {
 	stageCleared_[currStage_] = true;
 }
 
-StageID StageManger::GetCurrentStage()
+StageID StageManager::GetCurrentStage()
 {
 	return currStage_;
 }

@@ -24,7 +24,7 @@ void mtgb::ImageRenderer::Render() const
 
 bool mtgb::ImageRenderer::CanRender() const
 {
-	return handle_ != INVALID_ENTITY;
+	return (handle_ != INVALID_ENTITY) && enabled_;
 }
 
 GameObjectLayerFlag mtgb::ImageRenderer::GetLayer() const

@@ -27,9 +27,10 @@ namespace mtgb
 		{
 			return pInputData_;
 		}
-		InputData* pInputData_;
 
 	  private:
+		void UpdateStickTiltState();
+		InputData* pInputData_;
 		std::string name_;
 		ComPtr<IDirectInputDevice8> pKeyDevice_;
 		ComPtr<IDirectInputDevice8> pMouseDevice_;

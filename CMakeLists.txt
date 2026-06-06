@@ -129,6 +129,8 @@ set(01Game
     "Source/TheMain.cpp"
     "Source/TitleScene.cpp"
     "Source/TitleScene.h"
+    "Source/Slider.cpp"
+    "Source/Slider.h"
 )
 source_group("01Game" FILES ${01Game})
 
@@ -698,6 +700,12 @@ set(Unfiltered
     "Source/JumpController.h"
     "Source/RespawnManager.cpp"
     "Source/RespawnManager.h"
+    "Source/Button.cpp"
+    "Source/Button.h"
+    "Source/Panel.h"
+    "Source/Panel.cpp"
+    "Source/PanelManager.h"
+    "Source/PanelManager.cpp"
 )
 source_group("Unfiltered" FILES ${Unfiltered})
 
@@ -762,7 +770,7 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h")
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp")
 
 # プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE

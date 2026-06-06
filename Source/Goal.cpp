@@ -76,13 +76,14 @@ void Goal::ShowImGui()
 
 void Goal::OnClear()
 {
-	Game::System<Audio>().Play("GameClear");
+	Game::System<Audio>().StopAll();
+	Game::System<Audio>().Play("GetTreasure");
 
 	Timer::AddAram(
 		transitionSceneDelay_,
 		[]
 		{
-			Game::System<StageManger>().ClearCurrentStage();
+			Game::System<StageManager>().ClearCurrentStage();
 			Game::System<SceneSystem>().Move<ResultScene>();
 		}
 	);

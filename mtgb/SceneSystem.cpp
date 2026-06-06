@@ -1,21 +1,13 @@
 #include "SceneSystem.h"
 #include "GameObject.h"
 #include "WindowContextResourceManager.h"
-#include "DirectX11Manager.h"
-#include "DirectX11Draw.h"
 #include "Input.h"
-#include "ImGuiRenderer.h"
 #include "WindowContext.h"
 #include "WindowContextUtil.h"
 #include "MTImGui.h"
 #include "RenderSystem.h"
 #include "InputData.h"
-#include "WindowManager.h"
-#include "CameraResource.h"
-#include "InputResource.h"
-#include "DXGIResource.h"
-#include "Direct3DResource.h"
-#include "WindowResource.h"
+#include "GameObjectGenerator.h"
 
 mtgb::SceneSystem::SceneSystem()
 	: pNextScene_ { nullptr }
@@ -30,12 +22,10 @@ mtgb::SceneSystem::~SceneSystem()
 
 void mtgb::SceneSystem::Initialize()
 {
-	OnMove(
-		[]()
-		{
-			Game::System<Timer>().Clear();
-		}
-	);
+	mtgb::GameObjectGenerator::Initialize();
+	PropertyDisplayRegistry::Instance();
+	PropertyDisplayRegistry::Instance().Initialize();
+	MTImGui::Initialize();
 }
 
 void mtgb::SceneSystem::Update()
@@ -113,6 +103,9 @@ void mtgb::SceneSystem::ExecutePendingCallbacks()
 
 void mtgb::SceneSystem::ChangeScene()
 {
+	// 登録されたコールバックを削除
+	Game::System<Timer>().Clear();
+
 	// シーン遷移イベントを発動していく
 	for (auto& onMove : onMoveListener_)
 	{

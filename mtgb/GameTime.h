@@ -31,12 +31,26 @@ namespace mtgb
 			waitFrame_ = _frame;
 		};
 
+		/// <summary>
+		/// デルタタイムを安定させる。
+		/// ステージの読み込みなど時間のかかる処理を行った後に呼び出す
+		/// </summary>
+		static inline void StabilizeDeltaTime()
+		{
+			waitFrame_ = DELTA_TIME_WARMUP_FRAMES;
+		};
+
 	  private:
+		/// <summary>
+		/// デルタタイムを安定させるために待機するフレーム数
+		/// </summary>
+		inline static constexpr unsigned int DELTA_TIME_WARMUP_FRAMES = 2;
 		static const LONGLONG SEC_TO_MICRO; // マイクロ秒を１秒に変換する
 		static const double MICRO_TO_SEC;	// 1秒をマイクロ秒に変換する
 		static double deltaTime_;			// フレーム間時間 (秒)
 
 		static inline constexpr double MAX_DELTA_TIME { 0.1 };
+
 	  private:
 		LARGE_INTEGER current_;	 // 現在のCPU時間 (マイクロ秒)
 		LARGE_INTEGER previous_; // 前回のCPU時間 (マイクロ秒)

@@ -19,5 +19,5 @@ void mtgb::TextRenderer::Render() const
 
 bool mtgb::TextRenderer::CanRender() const
 {
-	return true;
+	return enabled_;
 }

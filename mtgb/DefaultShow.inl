@@ -37,7 +37,7 @@ namespace mtgb
 		}
 		else
 		{
-			T oldValue{*_value};
+			T oldValue { *_value };
 			if constexpr (std::is_same_v<Type, bool>)
 			{
 				changed = ImGui::Checkbox(_name, reinterpret_cast<bool*>(_value));
@@ -66,13 +66,21 @@ namespace mtgb
 			{
 				ImGui::InputScalar(_name, ImGuiDataType_S64, &_value);
 			}
+			else if constexpr (std::is_same_v<Type, long>)
+			{
+				ImGui::Text("%s : %10ld", _name, *_value);
+			}
+			else if constexpr (std::is_same_v<Type, long*>)
+			{
+				ImGui::Text("%s : %10ld", _name, **reinterpret_cast<long**>(_value));
+			}
 			else if constexpr (std::is_same_v<Type, unsigned long>)
 			{
-				ImGui::Text("%s : %4.2lo", _name, *_value);
+				ImGui::Text("%s : %10lo", _name, *_value);
 			}
 			else if constexpr (std::is_same_v<Type, unsigned long*>)
 			{
-				ImGui::Text("%s : %4.2lo", _name, **reinterpret_cast<unsigned long**>(_value));
+				ImGui::Text("%s : %10lo", _name, **reinterpret_cast<unsigned long**>(_value));
 			}
 			else if constexpr (std::is_same_v<Type, unsigned char>)
 			{

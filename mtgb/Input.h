@@ -5,10 +5,10 @@
 #include <wrl/client.h> // 追加
 #include <functional>
 #include <vector>
-#include <tuple>
-#include <set>
+#include <unordered_set>
+#include <unordered_map>
 #include <guiddef.h>
-#include <map>
+#include <string>
 #include "Timer.h"
 #include "InputConfig.h"
 #pragma comment(lib, "dxguid.lib")
@@ -59,6 +59,22 @@ namespace mtgb
 		~JoystickReservation();
 	};
 
+	struct GuidHash
+	{
+		size_t operator()(const GUID& _guid) const
+		{
+			size_t hash = std::hash<unsigned long>()(_guid.Data1);
+			hash ^= (std::hash<unsigned short>()(_guid.Data2) << 1);
+			hash ^= (std::hash<unsigned short>()(_guid.Data3) << 2);
+
+			for (int i = 0; i < 8; i++)
+			{
+				hash ^= (std::hash<unsigned char>()(_guid.Data4[i]) << (3 + i));
+			}
+			return hash;
+		}
+	};
+
 	class Input : public ISystem
 	{
 	  public:
@@ -70,7 +86,6 @@ namespace mtgb
 		void UpdateKeyDevice();
 		void UpdateMouseDevice();
 		void UpdateJoystickDevice();
-		void UpdateGamePadDevice();
 
 		void Release() override;
 
@@ -146,9 +161,9 @@ namespace mtgb
 		bool RegisterJoystickGuid(GUID _guid);
 
 		/// <summary>
-		/// 取得感覚を設定する
+		/// 一定間隔でジョイスティックの取得をするよう設定する
 		/// </summary>
-		void SetAcquireInterval(GUID _guid, ComPtr<IDirectInputDevice8> _device);
+		void ScheduleJoystickEnum();
 		/// <summary>
 		/// 割り当て予約がされていないか否か
 		/// </summary>
@@ -200,17 +215,7 @@ namespace mtgb
 		bool IsJoystickAssigned(GUID _guid) const;
 
 	  private:
-		void StartEnumTimer();
-		void StopEnumTimer();
-		void AutoEnum();
-		// 定期的にデバイス列挙をタイマー
 		TimerHandle enumTimerHandle_ { nullptr };
-		float enumInterval_ { 1.0f };
-
-		/// <summary>
-		/// アクティブなコントローラのIDを調べる
-		/// </summary>
-		void CheckValidPadID();
 
 		void AcquireJoystick(ComPtr<IDirectInputDevice8> _pJoystickDevice);
 		GUID GetDeviceGuid(ComPtr<IDirectInputDevice8> _pInputDevice);
@@ -222,9 +227,9 @@ namespace mtgb
 		ComPtr<IDirectInputDevice8> pJoystickDevice_; // ジョイスティックデバイス
 
 		std::vector<JoystickReservation> requestedJoystickDevices_; // 割り当て予約されたジョイスティックデバイス
-		std::set<GUID> assignedJoystickGuids_;						// 既に割り当て済みのジョイスティック
+		std::unordered_set<GUID, GuidHash> assignedJoystickGuids_;	// 既に割り当て済みのジョイスティック
 
-		std::map<GUID, JoystickContext> joystickContext_;
+		std::unordered_map<GUID, JoystickContext, GuidHash> joystickContext_;
 		GUID currJoystickGuid_;
 	};
 } // namespace mtgb

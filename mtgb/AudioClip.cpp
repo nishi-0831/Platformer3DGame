@@ -22,17 +22,18 @@ mtgb::AudioClip::AudioClip(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio
 
 mtgb::AudioClip::~AudioClip()
 {
-	SAFE_DELETE(pWaveData_);
 	if (pSourceVoice_ != nullptr)
 	{
 		pSourceVoice_->Stop(0);
+		pSourceVoice_->SetOutputVoices(nullptr);
 		pSourceVoice_->FlushSourceBuffers();
 		pSourceVoice_->DestroyVoice();
 		pSourceVoice_ = nullptr;
 	}
+	SAFE_DELETE(pWaveData_);
 }
 
-void mtgb::AudioClip::Play()
+void mtgb::AudioClip::Play(bool _loop)
 {
 	// 音声の再生を停止。そうしないとFlushSourceBuffersで消えない
 	pSourceVoice_->Stop(0, 0);
@@ -43,6 +44,11 @@ void mtgb::AudioClip::Play()
 							.pAudioData = pWaveData_->pBuffer,
 							.LoopCount	= 0 };
 
+	if (_loop)
+	{
+		buffer.LoopCount = XAUDIO2_LOOP_INFINITE;
+	}
+
 	HRESULT hResult = pSourceVoice_->SubmitSourceBuffer(&buffer);
 	if (FAILED(hResult))
 	{
@@ -51,6 +57,12 @@ void mtgb::AudioClip::Play()
 	}
 
 	pSourceVoice_->Start();
+}
+
+void mtgb::AudioClip::Stop()
+{
+	pSourceVoice_->Stop(0, 0);
+	pSourceVoice_->FlushSourceBuffers();
 }
 
 void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
@@ -71,7 +83,7 @@ void mtgb::AudioClip::Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2)
 		_ms.Seek(0);
 		LoadWave(_ms);
 	}
-	else if (CompareId<3>(header, "ID3") || (header[0] == 0xFF && (header[1] % 0xE0) == 0xE0))
+	else if (CompareId<3>(header, "ID3") || (header[0] == 0xFF && (header[1] == 0xFA || header[1] == 0xFB)))
 	{
 		_ms.Seek(0);
 		LoadMp3(_ms);
@@ -198,6 +210,11 @@ float mtgb::AudioClip::GetTotalTimeSec() const
 	massert(pWaveData_->waveFormat.nAvgBytesPerSec != 0 && "0除算してしまいます。");
 	// データサイズ / 1秒間あたりの読みバイト数 = 総再生時間
 	return pWaveData_->bufferSize / static_cast<float>(pWaveData_->waveFormat.nAvgBytesPerSec);
+}
+
+void mtgb::AudioClip::SetVolume(float _volume)
+{
+	pSourceVoice_->SetVolume(_volume);
 }
 
 std::optional<mtbin::MemoryStream> mtgb::AudioClip::GetMemoryStream(std::string_view _filePath)
