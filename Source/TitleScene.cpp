@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include <mtgb.h>
+#include <ProfileUtlity.h>
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
 #include "../Source/SkySphere.h"
@@ -66,9 +67,9 @@ void TitleScene::Draw() const
 	Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
 	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 }, 24);
 
-	Draw::Image(hBackgroundImage, { 500, 550, 150, 50 });
-	Draw::Image(hEastButtonImg, { 500, 550, 50, 50 });
-	Draw::ImmediateTextW(L"決定", { 550, 550, 100, 50 });
+	Draw::Image(hBackgroundImage, { 550, 550, 150, 50 });
+	Draw::Image(hEastButtonImg, { 550, 550, 50, 50 });
+	Draw::ImmediateTextW(L"決定", { 600, 550, 100, 50 });
 }
 
 void TitleScene::End() {}
@@ -84,6 +85,7 @@ void TitleScene::CreatePanel()
 
 	Vector2F screenSize		= Game::System<Screen>().GetSizeF();
 	pImgRenderer->drawRect_ = RectF { 0, 0, screenSize.x, 500 };
+
 	{
 		Button* pItem1 = pCurrScene->Instantiate<Button>();
 		pItem1->SetOnPressed(
@@ -93,7 +95,7 @@ void TitleScene::CreatePanel()
 			}
 		);
 		pItem1->SetText("Start Game");
-		pItem1->SetRect({ 290, 360, 220, 60 });
+		pItem1->SetRect({ 290, 300, 220, 60 });
 
 		Button* pItem2 = pCurrScene->Instantiate<Button>();
 		pItem2->SetOnPressed(
@@ -108,20 +110,58 @@ void TitleScene::CreatePanel()
 			}
 		);
 		pItem2->SetText("How to Play");
-		pItem2->SetRect({ 290, 490, 220, 60 });
+		pItem2->SetRect({ 290, 430, 220, 60 });
+
+		Button* pItem3 = pCurrScene->Instantiate<Button>();
+		pItem3->SetOnPressed(
+			[this]()
+			{
+				panelManager_.EnablePanel("Setting");
+			}
+		);
+		pItem3->SetText("Setting");
+		pItem3->SetRect({ 290, 530, 220, 60 });
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
 		pPanel->AddUIComponent(pItem1);
 		pPanel->AddUIComponent(pItem2);
-
-		Slider* pSlider = pCurrScene->Instantiate<Slider>();
-		pSlider->SetRect({ 60, 60, 300, 50 });
-		pSlider->SetLabel("Slider");
-		pPanel->AddUIComponent(pSlider);
+		pPanel->AddUIComponent(pItem3);
 
 		panelManager_.AddPanel("TitleMenu", pPanel);
 	}
 
+	// Setting
+	{
+
+		Slider* pSlider = pCurrScene->Instantiate<Slider>();
+
+		pSlider->SetRect({ 110, 400, 300, 50 });
+		pSlider->SetLabel("Slider");
+		pSlider->SetOnValueChanged(
+			[](int _value)
+			{
+				ProfileInt::Load().Section("Game").Param("CameraSpeed").Write(_value);
+			}
+		);
+		pSlider->SetValue(ProfileInt::Load().Section("GAME").Param("CameraSpeed").InitValue(60).Get());
+
+		Button* pItem1 = pCurrScene->Instantiate<Button>();
+		pItem1->SetOnPressed(
+			[this]()
+			{
+				panelManager_.EnablePanel("TitleMenu");
+			}
+		);
+		pItem1->SetText("Close");
+		pItem1->SetRect({ 118, 500, 565, 100 });
+		Panel* pPanel = pCurrScene->Instantiate<Panel>();
+
+		pPanel->AddUIComponent(pSlider);
+		pPanel->AddUIComponent(pItem1);
+		panelManager_.AddPanel("Setting", pPanel);
+	}
+
+	// HowToPlay
 	{
 		Button* pItem1 = pCurrScene->Instantiate<Button>();
 		pItem1->SetOnPressed(
@@ -142,5 +182,6 @@ void TitleScene::CreatePanel()
 		pPanel->AddUIComponent(pItem1);
 		panelManager_.AddPanel("HowToPlay", pPanel);
 	}
+
 	panelManager_.EnablePanel("TitleMenu");
 }
