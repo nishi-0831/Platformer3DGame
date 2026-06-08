@@ -4,7 +4,7 @@ var classmtgb_1_1Debug =
     [ "Debug", "classmtgb_1_1Debug.html#a9e99e2688a80681c262941c8ddefbe91", null ],
     [ "~Debug", "classmtgb_1_1Debug.html#a702808db94b000adb234652f828fdd81", null ],
     [ "GetLog", "classmtgb_1_1Debug.html#a18f85855c40bc04d7835b596ce79c625", null ],
-    [ "GetName", "classmtgb_1_1Debug.html#a17536cf5010b8ec45ab88daa1deaa5db", null ],
+    [ "GetName", "classmtgb_1_1Debug.html#a04aa97f2a3ac94d084ec0d8cb0cd5bda", null ],
     [ "Initialize", "classmtgb_1_1Debug.html#a782371ed5a6873941a083bad5926544c", null ],
     [ "LogF", "classmtgb_1_1Debug.html#ac2dffde5cceb921e9f0b9db9b73e701c", null ],
     [ "LogImGui", "classmtgb_1_1Debug.html#ae71d828480995fe085306f616f72a5c5", null ],

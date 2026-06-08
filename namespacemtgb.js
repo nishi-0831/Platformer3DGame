@@ -21,6 +21,7 @@ var namespacemtgb =
     [ "AssetsManager", "classmtgb_1_1AssetsManager.html", "classmtgb_1_1AssetsManager" ],
     [ "Audio", "classmtgb_1_1Audio.html", "classmtgb_1_1Audio" ],
     [ "AudioClip", "classmtgb_1_1AudioClip.html", "classmtgb_1_1AudioClip" ],
+    [ "AudioEmitter", "structmtgb_1_1AudioEmitter.html", "structmtgb_1_1AudioEmitter" ],
     [ "Box3D", "classmtgb_1_1Box3D.html", "classmtgb_1_1Box3D" ],
     [ "CameraResource", "classmtgb_1_1CameraResource.html", "classmtgb_1_1CameraResource" ],
     [ "CameraSystem", "classmtgb_1_1CameraSystem.html", "classmtgb_1_1CameraSystem" ],
@@ -80,6 +81,7 @@ var namespacemtgb =
     [ "GameObjectTypeRegistry", "classmtgb_1_1GameObjectTypeRegistry.html", "classmtgb_1_1GameObjectTypeRegistry" ],
     [ "GameScene", "classmtgb_1_1GameScene.html", "classmtgb_1_1GameScene" ],
     [ "GroupCommand", "classmtgb_1_1GroupCommand.html", "classmtgb_1_1GroupCommand" ],
+    [ "GuidHash", "structmtgb_1_1GuidHash.html", "structmtgb_1_1GuidHash" ],
     [ "GuizmoManipulateCommand", "classmtgb_1_1GuizmoManipulateCommand.html", "classmtgb_1_1GuizmoManipulateCommand" ],
     [ "handle_order", "structmtgb_1_1handle__order.html", null ],
     [ "HLSLInclude", "structmtgb_1_1HLSLInclude.html", "structmtgb_1_1HLSLInclude" ],
@@ -285,6 +287,10 @@ var namespacemtgb =
       [ "BOX3_D", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda291aca4b0b422607796ebbe0706e751e", null ],
       [ "SEA", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda9abd3d9b983e99aa1fd94837498b0bea", null ],
       [ "MAX", "namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fda26a4b44a837bf97b972628509912b4a5", null ]
+    ] ],
+    [ "StickDirection", "namespacemtgb.html#a82b92541758f6f9b880f566248bb7eef", [
+      [ "Positive", "namespacemtgb.html#a82b92541758f6f9b880f566248bb7eefa3289297424e01eda5b788c083bbf3147", null ],
+      [ "Negative", "namespacemtgb.html#a82b92541758f6f9b880f566248bb7eefaffb9356ff2b7da85c75c92fa7ea03b8b", null ]
     ] ],
     [ "TextAlignment", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dba", [
       [ "TOP_LEFT", "namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa747385047b85ae751f83adb36435a3c1", null ],

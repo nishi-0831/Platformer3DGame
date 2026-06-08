@@ -268,27 +268,32 @@ mtgb::QuaternionCamera 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00004">4</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">    5</span>    : <a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">GameObject</a>(<a class="code hl_class" href="classmtgb_1_1GameObjectBuilder.html">GameObjectBuilder</a>().SetPosition({ 0, 0, 0 }).<a class="code hl_function" href="classmtgb_1_1GameObject.html#af0b3630f3e49fde5433ef21cc243a235">SetName</a>(<span class="stringliteral">&quot;Camera&quot;</span>).Build())</div>
-<div class="line"><span class="lineno">    6</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a> { Component&lt;Transform&gt;() }</div>
-<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a> { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">Transform::Get</a>(_entityId) }</div>
-<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a> { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">RigidBody::Get</a>(_entityId) }</div>
-<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a9de63cdbb2c8f061b97a1070030252a6">lookAtPositionOffset_</a> { <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> { 0, 2, 0 } }</div>
-<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> { 60.0f }</div>
-<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3">distance_</a> { 8.0f }</div>
-<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a15b2605fba263e88fc019c3f3a86467b">inputType_</a> { <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">InputType::JOYPAD</a> }</div>
-<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a1b33dc9c213baa08e4c73538c68ee7e4">minPitchAngleDeg_</a> { -5.0f }</div>
-<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ad8a6a6daa2ea63369b5eb961e1549356">maxPitchAngleDeg_</a> { 80.0f }</div>
-<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> { 0.01f }</div>
-<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#af1d9a75c9ba3680864831a0da0766457">lerpSpeedOnJumping_</a> { 0.1f }</div>
-<div class="line"><span class="lineno">   17</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a202b993a56b79e2436a1711ce865f1a5">lerpSpeedOnDescending_</a> { 0.1f }</div>
-<div class="line"><span class="lineno">   18</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a3e03eaff47df9d43664160b960fdcdbe">lerpSpeedOnGrounded_</a> { 0.3f }</div>
-<div class="line"><span class="lineno">   19</span>{</div>
-<div class="line"><span class="lineno">   20</span>}</div>
+<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00005">5</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>    : <a class="code hl_function" href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">GameObject</a>(<a class="code hl_class" href="classmtgb_1_1GameObjectBuilder.html">GameObjectBuilder</a>().SetPosition({ 0, 0, 0 }).<a class="code hl_function" href="classmtgb_1_1GameObject.html#af0b3630f3e49fde5433ef21cc243a235">SetName</a>(<span class="stringliteral">&quot;Camera&quot;</span>).Build())</div>
+<div class="line"><span class="lineno">    7</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a> { Component&lt;Transform&gt;() }</div>
+<div class="line"><span class="lineno">    8</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a> { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">Transform::Get</a>(_entityId) }</div>
+<div class="line"><span class="lineno">    9</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a> { &amp;<a class="code hl_function" href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">RigidBody::Get</a>(_entityId) }</div>
+<div class="line"><span class="lineno">   10</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a9de63cdbb2c8f061b97a1070030252a6">lookAtPositionOffset_</a> { <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> { 0, 2, 0 } }</div>
+<div class="line"><span class="lineno">   11</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> { 60.0f }</div>
+<div class="line"><span class="lineno">   12</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3">distance_</a> { 8.0f }</div>
+<div class="line"><span class="lineno">   13</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a15b2605fba263e88fc019c3f3a86467b">inputType_</a> { <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">InputType::MOUSE</a> }</div>
+<div class="line"><span class="lineno">   14</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a1b33dc9c213baa08e4c73538c68ee7e4">minPitchAngleDeg_</a> { -5.0f }</div>
+<div class="line"><span class="lineno">   15</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ad8a6a6daa2ea63369b5eb961e1549356">maxPitchAngleDeg_</a> { 80.0f }</div>
+<div class="line"><span class="lineno">   16</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> { 0.01f }</div>
+<div class="line"><span class="lineno">   17</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#af1d9a75c9ba3680864831a0da0766457">lerpSpeedOnJumping_</a> { 0.1f }</div>
+<div class="line"><span class="lineno">   18</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a202b993a56b79e2436a1711ce865f1a5">lerpSpeedOnDescending_</a> { 0.1f }</div>
+<div class="line"><span class="lineno">   19</span>    , <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a3e03eaff47df9d43664160b960fdcdbe">lerpSpeedOnGrounded_</a> { 0.3f }</div>
+<div class="line"><span class="lineno">   20</span>{</div>
+<div class="line"><span class="lineno">   21</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> = <a class="code hl_function" href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">ProfileInt::Load</a>().<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">Section</a>(<span class="stringliteral">&quot;GAME&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">Param</a>(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">InitValue</a>(60).<a class="code hl_function" href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">Get</a>();</div>
+<div class="line"><span class="lineno">   22</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectBuilder_html"><div class="ttname"><a href="classmtgb_1_1GameObjectBuilder.html">mtgb::GameObjectBuilder</a></div><div class="ttdef"><b>Definition:</b> <a href="GameObjectBuilder_8h_source.html#l00035">GameObjectBuilder.h:36</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_a81d29105f581c405cbc7b7dd1cc48652"><div class="ttname"><a href="classmtgb_1_1GameObject.html#a81d29105f581c405cbc7b7dd1cc48652">mtgb::GameObject::GameObject</a></div><div class="ttdeci">GameObject()</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8cpp_source.html#l00028">GameObject.cpp:28</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObject_html_af0b3630f3e49fde5433ef21cc243a235"><div class="ttname"><a href="classmtgb_1_1GameObject.html#af0b3630f3e49fde5433ef21cc243a235">mtgb::GameObject::SetName</a></div><div class="ttdeci">void SetName(const std::string &amp;_name)</div><div class="ttdoc">名前を設定する</div><div class="ttdef"><b>Definition:</b> <a href="GameObject_8h_source.html#l00035">GameObject.h:35</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1IComponent_html_af1eb4ba05a672953e5bf9f976695d2c9"><div class="ttname"><a href="classmtgb_1_1IComponent.html#af1eb4ba05a672953e5bf9f976695d2c9">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get</a></div><div class="ttdeci">static Transform &amp; Get(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="IComponent_8h_source.html#l00027">IComponent.h:63</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a0d7216e8e0697d73b534605e3fb6b2a0"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">mtgb::IProfile&lt; int, ProfileInt &gt;::Load</a></div><div class="ttdeci">static ProfileInt Load()</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00030">ProfileUtlity.h:30</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a73b3e029e35f9f3615cc5042bd542e32"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a73b3e029e35f9f3615cc5042bd542e32">mtgb::IProfile::InitValue</a></div><div class="ttdeci">ExtendT &amp; InitValue(const T _initValue)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00023">ProfileUtlity.h:23</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a8bc61567afe56971c7e7388f73540782"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">mtgb::IProfile::Section</a></div><div class="ttdeci">ExtendT &amp; Section(const char *_section)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00013">ProfileUtlity.h:13</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1IProfile_html_a8f591103a5fdc9491396ae1d7ecbf5ff"><div class="ttname"><a href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">mtgb::IProfile::Param</a></div><div class="ttdeci">ExtendT &amp; Param(const char *_param)</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00018">ProfileUtlity.h:18</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a009bbba52f34f11163accc4757f2754c"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">mtgb::QuaternionCamera::pTransform_</a></div><div class="ttdeci">Transform * pTransform_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00014">QuaternionCamera.h:14</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a15b2605fba263e88fc019c3f3a86467b"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a15b2605fba263e88fc019c3f3a86467b">mtgb::QuaternionCamera::inputType_</a></div><div class="ttdeci">InputType inputType_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00027">QuaternionCamera.h:27</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a1b33dc9c213baa08e4c73538c68ee7e4"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a1b33dc9c213baa08e4c73538c68ee7e4">mtgb::QuaternionCamera::minPitchAngleDeg_</a></div><div class="ttdeci">float minPitchAngleDeg_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00029">QuaternionCamera.h:29</a></div></div>
@@ -302,7 +307,8 @@ mtgb::QuaternionCamera 連携図</div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_ad8a6a6daa2ea63369b5eb961e1549356"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#ad8a6a6daa2ea63369b5eb961e1549356">mtgb::QuaternionCamera::maxPitchAngleDeg_</a></div><div class="ttdeci">float maxPitchAngleDeg_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00031">QuaternionCamera.h:31</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_af1d9a75c9ba3680864831a0da0766457"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#af1d9a75c9ba3680864831a0da0766457">mtgb::QuaternionCamera::lerpSpeedOnJumping_</a></div><div class="ttdeci">float lerpSpeedOnJumping_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00033">QuaternionCamera.h:33</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_afe1c3ca5cc39892ce80ce2c34a933bd3"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3">mtgb::QuaternionCamera::distance_</a></div><div class="ttdeci">float distance_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00025">QuaternionCamera.h:25</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">mtgb::InputType::JOYPAD</a></div><div class="ttdeci">@ JOYPAD</div></div>
+<div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::InputType::MOUSE</a></div><div class="ttdeci">@ MOUSE</div></div>
+<div class="ttc" id="astructmtgb_1_1ProfileInt_html_a2c226e7ba7a90e23e6c000df11fd112a"><div class="ttname"><a href="structmtgb_1_1ProfileInt.html#a2c226e7ba7a90e23e6c000df11fd112a">mtgb::ProfileInt::Get</a></div><div class="ttdeci">const int Get() const override</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00052">ProfileUtlity.h:52</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html"><div class="ttname"><a href="structmtgb_1_1Vector3.html">mtgb::Vector3</a></div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00007">Vector3.h:8</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -322,9 +328,20 @@ mtgb::QuaternionCamera 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00022">22</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   22</span>{}</div>
+<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0">ProfileInt::Load</a>().<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782">Section</a>(<span class="stringliteral">&quot;Game&quot;</span>).<a class="code hl_function" href="classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff">Param</a>(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).<a class="code hl_function" href="structmtgb_1_1ProfileInt.html#a423310ab34f3eb3fe869eb5512b5d2bd">Write</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a>));</div>
+<div class="line"><span class="lineno">   27</span>}</div>
+<div class="ttc" id="astructmtgb_1_1ProfileInt_html_a423310ab34f3eb3fe869eb5512b5d2bd"><div class="ttname"><a href="structmtgb_1_1ProfileInt.html#a423310ab34f3eb3fe869eb5512b5d2bd">mtgb::ProfileInt::Write</a></div><div class="ttdeci">void Write(int _value) override</div><div class="ttdef"><b>Definition:</b> <a href="ProfileUtlity_8h_source.html#l00056">ProfileUtlity.h:56</a></div></div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="ProfileUtlity_8h_source.html#l00030">mtgb::IProfile&lt; int, ProfileInt &gt;::Load()</a>, <a class="el" href="ProfileUtlity_8h_source.html#l00018">mtgb::IProfile&lt; T, ExtendT &gt;::Param()</a>, <a class="el" href="ProfileUtlity_8h_source.html#l00013">mtgb::IProfile&lt; T, ExtendT &gt;::Section()</a>, <a class="el" href="ProfileUtlity_8h_source.html#l00056">mtgb::ProfileInt::Write()</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1QuaternionCamera_a0a5283623cbc5ee872f1eb01b903a44f_cgraph.svg" width="622" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
@@ -371,11 +388,11 @@ template&lt;class ComponentT , typename... Args&gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00026">mtgb::Entity::entityId_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="TitleScene_8cpp_source.html#l00021">TitleScene::Initialize()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>.</p>
+<p class="reference">参照元 <a class="el" href="TitleScene_8cpp_source.html#l00077">TitleScene::CreatePanel()</a>, <a class="el" href="Interpolator_8cpp_source.html#l00018">mtgb::Interpolator::Interpolator()</a>, <a class="el" href="Slider_8cpp_source.html#l00003">Slider::Slider()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObject_aec1d6bd2a9c2953d360201599fc31d4a_icgraph.svg" width="442" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameObject_aec1d6bd2a9c2953d360201599fc31d4a_icgraph.svg" width="666" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -458,7 +475,7 @@ template&lt;class ComponentT , typename... Args&gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameObject_8h_source.html#l00125">mtgb::GameObject::status_</a>, <a class="el" href="GameObject_8h_source.html#l00119">mtgb::GameObject::Status::toDestroy_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00321">PatrolChargerEnemy::Dying()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
+<p class="reference">参照元 <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00328">PatrolChargerEnemy::Dying()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -554,7 +571,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><span class="lineno">  150</span>        <span class="keywordflow">return</span> mtgb::Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;template GetGameObject&lt;T&gt;();</div>
 <div class="line"><span class="lineno">  151</span>    }</div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00202">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00027">GameOverZone::Start()</a>, <a class="el" href="Goal_8cpp_source.html#l00041">Goal::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00076">PatrolChargerEnemy::Start()</a>.</p>
+<p class="reference">参照元 <a class="el" href="MTImGui_8h_source.html#l00202">mtgb::MTImGui::RegisterComponentViewer()</a>, <a class="el" href="ScoreItem_8cpp_source.html#l00006">ScoreItem::ScoreItem()</a>, <a class="el" href="GameOverZone_8cpp_source.html#l00027">GameOverZone::Start()</a>, <a class="el" href="Goal_8cpp_source.html#l00041">Goal::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::Start()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -861,11 +878,11 @@ template&lt;typename T &gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00026">mtgb::Entity::entityId_</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00179">mtgb::ImGuiEditorCamera::CreateCamera()</a>, <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00036">mtgb::GameObjectCreateCommand::CreateGameObject()</a>, <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00017">mtgb::DuplicateGameObjectCommand::Execute()</a>, <a class="el" href="HPViewer_8cpp_source.html#l00004">mtgb::HPViewer::HPViewer()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00061">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00089">RespawnPoint::OnCollisionEnter()</a>, <a class="el" href="GameScene_8cpp_source.html#l00030">mtgb::GameScene::RegisterCameraGameObject()</a>, <a class="el" href="GameScene_8cpp_source.html#l00019">mtgb::GameScene::RegisterGameObject()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00083">RespawnPoint::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00044">mtgb::CircularSaw::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00076">PatrolChargerEnemy::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00363">Player::TakeDamage()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiEditorCamera_8cpp_source.html#l00179">mtgb::ImGuiEditorCamera::CreateCamera()</a>, <a class="el" href="GameObjectCreateCommand_8cpp_source.html#l00036">mtgb::GameObjectCreateCommand::CreateGameObject()</a>, <a class="el" href="DeleteGameObjectCommand_8cpp_source.html#l00005">mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand()</a>, <a class="el" href="DuplicateGameObjectCommand_8cpp_source.html#l00017">mtgb::DuplicateGameObjectCommand::Execute()</a>, <a class="el" href="HPViewer_8cpp_source.html#l00004">mtgb::HPViewer::HPViewer()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00061">MovingFloor::OnCollisionEnter()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00089">RespawnPoint::OnCollisionEnter()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00381">PatrolChargerEnemy::OnFootstepWalk()</a>, <a class="el" href="GameScene_8cpp_source.html#l00030">mtgb::GameScene::RegisterCameraGameObject()</a>, <a class="el" href="GameScene_8cpp_source.html#l00019">mtgb::GameScene::RegisterGameObject()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00083">RespawnPoint::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00045">mtgb::CircularSaw::Start()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00083">PatrolChargerEnemy::Start()</a>, <a class="el" href="Player_8cpp_source.html#l00378">Player::TakeDamage()</a>, <a class="el" href="Player_8cpp_source.html#l00071">Player::Update()</a> (計15項目).</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Entity_a9fb3f98676d0ab770dad414ad6bbc029_icgraph.svg" width="799" height="779"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Entity_a9fb3f98676d0ab770dad414ad6bbc029_icgraph.svg" width="1002" height="892"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1375,90 +1392,96 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameObject.html#a3c037070db43bd5eac32ffbc3b721124">mtgb::GameObject</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classmtgb_1_1QuaternionCamera.html#a0557441d4afceca59789f6c116e017d9">UpdateLerpSpeed</a>();</div>
-<div class="line"><span class="lineno">   27</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> movement;</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="comment">// デバイスから入力を取得する</span></div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a15b2605fba263e88fc019c3f3a86467b">inputType_</a>)</div>
-<div class="line"><span class="lineno">   31</span>    {</div>
-<div class="line"><span class="lineno">   32</span>            <span class="comment">// マウス</span></div>
-<div class="line"><span class="lineno">   33</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">InputType::MOUSE</a> :</div>
-<div class="line"><span class="lineno">   34</span>            movement = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#afc5ad9bcab455f772f6573b9d3c945f9">InputUtil::GetMouseMove</a>();</div>
-<div class="line"><span class="lineno">   35</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>            <span class="comment">// ゲームパッド</span></div>
-<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">InputType::JOYPAD</a> :</div>
-<div class="line"><span class="lineno">   39</span>            <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a> vec2 = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a5aaa5b039b8986c6ae02bfb41040da06">InputUtil::GetAxis</a>(StickType::RIGHT);</div>
-<div class="line"><span class="lineno">   40</span>            movement.x    = -vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a>;</div>
-<div class="line"><span class="lineno">   41</span>            movement.y    = vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>;</div>
-<div class="line"><span class="lineno">   42</span>            <span class="keywordflow">break</span>;</div>
-<div class="line"><span class="lineno">   43</span>    }</div>
-<div class="line"><span class="lineno">   44</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; rotate      = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>;</div>
-<div class="line"><span class="lineno">   45</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> worldRotateY = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
-<div class="line"><span class="lineno">   46</span>        DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.y),</div>
-<div class="line"><span class="lineno">   47</span>        <a class="code hl_function" href="structmtgb_1_1Vector3.html#afde8104cffdc6b674a721eb24c89e7cc">Vector3::Up</a>()</div>
-<div class="line"><span class="lineno">   48</span>    );</div>
-<div class="line"><span class="lineno">   49</span>    <span class="comment">// カメラのローカル座標系でのRight軸</span></div>
-<div class="line"><span class="lineno">   50</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> localRight = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a66b7763ddd6bb11b5d4adde31883fdcd">Vector3::Right</a>(), rotate.v);</div>
-<div class="line"><span class="lineno">   51</span> </div>
-<div class="line"><span class="lineno">   52</span>    <span class="comment">// カメラの右方向を軸に回転</span></div>
-<div class="line"><span class="lineno">   53</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> localRotateX = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
-<div class="line"><span class="lineno">   54</span>        DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.x),</div>
-<div class="line"><span class="lineno">   55</span>        localRight</div>
-<div class="line"><span class="lineno">   56</span>    );</div>
-<div class="line"><span class="lineno">   57</span> </div>
-<div class="line"><span class="lineno">   58</span>    <span class="comment">// 回転を計算</span></div>
-<div class="line"><span class="lineno">   59</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> testRotate = rotate * worldRotateY * localRotateX;</div>
-<div class="line"><span class="lineno">   60</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> testForward   = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a9ef73d52a097697ccba69787641edf2b">Vector3::Forward</a>(), testRotate.v);</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    <span class="comment">// 制限角度</span></div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordtype">float</span> testPitch   = asinf(-testForward.y);</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">float</span> maxPitchRad = DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ad8a6a6daa2ea63369b5eb961e1549356">maxPitchAngleDeg_</a>);</div>
-<div class="line"><span class="lineno">   65</span>    <span class="keywordtype">float</span> minPitchRad = DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a1b33dc9c213baa08e4c73538c68ee7e4">minPitchAngleDeg_</a>);</div>
-<div class="line"><span class="lineno">   66</span> </div>
-<div class="line"><span class="lineno">   67</span>    <span class="comment">// ピッチ(DirectXでのX軸)角度が制限範囲内なら回転を適用</span></div>
-<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">if</span> (testPitch &lt;= maxPitchRad &amp;&amp; testPitch &gt;= minPitchRad)</div>
-<div class="line"><span class="lineno">   69</span>    {</div>
-<div class="line"><span class="lineno">   70</span>        rotate = testRotate;</div>
-<div class="line"><span class="lineno">   71</span>    }</div>
-<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   73</span>    {</div>
-<div class="line"><span class="lineno">   74</span>        <span class="comment">// 制限を超えているので、ヨー(DirectXでのY軸)回転のみ適用</span></div>
-<div class="line"><span class="lineno">   75</span>        rotate *= worldRotateY;</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
+<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   30</span>{</div>
+<div class="line"><span class="lineno">   31</span>    <a class="code hl_function" href="classmtgb_1_1QuaternionCamera.html#a0557441d4afceca59789f6c116e017d9">UpdateLerpSpeed</a>();</div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> movement;</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <span class="comment">// デバイスから入力を取得する</span></div>
+<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">switch</span> (<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a15b2605fba263e88fc019c3f3a86467b">inputType_</a>)</div>
+<div class="line"><span class="lineno">   36</span>    {</div>
+<div class="line"><span class="lineno">   37</span>            <span class="comment">// マウス</span></div>
+<div class="line"><span class="lineno">   38</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">InputType::MOUSE</a> :</div>
+<div class="line"><span class="lineno">   39</span>        {</div>
+<div class="line"><span class="lineno">   40</span>            movement   = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a08a56f2eabd302712326265785831c4f">InputUtil::GetMouseAxis</a>();</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordtype">float</span> tmp  = movement.x;</div>
+<div class="line"><span class="lineno">   42</span>            movement.x = movement.y;</div>
+<div class="line"><span class="lineno">   43</span>            movement.y = tmp;</div>
+<div class="line"><span class="lineno">   44</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   45</span>        }</div>
+<div class="line"><span class="lineno">   46</span>            <span class="comment">// ゲームパッド</span></div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">InputType::JOYPAD</a> :</div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a> vec2 = <a class="code hl_function" href="classmtgb_1_1InputUtil.html#a5aaa5b039b8986c6ae02bfb41040da06">InputUtil::GetAxis</a>(StickType::RIGHT);</div>
+<div class="line"><span class="lineno">   50</span>            movement.x    = vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#a6b5d8ad644dee9011b00557eaa04e255">y</a>;</div>
+<div class="line"><span class="lineno">   51</span>            movement.y    = vec2.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>;</div>
+<div class="line"><span class="lineno">   52</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   53</span>        }</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a>&amp; rotate      = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">rotate</a>;</div>
+<div class="line"><span class="lineno">   56</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> worldRotateY = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
+<div class="line"><span class="lineno">   57</span>        DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.y),</div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_function" href="structmtgb_1_1Vector3.html#afde8104cffdc6b674a721eb24c89e7cc">Vector3::Up</a>()</div>
+<div class="line"><span class="lineno">   59</span>    );</div>
+<div class="line"><span class="lineno">   60</span>    <span class="comment">// カメラのローカル座標系でのRight軸</span></div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> localRight = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a66b7763ddd6bb11b5d4adde31883fdcd">Vector3::Right</a>(), rotate.v);</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="comment">// カメラの右方向を軸に回転</span></div>
+<div class="line"><span class="lineno">   64</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> localRotateX = <a class="code hl_function" href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">Quaternion::AngleAxis</a>(</div>
+<div class="line"><span class="lineno">   65</span>        DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ac62fff2d2e33607fbfcedc4d964b22a0">rotationSpeedDegPerSec_</a> * <a class="code hl_function" href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">Time::DeltaTimeF</a>() * movement.x),</div>
+<div class="line"><span class="lineno">   66</span>        localRight</div>
+<div class="line"><span class="lineno">   67</span>    );</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// 回転を計算</span></div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_struct" href="structmtgb_1_1Quaternion.html">Quaternion</a> testRotate = rotate * worldRotateY * localRotateX;</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> testForward   = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a9ef73d52a097697ccba69787641edf2b">Vector3::Forward</a>(), testRotate.v);</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="comment">// 制限角度</span></div>
+<div class="line"><span class="lineno">   74</span>    <span class="keywordtype">float</span> testPitch   = asinf(-testForward.y);</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordtype">float</span> maxPitchRad = DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#ad8a6a6daa2ea63369b5eb961e1549356">maxPitchAngleDeg_</a>);</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordtype">float</span> minPitchRad = DirectX::XMConvertToRadians(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a1b33dc9c213baa08e4c73538c68ee7e4">minPitchAngleDeg_</a>);</div>
 <div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.x = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.x;</div>
-<div class="line"><span class="lineno">   79</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.y = <a class="code hl_function" href="namespacemtgb_1_1Mathf.html#a02b347bda774f51913f17dd14c4646e5">Mathf::Lerp</a>(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.y, <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.y, <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a>);</div>
-<div class="line"><span class="lineno">   80</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.z = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.z;</div>
-<div class="line"><span class="lineno">   81</span> </div>
-<div class="line"><span class="lineno">   82</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> toTargetDir   = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a9ef73d52a097697ccba69787641edf2b">Vector3::Forward</a>(), rotate.v);</div>
-<div class="line"><span class="lineno">   83</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a> - (toTargetDir * <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3">distance_</a>) + <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a9de63cdbb2c8f061b97a1070030252a6">lookAtPositionOffset_</a>;</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aadd579a29756ab8f7ea3b7ad2bd2e8ca">MTImGui::DirectShow</a>(</div>
-<div class="line"><span class="lineno">   86</span>        [<span class="keyword">this</span>]()</div>
-<div class="line"><span class="lineno">   87</span>        {</div>
-<div class="line"><span class="lineno">   88</span>            ImGui::InputFloat(<span class="stringliteral">&quot;s&quot;</span>, &amp;<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a>);</div>
-<div class="line"><span class="lineno">   89</span>            <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">velocity_</a>, <span class="stringliteral">&quot;vel&quot;</span>);</div>
-<div class="line"><span class="lineno">   90</span>        },</div>
-<div class="line"><span class="lineno">   91</span>        <span class="stringliteral">&quot;lerpSpeed&quot;</span>,</div>
-<div class="line"><span class="lineno">   92</span>        ShowType::INSPECTOR</div>
-<div class="line"><span class="lineno">   93</span>    );</div>
-<div class="line"><span class="lineno">   94</span>}</div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">// ピッチ(DirectXでのX軸)角度が制限範囲内なら回転を適用</span></div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">if</span> (testPitch &lt;= maxPitchRad &amp;&amp; testPitch &gt;= minPitchRad)</div>
+<div class="line"><span class="lineno">   80</span>    {</div>
+<div class="line"><span class="lineno">   81</span>        rotate = testRotate;</div>
+<div class="line"><span class="lineno">   82</span>    }</div>
+<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   84</span>    {</div>
+<div class="line"><span class="lineno">   85</span>        <span class="comment">// 制限を超えているので、ヨー(DirectXでのY軸)回転のみ適用</span></div>
+<div class="line"><span class="lineno">   86</span>        rotate *= worldRotateY;</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.x = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.x;</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.y = <a class="code hl_function" href="namespacemtgb_1_1Mathf.html#a02b347bda774f51913f17dd14c4646e5">Mathf::Lerp</a>(<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.y, <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.y, <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a>);</div>
+<div class="line"><span class="lineno">   91</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a>.z = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#aa6cc79328a3bcf3393534d8c1a244d2b">pTargetTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a>.z;</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> toTargetDir   = DirectX::XMVector3Rotate(<a class="code hl_function" href="structmtgb_1_1Vector3.html#a9ef73d52a097697ccba69787641edf2b">Vector3::Forward</a>(), rotate.v);</div>
+<div class="line"><span class="lineno">   94</span>    <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a009bbba52f34f11163accc4757f2754c">pTransform_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">position</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">lookAtPos_</a> - (toTargetDir * <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#afe1c3ca5cc39892ce80ce2c34a933bd3">distance_</a>) + <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a9de63cdbb2c8f061b97a1070030252a6">lookAtPositionOffset_</a>;</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#aadd579a29756ab8f7ea3b7ad2bd2e8ca">MTImGui::DirectShow</a>(</div>
+<div class="line"><span class="lineno">   97</span>        [<span class="keyword">this</span>]()</div>
+<div class="line"><span class="lineno">   98</span>        {</div>
+<div class="line"><span class="lineno">   99</span>            ImGui::InputFloat(<span class="stringliteral">&quot;s&quot;</span>, &amp;<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a>);</div>
+<div class="line"><span class="lineno">  100</span>            <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">ShowProperty</a>(&amp;<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">velocity_</a>, <span class="stringliteral">&quot;vel&quot;</span>);</div>
+<div class="line"><span class="lineno">  101</span>        },</div>
+<div class="line"><span class="lineno">  102</span>        <span class="stringliteral">&quot;lerpSpeed&quot;</span>,</div>
+<div class="line"><span class="lineno">  103</span>        ShowType::INSPECTOR</div>
+<div class="line"><span class="lineno">  104</span>    );</div>
+<div class="line"><span class="lineno">  105</span>}</div>
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_ab2a2ac6dfa70ef1c52e281c1e11552d3"><div class="ttname"><a href="classPropertyDisplayRegistry.html#ab2a2ac6dfa70ef1c52e281c1e11552d3">PropertyDisplayRegistry::ShowProperty</a></div><div class="ttdeci">void ShowProperty(T *_instance, const char *_name)</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8h_source.html#l00060">PropertyDisplayRegistry.h:60</a></div></div>
 <div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry.cpp:5</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a08a56f2eabd302712326265785831c4f"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a08a56f2eabd302712326265785831c4f">mtgb::InputUtil::GetMouseAxis</a></div><div class="ttdeci">static Vector3 GetMouseAxis(WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00310">InputData.cpp:310</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1InputUtil_html_a5aaa5b039b8986c6ae02bfb41040da06"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a5aaa5b039b8986c6ae02bfb41040da06">mtgb::InputUtil::GetAxis</a></div><div class="ttdeci">static float GetAxis(Axis _axis, StickType _stickType, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00212">InputData.cpp:212</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1InputUtil_html_afc5ad9bcab455f772f6573b9d3c945f9"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#afc5ad9bcab455f772f6573b9d3c945f9">mtgb::InputUtil::GetMouseMove</a></div><div class="ttdeci">static Vector3 GetMouseMove(WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00279">InputData.cpp:279</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_aadd579a29756ab8f7ea3b7ad2bd2e8ca"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#aadd579a29756ab8f7ea3b7ad2bd2e8ca">mtgb::MTImGui::DirectShow</a></div><div class="ttdeci">static void DirectShow(Func &amp;&amp;_func, const std::string &amp;_name, ShowType _show)</div><div class="ttdoc">コールバックを表示キューに直接積む</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8h_source.html#l00190">MTImGui.h:190</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a0557441d4afceca59789f6c116e017d9"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a0557441d4afceca59789f6c116e017d9">mtgb::QuaternionCamera::UpdateLerpSpeed</a></div><div class="ttdeci">void UpdateLerpSpeed()</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8cpp_source.html#l00096">QuaternionCamera.cpp:96</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a0557441d4afceca59789f6c116e017d9"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a0557441d4afceca59789f6c116e017d9">mtgb::QuaternionCamera::UpdateLerpSpeed</a></div><div class="ttdeci">void UpdateLerpSpeed()</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8cpp_source.html#l00107">QuaternionCamera.cpp:107</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1QuaternionCamera_html_a6265e557c7f76715867e4823b74d6bd6"><div class="ttname"><a href="classmtgb_1_1QuaternionCamera.html#a6265e557c7f76715867e4823b74d6bd6">mtgb::QuaternionCamera::lookAtPos_</a></div><div class="ttdeci">Vector3 lookAtPos_</div><div class="ttdef"><b>Definition:</b> <a href="QuaternionCamera_8h_source.html#l00019">QuaternionCamera.h:19</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1RigidBody_html_a99215f31052ddd330d3e25908e5d4ed3"><div class="ttname"><a href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">mtgb::RigidBody::velocity_</a></div><div class="ttdeci">Vector3 velocity_</div><div class="ttdef"><b>Definition:</b> <a href="RigidBody_8h_source.html#l00068">RigidBody.h:68</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Time_html_a561b9381599a78b330575d350f5130fe"><div class="ttname"><a href="classmtgb_1_1Time.html#a561b9381599a78b330575d350f5130fe">mtgb::Time::DeltaTimeF</a></div><div class="ttdeci">static float DeltaTimeF()</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00025">GameTime.h:25</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a0e4b47a931e7ef521e3265c8d9413966"><div class="ttname"><a href="classmtgb_1_1Transform.html#a0e4b47a931e7ef521e3265c8d9413966">mtgb::Transform::rotate</a></div><div class="ttdeci">Quaternion rotate</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00154">Transform.h:154</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Transform_html_a71231187095137f6dd753ef9450bc18b"><div class="ttname"><a href="classmtgb_1_1Transform.html#a71231187095137f6dd753ef9450bc18b">mtgb::Transform::position</a></div><div class="ttdeci">Vector3 position</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00150">Transform.h:150</a></div></div>
 <div class="ttc" id="anamespacemtgb_1_1Mathf_html_a02b347bda774f51913f17dd14c4646e5"><div class="ttname"><a href="namespacemtgb_1_1Mathf.html#a02b347bda774f51913f17dd14c4646e5">mtgb::Mathf::Lerp</a></div><div class="ttdeci">static float Lerp(const float _a, const float _b, const float _value)</div><div class="ttdoc">aからbを線形補間する</div><div class="ttdef"><b>Definition:</b> <a href="Mathf_8h_source.html#l00032">Mathf.h:32</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::InputType::MOUSE</a></div><div class="ttdeci">@ MOUSE</div></div>
+<div class="ttc" id="anamespacemtgb_html_a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234"><div class="ttname"><a href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">mtgb::InputType::JOYPAD</a></div><div class="ttdeci">@ JOYPAD</div></div>
 <div class="ttc" id="astructmtgb_1_1Quaternion_html"><div class="ttname"><a href="structmtgb_1_1Quaternion.html">mtgb::Quaternion</a></div><div class="ttdoc">四元数の構造体</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00011">Quaternion.h:12</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Quaternion_html_a93d7d692e09e6e5d6b1b7076d5589000"><div class="ttname"><a href="structmtgb_1_1Quaternion.html#a93d7d692e09e6e5d6b1b7076d5589000">mtgb::Quaternion::AngleAxis</a></div><div class="ttdeci">static Quaternion AngleAxis(float _angleRad, const Vector3 &amp;_vec)</div><div class="ttdoc">軸に対する回転を取得</div><div class="ttdef"><b>Definition:</b> <a href="Quaternion_8h_source.html#l00097">Quaternion.h:97</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector2T_html"><div class="ttname"><a href="structmtgb_1_1Vector2T.html">mtgb::Vector2T&lt; float &gt;</a></div></div>
@@ -1468,11 +1491,11 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_a9ef73d52a097697ccba69787641edf2b"><div class="ttname"><a href="structmtgb_1_1Vector3.html#a9ef73d52a097697ccba69787641edf2b">mtgb::Vector3::Forward</a></div><div class="ttdeci">static Vector3 Forward()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00143">Vector3.h:143</a></div></div>
 <div class="ttc" id="astructmtgb_1_1Vector3_html_afde8104cffdc6b674a721eb24c89e7cc"><div class="ttname"><a href="structmtgb_1_1Vector3.html#afde8104cffdc6b674a721eb24c89e7cc">mtgb::Vector3::Up</a></div><div class="ttdeci">static Vector3 Up()</div><div class="ttdef"><b>Definition:</b> <a href="Vector3_8h_source.html#l00123">Vector3.h:123</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Quaternion_8h_source.html#l00097">mtgb::Quaternion::AngleAxis()</a>, <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="MTImGui_8h_source.html#l00190">mtgb::MTImGui::DirectShow()</a>, <a class="el" href="Vector3_8h_source.html#l00143">mtgb::Vector3::Forward()</a>, <a class="el" href="InputData_8cpp_source.html#l00212">mtgb::InputUtil::GetAxis()</a>, <a class="el" href="InputData_8cpp_source.html#l00279">mtgb::InputUtil::GetMouseMove()</a>, <a class="el" href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">mtgb::JOYPAD</a>, <a class="el" href="Mathf_8h_source.html#l00032">mtgb::Mathf::Lerp()</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::MOUSE</a>, <a class="el" href="Vector3_8h_source.html#l00135">mtgb::Vector3::Right()</a>, <a class="el" href="PropertyDisplayRegistry_8h_source.html#l00060">PropertyDisplayRegistry::ShowProperty()</a>, <a class="el" href="Vector3_8h_source.html#l00123">mtgb::Vector3::Up()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a> (計15項目).</p>
+<p class="reference">参照先 <a class="el" href="Quaternion_8h_source.html#l00097">mtgb::Quaternion::AngleAxis()</a>, <a class="el" href="GameTime_8h_source.html#l00025">mtgb::Time::DeltaTimeF()</a>, <a class="el" href="MTImGui_8h_source.html#l00190">mtgb::MTImGui::DirectShow()</a>, <a class="el" href="Vector3_8h_source.html#l00143">mtgb::Vector3::Forward()</a>, <a class="el" href="InputData_8cpp_source.html#l00212">mtgb::InputUtil::GetAxis()</a>, <a class="el" href="InputData_8cpp_source.html#l00310">mtgb::InputUtil::GetMouseAxis()</a>, <a class="el" href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa272826f644b5c37dbb9aa9bddf9d2234">mtgb::JOYPAD</a>, <a class="el" href="Mathf_8h_source.html#l00032">mtgb::Mathf::Lerp()</a>, <a class="el" href="namespacemtgb.html#a849b27857061661deeb701b23f338ecaa2ec2be318cc86a1224c0e9dcc71321e4">mtgb::MOUSE</a>, <a class="el" href="Vector3_8h_source.html#l00135">mtgb::Vector3::Right()</a>, <a class="el" href="PropertyDisplayRegistry_8h_source.html#l00060">PropertyDisplayRegistry::ShowProperty()</a>, <a class="el" href="Vector3_8h_source.html#l00123">mtgb::Vector3::Up()</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a> (計15項目).</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1QuaternionCamera_a6e9c36ed2b7d4262312fe6d9f183a605_cgraph.svg" width="1102" height="562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1QuaternionCamera_a6e9c36ed2b7d4262312fe6d9f183a605_cgraph.svg" width="1108" height="562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1501,24 +1524,24 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00096">96</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>{</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">isGround_</a>)</div>
-<div class="line"><span class="lineno">   99</span>    {</div>
-<div class="line"><span class="lineno">  100</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a3e03eaff47df9d43664160b960fdcdbe">lerpSpeedOnGrounded_</a>;</div>
-<div class="line"><span class="lineno">  101</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  102</span>    }</div>
-<div class="line"><span class="lineno">  103</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> velocity = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">velocity_</a>;</div>
-<div class="line"><span class="lineno">  104</span> </div>
-<div class="line"><span class="lineno">  105</span>    <span class="keywordflow">if</span> (velocity.y &gt; 0.0f)</div>
-<div class="line"><span class="lineno">  106</span>    {</div>
-<div class="line"><span class="lineno">  107</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#af1d9a75c9ba3680864831a0da0766457">lerpSpeedOnJumping_</a>;</div>
-<div class="line"><span class="lineno">  108</span>    }</div>
-<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">else</span></div>
+<p class="definition"> <a class="el" href="QuaternionCamera_8cpp_source.html">QuaternionCamera.cpp</a> の <a class="el" href="QuaternionCamera_8cpp_source.html#l00107">107</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>{</div>
+<div class="line"><span class="lineno">  109</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">isGround_</a>)</div>
 <div class="line"><span class="lineno">  110</span>    {</div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a202b993a56b79e2436a1711ce865f1a5">lerpSpeedOnDescending_</a>;</div>
-<div class="line"><span class="lineno">  112</span>    }</div>
-<div class="line"><span class="lineno">  113</span>}</div>
+<div class="line"><span class="lineno">  111</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a3e03eaff47df9d43664160b960fdcdbe">lerpSpeedOnGrounded_</a>;</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_struct" href="structmtgb_1_1Vector3.html">Vector3</a> velocity = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a69da3c9523fbc2c14fa5401cf02778d3">pTargetRigidBody_</a>-&gt;<a class="code hl_variable" href="classmtgb_1_1RigidBody.html#a99215f31052ddd330d3e25908e5d4ed3">velocity_</a>;</div>
+<div class="line"><span class="lineno">  115</span> </div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">if</span> (velocity.y &gt; 0.0f)</div>
+<div class="line"><span class="lineno">  117</span>    {</div>
+<div class="line"><span class="lineno">  118</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#af1d9a75c9ba3680864831a0da0766457">lerpSpeedOnJumping_</a>;</div>
+<div class="line"><span class="lineno">  119</span>    }</div>
+<div class="line"><span class="lineno">  120</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  121</span>    {</div>
+<div class="line"><span class="lineno">  122</span>        <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#acaaa0526e1abd692629c9fb54073b75b">currentLerpSpeed_</a> = <a class="code hl_variable" href="classmtgb_1_1QuaternionCamera.html#a202b993a56b79e2436a1711ce865f1a5">lerpSpeedOnDescending_</a>;</div>
+<div class="line"><span class="lineno">  123</span>    }</div>
+<div class="line"><span class="lineno">  124</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1RigidBody_html_a557e03afdd4b7f4cb0b46d810b8dd348"><div class="ttname"><a href="classmtgb_1_1RigidBody.html#a557e03afdd4b7f4cb0b46d810b8dd348">mtgb::RigidBody::isGround_</a></div><div class="ttdeci">bool isGround_</div><div class="ttdef"><b>Definition:</b> <a href="RigidBody_8h_source.html#l00071">RigidBody.h:71</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1594,7 +1617,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="Entity_8h_source.html">Entity.h</a> の <a class="el" href="Entity_8h_source.html#l00026">26</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="GameObject_8h_source.html#l00131">mtgb::GameObject::Component()</a>, <a class="el" href="GameObject_8cpp_source.html#l00028">mtgb::GameObject::GameObject()</a>, <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Box3D_8cpp_source.html#l00034">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00105">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00071">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00055">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00090">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00264">Player::ShowImGui()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00083">RespawnPoint::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00033">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00032">mtgb::SkySphere::ShowImGui()</a>.</p>
+<p class="reference">参照元 <a class="el" href="GameObject_8h_source.html#l00131">mtgb::GameObject::Component()</a>, <a class="el" href="GameObject_8cpp_source.html#l00028">mtgb::GameObject::GameObject()</a>, <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>, <a class="el" href="Box3D_8cpp_source.html#l00034">mtgb::Box3D::ShowImGui()</a>, <a class="el" href="CircularSaw_8cpp_source.html#l00111">mtgb::Saw::ShowImGui()</a>, <a class="el" href="Goal_8cpp_source.html#l00071">Goal::ShowImGui()</a>, <a class="el" href="MovingFloor_8cpp_source.html#l00055">MovingFloor::ShowImGui()</a>, <a class="el" href="PatrolChargerEnemy_8cpp_source.html#l00097">PatrolChargerEnemy::ShowImGui()</a>, <a class="el" href="Player_8cpp_source.html#l00274">Player::ShowImGui()</a>, <a class="el" href="RespawnManager_8cpp_source.html#l00083">RespawnPoint::ShowImGui()</a>, <a class="el" href="SeaPlane_8cpp_source.html#l00033">SeaPlane::ShowImGui()</a>, <a class="el" href="SkySphere_8cpp_source.html#l00032">mtgb::SkySphere::ShowImGui()</a>.</p>
 
 </div>
 </div>

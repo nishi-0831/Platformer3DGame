@@ -7,6 +7,7 @@ var classmtgb_1_1IProfile =
     [ "Load", "classmtgb_1_1IProfile.html#a0d7216e8e0697d73b534605e3fb6b2a0", null ],
     [ "Param", "classmtgb_1_1IProfile.html#a8f591103a5fdc9491396ae1d7ecbf5ff", null ],
     [ "Section", "classmtgb_1_1IProfile.html#a8bc61567afe56971c7e7388f73540782", null ],
+    [ "Write", "classmtgb_1_1IProfile.html#aeaaf92cabc360bd574a8aa2669ee5ac9", null ],
     [ "initValue_", "classmtgb_1_1IProfile.html#ac456ecb3e3105e30ee568ec36e1eed58", null ],
     [ "param_", "classmtgb_1_1IProfile.html#a18660ef71c2fcd099869878c0c6f479e", null ],
     [ "PATH", "classmtgb_1_1IProfile.html#a0800013fd85e37d33a5701edf54684c6", null ],

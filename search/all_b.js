@@ -20,7 +20,7 @@ var searchData=
   ['joystatecurrent_5f_17',['joyStateCurrent_',['../classmtgb_1_1InputData.html#adaffd86f7528c4d04bb6eb5ec020fbdf',1,'mtgb::InputData']]],
   ['joystateprevious_5f_18',['joyStatePrevious_',['../classmtgb_1_1InputData.html#aa26af3c4e14d74a9e05d4adc74654776',1,'mtgb::InputData']]],
   ['joystickcontext_19',['JoystickContext',['../structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e',1,'mtgb::JoystickContext::JoystickContext()'],['../structmtgb_1_1JoystickContext.html#acf470ac9d7f7cf6695f9283d0ca30bcf',1,'mtgb::JoystickContext::JoystickContext(ComPtr&lt; IDirectInputDevice8 &gt; _device)'],['../structmtgb_1_1JoystickContext.html',1,'mtgb::JoystickContext']]],
-  ['joystickcontext_5f_20',['joystickContext_',['../classmtgb_1_1Input.html#a7e019521a9bddfdd0784d7da6a68ce86',1,'mtgb::Input']]],
+  ['joystickcontext_5f_20',['joystickContext_',['../classmtgb_1_1Input.html#aba49fc97acd2202d30a95bafccdb30bd',1,'mtgb::Input']]],
   ['joystickproxy_21',['JoystickProxy',['../structmtgb_1_1JoystickProxy.html#ab893570e7636280450fd45ac39c20606',1,'mtgb::JoystickProxy::JoystickProxy()'],['../structmtgb_1_1JoystickProxy.html',1,'mtgb::JoystickProxy']]],
   ['joystickproxy_2ecpp_22',['JoystickProxy.cpp',['../JoystickProxy_8cpp.html',1,'']]],
   ['joystickproxy_2eh_23',['JoystickProxy.h',['../JoystickProxy_8h.html',1,'']]],

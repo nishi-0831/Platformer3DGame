@@ -10,6 +10,7 @@ var classmtgb_1_1InputResource =
     [ "Reset", "classmtgb_1_1InputResource.html#af7a1be98828072a5924a3bd2240a7589", null ],
     [ "SetResource", "classmtgb_1_1InputResource.html#a6ff97381a0878d1e4a4821450118a189", null ],
     [ "Update", "classmtgb_1_1InputResource.html#ad1a7496289a816903d50af7232189601", null ],
+    [ "UpdateStickTiltState", "classmtgb_1_1InputResource.html#a2fb5c61544636c7c464cfb26e6dd2b94", null ],
     [ "assignedJoystickGuid_", "classmtgb_1_1InputResource.html#a98beca7c75a095c65e56c3f883a60852", null ],
     [ "isInitialized", "classmtgb_1_1InputResource.html#afb11517f8a89a241f5d0bafde5788b02", null ],
     [ "name_", "classmtgb_1_1InputResource.html#afdc5cffb72eab98fa5ba4e3a329faaf9", null ],

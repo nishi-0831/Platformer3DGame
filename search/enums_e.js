@@ -6,6 +6,7 @@ var searchData=
   ['showtype_3',['ShowType',['../ShowType_8h.html#ac3437429431adf559d607c0e46c396c2',1,'ShowType.h']]],
   ['stageid_4',['StageID',['../StageID_8h.html#a2dec0eb07ce69be2b4cdaa2b2e2115e1',1,'StageID.h']]],
   ['state_5',['STATE',['../classPatrolChargerEnemy.html#aadeb50c8152beddf3ccfac7df1e75498',1,'PatrolChargerEnemy::STATE()'],['../classPlayer.html#ad93c54e92318d7c7abb43d424154f019',1,'Player::STATE()']]],
-  ['sticktype_6',['StickType',['../InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae',1,'InputPadCode.h']]],
-  ['systemupdatetype_7',['SystemUpdateType',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b',1,'mtgb::Game']]]
+  ['stickdirection_6',['StickDirection',['../namespacemtgb.html#a82b92541758f6f9b880f566248bb7eef',1,'mtgb']]],
+  ['sticktype_7',['StickType',['../InputPadCode_8h.html#a50648ae2c18c841f72153edc6cb7bdae',1,'InputPadCode.h']]],
+  ['systemupdatetype_8',['SystemUpdateType',['../classmtgb_1_1Game.html#acd5aa6dfc99569b487836ee990a9686b',1,'mtgb::Game']]]
 ];

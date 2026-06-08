@@ -6,6 +6,7 @@ var structmtgb_1_1ProfileInt =
     [ "Load", "structmtgb_1_1ProfileInt.html#a0d7216e8e0697d73b534605e3fb6b2a0", null ],
     [ "Param", "structmtgb_1_1ProfileInt.html#a8f591103a5fdc9491396ae1d7ecbf5ff", null ],
     [ "Section", "structmtgb_1_1ProfileInt.html#a8bc61567afe56971c7e7388f73540782", null ],
+    [ "Write", "structmtgb_1_1ProfileInt.html#a423310ab34f3eb3fe869eb5512b5d2bd", null ],
     [ "initValue_", "structmtgb_1_1ProfileInt.html#ac456ecb3e3105e30ee568ec36e1eed58", null ],
     [ "param_", "structmtgb_1_1ProfileInt.html#a18660ef71c2fcd099869878c0c6f479e", null ],
     [ "PATH", "structmtgb_1_1ProfileInt.html#a0800013fd85e37d33a5701edf54684c6", null ],

@@ -2,6 +2,7 @@ var classTitleScene =
 [
     [ "TitleScene", "classTitleScene.html#ad84453af5c7851b1222d058c2dc6b3be", null ],
     [ "~TitleScene", "classTitleScene.html#acdb98d58a55068a357899b9cff376446", null ],
+    [ "CreatePanel", "classTitleScene.html#a0fb21e1b232b2e4f68810ddb091fd4df", null ],
     [ "DestroyGameObject", "classTitleScene.html#ae6947b574cd958fe123b72e10e8a520d", null ],
     [ "Draw", "classTitleScene.html#a4d5b8ebcda824d0b6bd48d45b7686ba0", null ],
     [ "End", "classTitleScene.html#ae2550ca9d7394e544725c4c3744aac1a", null ],
@@ -18,6 +19,7 @@ var classTitleScene =
     [ "RegisterGameObject", "classTitleScene.html#a7439e6661b010ce9e79d1e6b54686e51", null ],
     [ "SerializeGameObjects", "classTitleScene.html#a8aa4435b53718b67839e8fb7cce11ba5", null ],
     [ "Update", "classTitleScene.html#a4d4e98579e09afbff30399ce4bc6036f", null ],
+    [ "panelManager_", "classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae", null ],
     [ "pGameObjects_", "classTitleScene.html#a3cfe6412123432bb9b77cbbf918a1b22", null ],
     [ "pInstance_", "classTitleScene.html#a280eb590943cbe7bb792522f60d34b9e", null ]
 ];

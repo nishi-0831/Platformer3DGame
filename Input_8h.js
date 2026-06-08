@@ -2,6 +2,7 @@ var Input_8h =
 [
     [ "mtgb::JoystickContext", "structmtgb_1_1JoystickContext.html", "structmtgb_1_1JoystickContext" ],
     [ "mtgb::JoystickReservation", "structmtgb_1_1JoystickReservation.html", "structmtgb_1_1JoystickReservation" ],
+    [ "mtgb::GuidHash", "structmtgb_1_1GuidHash.html", "structmtgb_1_1GuidHash" ],
     [ "mtgb::Input", "classmtgb_1_1Input.html", "classmtgb_1_1Input" ],
     [ "HWND", "Input_8h.html#ac17599842f3c193b028cc578098f8b93", null ],
     [ "ControllerType", "Input_8h.html#ad5fce522aec9941a8920f42294209e65", [

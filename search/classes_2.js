@@ -310,5 +310,6 @@ var searchData=
   ['build_5ftuple_5fcons_307',['build_tuple_cons',['../structboost_1_1fusion_1_1detail_1_1build__tuple__cons.html',1,'boost::fusion::detail']]],
   ['build_5ftuple_5fcons_3c_20first_2c_20last_2c_20false_20_3e_308',['build_tuple_cons&lt; First, Last, false &gt;',['../structboost_1_1fusion_1_1detail_1_1build__tuple__cons_3_01First_00_01Last_00_01false_01_4.html',1,'boost::fusion::detail']]],
   ['build_5ftuple_5fcons_3c_20first_2c_20last_2c_20true_20_3e_309',['build_tuple_cons&lt; First, Last, true &gt;',['../structboost_1_1fusion_1_1detail_1_1build__tuple__cons_3_01First_00_01Last_00_01true_01_4.html',1,'boost::fusion::detail']]],
-  ['byte_5fcontainer_5fwith_5fsubtype_310',['byte_container_with_subtype',['../classbyte__container__with__subtype.html',1,'']]]
+  ['button_310',['Button',['../classButton.html',1,'']]],
+  ['byte_5fcontainer_5fwith_5fsubtype_311',['byte_container_with_subtype',['../classbyte__container__with__subtype.html',1,'']]]
 ];

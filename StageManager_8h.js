@@ -1,4 +1,4 @@
 var StageManager_8h =
 [
-    [ "StageManger", "classStageManger.html", "classStageManger" ]
+    [ "StageManager", "classStageManager.html", "classStageManager" ]
 ];

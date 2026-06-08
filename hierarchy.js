@@ -2126,6 +2126,7 @@ var hierarchy =
     [ "boost::detail::atomic_count", "classboost_1_1detail_1_1atomic__count.html", null ],
     [ "boost::atomic_shared_ptr< T >", "classboost_1_1atomic__shared__ptr.html", null ],
     [ "mtgb::AudioClip", "classmtgb_1_1AudioClip.html", null ],
+    [ "mtgb::AudioEmitter", "structmtgb_1_1AudioEmitter.html", null ],
     [ "boost::multi_index::detail::null_augment_policy::augmented_interface< OrderedIndexImpl >", "structboost_1_1multi__index_1_1detail_1_1null__augment__policy_1_1augmented__interface.html", null ],
     [ "boost::multi_index::detail::rank_policy::augmented_interface< OrderedIndexImpl >", "structboost_1_1multi__index_1_1detail_1_1rank__policy_1_1augmented__interface.html", null ],
     [ "boost::multi_index::detail::null_augment_policy::augmented_node< OrderedIndexNodeImpl >", "structboost_1_1multi__index_1_1detail_1_1null__augment__policy_1_1augmented__node.html", null ],
@@ -3983,6 +3984,7 @@ var hierarchy =
         [ "Goal", "classGoal.html", null ],
         [ "HighlightEnemy", "classHighlightEnemy.html", null ],
         [ "MovingFloor", "classMovingFloor.html", null ],
+        [ "Panel", "classPanel.html", null ],
         [ "PatrolChargerEnemy", "classPatrolChargerEnemy.html", null ],
         [ "Player", "classPlayer.html", null ],
         [ "RespawnManager", "classRespawnManager.html", null ],
@@ -3990,6 +3992,10 @@ var hierarchy =
         [ "ScoreItem", "classScoreItem.html", null ],
         [ "ScoreViewer", "classScoreViewer.html", null ],
         [ "SeaPlane", "classSeaPlane.html", null ],
+        [ "UIComponent", "classUIComponent.html", [
+          [ "Button", "classButton.html", null ],
+          [ "Slider", "classSlider.html", null ]
+        ] ],
         [ "mtgb::Box3D", "classmtgb_1_1Box3D.html", null ],
         [ "mtgb::CircularSaw", "classmtgb_1_1CircularSaw.html", null ],
         [ "mtgb::HPViewer", "classmtgb_1_1HPViewer.html", null ],
@@ -4650,6 +4656,7 @@ var hierarchy =
     [ "boost::fusion::detail::gref< T >", "structboost_1_1fusion_1_1detail_1_1gref.html", null ],
     [ "boost::fusion::detail::gref< T & >", "structboost_1_1fusion_1_1detail_1_1gref_3_01T_01_6_01_4.html", null ],
     [ "boost::fusion::detail::gref< T const >", "structboost_1_1fusion_1_1detail_1_1gref_3_01T_01const_01_4.html", null ],
+    [ "mtgb::GuidHash", "structmtgb_1_1GuidHash.html", null ],
     [ "mtgb::handle_order", "structmtgb_1_1handle__order.html", null ],
     [ "mtgb::Event< EventDataType >::HandlerEntry", "structmtgb_1_1Event_1_1HandlerEntry.html", null ],
     [ "boost::move_detail::has_boost_move_no_copy_constructor_or_assign_type< T >", "structboost_1_1move__detail_1_1has__boost__move__no__copy__constructor__or__assign__type.html", null ],
@@ -6857,7 +6864,7 @@ var hierarchy =
     [ "boost::_bi::isref< R * >", "structboost_1_1__bi_1_1isref_3_01R_01_5_01_4.html", null ],
     [ "ISystem", null, [
       [ "ActorManager", "classActorManager.html", null ],
-      [ "StageManger", "classStageManger.html", null ]
+      [ "StageManager", "classStageManager.html", null ]
     ] ],
     [ "mtgb::ISystem", "classmtgb_1_1ISystem.html", [
       [ "mtgb::ComponentPool< Collider, ColliderCP >", "classmtgb_1_1ComponentPool.html", null ],
@@ -10650,6 +10657,7 @@ var hierarchy =
     [ "boost::mpl::pair_iter< Iter1, Iter2, Category >", "structboost_1_1mpl_1_1pair__iter.html", null ],
     [ "boost::fusion::result_of::pair_tie< Key, T >", "structboost_1_1fusion_1_1result__of_1_1pair__tie.html", null ],
     [ "boost::mpl::pair_view< BOOST_MPL_AUX_NA_PARAM, BOOST_MPL_AUX_NA_PARAM >", "structboost_1_1mpl_1_1pair__view.html", null ],
+    [ "PanelManager", "classPanelManager.html", null ],
     [ "Par_Test", "classPar__Test.html", null ],
     [ "boost::multi_index::detail::ordered_index_node_compressed_base< AugmentPolicy, Allocator >::parent_ref", "structboost_1_1multi__index_1_1detail_1_1ordered__index__node__compressed__base_1_1parent__ref.html", null ],
     [ "detail::parser< BasicJsonType, InputAdapterType >", "classdetail_1_1parser.html", null ],
@@ -12893,6 +12901,7 @@ var hierarchy =
     [ "mtgb::GameObject::Status", "structmtgb_1_1GameObject_1_1Status.html", null ],
     [ "boost::fusion::extension::std_array_size< T >", "structboost_1_1fusion_1_1extension_1_1std__array__size.html", null ],
     [ "boost::fusion::std_tuple_iterator_identity< Tuple, Index >", "structboost_1_1fusion_1_1std__tuple__iterator__identity.html", null ],
+    [ "mtgb::InputData::StickTiltState", "structmtgb_1_1InputData_1_1StickTiltState.html", null ],
     [ "boost::fusion::detail::stream_data< Stream, Tag, T >", "structboost_1_1fusion_1_1detail_1_1stream__data.html", null ],
     [ "boost::fusion::detail::stricter_traversal< Tag1, Tag2, Tag1Stricter >", "structboost_1_1fusion_1_1detail_1_1stricter__traversal.html", null ],
     [ "boost::fusion::detail::stricter_traversal< Tag1, Tag2, false >", "structboost_1_1fusion_1_1detail_1_1stricter__traversal_3_01Tag1_00_01Tag2_00_01false_01_4.html", null ],
@@ -14320,20 +14329,20 @@ var hierarchy =
       [ "boost::move_detail::eval_if< C, T1, T2 >", "structboost_1_1move__detail_1_1eval__if.html", null ]
     ] ],
     [ "if_::type", null, [
+      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, bitand_2< N1, N2 >, bitand_< bitand_2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
+    ] ],
+    [ "if_::type", null, [
       [ "boost::mpl::bitand_< bitand_< bitand_< N1, N2 >, N3 >, N4 >", "structboost_1_1mpl_1_1bitand__.html", null ],
       [ "boost::mpl::bitand_< bitand_< N1, N2 >, N3 >", "structboost_1_1mpl_1_1bitand__.html", null ],
       [ "boost::mpl::bitand_< BOOST_MPL_AUX_NA_PARAM, BOOST_MPL_AUX_NA_PARAM, N3, N4, N5 >", "structboost_1_1mpl_1_1bitand__.html", null ]
     ] ],
     [ "if_::type", null, [
-      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, bitand_2< N1, N2 >, bitand_< bitand_2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
+      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, bitor_2< N1, N2 >, bitor_< bitor_2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
     ] ],
     [ "if_::type", null, [
       [ "boost::mpl::bitor_< bitor_< bitor_< N1, N2 >, N3 >, N4 >", "structboost_1_1mpl_1_1bitor__.html", null ],
       [ "boost::mpl::bitor_< bitor_< N1, N2 >, N3 >", "structboost_1_1mpl_1_1bitor__.html", null ],
       [ "boost::mpl::bitor_< BOOST_MPL_AUX_NA_PARAM, BOOST_MPL_AUX_NA_PARAM, N3, N4, N5 >", "structboost_1_1mpl_1_1bitor__.html", null ]
-    ] ],
-    [ "if_::type", null, [
-      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, bitor_2< N1, N2 >, bitor_< bitor_2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
     ] ],
     [ "if_::type", null, [
       [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, bitxor_2< N1, N2 >, bitxor_< bitxor_2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
@@ -14344,12 +14353,12 @@ var hierarchy =
       [ "boost::mpl::bitxor_< BOOST_MPL_AUX_NA_PARAM, BOOST_MPL_AUX_NA_PARAM, N3, N4, N5 >", "structboost_1_1mpl_1_1bitxor__.html", null ]
     ] ],
     [ "if_::type", null, [
+      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, divides2< N1, N2 >, divides< divides2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
+    ] ],
+    [ "if_::type", null, [
       [ "boost::mpl::divides< divides< divides< N1, N2 >, N3 >, N4 >", "structboost_1_1mpl_1_1divides.html", null ],
       [ "boost::mpl::divides< divides< N1, N2 >, N3 >", "structboost_1_1mpl_1_1divides.html", null ],
       [ "boost::mpl::divides< BOOST_MPL_AUX_NA_PARAM, BOOST_MPL_AUX_NA_PARAM, N3, N4, N5 >", "structboost_1_1mpl_1_1divides.html", null ]
-    ] ],
-    [ "if_::type", null, [
-      [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, divides2< N1, N2 >, divides< divides2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]
     ] ],
     [ "if_::type", null, [
       [ "boost::mpl::aux::msvc_eti_base< if_< is_na< na >, minus2< N1, N2 >, minus< minus2< N1, N2 >, na, na, na > >::type >", "structboost_1_1mpl_1_1aux_1_1msvc__eti__base.html", null ]

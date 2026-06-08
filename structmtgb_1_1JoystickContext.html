@@ -150,13 +150,13 @@ mtgb::JoystickContext 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00781">781</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  782</span>    : <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a> { <span class="keyword">nullptr</span> }</div>
-<div class="line"><span class="lineno">  783</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#acf51528aede2a94ede182cb1d4e60a37">lastResult</a> { S_OK }</div>
-<div class="line"><span class="lineno">  784</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a> { <span class="keyword">nullptr</span> }</div>
-<div class="line"><span class="lineno">  785</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#ae75abcfdccd154026f0f067a1649b46c">deviceType</a> { <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a696b031073e74bf2cb98e5ef201d4aa3">DeviceType::UNKNOWN</a> }</div>
-<div class="line"><span class="lineno">  786</span>{</div>
-<div class="line"><span class="lineno">  787</span>}</div>
+<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00703">703</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  704</span>    : <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">  705</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#acf51528aede2a94ede182cb1d4e60a37">lastResult</a> { S_OK }</div>
+<div class="line"><span class="lineno">  706</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">  707</span>    , <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#ae75abcfdccd154026f0f067a1649b46c">deviceType</a> { <a class="code hl_enumvalue" href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a696b031073e74bf2cb98e5ef201d4aa3">DeviceType::UNKNOWN</a> }</div>
+<div class="line"><span class="lineno">  708</span>{</div>
+<div class="line"><span class="lineno">  709</span>}</div>
 <div class="ttc" id="anamespacemtgb_html_a919a09feaf3649c048364fffc3053d97a696b031073e74bf2cb98e5ef201d4aa3"><div class="ttname"><a href="namespacemtgb.html#a919a09feaf3649c048364fffc3053d97a696b031073e74bf2cb98e5ef201d4aa3">mtgb::DeviceType::UNKNOWN</a></div><div class="ttdeci">@ UNKNOWN</div></div>
 <div class="ttc" id="astructmtgb_1_1JoystickContext_html_a838190d163810c64aaf3f60e0743a068"><div class="ttname"><a href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">mtgb::JoystickContext::timerHandle</a></div><div class="ttdeci">TimerHandle timerHandle</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00041">Input.h:41</a></div></div>
 <div class="ttc" id="astructmtgb_1_1JoystickContext_html_abfe9d36c0e212166ccde368ff8a2d941"><div class="ttname"><a href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">mtgb::JoystickContext::device</a></div><div class="ttdeci">ComPtr&lt; IDirectInputDevice8 &gt; device</div><div class="ttdef"><b>Definition:</b> <a href="Input_8h_source.html#l00043">Input.h:43</a></div></div>
@@ -180,14 +180,14 @@ mtgb::JoystickContext 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00789">789</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  790</span>{</div>
-<div class="line"><span class="lineno">  791</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a>)</div>
-<div class="line"><span class="lineno">  792</span>    {</div>
-<div class="line"><span class="lineno">  793</span>        <a class="code hl_function" href="classmtgb_1_1Timer.html#a7a08cb86268c3b009ae8c9b68afa55b9">Timer::Remove</a>(<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a>);</div>
-<div class="line"><span class="lineno">  794</span>    }</div>
-<div class="line"><span class="lineno">  795</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>.Reset();</div>
-<div class="line"><span class="lineno">  796</span>}</div>
+<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00711">711</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  712</span>{</div>
+<div class="line"><span class="lineno">  713</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a>)</div>
+<div class="line"><span class="lineno">  714</span>    {</div>
+<div class="line"><span class="lineno">  715</span>        <a class="code hl_function" href="classmtgb_1_1Timer.html#a7a08cb86268c3b009ae8c9b68afa55b9">Timer::Remove</a>(<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#a838190d163810c64aaf3f60e0743a068">timerHandle</a>);</div>
+<div class="line"><span class="lineno">  716</span>    }</div>
+<div class="line"><span class="lineno">  717</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>.Reset();</div>
+<div class="line"><span class="lineno">  718</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1Timer_html_a7a08cb86268c3b009ae8c9b68afa55b9"><div class="ttname"><a href="classmtgb_1_1Timer.html#a7a08cb86268c3b009ae8c9b68afa55b9">mtgb::Timer::Remove</a></div><div class="ttdeci">static void Remove(TimerHandle _hTimer)</div><div class="ttdef"><b>Definition:</b> <a href="Timer_8cpp_source.html#l00019">Timer.cpp:19</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Timer_8cpp_source.html#l00019">mtgb::Timer::Remove()</a>.</p>
@@ -216,16 +216,16 @@ mtgb::JoystickContext 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00798">798</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">  799</span>    : <a class="code hl_function" href="structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e">JoystickContext</a>()</div>
-<div class="line"><span class="lineno">  800</span>{</div>
-<div class="line"><span class="lineno">  801</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>     = _device;</div>
-<div class="line"><span class="lineno">  802</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#ae75abcfdccd154026f0f067a1649b46c">deviceType</a> = <a class="code hl_function" href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">Input::GetDeviceType</a>(<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>);</div>
-<div class="line"><span class="lineno">  803</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Input_html_a5e7d3ec55273498dde61ab62c818fecd"><div class="ttname"><a href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">mtgb::Input::GetDeviceType</a></div><div class="ttdeci">static DeviceType GetDeviceType(ComPtr&lt; IDirectInputDevice8 &gt; _pInputDevice)</div><div class="ttdoc">デバイスのタイプを判別</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00552">Input.cpp:552</a></div></div>
-<div class="ttc" id="astructmtgb_1_1JoystickContext_html_a50a95b41b84ddc66c1b1f3e746c2e33e"><div class="ttname"><a href="structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e">mtgb::JoystickContext::JoystickContext</a></div><div class="ttdeci">JoystickContext()</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00781">Input.cpp:781</a></div></div>
+<p class="definition"> <a class="el" href="Input_8cpp_source.html">Input.cpp</a> の <a class="el" href="Input_8cpp_source.html#l00720">720</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  721</span>    : <a class="code hl_function" href="structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e">JoystickContext</a>()</div>
+<div class="line"><span class="lineno">  722</span>{</div>
+<div class="line"><span class="lineno">  723</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>     = _device;</div>
+<div class="line"><span class="lineno">  724</span>    <a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#ae75abcfdccd154026f0f067a1649b46c">deviceType</a> = <a class="code hl_function" href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">Input::GetDeviceType</a>(<a class="code hl_variable" href="structmtgb_1_1JoystickContext.html#abfe9d36c0e212166ccde368ff8a2d941">device</a>);</div>
+<div class="line"><span class="lineno">  725</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Input_html_a5e7d3ec55273498dde61ab62c818fecd"><div class="ttname"><a href="classmtgb_1_1Input.html#a5e7d3ec55273498dde61ab62c818fecd">mtgb::Input::GetDeviceType</a></div><div class="ttdeci">static DeviceType GetDeviceType(ComPtr&lt; IDirectInputDevice8 &gt; _pInputDevice)</div><div class="ttdoc">デバイスのタイプを判別</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00506">Input.cpp:506</a></div></div>
+<div class="ttc" id="astructmtgb_1_1JoystickContext_html_a50a95b41b84ddc66c1b1f3e746c2e33e"><div class="ttname"><a href="structmtgb_1_1JoystickContext.html#a50a95b41b84ddc66c1b1f3e746c2e33e">mtgb::JoystickContext::JoystickContext</a></div><div class="ttdeci">JoystickContext()</div><div class="ttdef"><b>Definition:</b> <a href="Input_8cpp_source.html#l00703">Input.cpp:703</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="Input_8h_source.html#l00043">device</a>, <a class="el" href="Input_8h_source.html#l00044">deviceType</a>, <a class="el" href="Input_8cpp_source.html#l00552">mtgb::Input::GetDeviceType()</a>.</p>
+<p class="reference">参照先 <a class="el" href="Input_8h_source.html#l00043">device</a>, <a class="el" href="Input_8h_source.html#l00044">deviceType</a>, <a class="el" href="Input_8cpp_source.html#l00506">mtgb::Input::GetDeviceType()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -250,7 +250,7 @@ mtgb::JoystickContext 連携図</div>
 
 <p class="definition"> <a class="el" href="Input_8h_source.html">Input.h</a> の <a class="el" href="Input_8h_source.html#l00043">43</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00798">JoystickContext()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00720">JoystickContext()</a>.</p>
 
 </div>
 </div>
@@ -268,7 +268,7 @@ mtgb::JoystickContext 連携図</div>
 
 <p class="definition"> <a class="el" href="Input_8h_source.html">Input.h</a> の <a class="el" href="Input_8h_source.html#l00044">44</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00798">JoystickContext()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Input_8cpp_source.html#l00720">JoystickContext()</a>.</p>
 
 </div>
 </div>

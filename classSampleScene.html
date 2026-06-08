@@ -197,10 +197,10 @@ SampleScene 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00010">10</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   11</span>    : <a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a> { StageID::STAGE_ONE }</div>
-<div class="line"><span class="lineno">   12</span>{</div>
-<div class="line"><span class="lineno">   13</span>}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00019">19</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   20</span>    : <a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a> { StageID::STAGE_ONE }</div>
+<div class="line"><span class="lineno">   21</span>{</div>
+<div class="line"><span class="lineno">   22</span>}</div>
 <div class="ttc" id="aclassSampleScene_html_a40cb91676e4af6ab8236fb0f117716b0"><div class="ttname"><a href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">SampleScene::stageID_</a></div><div class="ttdeci">StageID stageID_</div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8h_source.html#l00016">SampleScene.h:16</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -220,8 +220,8 @@ SampleScene 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00015">15</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   15</span>{}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00024">24</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   24</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -297,9 +297,35 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#a62c3eb59801fdd460e8b316a0a879bb4">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00050">50</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00065">65</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <a class="code hl_typedef" href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">RectF</a> moveInstructionRect { 50, 550, 100, 50 };</div>
+<div class="line"><span class="lineno">   68</span>    </div>
+<div class="line"><span class="lineno">   69</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hBackgroundImg, { 50, 550, 150, 50 });</div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hLeftStickImg, { 50, 550, 50, 50 });</div>
+<div class="line"><span class="lineno">   71</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a9470953a68bb79976afc3b28cd00324f">mtgb::Draw::ImmediateTextW</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;移動&quot;</span>, { 100, 550, 100, 50 });</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hBackgroundImg, { 250, 550, 200, 50 });</div>
+<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hSouthButtonPushImg, { 250, 550, 50, 50 });</div>
+<div class="line"><span class="lineno">   75</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a9470953a68bb79976afc3b28cd00324f">mtgb::Draw::ImmediateTextW</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;ジャンプ&quot;</span>, { 300, 550, 150, 50 });</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hBackgroundImg, { 500, 550, 200, 50 });</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a>(hRightStickImg, { 500, 550, 50, 50 });</div>
+<div class="line"><span class="lineno">   79</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a9470953a68bb79976afc3b28cd00324f">mtgb::Draw::ImmediateTextW</a>(<a class="code hl_enumvalue" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a><span class="stringliteral">&quot;視点移動&quot;</span>, { 550, 550, 150, 50 });</div>
+<div class="line"><span class="lineno">   80</span>}</div>
+<div class="ttc" id="aInputKeyCode_8h_html_a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587"><div class="ttname"><a href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">KeyCode::L</a></div><div class="ttdeci">@ L</div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a58181584ec06ddd3c786dada2327f86b"><div class="ttname"><a href="classmtgb_1_1Draw.html#a58181584ec06ddd3c786dada2327f86b">mtgb::Draw::Image</a></div><div class="ttdeci">static void Image(ImageHandle _hImage, const RectF &amp;_draw, const RectF &amp;_cut, float _rotationZ, const UIParams &amp;_uiParams=defaultUIParams_, Color _color=Color::WHITE)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00051">Draw.cpp:51</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Draw_html_a9470953a68bb79976afc3b28cd00324f"><div class="ttname"><a href="classmtgb_1_1Draw.html#a9470953a68bb79976afc3b28cd00324f">mtgb::Draw::ImmediateTextW</a></div><div class="ttdeci">static void ImmediateTextW(std::wstring_view _text, Vector2F _topLeft, int _size=currentDefaultFontSize_, TextAlignment _alignment=currentDefaultTextAlignment_, const UIParams &amp;_uiParams=defaultUIParams_)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00117">Draw.cpp:117</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a5c832fe81e838c69e5c62380af9a01de"><div class="ttname"><a href="namespacemtgb.html#a5c832fe81e838c69e5c62380af9a01de">mtgb::RectF</a></div><div class="ttdeci">RectT&lt; float &gt; RectF</div><div class="ttdef"><b>Definition:</b> <a href="RectF_8h_source.html#l00006">RectF.h:6</a></div></div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Draw_8cpp_source.html#l00051">mtgb::Draw::Image()</a>, <a class="el" href="Draw_8cpp_source.html#l00117">mtgb::Draw::ImmediateTextW()</a>, <a class="el" href="InputKeyCode_8h.html#a0607c9301fb39199343f886885e74574ad20caec3b48a1eef164cb4ca81ba2587">L</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSampleScene_a7fe2abd741221eb37db47a1c6b43737e_cgraph.svg" width="872" height="264"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a81e26cc660526b4e073a26ffb8f9ff18" name="a81e26cc660526b4e073a26ffb8f9ff18"></a>
@@ -327,8 +353,8 @@ SampleScene 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#ae9f7881aa324e201222b276fdacec76b">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   52</span>{}</div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00082">82</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -706,43 +732,47 @@ template&lt;typename T &gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#a1bd20af76384c4d0d1e1fa448419b45d">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00017">17</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   18</span>{</div>
-<div class="line"><span class="lineno">   19</span>    mtgb::Game::System&lt;mtgb::ImGuiEditorCamera&gt;().CreateCamera();</div>
-<div class="line"><span class="lineno">   20</span> </div>
-<div class="line"><span class="lineno">   21</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>();</div>
-<div class="line"><span class="lineno">   22</span>    <a class="code hl_function" href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a>().<a class="code hl_function" href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">Initialize</a>();</div>
-<div class="line"><span class="lineno">   23</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba">mtgb::MTImGui::Initialize</a>();</div>
-<div class="line"><span class="lineno">   24</span> </div>
-<div class="line"><span class="lineno">   25</span>    Instantiate&lt;GameOverManager&gt;();</div>
-<div class="line"><span class="lineno">   26</span>    Instantiate&lt;mtgb::SkySphere&gt;();</div>
-<div class="line"><span class="lineno">   27</span>    Instantiate&lt;RespawnManager&gt;();</div>
-<div class="line"><span class="lineno">   28</span>    std::optional&lt;nlohmann::json&gt; <a class="code hl_class" href="classbasic__json.html">json</a> = mtgb::Game::System&lt;StageManger&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
-<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="classbasic__json.html">json</a>.has_value())</div>
-<div class="line"><span class="lineno">   30</span>    {</div>
-<div class="line"><span class="lineno">   31</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a>(<a class="code hl_class" href="classbasic__json.html">json</a>);</div>
-<div class="line"><span class="lineno">   32</span>        <span class="comment">// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる</span></div>
-<div class="line"><span class="lineno">   33</span>        <span class="comment">// TODO: マジックナンバーを修正</span></div>
-<div class="line"><span class="lineno">   34</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">mtgb::Time::WaitFrame</a>(2);</div>
-<div class="line"><span class="lineno">   35</span>    }</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   37</span>    {</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_struct" href="structassert.html">assert</a>(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>}</div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_a28a8021dd97f8ea30b8e1d35c769e483"><div class="ttname"><a href="classPropertyDisplayRegistry.html#a28a8021dd97f8ea30b8e1d35c769e483">PropertyDisplayRegistry::Initialize</a></div><div class="ttdeci">void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8cpp_source.html#l00011">PropertyDisplayRegistry.cpp:11</a></div></div>
-<div class="ttc" id="aclassPropertyDisplayRegistry_html_afc910235065385c0a147e03f9a2305e1"><div class="ttname"><a href="classPropertyDisplayRegistry.html#afc910235065385c0a147e03f9a2305e1">PropertyDisplayRegistry::Instance</a></div><div class="ttdeci">static PropertyDisplayRegistry &amp; Instance()</div><div class="ttdef"><b>Definition:</b> <a href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry.cpp:5</a></div></div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00026">26</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    mtgb::Game::System&lt;mtgb::ImGuiEditorCamera&gt;().CreateCamera();</div>
+<div class="line"><span class="lineno">   29</span>    mtgb::Game::System&lt;mtgb::Audio&gt;().Play(<span class="stringliteral">&quot;PlayScene&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   30</span>    mtgb::Game::System&lt;mtgb::SceneSystem&gt;().OnMove(</div>
+<div class="line"><span class="lineno">   31</span>        []()</div>
+<div class="line"><span class="lineno">   32</span>        {</div>
+<div class="line"><span class="lineno">   33</span>            mtgb::Game::System&lt;mtgb::Audio&gt;().Stop(<span class="stringliteral">&quot;PlayScene&quot;</span>);</div>
+<div class="line"><span class="lineno">   34</span>        }</div>
+<div class="line"><span class="lineno">   35</span>    );</div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    Instantiate&lt;GameOverManager&gt;();</div>
+<div class="line"><span class="lineno">   38</span>    Instantiate&lt;mtgb::SkySphere&gt;();</div>
+<div class="line"><span class="lineno">   39</span>    Instantiate&lt;RespawnManager&gt;();</div>
+<div class="line"><span class="lineno">   40</span>    std::optional&lt;nlohmann::json&gt; <a class="code hl_class" href="classbasic__json.html">json</a> = mtgb::Game::System&lt;StageManager&gt;().GetStageJson(<a class="code hl_variable" href="classSampleScene.html#a40cb91676e4af6ab8236fb0f117716b0">stageID_</a>);</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="classbasic__json.html">json</a>.has_value())</div>
+<div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a>(<a class="code hl_class" href="classbasic__json.html">json</a>);</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#adff9703b00d6ecfa1c1bb4e17fe362e8">mtgb::Time::StabilizeDeltaTime</a>();</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   47</span>    {</div>
+<div class="line"><span class="lineno">   48</span>        <a class="code hl_struct" href="structassert.html">assert</a>(<span class="keyword">false</span> &amp;&amp; <span class="stringliteral">&quot;JSONファイルが見つかりません&quot;</span>);</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>    hBackgroundImg = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a>(<span class="stringliteral">&quot;Image/Black.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   52</span>    hLeftStickImg  = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a>(<span class="stringliteral">&quot;Image/LeftStick.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   53</span>    hSouthButtonPushImg = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a>(<span class="stringliteral">&quot;Image/SouthButtonPush.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   54</span>    hRightStickImg = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a>(<span class="stringliteral">&quot;Image/RightStick.png&quot;</span>);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 <div class="ttc" id="aclassbasic__json_html"><div class="ttname"><a href="classbasic__json.html">basic_json</a></div><div class="ttdoc">namespace for Niels Lohmann</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00098">json.hpp:100</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1GameObjectGenerator_html_a75cbc1b1bde2c45d36a91cacc6fbdd3f"><div class="ttname"><a href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a></div><div class="ttdeci">static void GenerateFromJson(const nlohmann::json &amp;_json)</div><div class="ttdoc">JSONからゲームオブジェクトを生成する</div><div class="ttdef"><b>Definition:</b> <a href="GameObjectGenerator_8cpp_source.html#l00026">GameObjectGenerator.cpp:26</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1MTImGui_html_a9d99d144b1fc6bbaacf6044db9ef8eba"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#a9d99d144b1fc6bbaacf6044db9ef8eba">mtgb::MTImGui::Initialize</a></div><div class="ttdeci">static void Initialize()</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00029">MTImGui.cpp:29</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Time_html_a861d48000e2c98be1942c717ea17ae53"><div class="ttname"><a href="classmtgb_1_1Time.html#a861d48000e2c98be1942c717ea17ae53">mtgb::Time::WaitFrame</a></div><div class="ttdeci">static void WaitFrame(unsigned int _frame)</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00029">GameTime.h:29</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Image_html_a739cb4329f2e2f2521fa782b260cfeb7"><div class="ttname"><a href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">mtgb::Image::Load</a></div><div class="ttdeci">static ImageHandle Load(const std::string_view &amp;_fileName)</div><div class="ttdoc">画像を読み込み、ハンドラを取得</div><div class="ttdef"><b>Definition:</b> <a href="Image_8cpp_source.html#l00024">Image.cpp:24</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Time_html_adff9703b00d6ecfa1c1bb4e17fe362e8"><div class="ttname"><a href="classmtgb_1_1Time.html#adff9703b00d6ecfa1c1bb4e17fe362e8">mtgb::Time::StabilizeDeltaTime</a></div><div class="ttdeci">static void StabilizeDeltaTime()</div><div class="ttdoc">デルタタイムを安定させる。 ステージの読み込みなど時間のかかる処理を行った後に呼び出す</div><div class="ttdef"><b>Definition:</b> <a href="GameTime_8h_source.html#l00038">GameTime.h:38</a></div></div>
 <div class="ttc" id="astructassert_html"><div class="ttname"><a href="structassert.html">assert</a></div><div class="ttdef"><b>Definition:</b> <a href="mpl_2assert_8hpp_source.html#l00079">mpl/assert.hpp:79</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00026">mtgb::GameObjectGenerator::GenerateFromJson()</a>, <a class="el" href="MTImGui_8cpp_source.html#l00029">mtgb::MTImGui::Initialize()</a>, <a class="el" href="PropertyDisplayRegistry_8cpp_source.html#l00011">PropertyDisplayRegistry::Initialize()</a>, <a class="el" href="PropertyDisplayRegistry_8cpp_source.html#l00005">PropertyDisplayRegistry::Instance()</a>, <a class="el" href="SampleScene_8h_source.html#l00016">stageID_</a>, <a class="el" href="GameTime_8h_source.html#l00029">mtgb::Time::WaitFrame()</a>.</p>
+<p class="reference">参照先 <a class="el" href="GameObjectGenerator_8cpp_source.html#l00026">mtgb::GameObjectGenerator::GenerateFromJson()</a>, <a class="el" href="Image_8cpp_source.html#l00024">mtgb::Image::Load()</a>, <a class="el" href="GameTime_8h_source.html#l00038">mtgb::Time::StabilizeDeltaTime()</a>, <a class="el" href="SampleScene_8h_source.html#l00016">stageID_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classSampleScene_aae186be401040c6ad4aef71afd78f711_cgraph.svg" width="1699" height="586"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classSampleScene_aae186be401040c6ad4aef71afd78f711_cgraph.svg" width="1331" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -792,6 +822,14 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="GameScene_8h_source.html#l00091">mtgb::GameScene::pGameObjects_</a>.</p>
 
+<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00091">ResultScene::CreatePanel()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00077">TitleScene::CreatePanel()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameScene_a6056998d7d171d984838f7c705fb8bfa_icgraph.svg" width="682" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
 </div>
 </div>
 <a id="a6fbe94e4fcf17b804cba13b30846dd92" name="a6fbe94e4fcf17b804cba13b30846dd92"></a>
@@ -836,7 +874,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="IComponent_8h_source.html#l00063">mtgb::IComponent&lt; TransformCP, Transform &gt;::Get()</a>, <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00018">ResultScene::Initialize()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00021">TitleScene::Initialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00021">ResultScene::Initialize()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00027">TitleScene::Initialize()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -896,10 +934,18 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 <div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Entity_8h_source.html#l00020">mtgb::Entity::GetEntityId()</a>.</p>
+
+<p class="reference">参照元 <a class="el" href="TitleScene_8cpp_source.html#l00077">TitleScene::CreatePanel()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameScene_a7439e6661b010ce9e79d1e6b54686e51_cgraph.svg" width="446" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1GameScene_a7439e6661b010ce9e79d1e6b54686e51_icgraph.svg" width="642" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -986,15 +1032,15 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p><a class="el" href="classmtgb_1_1GameScene.html#aee3999ef14c77f7a41365d751867d4ab">mtgb::GameScene</a>を再実装しています。</p>
 
-<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00042">42</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
-<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">mtgb::InputUtil::GetKeyDown</a>(KeyCode::ESCAPE))</div>
-<div class="line"><span class="lineno">   45</span>    {</div>
-<div class="line"><span class="lineno">   46</span>        mtgb::Game::System&lt;mtgb::SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classResultScene.html">ResultScene</a>&gt;();</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span>}</div>
-<div class="ttc" id="aclassResultScene_html"><div class="ttname"><a href="classResultScene.html">ResultScene</a></div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8h_source.html#l00004">ResultScene.h:5</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a0228ab943ec558bd2599ce2d43d0397f"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a0228ab943ec558bd2599ce2d43d0397f">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(const KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
+<p class="definition"> <a class="el" href="SampleScene_8cpp_source.html">SampleScene.cpp</a> の <a class="el" href="SampleScene_8cpp_source.html#l00057">57</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
+<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="classmtgb_1_1InputUtil.html#a89174396289ee1bbcaa257df2bb65ffe">mtgb::InputUtil::GetKeyDown</a>(KeyCode::ESCAPE))</div>
+<div class="line"><span class="lineno">   60</span>    {</div>
+<div class="line"><span class="lineno">   61</span>        mtgb::Game::System&lt;mtgb::SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classResultScene.html">ResultScene</a>&gt;();</div>
+<div class="line"><span class="lineno">   62</span>    }</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aclassResultScene_html"><div class="ttname"><a href="classResultScene.html">ResultScene</a></div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8h_source.html#l00005">ResultScene.h:6</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1InputUtil_html_a89174396289ee1bbcaa257df2bb65ffe"><div class="ttname"><a href="classmtgb_1_1InputUtil.html#a89174396289ee1bbcaa257df2bb65ffe">mtgb::InputUtil::GetKeyDown</a></div><div class="ttdeci">static bool GetKeyDown(KeyCode _keyCode, WindowContext _context=mtgb::WindowContext::FIRST)</div><div class="ttdef"><b>Definition:</b> <a href="InputData_8cpp_source.html#l00028">InputData.cpp:28</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="InputData_8cpp_source.html#l00028">mtgb::InputUtil::GetKeyDown()</a>.</p>
 <div class="dynheader">
@@ -1055,7 +1101,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="GameScene_8h_source.html">GameScene.h</a> の <a class="el" href="GameScene_8h_source.html#l00026">26</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="SceneSystem_8cpp_source.html#l00114">mtgb::SceneSystem::ChangeScene()</a>, <a class="el" href="SceneSystem_8h_source.html#l00030">mtgb::SceneSystem::GetActiveScene()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00041">mtgb::SceneSystem::Update()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00026">mtgb::SceneSystem::~SceneSystem()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SceneSystem_8cpp_source.html#l00104">mtgb::SceneSystem::ChangeScene()</a>, <a class="el" href="SceneSystem_8h_source.html#l00030">mtgb::SceneSystem::GetActiveScene()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00031">mtgb::SceneSystem::Update()</a>, <a class="el" href="SceneSystem_8cpp_source.html#l00018">mtgb::SceneSystem::~SceneSystem()</a>.</p>
 
 </div>
 </div>
@@ -1081,7 +1127,7 @@ template&lt;class GameObjectT , typename... Args&gt; </div>
 
 <p class="definition"> <a class="el" href="SampleScene_8h_source.html">SampleScene.h</a> の <a class="el" href="SampleScene_8h_source.html#l00016">16</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00017">Initialize()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00026">Initialize()</a>.</p>
 
 </div>
 </div>

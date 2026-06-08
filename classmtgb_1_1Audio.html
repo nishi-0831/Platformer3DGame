@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('classmtgb_1_1Audio.html',''); initResi
 <a href="#pub-methods">公開メンバ関数</a> &#124;
 <a href="#pri-methods">非公開メンバ関数</a> &#124;
 <a href="#pri-attribs">非公開変数類</a> &#124;
+<a href="#pri-static-attribs">静的非公開変数類</a> &#124;
 <a href="classmtgb_1_1Audio-members.html">全メンバ一覧</a>  </div>
   <div class="headertitle"><div class="title">mtgb::Audio クラス</div></div>
 </div><!--header-->
@@ -108,13 +109,13 @@ $(document).ready(function(){initNavTree('classmtgb_1_1Audio.html',''); initResi
 <div class="dynheader">
 mtgb::Audio の継承関係図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio__inherit__graph.svg" width="282" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio__inherit__graph.svg" width="282" height="991"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <div class="dynheader">
 mtgb::Audio 連携図</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio__coll__graph.svg" width="423" height="647"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio__coll__graph.svg" width="1470" height="2562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 <table class="memberdecls">
@@ -130,8 +131,22 @@ mtgb::Audio 連携図</div>
 <tr class="separator:ad96a64c0eba4aab70cf1813a6cf61d66"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78d019d07cb6d590b2f9e63d86dacc37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a78d019d07cb6d590b2f9e63d86dacc37">Register</a> (std::string_view _soundName, std::string_view _filePath)</td></tr>
 <tr class="separator:a78d019d07cb6d590b2f9e63d86dacc37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f9fcb93636e5f0d2e8078fa659da9c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a5f9fcb93636e5f0d2e8078fa659da9c7">Play</a> (std::string_view _soundName)</td></tr>
-<tr class="separator:a5f9fcb93636e5f0d2e8078fa659da9c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66cac39eaba12c0e57b35049081697cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a66cac39eaba12c0e57b35049081697cd">Play</a> (std::string_view _soundName, bool _loop=false)</td></tr>
+<tr class="separator:a66cac39eaba12c0e57b35049081697cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae70faa97045ce783ec7f0d9c195ffcd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#ae70faa97045ce783ec7f0d9c195ffcd9">Stop</a> (std::string_view _soundName)</td></tr>
+<tr class="memdesc:ae70faa97045ce783ec7f0d9c195ffcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">指定した音声の再生を停止する  <br /></td></tr>
+<tr class="separator:ae70faa97045ce783ec7f0d9c195ffcd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c1fcbb112125b685f1ce8c1e39c9806"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a2c1fcbb112125b685f1ce8c1e39c9806">StopAll</a> ()</td></tr>
+<tr class="memdesc:a2c1fcbb112125b685f1ce8c1e39c9806"><td class="mdescLeft">&#160;</td><td class="mdescRight">再生中の全音声を停止する  <br /></td></tr>
+<tr class="separator:a2c1fcbb112125b685f1ce8c1e39c9806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b582aedd17755770afaae4676bd9c56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a0b582aedd17755770afaae4676bd9c56">SetClipVolume</a> (std::string_view _soundName, float _volume)</td></tr>
+<tr class="separator:a0b582aedd17755770afaae4676bd9c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48d2d73945f2e3002b83eb60f7d1f0a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a48d2d73945f2e3002b83eb60f7d1f0a6">SetMasterVolume</a> (float _volume)</td></tr>
+<tr class="separator:a48d2d73945f2e3002b83eb60f7d1f0a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c022a588a0639c574d6633579cdfbe1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a6c022a588a0639c574d6633579cdfbe1">SetListenerEntityId</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id)</td></tr>
+<tr class="separator:a6c022a588a0639c574d6633579cdfbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7063776151fe71555b16eb18fdf0b2ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a7063776151fe71555b16eb18fdf0b2ba">SetEmitter</a> (<a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a> _id, std::string_view _soundName)</td></tr>
+<tr class="separator:a7063776151fe71555b16eb18fdf0b2ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa2823e5390468dfc47213b845c55d3ac"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1ISystem.html#aa2823e5390468dfc47213b845c55d3ac">Release</a> ()</td></tr>
 <tr class="memdesc:aa2823e5390468dfc47213b845c55d3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">開放処理  <br /></td></tr>
 <tr class="separator:aa2823e5390468dfc47213b845c55d3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -141,19 +156,44 @@ mtgb::Audio 連携図</div>
 <tr class="memitem:ad48eedf195ae84f68a1ba72f3e320617"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1AudioClip.html">AudioClip</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">Load</a> (std::string_view _filePath)</td></tr>
 <tr class="memdesc:ad48eedf195ae84f68a1ba72f3e320617"><td class="mdescLeft">&#160;</td><td class="mdescRight">音声ファイルをロードする  <br /></td></tr>
 <tr class="separator:ad48eedf195ae84f68a1ba72f3e320617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2083ccd1cb520fbc3f1e2a7b43ea8f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#aa2083ccd1cb520fbc3f1e2a7b43ea8f8">UpdateEmitter</a> ()</td></tr>
+<tr class="separator:aa2083ccd1cb520fbc3f1e2a7b43ea8f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4e9f1af790a5236d7149946065eff81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#ae4e9f1af790a5236d7149946065eff81">UpdateListener</a> ()</td></tr>
+<tr class="separator:ae4e9f1af790a5236d7149946065eff81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 非公開変数類</h2></td></tr>
 <tr class="memitem:a1919ac778affcb56b2ddc71dcc15f838"><td class="memItemLeft" align="right" valign="top">ComPtr&lt; IXAudio2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a></td></tr>
 <tr class="separator:a1919ac778affcb56b2ddc71dcc15f838"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e017363c0bcb3b0eb0817ae5ba85f52"><td class="memItemLeft" align="right" valign="top">X3DAUDIO_HANDLE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a6e017363c0bcb3b0eb0817ae5ba85f52">x3DInstance_</a></td></tr>
+<tr class="separator:a6e017363c0bcb3b0eb0817ae5ba85f52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a175cf448fd62a8706ea9eadde9a7f368"><td class="memItemLeft" align="right" valign="top">IXAudio2MasteringVoice *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a></td></tr>
 <tr class="separator:a175cf448fd62a8706ea9eadde9a7f368"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b2788e69185e2d4090f89c20c8ef505"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="classmtgb_1_1AudioClip.html">AudioClip</a> *, <a class="el" href="structmtgb_1_1TransparentStringHash.html">TransparentStringHash</a>, <a class="el" href="structmtgb_1_1TransparentStringEq.html">TransparentStringEq</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a></td></tr>
 <tr class="separator:a7b2788e69185e2d4090f89c20c8ef505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d4ab71be64f53edd8223cda459fdeb"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="structmtgb_1_1AudioEmitter.html">AudioEmitter</a>, <a class="el" href="structmtgb_1_1TransparentStringHash.html">TransparentStringHash</a>, <a class="el" href="structmtgb_1_1TransparentStringEq.html">TransparentStringEq</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">emitterMap_</a></td></tr>
+<tr class="separator:a66d4ab71be64f53edd8223cda459fdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a484d8152c0de85990afe8cb1cb3544fb"><td class="memItemLeft" align="right" valign="top">X3DAUDIO_LISTENER&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a></td></tr>
+<tr class="separator:a484d8152c0de85990afe8cb1cb3544fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4458f12f7f1c78c4a9a9db9b764f3286"><td class="memItemLeft" align="right" valign="top">X3DAUDIO_DISTANCE_CURVE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a4458f12f7f1c78c4a9a9db9b764f3286">volumeCurve_</a></td></tr>
+<tr class="separator:a4458f12f7f1c78c4a9a9db9b764f3286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e11b272f973b3034b0be29802b38b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classmtgb_1_1Transform.html">Transform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a></td></tr>
+<tr class="separator:ac5e11b272f973b3034b0be29802b38b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f6c8c971bcd3a37ae50dfc3eb715deb"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a4f6c8c971bcd3a37ae50dfc3eb715deb">attenuationVolumeDistance_</a></td></tr>
+<tr class="separator:a4f6c8c971bcd3a37ae50dfc3eb715deb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab241dcaf3c5646b5f24d612d68394187"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#ab241dcaf3c5646b5f24d612d68394187">volumeControlPointCount_</a></td></tr>
+<tr class="separator:ab241dcaf3c5646b5f24d612d68394187"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724eab6a0d6da513182409d74b43baae"><td class="memItemLeft" align="right" valign="top">X3DAUDIO_DISTANCE_CURVE_POINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">volumePoints</a> [<a class="el" href="classmtgb_1_1Audio.html#a8af12bfb0bb007ab90c052565da002a3">CONTROL_POINT_COUNT</a>]</td></tr>
+<tr class="separator:a724eab6a0d6da513182409d74b43baae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+静的非公開変数類</h2></td></tr>
+<tr class="memitem:a8af12bfb0bb007ab90c052565da002a3"><td class="memItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmtgb_1_1Audio.html#a8af12bfb0bb007ab90c052565da002a3">CONTROL_POINT_COUNT</a> { 3 }</td></tr>
+<tr class="separator:a8af12bfb0bb007ab90c052565da002a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00018">18</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00027">27</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
 <a id="aae184b0088069fde1d7ea6b0545e212c" name="aae184b0088069fde1d7ea6b0545e212c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae184b0088069fde1d7ea6b0545e212c">&#9670;&#160;</a></span>Audio()</h2>
@@ -170,14 +210,22 @@ mtgb::Audio 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00028">28</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   29</span>    : <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a> { <span class="keyword">nullptr</span> }</div>
-<div class="line"><span class="lineno">   30</span>    , <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> { <span class="keyword">nullptr</span> }</div>
-<div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a175cf448fd62a8706ea9eadde9a7f368"><div class="ttname"><a href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">mtgb::Audio::pMasteringVoice_</a></div><div class="ttdeci">IXAudio2MasteringVoice * pMasteringVoice_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00053">Audio.h:53</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a1919ac778affcb56b2ddc71dcc15f838"><div class="ttname"><a href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">mtgb::Audio::pXAudio2_</a></div><div class="ttdeci">ComPtr&lt; IXAudio2 &gt; pXAudio2_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00052">Audio.h:52</a></div></div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00046">46</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   47</span>    : <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">   48</span>    , <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">   49</span>    , <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a> { <span class="keyword">nullptr</span> }</div>
+<div class="line"><span class="lineno">   50</span>    , <a class="code hl_variable" href="classmtgb_1_1Audio.html#a4f6c8c971bcd3a37ae50dfc3eb715deb">attenuationVolumeDistance_</a> { 40.0f }</div>
+<div class="line"><span class="lineno">   51</span>{</div>
+<div class="line"><span class="lineno">   52</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a>.pCone = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   53</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a175cf448fd62a8706ea9eadde9a7f368"><div class="ttname"><a href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">mtgb::Audio::pMasteringVoice_</a></div><div class="ttdeci">IXAudio2MasteringVoice * pMasteringVoice_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00095">Audio.h:95</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a1919ac778affcb56b2ddc71dcc15f838"><div class="ttname"><a href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">mtgb::Audio::pXAudio2_</a></div><div class="ttdeci">ComPtr&lt; IXAudio2 &gt; pXAudio2_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00093">Audio.h:93</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a484d8152c0de85990afe8cb1cb3544fb"><div class="ttname"><a href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">mtgb::Audio::listener_</a></div><div class="ttdeci">X3DAUDIO_LISTENER listener_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00098">Audio.h:98</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a4f6c8c971bcd3a37ae50dfc3eb715deb"><div class="ttname"><a href="classmtgb_1_1Audio.html#a4f6c8c971bcd3a37ae50dfc3eb715deb">mtgb::Audio::attenuationVolumeDistance_</a></div><div class="ttdeci">float attenuationVolumeDistance_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00105">Audio.h:105</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ac5e11b272f973b3034b0be29802b38b5"><div class="ttname"><a href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">mtgb::Audio::pListenerTransform_</a></div><div class="ttdeci">Transform * pListenerTransform_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00101">Audio.h:101</a></div></div>
 </div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Audio_8h_source.html#l00098">listener_</a>.</p>
+
 </div>
 </div>
 <a id="accd8889d5adbf9bd87c35f2a20643fb2" name="accd8889d5adbf9bd87c35f2a20643fb2"></a>
@@ -195,25 +243,25 @@ mtgb::Audio 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00034">34</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end(); itr++)</div>
-<div class="line"><span class="lineno">   37</span>    {</div>
-<div class="line"><span class="lineno">   38</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(itr-&gt;second);</div>
-<div class="line"><span class="lineno">   39</span>    }</div>
-<div class="line"><span class="lineno">   40</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.clear();</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> != <span class="keyword">nullptr</span>)</div>
-<div class="line"><span class="lineno">   43</span>    {</div>
-<div class="line"><span class="lineno">   44</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;DestroyVoice();</div>
-<div class="line"><span class="lineno">   45</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> = <span class="keyword">nullptr</span>;</div>
-<div class="line"><span class="lineno">   46</span>    }</div>
-<div class="line"><span class="lineno">   47</span> </div>
-<div class="line"><span class="lineno">   48</span>    <span class="comment">// IXAudio2の解放は最後</span></div>
-<div class="line"><span class="lineno">   49</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.Reset();</div>
-<div class="line"><span class="lineno">   50</span>}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00055">55</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>{</div>
+<div class="line"><span class="lineno">   57</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end(); itr++)</div>
+<div class="line"><span class="lineno">   58</span>    {</div>
+<div class="line"><span class="lineno">   59</span>        <a class="code hl_define" href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a>(itr-&gt;second);</div>
+<div class="line"><span class="lineno">   60</span>    }</div>
+<div class="line"><span class="lineno">   61</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.clear();</div>
+<div class="line"><span class="lineno">   62</span> </div>
+<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> != <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   64</span>    {</div>
+<div class="line"><span class="lineno">   65</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;DestroyVoice();</div>
+<div class="line"><span class="lineno">   66</span>        <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">   67</span>    }</div>
+<div class="line"><span class="lineno">   68</span> </div>
+<div class="line"><span class="lineno">   69</span>    <span class="comment">// IXAudio2の解放は最後</span></div>
+<div class="line"><span class="lineno">   70</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.Reset();</div>
+<div class="line"><span class="lineno">   71</span>}</div>
 <div class="ttc" id="aReleaseUtility_8h_html_a9bbcd82e77c41df827c09759def05c9a"><div class="ttname"><a href="ReleaseUtility_8h.html#a9bbcd82e77c41df827c09759def05c9a">SAFE_DELETE</a></div><div class="ttdeci">#define SAFE_DELETE(p)</div><div class="ttdef"><b>Definition:</b> <a href="ReleaseUtility_8h_source.html#l00004">ReleaseUtility.h:4</a></div></div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_a7b2788e69185e2d4090f89c20c8ef505"><div class="ttname"><a href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">mtgb::Audio::audioClipMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, AudioClip *, TransparentStringHash, TransparentStringEq &gt; audioClipMap_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00054">Audio.h:54</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a7b2788e69185e2d4090f89c20c8ef505"><div class="ttname"><a href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">mtgb::Audio::audioClipMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, AudioClip *, TransparentStringHash, TransparentStringEq &gt; audioClipMap_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00096">Audio.h:96</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ReleaseUtility_8h_source.html#l00004">SAFE_DELETE</a>.</p>
 
@@ -245,38 +293,68 @@ mtgb::Audio 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a6f5968671a19e618e56c0313ec2cbbe7">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00052">52</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>    HRESULT hResult {};</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);</div>
-<div class="line"><span class="lineno">   57</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   58</span>        SUCCEEDED(hResult) <span class="comment">// COMの初期化に成功</span></div>
-<div class="line"><span class="lineno">   59</span>        &amp;&amp; <span class="stringliteral">&quot;COMの初期化に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   60</span>    );</div>
-<div class="line"><span class="lineno">   61</span> </div>
-<div class="line"><span class="lineno">   62</span>    hResult = XAudio2Create(<a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.ReleaseAndGetAddressOf());</div>
-<div class="line"><span class="lineno">   63</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   64</span>        SUCCEEDED(hResult) <span class="comment">// XAudio2の作成に成功</span></div>
-<div class="line"><span class="lineno">   65</span>        &amp;&amp; <span class="stringliteral">&quot;XAudio2の作成に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   66</span>    );</div>
-<div class="line"><span class="lineno">   67</span> </div>
-<div class="line"><span class="lineno">   68</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>-&gt;CreateMasteringVoice(&amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>);</div>
-<div class="line"><span class="lineno">   69</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
-<div class="line"><span class="lineno">   70</span>        SUCCEEDED(hResult) <span class="comment">// MasteringVoiceの作成に成功</span></div>
-<div class="line"><span class="lineno">   71</span>        &amp;&amp; <span class="stringliteral">&quot;MasteringVoiceの作成に失敗 @Audio::Initialize&quot;</span></div>
-<div class="line"><span class="lineno">   72</span>    );</div>
-<div class="line"><span class="lineno">   73</span> </div>
-<div class="line"><span class="lineno">   74</span>    <a class="code hl_function" href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">RegisterAudios</a>();</div>
-<div class="line"><span class="lineno">   75</span>}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00073">73</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{</div>
+<div class="line"><span class="lineno">   75</span>    HRESULT hResult {};</div>
+<div class="line"><span class="lineno">   76</span> </div>
+<div class="line"><span class="lineno">   77</span>    hResult = CoInitializeEx(NULL, COINIT_MULTITHREADED);</div>
+<div class="line"><span class="lineno">   78</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   79</span>        SUCCEEDED(hResult) <span class="comment">// COMの初期化に成功</span></div>
+<div class="line"><span class="lineno">   80</span>        &amp;&amp; <span class="stringliteral">&quot;COMの初期化に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   81</span>    );</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    hResult = XAudio2Create(<a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>.ReleaseAndGetAddressOf());</div>
+<div class="line"><span class="lineno">   84</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   85</span>        SUCCEEDED(hResult) <span class="comment">// XAudio2の作成に成功</span></div>
+<div class="line"><span class="lineno">   86</span>        &amp;&amp; <span class="stringliteral">&quot;XAudio2の作成に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   87</span>    );</div>
+<div class="line"><span class="lineno">   88</span> </div>
+<div class="line"><span class="lineno">   89</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>-&gt;CreateMasteringVoice(&amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>, 1);</div>
+<div class="line"><span class="lineno">   90</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(</div>
+<div class="line"><span class="lineno">   91</span>        SUCCEEDED(hResult) <span class="comment">// MasteringVoiceの作成に成功</span></div>
+<div class="line"><span class="lineno">   92</span>        &amp;&amp; <span class="stringliteral">&quot;MasteringVoiceの作成に失敗 @Audio::Initialize&quot;</span></div>
+<div class="line"><span class="lineno">   93</span>    );</div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">// 音量制限用のAPOを作成</span></div>
+<div class="line"><span class="lineno">   96</span>    IUnknown* pLimiterAPO;</div>
+<div class="line"><span class="lineno">   97</span>    hResult = XAudio2CreateVolumeMeter(&amp;pLimiterAPO);</div>
+<div class="line"><span class="lineno">   98</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;VolumeMeterAPOの作成に失敗&quot;</span>);</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    XAUDIO2_EFFECT_DESCRIPTOR desc {</div>
+<div class="line"><span class="lineno">  101</span>        .pEffect        = pLimiterAPO,</div>
+<div class="line"><span class="lineno">  102</span>        .InitialState   = TRUE,</div>
+<div class="line"><span class="lineno">  103</span>        .OutputChannels = 1, <span class="comment">// モノラル</span></div>
+<div class="line"><span class="lineno">  104</span>    };</div>
+<div class="line"><span class="lineno">  105</span>    XAUDIO2_EFFECT_CHAIN chain { .EffectCount = 1, .pEffectDescriptors = &amp;desc };</div>
+<div class="line"><span class="lineno">  106</span>    hResult = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;SetEffectChain(&amp;chain);</div>
+<div class="line"><span class="lineno">  107</span>    <a class="code hl_define" href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a>(SUCCEEDED(hResult) &amp;&amp; <span class="stringliteral">&quot;SetEffectChainに失敗&quot;</span>);</div>
+<div class="line"><span class="lineno">  108</span> </div>
+<div class="line"><span class="lineno">  109</span>    DWORD dwChannelMask;</div>
+<div class="line"><span class="lineno">  110</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;GetChannelMask(&amp;dwChannelMask);</div>
+<div class="line"><span class="lineno">  111</span>    hResult = X3DAudioInitialize(dwChannelMask, X3DAUDIO_SPEED_OF_SOUND, <a class="code hl_variable" href="classmtgb_1_1Audio.html#a6e017363c0bcb3b0eb0817ae5ba85f52">x3DInstance_</a>);</div>
+<div class="line"><span class="lineno">  112</span> </div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">// 距離(0.0～1.0)、音量(0.0～1.0)</span></div>
+<div class="line"><span class="lineno">  114</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">volumePoints</a>[0] = { 0.0f, 1.0f };</div>
+<div class="line"><span class="lineno">  115</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">volumePoints</a>[1] = { 0.5f, 0.5f };</div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">volumePoints</a>[2] = { 1.0f, 0.0f };</div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a4458f12f7f1c78c4a9a9db9b764f3286">volumeCurve_</a>.pPoints    = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">volumePoints</a>;</div>
+<div class="line"><span class="lineno">  119</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a4458f12f7f1c78c4a9a9db9b764f3286">volumeCurve_</a>.PointCount = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a8af12bfb0bb007ab90c052565da002a3">CONTROL_POINT_COUNT</a>;</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    <a class="code hl_function" href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">RegisterAudios</a>();</div>
+<div class="line"><span class="lineno">  122</span>}</div>
 <div class="ttc" id="aMTAssert_8h_html_a7de4bc03eec86d2d1319f77ce98a93d7"><div class="ttname"><a href="MTAssert_8h.html#a7de4bc03eec86d2d1319f77ce98a93d7">massert</a></div><div class="ttdeci">#define massert(expression)</div><div class="ttdef"><b>Definition:</b> <a href="MTAssert_8h_source.html#l00048">MTAssert.h:48</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a5e8dde9bf268b4bc0c753104f8f9d413"><div class="ttname"><a href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">mtgb::RegisterAudios</a></div><div class="ttdeci">void RegisterAudios()</div><div class="ttdoc">ゲームで使用する音声を登録</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00017">Audio.cpp:17</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a4458f12f7f1c78c4a9a9db9b764f3286"><div class="ttname"><a href="classmtgb_1_1Audio.html#a4458f12f7f1c78c4a9a9db9b764f3286">mtgb::Audio::volumeCurve_</a></div><div class="ttdeci">X3DAUDIO_DISTANCE_CURVE volumeCurve_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00100">Audio.h:100</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a6e017363c0bcb3b0eb0817ae5ba85f52"><div class="ttname"><a href="classmtgb_1_1Audio.html#a6e017363c0bcb3b0eb0817ae5ba85f52">mtgb::Audio::x3DInstance_</a></div><div class="ttdeci">X3DAUDIO_HANDLE x3DInstance_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00094">Audio.h:94</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a724eab6a0d6da513182409d74b43baae"><div class="ttname"><a href="classmtgb_1_1Audio.html#a724eab6a0d6da513182409d74b43baae">mtgb::Audio::volumePoints</a></div><div class="ttdeci">X3DAUDIO_DISTANCE_CURVE_POINT volumePoints[CONTROL_POINT_COUNT]</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00107">Audio.h:107</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a8af12bfb0bb007ab90c052565da002a3"><div class="ttname"><a href="classmtgb_1_1Audio.html#a8af12bfb0bb007ab90c052565da002a3">mtgb::Audio::CONTROL_POINT_COUNT</a></div><div class="ttdeci">static constexpr int CONTROL_POINT_COUNT</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00104">Audio.h:104</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a5e8dde9bf268b4bc0c753104f8f9d413"><div class="ttname"><a href="namespacemtgb.html#a5e8dde9bf268b4bc0c753104f8f9d413">mtgb::RegisterAudios</a></div><div class="ttdeci">void RegisterAudios()</div><div class="ttdoc">ゲームで使用する音声を登録</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00018">Audio.cpp:18</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="Audio_8cpp_source.html#l00017">mtgb::RegisterAudios()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTAssert_8h_source.html#l00048">massert</a>, <a class="el" href="Audio_8cpp_source.html#l00018">mtgb::RegisterAudios()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio_a11292aae0382213f7111390850af90b2_cgraph.svg" width="598" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio_a11292aae0382213f7111390850af90b2_cgraph.svg" width="659" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -315,17 +393,17 @@ mtgb::Audio 連携図</div>
 </dl>
 <dl class="section return"><dt>戻り値</dt><dd>音声クリップ</dd></dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00088">88</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   89</span>{</div>
-<div class="line"><span class="lineno">   90</span>    AudioClip* audioClip = <span class="keyword">new</span> AudioClip(_filePath, <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>);</div>
-<div class="line"><span class="lineno">   91</span> </div>
-<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">return</span> audioClip;</div>
-<div class="line"><span class="lineno">   93</span>}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00173">173</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  174</span>{</div>
+<div class="line"><span class="lineno">  175</span>    AudioClip* audioClip = <span class="keyword">new</span> AudioClip(_filePath, <a class="code hl_variable" href="classmtgb_1_1Audio.html#a1919ac778affcb56b2ddc71dcc15f838">pXAudio2_</a>);</div>
+<div class="line"><span class="lineno">  176</span> </div>
+<div class="line"><span class="lineno">  177</span>    <span class="keywordflow">return</span> audioClip;</div>
+<div class="line"><span class="lineno">  178</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a5f9fcb93636e5f0d2e8078fa659da9c7" name="a5f9fcb93636e5f0d2e8078fa659da9c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f9fcb93636e5f0d2e8078fa659da9c7">&#9670;&#160;</a></span>Play()</h2>
+<a id="a66cac39eaba12c0e57b35049081697cd" name="a66cac39eaba12c0e57b35049081697cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66cac39eaba12c0e57b35049081697cd">&#9670;&#160;</a></span>Play()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -334,8 +412,18 @@ mtgb::Audio 連携図</div>
           <td class="memname">void mtgb::Audio::Play </td>
           <td>(</td>
           <td class="paramtype">std::string_view&#160;</td>
-          <td class="paramname"><em>_soundName</em></td><td>)</td>
+          <td class="paramname"><em>_soundName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>_loop</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -345,18 +433,19 @@ mtgb::Audio 連携図</div>
 <dl class="params"><dt>引数</dt><dd>
   <table class="params">
     <tr><td class="paramname">_soundName</td><td>Registerで登録した識別子</td></tr>
+    <tr><td class="paramname">_loop</td><td>ループをするか否か</td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00095">95</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   96</span>{</div>
-<div class="line"><span class="lineno">   97</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
-<div class="line"><span class="lineno">   99</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">  100</span> </div>
-<div class="line"><span class="lineno">  101</span>    itr-&gt;second-&gt;Play();</div>
-<div class="line"><span class="lineno">  102</span>}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00232">232</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>{</div>
+<div class="line"><span class="lineno">  234</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">  235</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
+<div class="line"><span class="lineno">  236</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  237</span> </div>
+<div class="line"><span class="lineno">  238</span>    itr-&gt;second-&gt;Play(_loop);</div>
+<div class="line"><span class="lineno">  239</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -395,17 +484,17 @@ mtgb::Audio 連携図</div>
   </dd>
 </dl>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00079">79</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   80</span>{</div>
-<div class="line"><span class="lineno">   81</span>    <span class="comment">// 登録済みの場合はreturn</span></div>
-<div class="line"><span class="lineno">   82</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.contains(_soundName))</div>
-<div class="line"><span class="lineno">   83</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.emplace(_soundName, <a class="code hl_function" href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">Load</a>(_filePath));</div>
-<div class="line"><span class="lineno">   86</span>}</div>
-<div class="ttc" id="aclassmtgb_1_1Audio_html_ad48eedf195ae84f68a1ba72f3e320617"><div class="ttname"><a href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">mtgb::Audio::Load</a></div><div class="ttdeci">AudioClip * Load(std::string_view _filePath)</div><div class="ttdoc">音声ファイルをロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00088">Audio.cpp:88</a></div></div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00130">130</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  131</span>{</div>
+<div class="line"><span class="lineno">  132</span>    <span class="comment">// 登録済みの場合はreturn</span></div>
+<div class="line"><span class="lineno">  133</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.contains(_soundName))</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  135</span> </div>
+<div class="line"><span class="lineno">  136</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.emplace(_soundName, <a class="code hl_function" href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">Load</a>(_filePath));</div>
+<div class="line"><span class="lineno">  137</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ad48eedf195ae84f68a1ba72f3e320617"><div class="ttname"><a href="classmtgb_1_1Audio.html#ad48eedf195ae84f68a1ba72f3e320617">mtgb::Audio::Load</a></div><div class="ttdeci">AudioClip * Load(std::string_view _filePath)</div><div class="ttdoc">音声ファイルをロードする</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00173">Audio.cpp:173</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00017">mtgb::RegisterAudios()</a>.</p>
+<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00018">mtgb::RegisterAudios()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
@@ -455,6 +544,241 @@ mtgb::Audio 連携図</div>
 
 </div>
 </div>
+<a id="a0b582aedd17755770afaae4676bd9c56" name="a0b582aedd17755770afaae4676bd9c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b582aedd17755770afaae4676bd9c56">&#9670;&#160;</a></span>SetClipVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::SetClipVolume </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>_soundName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_volume</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>指定した音声クリップの音量を設定 </p>
+<p>0.0～1.0の範囲を指定</p>
+<p>既定では1.0</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_soundName</td><td></td></tr>
+    <tr><td class="paramname">_volume</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00258">258</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  259</span>{</div>
+<div class="line"><span class="lineno">  260</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">  261</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
+<div class="line"><span class="lineno">  262</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>    itr-&gt;second-&gt;SetVolume(_volume);</div>
+<div class="line"><span class="lineno">  265</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00018">mtgb::RegisterAudios()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio_a0b582aedd17755770afaae4676bd9c56_icgraph.svg" width="639" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="a7063776151fe71555b16eb18fdf0b2ba" name="a7063776151fe71555b16eb18fdf0b2ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7063776151fe71555b16eb18fdf0b2ba">&#9670;&#160;</a></span>SetEmitter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::SetEmitter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>_soundName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00149">149</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  150</span>{</div>
+<div class="line"><span class="lineno">  151</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">  152</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  154</span> </div>
+<div class="line"><span class="lineno">  155</span>    X3DAUDIO_EMITTER* pX3DEmitter = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  156</span>    <span class="keyword">auto</span> emitterItr               = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">emitterMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">  157</span>    <span class="keywordflow">if</span> (emitterItr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">emitterMap_</a>.end())</div>
+<div class="line"><span class="lineno">  158</span>    {</div>
+<div class="line"><span class="lineno">  159</span>        AudioEmitter&amp; emitter            = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">emitterMap_</a>[std::string(_soundName)];</div>
+<div class="line"><span class="lineno">  160</span>        pX3DEmitter                      = &amp;emitter.x3DEmitter;</div>
+<div class="line"><span class="lineno">  161</span>        pX3DEmitter-&gt;pVolumeCurve        = &amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a4458f12f7f1c78c4a9a9db9b764f3286">volumeCurve_</a>;</div>
+<div class="line"><span class="lineno">  162</span>        pX3DEmitter-&gt;CurveDistanceScaler = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a4f6c8c971bcd3a37ae50dfc3eb715deb">attenuationVolumeDistance_</a>;</div>
+<div class="line"><span class="lineno">  163</span>        pX3DEmitter-&gt;ChannelCount        = 2;</div>
+<div class="line"><span class="lineno">  164</span>        pX3DEmitter-&gt;pLFECurve           = <span class="keyword">nullptr</span>;</div>
+<div class="line"><span class="lineno">  165</span>        emitter.emitterId                = _id;</div>
+<div class="line"><span class="lineno">  166</span>    }</div>
+<div class="line"><span class="lineno">  167</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  168</span>    {</div>
+<div class="line"><span class="lineno">  169</span>        pX3DEmitter = &amp;emitterItr-&gt;second.x3DEmitter;</div>
+<div class="line"><span class="lineno">  170</span>    }</div>
+<div class="line"><span class="lineno">  171</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_a66d4ab71be64f53edd8223cda459fdeb"><div class="ttname"><a href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">mtgb::Audio::emitterMap_</a></div><div class="ttdeci">std::unordered_map&lt; std::string, AudioEmitter, TransparentStringHash, TransparentStringEq &gt; emitterMap_</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8h_source.html#l00097">Audio.h:97</a></div></div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Audio_8h_source.html#l00024">mtgb::AudioEmitter::emitterId</a>, <a class="el" href="Audio_8h_source.html#l00023">mtgb::AudioEmitter::x3DEmitter</a>.</p>
+
+</div>
+</div>
+<a id="a6c022a588a0639c574d6633579cdfbe1" name="a6c022a588a0639c574d6633579cdfbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c022a588a0639c574d6633579cdfbe1">&#9670;&#160;</a></span>SetListenerEntityId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::SetListenerEntityId </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacemtgb.html#a33d2d6c57bed7a7d2ed9aa5f5029547c">EntityId</a>&#160;</td>
+          <td class="paramname"><em>_id</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00144">144</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  145</span>{</div>
+<div class="line"><span class="lineno">  146</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a> = &amp;(Game::System&lt;TransformCP&gt;().Get(_id));</div>
+<div class="line"><span class="lineno">  147</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a48d2d73945f2e3002b83eb60f7d1f0a6" name="a48d2d73945f2e3002b83eb60f7d1f0a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48d2d73945f2e3002b83eb60f7d1f0a6">&#9670;&#160;</a></span>SetMasterVolume()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::SetMasterVolume </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>_volume</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>最終的な音量を設定 </p>
+<p>0.0～1.0の範囲を指定</p>
+<p>既定では1.0</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_volume</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00139">139</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>{</div>
+<div class="line"><span class="lineno">  141</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;SetVolume(_volume);</div>
+<div class="line"><span class="lineno">  142</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00018">mtgb::RegisterAudios()</a>.</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio_a48d2d73945f2e3002b83eb60f7d1f0a6_icgraph.svg" width="659" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae70faa97045ce783ec7f0d9c195ffcd9" name="ae70faa97045ce783ec7f0d9c195ffcd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae70faa97045ce783ec7f0d9c195ffcd9">&#9670;&#160;</a></span>Stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::Stop </td>
+          <td>(</td>
+          <td class="paramtype">std::string_view&#160;</td>
+          <td class="paramname"><em>_soundName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>指定した音声の再生を停止する </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">_soundName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00241">241</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  242</span>{</div>
+<div class="line"><span class="lineno">  243</span>    <span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.find(_soundName);</div>
+<div class="line"><span class="lineno">  244</span>    <span class="keywordflow">if</span> (itr == <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end())</div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  246</span> </div>
+<div class="line"><span class="lineno">  247</span>    itr-&gt;second-&gt;Stop();</div>
+<div class="line"><span class="lineno">  248</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a2c1fcbb112125b685f1ce8c1e39c9806" name="a2c1fcbb112125b685f1ce8c1e39c9806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c1fcbb112125b685f1ce8c1e39c9806">&#9670;&#160;</a></span>StopAll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::StopAll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>再生中の全音声を停止する </p>
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00250">250</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  251</span>{</div>
+<div class="line"><span class="lineno">  252</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> itr = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.begin(); itr != <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>.end(); itr++)</div>
+<div class="line"><span class="lineno">  253</span>    {</div>
+<div class="line"><span class="lineno">  254</span>        itr-&gt;second-&gt;Stop();</div>
+<div class="line"><span class="lineno">  255</span>    }</div>
+<div class="line"><span class="lineno">  256</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="ad96a64c0eba4aab70cf1813a6cf61d66" name="ad96a64c0eba4aab70cf1813a6cf61d66"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad96a64c0eba4aab70cf1813a6cf61d66">&#9670;&#160;</a></span>Update()</h2>
 
@@ -480,12 +804,154 @@ mtgb::Audio 連携図</div>
 
 <p><a class="el" href="classmtgb_1_1ISystem.html#a062df997ccb5b7b6e3001b30521fcec0">mtgb::ISystem</a>を実装しています。</p>
 
-<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00077">77</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{}</div>
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00124">124</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    <a class="code hl_function" href="classmtgb_1_1Audio.html#ae4e9f1af790a5236d7149946065eff81">UpdateListener</a>();</div>
+<div class="line"><span class="lineno">  127</span>    <a class="code hl_function" href="classmtgb_1_1Audio.html#aa2083ccd1cb520fbc3f1e2a7b43ea8f8">UpdateEmitter</a>();</div>
+<div class="line"><span class="lineno">  128</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_aa2083ccd1cb520fbc3f1e2a7b43ea8f8"><div class="ttname"><a href="classmtgb_1_1Audio.html#aa2083ccd1cb520fbc3f1e2a7b43ea8f8">mtgb::Audio::UpdateEmitter</a></div><div class="ttdeci">void UpdateEmitter()</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00180">Audio.cpp:180</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Audio_html_ae4e9f1af790a5236d7149946065eff81"><div class="ttname"><a href="classmtgb_1_1Audio.html#ae4e9f1af790a5236d7149946065eff81">mtgb::Audio::UpdateListener</a></div><div class="ttdeci">void UpdateListener()</div><div class="ttdef"><b>Definition:</b> <a href="Audio_8cpp_source.html#l00223">Audio.cpp:223</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa2083ccd1cb520fbc3f1e2a7b43ea8f8" name="aa2083ccd1cb520fbc3f1e2a7b43ea8f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2083ccd1cb520fbc3f1e2a7b43ea8f8">&#9670;&#160;</a></span>UpdateEmitter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::UpdateEmitter </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00180">180</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  181</span>{</div>
+<div class="line"><span class="lineno">  182</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  183</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  184</span>    XAUDIO2_VOICE_DETAILS voiceDetails;</div>
+<div class="line"><span class="lineno">  185</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>-&gt;GetVoiceDetails(&amp;voiceDetails);</div>
+<div class="line"><span class="lineno">  186</span> </div>
+<div class="line"><span class="lineno">  187</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; [name, emitter] : <a class="code hl_variable" href="classmtgb_1_1Audio.html#a66d4ab71be64f53edd8223cda459fdeb">emitterMap_</a>)</div>
+<div class="line"><span class="lineno">  188</span>    {</div>
+<div class="line"><span class="lineno">  189</span>        AudioClip* clip = <a class="code hl_variable" href="classmtgb_1_1Audio.html#a7b2788e69185e2d4090f89c20c8ef505">audioClipMap_</a>[name];</div>
+<div class="line"><span class="lineno">  190</span> </div>
+<div class="line"><span class="lineno">  191</span>        X3DAUDIO_DSP_SETTINGS dspSettings;</div>
+<div class="line"><span class="lineno">  192</span>        <span class="comment">// 出力先となるマスターボイスのチャネル数</span></div>
+<div class="line"><span class="lineno">  193</span>        dspSettings.DstChannelCount = voiceDetails.InputChannels;</div>
+<div class="line"><span class="lineno">  194</span>        <span class="comment">// ソースとなるクリップのチャネル数</span></div>
+<div class="line"><span class="lineno">  195</span>        dspSettings.SrcChannelCount = clip-&gt;pWaveData_-&gt;waveFormat.nChannels;</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>        std::vector&lt;FLOAT32&gt; mat(dspSettings.SrcChannelCount * dspSettings.DstChannelCount);</div>
+<div class="line"><span class="lineno">  198</span>        dspSettings.pMatrixCoefficients = mat.data();</div>
+<div class="line"><span class="lineno">  199</span> </div>
+<div class="line"><span class="lineno">  200</span>        Transform&amp; emitterTransform = Game::System&lt;TransformCP&gt;().Get(emitter.emitterId);</div>
+<div class="line"><span class="lineno">  201</span> </div>
+<div class="line"><span class="lineno">  202</span>        X3DAUDIO_EMITTER&amp; pX3DEmitter = emitter.x3DEmitter;</div>
+<div class="line"><span class="lineno">  203</span>        pX3DEmitter.Position          = emitterTransform.GetWorldPosition();</div>
+<div class="line"><span class="lineno">  204</span>        pX3DEmitter.OrientFront       = emitterTransform.Forward();</div>
+<div class="line"><span class="lineno">  205</span>        pX3DEmitter.OrientTop         = emitterTransform.Up();</div>
+<div class="line"><span class="lineno">  206</span>        <span class="comment">// エミッターの座標を原点として、各チャネルが広がる半径</span></div>
+<div class="line"><span class="lineno">  207</span>        pX3DEmitter.ChannelRadius = 1.0f;</div>
+<div class="line"><span class="lineno">  208</span>        <span class="comment">// エミッターの前方ベクトルを基準とした角度</span></div>
+<div class="line"><span class="lineno">  209</span>        <span class="comment">// 左右に分けるために、-π/2とπ/2を設定</span></div>
+<div class="line"><span class="lineno">  210</span>        std::vector&lt;FLOAT32&gt; channelAzimuths = { -X3DAUDIO_2PI / 4.0f, X3DAUDIO_2PI / 4.0f };</div>
+<div class="line"><span class="lineno">  211</span>        pX3DEmitter.pChannelAzimuths         = channelAzimuths.data();</div>
+<div class="line"><span class="lineno">  212</span> </div>
+<div class="line"><span class="lineno">  213</span>        X3DAudioCalculate(<a class="code hl_variable" href="classmtgb_1_1Audio.html#a6e017363c0bcb3b0eb0817ae5ba85f52">x3DInstance_</a>, &amp;<a class="code hl_variable" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a>, &amp;emitter.x3DEmitter, X3DAUDIO_CALCULATE_MATRIX, &amp;dspSettings);</div>
+<div class="line"><span class="lineno">  214</span>        clip-&gt;pSourceVoice_-&gt;SetOutputMatrix(</div>
+<div class="line"><span class="lineno">  215</span>            <a class="code hl_variable" href="classmtgb_1_1Audio.html#a175cf448fd62a8706ea9eadde9a7f368">pMasteringVoice_</a>,</div>
+<div class="line"><span class="lineno">  216</span>            dspSettings.SrcChannelCount,</div>
+<div class="line"><span class="lineno">  217</span>            dspSettings.DstChannelCount,</div>
+<div class="line"><span class="lineno">  218</span>            dspSettings.pMatrixCoefficients</div>
+<div class="line"><span class="lineno">  219</span>        );</div>
+<div class="line"><span class="lineno">  220</span>    }</div>
+<div class="line"><span class="lineno">  221</span>}</div>
+</div><!-- fragment -->
+<p class="reference">参照先 <a class="el" href="Transform_8cpp_source.html#l00164">mtgb::Transform::Forward()</a>, <a class="el" href="IComponent_8h_source.html#l00063">mtgb::IComponent&lt; ComponentPoolT, ComponentT &gt;::Get()</a>, <a class="el" href="Transform_8h_source.html#l00136">mtgb::Transform::GetWorldPosition()</a>, <a class="el" href="AudioClip_8h_source.html#l00067">mtgb::AudioClip::pSourceVoice_</a>, <a class="el" href="AudioClip_8h_source.html#l00066">mtgb::AudioClip::pWaveData_</a>, <a class="el" href="Transform_8h_source.html#l00090">mtgb::Transform::Up()</a>, <a class="el" href="WaveData_8h_source.html#l00014">mtgb::WaveData::waveFormat</a>.</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Audio_aa2083ccd1cb520fbc3f1e2a7b43ea8f8_cgraph.svg" width="682" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+</div>
+</div>
+
+</div>
+</div>
+<a id="ae4e9f1af790a5236d7149946065eff81" name="ae4e9f1af790a5236d7149946065eff81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4e9f1af790a5236d7149946065eff81">&#9670;&#160;</a></span>UpdateListener()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mtgb::Audio::UpdateListener </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8cpp_source.html">Audio.cpp</a> の <a class="el" href="Audio_8cpp_source.html#l00223">223</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">  224</span>{</div>
+<div class="line"><span class="lineno">  225</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a> == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">  226</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  227</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a>.OrientFront = <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a95361d2c6ec0ff51183e7c1221e5ae0e">Forward</a>();</div>
+<div class="line"><span class="lineno">  228</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a>.OrientTop   = <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#ac8b68f35d2f2fa181a62b5b53b545cc8">Up</a>();</div>
+<div class="line"><span class="lineno">  229</span>    <a class="code hl_variable" href="classmtgb_1_1Audio.html#a484d8152c0de85990afe8cb1cb3544fb">listener_</a>.Position    = <a class="code hl_variable" href="classmtgb_1_1Audio.html#ac5e11b272f973b3034b0be29802b38b5">pListenerTransform_</a>-&gt;<a class="code hl_function" href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">GetWorldPosition</a>();</div>
+<div class="line"><span class="lineno">  230</span>}</div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a6a5f7f7a32791143f366132d90dcc3e6"><div class="ttname"><a href="classmtgb_1_1Transform.html#a6a5f7f7a32791143f366132d90dcc3e6">mtgb::Transform::GetWorldPosition</a></div><div class="ttdeci">Vector3 GetWorldPosition() const</div><div class="ttdoc">ワールド座標を取得</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00136">Transform.h:136</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_a95361d2c6ec0ff51183e7c1221e5ae0e"><div class="ttname"><a href="classmtgb_1_1Transform.html#a95361d2c6ec0ff51183e7c1221e5ae0e">mtgb::Transform::Forward</a></div><div class="ttdeci">Vector3 Forward() const</div><div class="ttdoc">前方向のワールドベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8cpp_source.html#l00164">Transform.cpp:164</a></div></div>
+<div class="ttc" id="aclassmtgb_1_1Transform_html_ac8b68f35d2f2fa181a62b5b53b545cc8"><div class="ttname"><a href="classmtgb_1_1Transform.html#ac8b68f35d2f2fa181a62b5b53b545cc8">mtgb::Transform::Up</a></div><div class="ttdeci">Vector3 Up() const</div><div class="ttdoc">上方向のワールドベクトル</div><div class="ttdef"><b>Definition:</b> <a href="Transform_8h_source.html#l00090">Transform.h:90</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">メンバ詳解</h2>
+<a id="a4f6c8c971bcd3a37ae50dfc3eb715deb" name="a4f6c8c971bcd3a37ae50dfc3eb715deb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f6c8c971bcd3a37ae50dfc3eb715deb">&#9670;&#160;</a></span>attenuationVolumeDistance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::Audio::attenuationVolumeDistance_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00105">105</a> 行目に定義があります。</p>
+
+</div>
+</div>
 <a id="a7b2788e69185e2d4090f89c20c8ef505" name="a7b2788e69185e2d4090f89c20c8ef505"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7b2788e69185e2d4090f89c20c8ef505">&#9670;&#160;</a></span>audioClipMap_</h2>
 
@@ -506,7 +972,105 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00054">54</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00096">96</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a8af12bfb0bb007ab90c052565da002a3" name="a8af12bfb0bb007ab90c052565da002a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af12bfb0bb007ab90c052565da002a3">&#9670;&#160;</a></span>CONTROL_POINT_COUNT</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr int mtgb::Audio::CONTROL_POINT_COUNT { 3 }</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00104">104</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a66d4ab71be64f53edd8223cda459fdeb" name="a66d4ab71be64f53edd8223cda459fdeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d4ab71be64f53edd8223cda459fdeb">&#9670;&#160;</a></span>emitterMap_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string, <a class="el" href="structmtgb_1_1AudioEmitter.html">AudioEmitter</a>, <a class="el" href="structmtgb_1_1TransparentStringHash.html">TransparentStringHash</a>, <a class="el" href="structmtgb_1_1TransparentStringEq.html">TransparentStringEq</a>&gt; mtgb::Audio::emitterMap_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00097">97</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a484d8152c0de85990afe8cb1cb3544fb" name="a484d8152c0de85990afe8cb1cb3544fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a484d8152c0de85990afe8cb1cb3544fb">&#9670;&#160;</a></span>listener_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X3DAUDIO_LISTENER mtgb::Audio::listener_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00098">98</a> 行目に定義があります。</p>
+
+<p class="reference">参照元 <a class="el" href="Audio_8cpp_source.html#l00046">Audio()</a>.</p>
+
+</div>
+</div>
+<a id="ac5e11b272f973b3034b0be29802b38b5" name="ac5e11b272f973b3034b0be29802b38b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5e11b272f973b3034b0be29802b38b5">&#9670;&#160;</a></span>pListenerTransform_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classmtgb_1_1Transform.html">Transform</a>* mtgb::Audio::pListenerTransform_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00101">101</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -530,7 +1094,7 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00053">53</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00095">95</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -554,7 +1118,103 @@ mtgb::Audio 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00052">52</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00093">93</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ab241dcaf3c5646b5f24d612d68394187" name="ab241dcaf3c5646b5f24d612d68394187"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab241dcaf3c5646b5f24d612d68394187">&#9670;&#160;</a></span>volumeControlPointCount_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float mtgb::Audio::volumeControlPointCount_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00106">106</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a4458f12f7f1c78c4a9a9db9b764f3286" name="a4458f12f7f1c78c4a9a9db9b764f3286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4458f12f7f1c78c4a9a9db9b764f3286">&#9670;&#160;</a></span>volumeCurve_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X3DAUDIO_DISTANCE_CURVE mtgb::Audio::volumeCurve_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00100">100</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a724eab6a0d6da513182409d74b43baae" name="a724eab6a0d6da513182409d74b43baae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724eab6a0d6da513182409d74b43baae">&#9670;&#160;</a></span>volumePoints</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X3DAUDIO_DISTANCE_CURVE_POINT mtgb::Audio::volumePoints[<a class="el" href="classmtgb_1_1Audio.html#a8af12bfb0bb007ab90c052565da002a3">CONTROL_POINT_COUNT</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00107">107</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a6e017363c0bcb3b0eb0817ae5ba85f52" name="a6e017363c0bcb3b0eb0817ae5ba85f52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e017363c0bcb3b0eb0817ae5ba85f52">&#9670;&#160;</a></span>x3DInstance_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">X3DAUDIO_HANDLE mtgb::Audio::x3DInstance_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="Audio_8h_source.html">Audio.h</a> の <a class="el" href="Audio_8h_source.html#l00094">94</a> 行目に定義があります。</p>
 
 </div>
 </div>

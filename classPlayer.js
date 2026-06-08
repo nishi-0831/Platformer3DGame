@@ -41,6 +41,7 @@ var classPlayer =
     [ "IsToDestroy", "classPlayer.html#a5979a661ae43ad11b3c2613bce9b6ce8", null ],
     [ "MarkAsCalledStart", "classPlayer.html#a2b3bfca9e052731abb8bddb839f01bee", null ],
     [ "OnCollisionEnter", "classPlayer.html#a80fcab0539c8df52bfc931b0762e2307", null ],
+    [ "OnFootstep", "classPlayer.html#acfa6a6f1e058e14c16cf435303940c11", null ],
     [ "OnHitSide", "classPlayer.html#a5a366cfffd1642228afaa6ae0769fab8", null ],
     [ "OnStomped", "classPlayer.html#a4be55517a106519930effdb84a69efb7", null ],
     [ "Serialize", "classPlayer.html#a13ff8ad56cd9b118123bb5a30e32c970", null ],
