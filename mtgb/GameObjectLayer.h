@@ -1,9 +1,10 @@
 #pragma once
+#include "ReflectionMacro.h"
 #include "MTBit/BitFlag.h"
 
 namespace mtgb
 {
-	enum struct GameObjectLayer : unsigned char
+	enum struct [[MT_ENUM()]] GameObjectLayer : unsigned char
 	{
 		A,
 		B,

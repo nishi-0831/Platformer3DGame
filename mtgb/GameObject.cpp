@@ -31,6 +31,7 @@ mtgb::GameObject::GameObject()
 	, tag_ { GameObjectTag::UNTAGGED }
 {
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
+	name_			  = std::format("GameObject ({})", std::to_string(entityId_));
 	isNotCalledStart_ = true;
 }
 

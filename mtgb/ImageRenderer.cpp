@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "ImageRenderer.h"
 #include "Draw.h"
+#include "Image.h"
 mtgb::ImageRenderer::ImageRenderer()
 	: color_ { Color::WHITE }
 {
@@ -30,4 +31,12 @@ bool mtgb::ImageRenderer::CanRender() const
 GameObjectLayerFlag mtgb::ImageRenderer::GetLayer() const
 {
 	return layer_;
+}
+
+void mtgb::ImageRenderer::OnPostRestore() 
+{
+	if (imageFileName_.empty() == false)
+	{
+		handle_ = Image::Load(imageFileName_);
+	}
 }
