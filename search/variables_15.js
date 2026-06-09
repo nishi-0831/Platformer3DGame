@@ -3,7 +3,7 @@ var searchData=
   ['uicomponents_5f_0',['uiComponents_',['../classPanel.html#ad211465cbe075472ee193be7f629593b',1,'Panel']]],
   ['uidrawcommands_5f_1',['uiDrawCommands_',['../classmtgb_1_1Draw.html#a314f12789d14f9d3b5d1420ca579d3b1',1,'mtgb::Draw']]],
   ['uiparams_2',['uiParams',['../structmtgb_1_1DetectorConfigBase.html#ac8a6d40ca4979f27e207b8be46b98b11',1,'mtgb::DetectorConfigBase']]],
-  ['uiparams_5f_3',['uiParams_',['../classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716',1,'mtgb::ImageRenderer']]],
+  ['uiparams_5f_3',['uiParams_',['../structImageRendererState.html#a7678e928e4275e2d51508b3ce7cf0813',1,'ImageRendererState::uiParams_()'],['../classmtgb_1_1ImageRenderer.html#a51326a3833672aec9459508d81bf2716',1,'mtgb::ImageRenderer::uiParams_()']]],
   ['undocounter_5f_4',['undoCounter_',['../classmtgb_1_1GroupCommand.html#abaac1726ddb3baff0d3d9011669245ff',1,'mtgb::GroupCommand']]],
   ['undonames_5f_5',['undoNames_',['../classmtgb_1_1NamedCommandHistory.html#a9a779cfbe38f6e4b590587b519558b6d',1,'mtgb::NamedCommandHistory']]],
   ['undostack_5f_6',['undoStack_',['../classCommandHistory.html#a40203e1b3919eab4e9797673a1394318',1,'CommandHistory']]],

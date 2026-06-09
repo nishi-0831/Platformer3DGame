@@ -1,5 +1,10 @@
 var NAVTREEINDEX288 =
 {
+"reverse__fold__fwd_8hpp.html#ac94104ccffa168e622ce86fc746dfe59":[7,0,4,0,13,1,1,10,1],
+"reverse__fold__fwd_8hpp.html#afcad49ca0744a0da24d500cb713a985d":[7,0,4,0,13,1,1,10,3],
+"reverse__fold__fwd_8hpp_source.html":[7,0,4,0,13,1,1,10],
+"reverse__fold__impl_8hpp.html":[7,0,4,0,19,0,80],
+"reverse__fold__impl_8hpp.html#a32ae8b8efc914e69aa7712b614d1301d":[7,0,4,0,19,0,80,0],
 "reverse__fold__impl_8hpp_source.html":[7,0,4,0,19,0,80],
 "reverse__fold__impl__body_8hpp.html":[7,0,4,0,19,0,81],
 "reverse__fold__impl__body_8hpp.html#a00fd4172100c2784cae682e076ca8a01":[7,0,4,0,19,0,81,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX288 =
 "segmented__find_8hpp_source.html":[7,0,4,0,13,1,2,0,5],
 "segmented__find__if_8hpp.html":[7,0,4,0,13,1,2,0,6],
 "segmented__find__if_8hpp_source.html":[7,0,4,0,13,1,2,0,6],
-"segmented__fold_8hpp.html":[7,0,4,0,13,1,1,0,3],
-"segmented__fold_8hpp_source.html":[7,0,4,0,13,1,1,0,3],
-"segmented__fold__until__impl_8hpp.html":[7,0,4,0,13,8,0,10],
-"segmented__fold__until__impl_8hpp.html#a0767c9befd6eae9ce0acedcf85e73791":[7,0,4,0,13,8,0,10,10],
-"segmented__fold__until__impl_8hpp_source.html":[7,0,4,0,13,8,0,10],
-"segmented__for__each_8hpp.html":[7,0,4,0,13,1,1,0,4]
+"segmented__fold_8hpp.html":[7,0,4,0,13,1,1,0,3]
 };

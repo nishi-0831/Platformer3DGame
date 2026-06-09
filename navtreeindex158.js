@@ -1,5 +1,10 @@
 var NAVTREEINDEX158 =
 {
+"enum__binary__params_8hpp_source.html":[7,0,4,0,24,11,5],
+"enum__from__string_8hpp.html":[7,0,4,0,7,6],
+"enum__from__string_8hpp_source.html":[7,0,4,0,7,6],
+"enum__params_8hpp.html":[7,0,4,0,24,29],
+"enum__params_8hpp_source.html":[7,0,4,0,24,29],
 "enum__params__with__a__default_8hpp.html":[7,0,4,0,24,30],
 "enum__params__with__a__default_8hpp_source.html":[7,0,4,0,24,30],
 "enum__params__with__defaults_8hpp.html":[7,0,4,0,24,31],
@@ -244,10 +249,5 @@ var NAVTREEINDEX158 =
 "forward1__512_8hpp.html":[7,0,4,0,24,7,0,1,0,2],
 "forward1__512_8hpp_source.html":[7,0,4,0,24,7,0,1,0,2],
 "forward2_8hpp.html":[7,0,4,0,24,7,0,1,2],
-"forward2_8hpp.html#abca5799ab3d563da7667a4b939eb6d60":[7,0,4,0,24,7,0,1,2,1],
-"forward2_8hpp.html#abca5799ab3d563da7667a4b939eb6d60":[7,0,4,0,24,7,0,1,2,0],
-"forward2_8hpp_source.html":[7,0,4,0,24,7,0,1,2],
-"forward2__1024_8hpp.html":[7,0,4,0,24,7,0,1,0,3],
-"forward2__1024_8hpp_source.html":[7,0,4,0,24,7,0,1,0,3],
-"forward2__256_8hpp.html":[7,0,4,0,24,7,0,1,0,4]
+"forward2_8hpp.html#abca5799ab3d563da7667a4b939eb6d60":[7,0,4,0,24,7,0,1,2,0]
 };

@@ -9,7 +9,7 @@ var classmtgb_1_1ImageRenderer =
     [ "GetEntityId", "classmtgb_1_1ImageRenderer.html#a7c5ec3a0bbee0b1441ed353a543a5cf6", null ],
     [ "GetLayer", "classmtgb_1_1ImageRenderer.html#aac287a500f1e162b7e6f75984b4c0b7d", null ],
     [ "Initialize", "classmtgb_1_1ImageRenderer.html#aecaeb2d199af3bd978a34238ae7f733a", null ],
-    [ "OnPostRestore", "classmtgb_1_1ImageRenderer.html#a657030a231a22470b5b09bd6e55a2c0e", null ],
+    [ "OnPostRestore", "classmtgb_1_1ImageRenderer.html#a2831aaceedd93d11cb7b1628b63bdd5e", null ],
     [ "OnPreSave", "classmtgb_1_1ImageRenderer.html#a86fe7f4e0ab2a86787b52d34ac5b6ec8", null ],
     [ "Render", "classmtgb_1_1ImageRenderer.html#af1bba7d2f37d19350f437c22442c5c20", null ],
     [ "Reset", "classmtgb_1_1ImageRenderer.html#a8f36832efd27d0f5f07f4af41d6a3259", null ],

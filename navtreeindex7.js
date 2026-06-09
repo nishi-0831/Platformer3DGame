@@ -1,5 +1,10 @@
 var NAVTREEINDEX7 =
 {
+"alloc__construct_8hpp.html#addfb60558362836d7af3b8a208ad4689":[7,0,4,0,6,3,3],
+"alloc__construct_8hpp.html#afa9c2999c5157fa96b1562588f656660":[7,0,4,0,6,3,1],
+"alloc__construct_8hpp_source.html":[7,0,4,0,6,3],
+"allocate__local__shared__array_8hpp.html":[7,0,4,0,25,1],
+"allocate__local__shared__array_8hpp.html#a14d496fd097fe1be14e75903b0635b88":[7,0,4,0,25,1,3],
 "allocate__local__shared__array_8hpp.html#a1f7d023312946b1d4dae8b9c8b1fc3e3":[7,0,4,0,25,1,6],
 "allocate__local__shared__array_8hpp.html#a4e23aa119b22e8fadf4ef3090a426420":[7,0,4,0,25,1,4],
 "allocate__local__shared__array_8hpp.html#a7d72bd2b6a0311f327b09a15ee231af3":[7,0,4,0,25,1,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX7 =
 "assert_8hpp_source.html":[7,0,4,0,31],
 "assert__cxx03_8hpp.html":[7,0,4,0,4,8],
 "assert__cxx03_8hpp_source.html":[7,0,4,0,4,8],
-"assert__cxx11_8hpp.html":[7,0,4,0,4,9],
-"assert__cxx11_8hpp_source.html":[7,0,4,0,4,9],
-"assert__cxx14_8hpp.html":[7,0,4,0,4,10],
-"assert__cxx14_8hpp_source.html":[7,0,4,0,4,10],
-"assert__cxx17_8hpp.html":[7,0,4,0,4,11],
-"assert__cxx17_8hpp_source.html":[7,0,4,0,4,11]
+"assert__cxx11_8hpp.html":[7,0,4,0,4,9]
 };

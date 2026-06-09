@@ -1,5 +1,10 @@
 var NAVTREEINDEX27 =
 {
+"classStageEditScene.html#ab9e8384f2f6a15526157a9f2c2f172a7":[6,0,233,7],
+"classStageEditScene.html#ae6947b574cd958fe123b72e10e8a520d":[6,0,233,2],
+"classStageEditScene.html#af2c77f17487f66c4afd24c67f1a8b85e":[6,0,233,11],
+"classStageEditScene.html#afafcd4e3890c83df321d60aa40c9fd97":[6,0,233,3],
+"classStageManager.html":[6,0,234],
 "classStageManager.html#a0fc357ec841253f4780efe687091f470":[6,0,234,4],
 "classStageManager.html#a1d5efd26d016543ce734b90faf27274e":[6,0,234,8],
 "classStageManager.html#a225212f6fbb25071ca9f4066505d6dbb":[6,0,234,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX27 =
 "classbasic__json.html#a6ca7bfb35987ce7cb8d27447cda5b80a":[6,0,44,43],
 "classbasic__json.html#a7053bdd8e9ee2fcb0ca9c54ec85f1297":[6,0,44,89],
 "classbasic__json.html#a706ccab0e47bd75cd36911db84451cd1":[6,0,44,272],
-"classbasic__json.html#a70b96a2315625383ea8d6dbc466978a9":[6,0,44,3],
-"classbasic__json.html#a70e1c8fbdb62f3f8bc04e69eef9cc9cf":[6,0,44,219],
-"classbasic__json.html#a71794547dde3dd67e444aa45131ca861":[6,0,44,268],
-"classbasic__json.html#a727e3cfb5a874314d8deb12cb53a8105":[6,0,44,115],
-"classbasic__json.html#a743ac3bcbc4b0f7897244d4cea387eee":[6,0,44,79],
-"classbasic__json.html#a747e3e19891143442991bbdb33edb917":[6,0,44,220]
+"classbasic__json.html#a70b96a2315625383ea8d6dbc466978a9":[6,0,44,3]
 };

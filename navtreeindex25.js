@@ -1,5 +1,10 @@
 var NAVTREEINDEX25 =
 {
+"classPatrolChargerEnemy.html#aee8629c2c936df1173a2f9efe7747ab9":[6,0,208,55],
+"classPatrolChargerEnemy.html#af0b3630f3e49fde5433ef21cc243a235":[6,0,208,40],
+"classPatrolChargerEnemy.html#af889133148e81bfcd2341b8573e5abc6":[6,0,208,56],
+"classPatrolChargerEnemy.html#afaeb72363aa2518190ac01dee5d40c0c":[6,0,208,15],
+"classPatrolChargerEnemy.html#afb5d07c892feebd2bc8a4a3bdc7d8917":[6,0,208,43],
 "classPatrolChargerEnemy.html#afd37371f752111fede965aee5e4c3c61":[6,0,208,65],
 "classPatrolChargerEnemy.html#afdc25d4c9be2f93aee277719d0b52106":[6,0,208,69],
 "classPlayer.html":[6,0,209],
@@ -244,10 +249,5 @@ var NAVTREEINDEX25 =
 "classSampleGame.html#a3839efdd6fe6babe3e11f14a1641436f":[6,0,224,2],
 "classSampleGame.html#a38bd9c3e1b8fd3519fff96dba55e6235":[6,0,224,0],
 "classSampleGame.html#a4e48e26f90f011b488caed737a9be8fc":[6,0,224,13],
-"classSampleGame.html#a5bb1e92d082cafb5312252c5e7290206":[6,0,224,10],
-"classSampleGame.html#a66362917a1d96665e8160adcb72f031f":[6,0,224,7],
-"classSampleGame.html#a673c637d5c84d84def22c034967aba5e":[6,0,224,34],
-"classSampleGame.html#a6782cd6f4a02abb3823fe54e10b83287":[6,0,224,4],
-"classSampleGame.html#a75f42d44b202e2ea92bff2b2d9acadf8":[6,0,224,32],
-"classSampleGame.html#a797d8f7694629aa2eab457443d731ab8":[6,0,224,11]
+"classSampleGame.html#a5bb1e92d082cafb5312252c5e7290206":[6,0,224,10]
 };

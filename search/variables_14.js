@@ -17,7 +17,7 @@ var searchData=
   ['test_14',['test',['../structboost_1_1detail_1_1is__copy__assignable__impl2.html#a4d9e91a1801be683405061aa999c1175',1,'boost::detail::is_copy_assignable_impl2::test()'],['../structboost_1_1move__detail_1_1is__copy__assignable.html#a455e0e41d303ec4f4c2e2a5187dff43d',1,'boost::move_detail::is_copy_assignable::test()']]],
   ['testee_15',['testee',['../structboost_1_1type__traits_1_1detail_1_1promoted__index.html#ae14f31d18bf1f1e655107425bee610f4',1,'boost::type_traits::detail::promoted_index']]],
   ['tester_16',['tester',['../structboost_1_1function__types_1_1detail_1_1classifier__bits.html#a175d4df4314c444a51c34cfa6f452833',1,'boost::function_types::detail::classifier_bits']]],
-  ['text_5f_17',['text_',['../classmtgb_1_1TextRenderer.html#a46bc4cb172c88cd2487ae61356e07c1d',1,'mtgb::TextRenderer']]],
+  ['text_5f_17',['text_',['../structTextRendererState.html#ab3dee65fc07a36ab01ea6174cea62cdf',1,'TextRendererState::text_()'],['../classmtgb_1_1TextRenderer.html#a46bc4cb172c88cd2487ae61356e07c1d',1,'mtgb::TextRenderer::text_()']]],
   ['textlayoutdata_5f_18',['textLayoutData_',['../classmtgb_1_1TextCache.html#a55f508972deebf6a5760bae2c6a6946f',1,'mtgb::TextCache']]],
   ['textrenderercp_19',['TextRendererCP',['../classmtgb_1_1TextRenderer.html#aee34247f7127fbe46a0b9da0abd5b3b5',1,'mtgb::TextRenderer']]],
   ['texttopoffset_20',['textTopOffset',['../structmtgb_1_1PixelFontMetrics.html#a42fe6a78117959b2673120072e700b7c',1,'mtgb::PixelFontMetrics']]],

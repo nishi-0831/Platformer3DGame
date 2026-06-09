@@ -1,5 +1,10 @@
 var NAVTREEINDEX180 =
 {
+"is__binary_8hpp.html#a53afe80e1a8e17ba21de2c2526a715de":[7,0,4,0,24,5,4,0],
+"is__binary_8hpp.html#aa67ea79045681ba3f90d76898cafa229":[7,0,4,0,24,5,4,3],
+"is__binary_8hpp.html#ac15f1ee498b1abd03c4415e91d438965":[7,0,4,0,24,5,4,1],
+"is__binary_8hpp_source.html":[7,0,4,0,24,5,4],
+"is__bounded__array_8hpp.html":[7,0,4,0,27,95],
 "is__bounded__array_8hpp_source.html":[7,0,4,0,27,95],
 "is__callable__builtin_8hpp.html":[7,0,4,0,11,7],
 "is__callable__builtin_8hpp_source.html":[7,0,4,0,11,7],
@@ -244,10 +249,5 @@ var NAVTREEINDEX180 =
 "is__noncopyable_8hpp_source.html":[7,0,4,0,27,123],
 "is__nonmember__callable__builtin_8hpp.html":[7,0,4,0,11,14],
 "is__nonmember__callable__builtin_8hpp_source.html":[7,0,4,0,11,14],
-"is__nothrow__move__assignable_8hpp.html":[7,0,4,0,27,124],
-"is__nothrow__move__assignable_8hpp_source.html":[7,0,4,0,27,124],
-"is__nothrow__move__constructible_8hpp.html":[7,0,4,0,27,125],
-"is__nothrow__move__constructible_8hpp_source.html":[7,0,4,0,27,125],
-"is__nothrow__swappable_8hpp.html":[7,0,4,0,27,126],
-"is__nothrow__swappable_8hpp_source.html":[7,0,4,0,27,126]
+"is__nothrow__move__assignable_8hpp.html":[7,0,4,0,27,124]
 };

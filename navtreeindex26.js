@@ -1,5 +1,10 @@
 var NAVTREEINDEX26 =
 {
+"classSampleGame.html#a66362917a1d96665e8160adcb72f031f":[6,0,224,7],
+"classSampleGame.html#a673c637d5c84d84def22c034967aba5e":[6,0,224,34],
+"classSampleGame.html#a6782cd6f4a02abb3823fe54e10b83287":[6,0,224,4],
+"classSampleGame.html#a75f42d44b202e2ea92bff2b2d9acadf8":[6,0,224,32],
+"classSampleGame.html#a797d8f7694629aa2eab457443d731ab8":[6,0,224,11],
 "classSampleGame.html#a83d95acc414cc236587416fd8075ed2d":[6,0,224,12],
 "classSampleGame.html#a89610789c1e997fbf101d1137f9407a9":[6,0,224,6],
 "classSampleGame.html#a8b552e60ee7d044929c35b08c3b46030":[6,0,224,19],
@@ -244,10 +249,5 @@ var NAVTREEINDEX26 =
 "classStageEditScene.html#ab0386b1ccc7209102d7e320dd9fe86fd":[6,0,233,8],
 "classStageEditScene.html#ab20543dbba4c06b140faff0434cd2b52":[6,0,233,1],
 "classStageEditScene.html#ab4f43993cd3afba2194f420d68fae9e8":[6,0,233,0],
-"classStageEditScene.html#ab58c8a57aad68525a42128f090cb4919":[6,0,233,12],
-"classStageEditScene.html#ab9e8384f2f6a15526157a9f2c2f172a7":[6,0,233,7],
-"classStageEditScene.html#ae6947b574cd958fe123b72e10e8a520d":[6,0,233,2],
-"classStageEditScene.html#af2c77f17487f66c4afd24c67f1a8b85e":[6,0,233,11],
-"classStageEditScene.html#afafcd4e3890c83df321d60aa40c9fd97":[6,0,233,3],
-"classStageManager.html":[6,0,234]
+"classStageEditScene.html#ab58c8a57aad68525a42128f090cb4919":[6,0,233,12]
 };
