@@ -770,7 +770,7 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp")
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp" "mtgb/SerializableGameObject.h" "mtgb/SerializableGameObject.cpp")
 
 # プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE

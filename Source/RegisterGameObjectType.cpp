@@ -9,6 +9,8 @@
 #include "SeaPlane.h"
 #include "CircularSaw.h"
 #include "RespawnManager.h"
+#include "Button.h"
+#include "Slider.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	_pGameObjectRegistrar->Register<MovingFloor>("MovingFloor");
