@@ -1,5 +1,9 @@
 var NAVTREEINDEX6 =
 {
+"adapted_2struct_2detail_2define__struct__inline_8hpp.html#ad55ceb795e3ab8f4ddf44e12730211ea":[7,0,4,0,13,0,7,0,10,23],
+"adapted_2struct_2detail_2define__struct__inline_8hpp.html#ae0bc82231835bf069a7925e4abeb7fe2":[7,0,4,0,13,0,7,0,10,12],
+"adapted_2struct_2detail_2define__struct__inline_8hpp.html#ae18dad0b34cf4cc445ed2e953e44e003":[7,0,4,0,13,0,7,0,10,5],
+"adapted_2struct_2detail_2define__struct__inline_8hpp.html#ae19ae55e2d05e44161bf9f4de2641b99":[7,0,4,0,13,0,7,0,10,26],
 "adapted_2struct_2detail_2define__struct__inline_8hpp.html#ae7c8371379d2abb8b313a84efaf40900":[7,0,4,0,13,0,7,0,10,20],
 "adapted_2struct_2detail_2define__struct__inline_8hpp_source.html":[7,0,4,0,13,0,7,0,10],
 "adapted_2struct_2detail_2deref__data__impl_8hpp.html":[7,0,4,0,13,0,7,0,11],
@@ -245,9 +249,5 @@ var NAVTREEINDEX6 =
 "alignof_8hpp.html#a51d330d4dfb7f3b4b4ca2bc1597a0b42":[7,0,4,0,6,2,0],
 "alignof_8hpp_source.html":[7,0,4,0,6,2],
 "alloc__construct_8hpp.html":[7,0,4,0,6,3],
-"alloc__construct_8hpp.html#a1499b5fc11e376a226e7e7db8633b515":[7,0,4,0,6,3,6],
-"alloc__construct_8hpp.html#a2fceb107fd433d37b678795cda23abad":[7,0,4,0,6,3,4],
-"alloc__construct_8hpp.html#a512ee326a009b71e8d70e96f50f0d77f":[7,0,4,0,6,3,0],
-"alloc__construct_8hpp.html#a6c0cc51c549abd2d2fb05ae06abf8fcb":[7,0,4,0,6,3,2],
-"alloc__construct_8hpp.html#a96edded6c1d913a8c9ac3da2f3d759a1":[7,0,4,0,6,3,5]
+"alloc__construct_8hpp.html#a1499b5fc11e376a226e7e7db8633b515":[7,0,4,0,6,3,6]
 };

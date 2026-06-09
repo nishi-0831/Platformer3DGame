@@ -243,6 +243,8 @@ var dir_3cf6e300f4ed75b2a0531d7b20a0e51f =
     [ "Screen.h", "Screen_8h.html", "Screen_8h" ],
     [ "SelectionCommand.cpp", "SelectionCommand_8cpp.html", null ],
     [ "SelectionCommand.h", "SelectionCommand_8h.html", "SelectionCommand_8h" ],
+    [ "SerializableGameObject.cpp", "SerializableGameObject_8cpp.html", null ],
+    [ "SerializableGameObject.h", "SerializableGameObject_8h.html", "SerializableGameObject_8h" ],
     [ "ShaderType.h", "ShaderType_8h.html", "ShaderType_8h" ],
     [ "ShowAttributes.cpp", "ShowAttributes_8cpp.html", null ],
     [ "ShowAttributes.h", "ShowAttributes_8h.html", "ShowAttributes_8h" ],

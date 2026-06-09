@@ -154,6 +154,7 @@ var namespacemtgb =
     [ "ScreenCoordContainsInfo", "structmtgb_1_1ScreenCoordContainsInfo.html", "structmtgb_1_1ScreenCoordContainsInfo" ],
     [ "SelectionClearedEvent", "structmtgb_1_1SelectionClearedEvent.html", null ],
     [ "SelectionCommand", "classmtgb_1_1SelectionCommand.html", "classmtgb_1_1SelectionCommand" ],
+    [ "SerializableGameObject", "classmtgb_1_1SerializableGameObject.html", "classmtgb_1_1SerializableGameObject" ],
     [ "ShaderBundle", "structmtgb_1_1ShaderBundle.html", "structmtgb_1_1ShaderBundle" ],
     [ "SimpleConstantBuffer", "structmtgb_1_1SimpleConstantBuffer.html", "structmtgb_1_1SimpleConstantBuffer" ],
     [ "SimpleMesh", "structmtgb_1_1SimpleMesh.html", "structmtgb_1_1SimpleMesh" ],

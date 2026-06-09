@@ -4001,6 +4001,7 @@ var hierarchy =
         [ "mtgb::HPViewer", "classmtgb_1_1HPViewer.html", null ],
         [ "mtgb::QuaternionCamera", "classmtgb_1_1QuaternionCamera.html", null ],
         [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
+        [ "mtgb::SerializableGameObject", "classmtgb_1_1SerializableGameObject.html", null ],
         [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ],
         [ "mtgb::SphericalCamera", "classmtgb_1_1SphericalCamera.html", null ]
       ] ]
@@ -4955,6 +4956,7 @@ var hierarchy =
       [ "mtgb::ImGuiEditorCamera", "classmtgb_1_1ImGuiEditorCamera.html", null ],
       [ "mtgb::ImGuizmoManipulator", "classmtgb_1_1ImGuizmoManipulator.html", null ],
       [ "mtgb::Saw", "classmtgb_1_1Saw.html", null ],
+      [ "mtgb::SerializableGameObject", "classmtgb_1_1SerializableGameObject.html", null ],
       [ "mtgb::SkySphere", "classmtgb_1_1SkySphere.html", null ]
     ] ],
     [ "mtgb::ImGuiWindowState", "structmtgb_1_1ImGuiWindowState.html", null ],
