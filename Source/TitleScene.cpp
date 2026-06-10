@@ -8,18 +8,8 @@
 #include "../Source/ResultScene.h"
 #include "Slider.h"
 #include "Button.h"
-namespace
-{
-	// 118,90 , 565,100
-	ImageHandle hTitleImage;
-	ImageHandle hLeftStickImg;
-	ImageHandle hEastButtonImg;
-	ImageHandle hBackgroundImage;
-	FBXModelHandle hModel;
-	RectF draw { 118, 90, 565, 100 };
+#include <SerializableGameObject.h>
 
-	RectF textDrawRect { 118, 450, 565, 80 };
-} // namespace
 TitleScene::TitleScene() {}
 
 TitleScene::~TitleScene() {}
@@ -36,11 +26,7 @@ void TitleScene::Initialize()
 	);
 	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("SceneCamera").Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
-	hTitleImage		 = Image::Load("Image/TitleImage.png");
-	hBackgroundImage = Image::Load("Image/Black.png");
-	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
-	hLeftStickImg	 = Image::Load("Image/LeftStick.png");
-
+	
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
@@ -62,14 +48,6 @@ void TitleScene::Update()
 
 void TitleScene::Draw() const
 {
-	Draw::Image(hTitleImage, draw);
-	Draw::Image(hBackgroundImage, { 50, 550, 200, 50 });
-	Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
-	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 }, 24);
-
-	Draw::Image(hBackgroundImage, { 550, 550, 150, 50 });
-	Draw::Image(hEastButtonImg, { 550, 550, 50, 50 });
-	Draw::ImmediateTextW(L"決定", { 600, 550, 100, 50 });
 }
 
 void TitleScene::End() {}

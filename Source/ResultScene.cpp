@@ -4,6 +4,7 @@
 #include "SkySphere.h"
 #include "StageManager.h"
 #include "Button.h"
+#include <SerializableGameObject.h>
 namespace
 {
 	// 118,90 , 565,100
@@ -41,17 +42,16 @@ void ResultScene::Initialize()
 
 	std::optional<nlohmann::json> json { std::nullopt };
 
+	
 	// クリアしているかによって表示する画像を変える
 	if (clearedStage)
 	{
 		Game::System<Audio>().Play("GameClear");
-		hTitleImage = Image::Load("Image/ClearImage.png");
 		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_CLEAR_SCENE);
 	}
 	else
 	{
 		Game::System<Audio>().Play("GameOver");
-		hTitleImage = Image::Load("Image/GameOverImage.png");
 		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
 	}
 	hBackgroundImage = Image::Load("Image/Black.png");
@@ -75,15 +75,15 @@ void ResultScene::Update()
 
 void ResultScene::Draw() const
 {
-	Draw::Image(hTitleImage, draw);
-	Draw::Image(hBackgroundImage, textDrawRect, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
-
-	Draw::Image(hBackgroundImage, mtgb::RectF { 120, 305, 310, 40 }, mtgb::UIParams {}, mtgb::Color(0, 0, 0, 90));
-
 	int32_t itemCount = Game::System<ScoreManager>().GetScore();
-	Draw::ImmediateText("Items Collected", mtgb::RectF { 120, 320, 300, 30 }, 36, mtgb::TextAlignment::MIDDLE_LEFT);
 	std::string scoreText(std::to_string(itemCount));
-	Draw::ImmediateText(scoreText, mtgb::RectF { 400, 320, 80, 30 }, 36, mtgb::TextAlignment::MIDDLE_LEFT);
+	Draw::ImmediateText(
+		scoreText,
+		mtgb::RectF { 400, 320, 80, 30 },
+		36,
+		mtgb::TextAlignment::MIDDLE_LEFT,
+		UIParams { 1, AllLayer() }
+	);
 }
 
 void ResultScene::End() {}
