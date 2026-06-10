@@ -850,7 +850,7 @@ mtgb::Draw 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Sprite_8cpp_source.html#l00018">mtgb::Sprite::Draw()</a>, <a class="el" href="RectT_8h_source.html#l00085">mtgb::RectT&lt; T &gt;::point</a>, <a class="el" href="RectT_8h_source.html#l00094">mtgb::RectT&lt; T &gt;::size</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">mtgb::SPRITE2_D</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="ResultScene_8cpp_source.html#l00076">ResultScene::Draw()</a>, <a class="el" href="SampleScene_8cpp_source.html#l00065">SampleScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00063">TitleScene::Draw()</a>, <a class="el" href="ImageRenderer_8cpp_source.html#l00021">mtgb::ImageRenderer::Render()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00065">SampleScene::Draw()</a>, <a class="el" href="ImageRenderer_8cpp_source.html#l00021">mtgb::ImageRenderer::Render()</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -860,7 +860,7 @@ mtgb::Draw 連携図</div>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw_a58181584ec06ddd3c786dada2327f86b_icgraph.svg" width="599" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw_a58181584ec06ddd3c786dada2327f86b_icgraph.svg" width="599" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
@@ -1075,7 +1075,7 @@ mtgb::Draw 連携図</div>
 <div class="line"><span class="lineno">  205</span> </div>
 <div class="line"><span class="lineno">  206</span>            <span class="keyword">const</span> <a class="code hl_typedef" href="namespacemtgb.html#a0a8a0914ad55f984fdc2defcfff41f9d">Vector2F</a> ratio = Game::System&lt;Screen&gt;().GetSizeRatio();</div>
 <div class="line"><span class="lineno">  207</span>            Game::System&lt;DirectWrite&gt;().ImmediateDraw(</div>
-<div class="line"><span class="lineno">  208</span>                <a class="code hl_function" href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">MultiToWide</a>(text.c_str()),</div>
+<div class="line"><span class="lineno">  208</span>                <a class="code hl_function" href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">UTF8ToWide</a>(text.c_str()),</div>
 <div class="line"><span class="lineno">  209</span>                formatData-&gt;format,</div>
 <div class="line"><span class="lineno">  210</span>                formatData-&gt;pixelFontMetrics,</div>
 <div class="line"><span class="lineno">  211</span>                _rect.x * ratio.x,</div>
@@ -1088,9 +1088,9 @@ mtgb::Draw 連携図</div>
 <div class="line"><span class="lineno">  218</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1DirectX11Draw_html_a77288e7f8a17e9b18baf75c12bdce57a"><div class="ttname"><a href="classmtgb_1_1DirectX11Draw.html#a77288e7f8a17e9b18baf75c12bdce57a">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer</a></div><div class="ttdeci">static void SetIsWriteToDepthBuffer(bool _enabled)</div><div class="ttdoc">深度バッファへの書き込みをするか</div><div class="ttdef"><b>Definition:</b> <a href="DirectX11Draw_8cpp_source.html#l00057">DirectX11Draw.cpp:57</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Draw_html_aeb1dc2a9707ffbdca3638d78ac39dacb"><div class="ttname"><a href="classmtgb_1_1Draw.html#aeb1dc2a9707ffbdca3638d78ac39dacb">mtgb::Draw::CalcScaledFontSize</a></div><div class="ttdeci">static int CalcScaledFontSize(int _baseSize)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00298">Draw.cpp:298</a></div></div>
-<div class="ttc" id="anamespacemtgb_html_a11fc0443ed8ddf859bdd5882dd48d3af"><div class="ttname"><a href="namespacemtgb.html#a11fc0443ed8ddf859bdd5882dd48d3af">mtgb::MultiToWide</a></div><div class="ttdeci">std::wstring MultiToWide(const std::string &amp;_string)</div><div class="ttdoc">マルチバイト文字列からワイド文字列へ変換</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00101">MTStringUtility.cpp:101</a></div></div>
+<div class="ttc" id="anamespacemtgb_html_a91dcf894b121fab17af7182528469d05"><div class="ttname"><a href="namespacemtgb.html#a91dcf894b121fab17af7182528469d05">mtgb::UTF8ToWide</a></div><div class="ttdeci">std::wstring UTF8ToWide(const std::string &amp;_string)</div><div class="ttdef"><b>Definition:</b> <a href="MTStringUtility_8cpp_source.html#l00144">MTStringUtility.cpp:144</a></div></div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="RectT_8h_source.html#l00092">mtgb::RectT&lt; T &gt;::height</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00101">mtgb::MultiToWide()</a>, <a class="el" href="DirectWrite_8h_source.html#l00042">mtgb::FontFormatData::pixelFontMetrics</a>, <a class="el" href="DirectX11Draw_8cpp_source.html#l00057">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer()</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">mtgb::SPRITE2_D</a>, <a class="el" href="RectT_8h_source.html#l00091">mtgb::RectT&lt; T &gt;::width</a>, <a class="el" href="RectT_8h_source.html#l00082">mtgb::RectT&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="RectT_8h_source.html#l00083">mtgb::RectT&lt; T &gt;::y</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
+<p class="reference">参照先 <a class="el" href="DirectWrite_8h_source.html#l00041">mtgb::FontFormatData::format</a>, <a class="el" href="RectT_8h_source.html#l00092">mtgb::RectT&lt; T &gt;::height</a>, <a class="el" href="DirectWrite_8h_source.html#l00042">mtgb::FontFormatData::pixelFontMetrics</a>, <a class="el" href="DirectX11Draw_8cpp_source.html#l00057">mtgb::DirectX11Draw::SetIsWriteToDepthBuffer()</a>, <a class="el" href="namespacemtgb.html#abd56f621e81af02c018dca9fbb31a5fdadc33fd0ad62ec97d3960478f7fb73e88">mtgb::SPRITE2_D</a>, <a class="el" href="MTStringUtility_8cpp_source.html#l00144">mtgb::UTF8ToWide()</a>, <a class="el" href="RectT_8h_source.html#l00091">mtgb::RectT&lt; T &gt;::width</a>, <a class="el" href="RectT_8h_source.html#l00082">mtgb::RectT&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="RectT_8h_source.html#l00083">mtgb::RectT&lt; T &gt;::y</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -1371,11 +1371,11 @@ mtgb::Draw 連携図</div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="Vector2T_8h_source.html#l00013">mtgb::Vector2T&lt; T &gt;::x</a>, <a class="el" href="Vector2T_8h_source.html#l00014">mtgb::Vector2T&lt; T &gt;::y</a>.</p>
 
-<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00065">SampleScene::Draw()</a>, <a class="el" href="TitleScene_8cpp_source.html#l00063">TitleScene::Draw()</a>.</p>
+<p class="reference">参照元 <a class="el" href="SampleScene_8cpp_source.html#l00065">SampleScene::Draw()</a>.</p>
 <div class="dynheader">
 被呼び出し関係図:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw_a9470953a68bb79976afc3b28cd00324f_icgraph.svg" width="427" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classmtgb_1_1Draw_a9470953a68bb79976afc3b28cd00324f_icgraph.svg" width="427" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 
