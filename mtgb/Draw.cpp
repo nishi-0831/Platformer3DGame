@@ -205,7 +205,7 @@ void mtgb::Draw::ImmediateText(
 
 			const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
 			Game::System<DirectWrite>().ImmediateDraw(
-				MultiToWide(text.c_str()),
+				UTF8ToWide(text.c_str()),
 				formatData->format,
 				formatData->pixelFontMetrics,
 				_rect.x * ratio.x,
