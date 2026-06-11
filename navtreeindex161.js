@@ -1,5 +1,9 @@
 var NAVTREEINDEX161 =
 {
+"functions_func_v.html":[6,3,1,22],
+"functions_func_w.html":[6,3,1,23],
+"functions_func_x.html":[6,3,1,24],
+"functions_func_y.html":[6,3,1,25],
 "functions_func_z.html":[6,3,1,26],
 "functions_func_~.html":[6,3,1,27],
 "functions_g.html":[6,3,0,8],
@@ -64,8 +68,8 @@ var NAVTREEINDEX161 =
 "functions_type_z.html":[6,3,3,26],
 "functions_u.html":[6,3,0,22],
 "functions_v.html":[6,3,0,23],
-"functions_vars.html":[6,3,2,0],
 "functions_vars.html":[6,3,2],
+"functions_vars.html":[6,3,2,0],
 "functions_vars_a.html":[6,3,2,1],
 "functions_vars_b.html":[6,3,2,2],
 "functions_vars_c.html":[6,3,2,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX161 =
 "fusion_2algorithm_2iteration_2reverse__iter__fold_8hpp.html":[7,0,4,0,13,1,1,11],
 "fusion_2algorithm_2iteration_2reverse__iter__fold_8hpp.html#a2ac8e592e3dfd25be5b9dd615380aadc":[7,0,4,0,13,1,1,11,0],
 "fusion_2algorithm_2iteration_2reverse__iter__fold_8hpp.html#ae9f4e689119c34e371958e61323b43ce":[7,0,4,0,13,1,1,11,1],
-"fusion_2algorithm_2iteration_2reverse__iter__fold_8hpp_source.html":[7,0,4,0,13,1,1,11],
-"fusion_2algorithm_2iteration_8hpp.html":[7,0,4,0,13,1,5],
-"fusion_2algorithm_2iteration_8hpp_source.html":[7,0,4,0,13,1,5],
-"fusion_2algorithm_2query_2count_8hpp.html":[7,0,4,0,13,1,2,3],
-"fusion_2algorithm_2query_2count_8hpp.html#a950740272e9219cfe814fbf6588e659e":[7,0,4,0,13,1,2,3,1]
+"fusion_2algorithm_2iteration_2reverse__iter__fold_8hpp_source.html":[7,0,4,0,13,1,1,11]
 };

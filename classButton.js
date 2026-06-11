@@ -38,6 +38,7 @@ var classButton =
     [ "Update", "classButton.html#a3c037070db43bd5eac32ffbc3b721124", null ],
     [ "UpdateUI", "classButton.html#ac2b8f1d19af425df561d0f4e3d6feaba", null ],
     [ "entityId_", "classButton.html#a6cc5a321c4352e0a78ba6350d80f1cc6", null ],
+    [ "generateCounter_", "classButton.html#ae4bdbd5fd9bf53ca190a659dbc4f485a", null ],
     [ "hImageOnNotSelected_", "classButton.html#a7623782460c4ec64ef028c2160abd994", null ],
     [ "hImageOnSelected_", "classButton.html#aa4b77009b6cea617e788a1b854023a61", null ],
     [ "isNotCalledStart_", "classButton.html#aee8629c2c936df1173a2f9efe7747ab9", null ],

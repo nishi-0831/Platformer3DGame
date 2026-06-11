@@ -1,5 +1,9 @@
 var NAVTREEINDEX162 =
 {
+"fusion_2algorithm_2iteration_8hpp.html":[7,0,4,0,13,1,5],
+"fusion_2algorithm_2iteration_8hpp_source.html":[7,0,4,0,13,1,5],
+"fusion_2algorithm_2query_2count_8hpp.html":[7,0,4,0,13,1,2,3],
+"fusion_2algorithm_2query_2count_8hpp.html#a950740272e9219cfe814fbf6588e659e":[7,0,4,0,13,1,2,3,1],
 "fusion_2algorithm_2query_2count_8hpp_source.html":[7,0,4,0,13,1,2,3],
 "fusion_2algorithm_2query_2count__if_8hpp.html":[7,0,4,0,13,1,2,4],
 "fusion_2algorithm_2query_2count__if_8hpp.html#a062ed24b138f00f7e5d5394b9d491c14":[7,0,4,0,13,1,2,4,1],
@@ -245,9 +249,5 @@ var NAVTREEINDEX162 =
 "fusion_2include_2clear_8hpp.html":[7,0,4,0,13,4,30],
 "fusion_2include_2clear_8hpp_source.html":[7,0,4,0,13,4,30],
 "fusion_2include_2comparison_8hpp.html":[7,0,4,0,13,4,31],
-"fusion_2include_2comparison_8hpp_source.html":[7,0,4,0,13,4,31],
-"fusion_2include_2copy_8hpp.html":[7,0,4,0,13,4,36],
-"fusion_2include_2copy_8hpp_source.html":[7,0,4,0,13,4,36],
-"fusion_2include_2count_8hpp.html":[7,0,4,0,13,4,37],
-"fusion_2include_2count_8hpp_source.html":[7,0,4,0,13,4,37]
+"fusion_2include_2comparison_8hpp_source.html":[7,0,4,0,13,4,31]
 };

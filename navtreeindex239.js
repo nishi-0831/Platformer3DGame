@@ -1,5 +1,9 @@
 var NAVTREEINDEX239 =
 {
+"mpl_2bitxor_8hpp.html#aee63ead044777fc05a53b13e6067a392":[7,0,4,0,19,36,0],
+"mpl_2bitxor_8hpp_source.html":[7,0,4,0,19,36],
+"mpl_2bool_8hpp.html":[7,0,4,0,19,37],
+"mpl_2bool_8hpp_source.html":[7,0,4,0,19,37],
 "mpl_2clear_8hpp.html":[7,0,4,0,19,41],
 "mpl_2clear_8hpp_source.html":[7,0,4,0,19,41],
 "mpl_2comparison_8hpp.html":[7,0,4,0,19,43],
@@ -245,9 +249,5 @@ var NAVTREEINDEX239 =
 "mpl_2protect_8hpp.html":[7,0,4,0,19,149],
 "mpl_2protect_8hpp_source.html":[7,0,4,0,19,149],
 "mpl_2push__back_8hpp.html":[7,0,4,0,19,150],
-"mpl_2push__back_8hpp_source.html":[7,0,4,0,19,150],
-"mpl_2push__front_8hpp.html":[7,0,4,0,19,152],
-"mpl_2push__front_8hpp_source.html":[7,0,4,0,19,152],
-"mpl_2remove_8hpp.html":[7,0,4,0,19,156],
-"mpl_2remove_8hpp_source.html":[7,0,4,0,19,156]
+"mpl_2push__back_8hpp_source.html":[7,0,4,0,19,150]
 };

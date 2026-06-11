@@ -1,19 +1,20 @@
 var NAVTREEINDEX23 =
 {
 "classButton.html#ac2b8f1d19af425df561d0f4e3d6feaba":[6,0,48,36],
-"classButton.html#ac4f79d210ae0d1388e203d1d1b93ae6c":[6,0,48,43],
-"classButton.html#acc113fbf7768444caa081de2298613af":[6,0,48,41],
-"classButton.html#acff62110b73cdb09dcc0279b8cc2b3eb":[6,0,48,48],
+"classButton.html#ac4f79d210ae0d1388e203d1d1b93ae6c":[6,0,48,44],
+"classButton.html#acc113fbf7768444caa081de2298613af":[6,0,48,42],
+"classButton.html#acff62110b73cdb09dcc0279b8cc2b3eb":[6,0,48,49],
 "classButton.html#ad1f5d6a3e1e9e09d0ef127cf000cffb9":[6,0,48,20],
 "classButton.html#adca80cc33581de34dd622983ac232707":[6,0,48,16],
 "classButton.html#ae44357d83a99c7f91a3259dc390c7946":[6,0,48,25],
+"classButton.html#ae4bdbd5fd9bf53ca190a659dbc4f485a":[6,0,48,38],
 "classButton.html#ae98ecf286d6e93064a967ef02c41a438":[6,0,48,13],
 "classButton.html#aec1d6bd2a9c2953d360201599fc31d4a":[6,0,48,1],
 "classButton.html#aed2d88f25ff20bd9f0068b119d867a8e":[6,0,48,19],
-"classButton.html#aee8629c2c936df1173a2f9efe7747ab9":[6,0,48,40],
+"classButton.html#aee8629c2c936df1173a2f9efe7747ab9":[6,0,48,41],
 "classButton.html#af0b3630f3e49fde5433ef21cc243a235":[6,0,48,30],
-"classButton.html#af174d827a7c91ac622086fd311424970":[6,0,48,45],
-"classButton.html#af889133148e81bfcd2341b8573e5abc6":[6,0,48,42],
+"classButton.html#af174d827a7c91ac622086fd311424970":[6,0,48,46],
+"classButton.html#af889133148e81bfcd2341b8573e5abc6":[6,0,48,43],
 "classButton.html#afaeb72363aa2518190ac01dee5d40c0c":[6,0,48,10],
 "classC.html":[6,0,50],
 "classC.html#a086d3a4efc697dba0601b9fef3d082ad":[6,0,50,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX23 =
 "classHighlightEnemy.html#a6528ee5991a4f830c4730fb538c52ba0":[6,0,180,12],
 "classHighlightEnemy.html#a6be9c04da18a66f116916cd8c4573702":[6,0,180,5],
 "classHighlightEnemy.html#a6cc5a321c4352e0a78ba6350d80f1cc6":[6,0,180,30],
-"classHighlightEnemy.html#a78fb345c550e9f448e08654127792564":[6,0,180,4],
-"classHighlightEnemy.html#a7d169f3a70bbd0c6ff3f3f9bc6a69e27":[6,0,180,32]
+"classHighlightEnemy.html#a78fb345c550e9f448e08654127792564":[6,0,180,4]
 };

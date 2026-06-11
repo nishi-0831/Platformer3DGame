@@ -1,5 +1,6 @@
 var classmtgb_1_1IRenderable =
 [
+    [ "IRenderable", "classmtgb_1_1IRenderable.html#a8d88634608a26f5259613ca1afbc7103", null ],
     [ "~IRenderable", "classmtgb_1_1IRenderable.html#a123aa3e2f604720cf888deef93903a28", null ],
     [ "CanRender", "classmtgb_1_1IRenderable.html#a4e8551bc91bebf3b092b65d817f76068", null ],
     [ "GetLayer", "classmtgb_1_1IRenderable.html#a793729872ce00cc8d43de69abe99183b", null ],
