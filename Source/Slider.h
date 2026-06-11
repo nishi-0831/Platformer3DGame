@@ -7,6 +7,7 @@ class Slider : public UIComponent
 {
   public:
 	Slider();
+	void Start() override;
 	void SetRect(const RectF& _rect);
 	void SetLabel(std::string_view _label);
 	void SetValue(int _value);
@@ -38,4 +39,6 @@ class Slider : public UIComponent
 	mtgb::ImageRenderer* pEmptyImageRenderer_;
 
 	mtgb::ImageRenderer* pHandleImageRenderer_;
+
+	static unsigned int generateCounter_;
 };

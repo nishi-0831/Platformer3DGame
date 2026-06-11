@@ -1,5 +1,8 @@
 #include "Slider.h"
 #include <cmath>
+
+unsigned int Slider::generateCounter_ { 0 };
+
 Slider::Slider()
 	: minValue_ { 10 }
 	, maxValue_ { 180 }
@@ -14,6 +17,10 @@ Slider::Slider()
 	, pHandleImageRenderer_ { nullptr }
 {
 	using namespace mtgb;
+
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Slider));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+
 	pLabelRenderer_->alignment	   = TextAlignment::CENTER;
 	pLabelRenderer_->params_.depth = 3;
 
@@ -42,6 +49,11 @@ Slider::Slider()
 	pHandleImageRenderer_				   = handle->Component<ImageRenderer>();
 	pHandleImageRenderer_->handle_		   = Image::Load("Image/Circle.png");
 	pHandleImageRenderer_->uiParams_.depth = 4;
+}
+
+void Slider::Start()
+{
+	SetRect(pBackgroundRenderer_->drawRect_);
 }
 
 void Slider::SetRect(const RectF& _rect)

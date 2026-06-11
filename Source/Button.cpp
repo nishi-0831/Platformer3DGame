@@ -1,8 +1,10 @@
 #include "Button.h"
-
+#include <format>
 ImageHandle Button::hImageOnSelected_ { mtgb::INVALID_HANDLE };
 
 ImageHandle Button::hImageOnNotSelected_ { mtgb::INVALID_HANDLE };
+
+unsigned int Button::generateCounter_ { 0 };
 
 Button::Button()
 	: pImageRenderer_ { Component<mtgb::ImageRenderer>() }
@@ -13,6 +15,9 @@ Button::Button()
 	Button::hImageOnNotSelected_ = mtgb::Image::Load("Image/OnNotSelected.png");
 	pTextRenderer_->alignment	 = mtgb::TextAlignment::CENTER;
 	pImageRenderer_->handle_	 = Button::hImageOnNotSelected_;
+
+	std::string typeName = mtgb::Game::System<mtgb::GameObjectTypeRegistry>().GetNameFromType(typeid(Button));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }
 
 void Button::SetRect(const RectF& _rect)

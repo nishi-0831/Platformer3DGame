@@ -26,7 +26,7 @@ void TitleScene::Initialize()
 	);
 	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("SceneCamera").Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
-	
+
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
@@ -46,9 +46,7 @@ void TitleScene::Update()
 	panelManager_.UpdatePanel();
 }
 
-void TitleScene::Draw() const
-{
-}
+void TitleScene::Draw() const {}
 
 void TitleScene::End() {}
 
@@ -88,6 +86,7 @@ void TitleScene::CreatePanel()
 			}
 		);
 		pItem2->SetText("How to Play");
+
 		pItem2->SetRect({ 290, 430, 220, 60 });
 
 		Button* pItem3 = pCurrScene->Instantiate<Button>();

@@ -31,4 +31,5 @@ class Button : public UIComponent
 	RectF rect_;
 	static ImageHandle hImageOnSelected_;
 	static ImageHandle hImageOnNotSelected_;
+	static unsigned int generateCounter_;
 };
