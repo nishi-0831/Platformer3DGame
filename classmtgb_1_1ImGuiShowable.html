@@ -271,10 +271,11 @@ mtgb::ImGuiShowable 連携図</div>
 <div class="fragment"><div class="line"><span class="lineno">   23</span>    : <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a04e42ed23c57183524dc34a01aa2a138">targetEntityId_</a> { _entityId }</div>
 <div class="line"><span class="lineno">   24</span>    , <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a6e6923aae4b3d0f9993e2ce74ab9e8b4">show_</a> { _showType }</div>
 <div class="line"><span class="lineno">   25</span>{</div>
-<div class="line"><span class="lineno">   26</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a75eecfae4bb42029b2fb21ac621af7c1">MTImGui::Register</a>(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   27</span>}</div>
+<div class="line"><span class="lineno">   26</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a6cb2da3299bd0517b40f70baaac992ae">scope_</a> = <a class="code hl_enumvalue" href="classmtgb_1_1ImGuiShowable.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698">Scope::SCENE</a>;</div>
+<div class="line"><span class="lineno">   27</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#a75eecfae4bb42029b2fb21ac621af7c1">MTImGui::Register</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   28</span>}</div>
 </div><!-- fragment -->
-<p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00445">mtgb::MTImGui::Register()</a>.</p>
+<p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00445">mtgb::MTImGui::Register()</a>, <a class="el" href="classmtgb_1_1ImGuiShowable.html#a6c5a5f9b24a3745750e50e1393530c7aaf151a543099185593a5a87339c552698">SCENE</a>, <a class="el" href="ImGuiShowable_8h_source.html#l00042">scope_</a>.</p>
 <div class="dynheader">
 呼び出し関係図:</div>
 <div class="dyncontent">
@@ -322,12 +323,12 @@ mtgb::ImGuiShowable 連携図</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ImGuiShowable_8cpp_source.html">ImGuiShowable.cpp</a> の <a class="el" href="ImGuiShowable_8cpp_source.html#l00029">29</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   30</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#add175e8554e975ec8f8ff4804186373a">ImGuiShowable</a>(_showType, _entityId)</div>
-<div class="line"><span class="lineno">   31</span>{</div>
-<div class="line"><span class="lineno">   32</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496">displayName_</a> = _name;</div>
-<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a6cb2da3299bd0517b40f70baaac992ae">scope_</a>       = _scope;</div>
-<div class="line"><span class="lineno">   34</span>}</div>
+<p class="definition"> <a class="el" href="ImGuiShowable_8cpp_source.html">ImGuiShowable.cpp</a> の <a class="el" href="ImGuiShowable_8cpp_source.html#l00030">30</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   31</span>    : <a class="code hl_function" href="classmtgb_1_1ImGuiShowable.html#add175e8554e975ec8f8ff4804186373a">ImGuiShowable</a>(_showType, _entityId)</div>
+<div class="line"><span class="lineno">   32</span>{</div>
+<div class="line"><span class="lineno">   33</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a53eca55c2c3901c5713e857417100496">displayName_</a> = _name;</div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_variable" href="classmtgb_1_1ImGuiShowable.html#a6cb2da3299bd0517b40f70baaac992ae">scope_</a>       = _scope;</div>
+<div class="line"><span class="lineno">   35</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1ImGuiShowable_html_add175e8554e975ec8f8ff4804186373a"><div class="ttname"><a href="classmtgb_1_1ImGuiShowable.html#add175e8554e975ec8f8ff4804186373a">mtgb::ImGuiShowable::ImGuiShowable</a></div><div class="ttdeci">ImGuiShowable(EntityId _entityId)</div><div class="ttdef"><b>Definition:</b> <a href="ImGuiShowable_8cpp_source.html#l00011">ImGuiShowable.cpp:11</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="ImGuiShowable_8h_source.html#l00040">displayName_</a>, <a class="el" href="ImGuiShowable_8h_source.html#l00042">scope_</a>.</p>
@@ -357,10 +358,10 @@ mtgb::ImGuiShowable 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="ImGuiShowable_8cpp_source.html">ImGuiShowable.cpp</a> の <a class="el" href="ImGuiShowable_8cpp_source.html#l00036">36</a> 行目に定義があります。</p>
-<div class="fragment"><div class="line"><span class="lineno">   37</span>{</div>
-<div class="line"><span class="lineno">   38</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#af9fd54a12161c02920b5ab2ed20d0019">MTImGui::Unregister</a>(<span class="keyword">this</span>);</div>
-<div class="line"><span class="lineno">   39</span>}</div>
+<p class="definition"> <a class="el" href="ImGuiShowable_8cpp_source.html">ImGuiShowable.cpp</a> の <a class="el" href="ImGuiShowable_8cpp_source.html#l00037">37</a> 行目に定義があります。</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    <a class="code hl_function" href="classmtgb_1_1MTImGui.html#af9fd54a12161c02920b5ab2ed20d0019">MTImGui::Unregister</a>(<span class="keyword">this</span>);</div>
+<div class="line"><span class="lineno">   40</span>}</div>
 <div class="ttc" id="aclassmtgb_1_1MTImGui_html_af9fd54a12161c02920b5ab2ed20d0019"><div class="ttname"><a href="classmtgb_1_1MTImGui.html#af9fd54a12161c02920b5ab2ed20d0019">mtgb::MTImGui::Unregister</a></div><div class="ttdeci">static void Unregister(ImGuiShowable *_obj)</div><div class="ttdoc">登録解除 デストラクタで呼ばれる</div><div class="ttdef"><b>Definition:</b> <a href="MTImGui_8cpp_source.html#l00454">MTImGui.cpp:454</a></div></div>
 </div><!-- fragment -->
 <p class="reference">参照先 <a class="el" href="MTImGui_8cpp_source.html#l00454">mtgb::MTImGui::Unregister()</a>.</p>
@@ -480,7 +481,7 @@ mtgb::ImGuiShowable 連携図</div>
 
 <p class="definition"> <a class="el" href="ImGuiShowable_8h_source.html">ImGuiShowable.h</a> の <a class="el" href="ImGuiShowable_8h_source.html#l00042">42</a> 行目に定義があります。</p>
 
-<p class="reference">参照元 <a class="el" href="ImGuiShowable_8cpp_source.html#l00029">ImGuiShowable()</a>.</p>
+<p class="reference">参照元 <a class="el" href="ImGuiShowable_8cpp_source.html#l00022">ImGuiShowable()</a>.</p>
 
 </div>
 </div>

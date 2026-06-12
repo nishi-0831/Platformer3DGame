@@ -142,71 +142,81 @@ $(document).ready(function(){initNavTree('ResultScene_8cpp_source.html',''); ini
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    std::optional&lt;nlohmann::json&gt; <a class="code hl_class" href="classbasic__json.html">json</a> { std::nullopt };</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">// クリアしているかによって表示する画像を変える</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">if</span> (clearedStage)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        Game::System&lt;Audio&gt;().Play(<span class="stringliteral">&quot;GameClear&quot;</span>);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <a class="code hl_class" href="classbasic__json.html">json</a>        = mtgb::Game::System&lt;StageManager&gt;().GetStageJson(StageID::STAGE_CLEAR_SCENE);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordflow">else</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    {</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        Game::System&lt;Audio&gt;().Play(<span class="stringliteral">&quot;GameOver&quot;</span>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        <a class="code hl_class" href="classbasic__json.html">json</a>        = mtgb::Game::System&lt;StageManager&gt;().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    }</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    hBackgroundImage = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/Black.png&quot;</span>);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    hEastButtonImg   = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/EastButtonPush.png&quot;</span>);</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="classbasic__json.html">json</a>.has_value())</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a>(<a class="code hl_class" href="classbasic__json.html">json</a>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#adff9703b00d6ecfa1c1bb4e17fe362e8">mtgb::Time::StabilizeDeltaTime</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    Instantiate&lt;mtgb::SkySphere&gt;();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <a class="code hl_function" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">CreatePanel</a>();</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>}</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">   71</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a>()</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>{</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#acc4a2a6c83f9d3d746c786d4ff487b70">UpdatePanel</a>();</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>}</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="classResultScene.html#a3630928e249318139f019fd274730f82">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a>()<span class="keyword"> const</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="keyword"></span>{</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    int32_t itemCount = Game::System&lt;ScoreManager&gt;().GetScore();</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    std::string scoreText(std::to_string(itemCount));</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a2e3a030fee294e80871f396ac4d99e42">Draw::ImmediateText</a>(</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        scoreText,</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <a class="code hl_class" href="structmtgb_1_1RectT.html">mtgb::RectF</a> { 400, 320, 80, 30 },</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        36,</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa9d4989e254422a15442ed8c59c600f1a">mtgb::TextAlignment::MIDDLE_LEFT</a>,</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a> { 1, <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    );</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">   89</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a>() {}</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">   91</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">ResultScene::CreatePanel</a>() </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>{</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>* pCurrScene = Game::System&lt;SceneSystem&gt;().GetActiveScene();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_class" href="classButton.html">Button</a>* pItem = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    pItem-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        []()</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classTitleScene.html">TitleScene</a>&gt;();</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    );</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    pItem-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;Return To Title&quot;</span>);</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    pItem-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 290, 490, 220, 60 });</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;ResultMenu&quot;</span>, pPanel);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;ResultMenu&quot;</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// クリアしているかによって表示する画像を変える</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">if</span> (clearedStage)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        Game::System&lt;Audio&gt;().Play(<span class="stringliteral">&quot;GameClear&quot;</span>);</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        <a class="code hl_class" href="classbasic__json.html">json</a> = mtgb::Game::System&lt;StageManager&gt;().GetStageJson(StageID::STAGE_CLEAR_SCENE);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        Game::System&lt;Audio&gt;().Play(<span class="stringliteral">&quot;GameOver&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <a class="code hl_class" href="classbasic__json.html">json</a> = mtgb::Game::System&lt;StageManager&gt;().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    }</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    hBackgroundImage = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/Black.png&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    hEastButtonImg   = <a class="code hl_function" href="classmtgb_1_1Image.html#a739cb4329f2e2f2521fa782b260cfeb7">Image::Load</a>(<span class="stringliteral">&quot;Image/EastButtonPush.png&quot;</span>);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">if</span> (<a class="code hl_class" href="classbasic__json.html">json</a>.has_value())</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <a class="code hl_function" href="classmtgb_1_1GameObjectGenerator.html#a75cbc1b1bde2c45d36a91cacc6fbdd3f">mtgb::GameObjectGenerator::GenerateFromJson</a>(<a class="code hl_class" href="classbasic__json.html">json</a>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        <a class="code hl_function" href="classmtgb_1_1Time.html#adff9703b00d6ecfa1c1bb4e17fe362e8">mtgb::Time::StabilizeDeltaTime</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    Instantiate&lt;mtgb::SkySphere&gt;();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <a class="code hl_function" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">CreatePanel</a>();</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a>()</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#acc4a2a6c83f9d3d746c786d4ff487b70">UpdatePanel</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="classResultScene.html#a3630928e249318139f019fd274730f82">   75</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="keyword"></span>{</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    int32_t itemCount = Game::System&lt;ScoreManager&gt;().GetScore();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    std::string scoreText(std::to_string(itemCount));</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="classmtgb_1_1Draw.html#a2e3a030fee294e80871f396ac4d99e42">Draw::ImmediateText</a>(</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        scoreText,</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <a class="code hl_class" href="structmtgb_1_1RectT.html">mtgb::RectF</a> { 400, 320, 80, 30 },</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        36,</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <a class="code hl_enumvalue" href="namespacemtgb.html#aaa050496bbbdc66aee7c9aeb96d51dbaa9d4989e254422a15442ed8c59c600f1a">mtgb::TextAlignment::MIDDLE_LEFT</a>,</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <a class="code hl_struct" href="structmtgb_1_1UIParams.html">UIParams</a> { 1, <a class="code hl_function" href="namespacemtgb.html#a100fdeed4f1f4e5f27e7ffb97ee743ca">AllLayer</a>() }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    );</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">   88</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a>() {}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">ResultScene::CreatePanel</a>()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_class" href="classmtgb_1_1GameScene.html">GameScene</a>* pCurrScene = Game::System&lt;SceneSystem&gt;().GetActiveScene();</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    std::vector&lt;Button*&gt; btns;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    GetGameObjects&lt;Button&gt;(&amp;btns);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keyword">auto</span> btn = std::find_if(</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        btns.begin(),</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        btns.end(),</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (5)&quot;</span>;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        }</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    );</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">if</span> (btn != btns.end())</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        (*btn)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>            []()</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>            {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>                Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classTitleScene.html">TitleScene</a>&gt;();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        );</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*btn);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;ResultMenu&quot;</span>, pPanel);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_variable" href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;ResultMenu&quot;</span>);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}</div>
 <div class="ttc" id="aButton_8h_html"><div class="ttname"><a href="Button_8h.html">Button.h</a></div></div>
 <div class="ttc" id="aResultScene_8h_html"><div class="ttname"><a href="ResultScene_8h.html">ResultScene.h</a></div></div>
 <div class="ttc" id="aSerializableGameObject_8h_html"><div class="ttname"><a href="SerializableGameObject_8h.html">SerializableGameObject.h</a></div></div>
@@ -214,22 +224,19 @@ $(document).ready(function(){initNavTree('ResultScene_8cpp_source.html',''); ini
 <div class="ttc" id="aStageManager_8h_html"><div class="ttname"><a href="StageManager_8h.html">StageManager.h</a></div></div>
 <div class="ttc" id="aTitleScene_8h_html"><div class="ttname"><a href="TitleScene_8h.html">TitleScene.h</a></div></div>
 <div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdef"><b>Definition:</b> <a href="Button_8h_source.html#l00007">Button.h:8</a></div></div>
-<div class="ttc" id="aclassButton_html_a627c9358bbf21c8396475300e900bf37"><div class="ttname"><a href="classButton.html#a627c9358bbf21c8396475300e900bf37">Button::SetOnPressed</a></div><div class="ttdeci">void SetOnPressed(T &amp;&amp;_func)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8h_source.html#l00019">Button.h:19</a></div></div>
-<div class="ttc" id="aclassButton_html_a7e70f0b1c6f460668dadbf7d94fa20d4"><div class="ttname"><a href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">Button::SetRect</a></div><div class="ttdeci">void SetRect(const RectF &amp;_rect)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00023">Button.cpp:23</a></div></div>
-<div class="ttc" id="aclassButton_html_aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b"><div class="ttname"><a href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">Button::SetText</a></div><div class="ttdeci">void SetText(std::string_view _text)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00035">Button.cpp:35</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_a929fd81e1c77c54c83d05c6d0ebcec1e"><div class="ttname"><a href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">PanelManager::EnablePanel</a></div><div class="ttdeci">void EnablePanel(std::string_view _panelName)</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00031">PanelManager.cpp:31</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_acc4a2a6c83f9d3d746c786d4ff487b70"><div class="ttname"><a href="classPanelManager.html#acc4a2a6c83f9d3d746c786d4ff487b70">PanelManager::UpdatePanel</a></div><div class="ttdeci">void UpdatePanel()</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00057">PanelManager.cpp:57</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_afbd43869eb72693bf5f264ed210821e8"><div class="ttname"><a href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">PanelManager::AddPanel</a></div><div class="ttdeci">void AddPanel(std::string_view _panelName, Panel *_pPanel)</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00009">PanelManager.cpp:9</a></div></div>
 <div class="ttc" id="aclassPanel_html"><div class="ttname"><a href="classPanel.html">Panel</a></div><div class="ttdef"><b>Definition:</b> <a href="Panel_8h_source.html#l00006">Panel.h:7</a></div></div>
 <div class="ttc" id="aclassPanel_html_a18513d183682f167f96ea27cbc3a7340"><div class="ttname"><a href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">Panel::AddUIComponent</a></div><div class="ttdeci">void AddUIComponent(UIComponent *_pUIComponent)</div><div class="ttdef"><b>Definition:</b> <a href="Panel_8cpp_source.html#l00025">Panel.cpp:25</a></div></div>
 <div class="ttc" id="aclassResultScene_html_a1c074c08f803ed253f844d9189c88cfc"><div class="ttname"><a href="classResultScene.html#a1c074c08f803ed253f844d9189c88cfc">ResultScene::Initialize</a></div><div class="ttdeci">void Initialize() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00022">ResultScene.cpp:22</a></div></div>
-<div class="ttc" id="aclassResultScene_html_a3630928e249318139f019fd274730f82"><div class="ttname"><a href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00076">ResultScene.cpp:76</a></div></div>
+<div class="ttc" id="aclassResultScene_html_a3630928e249318139f019fd274730f82"><div class="ttname"><a href="classResultScene.html#a3630928e249318139f019fd274730f82">ResultScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00075">ResultScene.cpp:75</a></div></div>
 <div class="ttc" id="aclassResultScene_html_a3cd26a2fd06414baef819e770b7859d7"><div class="ttname"><a href="classResultScene.html#a3cd26a2fd06414baef819e770b7859d7">ResultScene::ResultScene</a></div><div class="ttdeci">ResultScene()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00018">ResultScene.cpp:18</a></div></div>
 <div class="ttc" id="aclassResultScene_html_a5617fe5de7ba64b37bb397b579957e6a"><div class="ttname"><a href="classResultScene.html#a5617fe5de7ba64b37bb397b579957e6a">ResultScene::~ResultScene</a></div><div class="ttdeci">~ResultScene()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00020">ResultScene.cpp:20</a></div></div>
-<div class="ttc" id="aclassResultScene_html_aa94ea7da280d0e2d7de679b3ff2330c7"><div class="ttname"><a href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">ResultScene::CreatePanel</a></div><div class="ttdeci">void CreatePanel()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00091">ResultScene.cpp:91</a></div></div>
-<div class="ttc" id="aclassResultScene_html_aaef36889cb898aaf81c452f4354ffe70"><div class="ttname"><a href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a></div><div class="ttdeci">void End() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00089">ResultScene.cpp:89</a></div></div>
+<div class="ttc" id="aclassResultScene_html_aa94ea7da280d0e2d7de679b3ff2330c7"><div class="ttname"><a href="classResultScene.html#aa94ea7da280d0e2d7de679b3ff2330c7">ResultScene::CreatePanel</a></div><div class="ttdeci">void CreatePanel()</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00090">ResultScene.cpp:90</a></div></div>
+<div class="ttc" id="aclassResultScene_html_aaef36889cb898aaf81c452f4354ffe70"><div class="ttname"><a href="classResultScene.html#aaef36889cb898aaf81c452f4354ffe70">ResultScene::End</a></div><div class="ttdeci">void End() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00088">ResultScene.cpp:88</a></div></div>
 <div class="ttc" id="aclassResultScene_html_ac50e98fa83e9df2bbe2b460dff124648"><div class="ttname"><a href="classResultScene.html#ac50e98fa83e9df2bbe2b460dff124648">ResultScene::panelManager_</a></div><div class="ttdeci">PanelManager panelManager_</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8h_source.html#l00018">ResultScene.h:18</a></div></div>
-<div class="ttc" id="aclassResultScene_html_ac56b2e5d453653aef1f63f2d0fe7f2e2"><div class="ttname"><a href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00071">ResultScene.cpp:71</a></div></div>
+<div class="ttc" id="aclassResultScene_html_ac56b2e5d453653aef1f63f2d0fe7f2e2"><div class="ttname"><a href="classResultScene.html#ac56b2e5d453653aef1f63f2d0fe7f2e2">ResultScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="ResultScene_8cpp_source.html#l00070">ResultScene.cpp:70</a></div></div>
 <div class="ttc" id="aclassTitleScene_html"><div class="ttname"><a href="classTitleScene.html">TitleScene</a></div><div class="ttdef"><b>Definition:</b> <a href="TitleScene_8h_source.html#l00005">TitleScene.h:6</a></div></div>
 <div class="ttc" id="aclassbasic__json_html"><div class="ttname"><a href="classbasic__json.html">basic_json</a></div><div class="ttdoc">namespace for Niels Lohmann</div><div class="ttdef"><b>Definition:</b> <a href="json_8hpp_source.html#l00098">json.hpp:100</a></div></div>
 <div class="ttc" id="aclassmtgb_1_1Draw_html_a2e3a030fee294e80871f396ac4d99e42"><div class="ttname"><a href="classmtgb_1_1Draw.html#a2e3a030fee294e80871f396ac4d99e42">mtgb::Draw::ImmediateText</a></div><div class="ttdeci">static void ImmediateText(std::string_view _text, Vector2F _topLeft, int _size=currentDefaultFontSize_, TextAlignment _alignment=currentDefaultTextAlignment_, const UIParams &amp;_uiParams=defaultUIParams_)</div><div class="ttdef"><b>Definition:</b> <a href="Draw_8cpp_source.html#l00169">Draw.cpp:169</a></div></div>

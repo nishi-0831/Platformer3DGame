@@ -161,107 +161,137 @@ $(document).ready(function(){initNavTree('TitleScene_8cpp_source.html',''); init
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_class" href="structmtgb_1_1Vector2T.html">Vector2F</a> screenSize     = Game::System&lt;Screen&gt;().GetSizeF();</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    pImgRenderer-&gt;<a class="code hl_variable" href="classmtgb_1_1ImageRenderer.html#aa9417209e21f703c27c8e989e5505331">drawRect_</a> = <a class="code hl_class" href="structmtgb_1_1RectT.html">RectF</a> { 0, 0, screenSize.<a class="code hl_variable" href="structmtgb_1_1Vector2T.html#ac78650fee4feebc437d7a6893be2b1c7">x</a>, 500 };</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <a class="code hl_class" href="classButton.html">Button</a>* pItem1 = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>            []()</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>            {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classSampleScene.html">SampleScene</a>&gt;();</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        );</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;Start Game&quot;</span>);</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 290, 300, 220, 60 });</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        <a class="code hl_class" href="classButton.html">Button</a>* pItem2 = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        pItem2-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            [<span class="keyword">this</span>]()</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<span class="stringliteral">&quot;HowToPlayImage&quot;</span>);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>                pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>&gt;()-&gt;enabled_ = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;HowToPlay&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        );</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        pItem2-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;How to Play&quot;</span>);</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        pItem2-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 290, 430, 220, 60 });</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <a class="code hl_class" href="classButton.html">Button</a>* pItem3 = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        pItem3-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>            [<span class="keyword">this</span>]()</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>                <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;Setting&quot;</span>);</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>            }</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        );</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        pItem3-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;Setting&quot;</span>);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        pItem3-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 290, 530, 220, 60 });</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem1);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem2);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem3);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>, pPanel);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// Setting</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <a class="code hl_class" href="classSlider.html">Slider</a>* pSlider = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classSlider.html">Slider</a>&gt;();</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        pSlider-&gt;<a class="code hl_function" href="classSlider.html#ae87d0472a040e35ca7bcc33ecb338f42">SetRect</a>({ 110, 400, 300, 50 });</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        pSlider-&gt;<a class="code hl_function" href="classSlider.html#a5a52f03d4694c93da580706a5233c204">SetLabel</a>(<span class="stringliteral">&quot;Slider&quot;</span>);</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        pSlider-&gt;<a class="code hl_function" href="classSlider.html#a65b01c8200d8f76410745eaf1dc0956f">SetOnValueChanged</a>(</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>            [](<span class="keywordtype">int</span> _value)</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                ProfileInt::Load().Section(<span class="stringliteral">&quot;Game&quot;</span>).Param(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).Write(_value);</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>            }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        );</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        pSlider-&gt;<a class="code hl_function" href="classSlider.html#ab2e02fbdb03f5b30b1c6b92e2c34afd6">SetValue</a>(ProfileInt::Load().Section(<span class="stringliteral">&quot;GAME&quot;</span>).Param(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).InitValue(60).Get());</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        <a class="code hl_class" href="classButton.html">Button</a>* pItem1 = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>            [<span class="keyword">this</span>]()</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>            {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>                <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>            }</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        );</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;Close&quot;</span>);</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 118, 500, 565, 100 });</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pSlider);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem1);</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;Setting&quot;</span>, pPanel);</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    }</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// HowToPlay</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    {</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        <a class="code hl_class" href="classButton.html">Button</a>* pItem1 = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classButton.html">Button</a>&gt;();</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a627c9358bbf21c8396475300e900bf37">SetOnPressed</a>(</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            [<span class="keyword">this</span>]()</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>            {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>                <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<span class="stringliteral">&quot;HowToPlayImage&quot;</span>);</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>                <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>&gt;()-&gt;enabled_ = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>                <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        );</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">SetText</a>(<span class="stringliteral">&quot;Close&quot;</span>);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        pItem1-&gt;<a class="code hl_function" href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">SetRect</a>({ 118, 500, 565, 100 });</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(pItem1);</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;HowToPlay&quot;</span>, pPanel);</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>}</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    std::vector&lt;Button*&gt; btns;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    GetGameObjects&lt;Button&gt;(&amp;btns);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">auto</span> pBtn1 = std::find_if(</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        btns.begin(),</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>        btns.end(),</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>        {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (0)&quot;</span>;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    );</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    (*pBtn1)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        []()</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        {</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            Game::System&lt;SceneSystem&gt;().Move&lt;<a class="code hl_class" href="classSampleScene.html">SampleScene</a>&gt;();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    );</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keyword">auto</span> pBtn2 = std::find_if(</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        btns.begin(),</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        btns.end(),</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (1)&quot;</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>        }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    );</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    (*pBtn2)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        {</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<span class="stringliteral">&quot;HowToPlayImage&quot;</span>);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>            pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>&gt;()-&gt;enabled_ = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>            <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;HowToPlay&quot;</span>);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        }</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    );</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keyword">auto</span> pBtn3 = std::find_if(</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        btns.begin(),</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        btns.end(),</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (2)&quot;</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    );</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    (*pBtn3)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        {</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;Setting&quot;</span>);</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        }</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    );</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keyword">auto</span> pBtn4 = std::find_if(</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        btns.begin(),</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        btns.end(),</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (3)&quot;</span>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    );</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    (*pBtn4)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        {</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>            <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        }</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    );</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">auto</span> pBtn5 = std::find_if(</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        btns.begin(),</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        btns.end(),</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        [](<a class="code hl_class" href="classButton.html">Button</a>* _pBtn)</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>            return _pBtn-&gt;GetName() == <span class="stringliteral">&quot;Button (4)&quot;</span>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    );</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    (*pBtn5)-&gt;SetOnPressed(</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        [<span class="keyword">this</span>]()</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        {</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>            <a class="code hl_class" href="classmtgb_1_1GameObject.html">GameObject</a>* pGameObj = Game::System&lt;SceneSystem&gt;().GetActiveScene()-&gt;GetGameObject(<span class="stringliteral">&quot;HowToPlayImage&quot;</span>);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="keywordflow">if</span> (pGameObj == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>                <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            pGameObj-&gt;<a class="code hl_function" href="classmtgb_1_1GameObject.html#aec1d6bd2a9c2953d360201599fc31d4a">Component</a>&lt;<a class="code hl_class" href="classmtgb_1_1ImageRenderer.html">ImageRenderer</a>&gt;()-&gt;enabled_ = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>            <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    );</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    std::vector&lt;Slider*&gt; sliders;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    GetGameObjects&lt;Slider&gt;(&amp;sliders);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">auto</span> pSlider1 = std::find_if(</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        sliders.begin(),</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        sliders.end(),</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        [](<a class="code hl_class" href="classSlider.html">Slider</a>* _pSlider)</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            return _pSlider-&gt;GetName() == <span class="stringliteral">&quot;Slider (0)&quot;</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    );</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    (*pSlider1)-&gt;SetOnValueChanged(</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        [](<span class="keywordtype">int</span> _value)</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            ProfileInt::Load().Section(<span class="stringliteral">&quot;Game&quot;</span>).Param(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).Write(_value);</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    );</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    (*pSlider1)-&gt;SetValue(ProfileInt::Load().Section(<span class="stringliteral">&quot;GAME&quot;</span>).Param(<span class="stringliteral">&quot;CameraSpeed&quot;</span>).InitValue(60).Get());</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pBtn1);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pBtn2);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pBtn3);</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>, pPanel);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    }</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    <span class="comment">// Setting</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pSlider1);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pBtn4);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;Setting&quot;</span>, pPanel);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <span class="comment">// HowToPlay</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <a class="code hl_class" href="classPanel.html">Panel</a>* pPanel = pCurrScene-&gt;<a class="code hl_function" href="classmtgb_1_1GameScene.html#a6056998d7d171d984838f7c705fb8bfa">Instantiate</a>&lt;<a class="code hl_class" href="classPanel.html">Panel</a>&gt;();</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        pPanel-&gt;<a class="code hl_function" href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">AddUIComponent</a>(*pBtn5);</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">AddPanel</a>(<span class="stringliteral">&quot;HowToPlay&quot;</span>, pPanel);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    <a class="code hl_variable" href="classTitleScene.html#a6c2d4c5ab2f55f2cf58cc722f7ce80ae">panelManager_</a>.<a class="code hl_function" href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">EnablePanel</a>(<span class="stringliteral">&quot;TitleMenu&quot;</span>);</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
 <div class="ttc" id="aButton_8h_html"><div class="ttname"><a href="Button_8h.html">Button.h</a></div></div>
 <div class="ttc" id="aProfileUtlity_8h_html"><div class="ttname"><a href="ProfileUtlity_8h.html">ProfileUtlity.h</a></div></div>
 <div class="ttc" id="aSampleScene_8h_html"><div class="ttname"><a href="SampleScene_8h.html">SampleScene.h</a></div></div>
@@ -269,9 +299,6 @@ $(document).ready(function(){initNavTree('TitleScene_8cpp_source.html',''); init
 <div class="ttc" id="aSlider_8h_html"><div class="ttname"><a href="Slider_8h.html">Slider.h</a></div></div>
 <div class="ttc" id="aTitleScene_8h_html"><div class="ttname"><a href="TitleScene_8h.html">TitleScene.h</a></div></div>
 <div class="ttc" id="aclassButton_html"><div class="ttname"><a href="classButton.html">Button</a></div><div class="ttdef"><b>Definition:</b> <a href="Button_8h_source.html#l00007">Button.h:8</a></div></div>
-<div class="ttc" id="aclassButton_html_a627c9358bbf21c8396475300e900bf37"><div class="ttname"><a href="classButton.html#a627c9358bbf21c8396475300e900bf37">Button::SetOnPressed</a></div><div class="ttdeci">void SetOnPressed(T &amp;&amp;_func)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8h_source.html#l00019">Button.h:19</a></div></div>
-<div class="ttc" id="aclassButton_html_a7e70f0b1c6f460668dadbf7d94fa20d4"><div class="ttname"><a href="classButton.html#a7e70f0b1c6f460668dadbf7d94fa20d4">Button::SetRect</a></div><div class="ttdeci">void SetRect(const RectF &amp;_rect)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00023">Button.cpp:23</a></div></div>
-<div class="ttc" id="aclassButton_html_aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b"><div class="ttname"><a href="classButton.html#aa55cdbb12a3c8e9cfa7a1e5cd1a82c7b">Button::SetText</a></div><div class="ttdeci">void SetText(std::string_view _text)</div><div class="ttdef"><b>Definition:</b> <a href="Button_8cpp_source.html#l00035">Button.cpp:35</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_a929fd81e1c77c54c83d05c6d0ebcec1e"><div class="ttname"><a href="classPanelManager.html#a929fd81e1c77c54c83d05c6d0ebcec1e">PanelManager::EnablePanel</a></div><div class="ttdeci">void EnablePanel(std::string_view _panelName)</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00031">PanelManager.cpp:31</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_acc4a2a6c83f9d3d746c786d4ff487b70"><div class="ttname"><a href="classPanelManager.html#acc4a2a6c83f9d3d746c786d4ff487b70">PanelManager::UpdatePanel</a></div><div class="ttdeci">void UpdatePanel()</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00057">PanelManager.cpp:57</a></div></div>
 <div class="ttc" id="aclassPanelManager_html_afbd43869eb72693bf5f264ed210821e8"><div class="ttname"><a href="classPanelManager.html#afbd43869eb72693bf5f264ed210821e8">PanelManager::AddPanel</a></div><div class="ttdeci">void AddPanel(std::string_view _panelName, Panel *_pPanel)</div><div class="ttdef"><b>Definition:</b> <a href="PanelManager_8cpp_source.html#l00009">PanelManager.cpp:9</a></div></div>
@@ -279,10 +306,6 @@ $(document).ready(function(){initNavTree('TitleScene_8cpp_source.html',''); init
 <div class="ttc" id="aclassPanel_html_a18513d183682f167f96ea27cbc3a7340"><div class="ttname"><a href="classPanel.html#a18513d183682f167f96ea27cbc3a7340">Panel::AddUIComponent</a></div><div class="ttdeci">void AddUIComponent(UIComponent *_pUIComponent)</div><div class="ttdef"><b>Definition:</b> <a href="Panel_8cpp_source.html#l00025">Panel.cpp:25</a></div></div>
 <div class="ttc" id="aclassSampleScene_html"><div class="ttname"><a href="classSampleScene.html">SampleScene</a></div><div class="ttdef"><b>Definition:</b> <a href="SampleScene_8h_source.html#l00004">SampleScene.h:5</a></div></div>
 <div class="ttc" id="aclassSlider_html"><div class="ttname"><a href="classSlider.html">Slider</a></div><div class="ttdef"><b>Definition:</b> <a href="Slider_8h_source.html#l00006">Slider.h:7</a></div></div>
-<div class="ttc" id="aclassSlider_html_a5a52f03d4694c93da580706a5233c204"><div class="ttname"><a href="classSlider.html#a5a52f03d4694c93da580706a5233c204">Slider::SetLabel</a></div><div class="ttdeci">void SetLabel(std::string_view _label)</div><div class="ttdef"><b>Definition:</b> <a href="Slider_8cpp_source.html#l00088">Slider.cpp:88</a></div></div>
-<div class="ttc" id="aclassSlider_html_a65b01c8200d8f76410745eaf1dc0956f"><div class="ttname"><a href="classSlider.html#a65b01c8200d8f76410745eaf1dc0956f">Slider::SetOnValueChanged</a></div><div class="ttdeci">void SetOnValueChanged(const std::function&lt; void(int)&gt; &amp;_func)</div><div class="ttdef"><b>Definition:</b> <a href="Slider_8h_source.html#l00016">Slider.h:16</a></div></div>
-<div class="ttc" id="aclassSlider_html_ab2e02fbdb03f5b30b1c6b92e2c34afd6"><div class="ttname"><a href="classSlider.html#ab2e02fbdb03f5b30b1c6b92e2c34afd6">Slider::SetValue</a></div><div class="ttdeci">void SetValue(int _value)</div><div class="ttdef"><b>Definition:</b> <a href="Slider_8cpp_source.html#l00093">Slider.cpp:93</a></div></div>
-<div class="ttc" id="aclassSlider_html_ae87d0472a040e35ca7bcc33ecb338f42"><div class="ttname"><a href="classSlider.html#ae87d0472a040e35ca7bcc33ecb338f42">Slider::SetRect</a></div><div class="ttdeci">void SetRect(const RectF &amp;_rect)</div><div class="ttdef"><b>Definition:</b> <a href="Slider_8cpp_source.html#l00059">Slider.cpp:59</a></div></div>
 <div class="ttc" id="aclassTitleScene_html_a0fb21e1b232b2e4f68810ddb091fd4df"><div class="ttname"><a href="classTitleScene.html#a0fb21e1b232b2e4f68810ddb091fd4df">TitleScene::CreatePanel</a></div><div class="ttdeci">void CreatePanel()</div><div class="ttdef"><b>Definition:</b> <a href="TitleScene_8cpp_source.html#l00053">TitleScene.cpp:53</a></div></div>
 <div class="ttc" id="aclassTitleScene_html_a4d4e98579e09afbff30399ce4bc6036f"><div class="ttname"><a href="classTitleScene.html#a4d4e98579e09afbff30399ce4bc6036f">TitleScene::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdef"><b>Definition:</b> <a href="TitleScene_8cpp_source.html#l00044">TitleScene.cpp:44</a></div></div>
 <div class="ttc" id="aclassTitleScene_html_a4d5b8ebcda824d0b6bd48d45b7686ba0"><div class="ttname"><a href="classTitleScene.html#a4d5b8ebcda824d0b6bd48d45b7686ba0">TitleScene::Draw</a></div><div class="ttdeci">void Draw() const override</div><div class="ttdef"><b>Definition:</b> <a href="TitleScene_8cpp_source.html#l00049">TitleScene.cpp:49</a></div></div>
