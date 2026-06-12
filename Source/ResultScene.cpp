@@ -42,17 +42,16 @@ void ResultScene::Initialize()
 
 	std::optional<nlohmann::json> json { std::nullopt };
 
-	
 	// クリアしているかによって表示する画像を変える
 	if (clearedStage)
 	{
 		Game::System<Audio>().Play("GameClear");
-		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_CLEAR_SCENE);
+		json = mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_CLEAR_SCENE);
 	}
 	else
 	{
 		Game::System<Audio>().Play("GameOver");
-		json		= mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
+		json = mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
 	}
 	hBackgroundImage = Image::Load("Image/Black.png");
 	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
@@ -88,21 +87,32 @@ void ResultScene::Draw() const
 
 void ResultScene::End() {}
 
-void ResultScene::CreatePanel() 
+void ResultScene::CreatePanel()
 {
 	GameScene* pCurrScene = Game::System<SceneSystem>().GetActiveScene();
 
-	Button* pItem = pCurrScene->Instantiate<Button>();
-	pItem->SetOnPressed(
-		[]()
+	std::vector<Button*> btns;
+	GetGameObjects<Button>(&btns);
+	auto btn = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
 		{
-			Game::System<SceneSystem>().Move<TitleScene>();
+			return _pBtn->GetName() == "Button (5)";
 		}
 	);
-	pItem->SetText("Return To Title");
-	pItem->SetRect({ 290, 490, 220, 60 });
+	if (btn != btns.end())
+	{
+		(*btn)->SetOnPressed(
+			[]()
+			{
+				Game::System<SceneSystem>().Move<TitleScene>();
+			}
+		);
+	}
+
 	Panel* pPanel = pCurrScene->Instantiate<Panel>();
-	pPanel->AddUIComponent(pItem);
+	pPanel->AddUIComponent(*btn);
 
 	panelManager_.AddPanel("ResultMenu", pPanel);
 	panelManager_.EnablePanel("ResultMenu");
