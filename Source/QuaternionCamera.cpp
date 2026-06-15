@@ -123,22 +123,25 @@ void mtgb::QuaternionCamera::Update()
 
 void mtgb::QuaternionCamera::UpdateLerpSpeed()
 {
-	if (wasGrounded_ == false && isGrounded_)
+	if (wasGrounded_ == true && isGrounded_ == false)
 	{
-		lerpProgress_ = 0.0f;
+		cameraEasedProgress_ = 0.0f;
+		lerpProgress_		 = 0.0f;
 	}
-
 	//
 	// 現在のカメラ速度から、目標のカメラ速度へ補間する
 	//
 
 	// 目標値
 	float destSpeed = cameraEasedProgress_;
+	cameraDestY_	= pTargetTransform_->position.y;
 	// 接地時
 	if (isGrounded_)
 	{
-		destSpeed	 = lerpSpeedOnGrounded_;
-		cameraDestY_ = pTargetTransform_->position.y;
+		destSpeed = lerpSpeedOnGrounded_;
+		lerpProgress_ += lerpSpeed_ * Time::DeltaTimeF();
+		float t				 = EaseOutSine(lerpProgress_);
+		cameraEasedProgress_ = Mathf::Lerp(cameraEasedProgress_, destSpeed, t);
 	}
 	// 接地していない時
 	else
@@ -155,9 +158,6 @@ void mtgb::QuaternionCamera::UpdateLerpSpeed()
 		{
 			destSpeed = lerpSpeedOnDescending_;
 		}
+		cameraEasedProgress_ += destSpeed * Time::DeltaTimeF();
 	}
-
-	lerpProgress_ += lerpSpeed_ * Time::DeltaTimeF();
-	float t				 = EaseOutSine(lerpProgress_);
-	cameraEasedProgress_ = Mathf::Lerp(cameraEasedProgress_, destSpeed, t);
 }
