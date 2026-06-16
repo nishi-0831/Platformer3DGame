@@ -69,13 +69,24 @@ void mtgb::ColliderCP::Draw()
 		}
 	}
 }
-mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vector3& _dir, float _dist)
+mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float* _dist,
+	ColliderTag _tag
+)
 {
 	EntityId nearestEntity = INVALID_ENTITY;
-	float nearest		   = _dist;
+	float nearest		   = *_dist;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] == INVALID_ENTITY)
+		{
+			continue;
+		}
+
+		ColliderTag tag = pool_[poolId_[i]].colliderTag_;
+		if (tag != _tag && _tag != ColliderTag::GAME_OBJECT)
 		{
 			continue;
 		}
@@ -91,6 +102,7 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(const Vector3& _origin, const Vec
 			}
 		}
 	}
+	*_dist = nearest;
 	return nearestEntity;
 }
 
