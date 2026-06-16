@@ -1,57 +1,49 @@
 #include "3DCommon.hlsli"
 
-VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
+cbuffer ShadowParam : register(b1)
 {
-    VS_OUT outData;
+    float4 casterPos;
+    float softness;
+    float playerHeight;
+    float2 shadowPadding;
+}
+
+struct BOX3D_VS_OUT
+{
+    float4 position : SV_POSITION; // ä½ç½®
+    float4 normal : NORMAL0; // æ³•ç·š
+    float2 uv : TEXCOORD; // uvåº§æ¨™
+    float4 eye : NORMAL1;
+    float4 positionW : POSITION0;
+};
+
+BOX3D_VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD)
+{
+    BOX3D_VS_OUT outData;
 
     outData.position = mul(position, g_matrixWVP);
 
-    // –@ü‚Ì•ÏŒ`
+    // æ³•ç·šã®å¤‰å½¢
     normal.w = 0;
     outData.normal = mul(normal, g_matrixNormalTrans);
 
     float4 worldPosition = mul(position, g_matrixW);
-    // ‹üƒxƒNƒgƒ‹
+    outData.positionW = worldPosition;
+    // è¦–ç·šãƒ™ã‚¯ãƒˆãƒ«
     outData.eye = normalize(g_cameraPosition - worldPosition);
     
-    // –@ü‚Ìâ‘Î’l‚ğæ“¾
-    float3 absNormal = abs(outData.normal.xyz);
-    
-    // Å‚à‰e‹¿“x‚Ì‚‚¢²‚ğ”»•Ê‚µ‚ÄA‘Î‰‚·‚éƒXƒP[ƒ‹’l‚ğ‘I‘ğ
-    float2 selectedScale;
-    
-    if (absNormal.z > absNormal.x && absNormal.z > absNormal.y)
-    {
-        // XY•½–Ê‚É‚’¼ ¨ XY²‚ÌƒXƒP[ƒ‹‚ğg—p
-        selectedScale.x = g_textureScale.x;
-        selectedScale.y = g_textureScale.y;
-      
-    }
-    else if (absNormal.y > absNormal.x)
-    {
-        // XZ•½–Ê‚É‚’¼ ¨ XZ²‚ÌƒXƒP[ƒ‹‚ğg—p
-        selectedScale.x = g_textureScale.x;
-        selectedScale.y = g_textureScale.z;
-    }
-    else
-    {
-        // XY•½–Ê‚É‚’¼ ¨ ZY²‚ÌƒXƒP[ƒ‹‚ğg—p
-        selectedScale.x = g_textureScale.z;
-        selectedScale.y = g_textureScale.y;
-    }
-    
-    // UVÀ•W
-    outData.uv = uv * selectedScale.xy;
+    // UVåº§æ¨™
+    outData.uv = uv;
     
     return outData;
 }
 
-float4 PS(VS_OUT inData) : SV_Target
+float4 PS(BOX3D_VS_OUT inData) : SV_Target
 {
-    // ŒõŒ¹•ûŒü
+    // å…‰æºæ–¹å‘
     float4 lightDir = normalize(g_lightDir);
     
-    // –@ü
+    // æ³•ç·š
     inData.normal = normalize(inData.normal);
     
     // 
@@ -69,10 +61,10 @@ float4 PS(VS_OUT inData) : SV_Target
         diffuse = g_diffuseColor;
     }
     
-    // ŠÂ‹«Œõ
+    // ç’°å¢ƒå…‰
     float4 ambient = float4(1, 1, 1, 1);
     
-    // ‹¾–Ê”½Ë¬•ª
+    // é¡é¢åå°„æˆåˆ†
     float4 specuer = float4(0, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
@@ -80,7 +72,23 @@ float4 PS(VS_OUT inData) : SV_Target
         specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
     
-    // ÅI“I‚ÈF
+    // å½±
+    float2 casterPosXZ = casterPos.xz;
+    float2 posXZ = inData.positionW.xz;
+    float2 diff = abs(casterPosXZ - posXZ);
+    // è·é›¢ã®äºŒä¹—
+    float distSq = dot(diff, diff);
+    
+    float ratio = 1.0f;
+    float radius = 1.0f;
+    float alpha = 0.5f;
+    
+    float shadowAlpha = saturate((radius * radius - distSq) * softness);
+    float4 shadowColor = float4(0, 0, 0, shadowAlpha);
+    // æœ€çµ‚çš„ãªè‰²
     float4 color = diffuse * shade + diffuse * ambient + specuer;
-    return color;
+    
+    //return float4(shadowAlpha, 0, 0, 255);
+    
+    return lerp(color,shadowColor,shadowAlpha);
 }

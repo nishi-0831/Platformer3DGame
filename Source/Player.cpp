@@ -70,6 +70,7 @@ Player::~Player() {}
 
 void Player::Update()
 {
+	Game::System<ShadowSettings>().SetCaster(GetEntityId());
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
 
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)

@@ -84,8 +84,8 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(
 		{
 			continue;
 		}
-
-		ColliderTag tag = pool_[poolId_[i]].colliderTag_;
+		
+		ColliderTag tag = Get(poolId_[i]).colliderTag_;
 		if (tag != _tag && _tag != ColliderTag::GAME_OBJECT)
 		{
 			continue;

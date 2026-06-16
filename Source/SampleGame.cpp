@@ -5,6 +5,7 @@
 #include "StageEditScene.h"
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
+#include <ShadowSettings.h>
 
 using namespace mtgb;
 
@@ -70,8 +71,9 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<StageManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<ImGuiEditorCamera>(SystemUpdateType::FRAME);
 	Game::Set<ImGuiEditor>(SystemUpdateType::FRAME);
-
 	Game::Set<EffectManager>(SystemUpdateType::FRAME);
+	Game::Set<ShadowSettings>(SystemUpdateType::DONT_CALL_ME);
+
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<SceneSystem>(SystemUpdateType::FRAME);
 

@@ -8,6 +8,7 @@
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
+#include "ShadowSettings.h"
 void mtgb::RenderSystem::Initialize() {}
 
 void mtgb::RenderSystem::Update() {}
@@ -74,6 +75,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 
 void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag _layer)
 {
+	Game::System<ShadowSettings>().SetCB();
 	_scene.Draw();
 
 	std::span<IRenderableCP*> renderableCPs = Game::GetRenderableCPs();
