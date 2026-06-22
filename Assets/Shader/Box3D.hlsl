@@ -87,8 +87,6 @@ float4 PS(BOX3D_VS_OUT inData) : SV_Target
     float4 shadowColor = float4(0, 0, 0, shadowAlpha);
     // 最終的な色
     float4 color = diffuse * shade + diffuse * ambient + specuer;
-    
-    //return float4(shadowAlpha, 0, 0, 255);
-    
+        
     return lerp(color,shadowColor,shadowAlpha);
 }

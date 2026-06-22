@@ -75,7 +75,6 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 
 void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag _layer)
 {
-	Game::System<ShadowSettings>().SetCB();
 	_scene.Draw();
 
 	std::span<IRenderableCP*> renderableCPs = Game::GetRenderableCPs();
