@@ -14,8 +14,7 @@ namespace mtgb
 		ShadowParams();
 		Vector4 casterPos;
 		float softness;
-		float playerHeight;
-		float padding[2];
+		float padding[3];
 	};
 
 	class ShadowSettings : public ISystem
@@ -29,7 +28,6 @@ namespace mtgb
 		void SetCB();
 	  private:
 		ShadowParams params;
-		float shadowCastDistance_;
 		ComPtr<ID3D11Buffer> pShadowCB_;
 	};
 } // namespace mtgb

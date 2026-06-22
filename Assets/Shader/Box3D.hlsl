@@ -4,8 +4,7 @@ cbuffer ShadowParam : register(b1)
 {
     float4 casterPos;
     float softness;
-    float playerHeight;
-    float2 shadowPadding;
+    float3 shadowPadding;
 }
 
 struct BOX3D_VS_OUT
@@ -79,9 +78,7 @@ float4 PS(BOX3D_VS_OUT inData) : SV_Target
     // 距離の二乗
     float distSq = dot(diff, diff);
     
-    float ratio = 1.0f;
     float radius = 1.0f;
-    float alpha = 0.5f;
     
     float shadowAlpha = saturate((radius * radius - distSq) * softness);
     float4 shadowColor = float4(0, 0, 0, shadowAlpha);

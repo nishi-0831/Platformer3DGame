@@ -4,7 +4,6 @@
 #include "DirectX11Draw.h"
 mtgb::ShadowSettings::ShadowSettings()
 	: params {}
-	, shadowCastDistance_ { 100.0f }
 {
 }
 
@@ -35,12 +34,7 @@ void mtgb::ShadowSettings::SetCaster(EntityId _id)
 {
 	Transform& casterTransform = Game::System<TransformCP>().Get(_id);
 
-	float distance = shadowCastDistance_;
-	EntityId nearestStageObjectId = Game::System<ColliderCP>()
-		.RayCastHitAll(casterTransform.position, Vector3::Down(), &distance, ColliderTag::STAGE);
-
 	params.casterPos   = Vector4 { casterTransform.position.x, casterTransform.position.y, casterTransform.position.z,1.0f };
-	params.playerHeight = casterTransform.position.y - distance;
 }
 
 void mtgb::ShadowSettings::SetCB() 
@@ -57,7 +51,6 @@ void mtgb::ShadowSettings::SetCB()
 
 mtgb::ShadowParams::ShadowParams()
 	: casterPos {}
-	, softness {0.5f}
-	, playerHeight {0.0f}
+	, softness {1.0f}
 {
 }
