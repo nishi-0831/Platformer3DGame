@@ -23,7 +23,7 @@ nlohmann::json GetJson(const char* _path)
 void StageManager::Initialize()
 {
 	stageJsons_[StageID::STAGE_ONE]				= GetJson("data12.json");
-	stageJsons_[StageID::STAGE_CLEAR_SCENE]		= GetJson("result_scene2.json");
+	stageJsons_[StageID::STAGE_CLEAR_SCENE]		= GetJson("result_scene.json");
 	stageJsons_[StageID::STAGE_GAME_OVER_SCENE] = GetJson("game_over_scene2.json");
 	stageJsons_[StageID::STAGE_TITLE_SCENE]		= GetJson("title_scene_2.json");
 }
