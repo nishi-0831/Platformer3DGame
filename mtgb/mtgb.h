@@ -71,6 +71,7 @@
 #include "EntityManager.h"
 #include "GameObjectGenerator.h"
 #include "ComponentFactory.h"
+#include "ShadowSettings.h"
 #pragma endregion
 
 #include "GameObjectBuilder.h"

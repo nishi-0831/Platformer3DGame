@@ -1,5 +1,4 @@
 #include "Panel.h"
-
 Panel::Panel()
 	: currIdx_ { -1 }
 {
@@ -15,52 +14,52 @@ void Panel::DecrementIndex()
 	MoveCurrIndex(-1);
 }
 
-void Panel::Press()
+void Panel::UpdateUI() 
 {
-	if (currIdx_ < 0 || currIdx_ >= menuItems_.size())
+	if (currIdx_ < 0 || currIdx_ >= uiComponents_.size())
 		massert(false && "currIdx_が不正");
 
-	menuItems_[currIdx_]->OnPressed();
+	uiComponents_[currIdx_]->UpdateUI();
 }
 
-void Panel::AddMenuItem(MenuItem* _pMenuItem)
+void Panel::AddUIComponent(UIComponent* _pUIComponent)
 {
-	if (_pMenuItem == nullptr)
+	if (_pUIComponent == nullptr)
 	{
-		assert(false && "_pMenuItemがnullptr");
+		assert(false && "_pUIComponentがnullptr");
 		return;
 	}
 
-	menuItems_.push_back(_pMenuItem);
+	uiComponents_.push_back(_pUIComponent);
 	if (currIdx_ < 0)
 	{
-		currIdx_ = menuItems_.size() - 1;
-		menuItems_[currIdx_]->OnSelected();
+		currIdx_ = uiComponents_.size() - 1;
+		uiComponents_[currIdx_]->OnSelected();
 	}
 }
 
 void Panel::Enable()
 {
-	for (MenuItem* item : menuItems_)
+	for (UIComponent* item : uiComponents_)
 	{
-		item->Enable();
+		item->OnEnable();
 	}
 }
 
 void Panel::Disable()
 {
-	for (MenuItem* item : menuItems_)
+	for (UIComponent* item : uiComponents_)
 	{
-		item->Disable();
+		item->OnDisable();
 	}
 }
 
 void Panel::MoveCurrIndex(int _movement)
 {
-	Game::System<Audio>().Play("MoveCursor");
+	mtgb::Game::System<mtgb::Audio>().Play("MoveCursor");
 
-	menuItems_[currIdx_]->OnDeselected();
+	uiComponents_[currIdx_]->OnDeselected();
 	currIdx_ += _movement;
-	currIdx_ = (currIdx_ + menuItems_.size()) % menuItems_.size();
-	menuItems_[currIdx_]->OnSelected();
+	currIdx_ = (currIdx_ + uiComponents_.size()) % uiComponents_.size();
+	uiComponents_[currIdx_]->OnSelected();
 }

@@ -858,6 +858,9 @@ void mtgb::DirectX11Manager::InitializeShaderBundle()
 			.AntialiasedLineEnable = {},
 		});
 
+	}
+
+	{
 		CompileShader(
 			L"Shader/Box3D.hlsl",
 			ShaderType::BOX3_D,

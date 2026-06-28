@@ -296,7 +296,7 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	const CameraSystem& camera = Game::System<CameraSystem>();
 	float distance			   = camera.GetFar() - camera.GetNear(); // 元の長さを計算
 
-	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance);
+	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, &distance);
 	if (entityId != INVALID_ENTITY)
 	{
 		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet

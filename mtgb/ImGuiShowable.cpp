@@ -23,6 +23,7 @@ mtgb::ImGuiShowable::ImGuiShowable(ShowType _showType, mtgb::EntityId _entityId)
 	: targetEntityId_ { _entityId }
 	, show_ { _showType }
 {
+	scope_ = Scope::SCENE;
 	MTImGui::Register(this);
 }
 

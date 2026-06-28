@@ -8,6 +8,7 @@
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
+#include "ShadowSettings.h"
 void mtgb::RenderSystem::Initialize() {}
 
 void mtgb::RenderSystem::Update() {}

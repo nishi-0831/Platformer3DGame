@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 #include <vector>
-#include "MenuItem.h"
+#include "UIComponent.h"
 
 class Panel : public GameObject
 {
@@ -9,12 +9,12 @@ class Panel : public GameObject
 	Panel();
 	void IncrementIndex();
 	void DecrementIndex();
-	void Press();
-	void AddMenuItem(MenuItem* _pMenuItem);
+	void UpdateUI();
+	void AddUIComponent(UIComponent* _pUIComponent);
 	void Enable();
 	void Disable();
   private:
 	void MoveCurrIndex(int _movement);
-	std::vector<MenuItem*> menuItems_;
+	std::vector<UIComponent*> uiComponents_;
 	int currIdx_;
 };

@@ -8,6 +8,8 @@
 #include "ShowAttributes.h"
 #include "Interpolator.h"
 #include "Matrix4x4.h"
+#include "RectF.h"
+#include "UIDrawCommand.h"
 // #include "TypeRegistryImpl.h"
 #include "ShowFunc.h"
 using namespace mtgb;
@@ -49,4 +51,16 @@ REGISTER_FIELD(lX)
 REGISTER_FIELD(lY)
 REGISTER_FIELD(lZ)
 REGISTER_FIELD(rgbButtons)
+REGISTER_END
+
+REGISTER_TYPE(RectF)
+REGISTER_FIELD(x)
+REGISTER_FIELD(y)
+REGISTER_FIELD(width)
+REGISTER_FIELD(height)
+REGISTER_END
+
+REGISTER_TYPE(UIParams)
+REGISTER_FIELD(depth)
+REGISTER_FIELD(layerFlag)
 REGISTER_END

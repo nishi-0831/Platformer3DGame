@@ -2,6 +2,7 @@
 #include "Fbx.h"
 #include "Draw.h"
 #include "Transform.h"
+#include "ShadowSettings.h"
 namespace
 {
 	constexpr size_t BUFFER_SIZE { 256 };
@@ -36,6 +37,10 @@ void mtgb::MeshRenderer::OnChangeMeshFileName()
 
 void mtgb::MeshRenderer::Render() const
 {
+	if (shaderType == ShaderType::BOX3_D)
+	{
+		Game::System<ShadowSettings>().SetCB();
+	}
 	if (shaderType == ShaderType::SEA)
 	{
 		Draw::SeaUVScroll(Transform::Get(GetEntityId()));

@@ -1,22 +1,15 @@
 #include "stdafx.h"
 #include <mtgb.h>
+#include <ProfileUtlity.h>
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
 #include "../Source/SkySphere.h"
 #include "../Source/StageManager.h"
 #include "../Source/ResultScene.h"
-namespace
-{
-	// 118,90 , 565,100
-	ImageHandle hTitleImage;
-	ImageHandle hLeftStickImg;
-	ImageHandle hEastButtonImg;
-	ImageHandle hBackgroundImage;
-	FBXModelHandle hModel;
-	RectF draw { 118, 90, 565, 100 };
+#include "Slider.h"
+#include "Button.h"
+#include <SerializableGameObject.h>
 
-	RectF textDrawRect { 118, 450, 565, 80 };
-} // namespace
 TitleScene::TitleScene() {}
 
 TitleScene::~TitleScene() {}
@@ -33,10 +26,6 @@ void TitleScene::Initialize()
 	);
 	GameObject* pCamera = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("SceneCamera").Build());
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
-	hTitleImage		 = Image::Load("Image/TitleImage.png");
-	hBackgroundImage = Image::Load("Image/Black.png");
-	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
-	hLeftStickImg	 = Image::Load("Image/LeftStick.png");
 
 	CameraHandleInScene hCamera = RegisterCameraGameObject(pCamera);
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
@@ -57,17 +46,7 @@ void TitleScene::Update()
 	panelManager_.UpdatePanel();
 }
 
-void TitleScene::Draw() const
-{
-	Draw::Image(hTitleImage, draw);
-	Draw::Image(hBackgroundImage, { 50, 550, 200, 50 });
-	Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
-	Draw::ImmediateTextW(L"項目切り替え", { 80, 550, 200, 50 },24);
-
-	Draw::Image(hBackgroundImage, { 500, 550, 150, 50 });
-	Draw::Image(hEastButtonImg, { 500, 550, 50, 50 });
-	Draw::ImmediateTextW(L"決定", { 550, 550, 100, 50 });
-}
+void TitleScene::Draw() const {}
 
 void TitleScene::End() {}
 
@@ -82,58 +61,134 @@ void TitleScene::CreatePanel()
 
 	Vector2F screenSize		= Game::System<Screen>().GetSizeF();
 	pImgRenderer->drawRect_ = RectF { 0, 0, screenSize.x, 500 };
+	std::vector<Button*> btns;
+	GetGameObjects<Button>(&btns);
+	auto pBtn1 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (0)";
+		}
+	);
+	(*pBtn1)->SetOnPressed(
+		[]()
+		{
+			Game::System<SceneSystem>().Move<SampleScene>();
+		}
+	);
+	auto pBtn2 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (1)";
+		}
+	);
+	(*pBtn2)->SetOnPressed(
+		[this]()
+		{
+			GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject("HowToPlayImage");
+			if (pGameObj == nullptr)
+				return;
+
+			pGameObj->Component<ImageRenderer>()->enabled_ = true;
+			panelManager_.EnablePanel("HowToPlay");
+		}
+	);
+	auto pBtn3 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (2)";
+		}
+	);
+	(*pBtn3)->SetOnPressed(
+		[this]()
+		{
+			panelManager_.EnablePanel("Setting");
+		}
+	);
+
+	auto pBtn4 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (3)";
+		}
+	);
+	(*pBtn4)->SetOnPressed(
+		[this]()
+		{
+			panelManager_.EnablePanel("TitleMenu");
+		}
+	);
+
+	auto pBtn5 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (4)";
+		}
+	);
+	(*pBtn5)->SetOnPressed(
+		[this]()
+		{
+			GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject("HowToPlayImage");
+			if (pGameObj == nullptr)
+				return;
+
+			pGameObj->Component<ImageRenderer>()->enabled_ = false;
+			panelManager_.EnablePanel("TitleMenu");
+		}
+	);
+
+	std::vector<Slider*> sliders;
+	GetGameObjects<Slider>(&sliders);
+	auto pSlider1 = std::find_if(
+		sliders.begin(),
+		sliders.end(),
+		[](Slider* _pSlider)
+		{
+			return _pSlider->GetName() == "Slider (0)";
+		}
+	);
+	(*pSlider1)->SetOnValueChanged(
+		[](int _value)
+		{
+			ProfileInt::Load().Section("Game").Param("CameraSpeed").Write(_value);
+		}
+	);
+	(*pSlider1)->SetValue(ProfileInt::Load().Section("GAME").Param("CameraSpeed").InitValue(60).Get());
+
 	{
-		MenuItem* pItem1 = pCurrScene->Instantiate<MenuItem>();
-		pItem1->SetOnPressed(
-			[]()
-			{
-				Game::System<SceneSystem>().Move<SampleScene>();
-			}
-		);
-		pItem1->SetText("Start Game");
-		pItem1->SetRect({ 290, 360, 220, 60 });
-
-		MenuItem* pItem2 = pCurrScene->Instantiate<MenuItem>();
-		pItem2->SetOnPressed(
-			[this]()
-			{
-				GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject("HowToPlayImage");
-				if (pGameObj == nullptr)
-					return;
-
-				pGameObj->Component<ImageRenderer>()->enabled_ = true;
-				panelManager_.EnablePanel("HowToPlay");
-			}
-		);
-		pItem2->SetText("How to Play");
-		pItem2->SetRect({ 290, 490, 220, 60 });
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
-		pPanel->AddMenuItem(pItem1);
-		pPanel->AddMenuItem(pItem2);
+		pPanel->AddUIComponent(*pBtn1);
+		pPanel->AddUIComponent(*pBtn2);
+		pPanel->AddUIComponent(*pBtn3);
 
 		panelManager_.AddPanel("TitleMenu", pPanel);
 	}
 
+	// Setting
 	{
-		MenuItem* pItem1 = pCurrScene->Instantiate<MenuItem>();
-		pItem1->SetOnPressed(
-			[this]()
-			{
-				GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject("HowToPlayImage");
-				if (pGameObj == nullptr)
-					return;
-
-				pGameObj->Component<ImageRenderer>()->enabled_ = false;
-				panelManager_.EnablePanel("TitleMenu");
-			}
-		);
-		pItem1->SetText("Close");
-		pItem1->SetRect({ 118, 500, 565, 100 });
-
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
-		pPanel->AddMenuItem(pItem1);
+
+		pPanel->AddUIComponent(*pSlider1);
+		pPanel->AddUIComponent(*pBtn4);
+		panelManager_.AddPanel("Setting", pPanel);
+	}
+
+	// HowToPlay
+	{
+		Panel* pPanel = pCurrScene->Instantiate<Panel>();
+		pPanel->AddUIComponent(*pBtn5);
 		panelManager_.AddPanel("HowToPlay", pPanel);
 	}
+
 	panelManager_.EnablePanel("TitleMenu");
 }

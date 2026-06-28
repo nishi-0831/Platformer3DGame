@@ -12,6 +12,11 @@
 // ============================================================================
 struct TextRendererState
 {
+		mtgb::TextAlignment alignment;
+		std::string text_;
+		mtgb::RectF rect_;
+		int fontSize_;
+		mtgb::UIParams params_;
 };
 
 // クラスの前方宣言

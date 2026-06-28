@@ -32,12 +32,19 @@ namespace mtgb
 		GameObjectLayerFlag GetLayer() const override;
 
 		ImageHandle handle_;
+		[[MT_PROPERTY()]]
 		std::string imageFileName_;
+		[[MT_PROPERTY()]]
 		RectF drawRect_;
 		RectF cutRect_;
 		float rotationZ_;
+		[[MT_PROPERTY()]]
 		UIParams uiParams_;
+		[[MT_PROPERTY()]]
 		GameObjectLayerFlag layer_;
 		Color color_;
+
+	  protected:
+		void OnPostRestore() override;
 	};
 } // namespace mtgb

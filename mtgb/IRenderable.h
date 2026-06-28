@@ -26,6 +26,8 @@ namespace mtgb
 	class IRenderable
 	{
 	  public:
+		IRenderable()
+			: enabled_ { true } {};
 		virtual ~IRenderable() = default;
 		/// <summary>
 		/// 描画を行う
