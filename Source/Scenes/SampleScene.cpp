@@ -34,6 +34,8 @@ void SampleScene::Initialize()
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();
 	Instantiate<RespawnManager>();
+	mtgb::Game::System<ScoreManager>().ResetScore();
+	mtgb::Game::System<StageManager>().StartStage(stageID_);
 	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
 	if (json.has_value())
 	{
