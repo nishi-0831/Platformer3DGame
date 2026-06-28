@@ -34,11 +34,15 @@ void mtgb::MTImGui::Initialize()
 		[]()
 		{
 			auto& showableObjs = Instance().showableObjs_;
-			for (auto itr = showableObjs.begin(); itr != showableObjs.end(); itr++)
+			for (auto itr = showableObjs.begin(); itr != showableObjs.end();)
 			{
 				if ((*itr)->scope_ == ImGuiShowable::Scope::SCENE)
 				{
 					itr = showableObjs.erase(itr);
+				}
+				else
+				{
+					itr++;
 				}
 			}
 		}
