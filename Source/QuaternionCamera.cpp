@@ -20,7 +20,7 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, lookAtPositionOffset_ { Vector3 { 0, 2, 0 } }
 	, rotationSpeedDegPerSec_ { 60.0f }
 	, distance_ { 8.0f }
-	, inputType_ { InputType::MOUSE }
+	, inputType_ { InputType::JOYPAD }
 	, minPitchAngleDeg_ { -5.0f }
 	, maxPitchAngleDeg_ { 80.0f }
 	, cameraEasedProgress_ { 0.01f }
