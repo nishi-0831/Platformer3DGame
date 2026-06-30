@@ -3,7 +3,6 @@
 #include <map>
 #include <fbxsdk.h>
 #include "Vector3.h"
-#include "IModelPack.h"
 #include "ISystem.h"
 #include "FbxModel.h"
 #include "Handlers.h"

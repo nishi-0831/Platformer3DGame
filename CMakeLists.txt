@@ -445,7 +445,6 @@ set(03mtgb__System__DirectX11
 source_group("03mtgb\\System\\DirectX11" FILES ${03mtgb__System__DirectX11})
 
 set(03mtgb__System__Draw
-    "mtgb/IModelPack.h"
     "mtgb/MeshRenderer.h"
     "mtgb/RenderSystem.cpp"
     "mtgb/RenderSystem.h"
