@@ -63,6 +63,5 @@ namespace mtgb
 		{
 			return !(*this == _other);
 		}
-		std::string ToString();
 	};
 } // namespace mtgb

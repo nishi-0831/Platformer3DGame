@@ -8,7 +8,6 @@
 #include "Image.h"
 #include "MTAssert.h"
 #include "MTStringUtility.h"
-#include "OBJ.h"
 #include "PlaneUVScroll.h"
 #include "ReleaseUtility.h"
 #include "Sprite.h"
@@ -227,13 +226,6 @@ void mtgb::Draw::ChangeFontSize(int _size)
 void mtgb::Draw::ChangeTextAlignment(TextAlignment _alignment)
 {
 	currentDefaultTextAlignment_ = _alignment;
-}
-
-void mtgb::Draw::OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform)
-{
-	CheckSetShader(ShaderType::FBX_PARTS);
-
-	Game::System<mtgb::OBJ>().Draw(static_cast<int>(_hOBJModel), _pTransform);
 }
 
 void mtgb::Draw::FBXModel(

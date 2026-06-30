@@ -205,7 +205,6 @@ set(03mtgb__CoreType
     "mtgb/Color.cpp"
     "mtgb/Color.h"
     "mtgb/Command.h"
-    "mtgb/Matrix4x4.cpp"
     "mtgb/Matrix4x4.h"
     "mtgb/Quaternion.cpp"
     "mtgb/Quaternion.h"
@@ -237,29 +236,6 @@ set(03mtgb__Library__MTBin
     "mtgb/MTBin/MemoryStream.h"
 )
 source_group("03mtgb\\Library\\MTBin" FILES ${03mtgb__Library__MTBin})
-
-set(03mtgb__Library__MTNet
-#    "mtgb/MTNet/BinaryReader.cpp"
-#    "mtgb/MTNet/BinaryReader.h"
-#    "mtgb/MTNet/BinaryWriter.cpp"
-#    "mtgb/MTNet/BinaryWriter.h"
-#    "mtgb/MTNet/Common.h"
-#    "mtgb/MTNet/EndPoint.cpp"
-#    "mtgb/MTNet/EndPoint.h"
-#    "mtgb/MTNet/HttpClient.cpp"
-#    "mtgb/MTNet/HttpClient.h"
-#    "mtgb/MTNet/HttpHeaderBuilder.cpp"
-#    "mtgb/MTNet/HttpHeaderBuilder.h"
-#    "mtgb/MTNet/Log.cpp"
-#    "mtgb/MTNet/Log.h"
-#    "mtgb/MTNet/Socket.cpp"
-#    "mtgb/MTNet/Socket.h"
-#    "mtgb/MTNet/TcpClient.cpp"
-#    "mtgb/MTNet/TcpClient.h"
-#    "mtgb/MTNet/TcpListener.cpp"
-#    "mtgb/MTNet/TcpListener.h"
-)
-source_group("03mtgb\\Library\\MTNet" FILES ${03mtgb__Library__MTNet})
 
 set(03mtgb__Library__MTStat
     "mtgb/MTStat/MTStat.h"
@@ -461,12 +437,6 @@ set(03mtgb__System__Draw__FBX
     "mtgb/FbxModel.h"
 )
 source_group("03mtgb\\System\\Draw\\FBX" FILES ${03mtgb__System__Draw__FBX})
-
-set(03mtgb__System__Draw__OBJ
-    "mtgb/OBJ.cpp"
-    "mtgb/OBJ.h"
-)
-source_group("03mtgb\\System\\Draw\\OBJ" FILES ${03mtgb__System__Draw__OBJ})
 
 set(03mtgb__System__Image
     "mtgb/Image.cpp"

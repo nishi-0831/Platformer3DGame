@@ -77,8 +77,6 @@ namespace mtgb
 			const UIParams& _uiParams = defaultUIParams_
 		);
 
-		static void OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform);
-
 		static void FBXModel(
 			FBXModelHandle _hFBXModel,
 			const Transform& _pTransform,
