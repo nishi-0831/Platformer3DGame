@@ -23,8 +23,8 @@ Player::Player()
 	, pCollider_ { Component<Collider>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pRigidBody_ { Component<RigidBody>() } //, pCamera_{Instantiate<Camera>(this)}
-	, pNewCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
-	, pCameraTransform_ { &Transform::Get(pNewCamera_->GetEntityId()) }
+	, pCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
+	, pCameraTransform_ { &Transform::Get(pCamera_->GetEntityId()) }
 	, hp_ { 3 }
 	, pHPViewer_ { nullptr }
 	, isInvincible_ { false }
@@ -51,7 +51,7 @@ Player::Player()
 
 	displayName_ = name_;
 
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pNewCamera_);
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
@@ -102,6 +102,8 @@ void Player::Update()
 	}
 
 	state_.Update();
+
+	jumpController_.Update();
 
 	// ダメージを受けた後の無敵時間
 	if (isInvincible_)

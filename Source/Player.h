@@ -43,7 +43,7 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	Collider* pCollider_;
 	MeshRenderer* pMeshRenderer_;
 	RigidBody* pRigidBody_;
-	QuaternionCamera* pNewCamera_;
+	QuaternionCamera* pCamera_;
 	const Transform* pCameraTransform_;
 	std::optional<FbxAnimationController> animController_;
 	int hp_;

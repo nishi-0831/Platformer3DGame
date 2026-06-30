@@ -34,5 +34,8 @@ class JumpController
 	bool isHolding_;
 	// ボタンを押下していた時間
 	float holdTime_;
-	float onStartJumpVelocity_;
+	float velocityOnStartJump_;
+	float gravity_;
+	float gravityMultiplier_;
+	
 };
