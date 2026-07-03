@@ -30,12 +30,10 @@ class JumpController
   private:
 	Transform* pTargetTransform_;
 	RigidBody* pTargetRigidBody_;
-	bool isJumping_;
 	bool isHolding_;
-	// ボタンを押下していた時間
-	float holdTime_;
-	float velocityOnStartJump_;
 	float gravity_;
-	float gravityMultiplier_;
-	
+	// 低いジャンプを行う際に適用する、重力の倍率
+	float lowJumpGravityMultiplier_;
+	// これ以上の速度であれば上昇中である、とみなす閾値
+	float minAscentVelocityThreshold_;
 };
