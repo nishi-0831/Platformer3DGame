@@ -50,14 +50,14 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 
 	InitializeState();
 
-	animController_.value().SetEventCallback(
+	animController_->SetEventCallback(
 		"FootstepRun",
 		[this](const AnimationEvent& _evt)
 		{
 			OnFootstepRun(_evt);
 		}
 	);
-	animController_.value().SetEventCallback(
+	animController_->SetEventCallback(
 		"FootstepWalk",
 		[this](const AnimationEvent& _evt)
 		{

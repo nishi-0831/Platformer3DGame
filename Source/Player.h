@@ -6,7 +6,6 @@
 #include "HPViewer.h"
 #include "JumpController.h"
 
-
 class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
   public:
@@ -27,7 +26,6 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	void UpdatePosition();
 	void UpdateRotate();
 	void OnCollisionEnter(EntityId _entityId);
-	void OnFootstep(const AnimationEvent& _event);
 	void InitializeState();
 	enum class STATE
 	{

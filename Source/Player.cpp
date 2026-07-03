@@ -263,11 +263,11 @@ void Player::Start()
 	state_.Change(STATE::IDLE);
 	pHPViewer_ = Instantiate<HPViewer>(hp_);
 
-	animController_.value().SetEventCallback(
-		"Footstep",
+	animController_->SetEventCallback(
+		"Footstep", // イベント名
 		[this](const AnimationEvent& _evt)
 		{
-			OnFootstep(_evt);
+			Game::System<Audio>().Play("MinerFootstep");
 		}
 	);
 }
@@ -365,11 +365,6 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	{
 		pOtherActor->OnHitSide(this);
 	}
-}
-
-void Player::OnFootstep(const AnimationEvent& _event)
-{
-	Game::System<Audio>().Play("MinerFootstep");
 }
 
 void Player::OnStomped(IActor* _pOther) {}
