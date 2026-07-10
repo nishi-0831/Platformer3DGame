@@ -43,12 +43,12 @@ void PanelManager::EnablePanel(std::string_view _panelName)
 	pCurrPanel_ = itr->second;
 	pCurrPanel_->Enable();
 }
-void PanelManager::MoveForcusBackward()
+void PanelManager::MoveFocusBackward()
 {
 	pCurrPanel_->IncrementIndex();
 }
 
-void PanelManager::MoveForcusForward()
+void PanelManager::MoveFocusForward()
 {
 	pCurrPanel_->DecrementIndex();
 }
@@ -59,12 +59,12 @@ void PanelManager::UpdatePanel()
 	if (InputUtil::GetKeyDown(KeyCode::DOWN) || InputUtil::GetKeyDown(KeyCode::S) ||
 		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
 	{
-		MoveForcusBackward();
+		MoveFocusBackward();
 	}
 	if (InputUtil::GetKeyDown(KeyCode::UP) || InputUtil::GetKeyDown(KeyCode::W) ||
 		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
 	{
-		MoveForcusForward();
+		MoveFocusForward();
 	}
 	pCurrPanel_->UpdateUI();
 }
