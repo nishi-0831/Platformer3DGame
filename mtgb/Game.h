@@ -91,6 +91,7 @@ namespace mtgb
 
 		virtual Vector2Int GetScreenSize() const;
 
+		
 	  private:
 		std::map<std::type_index, ISystem*> pRegisterSystems_; // 登録済みのシステム
 		std::list<ISystem*> pCycleUpdateSystems_;			   // 毎サイクル更新されるシステム
@@ -101,7 +102,7 @@ namespace mtgb
 		std::vector<std::type_index> registerOrder_;		   // 登録順を保持する配列
 
 		ComponentFactory componentFactory_;
-
+		bool isEditMode_;
 	  public:
 		/// <summary>
 		/// ゲームを起動する
@@ -194,6 +195,9 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		static std::span<IRenderableCP*> GetRenderableCPs();
+
+		static void SetEditMode(bool _isEditMode);
+		static bool IsEditMode();
 
 	  private:
 		/// <summary>

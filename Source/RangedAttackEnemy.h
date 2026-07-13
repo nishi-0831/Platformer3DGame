@@ -20,6 +20,5 @@ private:
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;
 
-	static unsigned int generateCounter_;
 	std::optional<FbxAnimationController> animController_;
 };

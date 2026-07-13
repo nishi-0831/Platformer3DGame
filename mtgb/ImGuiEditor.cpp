@@ -14,6 +14,7 @@
 #include "GameTime.h"
 #include "CommandHistoryManager.h"
 #include "MeshRenderer.h"
+#include "../Source/Scenes/SampleScene.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 {
@@ -64,6 +65,39 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::D))
 		{
 			DuplicateGameObject();
+		}
+		if (InputUtil::GetKeyDown(KeyCode::H))
+		{
+			Game::SetEditMode(false);
+			TCHAR fileName[255] = "";
+			OPENFILENAME ifn	= { 0 };
+
+			ifn.lStructSize = sizeof(ifn);
+			ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
+			ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
+			ifn.lpstrFile	= fileName;
+			ifn.nMaxFile	= 255;
+
+			if (GetOpenFileName(&ifn) == false)
+				return;
+
+			std::ifstream inputFile(fileName);
+			if (inputFile.fail())
+			{
+				assert(false);
+			}
+			nlohmann::json json;
+			try
+			{
+				inputFile >> json;
+			}
+			catch (const nlohmann::json::parse_error& e)
+			{
+				const char* errMsg = e.what();
+				assert(false && errMsg);
+			}
+			Game::System<SceneSystem>().Move<SampleScene>(json);
+			Time::StabilizeDeltaTime();
 		}
 	}
 	if (InputUtil::GetKeyDown(KeyCode::DELETE))

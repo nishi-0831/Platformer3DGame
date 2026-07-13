@@ -1,7 +1,8 @@
 #include "stdafx.h"
 #include <mtgb.h>
+#include <fstream>
 #include "StageEditScene.h"
-
+#include "Scenes/SampleScene.h"
 StageEditScene::StageEditScene() {}
 
 StageEditScene::~StageEditScene() {}
@@ -15,7 +16,9 @@ void StageEditScene::Initialize()
 	MTImGui::Initialize();
 }
 
-void StageEditScene::Update() {}
+void StageEditScene::Update() 
+{
+}
 
 void StageEditScene::Draw() const {}
 
