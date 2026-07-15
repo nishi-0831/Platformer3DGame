@@ -6,17 +6,7 @@ runs:
   steps:
     - name: Checkout
       uses: actions/checkout@v4
-
-    - name: Setup vcpkg
-      uses: lukka/run-vcpkg@v11
-      with:
-       # vcpkgを配置するディレクトリ
-       vcpkgDirectory: 'C:\vcpkg'
-       # コミットIDをセット
-       vcpkgGitCommitId: '${{ vars.VCPKG_COMMIT_ID }}'
-       # vcpkg install を実行する
-       runVcpkgInstall: true
-
+      
     - name: Setup CMake
       uses: lukka/get-cmake@latest
     
