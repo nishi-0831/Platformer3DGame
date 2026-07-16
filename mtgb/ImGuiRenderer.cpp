@@ -56,6 +56,7 @@ void mtgb::ImGuiRenderer::Initialize()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
 
+	ImGui::LoadIniSettingsFromDisk("Assets/imgui.ini");
 	CreateD3DResources();
 }
 

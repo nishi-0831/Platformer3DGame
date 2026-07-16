@@ -13,7 +13,7 @@
 #include "Debug.h"
 #include "GameTime.h"
 #include "CommandHistoryManager.h"
-#include "MeshRenderer.h"
+#include "MTImGui.h"
 #include "../Source/Scenes/SampleScene.h"
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
@@ -171,9 +171,8 @@ void mtgb::ImGuiEditor::LoadMapData()
 	}
 	GameObjectGenerator::GenerateFromJson(json);
 
-	// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
-	// TODO: マジックナンバーを修正
-	Time::WaitFrame(2);
+	// 読み込み時間で値が大きくなったデルタタイムを安定させる
+	Time::StabilizeDeltaTime();
 }
 
 void mtgb::ImGuiEditor::DuplicateGameObject()
@@ -222,4 +221,36 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 		}
 	}
 	ImGui::Separator();
+}
+
+void mtgb::ImGuiEditor::ShowMenuBar()
+{
+	if (ImGui::BeginMenuBar())
+	{
+		if (ImGui::BeginMenu("File"))
+		{
+			if (ImGui::MenuItem("Save"))
+			{
+				SaveMapData();
+			}
+			if (ImGui::MenuItem("Load"))
+			{
+				LoadMapData();
+			}
+			ImGui::EndMenu();
+		}
+		if (ImGui::BeginMenu("GameObject"))
+		{
+			std::vector<std::string> names = Game::System<GameObjectTypeRegistry>().GetRegisteredNames();
+			for (const std::string& name : names)
+			{
+				if (ImGui::MenuItem(name.c_str()))
+				{
+					GameObjectGenerator::Generate(name);
+				}
+			}
+			ImGui::EndMenu();
+		}
+		ImGui::EndMenuBar();
+	}
 }

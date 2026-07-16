@@ -132,6 +132,10 @@ namespace mtgb
 			{
 				return "Editor";
 			}
+			if (_showType == ShowType::DOCKSPACE)
+			{
+				return "DOCKSPACE";
+			}
 			return "None";
 		}
 
@@ -157,6 +161,7 @@ namespace mtgb
 		void SetupShowFunc();
 
 		void ShowListView(ShowType _show);
+		std::function<void()> GetSelectedFunc(ShowType _show);
 
 		std::vector<ImGuiShowable*> showableObjs_;
 
@@ -168,7 +173,6 @@ namespace mtgb
 
 		void DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness);
 		void DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness);
-
 		bool updatingImGuiShowable_;
 	};
 

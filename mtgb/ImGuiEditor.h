@@ -2,12 +2,8 @@
 #include <unordered_map>
 #include "ISystem.h"
 #include "ImGuizmoManipulator.h"
-#include "ImGuiEditorCamera.h"
 #include "ImGuiShowable.h"
-#include "ComponentFactory.h"
 #include "IComponentMemento.h"
-#include "GameObjectFactory.h"
-#include "GroupCommand.h"
 namespace mtgb
 {
 	class ImGuiEditor : public ISystem, public ImGuiShowable
@@ -21,6 +17,8 @@ namespace mtgb
 		void Update() override;
 		void ShowImGui() override;
 
+		void ShowMenuBar();
+
 	  private:
 		void SaveMapData();
 		void LoadMapData();
@@ -32,6 +30,5 @@ namespace mtgb
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
 		ImGuizmoManipulator* pManipulator_;
-		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
 	};
 } // namespace mtgb
