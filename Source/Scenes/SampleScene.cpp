@@ -6,6 +6,7 @@
 
 #include "../Source/GameOverManager.h"
 #include "../Source/RespawnManager.h"
+#include "../Source/RangedAttackEnemy.h"
 #include <SerializableGameObject.h>
 namespace
 {
@@ -34,6 +35,7 @@ void SampleScene::Initialize()
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();
 	Instantiate<RespawnManager>();
+	Instantiate<RangedAttackEnemy>();
 	mtgb::Game::System<ScoreManager>().ResetScore();
 	mtgb::Game::System<StageManager>().StartStage(stageID_);
 	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);

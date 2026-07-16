@@ -54,9 +54,13 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 	SAFE_DESTROY(fbxImporter); // インポータは解放
 
 	// DirectXの座標系に変換
-	FbxAxisSystem directXLeftHanded(FbxAxisSystem::eYAxis, FbxAxisSystem::eParityOdd, FbxAxisSystem::eLeftHanded);
-	// MEMO: DeepConvertにすることでシーン全体を変換できる。Convertだとルートのノードだけ
-	directXLeftHanded.DeepConvertScene(pFbxScene_);
+	FbxAxisSystem sceneAxisSystem = pFbxScene_->GetGlobalSettings().GetAxisSystem();
+	FbxAxisSystem ourAxisSystem(FbxAxisSystem::DirectX); // DirectX = Y-Up, Left-Handed
+	if (sceneAxisSystem != ourAxisSystem)
+	{
+		// MEMO: DeepConvertにすることでシーン全体を変換できる。Convertだとルートのノードだけ
+		ourAxisSystem.DeepConvertScene(pFbxScene_);
+	}
 
 	// 3角ポリゴン
 	FbxGeometryConverter geometryConverter { pFbxManager };
