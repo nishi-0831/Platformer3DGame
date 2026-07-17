@@ -22,10 +22,12 @@ namespace mtgb
 	class ImGuiRenderer final : public ISystem
 	{
 	  public:
-		enum class WindowFlag
+		 using WindowFlags = int;
+		enum WindowFlag
 		{
 			NONE,
-			NO_MOVE_WHEN_HOVERED // マウスカーソルがウィンドウ内にあるとき移動禁止
+			NO_MOVE_WHEN_HOVERED, // マウスカーソルがウィンドウ内にあるとき移動禁止
+			NO_SCROLL
 		};
 
 	  public:
@@ -36,7 +38,7 @@ namespace mtgb
 		void BeginFrame();
 		void BeginImGuizmoFrame();
 
-		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlag _flag = WindowFlag::NONE);
+		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlags _flag = 0);
 
 		/// <summary>
 		/// ImGuizmoウィンドウを描画するためにRTVをセット

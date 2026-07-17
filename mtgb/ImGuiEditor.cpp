@@ -60,44 +60,10 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::O))
 		{
 			LoadMapData();
-			Time::StabilizeDeltaTime();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::D))
 		{
 			DuplicateGameObject();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::H))
-		{
-			Game::SetEditMode(false);
-			TCHAR fileName[255] = "";
-			OPENFILENAME ifn	= { 0 };
-
-			ifn.lStructSize = sizeof(ifn);
-			ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-			ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
-			ifn.lpstrFile	= fileName;
-			ifn.nMaxFile	= 255;
-
-			if (GetOpenFileName(&ifn) == false)
-				return;
-
-			std::ifstream inputFile(fileName);
-			if (inputFile.fail())
-			{
-				assert(false);
-			}
-			nlohmann::json json;
-			try
-			{
-				inputFile >> json;
-			}
-			catch (const nlohmann::json::parse_error& e)
-			{
-				const char* errMsg = e.what();
-				assert(false && errMsg);
-			}
-			Game::System<SceneSystem>().Move<SampleScene>(json);
-			Time::StabilizeDeltaTime();
 		}
 	}
 	if (InputUtil::GetKeyDown(KeyCode::DELETE))
@@ -140,38 +106,27 @@ void mtgb::ImGuiEditor::SaveMapData()
 	}
 }
 
-void mtgb::ImGuiEditor::LoadMapData()
+void mtgb::ImGuiEditor::LoadMapData() 
 {
-	TCHAR fileName[255] = "";
-	OPENFILENAME ifn	= { 0 };
+	Game::SetEditMode(false);
 
-	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
-	ifn.lpstrFile	= fileName;
-	ifn.nMaxFile	= 255;
-
-	if (GetOpenFileName(&ifn) == false)
-		return;
-
-	std::ifstream inputFile(fileName);
-	if (inputFile.fail())
+	nlohmann::json json = GetStageJson();
+	if (json.empty() == false)
 	{
-		assert(false);
+		Game::System<SceneSystem>().Move<SampleScene>(json);
 	}
-	nlohmann::json json;
-	try
-	{
-		inputFile >> json;
-	}
-	catch (const nlohmann::json::parse_error& e)
-	{
-		const char* errMsg = e.what();
-		assert(false && errMsg);
-	}
-	GameObjectGenerator::GenerateFromJson(json);
+	Time::StabilizeDeltaTime();
+}
 
-	// 読み込み時間で値が大きくなったデルタタイムを安定させる
+void mtgb::ImGuiEditor::PlayScene() 
+{
+	Game::SetEditMode(false);
+
+	nlohmann::json json = GetStageJson();
+	if (json.empty() == false)
+	{
+		Game::System<SceneSystem>().Move<SampleScene>(json);
+	}
 	Time::StabilizeDeltaTime();
 }
 
@@ -223,6 +178,39 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 	ImGui::Separator();
 }
 
+nlohmann::json mtgb::ImGuiEditor::GetStageJson()
+{
+	TCHAR fileName[255] = "";
+	OPENFILENAME ifn	= { 0 };
+
+	ifn.lStructSize = sizeof(ifn);
+	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
+	ifn.lpstrFile	= fileName;
+	ifn.nMaxFile	= 255;
+
+	if (GetOpenFileName(&ifn) == false)
+		return nlohmann::json();
+
+	std::ifstream inputFile(fileName);
+	if (inputFile.fail())
+	{
+		assert(false);
+	}
+	nlohmann::json json;
+	try
+	{
+		inputFile >> json;
+		return json;
+	}
+	catch (const nlohmann::json::parse_error& e)
+	{
+		const char* errMsg = e.what();
+		assert(false && errMsg);
+	}
+	return nlohmann::json();
+}
+
 void mtgb::ImGuiEditor::ShowMenuBar()
 {
 	if (ImGui::BeginMenuBar())
@@ -250,6 +238,10 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 				}
 			}
 			ImGui::EndMenu();
+		}
+		if (ImGui::Button("Play"))
+		{
+			PlayScene();
 		}
 		ImGui::EndMenuBar();
 	}

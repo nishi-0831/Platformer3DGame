@@ -22,6 +22,7 @@ namespace mtgb
 	  private:
 		void SaveMapData();
 		void LoadMapData();
+		void PlayScene();
 		/// <summary>
 		/// 現在選択されているゲームオブジェクトの複製を行う
 		/// </summary>
@@ -30,5 +31,6 @@ namespace mtgb
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
 		ImGuizmoManipulator* pManipulator_;
+		nlohmann::json GetStageJson();
 	};
 } // namespace mtgb

@@ -420,7 +420,11 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 
 	if (_showType == ShowType::SCENE_VIEW)
 	{
-		imGui.Begin(GetName(ShowType::SCENE_VIEW), &state.isOpen, ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED);
+		imGui.Begin(
+			GetName(ShowType::SCENE_VIEW),
+			&state.isOpen,
+			ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED | ImGuiRenderer::WindowFlag::NO_SCROLL
+		);
 
 		imGui.RenderSceneView();
 		imGui.SetDrawList();

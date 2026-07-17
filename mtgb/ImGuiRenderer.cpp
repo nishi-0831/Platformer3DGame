@@ -86,15 +86,19 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 	ImGuizmo::BeginFrame();
 }
 
-void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
+void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlags _flag)
 {
 	ImGuiWindowFlags flags = 0;
-	if (_flag == WindowFlag::NO_MOVE_WHEN_HOVERED)
+	if (_flag & WindowFlag::NO_MOVE_WHEN_HOVERED)
 	{
 		if (mtgb::ImGuiUtil::IsMouseInWindow(_str))
 		{
 			flags |= ImGuiWindowFlags_NoMove;
 		}
+	}
+	if (_flag & WindowFlag::NO_SCROLL)
+	{
+		flags |= ImGuiWindowFlags_NoScrollWithMouse;
 	}
 	ImGui::Begin(_str, _isOpen, flags);
 }
