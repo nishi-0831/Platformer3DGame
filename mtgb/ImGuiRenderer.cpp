@@ -7,7 +7,9 @@
 #include "ImGui/imgui_impl_dx11.h"
 #include "Screen.h"
 #include "ImGuiUtil.h"
+#include <filesystem>
 
+namespace fs = std::filesystem;
 mtgb::ImGuiRenderer::ImGuiRenderer()
 	: winWidth_ { 800 }
 	, winHeight_ { 600 }
@@ -58,6 +60,16 @@ void mtgb::ImGuiRenderer::Initialize()
 
 	ImGui::LoadIniSettingsFromDisk("Assets/imgui.ini");
 	CreateD3DResources();
+	char defaultCurrentDirectory[MAX_PATH] {};
+	GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);
+
+	fs::path current_dir = fs::current_path();
+	Game::OnExit(
+		[]()
+		{
+			ImGui::SaveIniSettingsToDisk("Assets/imgui.ini");
+		}
+	);
 }
 
 void mtgb::ImGuiRenderer::Update() {}

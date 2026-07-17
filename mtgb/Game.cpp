@@ -170,6 +170,10 @@ void mtgb::Game::RunLoopGameCycle()
 
 		if (toExit_) // 終了フラグが立っていたらサイクル離脱
 		{
+			for (std::function<void()>& onExit : pInstance_->onExitCallbacks_)
+			{
+				onExit();
+			}
 			break;
 		}
 	}
