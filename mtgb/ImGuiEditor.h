@@ -20,6 +20,8 @@ namespace mtgb
 
 	  private:
 		void SaveMapData();
+		void SaveMapDataAs();
+		void SaveCopyMapDataAs();
 		void LoadMapData();
 		void PlayScene();
 		void StopScene();

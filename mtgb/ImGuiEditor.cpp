@@ -17,9 +17,9 @@
 #include "../Source/Scenes/SampleScene.h"
 #include "../Source/StageEditScene.h"
 
-nlohmann::json GetStageJson(std::filesystem::path filePath)
+static nlohmann::json GetStageJson(std::filesystem::path _filePath)
 {
-	std::ifstream inputFile(filePath);
+	std::ifstream inputFile(_filePath);
 	if (inputFile.fail())
 	{
 		assert(false);
@@ -37,6 +37,46 @@ nlohmann::json GetStageJson(std::filesystem::path filePath)
 		assert(false && errMsg);
 	}
 	return nlohmann::json();
+}
+static void SaveStageJson(std::filesystem::path _filePath)
+{
+	std::ofstream openFile(_filePath);
+	if (openFile.fail())
+	{
+		LOGIMGUI_CAT("Editor", "Failed File Save");
+		assert(false);
+		return;
+	}
+	openFile << std::setw(4) << Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
+
+	openFile.close();
+
+	LOGIMGUI_CAT("Editor", "File Saved");
+}
+
+static std::filesystem::path GetJsonFilePath()
+{
+	TCHAR fileName[255] = "";
+	OPENFILENAME ofn	= { 0 };
+
+	ofn.lStructSize = sizeof(ofn);
+
+	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ofn.lpstrFilter = "JSON File(*.json)\0*.json";
+	ofn.lpstrFile	= fileName;
+	ofn.nMaxFile	= 255;
+	ofn.Flags		= OFN_OVERWRITEPROMPT;
+
+	if (GetSaveFileName(&ofn))
+	{
+		std::filesystem::path filePath(fileName);
+		if (filePath.extension() != ".json")
+		{
+			filePath += ".json";
+		}
+		return filePath;
+	}
+	return std::filesystem::path();
 }
 
 mtgb::ImGuiEditor::ImGuiEditor()
@@ -81,7 +121,6 @@ void mtgb::ImGuiEditor::Update()
 		if (InputUtil::GetKeyDown(KeyCode::S))
 		{
 			SaveMapData();
-			Time::StabilizeDeltaTime();
 		}
 		if (InputUtil::GetKeyDown(KeyCode::O))
 		{
@@ -107,31 +146,38 @@ void mtgb::ImGuiEditor::ShowImGui()
 
 void mtgb::ImGuiEditor::SaveMapData()
 {
-	TCHAR fileName[255] = "";
-	OPENFILENAME ofn	= { 0 };
-
-	ofn.lStructSize = sizeof(ofn);
-
-	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ofn.lpstrFilter = "JSON File(*.json)\0*.json";
-	ofn.lpstrFile	= fileName;
-	ofn.nMaxFile	= 255;
-	ofn.Flags		= OFN_OVERWRITEPROMPT;
-
-	if (GetSaveFileName(&ofn))
+	// 編集中のファイルがない場合、新規作成する
+	if (editingStagePath_.empty())
 	{
-		std::ofstream openFile(fileName);
-
-		int width = 4;
-
-		// 現在のステージを記録
-		nlohmann::json json = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
-		openFile << std::setw(width) << json;
-
-		openFile.close();
-
-		LOGIMGUI_CAT("Editor", "File Saved");
+		SaveMapDataAs();
 	}
+	// 編集中のファイルに上書き
+	else
+	{
+		SaveStageJson(editingStagePath_);
+	}
+	Time::StabilizeDeltaTime();
+}
+
+void mtgb::ImGuiEditor::SaveMapDataAs()
+{
+	std::filesystem::path filePath(GetJsonFilePath());
+	if (filePath.empty())
+	{
+		return;
+	}
+	SaveStageJson(filePath);
+	editingStagePath_ = filePath;
+}
+
+void mtgb::ImGuiEditor::SaveCopyMapDataAs()
+{
+	std::filesystem::path filePath(GetJsonFilePath());
+	if (filePath.empty())
+	{
+		return;
+	}
+	SaveStageJson(filePath);
 }
 
 void mtgb::ImGuiEditor::LoadMapData()
@@ -243,13 +289,21 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 	{
 		if (ImGui::BeginMenu("File"))
 		{
+			if (ImGui::MenuItem("Load"))
+			{
+				LoadMapData();
+			}
 			if (ImGui::MenuItem("Save"))
 			{
 				SaveMapData();
 			}
-			if (ImGui::MenuItem("Load"))
+			if (ImGui::MenuItem("Save As..."))
 			{
-				LoadMapData();
+				SaveMapDataAs();
+			}
+			if (ImGui::MenuItem("Save Copy As.."))
+			{
+				SaveCopyMapDataAs();
 			}
 			ImGui::EndMenu();
 		}
