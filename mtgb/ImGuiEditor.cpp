@@ -15,8 +15,34 @@
 #include "CommandHistoryManager.h"
 #include "MTImGui.h"
 #include "../Source/Scenes/SampleScene.h"
+#include "../Source/StageEditScene.h"
+
+nlohmann::json GetStageJson(std::filesystem::path filePath)
+{
+	std::ifstream inputFile(filePath);
+	if (inputFile.fail())
+	{
+		assert(false);
+		return nlohmann::json();
+	}
+	nlohmann::json json;
+	try
+	{
+		inputFile >> json;
+		return json;
+	}
+	catch (const nlohmann::json::parse_error& e)
+	{
+		const char* errMsg = e.what();
+		assert(false && errMsg);
+	}
+	return nlohmann::json();
+}
+
 mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
+	, editingStagePath_ {}
+	, tmpStageData_ {}
 {
 
 	pManipulator_ = new ImGuizmoManipulator();
@@ -87,7 +113,7 @@ void mtgb::ImGuiEditor::SaveMapData()
 	ofn.lStructSize = sizeof(ofn);
 
 	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ofn.lpstrFilter = "JSONファイル(*.json)\0*.json";
+	ofn.lpstrFilter = "JSON File(*.json)\0*.json";
 	ofn.lpstrFile	= fileName;
 	ofn.nMaxFile	= 255;
 	ofn.Flags		= OFN_OVERWRITEPROMPT;
@@ -96,9 +122,11 @@ void mtgb::ImGuiEditor::SaveMapData()
 	{
 		std::ofstream openFile(fileName);
 
-		nlohmann::json j = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
-		int width		 = 4;
-		openFile << std::setw(width) << j;
+		int width = 4;
+
+		// 現在のステージを記録
+		nlohmann::json json = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
+		openFile << std::setw(width) << json;
 
 		openFile.close();
 
@@ -106,27 +134,58 @@ void mtgb::ImGuiEditor::SaveMapData()
 	}
 }
 
-void mtgb::ImGuiEditor::LoadMapData() 
+void mtgb::ImGuiEditor::LoadMapData()
 {
-	Game::SetEditMode(false);
+	TCHAR fileName[255] = "";
+	OPENFILENAME ifn	= { 0 };
 
-	nlohmann::json json = GetStageJson();
+	ifn.lStructSize = sizeof(ifn);
+	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ifn.lpstrFilter = "JSON File(*.json)\0*.json";
+	ifn.lpstrFile	= fileName;
+	ifn.nMaxFile	= 255;
+
+	if (GetOpenFileName(&ifn) == false)
+		return;
+
+	std::filesystem::path filePath(fileName);
+	if (filePath.empty())
+	{
+		return;
+	}
+
+	nlohmann::json json(GetStageJson(filePath));
 	if (json.empty() == false)
 	{
-		Game::System<SceneSystem>().Move<SampleScene>(json);
+		// 編集中のファイルを記録
+		editingStagePath_ = filePath;
+		Game::System<SceneSystem>().Move<StageEditScene>(json);
+		// 編集モードを有効にする
+		Game::SetEditMode(true);
+		// 現在のステージを記録
+		tmpStageData_ = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
 	}
 	Time::StabilizeDeltaTime();
 }
 
-void mtgb::ImGuiEditor::PlayScene() 
+void mtgb::ImGuiEditor::PlayScene()
 {
-	Game::SetEditMode(false);
+	nlohmann::json json(Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects());
 
-	nlohmann::json json = GetStageJson();
 	if (json.empty() == false)
 	{
 		Game::System<SceneSystem>().Move<SampleScene>(json);
+		tmpStageData_ = json;
+		Game::SetEditMode(false);
 	}
+	Time::StabilizeDeltaTime();
+}
+
+void mtgb::ImGuiEditor::StopScene()
+{
+	// 編集モードを有効にする
+	Game::SetEditMode(true);
+	Game::System<SceneSystem>().Move<StageEditScene>(tmpStageData_);
 	Time::StabilizeDeltaTime();
 }
 
@@ -178,39 +237,6 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 	ImGui::Separator();
 }
 
-nlohmann::json mtgb::ImGuiEditor::GetStageJson()
-{
-	TCHAR fileName[255] = "";
-	OPENFILENAME ifn	= { 0 };
-
-	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ifn.lpstrFilter = "JSONファイル(*.json)\0*.json";
-	ifn.lpstrFile	= fileName;
-	ifn.nMaxFile	= 255;
-
-	if (GetOpenFileName(&ifn) == false)
-		return nlohmann::json();
-
-	std::ifstream inputFile(fileName);
-	if (inputFile.fail())
-	{
-		assert(false);
-	}
-	nlohmann::json json;
-	try
-	{
-		inputFile >> json;
-		return json;
-	}
-	catch (const nlohmann::json::parse_error& e)
-	{
-		const char* errMsg = e.what();
-		assert(false && errMsg);
-	}
-	return nlohmann::json();
-}
-
 void mtgb::ImGuiEditor::ShowMenuBar()
 {
 	if (ImGui::BeginMenuBar())
@@ -239,10 +265,24 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			}
 			ImGui::EndMenu();
 		}
+		bool isEditMode = Game::IsEditMode();
+
+		// プレイモードなら無効化
+		ImGui::BeginDisabled(isEditMode == false);
 		if (ImGui::Button("Play"))
 		{
 			PlayScene();
 		}
+		ImGui::EndDisabled();
+
+		// 編集モードなら無効化
+		ImGui::BeginDisabled(isEditMode);
+		if (ImGui::Button("Stop"))
+		{
+			StopScene();
+		}
+		ImGui::EndDisabled();
+
 		ImGui::EndMenuBar();
 	}
 }

@@ -8,7 +8,7 @@ StageEditScene::StageEditScene()
 {
 }
 
-StageEditScene::StageEditScene(const nlohmann::json& _stageData) 
+StageEditScene::StageEditScene(const nlohmann::json& _stageData)
 {
 	stageData_ = _stageData;
 }
@@ -17,6 +17,7 @@ StageEditScene::~StageEditScene() {}
 
 void StageEditScene::Initialize()
 {
+	Game::SetEditMode(true);
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 	mtgb::GameObjectGenerator::Initialize();
 	PropertyDisplayRegistry::Instance();
@@ -29,9 +30,7 @@ void StageEditScene::Initialize()
 	}
 }
 
-void StageEditScene::Update() 
-{
-}
+void StageEditScene::Update() {}
 
 void StageEditScene::Draw() const {}
 
