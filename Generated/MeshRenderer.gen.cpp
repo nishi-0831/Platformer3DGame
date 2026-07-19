@@ -59,7 +59,6 @@
 		RegisterShowFuncHolder::Set<MeshRenderer>([]( MeshRenderer* _target, const char* _name)
 			{
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshFileName, "meshFileName");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshHandle, "meshHandle");
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer, "layer");
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType");
 			});
