@@ -141,6 +141,10 @@ void mtgb::Draw::ImmediateTextW(
 	const UIParams& _uiParams
 )
 {
+	if (_size < 1)
+	{
+		_size = currentDefaultFontSize_;
+	}
 	uiDrawCommands_.emplace(
 		_uiParams,
 		[text = std::wstring { _text }, _rect, _size, _alignment]()
@@ -192,6 +196,10 @@ void mtgb::Draw::ImmediateText(
 	const UIParams& _uiParams
 )
 {
+	if (_size < 1)
+	{
+		_size = currentDefaultFontSize_;
+	}
 	uiDrawCommands_.emplace(
 		_uiParams,
 		[text = std::string { _text }, _rect, _size, _alignment]()
@@ -219,6 +227,7 @@ void mtgb::Draw::ImmediateText(
 
 void mtgb::Draw::ChangeFontSize(int _size)
 {
+	_size						   = (std::max)(1, _size);
 	currentDefaultFontSize_		   = _size;
 	FontFormatData* fontFormatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(_size);
 	Game::System<DirectWrite>().ChangeFormat(fontFormatData->format, fontFormatData->pixelFontMetrics);
