@@ -78,7 +78,7 @@ void Player::Update()
 		UpdatePosition();
 		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
-			if (pRigidBody_->isGround_ == true)
+			if (pRigidBody_->isGround_)
 			{
 				jumpController_.StartJump(jumpHeight);
 				Game::System<Audio>().Play("Jump");
@@ -278,6 +278,7 @@ void Player::ShowImGui()
 {
 	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
+	PropertyDisplayRegistry::Instance().ShowProperty(&pRigidBody_->velocity_, "vel");
 }
 
 Vector3 Player::GetMoveDir()
