@@ -3,7 +3,7 @@
 
 #include "ImGuiInputCommand.h"
 #include "QuatToEuler.h"
-
+#include "GroupCommand.h"
 Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {
 	mtgb::Vector3 old = *_vec;
@@ -52,13 +52,34 @@ Command* Vector4Show::operator()(DirectX::XMVECTOR* _vec, const char* _name) con
 Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) const
 {
 	Vector4Show xShow;
-	xShow(&_mat->r[0], "x");
+	Command* cmdX = xShow(&_mat->r[0], "x");
+	
 	Vector4Show yShow;
-	yShow(&_mat->r[1], "y");
-	Vector4Show zShow;
-	zShow(&_mat->r[2], "z");
-	Vector4Show wShow;
-	wShow(&_mat->r[3], "w");
+	Command* cmdY = yShow(&_mat->r[1], "y");
 
-	return nullptr;
+	Vector4Show zShow;
+	Command* cmdZ = zShow(&_mat->r[2], "z");
+
+	Vector4Show wShow;
+	Command* cmdW = wShow(&_mat->r[3], "w");
+	
+	mtgb::GroupCommand* pGrpCmd = new mtgb::GroupCommand();
+	if (cmdX != nullptr)
+	{
+		pGrpCmd->ExecuteCommand(cmdX);
+	}
+	if (cmdY != nullptr)
+	{
+		pGrpCmd->ExecuteCommand(cmdY);
+	}
+	if (cmdZ != nullptr)
+	{
+		pGrpCmd->ExecuteCommand(cmdZ);
+	}
+	if (cmdW != nullptr)
+	{
+		pGrpCmd->ExecuteCommand(cmdW);
+	}
+
+	return pGrpCmd;
 }

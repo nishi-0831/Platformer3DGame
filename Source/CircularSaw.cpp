@@ -11,6 +11,7 @@ mtgb::CircularSaw::CircularSaw()
 	, pCollider_ { Component<Collider>() }
 	, sawOffset_ { 5.0f }
 	, rotateAngleSec_ { 45.0f }
+	, pSaw_ {nullptr}
 {
 	pTransform_->position.z = -5.0f;
 
@@ -28,7 +29,10 @@ mtgb::CircularSaw::CircularSaw()
 mtgb::CircularSaw::~CircularSaw()
 {
 	Game::System<Audio>().Stop("Saw");
-	pSaw_->DestroyMe();
+	if (pSaw_)
+	{
+		pSaw_->DestroyMe();
+	}
 }
 
 void mtgb::CircularSaw::Update()

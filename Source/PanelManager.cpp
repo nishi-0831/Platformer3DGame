@@ -1,12 +1,11 @@
 #include "PanelManager.h"
 #include <InputData.h>
-PanelManager::PanelManager() 
-	: pCurrPanel_ {nullptr}
+PanelManager::PanelManager()
+	: pCurrPanel_ { nullptr }
 {
-
 }
 
-void PanelManager::AddPanel(std::string_view _panelName, Panel* _pPanel) 
+void PanelManager::AddPanel(std::string_view _panelName, Panel* _pPanel)
 {
 	if (panelMap_.contains(_panelName))
 		return;
@@ -28,7 +27,7 @@ void PanelManager::AddPanel(std::string_view _panelName, Panel* _pPanel)
 	}
 }
 
-void PanelManager::EnablePanel(std::string_view _panelName) 
+void PanelManager::EnablePanel(std::string_view _panelName)
 {
 	auto itr = panelMap_.find(_panelName);
 
@@ -44,36 +43,28 @@ void PanelManager::EnablePanel(std::string_view _panelName)
 	pCurrPanel_ = itr->second;
 	pCurrPanel_->Enable();
 }
-void PanelManager::MoveForcusBackward()
+void PanelManager::MoveFocusBackward()
 {
 	pCurrPanel_->IncrementIndex();
 }
 
-void PanelManager::MoveForcusForward()
+void PanelManager::MoveFocusForward()
 {
 	pCurrPanel_->DecrementIndex();
 }
 
-void PanelManager::PressCurrentPanel()
-{
-	pCurrPanel_->Press();
-}
-
-void PanelManager::UpdatePanel() 
+void PanelManager::UpdatePanel()
 {
 	using namespace mtgb;
-	if (InputUtil::GetKeyDown(KeyCode::DOWN) ||
+	if (InputUtil::GetKeyDown(KeyCode::DOWN) || InputUtil::GetKeyDown(KeyCode::S) ||
 		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
 	{
-		MoveForcusBackward();
+		MoveFocusBackward();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::UP) ||
+	if (InputUtil::GetKeyDown(KeyCode::UP) || InputUtil::GetKeyDown(KeyCode::W) ||
 		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
 	{
-		MoveForcusForward();
+		MoveFocusForward();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::ENTER) || InputUtil::GetGamePadDown(PadCode::CIRCLE))
-	{
-		PressCurrentPanel();
-	}
+	pCurrPanel_->UpdateUI();
 }

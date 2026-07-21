@@ -7,7 +7,9 @@
 #include "ImGui/imgui_impl_dx11.h"
 #include "Screen.h"
 #include "ImGuiUtil.h"
+#include <filesystem>
 
+namespace fs = std::filesystem;
 mtgb::ImGuiRenderer::ImGuiRenderer()
 	: winWidth_ { 800 }
 	, winHeight_ { 600 }
@@ -56,7 +58,18 @@ void mtgb::ImGuiRenderer::Initialize()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 	ImGui_ImplDX11_Init(device.Get(), context.Get());
 
+	ImGui::LoadIniSettingsFromDisk("Assets/imgui.ini");
 	CreateD3DResources();
+	char defaultCurrentDirectory[MAX_PATH] {};
+	GetCurrentDirectory(MAX_PATH, defaultCurrentDirectory);
+
+	fs::path current_dir = fs::current_path();
+	Game::OnExit(
+		[]()
+		{
+			ImGui::SaveIniSettingsToDisk("Assets/imgui.ini");
+		}
+	);
 }
 
 void mtgb::ImGuiRenderer::Update() {}
@@ -73,15 +86,19 @@ void mtgb::ImGuiRenderer::BeginImGuizmoFrame()
 	ImGuizmo::BeginFrame();
 }
 
-void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlag _flag)
+void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlags _flag)
 {
 	ImGuiWindowFlags flags = 0;
-	if (_flag == WindowFlag::NO_MOVE_WHEN_HOVERED)
+	if (_flag & WindowFlag::NO_MOVE_WHEN_HOVERED)
 	{
 		if (mtgb::ImGuiUtil::IsMouseInWindow(_str))
 		{
 			flags |= ImGuiWindowFlags_NoMove;
 		}
+	}
+	if (_flag & WindowFlag::NO_SCROLL)
+	{
+		flags |= ImGuiWindowFlags_NoScrollWithMouse;
 	}
 	ImGui::Begin(_str, _isOpen, flags);
 }

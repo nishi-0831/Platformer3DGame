@@ -29,11 +29,25 @@ namespace mtgb
 		float minPitchAngleDeg_;
 		// 上下の角度の最大値
 		float maxPitchAngleDeg_;
-		float currentLerpSpeed_;
+		// 進行度がイージングされた値。カメラの補間に使う
+		float cameraEasedProgress_;
+		// 上昇時のカメラ補間速度
 		float lerpSpeedOnJumping_;
 
+		// 落下時のカメラ補間速度
 		float lerpSpeedOnDescending_;
+		// 接地時のカメラ補間速度
 		float lerpSpeedOnGrounded_;
+		// 補間の進行度
+		float lerpProgress_;
+		// 補間の目的値(y座標)
+		float cameraDestY_;
+		// 前のフレームは接地していたか否か
+		bool wasGrounded_;
+		// 今のフレームでは接地しているか否か
+		bool isGrounded_;
+		// 進行速度
+		float lerpSpeed_;
 		void UpdateLerpSpeed();
 	};
 } // namespace mtgb

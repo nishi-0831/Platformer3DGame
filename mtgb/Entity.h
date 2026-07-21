@@ -17,7 +17,7 @@ namespace mtgb
 		/// エンティティIdを取得する
 		/// </summary>
 		/// <returns>エンティティ識別番号</returns>
-		inline const EntityId GetEntityId() const
+		inline EntityId GetEntityId() const
 		{
 			return entityId_;
 		}

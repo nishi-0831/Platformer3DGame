@@ -60,17 +60,21 @@ void mtgb::SceneSystem::Update()
 	// 現在のシーン
 	GameScene& currentScene { *GameScene::pInstance_ };
 
-	// 更新処理
-	currentScene.Update();
-	for (auto&& gameObject : currentScene.pGameObjects_)
+	if (Game::IsEditMode() == false)
 	{
-		if (gameObject->IsNotCalledStart())
+		// 更新処理
+		currentScene.Update();
+		for (auto&& gameObject : currentScene.pGameObjects_)
 		{
-			gameObject->Start();
-			gameObject->MarkAsCalledStart();
+			if (gameObject->IsNotCalledStart())
+			{
+				gameObject->Start();
+				gameObject->MarkAsCalledStart();
+			}
+			gameObject->Update();
 		}
-		gameObject->Update();
 	}
+
 	MTImGui::Update();
 
 	// 描画処理

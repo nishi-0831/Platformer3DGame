@@ -171,20 +171,11 @@ namespace mtgb
 			return { axis.x * s, axis.y * s, axis.z * s, w };
 		}
 
-		/// <summary>
-		/// 文字列に変換する
-		/// </summary>
-		/// <returns>文字列</returns>
-		std::string ToString() const;
-
 		inline Quaternion& operator*=(const Quaternion& _other)
 		{
 			*this = DirectX::XMQuaternionMultiply((*this).v, _other.v);
 			return *this;
 		};
-		// inline Quaternion& operator+=(const Quaternion& _other) { f[0] += f[0]; f[1] += f[1]; f[2] += f[2]; f[3] +=
-		// f[3]; return *this; } inline Quaternion& operator-=(const Quaternion& _other) { f[0] -= f[0]; f[1] -= f[1];
-		// f[2] -= f[2]; f[3] -= f[3]; return *this; }
 	};
 
 	inline Quaternion operator*(const Quaternion& _q1, const Quaternion& _q2)

@@ -9,9 +9,8 @@ class PanelManager
 	PanelManager();
 	void AddPanel(std::string_view _panelName, Panel* _pPanel);
 	void EnablePanel(std::string_view _panelName);
-	void MoveForcusForward();
-	void MoveForcusBackward();
-	void PressCurrentPanel();
+	void MoveFocusForward();
+	void MoveFocusBackward();
 	void UpdatePanel();
   private:
 	std::unordered_map<std::string, Panel*, mtgb::TransparentStringHash, mtgb::TransparentStringEq> panelMap_;

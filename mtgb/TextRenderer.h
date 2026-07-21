@@ -32,11 +32,15 @@ namespace mtgb
 		{
 			return params_.layerFlag;
 		}
-
+		[[MT_PROPERTY()]]
 		TextAlignment alignment;
+		[[MT_PROPERTY()]]
 		std::string text_;
+		[[MT_PROPERTY()]]
 		RectF rect_;
+		[[MT_PROPERTY()]]
 		int fontSize_;
+		[[MT_PROPERTY()]]
 		UIParams params_;
 	};
 } // namespace mtgb

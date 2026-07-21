@@ -168,17 +168,15 @@ void mtgb::FbxAnimationController::CheckEvents()
 		// 現在のフレームが、イベント対象のフレームの範囲内か
 		if (currentFrame_ >= event.startFrame && currentFrame_ <= event.endFrame)
 		{
-			using iterator = decltype(eventCallbackMap_)::iterator;
 			// イベント名に該当するコールバック関数を取得
-			std::pair<iterator, iterator> ret = eventCallbackMap_.equal_range(event.eventName);
+			auto [first, last] = eventCallbackMap_.equal_range(event.eventName);
 
-			if (ret.first == eventCallbackMap_.end())
+			if (first == eventCallbackMap_.end())
 				return;
 
-			for (iterator itr = ret.first; itr != ret.second; itr++)
+			for (auto itr = first; itr != last; itr++)
 			{
-				auto& func = itr->second;
-				func(event);
+				itr->second(event);
 			}
 		}
 	}

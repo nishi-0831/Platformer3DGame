@@ -12,6 +12,10 @@
 // ============================================================================
 struct ImageRendererState
 {
+		std::string imageFileName_;
+		mtgb::RectF drawRect_;
+		mtgb::UIParams uiParams_;
+		mtgb::GameObjectLayerFlag layer_;
 };
 
 // クラスの前方宣言

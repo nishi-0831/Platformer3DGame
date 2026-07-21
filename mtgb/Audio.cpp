@@ -166,7 +166,7 @@ void mtgb::Audio::SetEmitter(EntityId _id, std::string_view _soundName)
 	}
 	else
 	{
-		pX3DEmitter = &emitterItr->second.x3DEmitter;
+		emitterItr->second.emitterId = _id;
 	}
 }
 

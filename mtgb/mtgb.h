@@ -53,7 +53,6 @@
 #include "Debug.h"
 #include "Image.h"
 #include "Audio.h"
-#include "OBJ.h"
 #include "ImGuiRenderer.h"
 #include "MeshRenderer.h"
 #include "TextRenderer.h"
@@ -71,6 +70,7 @@
 #include "EntityManager.h"
 #include "GameObjectGenerator.h"
 #include "ComponentFactory.h"
+#include "ShadowSettings.h"
 #pragma endregion
 
 #include "GameObjectBuilder.h"

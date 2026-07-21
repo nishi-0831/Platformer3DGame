@@ -6,14 +6,9 @@
 
 #include "../Source/GameOverManager.h"
 #include "../Source/RespawnManager.h"
-
+#include <SerializableGameObject.h>
 namespace
 {
-	ImageHandle hLeftStickImg;
-	ImageHandle hRightStickImg;
-	ImageHandle hEastButtonPushImg;
-	ImageHandle hSouthButtonPushImg;
-	ImageHandle hBackgroundImg;
 }
 
 SampleScene::SampleScene()
@@ -21,10 +16,17 @@ SampleScene::SampleScene()
 {
 }
 
+SampleScene::SampleScene(const nlohmann::json& _stageData) 
+{
+	stageData_ = _stageData;
+}
+
 SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
 {
+	using namespace mtgb;
+
 	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
 	mtgb::Game::System<mtgb::Audio>().Play("PlayScene", true);
 	mtgb::Game::System<mtgb::SceneSystem>().OnMove(
@@ -37,21 +39,26 @@ void SampleScene::Initialize()
 	Instantiate<GameOverManager>();
 	Instantiate<mtgb::SkySphere>();
 	Instantiate<RespawnManager>();
-	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
-	if (json.has_value())
+	mtgb::Game::System<ScoreManager>().ResetScore();
+	mtgb::Game::System<StageManager>().StartStage(stageID_);
+	if (stageData_.is_null() == false)
 	{
-		mtgb::GameObjectGenerator::GenerateFromJson(json);
+		mtgb::GameObjectGenerator::GenerateFromJson(stageData_);
 		mtgb::Time::StabilizeDeltaTime();
 	}
 	else
 	{
-		assert(false && "JSONファイルが見つかりません");
+		std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
+		if (json.has_value())
+		{
+			mtgb::GameObjectGenerator::GenerateFromJson(json);
+			mtgb::Time::StabilizeDeltaTime();
+		}
+		else
+		{
+			assert(false && "JSONファイルが見つかりません");
+		}
 	}
-
-	hBackgroundImg = mtgb::Image::Load("Image/Black.png");
-	hLeftStickImg  = mtgb::Image::Load("Image/LeftStick.png");
-	hSouthButtonPushImg = mtgb::Image::Load("Image/SouthButtonPush.png");
-	hRightStickImg = mtgb::Image::Load("Image/RightStick.png");
 }
 
 void SampleScene::Update()
@@ -62,21 +69,6 @@ void SampleScene::Update()
 	}
 }
 
-void SampleScene::Draw() const 
-{
-	RectF moveInstructionRect { 50, 550, 100, 50 };
-	
-	mtgb::Draw::Image(hBackgroundImg, { 50, 550, 150, 50 });
-	mtgb::Draw::Image(hLeftStickImg, { 50, 550, 50, 50 });
-	mtgb::Draw::ImmediateTextW(L"移動", { 100, 550, 100, 50 });
-
-	mtgb::Draw::Image(hBackgroundImg, { 250, 550, 200, 50 });
-	mtgb::Draw::Image(hSouthButtonPushImg, { 250, 550, 50, 50 });
-	mtgb::Draw::ImmediateTextW(L"ジャンプ", { 300, 550, 150, 50 });
-
-	mtgb::Draw::Image(hBackgroundImg, { 500, 550, 200, 50 });
-	mtgb::Draw::Image(hRightStickImg, { 500, 550, 50, 50 });
-	mtgb::Draw::ImmediateTextW(L"視点移動", { 550, 550, 150, 50 });
-}
+void SampleScene::Draw() const {}
 
 void SampleScene::End() {}

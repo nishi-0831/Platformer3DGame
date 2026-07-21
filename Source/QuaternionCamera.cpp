@@ -1,5 +1,16 @@
 #include "stdafx.h"
 #include "QuaternionCamera.h"
+#include "ProfileUtlity.h"
+#include <cmath>
+#include <numbers>
+float EaseOutQuart(float _x)
+{
+	return 1 - std::powf(1 - _x, 4);
+}
+float EaseOutSine(float _x)
+{
+	return std::sinf((_x * std::numbers::pi) / 2);
+}
 
 mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	: GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName("Camera").Build())
@@ -12,17 +23,28 @@ mtgb::QuaternionCamera::QuaternionCamera(EntityId _entityId)
 	, inputType_ { InputType::JOYPAD }
 	, minPitchAngleDeg_ { -5.0f }
 	, maxPitchAngleDeg_ { 80.0f }
-	, currentLerpSpeed_ { 0.01f }
+	, cameraEasedProgress_ { 0.01f }
 	, lerpSpeedOnJumping_ { 0.1f }
 	, lerpSpeedOnDescending_ { 0.1f }
 	, lerpSpeedOnGrounded_ { 0.3f }
+	, lerpProgress_ { 0.0f }
+	, wasGrounded_ { false }
+	, isGrounded_ { false }
+	, lerpSpeed_ { 0.1f }
 {
+	rotationSpeedDegPerSec_ = ProfileInt::Load().Section("GAME").Param("CameraSpeed").InitValue(60).Get();
 }
 
-mtgb::QuaternionCamera::~QuaternionCamera() {}
+mtgb::QuaternionCamera::~QuaternionCamera()
+{
+	ProfileInt::Load().Section("Game").Param("CameraSpeed").Write(static_cast<int>(rotationSpeedDegPerSec_));
+}
 
 void mtgb::QuaternionCamera::Update()
 {
+	wasGrounded_ = isGrounded_;
+	isGrounded_	 = pTargetRigidBody_->isGround_;
+
 	UpdateLerpSpeed();
 	Vector3 movement;
 
@@ -62,7 +84,7 @@ void mtgb::QuaternionCamera::Update()
 	);
 
 	// 回転を計算
-	Quaternion testRotate = rotate * worldRotateY * localRotateX;
+	Quaternion testRotate = rotate * localRotateX * worldRotateY;
 	Vector3 testForward	  = DirectX::XMVector3Rotate(Vector3::Forward(), testRotate.v);
 
 	// 制限角度
@@ -82,7 +104,7 @@ void mtgb::QuaternionCamera::Update()
 	}
 
 	lookAtPos_.x = pTargetTransform_->position.x;
-	lookAtPos_.y = Mathf::Lerp(lookAtPos_.y, pTargetTransform_->position.y, currentLerpSpeed_);
+	lookAtPos_.y = Mathf::Lerp(lookAtPos_.y, cameraDestY_, cameraEasedProgress_);
 	lookAtPos_.z = pTargetTransform_->position.z;
 
 	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate.v);
@@ -91,7 +113,7 @@ void mtgb::QuaternionCamera::Update()
 	MTImGui::DirectShow(
 		[this]()
 		{
-			ImGui::InputFloat("s", &currentLerpSpeed_);
+			ImGui::InputFloat("s", &cameraEasedProgress_);
 			PropertyDisplayRegistry::Instance().ShowProperty(&pTargetRigidBody_->velocity_, "vel");
 		},
 		"lerpSpeed",
@@ -101,19 +123,41 @@ void mtgb::QuaternionCamera::Update()
 
 void mtgb::QuaternionCamera::UpdateLerpSpeed()
 {
-	if (pTargetRigidBody_->isGround_)
+	if (wasGrounded_ == true && isGrounded_ == false)
 	{
-		currentLerpSpeed_ = lerpSpeedOnGrounded_;
-		return;
+		cameraEasedProgress_ = 0.0f;
+		lerpProgress_		 = 0.0f;
 	}
-	Vector3 velocity = pTargetRigidBody_->velocity_;
+	//
+	// 現在のカメラ速度から、目標のカメラ速度へ補間する
+	//
 
-	if (velocity.y > 0.0f)
+	// 目標値
+	float destSpeed = cameraEasedProgress_;
+	cameraDestY_	= pTargetTransform_->position.y;
+	// 接地時
+	if (isGrounded_)
 	{
-		currentLerpSpeed_ = lerpSpeedOnJumping_;
+		destSpeed = lerpSpeedOnGrounded_;
+		lerpProgress_ += lerpSpeed_ * Time::DeltaTimeF();
+		float t				 = EaseOutSine(lerpProgress_);
+		cameraEasedProgress_ = Mathf::Lerp(cameraEasedProgress_, destSpeed, t);
 	}
+	// 接地していない時
 	else
 	{
-		currentLerpSpeed_ = lerpSpeedOnDescending_;
+		Vector3 velocity = pTargetRigidBody_->velocity_;
+
+		// 上昇中
+		if (velocity.y > 0.0f)
+		{
+			destSpeed = lerpSpeedOnJumping_;
+		}
+		// 降下中
+		else
+		{
+			destSpeed = lerpSpeedOnDescending_;
+		}
+		cameraEasedProgress_ += destSpeed * Time::DeltaTimeF();
 	}
 }

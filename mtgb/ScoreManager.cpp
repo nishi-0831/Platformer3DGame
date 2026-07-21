@@ -17,17 +17,7 @@ mtgb::ScoreManager::ScoreManager()
 
 mtgb::ScoreManager::~ScoreManager() {}
 
-void mtgb::ScoreManager::Update()
-{
-	MTImGui::DirectShow(
-		[]()
-		{
-			ImGui::LabelText("Score", "%d", score_);
-		},
-		"CurrentScore",
-		ShowType::INSPECTOR
-	);
-}
+void mtgb::ScoreManager::Update() {}
 void mtgb::ScoreManager::AddScore(uint32_t _score)
 {
 	score_ += _score;
