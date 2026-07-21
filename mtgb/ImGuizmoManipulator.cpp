@@ -167,11 +167,6 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	{
 		mode_ = ImGuizmo::WORLD;
 	}
-
-	isUsing_ = ImGuizmo::IsUsing();
-
-	std::string text = isUsing_ ? "true" : "false";
-	ImGui::Text("%s", text.c_str());
 }
 
 void mtgb::ImGuizmoManipulator::Select(EntityId _id)
