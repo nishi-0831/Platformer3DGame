@@ -154,7 +154,9 @@ namespace mtgb
 		ComponentT& destCom = Get(_dest);
 		ComponentT& srcCom	= Get(_src);
 
-		destCom = srcCom;
+		destCom			  = srcCom;
+		destCom.entityId_ = _dest;
+		srcCom.entityId_  = _src;
 	}
 
 	template <typename ComponentT, typename DerivedT>

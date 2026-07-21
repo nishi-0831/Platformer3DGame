@@ -31,6 +31,9 @@ void mtgb::ColliderCP::Update()
 		pool_[i].UpdateBoundingData();
 	}
 
+	if (Game::IsEditMode())
+		return;
+
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		if (poolId_[i] == INVALID_ENTITY)

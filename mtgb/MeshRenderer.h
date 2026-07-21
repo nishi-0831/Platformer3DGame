@@ -69,7 +69,7 @@ namespace mtgb
 		void SetFrame(int _frame);
 		[[MT_PROPERTY()]]
 		std::string meshFileName;
-		[[MT_PROPERTY()]]
+		[[MT_PROPERTY(HideInEditor)]]
 		FBXModelHandle meshHandle;
 		[[MT_PROPERTY()]]
 		GameObjectLayerFlag layer;

@@ -1,13 +1,8 @@
 #pragma once
-#include <unordered_map>
 #include "ISystem.h"
 #include "ImGuizmoManipulator.h"
-#include "ImGuiEditorCamera.h"
 #include "ImGuiShowable.h"
-#include "ComponentFactory.h"
-#include "IComponentMemento.h"
-#include "GameObjectFactory.h"
-#include "GroupCommand.h"
+#include <filesystem>
 namespace mtgb
 {
 	class ImGuiEditor : public ISystem, public ImGuiShowable
@@ -21,9 +16,15 @@ namespace mtgb
 		void Update() override;
 		void ShowImGui() override;
 
+		void ShowMenuBar();
+
 	  private:
 		void SaveMapData();
+		void SaveMapDataAs();
+		void SaveCopyMapDataAs();
 		void LoadMapData();
+		void PlayScene();
+		void StopScene();
 		/// <summary>
 		/// 現在選択されているゲームオブジェクトの複製を行う
 		/// </summary>
@@ -32,6 +33,7 @@ namespace mtgb
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
 		ImGuizmoManipulator* pManipulator_;
-		std::unordered_map<std::type_index, IComponentMemento*> defMementos_;
+		std::filesystem::path editingStagePath_;
+		nlohmann::json tmpStageData_;
 	};
 } // namespace mtgb

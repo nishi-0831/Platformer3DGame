@@ -4,6 +4,7 @@ class StageEditScene : public mtgb::GameScene
 {
   public:
 	StageEditScene();
+	StageEditScene(const nlohmann::json& _stageData);
 	~StageEditScene();
 
 	void Initialize() override;
@@ -12,4 +13,5 @@ class StageEditScene : public mtgb::GameScene
 	void End() override;
 
   private:
+	nlohmann::json stageData_;
 };

@@ -8,7 +8,7 @@
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
-#include "ShadowSettings.h"
+#include "ImGuiEditor.h"
 void mtgb::RenderSystem::Initialize() {}
 
 void mtgb::RenderSystem::Update() {}
@@ -45,9 +45,17 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	WinCtxRes::ChangeResource(WindowContext::FIRST);
 
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();
-
 	imGui.BeginFrame();
 	imGui.BeginImGuizmoFrame();
+
+	ImGui::Begin("DockSpace Parent", nullptr, ImGuiWindowFlags_MenuBar);
+
+	ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+	ImGui::DockSpace(dockspace_id);
+
+	Game::System<ImGuiEditor>().ShowMenuBar();
+
+	ImGui::End();
 
 	// Inspector表示
 	MTImGui::ShowWindow(ShowType::INSPECTOR);
@@ -58,9 +66,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	// ログ表示
 	MTImGui::ShowLog();
 
-	// SceneView表示
-
-	// RenderTargetViewをImGui用に切り替え
+	//// RenderTargetViewをImGui用に切り替え
 	imGui.SetImGuizmoRenderTargetView();
 
 	DirectX11Draw::Begin();
@@ -70,7 +76,6 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	MTImGui::ShowWindow(ShowType::SCENE_VIEW);
 
 	imGui.EndFrame();
-	// DirectX11Draw::End();
 }
 
 void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag _layer)

@@ -23,8 +23,8 @@ Player::Player()
 	, pCollider_ { Component<Collider>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pRigidBody_ { Component<RigidBody>() } //, pCamera_{Instantiate<Camera>(this)}
-	, pNewCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
-	, pCameraTransform_ { &Transform::Get(pNewCamera_->GetEntityId()) }
+	, pCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
+	, pCameraTransform_ { &Transform::Get(pCamera_->GetEntityId()) }
 	, hp_ { 3 }
 	, pHPViewer_ { nullptr }
 	, isInvincible_ { false }
@@ -51,7 +51,7 @@ Player::Player()
 
 	displayName_ = name_;
 
-	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pNewCamera_);
+	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
@@ -78,7 +78,7 @@ void Player::Update()
 		UpdatePosition();
 		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
-			if (pRigidBody_->isGround_ == true)
+			if (pRigidBody_->isGround_)
 			{
 				jumpController_.StartJump(jumpHeight);
 				Game::System<Audio>().Play("Jump");
@@ -102,6 +102,8 @@ void Player::Update()
 	}
 
 	state_.Update();
+
+	jumpController_.Update();
 
 	// ダメージを受けた後の無敵時間
 	if (isInvincible_)
@@ -276,6 +278,7 @@ void Player::ShowImGui()
 {
 	MTImGui::ShowComponents(Entity::entityId_);
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
+	PropertyDisplayRegistry::Instance().ShowProperty(&pRigidBody_->velocity_, "vel");
 }
 
 Vector3 Player::GetMoveDir()

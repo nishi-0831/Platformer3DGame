@@ -91,6 +91,7 @@ namespace mtgb
 
 		virtual Vector2Int GetScreenSize() const;
 
+		
 	  private:
 		std::map<std::type_index, ISystem*> pRegisterSystems_; // 登録済みのシステム
 		std::list<ISystem*> pCycleUpdateSystems_;			   // 毎サイクル更新されるシステム
@@ -99,9 +100,10 @@ namespace mtgb
 		std::vector<IComponentPool*> pComponentPools_;		   // コンポーネントプールのシステム
 		std::vector<IRenderableCP*> pRenderablePools_;		   // 描画可能なコンポーネントプールのシステム
 		std::vector<std::type_index> registerOrder_;		   // 登録順を保持する配列
+		std::vector<std::function<void()>> onExitCallbacks_;   // 終了時に呼び出されるコールバック
 
 		ComponentFactory componentFactory_;
-
+		bool isEditMode_;
 	  public:
 		/// <summary>
 		/// ゲームを起動する
@@ -195,6 +197,11 @@ namespace mtgb
 		/// <returns></returns>
 		static std::span<IRenderableCP*> GetRenderableCPs();
 
+		static void SetEditMode(bool _isEditMode);
+		static bool IsEditMode();
+	  template <typename Func>
+		  requires std::is_invocable_v<Func>
+		static void OnExit(Func&& _onExit);
 	  private:
 		/// <summary>
 		/// システムの初期化をする
@@ -317,5 +324,11 @@ namespace mtgb
 			"ISystemクラスを継承していないクラスのインスタンスは取得できません。"
 		);
 		return *(dynamic_cast<SystemT*>(pSystem));
+	}
+	template <typename Func>
+		requires std::is_invocable_v<Func>
+	inline void Game::OnExit(Func&& _onExit) 
+	{
+		pInstance_->onExitCallbacks_.emplace_back(std::forward<Func>(_onExit));
 	}
 } // namespace mtgb

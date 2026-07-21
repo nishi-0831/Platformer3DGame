@@ -300,13 +300,23 @@ void mtgb::MTImGui::SetupShowFunc()
 }
 void mtgb::MTImGui::ShowListView(ShowType _show)
 {
+	ImGui::BeginChild("List", ImVec2(200, 0), true);
+	std::function<void()> selectedFunc = GetSelectedFunc(_show);
+	if (selectedFunc != nullptr)
+	{
+		ImGui::BeginChild("property", ImVec2(0, 0), true);
+		selectedFunc();
+		ImGui::EndChild();
+	}
+	ImGui::EndChild();
+}
+std::function<void()> mtgb::MTImGui::GetSelectedFunc(ShowType _show)
+{
 	auto& selectedName = imguiWindowStates_[_show].selectedName;
 	auto& queue		   = showQueues_[_show];
 
 	bool isSelected					   = false;
 	std::function<void()> selectedFunc = nullptr;
-
-	ImGui::BeginChild("List", ImVec2(200, 0), true);
 
 	while (!queue.empty())
 	{
@@ -332,17 +342,11 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 
 		queue.pop();
 	}
-	ImGui::EndChild();
-
-	// Listの横に property表示
-	ImGui::SameLine();
-
-	ImGui::BeginChild("property", ImVec2(0, 0), true);
 	if (selectedFunc && isSelected)
 	{
-		selectedFunc();
+		return selectedFunc;
 	}
-	ImGui::EndChild();
+	return nullptr;
 }
 void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 {
@@ -416,7 +420,11 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 
 	if (_showType == ShowType::SCENE_VIEW)
 	{
-		imGui.Begin(GetName(ShowType::SCENE_VIEW), &state.isOpen, ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED);
+		imGui.Begin(
+			GetName(ShowType::SCENE_VIEW),
+			&state.isOpen,
+			ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED | ImGuiRenderer::WindowFlag::NO_SCROLL
+		);
 
 		imGui.RenderSceneView();
 		imGui.SetDrawList();
@@ -439,6 +447,18 @@ void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 			Instance().sceneViewShowList_.front()();
 			Instance().sceneViewShowList_.pop();
 		}
+	}
+	else if (_show == ShowType::INSPECTOR)
+	{
+		std::function<void()> selectedFunc = Instance().GetSelectedFunc(_show);
+		ImGui::End();
+		ImGui::Begin("Property");
+		if (selectedFunc != nullptr)
+		{
+			selectedFunc();
+		}
+		ImGui::End();
+		ImGui::Begin(GetName(_show), &Instance().imguiWindowStates_[_show].isOpen);
 	}
 	else
 	{

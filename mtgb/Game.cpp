@@ -131,6 +131,16 @@ std::span<mtgb::IRenderableCP*> mtgb::Game::GetRenderableCPs()
 	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
 }
 
+void mtgb::Game::SetEditMode(bool _isEditMode) 
+{
+	pInstance_->isEditMode_ = _isEditMode;
+}
+
+bool mtgb::Game::IsEditMode()
+{
+	return pInstance_->isEditMode_;
+}
+
 void mtgb::Game::InitializeSystems()
 {
 	for (auto itr = pInstance_->registerOrder_.begin(); itr != pInstance_->registerOrder_.end(); itr++)
@@ -160,6 +170,10 @@ void mtgb::Game::RunLoopGameCycle()
 
 		if (toExit_) // 終了フラグが立っていたらサイクル離脱
 		{
+			for (std::function<void()>& onExit : pInstance_->onExitCallbacks_)
+			{
+				onExit();
+			}
 			break;
 		}
 	}

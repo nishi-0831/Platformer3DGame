@@ -8,5 +8,6 @@ enum class ShowType
 	SCENE_VIEW, // デバッグ用のゲーム画面
 	SETTINGS,	// ゲームの設定をいじる画面
 	EDITOR,
+	DOCKSPACE,
 	NONE
 };
