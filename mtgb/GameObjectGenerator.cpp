@@ -65,10 +65,10 @@ void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 
 void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 {
-	// TODO:ゲームオブジェクト作成、コンポーネントの付与のコマンドをまとめる
 	GameObject* src			  = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
 	std::string classTypeName = src->GetClassTypeName();
 
+	// 複製コマンドを作成、実行
 	DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand(
 		[classTypeName]()
 		{
@@ -82,7 +82,7 @@ void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
 void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
 {
 	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-
+	// 削除コマンドを作成、実行
 	DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }

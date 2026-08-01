@@ -77,5 +77,5 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<SceneSystem>(SystemUpdateType::FRAME);
 
-	Game::System<SceneSystem>().Move<StageEditScene>();
+	Game::System<SceneSystem>().Move<TitleScene>();
 }

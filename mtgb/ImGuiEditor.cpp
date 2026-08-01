@@ -16,6 +16,7 @@
 #include "MTImGui.h"
 #include "../Source/Scenes/SampleScene.h"
 #include "../Source/StageEditScene.h"
+#include "../Source/TitleScene.h"
 
 static nlohmann::json GetStageJson(std::filesystem::path _filePath)
 {
@@ -305,6 +306,13 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			{
 				SaveCopyMapDataAs();
 			}
+			if (ImGui::MenuItem("New Scene"))
+			{
+				Game::System<SceneSystem>().Move<StageEditScene>();
+				editingStagePath_.clear();
+				tmpStageData_.clear();
+				Game::SetEditMode(true);
+			}
 			ImGui::EndMenu();
 		}
 		if (ImGui::BeginMenu("GameObject"))
@@ -337,6 +345,10 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		ImGui::EndDisabled();
 
+		if (ImGui::Button("Move To TitleScene"))
+		{
+			Game::System<SceneSystem>().Move<TitleScene>();
+		}
 		ImGui::EndMenuBar();
 	}
 }

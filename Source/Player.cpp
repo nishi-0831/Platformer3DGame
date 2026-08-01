@@ -5,16 +5,11 @@
 #include "ResultScene.h"
 #include "GameEvents.h"
 #include <algorithm>
-namespace
-{
-	float speed		 = 5.0f;
-	float jumpHeight = 5.0f;
-} // namespace
 
 Player::Player()
 	: GameObject(GameObjectBuilder()
 					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-					 .SetPosition({ 0, 5, 10 })
+					 .SetPosition({ 0, 1, 0 })
 					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
 	, ImGuiShowable(ShowType::INSPECTOR, GetEntityId())
@@ -34,6 +29,8 @@ Player::Player()
 	, jumpController_ { GetEntityId() }
 	, walkSmokeInterval_ { 0.3f }
 	, walkSmokeElapsedTime_ { 0.0f }
+	, jumpHeight_ { 5.0f }
+	, moveSpeed_ { 5.0f }
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -55,7 +52,7 @@ Player::Player()
 
 	WinCtxRes::Get<CameraResource>(WindowContext::FIRST).SetHCamera(hCamera);
 
-	// ã‚´ãƒ¼ãƒ«ã‚¤ãƒ™ãƒ³ãƒˆã‚’è³¼èª­
+	// ƒS[ƒ‹ƒCƒxƒ“ƒg‚ğw“Ç
 	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Subscribe(
 		[this](const PlayerReachedGoalEvent& _event)
 		{
@@ -70,19 +67,27 @@ Player::~Player() {}
 
 void Player::Update()
 {
+	// ŠÛ‰e‚ğ—‚Æ‚·ˆÊ’u‚ğw’è‚·‚é
 	Game::System<ShadowSettings>().SetCaster(GetEntityId());
+	// ƒI[ƒfƒBƒIƒŠƒXƒi[‚ÌˆÊ’u‚ğw’è‚·‚é
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
 
+	// —Ís‚«‚½ó‘ÔAŸ—˜ó‘Ô‚Å‚È‚¢ê‡
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
+		// À•WXV
 		UpdatePosition();
+		// ƒWƒƒƒ“ƒvƒ{ƒ^ƒ“‰Ÿ‰ºˆ—
 		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
 			if (pRigidBody_->isGround_)
 			{
-				jumpController_.StartJump(jumpHeight);
+				// ƒWƒƒƒ“ƒvŠJn
+				jumpController_.StartJump(jumpHeight_);
+				// ƒWƒƒƒ“ƒv‚ÌSE
 				Game::System<Audio>().Play("Jump");
 
+				// ƒWƒƒƒ“ƒv‚Ì‰ŒƒGƒtƒFƒNƒg
 				Matrix4x4 worldMat;
 				pTransform_->GenerateWorldMatrix(&worldMat);
 				EffectParameters params;
@@ -91,6 +96,7 @@ void Player::Update()
 				Game::System<EffectManager>().Play("JumpSmoke", params);
 			}
 		}
+		// ƒWƒƒƒ“ƒvƒ{ƒ^ƒ“‚ğ—£‚µ‚½ˆ—
 		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
 		{
 			if (pRigidBody_->IsJumping())
@@ -98,14 +104,15 @@ void Player::Update()
 				jumpController_.ReleaseButton();
 			}
 		}
+		// p¨XV
 		UpdateRotate();
 	}
-
+	// ƒAƒjƒ[ƒVƒ‡ƒ“‚ÌƒXƒe[ƒgXV
 	state_.Update();
-
+	// ƒWƒƒƒ“ƒvˆ—‚ÌXV
 	jumpController_.Update();
 
-	// ãƒ€ãƒ¡ãƒ¼ã‚¸ã‚’å—ã‘ãŸå¾Œã®ç„¡æ•µæ™‚é–“
+	// ƒ_ƒ[ƒW‚ğó‚¯‚½Œã‚Ì–³“GŠÔ
 	if (isInvincible_)
 	{
 		elapsedInvincibilityTime_ += Time::DeltaTimeF();
@@ -122,7 +129,7 @@ void Player::Update()
 void Player::InitializeState()
 {
 	animController_ = Fbx::GetAnimationController(pMeshRenderer_->meshHandle);
-	massert(animController_.has_value() && "Playerã®ã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©å–å¾—ã«å¤±æ•—");
+	massert(animController_.has_value() && "Player‚ÌƒAƒjƒ[ƒVƒ‡ƒ“ƒRƒ“ƒgƒ[ƒ‰æ“¾‚É¸”s");
 
 	state_
 		.OnAnyUpdate(
@@ -135,6 +142,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// IDLEó‘Ô‚Ìˆ—
 		.OnStart(
 			STATE::IDLE,
 			[this]
@@ -146,11 +154,13 @@ void Player::InitializeState()
 			STATE::IDLE,
 			[this]
 			{
+				// +Y•ûŒü‚ÉˆÚ“®‚µ‚Ä‚¢‚éê‡AƒWƒƒƒ“ƒvó‘Ô‚É‘JˆÚ
 				if (pRigidBody_->velocity_.y > 0.0f)
 				{
 					state_.Change(STATE::JUMP);
 					return;
 				}
+				// …•½•ûŒü‚ÉˆÚ“®‚µ‚Ä‚¢‚éê‡A‘–‚éó‘Ô‚É‘JˆÚ
 				if (GetMoveDir().Size() != 0)
 				{
 					state_.Change(STATE::RUN);
@@ -158,6 +168,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// RUNó‘Ô‚Ìˆ—
 		.OnStart(
 			STATE::RUN,
 			[this]
@@ -170,27 +181,33 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
+				// ’â~‚µ‚Ä‚¢‚é‚È‚çIDLE‚É‘JˆÚ
 				if (pRigidBody_->velocity_.Size() == 0.0f)
 				{
 					state_.Change(STATE::IDLE);
 					return;
 				}
+				// +Y•ûŒü‚ÉˆÚ“®‚µ‚Ä‚¢‚éê‡AƒWƒƒƒ“ƒvó‘Ô‚É‘JˆÚ
 				if (pRigidBody_->velocity_.y > 0.0f)
 				{
 					state_.Change(STATE::JUMP);
 					return;
 				}
+				// -Y•ûŒü‚ÉˆÚ“®‚µ‚Ä‚¢‚éê‡A—‰ºó‘Ô‚É‘JˆÚ
 				if (pRigidBody_->velocity_.y < 0.0f)
 				{
 					state_.Change(STATE::FALL);
 					return;
 				}
 
+				// •à‚¢‚Ä‚¢‚é‚Æ‚«‚Ì‰ŒƒGƒtƒFƒNƒg‚ğ”­¶‚³‚¹‚é
 				walkSmokeElapsedTime_ += Time::DeltaTimeF();
 				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
 				{
 					EffectParameters params;
+					// ƒ‹[ƒv‚È‚µ
 					params.isLoop = false;
+					// ƒGƒtƒFƒNƒg‚Ì”­¶ˆÊ’u‚ğƒvƒŒƒCƒ„[‚ÌÀ•W‚Éİ’è
 					Matrix4x4 worldMat;
 					pTransform_->GenerateWorldMatrix(&worldMat);
 					params.worldMat = worldMat;
@@ -200,6 +217,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// JUMPó‘Ô‚Ìˆ—
 		.OnStart(
 			STATE::JUMP,
 			[this]
@@ -211,11 +229,13 @@ void Player::InitializeState()
 			STATE::JUMP,
 			[this]
 			{
+				// ƒWƒƒƒ“ƒvƒAƒjƒ[ƒVƒ‡ƒ“‚ªI—¹‚µ‚½‚ç—‰ºó‘Ô‚É‘JˆÚ
 				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
 				{
 					state_.Change(STATE::FALL);
 					return;
 				}
+				// İ’u‚µ‚Ä‚¢‚é‚È‚çIDLE‚É‘JˆÚ
 				if (pRigidBody_->isGround_)
 				{
 					state_.Change(STATE::IDLE);
@@ -223,6 +243,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// FALLó‘Ô‚Ìˆ—
 		.OnStart(
 			STATE::FALL,
 			[this]
@@ -234,6 +255,7 @@ void Player::InitializeState()
 			STATE::FALL,
 			[this]
 			{
+				// Ú’n‚µ‚Ä‚¢‚é‚È‚çIDLE‚É‘JˆÚ
 				if (pRigidBody_->isGround_)
 				{
 					state_.Change(STATE::IDLE);
@@ -261,12 +283,14 @@ void Player::Draw() const {}
 
 void Player::Start()
 {
+	// ƒXƒe[ƒgXVˆ—‚Ì‰Šú‰»
 	InitializeState();
 	state_.Change(STATE::IDLE);
 	pHPViewer_ = Instantiate<HPViewer>(hp_);
 
-	animController_.value().SetEventCallback(
-		"Footstep",
+	// ‘«‰¹–Â‚ç‚·ƒR[ƒ‹ƒoƒbƒN‚ğİ’è
+	animController_->SetEventCallback(
+		"Footstep", // ƒCƒxƒ“ƒg–¼
 		[this](const AnimationEvent& _evt)
 		{
 			OnFootstep(_evt);
@@ -303,15 +327,15 @@ Vector3 Player::GetMoveDir()
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
-	// å…¥åŠ›æ–¹å‘
+	// “ü—Í•ûŒü
 	Vector3 inputDir { axis.x, 0.0f, -axis.y };
 
-	// ã‚«ãƒ¡ãƒ©ã®å›è»¢è¡Œåˆ—ã‚’å–å¾—
+	// ƒJƒƒ‰‚Ì‰ñ“]s—ñ‚ğæ“¾
 	Matrix4x4 cameraRotMat;
 	pCameraTransform_->GenerateWorldRotationMatrix(&cameraRotMat);
-	// å…¥åŠ›æ–¹å‘ã‚’ã‚«ãƒ¡ãƒ©ã®å‘ãã ã‘å›è»¢
+	// “ü—Í•ûŒü‚ğƒJƒƒ‰‚ÌŒü‚«‚¾‚¯‰ñ“]
 	Vector3 dir = inputDir * cameraRotMat;
-	// Yæˆåˆ†ã‚’æ¨ã¦ãŸXZæˆåˆ†ã®ã¿å–å¾—
+	// Y¬•ª‚ğÌ‚Ä‚½XZ¬•ª‚Ì‚İæ“¾
 	Vector3 horizontalDir = Vector3 { dir.x, 0.0f, dir.z };
 	return Vector3::Normalize(horizontalDir);
 }
@@ -322,7 +346,7 @@ void Player::UpdatePosition()
 
 	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
 	{
-		Vector3 movement = moveDir * speed;
+		Vector3 movement = moveDir * moveSpeed_;
 
 		velocity.x = movement.x;
 		velocity.z = movement.z;
@@ -331,8 +355,8 @@ void Player::UpdatePosition()
 	{
 		// -------------------------------------------------------
 		// WARNING:
-		// å…¥åŠ›ãŒãªã„å ´åˆã€XZã®é€Ÿåº¦ã‚’ã‚¼ãƒ­ã«ã—ã¦ã„ã‚‹!!!!
-		// å…¥åŠ›ä»¥å¤–ã§é€Ÿåº¦ã‚’å¤‰ãˆã‚‹å ´åˆã¯ä¿®æ­£!!!!
+		// “ü—Í‚ª‚È‚¢ê‡AXZ‚Ì‘¬“x‚ğƒ[ƒ‚É‚µ‚Ä‚¢‚é!!!!
+		// “ü—ÍˆÈŠO‚Å‘¬“x‚ğ•Ï‚¦‚éê‡‚ÍC³!!!!
 		// -------------------------------------------------------
 		velocity.x = 0.0f;
 		velocity.z = 0.0f;
@@ -349,14 +373,17 @@ void Player::UpdateRotate()
 
 void Player::OnCollisionEnter(EntityId _entityId)
 {
+	// _entityId‚ÉŠY“–‚·‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª‘¶İ‚·‚é‚©Šm”F
 	GameObject* otherObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	if (!otherObj)
 		return;
 
+	// _entityId‚ÉŠY“–‚·‚éƒAƒNƒ^[‚ğæ“¾
 	IActor* pOtherActor = Game::System<ActorManager>().GetActor(_entityId);
 	if (pOtherActor == nullptr)
 		return;
 
+	// Õ“Ë‚µ‚½ƒGƒ“ƒeƒBƒeƒB‚Ìƒgƒ‰ƒ“ƒXƒtƒH[ƒ€æ“¾
 	Transform& otherTransform = Transform::Get(_entityId);
 	bool isStomping			  = (pTransform_->position.y > otherTransform.position.y);
 
@@ -381,10 +408,10 @@ void Player::OnHitSide(IActor* _pOther) {}
 
 void Player::TakeDamage(int _damage)
 {
-	// ç„¡æ•µãªã‚‰ãƒ€ãƒ¡ãƒ¼ã‚¸å‡¦ç†ã¯è¡Œã‚ãªã„
+	// –³“G‚È‚çƒ_ƒ[ƒWˆ—‚Ís‚í‚È‚¢
 	if (isInvincible_)
 		return;
-	// è² ã®å€¤ã¯ç„¡è¦–
+	// •‰‚Ì’l‚Í–³‹
 	if (_damage <= 0)
 		return;
 
@@ -395,20 +422,22 @@ void Player::TakeDamage(int _damage)
 		state_.Change(STATE::DYING);
 		pRigidBody_->velocity_ = Vector3::Zero();
 
-		// ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼ã®HPãŒ0ã«ãªã£ãŸã“ã¨ã‚’é€šçŸ¥
+		// ƒvƒŒƒCƒ„[‚ÌHP‚ª0‚É‚È‚Á‚½‚±‚Æ‚ğ’Ê’m
 		PlayerHpReachedZeroEvent event { .playerEntityId = GetEntityId() };
 		Game::System<EventManager>().GetEvent<PlayerHpReachedZeroEvent>().Invoke(event);
 	}
 
 	pHPViewer_->TakeDamage(_damage);
 
-	isInvincible_			= true;
+	// ˆê’èŠÔ–³“G‚É‚·‚é
+	isInvincible_ = true;
+	// ƒvƒŒƒCƒ„[‚ğ“_–Å‚³‚¹‚é
 	hTimerChangeVisibility_ = Timer::AddInterval(
 		changeVisibilitySpan_,
 		[this]
 		{
 			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
 		},
-		true // firstCall: å³åº§ã«å‡¦ç†ã‚’å‘¼ã¶
+		true // firstCall: ‘¦À‚Éˆ—‚ğŒÄ‚Ô
 	);
 }

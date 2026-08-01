@@ -101,6 +101,7 @@ void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, boo
 
 void mtgb::FbxAnimationController::UpdateFrame()
 {
+	// 現在のクリップが未設定、再生中でない場合は処理を行わない
 	if (pCurrentClip_ == nullptr)
 		return;
 
@@ -111,6 +112,8 @@ void mtgb::FbxAnimationController::UpdateFrame()
 
 	int startFrame = pCurrentClip_->startFrame;
 	int endFrame   = pCurrentClip_->endFrame;
+
+	// 再生範囲を超えた場合は、ループまたは終了状態に遷移する
 
 	if (currentFrame_ < startFrame)
 	{
@@ -138,6 +141,7 @@ void mtgb::FbxAnimationController::UpdateFrame()
 			isFinished_	  = true;
 		}
 	}
+	// 現フレームに該当するイベントを確認する
 	CheckEvents();
 }
 

@@ -6,7 +6,6 @@
 #include "HPViewer.h"
 #include "JumpController.h"
 
-
 class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
 {
   public:
@@ -64,4 +63,6 @@ class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActo
 	float walkSmokeInterval_;
 	// 煙のエフェクトを出す間隔を計る経過時間
 	float walkSmokeElapsedTime_;
+	float jumpHeight_;
+	float moveSpeed_;
 };
