@@ -179,11 +179,12 @@ void mtgb::ImGuiEditorCamera::Update()
 void mtgb::ImGuiEditorCamera::CreateCamera()
 {
 	// カメラに使うGameObject作成
-	GameObject* pCamera = new GameObject(GameObjectBuilder()
+	GameObject* pCamera		= new GameObject(GameObjectBuilder()
 											 .SetPosition({ 0, 0, 0 })
 											 .SetRotate(Quaternion::Euler(INIT_ANGLE))
 											 .SetName("EditorCamera")
 											 .Build());
+	pCamera->isInspectable_ = false;
 	// シーンに登録
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 

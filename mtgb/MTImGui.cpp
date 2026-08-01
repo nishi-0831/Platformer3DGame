@@ -67,7 +67,6 @@ void mtgb::MTImGui::Initialize()
 
 void mtgb::MTImGui::Update()
 {
-
 	Instance().updatingImGuiShowable_ = true;
 
 	for (ImGuiShowable* obj : Instance().showableObjs_)
@@ -211,16 +210,13 @@ mtgb::MTImGui& mtgb::MTImGui::Instance()
 	static MTImGui instance;
 	return instance;
 }
-mtgb::MTImGui::MTImGui() {}
+mtgb::MTImGui::MTImGui()
+	: inspectedObjectName_ { "" }
+{
+}
 mtgb::MTImGui::~MTImGui()
 {
-	for (auto& queue : showQueues_)
-	{
-		while (queue.second.empty() == false)
-		{
-			queue.second.pop();
-		}
-	}
+	ClearShowQueue();
 
 	showQueues_.clear();
 }
@@ -298,6 +294,16 @@ void mtgb::MTImGui::SetupShowFunc()
 		}
 	);
 }
+void mtgb::MTImGui::ClearShowQueue()
+{
+	for (auto& queue : Instance().showQueues_)
+	{
+		while (queue.second.empty() == false)
+		{
+			queue.second.pop();
+		}
+	}
+}
 void mtgb::MTImGui::ShowListView(ShowType _show)
 {
 	ImGui::BeginChild("List", ImVec2(200, 0), true);
@@ -368,14 +374,36 @@ void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
 	if (selectedEntityId == INVALID_ENTITY)
 		return;
 
-	for (ImGuiShowable* obj : Instance().showableObjs_)
+	GameObject* selectedObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
+	if (selectedObj == nullptr)
+		return;
+	Instance().inspectedObjectName_ = selectedObj->GetName();
+}
+void mtgb::MTImGui::ShowInspector()
+{
+	std::list<GameObject*> gameObjects;
+	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjects);
+	ImGui::Begin("Inspector");
+	GameObject* selectedObj = nullptr;
+	for (auto obj : gameObjects)
 	{
-		if (selectedEntityId == obj->targetEntityId_)
+		if (obj->isInspectable_ == false)
+			continue;
+		if (ImGui::Selectable(obj->GetName().c_str()) || Instance().inspectedObjectName_ == obj->GetName())
 		{
-			Instance().imguiWindowStates_[ShowType::INSPECTOR].selectedName = obj->displayName_;
-			Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId		= obj->targetEntityId_;
+			selectedObj						= obj;
+			Instance().inspectedObjectName_ = obj->GetName();
 		}
 	}
+	ImGui::End();
+	ImGui::Begin("Property");
+	if (selectedObj != nullptr)
+	{
+		selectedObj->ShowImGui();
+		GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
+		Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
+	}
+	ImGui::End();
 }
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
@@ -447,18 +475,6 @@ void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 			Instance().sceneViewShowList_.front()();
 			Instance().sceneViewShowList_.pop();
 		}
-	}
-	else if (_show == ShowType::INSPECTOR)
-	{
-		std::function<void()> selectedFunc = Instance().GetSelectedFunc(_show);
-		ImGui::End();
-		ImGui::Begin("Property");
-		if (selectedFunc != nullptr)
-		{
-			selectedFunc();
-		}
-		ImGui::End();
-		ImGui::Begin(GetName(_show), &Instance().imguiWindowStates_[_show].isOpen);
 	}
 	else
 	{
@@ -575,10 +591,4 @@ void mtgb::MTImGui::DrawCone(
 		int nextIdx = (i + 1) % _segments;
 		DrawLine(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);
 	}
-}
-
-mtgb::EntityId mtgb::MTImGui::GetSelectedEntityId()
-{
-	EntityId id = Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId;
-	return id;
 }

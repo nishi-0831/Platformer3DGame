@@ -5,13 +5,14 @@ unsigned int mtgb::CircularSaw::generateCounter_ { 0 };
 
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
-	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pPillarTransform_ { nullptr }
+	, pPillarMeshRenderer_ { nullptr }
+	, pSaw_ { nullptr }
 	, pCollider_ { Component<Collider>() }
 	, sawOffset_ { 5.0f }
 	, rotateAngleSec_ { 45.0f }
-	, pSaw_ {nullptr}
 {
 	pTransform_->position.z = -5.0f;
 
@@ -23,7 +24,6 @@ mtgb::CircularSaw::CircularSaw()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 }
 
 mtgb::CircularSaw::~CircularSaw()
@@ -44,7 +44,11 @@ void mtgb::CircularSaw::Update()
 
 void mtgb::CircularSaw::Draw() const {}
 
-void mtgb::CircularSaw::ShowImGui() {}
+void mtgb::CircularSaw::ShowImGui()
+{
+	GameObject::ShowImGui();
+	ImGui::InputFloat("RotateAngleSec", &rotateAngleSec_);
+}
 
 void mtgb::CircularSaw::Start()
 {
@@ -78,7 +82,6 @@ void mtgb::CircularSaw::Start()
 
 mtgb::Saw::Saw()
 	: GameObject()
-	, ImGuiShowable(GetEntityId())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
@@ -114,7 +117,8 @@ void mtgb::Saw::Start()
 
 void mtgb::Saw::ShowImGui()
 {
-	MTImGui::ShowComponents(Entity::entityId_);
+	GameObject::ShowImGui();
+	ImGui::InputFloat("RotateAngleSec", &rotateAngleSec_);
 }
 
 void mtgb::Saw::OnStomped(IActor* _pOther)

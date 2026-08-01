@@ -6,7 +6,7 @@
 #include "HPViewer.h"
 #include "JumpController.h"
 
-class Player : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
+class Player : public mtgb::GameObject, public IActor
 {
   public:
 	Player();

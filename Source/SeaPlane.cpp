@@ -5,7 +5,6 @@ unsigned int SeaPlane::generateCounter_ { 0 };
 
 SeaPlane::SeaPlane()
 	: GameObject()
-	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pCollider_ { Component<Collider>() }
@@ -21,7 +20,6 @@ SeaPlane::SeaPlane()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(SeaPlane));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 }
 
 SeaPlane::~SeaPlane() {}
@@ -29,11 +27,5 @@ SeaPlane::~SeaPlane() {}
 void SeaPlane::Update() {}
 
 void SeaPlane::Draw() const {}
-
-void SeaPlane::ShowImGui()
-{
-	MTImGui::ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%lld", Entity::entityId_);
-}
 
 void SeaPlane::Start() {}

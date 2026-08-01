@@ -7,7 +7,6 @@ unsigned int mtgb::Box3D::generateCounter_ { 0 };
 
 mtgb::Box3D::Box3D()
 	: GameObject()
-	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pCollider_ { Component<Collider>() }
@@ -22,7 +21,6 @@ mtgb::Box3D::Box3D()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 }
 
 mtgb::Box3D::~Box3D() {}
@@ -33,7 +31,7 @@ void mtgb::Box3D::Draw() const {}
 
 void mtgb::Box3D::ShowImGui()
 {
-	MTImGui::ShowComponents(Entity::entityId_);
+	GameObject::ShowImGui();
 	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
