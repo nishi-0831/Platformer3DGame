@@ -308,7 +308,12 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			}
 			if (ImGui::MenuItem("New Scene"))
 			{
-				Game::System<SceneSystem>().Move<StageEditScene>();
+				std::filesystem::path filePath("default.json");
+				if (std::filesystem::exists(filePath))
+				{
+					Game::System<SceneSystem>().Move<StageEditScene>(GetStageJson(filePath));
+				}
+
 				editingStagePath_.clear();
 				tmpStageData_.clear();
 				Game::SetEditMode(true);
