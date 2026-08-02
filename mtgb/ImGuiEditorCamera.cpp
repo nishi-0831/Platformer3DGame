@@ -20,6 +20,7 @@
 #include <algorithm>
 #include "Debug.h"
 #include <d3d11.h>
+#include "Mathf.h"
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -175,6 +176,14 @@ void mtgb::ImGuiEditorCamera::Update()
 	{
 		sCameraOperation_.Change(operation);
 	}
+	if (pCameraTransform_ == nullptr)
+		return;
+	DirectX::XMVECTOR forward		= DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+	DirectX::XMVECTOR rotatedVector = DirectX::XMVector3Rotate(forward, pCameraTransform_->rotate);
+
+	Mathf::SphericalCoord coord = Mathf::CartesianToSpherical(DirectX::XMVector4Normalize(rotatedVector));
+	polarAngleRad_				= coord.theta;
+	azimuthalAngleRad_			= coord.phi;
 }
 
 void mtgb::ImGuiEditorCamera::CreateCamera()

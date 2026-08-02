@@ -11,6 +11,8 @@
 #include "Entity.h"
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
+#include "SceneSystem.h"
+
 void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 {
 	if (!pTargetTransform_)
@@ -29,7 +31,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
-
+	DrawViewCube();
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		// 編集されたworldMatからposition,rotation,scaleに分解
@@ -60,6 +62,44 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
 	}
 	ImGui::PopID();
+}
+
+void mtgb::ImGuizmoManipulator::DrawViewCube()
+{
+	ImVec2 pos = ImGui::GetWindowPos();
+	// ギズモ表示
+	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
+	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImVec2 viewGuizmoPos(pos.x + displaySize.x - viewGuizmoSize_.x, pos.y + viewGuizmoSize_.y);
+
+	ImGuizmo::ViewManipulate(
+		viewMat_,
+		snapDistanceFromCamera_,
+		viewGuizmoPos,
+		viewGuizmoSize_,
+		IM_COL32(40, 40, 40, 255)
+	);
+
+	if (ImGuizmo::IsUsingViewManipulate())
+	{
+		using namespace DirectX;
+		memcpy(&float4x4_, viewMat_, sizeof(viewMat_));
+		viewMatrix4x4_		 = XMLoadFloat4x4(&float4x4_);
+		XMMATRIX worldMatrix = XMMatrixTranspose(XMMatrixInverse(nullptr, viewMatrix4x4_));
+
+		XMVECTOR outScale;
+		XMVECTOR outPosition;
+
+		Transform& cameraTransform = Game::System<TransformCP>().Get(
+			Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
+		);
+		// 行列を分解
+		XMMatrixDecompose(&outScale, &cameraTransform.rotate.v, &outPosition, worldMatrix);
+		cameraTransform.position = { XMVectorGetX(outPosition) + cameraTransform.position.x,
+									 XMVectorGetY(outPosition) + cameraTransform.position.y,
+									 XMVectorGetZ(outPosition) + cameraTransform.position.z };
+	}
 }
 
 void mtgb::ImGuizmoManipulator::SubscribeEvents()
@@ -99,6 +139,7 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	pTargetTransform_->GenerateWorldMatrix(&worldMatrix4x4);
 	Game::System<mtgb::CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
 	Game::System<mtgb::CameraSystem>().GetProjMatrix(&projMatrix4x4_);
+	viewMatrix4x4_ = DirectX::XMMatrixTranspose(viewMatrix4x4_);
 
 	// ワールド行列
 	DirectX::XMStoreFloat4x4(&float4x4_, worldMatrix4x4);
@@ -120,6 +161,8 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	, isUsing_ { false }
 	, wasUsing_ { false }
 	, pTargetTransform_ { nullptr }
+	, viewGuizmoSize_ { 75.0f, 75.0f }
+	, snapDistanceFromCamera_ { 10.0f }
 {
 	SubscribeEvents();
 }
