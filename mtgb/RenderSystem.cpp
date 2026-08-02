@@ -58,7 +58,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	ImGui::End();
 
 	// Inspector表示
-	MTImGui::ShowInspector();
+	Game::System<ImGuiEditor>().ShowInspector();
 
 	// Settings表示
 	MTImGui::ShowWindow(ShowType::SETTINGS);

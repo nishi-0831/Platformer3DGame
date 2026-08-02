@@ -47,22 +47,6 @@ void mtgb::MTImGui::Initialize()
 			}
 		}
 	);
-
-	// ゲームオブジェクトが選択されたときに、それを表示対象とする
-	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[](const GameObjectSelectedEvent& _handler)
-		{
-			SelectGameObject(_handler.entityId);
-		},
-		EventScope::GLOBAL
-	);
-	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
-		[](const GameObjectCreatedEvent& _event)
-		{
-			SelectGameObject(_event.entityId);
-		},
-		EventScope::GLOBAL
-	);
 }
 
 void mtgb::MTImGui::Update()
@@ -210,10 +194,7 @@ mtgb::MTImGui& mtgb::MTImGui::Instance()
 	static MTImGui instance;
 	return instance;
 }
-mtgb::MTImGui::MTImGui()
-	: inspectedObjectName_ { "" }
-{
-}
+mtgb::MTImGui::MTImGui() {}
 mtgb::MTImGui::~MTImGui()
 {
 	ClearShowQueue();
@@ -368,43 +349,7 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 		Instance().componentShowFuncs_[typeIdx](_entityId);
 	}
 }
-void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
-{
-	EntityId selectedEntityId = _entityId;
-	if (selectedEntityId == INVALID_ENTITY)
-		return;
 
-	GameObject* selectedObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	if (selectedObj == nullptr)
-		return;
-	Instance().inspectedObjectName_ = selectedObj->GetName();
-}
-void mtgb::MTImGui::ShowInspector()
-{
-	std::list<GameObject*> gameObjects;
-	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjects);
-	ImGui::Begin("Inspector");
-	GameObject* selectedObj = nullptr;
-	for (auto obj : gameObjects)
-	{
-		if (obj->isInspectable_ == false)
-			continue;
-		if (ImGui::Selectable(obj->GetName().c_str()) || Instance().inspectedObjectName_ == obj->GetName())
-		{
-			selectedObj						= obj;
-			Instance().inspectedObjectName_ = obj->GetName();
-		}
-	}
-	ImGui::End();
-	ImGui::Begin("Property");
-	if (selectedObj != nullptr)
-	{
-		selectedObj->ShowImGui();
-		GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
-		Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
-	}
-	ImGui::End();
-}
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
 	Matrix4x4 proj, view;

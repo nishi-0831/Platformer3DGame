@@ -140,9 +140,7 @@ namespace mtgb
 		static void ChangeAllWindowOpen();
 		static void ShowLog();
 		static void ShowComponents(EntityId _entityId);
-		static void SelectGameObject(EntityId _entityId);
 		template <typename T> static void RegisterComponentViewer();
-		static void ShowInspector();
 
 	  private:
 		static MTImGui& Instance();
@@ -169,7 +167,6 @@ namespace mtgb
 		void DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness);
 		void DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness);
 		bool updatingImGuiShowable_;
-		std::string inspectedObjectName_;
 	};
 
 	template <typename T> inline void MTImGui::TypedShow(T* _target, const std::string& _name, ShowType _show)
