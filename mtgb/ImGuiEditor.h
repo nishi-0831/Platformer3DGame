@@ -35,5 +35,10 @@ namespace mtgb
 		ImGuizmoManipulator* pManipulator_;
 		std::filesystem::path editingStagePath_;
 		nlohmann::json tmpStageData_;
+
+		// グリッドの中心からの距離(グリッドの全体サイズは gridHalfExtent_ * 2)
+		float gridHalfExtent_;
+		// グリッドの分割数
+		int gridDivisionNum_;
 	};
 } // namespace mtgb

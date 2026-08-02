@@ -84,6 +84,8 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, editingStagePath_ {}
 	, tmpStageData_ {}
+	, gridHalfExtent_ { 100.0f }
+	, gridDivisionNum_ { 10 }
 {
 
 	pManipulator_ = new ImGuizmoManipulator();
@@ -136,6 +138,23 @@ void mtgb::ImGuiEditor::Update()
 	{
 		// マニピュレータが選択しているゲームオブジェクトを取得
 		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+	}
+
+	// グリッドの描画
+	int interval = (static_cast<int>(gridHalfExtent_) * 2) / gridDivisionNum_;
+	for (int i = 0; i <= gridDivisionNum_; i++)
+	{
+		float z = i * interval - gridHalfExtent_;
+		{
+			Vector3 s(gridHalfExtent_, 0, z);
+			Vector3 e(-gridHalfExtent_, 0, z);
+			MTImGui::DrawLine(s, e, 1.0f);
+		}
+		{
+			Vector3 s(z, 0, gridHalfExtent_);
+			Vector3 e(z, 0, -gridHalfExtent_);
+			MTImGui::DrawLine(s, e, 1.0f);
+		}
 	}
 }
 

@@ -408,29 +408,33 @@ void mtgb::MTImGui::ShowInspector()
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
 	Matrix4x4 proj, view;
-	Game::System<CameraSystem>().GetProjMatrix(&proj);
-	Game::System<CameraSystem>().GetViewMatrix(&view);
+	CameraSystem& cameraSystem = Game::System<CameraSystem>();
+	cameraSystem.GetProjMatrix(&proj);
+	cameraSystem.GetViewMatrix(&view);
 	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start, proj, view, viewport);
-	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir, proj, view, viewport);
+	float nearZ = cameraSystem.GetNear();
+	float farZ	= cameraSystem.GetFar();
+	auto result = ImGuiUtil::WorldToImGuiClipped(_start, _start + _dir, proj, view, viewport, nearZ, farZ);
 
-	if (p1 && p2)
+	if (result)
 	{
-		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+		ImGui::GetWindowDrawList()->AddLine(result->first, result->second, IM_COL32_WHITE, _thickness);
 	}
 }
 void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness)
 {
 	Matrix4x4 proj, view;
-	Game::System<CameraSystem>().GetProjMatrix(&proj);
-	Game::System<CameraSystem>().GetViewMatrix(&view);
+	CameraSystem& cameraSystem = Game::System<CameraSystem>();
+	cameraSystem.GetProjMatrix(&proj);
+	cameraSystem.GetViewMatrix(&view);
 	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from, proj, view, viewport);
-	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
+	float nearZ = cameraSystem.GetNear();
+	float farZ	= cameraSystem.GetFar();
+	auto result = ImGuiUtil::WorldToImGuiClipped(_from, _to, proj, view, viewport, nearZ, farZ);
 
-	if (p1 && p2)
+	if (result)
 	{
-		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+		ImGui::GetWindowDrawList()->AddLine(result->first, result->second, IM_COL32_WHITE, _thickness);
 	}
 }
 void mtgb::MTImGui::ShowWindow(ShowType _showType)
