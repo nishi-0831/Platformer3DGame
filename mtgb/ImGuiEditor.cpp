@@ -133,6 +133,10 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
+		if (InputUtil::GetKeyDown(KeyCode::F))
+		{
+			Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+		}
 	}
 	if (InputUtil::GetKeyDown(KeyCode::DELETE))
 	{

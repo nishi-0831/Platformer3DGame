@@ -33,6 +33,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, hCamera_ { INVALID_ENTITY }
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }
+	, frameSelectedDistanceScale_ { 1.2f }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
@@ -196,6 +197,39 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	// 初期角度を設定
 	polarAngleRad_	   = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
+}
+
+void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
+{
+	if (_entityId == INVALID_ENTITY)
+		return;
+	Collider* pCollider = nullptr;
+	Game::System<ColliderCP>().TryGet(pCollider, _entityId);
+
+	if (pCollider == nullptr)
+		return;
+
+	float fovRad = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
+
+	float radius = 0.0f;
+	if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
+	{
+		radius = pCollider->GetRadius();
+	}
+	if (pCollider->colliderType_ == ColliderType::TYPE_AABB || pCollider->colliderType_ == ColliderType::TYPE_OBB)
+	{
+		Vector3 extents = pCollider->GetExtents();
+		// 一番大きな値を半径とする
+		radius = (std::max)({ extents.x, extents.y, extents.z });
+	}
+	// 対象を画面に収めるために必要な距離を計算
+	float baseDistance = radius / std::sinf(fovRad / 2.0f);
+	// 倍率をかけた最終的なカメラ距離
+	float distance = baseDistance * frameSelectedDistanceScale_;
+
+	// カメラの位置を設定
+	Vector3 center				= pCollider->GetCenter() + Game::System<TransformCP>().Get(_entityId).position;
+	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
