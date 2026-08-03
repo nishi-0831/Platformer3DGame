@@ -31,7 +31,6 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
-	DrawViewCube();
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		// 編集されたworldMatからposition,rotation,scaleに分解
@@ -61,6 +60,8 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
 	}
+	DrawViewCube();
+
 	ImGui::PopID();
 }
 
@@ -73,8 +74,16 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 	ImVec2 viewGuizmoPos(pos.x + displaySize.x - viewGuizmoSize_.x, pos.y + viewGuizmoSize_.y);
 
+	using namespace DirectX;
+
+	float ident[16];
+
 	ImGuizmo::ViewManipulate(
 		viewMat_,
+		projMat_,
+		operation_,
+		mode_,
+		ident,
 		snapDistanceFromCamera_,
 		viewGuizmoPos,
 		viewGuizmoSize_,
@@ -83,10 +92,9 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 
 	if (ImGuizmo::IsUsingViewManipulate())
 	{
-		using namespace DirectX;
 		memcpy(&float4x4_, viewMat_, sizeof(viewMat_));
 		viewMatrix4x4_		 = XMLoadFloat4x4(&float4x4_);
-		XMMATRIX worldMatrix = XMMatrixTranspose(XMMatrixInverse(nullptr, viewMatrix4x4_));
+		XMMATRIX worldMatrix = XMMatrixInverse(nullptr, viewMatrix4x4_);
 
 		XMVECTOR outScale;
 		XMVECTOR outPosition;
@@ -96,9 +104,7 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 		);
 		// 行列を分解
 		XMMatrixDecompose(&outScale, &cameraTransform.rotate.v, &outPosition, worldMatrix);
-		cameraTransform.position = { XMVectorGetX(outPosition) + cameraTransform.position.x,
-									 XMVectorGetY(outPosition) + cameraTransform.position.y,
-									 XMVectorGetZ(outPosition) + cameraTransform.position.z };
+		cameraTransform.position = { XMVectorGetX(outPosition), XMVectorGetY(outPosition), XMVectorGetZ(outPosition) };
 	}
 }
 
@@ -139,7 +145,6 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	pTargetTransform_->GenerateWorldMatrix(&worldMatrix4x4);
 	Game::System<mtgb::CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
 	Game::System<mtgb::CameraSystem>().GetProjMatrix(&projMatrix4x4_);
-	viewMatrix4x4_ = DirectX::XMMatrixTranspose(viewMatrix4x4_);
 
 	// ワールド行列
 	DirectX::XMStoreFloat4x4(&float4x4_, worldMatrix4x4);
@@ -157,7 +162,7 @@ void mtgb::ImGuizmoManipulator::Calculate()
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
-	, mode_ { ImGuizmo::LOCAL }
+	, mode_ { ImGuizmo::WORLD }
 	, isUsing_ { false }
 	, wasUsing_ { false }
 	, pTargetTransform_ { nullptr }
