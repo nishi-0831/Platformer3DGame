@@ -13,7 +13,7 @@
 #include "MTImGui.h"
 #include "SceneSystem.h"
 #include "Screen.h"
-void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
+void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	if (!pTargetTransform_)
 	{
@@ -60,19 +60,19 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
 	}
-	DrawViewCube();
+	DrawViewGizmo();
 
 	ImGui::PopID();
 }
 
-void mtgb::ImGuizmoManipulator::DrawViewCube()
+void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 {
 	ImVec2 pos = ImGui::GetWindowPos();
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
-	ImVec2 viewGuizmoPos(pos.x + displaySize.x - viewGuizmoSize_.x, pos.y + viewGuizmoSize_.y);
+	ImVec2 viewGizmoPos(pos.x + displaySize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
 	Transform& cameraTransform = Game::System<TransformCP>().Get(
 		Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
 	);
@@ -87,8 +87,8 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 		mode_,
 		ident,
 		snapDistanceFromCamera_,
-		viewGuizmoPos,
-		viewGuizmoSize_,
+		viewGizmoPos,
+		viewGizmoSize_,
 		IM_COL32(40, 40, 40, 255)
 	);
 
@@ -163,13 +163,13 @@ void mtgb::ImGuizmoManipulator::Calculate()
 }
 
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
-	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
+	: ImGuiShowable("Manipulator", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
 	, mode_ { ImGuizmo::WORLD }
 	, isUsing_ { false }
 	, wasUsing_ { false }
 	, pTargetTransform_ { nullptr }
-	, viewGuizmoSize_ { 75.0f, 75.0f }
+	, viewGizmoSize_ { 75.0f, 75.0f }
 	, snapDistanceFromCamera_ { 10.0f }
 {
 	SubscribeEvents();
@@ -184,7 +184,7 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
-	UpdateManpulator();
+	UpdateManipulator();
 	UpdateOperationMode();
 }
 
@@ -192,7 +192,7 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 {
 	// ImGuizmoの操作モードを指定
 
-	DrawTransformGuizmo();
+	DrawTransformGizmo();
 
 	if (ImGui::RadioButton("Translate", operation_ == ImGuizmo::TRANSLATE))
 	{
@@ -247,7 +247,7 @@ mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 	return pTargetTransform_->GetEntityId();
 }
 
-void mtgb::ImGuizmoManipulator::UpdateManpulator()
+void mtgb::ImGuizmoManipulator::UpdateManipulator()
 {
 	isUsing_ = ImGuizmo::IsUsing();
 
