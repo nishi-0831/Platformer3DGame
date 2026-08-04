@@ -12,7 +12,7 @@
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "SceneSystem.h"
-
+#include "Screen.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 {
 	if (!pTargetTransform_)
@@ -73,9 +73,11 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 	ImVec2 viewGuizmoPos(pos.x + displaySize.x - viewGuizmoSize_.x, pos.y + viewGuizmoSize_.y);
-
+	Transform& cameraTransform = Game::System<TransformCP>().Get(
+		Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
+	);
 	using namespace DirectX;
-
+	
 	float ident[16];
 
 	ImGuizmo::ViewManipulate(
@@ -97,13 +99,14 @@ void mtgb::ImGuizmoManipulator::DrawViewCube()
 		XMMATRIX worldMatrix = XMMatrixInverse(nullptr, viewMatrix4x4_);
 
 		XMVECTOR outScale;
-		XMVECTOR outPosition;
+		XMVECTOR outRot;
+		XMVECTOR outPosition;		
 
-		Transform& cameraTransform = Game::System<TransformCP>().Get(
-			Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
-		);
 		// 行列を分解
-		XMMatrixDecompose(&outScale, &cameraTransform.rotate.v, &outPosition, worldMatrix);
+		XMMatrixDecompose(&outScale, &outRot, &outPosition, worldMatrix);
+		Vector3 rotVec						   = DirectX::XMVector3Rotate( Vector3::Forward(), outRot);
+		// 上方向を+Yに指定する
+		cameraTransform.rotate = Quaternion::LookRotation(rotVec, Vector3::Up());
 		cameraTransform.position = { XMVectorGetX(outPosition), XMVectorGetY(outPosition), XMVectorGetZ(outPosition) };
 	}
 }

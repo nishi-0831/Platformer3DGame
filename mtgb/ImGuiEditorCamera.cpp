@@ -21,6 +21,7 @@
 #include "Debug.h"
 #include <d3d11.h>
 #include "Mathf.h"
+#include "QuatToEuler.h"
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -156,8 +157,11 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
+	
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
+	Vector3 euler = QuatToEuler(pCameraTransform_->rotate);
+	PropertyDisplayRegistry::Instance().ShowProperty(&euler, "euler");
 }
 
 void mtgb::ImGuiEditorCamera::Initialize() {}
@@ -184,6 +188,7 @@ void mtgb::ImGuiEditorCamera::Update()
 	Mathf::SphericalCoord coord = Mathf::CartesianToSpherical(DirectX::XMVector4Normalize(rotatedVector));
 	polarAngleRad_				= coord.theta;
 	azimuthalAngleRad_			= coord.phi;
+	polarAngleRad_				= std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 }
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
