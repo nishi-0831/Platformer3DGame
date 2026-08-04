@@ -54,5 +54,8 @@ namespace mtgb
 		bool wasUsing_;
 		bool isUsing_;
 		TransformMemento* pTargetPrevTransformMemento_;
+		// ギズモの大きさ
+		// クリップ空間(-1.0～1.0)における値を指定する。0.2なら画面の10%になる
+		float clipSpaceGizmoSize_;
 	};
 } // namespace mtgb

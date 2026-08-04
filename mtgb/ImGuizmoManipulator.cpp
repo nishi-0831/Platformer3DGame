@@ -12,7 +12,6 @@
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "SceneSystem.h"
-#include "Screen.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	if (!pTargetTransform_)
@@ -77,7 +76,7 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 		Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
 	);
 	using namespace DirectX;
-	
+
 	float ident[16];
 
 	ImGuizmo::ViewManipulate(
@@ -91,7 +90,6 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 		viewGizmoSize_,
 		IM_COL32(40, 40, 40, 255)
 	);
-
 	if (ImGuizmo::IsUsingViewManipulate())
 	{
 		memcpy(&float4x4_, viewMat_, sizeof(viewMat_));
@@ -100,13 +98,13 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 
 		XMVECTOR outScale;
 		XMVECTOR outRot;
-		XMVECTOR outPosition;		
+		XMVECTOR outPosition;
 
 		// 行列を分解
 		XMMatrixDecompose(&outScale, &outRot, &outPosition, worldMatrix);
-		Vector3 rotVec						   = DirectX::XMVector3Rotate( Vector3::Forward(), outRot);
+		Vector3 rotVec = DirectX::XMVector3Rotate(Vector3::Forward(), outRot);
 		// 上方向を+Yに指定する
-		cameraTransform.rotate = Quaternion::LookRotation(rotVec, Vector3::Up());
+		cameraTransform.rotate	 = Quaternion::LookRotation(rotVec, Vector3::Up());
 		cameraTransform.position = { XMVectorGetX(outPosition), XMVectorGetY(outPosition), XMVectorGetZ(outPosition) };
 	}
 }
@@ -171,6 +169,7 @@ mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	, pTargetTransform_ { nullptr }
 	, viewGizmoSize_ { 75.0f, 75.0f }
 	, snapDistanceFromCamera_ { 10.0f }
+	, clipSpaceGizmoSize_ { 0.15f }
 {
 	SubscribeEvents();
 }
@@ -184,6 +183,9 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
+	ImGuizmo::AllowAxisFlip(false);
+	ImGuizmo::SetGizmoSizeClipSpace(clipSpaceGizmoSize_);
+
 	UpdateManipulator();
 	UpdateOperationMode();
 }
