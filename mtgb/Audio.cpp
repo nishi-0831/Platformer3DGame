@@ -133,19 +133,19 @@ void mtgb::Audio::Update()
 void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {
 	WaveData* waveData = new WaveData(_filePath, pXAudio2_);
-	std::vector<Source> sources;
+	std::vector<AudioSource> sources;
 	X3DAUDIO_EMITTER pX3DEmitter;
 	pX3DEmitter.pVolumeCurve		= &volumeCurve_;
 	pX3DEmitter.CurveDistanceScaler = attenuationVolumeDistance_;
 	pX3DEmitter.ChannelCount		= 2;
 	pX3DEmitter.pLFECurve			= nullptr;
 
-	for (int i = 0; i < POOL_COUNT; i++)
+	for (int i = 0; i < SOURCE_VOICE_POOL_SIZE; i++)
 	{
 		IXAudio2SourceVoice* sourceVoice = nullptr;
 		pXAudio2_->CreateSourceVoice(&sourceVoice, &waveData->waveFormat);
 
-		sources.emplace_back(Source { AudioEmitter { pX3DEmitter, INVALID_ENTITY }, sourceVoice });
+		sources.emplace_back(AudioSource { AudioEmitter { pX3DEmitter, INVALID_ENTITY }, sourceVoice });
 	}
 	waveDataMap_.emplace(_soundName, *waveData);
 	sourceMap_.emplace(_soundName, sources);
@@ -167,7 +167,7 @@ void mtgb::Audio::SetEmitter(EntityId _id, std::string_view _soundName, int _han
 	if (itr == sourceMap_.end())
 		return;
 
-	std::vector<Source>& sources = itr->second;
+	std::vector<AudioSource>& sources = itr->second;
 	if (_handle < 0 || _handle >= sources.size())
 		return;
 	sources[_handle].emitter.emitterId = _id;
@@ -269,9 +269,9 @@ int mtgb::Audio::Play(std::string_view _soundName, bool _loop)
 
 	if (itr == sourceMap_.end())
 		return -1;
-	WaveData* waveData			= &waveDataMap_.find(_soundName)->second;
-	std::vector<Source>& voices = itr->second;
-	UINT complete				= 0;
+	WaveData* waveData				 = &waveDataMap_.find(_soundName)->second;
+	std::vector<AudioSource>& voices = itr->second;
+	UINT complete					 = 0;
 	for (int i = 0; i < voices.size(); i++)
 	{
 		XAUDIO2_VOICE_STATE state;
@@ -315,7 +315,7 @@ void mtgb::Audio::Stop(std::string_view _soundName, int _handle)
 
 	if (itr == sourceMap_.end())
 		return;
-	std::vector<Source>& voices = itr->second;
+	std::vector<AudioSource>& voices = itr->second;
 	if (_handle < 0 || _handle >= voices.size())
 		return;
 
@@ -329,7 +329,7 @@ void mtgb::Audio::Stop(std::string_view _soundName)
 
 	if (itr == sourceMap_.end())
 		return;
-	std::vector<Source>& voices = itr->second;
+	std::vector<AudioSource>& voices = itr->second;
 	for (auto source : voices)
 	{
 		source.pSourceVoice->Stop(0, 0);
