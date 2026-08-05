@@ -283,8 +283,6 @@ source_group("03mtgb\\System\\AssetsManager" FILES ${03mtgb__System__AssetsManag
 set(03mtgb__System__Audio
     "mtgb/Audio.cpp"
     "mtgb/Audio.h"
-    "mtgb/AudioClip.cpp"
-    "mtgb/AudioClip.h"
     "mtgb/WaveData.cpp"
     "mtgb/WaveData.h"
 )

@@ -31,8 +31,13 @@ void GameOverZone::Start()
 	pRigidBody_->OnCollisionEnter(
 		[this](EntityId _entityId)
 		{
-			IActor* pActor	  = Game::System<ActorManager>().GetActor(_entityId);
-			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
+			IActor* pActor = Game::System<ActorManager>().GetActor(_entityId);
+			if (pActor == nullptr)
+				return;
+			GameObject* pGameObj = FindGameObject(_entityId);
+			if (pGameObj == nullptr)
+				return;
+			GameObjectTag tag = pGameObj->GetTag();
 			if (tag == GameObjectTag::PLAYER)
 			{
 				// 落下イベント通知

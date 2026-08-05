@@ -87,4 +87,5 @@ class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 
 	// 踏みつけたアクターに加える力
 	float onStompedBounce_;
+	int audioSourceHandle_;
 };

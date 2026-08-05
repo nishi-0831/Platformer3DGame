@@ -48,15 +48,14 @@ mtgb::Collider& mtgb::Collider::operator=(const Collider& _other)
 	{
 		return *this;
 	}
+	IComponent::operator=(_other);
 	this->colliderType_ = _other.colliderType_;
 	this->isStatic_		= _other.isStatic_;
 	this->colliderTag_	= _other.colliderTag_;
 	this->isTrigger_	= _other.isTrigger_;
-
-	*(this->pTransform_) = *(_other.pTransform_);
-	this->center_		 = _other.center_;
-	this->radius_		 = _other.radius_;
-	this->extents_		 = _other.extents_;
+	this->center_		= _other.center_;
+	this->radius_		= _other.radius_;
+	this->extents_		= _other.extents_;
 
 	return *this;
 }
@@ -387,6 +386,7 @@ void mtgb::Collider::OnPostRestore()
 			SetExtents(extents_);
 			break;
 	}
+	pTransform_ = &Transform::Get(GetEntityId());
 }
 
 void mtgb::Collider::Reset()

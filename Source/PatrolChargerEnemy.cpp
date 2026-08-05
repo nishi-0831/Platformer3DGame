@@ -373,11 +373,12 @@ void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
 
-	Game::System<Audio>().Play("FootstepMonsterRun");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterRun");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterRun", audioSourceHandle_);
 }
 
 void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event)
 {
-	Game::System<Audio>().Play("FootstepMonsterWalk");
-	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterWalk");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk", audioSourceHandle_);
 }

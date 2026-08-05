@@ -23,6 +23,11 @@ namespace mtgb
 		X3DAUDIO_EMITTER x3DEmitter;
 		EntityId emitterId;
 	};
+	struct Source
+	{
+		AudioEmitter emitter;
+		IXAudio2SourceVoice* pSourceVoice;
+	};
 
 	class Audio : public ISystem
 	{
@@ -48,11 +53,12 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_soundName">Registerで登録した識別子</param>
 		/// <param name="_loop">ループをするか否か</param>
-		void Play(std::string_view _soundName, bool _loop = false);
+		int Play(std::string_view _soundName, bool _loop = false);
 		/// <summary>
 		/// 指定した音声の再生を停止する
 		/// </summary>
 		/// <param name="_soundName"></param>
+		void Stop(std::string_view _soundName, int _handle);
 		void Stop(std::string_view _soundName);
 		/// <summary>
 		/// 再生中の全音声を停止する
@@ -76,31 +82,25 @@ namespace mtgb
 		void SetMasterVolume(float _volume);
 
 		void SetListenerEntityId(EntityId _id);
-		void SetEmitter(EntityId _id, std::string_view _soundName);
+		void SetEmitter(EntityId _id, std::string_view _soundName, int _handle);
 
 	  private:
-		/// <summary>
-		/// 音声ファイルをロードする
-		/// </summary>
-		/// <param name="_filePath">ファイル名</param>
-		/// <returns>音声クリップ</returns>
-		AudioClip* Load(std::string_view _filePath);
-
 		void UpdateEmitter();
 		void UpdateListener();
+		void SubmitSourceVoice(IXAudio2SourceVoice* _pSrcVoice, WaveData* _pWaveData, bool _isLoop);
 
 	  private:
 		ComPtr<IXAudio2> pXAudio2_; // XAudio2のインタフェース
 		X3DAUDIO_HANDLE x3DInstance_;
 		IXAudio2MasteringVoice* pMasteringVoice_; // 主ボイス
-		std::unordered_map<std::string, AudioClip*, TransparentStringHash, TransparentStringEq> audioClipMap_;
-		std::unordered_map<std::string, AudioEmitter, TransparentStringHash, TransparentStringEq> emitterMap_;
+		std::unordered_map<std::string, WaveData, TransparentStringHash, TransparentStringEq> waveDataMap_;
+		std::unordered_map<std::string, std::vector<Source>, TransparentStringHash, TransparentStringEq> sourceMap_;
 		X3DAUDIO_LISTENER listener_;
 		// 音量減衰の度合い。曲線で定義する
 		X3DAUDIO_DISTANCE_CURVE volumeCurve_;
 		Transform* pListenerTransform_;
+		inline static constexpr int POOL_COUNT { 3 };
 		// 音量の減衰計算に使う距離。この値を1.0として音量を減衰させる
-
 		inline static constexpr int CONTROL_POINT_COUNT { 3 };
 		float attenuationVolumeDistance_;
 		float volumeControlPointCount_;
