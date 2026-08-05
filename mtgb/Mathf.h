@@ -160,9 +160,8 @@ namespace mtgb::Mathf
 		float x = _position.x;
 		float y = _position.y;
 		float z = _position.z;
+		float r = sqrtf(x * x + y * y + z * z);
 
-		return SphericalCoord { .r	   = sqrtf(x * x + y * y + z * z),
-								.theta = std::acosf(y / sqrtf(x * x + y * y + z * z)),
-								.phi   = std::signbit(z) * std::acosf(x / sqrtf(x * x + z * z)) };
+		return Mathf::SphericalCoord { .r = r, .theta = std::acosf(y / r), .phi = std::atan2f(z, x) };
 	}
 } // namespace mtgb::Mathf

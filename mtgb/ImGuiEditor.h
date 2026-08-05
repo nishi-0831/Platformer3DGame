@@ -17,6 +17,7 @@ namespace mtgb
 		void ShowImGui() override;
 
 		void ShowMenuBar();
+		void ShowInspector();
 
 	  private:
 		void SaveMapData();
@@ -32,8 +33,16 @@ namespace mtgb
 		void AddComponent(std::type_index _componentType, EntityId _entityId);
 		void ShowAddComponentDialog(EntityId _entityId);
 		void ShowGenerateGameObjectButton();
+		void SelectGameObject(EntityId _entityId);
 		ImGuizmoManipulator* pManipulator_;
 		std::filesystem::path editingStagePath_;
 		nlohmann::json tmpStageData_;
+
+		// グリッドの中心からの距離(グリッドの全体サイズは gridHalfExtent_ * 2)
+		float gridHalfExtent_;
+		// グリッドの分割数
+		int gridDivisionNum_;
+
+		std::string inspectedObjectName_;
 	};
 } // namespace mtgb

@@ -2,7 +2,7 @@
 #include <mtgb.h>
 #include <PlaneUVScroll.h>
 
-class SeaPlane : public GameObject, public ImGuiShowable
+class SeaPlane : public GameObject
 {
   public:
 	SeaPlane();
@@ -10,7 +10,6 @@ class SeaPlane : public GameObject, public ImGuiShowable
 
 	void Update() override;
 	void Draw() const override;
-	void ShowImGui() override;
 	void Start() override;
 
   private:

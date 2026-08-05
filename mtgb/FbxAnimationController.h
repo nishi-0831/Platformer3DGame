@@ -88,9 +88,10 @@ namespace mtgb
 		}
 
 	  private:
-		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
+		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq>
+			clipMap_; // アニメーション名:アニメーションクリップの連想配列
 		std::unordered_multimap<std::string, AnimationEventCallback, TransparentStringHash, TransparentStringEq>
-			eventCallbackMap_;
+			eventCallbackMap_;			 // イベント名:イベントを購読したコールバックの連想配列
 		FbxAnimationClip* pCurrentClip_; // 現在再生中のクリップ
 		float currentFrame_;			 // 現在のフレーム
 		float animationSpeed_;			 // 再生速度(倍率)

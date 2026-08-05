@@ -7,7 +7,6 @@ unsigned int Goal::generateCounter_ { 0 };
 
 Goal::Goal()
 	: GameObject()
-	, ImGuiShowable(ShowType::INSPECTOR, GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
 	, pRigidBody_ { Component<RigidBody>() }
@@ -24,7 +23,6 @@ Goal::Goal()
 
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 }
 
 Goal::~Goal()
@@ -67,12 +65,6 @@ void Goal::Start()
 }
 
 void Goal::Draw() const {}
-
-void Goal::ShowImGui()
-{
-	MTImGui::ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%lld", Entity::entityId_);
-}
 
 void Goal::OnClear()
 {

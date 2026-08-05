@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	class SerializableGameObject : public GameObject, public ImGuiShowable
+	class SerializableGameObject : public GameObject
 	{
 	  public:
 		SerializableGameObject();
@@ -11,8 +11,8 @@ namespace mtgb
 
 		void Update() override;
 		void Draw() const override;
-		void ShowImGui() override;
 		void Start() override;
+
 	  private:
 		static unsigned int generateCounter_;
 	};

@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	class Box3D : public GameObject, public ImGuiShowable
+	class Box3D : public GameObject
 	{
 	  public:
 		Box3D();

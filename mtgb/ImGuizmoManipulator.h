@@ -29,13 +29,14 @@ namespace mtgb
 		EntityId GetSelectedEntityId();
 
 	  private:
-		void UpdateManpulator();
+		void UpdateManipulator();
 		void UpdateOperationMode();
 		void GenerateCommand(const GameObjectSelectedEvent& _event);
 		void GenerateCommand(const GameObjectDeselectedEvent& _event);
 		void SubscribeEvents();
 
-		void DrawTransformGuizmo();
+		void DrawTransformGizmo();
+		void DrawViewGizmo();
 		void Calculate();
 
 		Transform* pTargetTransform_;
@@ -45,9 +46,16 @@ namespace mtgb
 		float worldMat_[16], viewMat_[16], projMat_[16];
 		Matrix4x4 worldMatrix4x4, viewMatrix4x4_, projMatrix4x4_;
 		DirectX::XMFLOAT4X4 float4x4_;
-
+		// ビューギズモ(カメラの視点を操作するのに使う立方体)のサイズ
+		ImVec2 viewGizmoSize_;
+		// カメラの方向を特定の軸にスナップさせるときに使用する基準点
+		// カメラの正面方向からこの値分伸ばした点を基準として回転する
+		float snapDistanceFromCamera_;
 		bool wasUsing_;
 		bool isUsing_;
 		TransformMemento* pTargetPrevTransformMemento_;
+		// ギズモの大きさ
+		// クリップ空間(-1.0～1.0)における値を指定する。0.2なら画面の10%になる
+		float clipSpaceGizmoSize_;
 	};
 } // namespace mtgb

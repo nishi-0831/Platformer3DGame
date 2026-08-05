@@ -25,5 +25,14 @@ namespace mtgb
 			const Matrix4x4& _view,
 			const D3D11_VIEWPORT& _viewport
 		);
+		std::optional<std::pair<ImVec2, ImVec2>> WorldToImGuiClipped(
+			const Vector3& _from,
+			const Vector3& _to,
+			const Matrix4x4& _proj,
+			const Matrix4x4& _view,
+			const D3D11_VIEWPORT& _viewport,
+			float _near,
+			float _far
+		);
 	} // namespace ImGuiUtil
 } // namespace mtgb

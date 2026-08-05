@@ -5,8 +5,9 @@ mtgb::HPViewer::HPViewer(int _hpCount)
 {
 	for (int i = 0; i < _hpCount; i++)
 	{
-		std::string name	 = std::format("HP ({})", i);
-		GameObject* pHpImage = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName(name).Build());
+		std::string name		 = std::format("HP ({})", i);
+		GameObject* pHpImage	 = new GameObject(GameObjectBuilder().SetPosition({ 0, 0, 0 }).SetName(name).Build());
+		pHpImage->isInspectable_ = false;
 		Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pHpImage);
 
 		ImageRenderer& imageRenderer = ImageRenderer::Get(pHpImage->GetEntityId());

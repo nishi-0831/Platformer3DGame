@@ -80,6 +80,7 @@ void mtgb::SceneSystem::Update()
 	// 描画処理
 	Game::System<RenderSystem>().Render(currentScene);
 
+	MTImGui::ClearShowQueue();
 	// 削除処理
 	for (auto&& itr = currentScene.pGameObjects_.begin(); itr != currentScene.pGameObjects_.end();)
 	{
