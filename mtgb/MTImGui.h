@@ -7,7 +7,7 @@
 #include "ShowType.h"
 #include "ImGuiShowable.h"
 #include "PropertyDisplayRegistry.h"
-#include <map>
+#include <unordered_map>
 #include "cmtgb.h"
 #include "GameObject.h"
 
@@ -55,8 +55,7 @@ namespace mtgb
 		/// <param name="target">表示対象のポインタ</param>
 		/// <param name="name">表示対象の名前</param>
 		/// <param name="show">表示するImGuiWindow</param>
-		template <typename T>
-		static void TypedShow(T* _target, const std::string& _name, ShowType _show = ShowType::INSPECTOR);
+		template <typename T> static void TypedShow(T* _target, const std::string& _name, ShowType _show);
 		/// <summary>
 		/// ImGuiShowable*インスタンスを登録、毎回ShowImGuiを呼ぶ
 		/// ImGuiShowableは自動で登録される
@@ -113,13 +112,8 @@ namespace mtgb
 			float _thickness = 1.0f,
 			int _segments	 = 16
 		);
-		static EntityId GetSelectedEntityId();
 		static const char* GetName(ShowType _showType)
 		{
-			if (_showType == ShowType::INSPECTOR)
-			{
-				return "Inspector";
-			}
 			if (_showType == ShowType::SCENE_VIEW)
 			{
 				return "Game View";
@@ -139,13 +133,13 @@ namespace mtgb
 			return "None";
 		}
 
+		static void ClearShowQueue();
 		static void SetWindowOpen(ShowType _showType, bool _flag);
 		static void SetAllWindowOpen(bool _flag);
 		static void ChangeWindowOpen(ShowType _showType);
 		static void ChangeAllWindowOpen();
 		static void ShowLog();
 		static void ShowComponents(EntityId _entityId);
-		static void SelectGameObject(EntityId _entityId);
 		template <typename T> static void RegisterComponentViewer();
 
 	  private:
@@ -159,14 +153,13 @@ namespace mtgb
 		/// TypedShowの_targetの型に対応する関数を登録する
 		/// </summary>
 		void SetupShowFunc();
-
 		void ShowListView(ShowType _show);
 		std::function<void()> GetSelectedFunc(ShowType _show);
 
 		std::vector<ImGuiShowable*> showableObjs_;
 
-		std::map<ShowType, ShowQueue> showQueues_;
-		std::map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
+		std::unordered_map<ShowType, ShowQueue> showQueues_;
+		std::unordered_map<ShowType, ImGuiWindowState> imguiWindowStates_; // ShowTypeごとのウィンドウの状態
 
 		std::unordered_map<std::type_index, std::function<void(EntityId)>> componentShowFuncs_;
 		std::queue<std::function<void()>> sceneViewShowList_;

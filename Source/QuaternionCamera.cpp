@@ -109,16 +109,6 @@ void mtgb::QuaternionCamera::Update()
 
 	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate.v);
 	pTransform_->position = lookAtPos_ - (toTargetDir * distance_) + lookAtPositionOffset_;
-
-	MTImGui::DirectShow(
-		[this]()
-		{
-			ImGui::InputFloat("s", &cameraEasedProgress_);
-			PropertyDisplayRegistry::Instance().ShowProperty(&pTargetRigidBody_->velocity_, "vel");
-		},
-		"lerpSpeed",
-		ShowType::INSPECTOR
-	);
 }
 
 void mtgb::QuaternionCamera::UpdateLerpSpeed()

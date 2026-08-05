@@ -25,13 +25,13 @@ mtgb::Vector3 mtgb::QuatToEuler(DirectX::XMVECTORF32 _q)
 	// ヨー(y軸)
 	if (gimbalLock)
 	{
-		num	  = 2.0f * (w * z + x * y);
-		denom = 1 - 2.0f * (w * w + z * z);
+		num	  = 2.0f * (x * z - w * y);
+		denom = 1 - 2.0f * (x * x + y * y);
 	}
 	else
 	{
-		num	  = 2.0f * (w * z - x * y);
-		denom = 1 - 2.0f * (w * w + y * y);
+		num	  = 2.0f * (w * x + w * y);
+		denom = 1 - 2.0f * (w * w + x * x);
 	}
 	yaw = std::atan2f(num, denom);
 

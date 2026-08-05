@@ -16,6 +16,7 @@
 #include "MTImGui.h"
 #include "../Source/Scenes/SampleScene.h"
 #include "../Source/StageEditScene.h"
+#include "../Source/TitleScene.h"
 
 static nlohmann::json GetStageJson(std::filesystem::path _filePath)
 {
@@ -83,6 +84,8 @@ mtgb::ImGuiEditor::ImGuiEditor()
 	: ImGuiShowable("ImGuiEditor", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, editingStagePath_ {}
 	, tmpStageData_ {}
+	, gridHalfExtent_ { 100.0f }
+	, gridDivisionNum_ { 10 }
 {
 
 	pManipulator_ = new ImGuizmoManipulator();
@@ -100,7 +103,24 @@ mtgb::ImGuiEditor::~ImGuiEditor()
 	SAFE_DELETE(pManipulator_);
 }
 
-void mtgb::ImGuiEditor::Initialize() {}
+void mtgb::ImGuiEditor::Initialize()
+{
+	// ゲームオブジェクトが選択されたときに、それを表示対象とする
+	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
+		[](const GameObjectSelectedEvent& _handler)
+		{
+			Game::System<ImGuiEditor>().SelectGameObject(_handler.entityId);
+		},
+		EventScope::GLOBAL
+	);
+	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
+		[](const GameObjectCreatedEvent& _event)
+		{
+			Game::System<ImGuiEditor>().SelectGameObject(_event.entityId);
+		},
+		EventScope::GLOBAL
+	);
+}
 
 void mtgb::ImGuiEditor::Release() {}
 
@@ -130,11 +150,32 @@ void mtgb::ImGuiEditor::Update()
 		{
 			DuplicateGameObject();
 		}
+		if (InputUtil::GetKeyDown(KeyCode::F))
+		{
+			Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+		}
 	}
 	if (InputUtil::GetKeyDown(KeyCode::DELETE))
 	{
 		// マニピュレータが選択しているゲームオブジェクトを取得
 		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+	}
+
+	// グリッドの描画
+	int interval = (static_cast<int>(gridHalfExtent_) * 2) / gridDivisionNum_;
+	for (int i = 0; i <= gridDivisionNum_; i++)
+	{
+		float z = i * interval - gridHalfExtent_;
+		{
+			Vector3 s(gridHalfExtent_, 0, z);
+			Vector3 e(-gridHalfExtent_, 0, z);
+			MTImGui::DrawLine(s, e, 1.0f);
+		}
+		{
+			Vector3 s(z, 0, gridHalfExtent_);
+			Vector3 e(z, 0, -gridHalfExtent_);
+			MTImGui::DrawLine(s, e, 1.0f);
+		}
 	}
 }
 
@@ -283,6 +324,18 @@ void mtgb::ImGuiEditor::ShowGenerateGameObjectButton()
 	ImGui::Separator();
 }
 
+void mtgb::ImGuiEditor::SelectGameObject(EntityId _entityId)
+{
+	EntityId selectedEntityId = _entityId;
+	if (selectedEntityId == INVALID_ENTITY)
+		return;
+
+	GameObject* selectedObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
+	if (selectedObj == nullptr)
+		return;
+	inspectedObjectName_ = selectedObj->GetName();
+}
+
 void mtgb::ImGuiEditor::ShowMenuBar()
 {
 	if (ImGui::BeginMenuBar())
@@ -304,6 +357,18 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			if (ImGui::MenuItem("Save Copy As.."))
 			{
 				SaveCopyMapDataAs();
+			}
+			if (ImGui::MenuItem("New Scene"))
+			{
+				std::filesystem::path filePath("default.json");
+				if (std::filesystem::exists(filePath))
+				{
+					Game::System<SceneSystem>().Move<StageEditScene>(GetStageJson(filePath));
+				}
+
+				editingStagePath_.clear();
+				tmpStageData_.clear();
+				Game::SetEditMode(true);
 			}
 			ImGui::EndMenu();
 		}
@@ -337,6 +402,45 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		ImGui::EndDisabled();
 
+		if (ImGui::Button("Move To TitleScene"))
+		{
+			Game::System<SceneSystem>().Move<TitleScene>();
+		}
 		ImGui::EndMenuBar();
 	}
+}
+
+void mtgb::ImGuiEditor::ShowInspector()
+{
+	std::list<GameObject*> gameObjects;
+	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjects);
+	ImGui::Begin("Inspector");
+	GameObject* selectedObj = nullptr;
+	for (auto obj : gameObjects)
+	{
+		// 非表示設定されているならばスキップ
+		if (obj->isInspectable_ == false)
+			continue;
+		bool selected = inspectedObjectName_ == obj->GetName();
+		// クリックされた or 表示対象として記録した名前と一致する場合
+		if (ImGui::Selectable(obj->GetName().c_str(), selected, ImGuiSelectableFlags_AllowDoubleClick) || selected)
+		{
+			// ダブルクリック時、対象を画面に収める
+			if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
+			{
+				Game::System<ImGuiEditorCamera>().FrameSelected(obj->GetEntityId());
+			}
+			selectedObj			 = obj;
+			inspectedObjectName_ = obj->GetName();
+		}
+	}
+	ImGui::End();
+	ImGui::Begin("Property");
+	if (selectedObj != nullptr)
+	{
+		selectedObj->ShowImGui();
+		GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
+		Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
+	}
+	ImGui::End();
 }

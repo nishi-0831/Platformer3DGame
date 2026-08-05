@@ -3,7 +3,7 @@
 #include "IActor.h"
 namespace mtgb
 {
-	class Saw : public GameObject, public IActor, public ImGuiShowable
+	class Saw : public GameObject, public IActor
 	{
 	  public:
 		Saw();
@@ -30,7 +30,7 @@ namespace mtgb
 
 		void TakeDamage(int _damage) override;
 	};
-	class CircularSaw : public GameObject, public ImGuiShowable
+	class CircularSaw : public GameObject
 	{
 	  public:
 		CircularSaw();

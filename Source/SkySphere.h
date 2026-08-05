@@ -3,7 +3,7 @@
 
 namespace mtgb
 {
-	class SkySphere : public GameObject, public ImGuiShowable
+	class SkySphere : public GameObject
 	{
 	  public:
 		SkySphere();
@@ -11,7 +11,6 @@ namespace mtgb
 
 		void Update() override;
 		void Draw() const override;
-		void ShowImGui() override;
 		void Start() override;
 
 	  private:

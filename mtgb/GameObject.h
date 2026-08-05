@@ -25,6 +25,7 @@ namespace mtgb
 		virtual inline void Draw() const {};
 		virtual inline void Start() {};
 		virtual inline void End() {};
+		virtual void ShowImGui();
 
 		nlohmann::json Serialize() const;
 		void Deserialize(const nlohmann::json& _json);
@@ -119,6 +120,7 @@ namespace mtgb
 			uint8_t toDestroy_ : 1; // 削除予定か
 		};
 
+		bool isInspectable_; // ImGuiのインスペクターに表示可能か
 	  protected:
 		std::string name_;
 

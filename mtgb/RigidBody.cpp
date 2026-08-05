@@ -45,6 +45,7 @@ void mtgb::RigidBody::UpdateVelocity()
 		velocity_ += Vector3::Up() * gravity * Time::DeltaTimeF();
 	}
 	pTransform_->position += velocity_ * Time::DeltaTimeF();
+	pTransform_->Compute();
 	if (FLT_EPSILON <= std::abs(velocity_.y))
 	{
 		isGround_ = false;

@@ -10,7 +10,7 @@ namespace
 }
 mtgb::ImGuiShowable::ImGuiShowable(mtgb::EntityId _entityId)
 	: targetEntityId_ { _entityId }
-	, show_ { ShowType::INSPECTOR }
+	, show_ { ShowType::NONE }
 	, scope_ { Scope::SCENE }
 {
 	MTImGui::Register(this);

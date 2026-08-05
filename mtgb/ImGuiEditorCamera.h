@@ -26,6 +26,7 @@ namespace mtgb
 
 		void Update() override;
 		void CreateCamera();
+		void FrameSelected(EntityId _entityId);
 
 	  private:
 		void DoDolly();
@@ -40,5 +41,9 @@ namespace mtgb
 		float moveSpeed_;
 
 		std::string windowName_;
+		// オブジェクトを画面の中央に表示する際の、距離に掛ける倍率
+		// ちょうど収まる距離を基準に、カメラ位置を調整するのに使う
+		// 1.0fでぴったり、1.2fで20%分さらに離れる
+		float frameSelectedDistanceScale_;
 	};
 } // namespace mtgb

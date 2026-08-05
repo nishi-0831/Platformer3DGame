@@ -4,6 +4,8 @@
 #include "Transform.h"
 #include "CameraSystem.h"
 #include "GameObjectTypeRegistry.h"
+#include "EventManager.h"
+#include "SelectionCommand.h"
 mtgb::GameScene::GameScene() {}
 
 mtgb::GameScene::~GameScene()
@@ -90,6 +92,11 @@ void mtgb::GameScene::GetGameObjects(GameObjectTag _tag, std::vector<GameObject*
 		}
 		_pFoundGameObjects->push_back(object);
 	}
+}
+
+void mtgb::GameScene::GetAllGameObjects(std::list<GameObject*>* _gameObjects)
+{
+	*_gameObjects = pGameObjects_;
 }
 
 mtgb::GameObject* mtgb::GameScene::GetGameObject(EntityId _entityId) const

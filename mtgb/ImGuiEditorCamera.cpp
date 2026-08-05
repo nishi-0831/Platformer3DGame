@@ -20,6 +20,8 @@
 #include <algorithm>
 #include "Debug.h"
 #include <d3d11.h>
+#include "Mathf.h"
+#include "QuatToEuler.h"
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -33,6 +35,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, hCamera_ { INVALID_ENTITY }
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }
+	, frameSelectedDistanceScale_ { 1.2f }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
@@ -154,8 +157,11 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
+	
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
+	Vector3 euler = QuatToEuler(pCameraTransform_->rotate);
+	PropertyDisplayRegistry::Instance().ShowProperty(&euler, "euler");
 }
 
 void mtgb::ImGuiEditorCamera::Initialize() {}
@@ -174,16 +180,26 @@ void mtgb::ImGuiEditorCamera::Update()
 	{
 		sCameraOperation_.Change(operation);
 	}
+	if (pCameraTransform_ == nullptr)
+		return;
+	DirectX::XMVECTOR forward		= DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
+	DirectX::XMVECTOR rotatedVector = DirectX::XMVector3Rotate(forward, pCameraTransform_->rotate);
+
+	Mathf::SphericalCoord coord = Mathf::CartesianToSpherical(DirectX::XMVector4Normalize(rotatedVector));
+	polarAngleRad_				= coord.theta;
+	azimuthalAngleRad_			= coord.phi;
+	polarAngleRad_				= std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 }
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
 {
 	// カメラに使うGameObject作成
-	GameObject* pCamera = new GameObject(GameObjectBuilder()
+	GameObject* pCamera		= new GameObject(GameObjectBuilder()
 											 .SetPosition({ 0, 0, 0 })
 											 .SetRotate(Quaternion::Euler(INIT_ANGLE))
 											 .SetName("EditorCamera")
 											 .Build());
+	pCamera->isInspectable_ = false;
 	// シーンに登録
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pCamera);
 
@@ -195,6 +211,39 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	// 初期角度を設定
 	polarAngleRad_	   = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
+}
+
+void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
+{
+	if (_entityId == INVALID_ENTITY)
+		return;
+	Collider* pCollider = nullptr;
+	Game::System<ColliderCP>().TryGet(pCollider, _entityId);
+
+	if (pCollider == nullptr)
+		return;
+
+	float fovRad = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
+
+	float radius = 0.0f;
+	if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
+	{
+		radius = pCollider->GetRadius();
+	}
+	if (pCollider->colliderType_ == ColliderType::TYPE_AABB || pCollider->colliderType_ == ColliderType::TYPE_OBB)
+	{
+		Vector3 extents = pCollider->GetExtents();
+		// 一番大きな値を半径とする
+		radius = (std::max)({ extents.x, extents.y, extents.z });
+	}
+	// 対象を画面に収めるために必要な距離を計算
+	float baseDistance = radius / std::sinf(fovRad / 2.0f);
+	// 倍率をかけた最終的なカメラ距離
+	float distance = baseDistance * frameSelectedDistanceScale_;
+
+	// カメラの位置を設定
+	Vector3 center				= pCollider->GetCenter() + Game::System<TransformCP>().Get(_entityId).position;
+	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
