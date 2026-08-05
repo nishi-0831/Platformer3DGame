@@ -83,6 +83,15 @@ int mtgb::FbxAnimationController::GetCurrentFrame() const
 	return static_cast<int>(currentFrame_);
 }
 
+fbxsdk::FbxAnimStack* mtgb::FbxAnimationController::GetCurrentAnimStack()
+{
+	if (pCurrentClip_)
+	{
+		return pCurrentClip_->pAnimStack;
+	}
+	return nullptr;
+}
+
 void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, bool _isLooping)
 {
 	auto itr = clipMap_.find(_clipName);

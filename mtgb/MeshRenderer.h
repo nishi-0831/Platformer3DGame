@@ -10,6 +10,11 @@
 #include "IRenderable.h"
 #include "cmtgb.h"
 #include "MeshRenderer.generated.h"
+
+namespace fbxsdk
+{
+	class FbxAnimStack;
+}
 namespace mtgb
 {
 	class MeshRendererCP;
@@ -67,6 +72,7 @@ namespace mtgb
 			return meshHandle != INVALID_HANDLE;
 		};
 		void SetFrame(int _frame);
+		void SetAnimStack(fbxsdk::FbxAnimStack* _pAnimStack);
 		[[MT_PROPERTY()]]
 		std::string meshFileName;
 		[[MT_PROPERTY(HideInEditor)]]
@@ -81,6 +87,7 @@ namespace mtgb
 
 	  private:
 		int frame_;
+		fbxsdk::FbxAnimStack* pAnimStack_;
 	};
 
 	using MeshRendererMemento = ComponentMemento<MeshRenderer, MeshRendererState>;

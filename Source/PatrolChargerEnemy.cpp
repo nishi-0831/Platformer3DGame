@@ -72,6 +72,7 @@ void PatrolChargerEnemy::Update()
 	{
 		animController_->UpdateFrame();
 		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
+		pMeshRenderer_->SetAnimStack(animController_->GetCurrentAnimStack());
 	}
 	state_.Update();
 }

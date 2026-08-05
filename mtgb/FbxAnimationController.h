@@ -11,7 +11,8 @@
 namespace fbxsdk
 {
 	class FbxScene;
-}
+	class FbxAnimStack;
+} // namespace fbxsdk
 namespace mtgb
 {
 	class FbxAnimationController
@@ -38,7 +39,11 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		int GetCurrentFrame() const;
-
+		/// <summary>
+		/// 現在のアニメーションスタックを取得
+		/// </summary>
+		/// <returns></returns>
+		fbxsdk::FbxAnimStack* GetCurrentAnimStack();
 		/// <summary>
 		/// <para> アニメーションを再生 </para>
 		/// <para> 名前に対応するクリップが無い場合は何もしない </para>
