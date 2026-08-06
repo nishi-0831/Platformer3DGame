@@ -127,8 +127,7 @@ void mtgb::ImGuiEditor::Release() {}
 void mtgb::ImGuiEditor::Update()
 {
 	pManipulator_->Update();
-
-	if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
+	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
 		if (InputUtil::GetKeyDown(KeyCode::Z))
 		{
@@ -154,11 +153,11 @@ void mtgb::ImGuiEditor::Update()
 		{
 			Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
 		}
-	}
-	if (InputUtil::GetKeyDown(KeyCode::DELETE))
-	{
-		// マニピュレータが選択しているゲームオブジェクトを取得
-		GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+		if (InputUtil::GetKeyDown(KeyCode::DELETE))
+		{
+			// マニピュレータが選択しているゲームオブジェクトを取得
+			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+		}
 	}
 
 	// グリッドの描画

@@ -157,7 +157,7 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
-	
+
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
 	Vector3 euler = QuatToEuler(pCameraTransform_->rotate);
@@ -173,12 +173,14 @@ void mtgb::ImGuiEditorCamera::SetCamera()
 
 void mtgb::ImGuiEditorCamera::Update()
 {
-	sCameraOperation_.Update();
-
-	CameraOperation operation;
-	if (sCameraOperation_.TryGetNextState(operation))
+	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		sCameraOperation_.Change(operation);
+		sCameraOperation_.Update();
+		CameraOperation operation;
+		if (sCameraOperation_.TryGetNextState(operation))
+		{
+			sCameraOperation_.Change(operation);
+		}
 	}
 	if (pCameraTransform_ == nullptr)
 		return;

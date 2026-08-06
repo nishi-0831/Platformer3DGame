@@ -315,3 +315,24 @@ mtgb::Vector3 mtgb::InputUtil::GetMouseAxis(WindowContext _context)
 						   input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lY),
 						   input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lZ) };
 }
+
+void mtgb::InputData::Initialize()
+{
+	// キー入力
+	keyStateCurrent_.reset();
+	keyStatePrevious_.reset();
+
+	// マウス
+	mouseStateCurrent_	= _DIMOUSESTATE {};
+	mouseStatePrevious_ = _DIMOUSESTATE {};
+
+	// ジョイスティック
+	joyStateCurrent_  = DIJOYSTATE {};
+	joyStatePrevious_ = DIJOYSTATE {};
+
+	for (auto& state : stickTiltStates_)
+	{
+		state.isFullyTiltedCurr_ = false;
+		state.isFullyTiltedPrev_ = false;
+	}
+}

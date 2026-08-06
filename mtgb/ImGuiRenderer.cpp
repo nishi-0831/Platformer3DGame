@@ -36,7 +36,6 @@ void mtgb::ImGuiRenderer::Initialize()
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO();
 	(void)io;
-
 	io.BackendFlags |= ImGuiBackendFlags_PlatformHasViewports;
 	io.BackendFlags |= ImGuiBackendFlags_RendererHasViewports;
 

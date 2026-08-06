@@ -274,23 +274,25 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 		// メモリの解放はコマンドが行うと断定して、ポインタを空にする
 		pTargetPrevTransformMemento_ = nullptr;
 	}
-
 	wasUsing_ = isUsing_;
 }
 
 void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 {
-	if (InputUtil::GetKeyDown(KeyCode::W))
+	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		operation_ = ImGuizmo::TRANSLATE;
-	}
-	if (InputUtil::GetKeyDown(KeyCode::E))
-	{
-		operation_ = ImGuizmo::SCALE;
-	}
-	if (InputUtil::GetKeyDown(KeyCode::R))
-	{
-		operation_ = ImGuizmo::ROTATE;
+		if (InputUtil::GetKeyDown(KeyCode::W))
+		{
+			operation_ = ImGuizmo::TRANSLATE;
+		}
+		if (InputUtil::GetKeyDown(KeyCode::E))
+		{
+			operation_ = ImGuizmo::SCALE;
+		}
+		if (InputUtil::GetKeyDown(KeyCode::R))
+		{
+			operation_ = ImGuizmo::ROTATE;
+		}
 	}
 }
 
