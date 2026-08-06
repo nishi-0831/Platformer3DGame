@@ -3,7 +3,6 @@
 #include <xaudio2fx.h>
 #include <fileapi.h>
 #include "MTAssert.h"
-#include "AudioClip.h"
 #include "MTBin/MemoryStream.h"
 #include "ReleaseUtility.h"
 #include "WaveData.h"
@@ -54,11 +53,15 @@ mtgb::Audio::Audio()
 
 mtgb::Audio::~Audio()
 {
-	for (auto itr = audioClipMap_.begin(); itr != audioClipMap_.end(); itr++)
+	for (auto itr = sourceMap_.begin(); itr != sourceMap_.end(); itr++)
 	{
-		SAFE_DELETE(itr->second);
+		for (auto source : itr->second)
+		{
+			source.pSourceVoice->DestroyVoice();
+			source.pSourceVoice = nullptr;
+		}
 	}
-	audioClipMap_.clear();
+	sourceMap_.clear();
 
 	if (pMasteringVoice_ != nullptr)
 	{
@@ -129,11 +132,23 @@ void mtgb::Audio::Update()
 
 void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {
-	// 登録済みの場合はreturn
-	if (audioClipMap_.contains(_soundName))
-		return;
+	WaveData* waveData = new WaveData(_filePath, pXAudio2_);
+	std::vector<AudioSource> sources;
+	X3DAUDIO_EMITTER pX3DEmitter;
+	pX3DEmitter.pVolumeCurve		= &volumeCurve_;
+	pX3DEmitter.CurveDistanceScaler = attenuationVolumeDistance_;
+	pX3DEmitter.ChannelCount		= 2;
+	pX3DEmitter.pLFECurve			= nullptr;
 
-	audioClipMap_.emplace(_soundName, Load(_filePath));
+	for (int i = 0; i < SOURCE_VOICE_POOL_SIZE; i++)
+	{
+		IXAudio2SourceVoice* sourceVoice = nullptr;
+		pXAudio2_->CreateSourceVoice(&sourceVoice, &waveData->waveFormat);
+
+		sources.emplace_back(AudioSource { AudioEmitter { pX3DEmitter, INVALID_ENTITY }, sourceVoice });
+	}
+	waveDataMap_.emplace(_soundName, *waveData);
+	sourceMap_.emplace(_soundName, sources);
 }
 
 void mtgb::Audio::SetMasterVolume(float _volume)
@@ -146,35 +161,16 @@ void mtgb::Audio::SetListenerEntityId(EntityId _id)
 	pListenerTransform_ = &(Game::System<TransformCP>().Get(_id));
 }
 
-void mtgb::Audio::SetEmitter(EntityId _id, std::string_view _soundName)
+void mtgb::Audio::SetEmitter(EntityId _id, std::string_view _soundName, int _handle)
 {
-	auto itr = audioClipMap_.find(_soundName);
-	if (itr == audioClipMap_.end())
+	auto itr = sourceMap_.find(_soundName);
+	if (itr == sourceMap_.end())
 		return;
 
-	X3DAUDIO_EMITTER* pX3DEmitter = nullptr;
-	auto emitterItr				  = emitterMap_.find(_soundName);
-	if (emitterItr == emitterMap_.end())
-	{
-		AudioEmitter& emitter			 = emitterMap_[std::string(_soundName)];
-		pX3DEmitter						 = &emitter.x3DEmitter;
-		pX3DEmitter->pVolumeCurve		 = &volumeCurve_;
-		pX3DEmitter->CurveDistanceScaler = attenuationVolumeDistance_;
-		pX3DEmitter->ChannelCount		 = 2;
-		pX3DEmitter->pLFECurve			 = nullptr;
-		emitter.emitterId				 = _id;
-	}
-	else
-	{
-		emitterItr->second.emitterId = _id;
-	}
-}
-
-mtgb::AudioClip* mtgb::Audio::Load(std::string_view _filePath)
-{
-	AudioClip* audioClip = new AudioClip(_filePath, pXAudio2_);
-
-	return audioClip;
+	std::vector<AudioSource>& sources = itr->second;
+	if (_handle < 0 || _handle >= sources.size())
+		return;
+	sources[_handle].emitter.emitterId = _id;
 }
 
 void mtgb::Audio::UpdateEmitter()
@@ -184,39 +180,51 @@ void mtgb::Audio::UpdateEmitter()
 	XAUDIO2_VOICE_DETAILS voiceDetails;
 	pMasteringVoice_->GetVoiceDetails(&voiceDetails);
 
-	for (auto& [name, emitter] : emitterMap_)
+	for (auto& [name, sources] : sourceMap_)
 	{
-		AudioClip* clip = audioClipMap_[name];
+		for (auto source : sources)
+		{
+			AudioEmitter& emitter = source.emitter;
+			if (emitter.emitterId == INVALID_ENTITY)
+				continue;
 
-		X3DAUDIO_DSP_SETTINGS dspSettings;
-		// 出力先となるマスターボイスのチャネル数
-		dspSettings.DstChannelCount = voiceDetails.InputChannels;
-		// ソースとなるクリップのチャネル数
-		dspSettings.SrcChannelCount = clip->pWaveData_->waveFormat.nChannels;
+			WaveData* pWaveData = &waveDataMap_.find(name)->second;
 
-		std::vector<FLOAT32> mat(dspSettings.SrcChannelCount * dspSettings.DstChannelCount);
-		dspSettings.pMatrixCoefficients = mat.data();
+			X3DAUDIO_DSP_SETTINGS dspSettings;
+			// 出力先となるマスターボイスのチャネル数
+			dspSettings.DstChannelCount = voiceDetails.InputChannels;
+			// ソースとなるクリップのチャネル数
+			dspSettings.SrcChannelCount = pWaveData->waveFormat.nChannels;
 
-		Transform& emitterTransform = Game::System<TransformCP>().Get(emitter.emitterId);
+			std::vector<FLOAT32> mat(dspSettings.SrcChannelCount * dspSettings.DstChannelCount);
+			dspSettings.pMatrixCoefficients = mat.data();
 
-		X3DAUDIO_EMITTER& pX3DEmitter = emitter.x3DEmitter;
-		pX3DEmitter.Position		  = emitterTransform.GetWorldPosition();
-		pX3DEmitter.OrientFront		  = emitterTransform.Forward();
-		pX3DEmitter.OrientTop		  = emitterTransform.Up();
-		// エミッターの座標を原点として、各チャネルが広がる半径
-		pX3DEmitter.ChannelRadius = 1.0f;
-		// エミッターの前方ベクトルを基準とした角度
-		// 左右に分けるために、-π/2とπ/2を設定
-		std::vector<FLOAT32> channelAzimuths = { -X3DAUDIO_2PI / 4.0f, X3DAUDIO_2PI / 4.0f };
-		pX3DEmitter.pChannelAzimuths		 = channelAzimuths.data();
+			Transform* pEmitterTransform = nullptr;
+			Game::System<TransformCP>().TryGet(pEmitterTransform, emitter.emitterId);
+			if (pEmitterTransform == nullptr)
+			{
+				continue;
+			}
 
-		X3DAudioCalculate(x3DInstance_, &listener_, &emitter.x3DEmitter, X3DAUDIO_CALCULATE_MATRIX, &dspSettings);
-		clip->pSourceVoice_->SetOutputMatrix(
-			pMasteringVoice_,
-			dspSettings.SrcChannelCount,
-			dspSettings.DstChannelCount,
-			dspSettings.pMatrixCoefficients
-		);
+			X3DAUDIO_EMITTER& pX3DEmitter = emitter.x3DEmitter;
+			pX3DEmitter.Position		  = pEmitterTransform->GetWorldPosition();
+			pX3DEmitter.OrientFront		  = pEmitterTransform->Forward();
+			pX3DEmitter.OrientTop		  = pEmitterTransform->Up();
+			// エミッターの座標を原点として、各チャネルが広がる半径
+			pX3DEmitter.ChannelRadius = 1.0f;
+			// エミッターの前方ベクトルを基準とした角度
+			// 左右に分けるために、-π/2とπ/2を設定
+			std::vector<FLOAT32> channelAzimuths = { -X3DAUDIO_2PI / 4.0f, X3DAUDIO_2PI / 4.0f };
+			pX3DEmitter.pChannelAzimuths		 = channelAzimuths.data();
+
+			X3DAudioCalculate(x3DInstance_, &listener_, &emitter.x3DEmitter, X3DAUDIO_CALCULATE_MATRIX, &dspSettings);
+			source.pSourceVoice->SetOutputMatrix(
+				pMasteringVoice_,
+				dspSettings.SrcChannelCount,
+				dspSettings.DstChannelCount,
+				dspSettings.pMatrixCoefficients
+			);
+		}
 	}
 }
 
@@ -229,37 +237,127 @@ void mtgb::Audio::UpdateListener()
 	listener_.Position	  = pListenerTransform_->GetWorldPosition();
 }
 
-void mtgb::Audio::Play(std::string_view _soundName, bool _loop)
+void mtgb::Audio::SubmitSourceVoice(IXAudio2SourceVoice* _pSrcVoice, WaveData* _pWaveData, bool _isLoop)
 {
-	auto itr = audioClipMap_.find(_soundName);
-	if (itr == audioClipMap_.end())
+	// 音声の再生を停止。そうしないとFlushSourceBuffersで消えない
+	_pSrcVoice->Stop(0, 0);
+	// 再生待ち中の音声を全て削除
+	_pSrcVoice->FlushSourceBuffers();
+	XAUDIO2_BUFFER buffer { .Flags		= XAUDIO2_END_OF_STREAM,
+							.AudioBytes = static_cast<UINT32>(_pWaveData->bufferSize),
+							.pAudioData = _pWaveData->pBuffer,
+							.LoopCount	= 0 };
+
+	if (_isLoop)
+	{
+		buffer.LoopCount = XAUDIO2_LOOP_INFINITE;
+	}
+
+	HRESULT hResult = _pSrcVoice->SubmitSourceBuffer(&buffer);
+	if (FAILED(hResult))
+	{
+		massert(false && "ソースボイスにサブミット失敗");
+		return;
+	}
+
+	_pSrcVoice->Start();
+}
+
+int mtgb::Audio::Play(std::string_view _soundName, bool _loop)
+{
+	auto itr = sourceMap_.find(_soundName);
+
+	if (itr == sourceMap_.end())
+		return -1;
+	WaveData* waveData				 = &waveDataMap_.find(_soundName)->second;
+	std::vector<AudioSource>& voices = itr->second;
+	UINT complete					 = 0;
+	for (int i = 0; i < voices.size(); i++)
+	{
+		XAUDIO2_VOICE_STATE state;
+		voices[i].pSourceVoice->GetState(&state);
+
+		if (state.BuffersQueued == complete)
+		{
+			// 再生処理
+			SubmitSourceVoice(voices[i].pSourceVoice, waveData, _loop);
+			return i;
+		}
+	}
+
+	IXAudio2SourceVoice* bestVoice = nullptr;
+	int min						   = INT_MAX;
+	int idx						   = -1;
+	for (int i = 0; i < voices.size(); i++)
+	{
+		XAUDIO2_VOICE_STATE state;
+		voices[i].pSourceVoice->GetState(&state);
+
+		int totalSample = waveData->bufferSize / waveData->waveFormat.nBlockAlign;
+		int remaining	= totalSample - state.SamplesPlayed;
+		if (remaining < min)
+		{
+			bestVoice = voices[i].pSourceVoice;
+			idx		  = i;
+			min		  = remaining;
+		}
+	}
+	if (bestVoice)
+	{
+		SubmitSourceVoice(bestVoice, waveData, _loop);
+	}
+	return idx;
+}
+
+void mtgb::Audio::Stop(std::string_view _soundName, int _handle)
+{
+	auto itr = sourceMap_.find(_soundName);
+
+	if (itr == sourceMap_.end())
+		return;
+	std::vector<AudioSource>& voices = itr->second;
+	if (_handle < 0 || _handle >= voices.size())
 		return;
 
-	itr->second->Play(_loop);
+	voices[_handle].pSourceVoice->Stop(0, 0);
+	voices[_handle].pSourceVoice->FlushSourceBuffers();
 }
 
 void mtgb::Audio::Stop(std::string_view _soundName)
 {
-	auto itr = audioClipMap_.find(_soundName);
-	if (itr == audioClipMap_.end())
-		return;
+	auto itr = sourceMap_.find(_soundName);
 
-	itr->second->Stop();
+	if (itr == sourceMap_.end())
+		return;
+	std::vector<AudioSource>& voices = itr->second;
+	for (auto source : voices)
+	{
+		source.pSourceVoice->Stop(0, 0);
+		source.pSourceVoice->FlushSourceBuffers();
+	}
 }
 
 void mtgb::Audio::StopAll()
 {
-	for (auto itr = audioClipMap_.begin(); itr != audioClipMap_.end(); itr++)
+	for (auto itr = sourceMap_.begin(); itr != sourceMap_.end(); itr++)
 	{
-		itr->second->Stop();
+		for (auto voice : itr->second)
+		{
+			voice.pSourceVoice->Stop(0, 0);
+			voice.pSourceVoice->FlushSourceBuffers();
+		}
 	}
 }
 
 void mtgb::Audio::SetClipVolume(std::string_view _soundName, float _volume)
 {
-	auto itr = audioClipMap_.find(_soundName);
-	if (itr == audioClipMap_.end())
+
+	auto itr = sourceMap_.find(_soundName);
+	if (itr == sourceMap_.end())
 		return;
 
-	itr->second->SetVolume(_volume);
+	for (auto source : itr->second)
+	{
+		source.pSourceVoice->SetVolume(_volume);
+	}
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 
-class Goal : public mtgb::GameObject, public ImGuiShowable
+class Goal : public mtgb::GameObject
 {
   public:
 	Goal();
@@ -10,7 +10,6 @@ class Goal : public mtgb::GameObject, public ImGuiShowable
 	void Update() override;
 	void Start() override;
 	void Draw() const override;
-	void ShowImGui() override;
 
   private:
 	void OnClear();

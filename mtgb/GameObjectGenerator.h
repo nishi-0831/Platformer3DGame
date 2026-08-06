@@ -20,9 +20,13 @@ namespace mtgb
 		/// <returns></returns>
 		static void Generate(std::string_view _gameObjName);
 		/// <summary>
-		/// コマンドを渡すことができるリスナーを登録
+		/// ゲームオブジェクトを複製する
 		/// </summary>
 		static void Duplicate(EntityId _srcEntityId);
+		/// <summary>
+		/// ゲームオブジェクトを削除する
+		/// </summary>
+		/// <param name="_entityId"></param>
 		static void Delete(EntityId _entityId);
 
 	  private:

@@ -5,6 +5,7 @@ class SampleScene : public mtgb::GameScene
 {
   public:
 	SampleScene();
+	SampleScene(const nlohmann::json& _stageData);
 	~SampleScene();
 
 	void Initialize() override;
@@ -14,4 +15,5 @@ class SampleScene : public mtgb::GameScene
 
   private:
 	StageID stageID_;
+	nlohmann::json stageData_;
 };

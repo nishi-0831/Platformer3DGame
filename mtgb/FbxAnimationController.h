@@ -11,7 +11,8 @@
 namespace fbxsdk
 {
 	class FbxScene;
-}
+	class FbxAnimStack;
+} // namespace fbxsdk
 namespace mtgb
 {
 	class FbxAnimationController
@@ -38,7 +39,11 @@ namespace mtgb
 		/// </summary>
 		/// <returns></returns>
 		int GetCurrentFrame() const;
-
+		/// <summary>
+		/// 現在のアニメーションスタックを取得
+		/// </summary>
+		/// <returns></returns>
+		fbxsdk::FbxAnimStack* GetCurrentAnimStack();
 		/// <summary>
 		/// <para> アニメーションを再生 </para>
 		/// <para> 名前に対応するクリップが無い場合は何もしない </para>
@@ -88,9 +93,10 @@ namespace mtgb
 		}
 
 	  private:
-		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq> clipMap_;
+		std::unordered_map<std::string, FbxAnimationClip, TransparentStringHash, TransparentStringEq>
+			clipMap_; // アニメーション名:アニメーションクリップの連想配列
 		std::unordered_multimap<std::string, AnimationEventCallback, TransparentStringHash, TransparentStringEq>
-			eventCallbackMap_;
+			eventCallbackMap_;			 // イベント名:イベントを購読したコールバックの連想配列
 		FbxAnimationClip* pCurrentClip_; // 現在再生中のクリップ
 		float currentFrame_;			 // 現在のフレーム
 		float animationSpeed_;			 // 再生速度(倍率)

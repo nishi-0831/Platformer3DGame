@@ -168,7 +168,7 @@ void mtgb::SphericalCamera::Update()
 			PropertyDisplayRegistry::Instance().ShowProperty(&normalizedY, "normalizedY");
 		},
 		"Camera",
-		ShowType::INSPECTOR
+		ShowType::SETTINGS
 	);
 
 	DoOrbit();

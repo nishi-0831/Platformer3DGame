@@ -53,7 +53,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<Image>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<Audio>(SystemUpdateType::FRAME);
-	Game::Set<OBJ>(SystemUpdateType::FRAME);
 	Game::Set<Fbx>(SystemUpdateType::FRAME);
 	Game::Set<TextCache>(SystemUpdateType::FRAME);
 

@@ -8,7 +8,6 @@
 #include "Image.h"
 #include "MTAssert.h"
 #include "MTStringUtility.h"
-#include "OBJ.h"
 #include "PlaneUVScroll.h"
 #include "ReleaseUtility.h"
 #include "Sprite.h"
@@ -141,6 +140,10 @@ void mtgb::Draw::ImmediateTextW(
 	const UIParams& _uiParams
 )
 {
+	if (_size < 1)
+	{
+		_size = currentDefaultFontSize_;
+	}
 	uiDrawCommands_.emplace(
 		_uiParams,
 		[text = std::wstring { _text }, _rect, _size, _alignment]()
@@ -192,6 +195,10 @@ void mtgb::Draw::ImmediateText(
 	const UIParams& _uiParams
 )
 {
+	if (_size < 1)
+	{
+		_size = currentDefaultFontSize_;
+	}
 	uiDrawCommands_.emplace(
 		_uiParams,
 		[text = std::string { _text }, _rect, _size, _alignment]()
@@ -219,6 +226,7 @@ void mtgb::Draw::ImmediateText(
 
 void mtgb::Draw::ChangeFontSize(int _size)
 {
+	_size						   = (std::max)(1, _size);
 	currentDefaultFontSize_		   = _size;
 	FontFormatData* fontFormatData = Game::System<mtgb::TextCache>().GetOrCreateTextFormat(_size);
 	Game::System<DirectWrite>().ChangeFormat(fontFormatData->format, fontFormatData->pixelFontMetrics);
@@ -227,13 +235,6 @@ void mtgb::Draw::ChangeFontSize(int _size)
 void mtgb::Draw::ChangeTextAlignment(TextAlignment _alignment)
 {
 	currentDefaultTextAlignment_ = _alignment;
-}
-
-void mtgb::Draw::OBJModel(const OBJModelHandle _hOBJModel, const Transform* _pTransform)
-{
-	CheckSetShader(ShaderType::FBX_PARTS);
-
-	Game::System<mtgb::OBJ>().Draw(static_cast<int>(_hOBJModel), _pTransform);
 }
 
 void mtgb::Draw::FBXModel(

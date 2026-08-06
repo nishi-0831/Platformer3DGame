@@ -47,27 +47,10 @@ void mtgb::MTImGui::Initialize()
 			}
 		}
 	);
-
-	// ゲームオブジェクトが選択されたときに、それを表示対象とする
-	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[](const GameObjectSelectedEvent& _handler)
-		{
-			SelectGameObject(_handler.entityId);
-		},
-		EventScope::GLOBAL
-	);
-	Game::System<EventManager>().GetEvent<GameObjectCreatedEvent>().Subscribe(
-		[](const GameObjectCreatedEvent& _event)
-		{
-			SelectGameObject(_event.entityId);
-		},
-		EventScope::GLOBAL
-	);
 }
 
 void mtgb::MTImGui::Update()
 {
-
 	Instance().updatingImGuiShowable_ = true;
 
 	for (ImGuiShowable* obj : Instance().showableObjs_)
@@ -214,13 +197,7 @@ mtgb::MTImGui& mtgb::MTImGui::Instance()
 mtgb::MTImGui::MTImGui() {}
 mtgb::MTImGui::~MTImGui()
 {
-	for (auto& queue : showQueues_)
-	{
-		while (queue.second.empty() == false)
-		{
-			queue.second.pop();
-		}
-	}
+	ClearShowQueue();
 
 	showQueues_.clear();
 }
@@ -298,15 +275,35 @@ void mtgb::MTImGui::SetupShowFunc()
 		}
 	);
 }
+void mtgb::MTImGui::ClearShowQueue()
+{
+	for (auto& queue : Instance().showQueues_)
+	{
+		while (queue.second.empty() == false)
+		{
+			queue.second.pop();
+		}
+	}
+}
 void mtgb::MTImGui::ShowListView(ShowType _show)
+{
+	ImGui::BeginChild("List", ImVec2(200, 0), true);
+	std::function<void()> selectedFunc = GetSelectedFunc(_show);
+	if (selectedFunc != nullptr)
+	{
+		ImGui::BeginChild("property", ImVec2(0, 0), true);
+		selectedFunc();
+		ImGui::EndChild();
+	}
+	ImGui::EndChild();
+}
+std::function<void()> mtgb::MTImGui::GetSelectedFunc(ShowType _show)
 {
 	auto& selectedName = imguiWindowStates_[_show].selectedName;
 	auto& queue		   = showQueues_[_show];
 
 	bool isSelected					   = false;
 	std::function<void()> selectedFunc = nullptr;
-
-	ImGui::BeginChild("List", ImVec2(200, 0), true);
 
 	while (!queue.empty())
 	{
@@ -332,17 +329,11 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 
 		queue.pop();
 	}
-	ImGui::EndChild();
-
-	// Listの横に property表示
-	ImGui::SameLine();
-
-	ImGui::BeginChild("property", ImVec2(0, 0), true);
 	if (selectedFunc && isSelected)
 	{
-		selectedFunc();
+		return selectedFunc;
 	}
-	ImGui::EndChild();
+	return nullptr;
 }
 void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 {
@@ -358,47 +349,37 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 		Instance().componentShowFuncs_[typeIdx](_entityId);
 	}
 }
-void mtgb::MTImGui::SelectGameObject(EntityId _entityId)
-{
-	EntityId selectedEntityId = _entityId;
-	if (selectedEntityId == INVALID_ENTITY)
-		return;
 
-	for (ImGuiShowable* obj : Instance().showableObjs_)
-	{
-		if (selectedEntityId == obj->targetEntityId_)
-		{
-			Instance().imguiWindowStates_[ShowType::INSPECTOR].selectedName = obj->displayName_;
-			Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId		= obj->targetEntityId_;
-		}
-	}
-}
 void mtgb::MTImGui::DrawRayImpl(const Vector3& _start, const Vector3& _dir, float _thickness)
 {
 	Matrix4x4 proj, view;
-	Game::System<CameraSystem>().GetProjMatrix(&proj);
-	Game::System<CameraSystem>().GetViewMatrix(&view);
+	CameraSystem& cameraSystem = Game::System<CameraSystem>();
+	cameraSystem.GetProjMatrix(&proj);
+	cameraSystem.GetViewMatrix(&view);
 	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_start, proj, view, viewport);
-	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_start + _dir, proj, view, viewport);
+	float nearZ = cameraSystem.GetNear();
+	float farZ	= cameraSystem.GetFar();
+	auto result = ImGuiUtil::WorldToImGuiClipped(_start, _start + _dir, proj, view, viewport, nearZ, farZ);
 
-	if (p1 && p2)
+	if (result)
 	{
-		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+		ImGui::GetWindowDrawList()->AddLine(result->first, result->second, IM_COL32_WHITE, _thickness);
 	}
 }
 void mtgb::MTImGui::DrawLineImpl(const Vector3& _from, const Vector3& _to, float _thickness)
 {
 	Matrix4x4 proj, view;
-	Game::System<CameraSystem>().GetProjMatrix(&proj);
-	Game::System<CameraSystem>().GetViewMatrix(&view);
+	CameraSystem& cameraSystem = Game::System<CameraSystem>();
+	cameraSystem.GetProjMatrix(&proj);
+	cameraSystem.GetViewMatrix(&view);
 	D3D11_VIEWPORT viewport { Game::System<mtgb::ImGuiRenderer>().GetViewport() };
-	std::optional<ImVec2> p1 = ImGuiUtil::WorldToImGui(_from, proj, view, viewport);
-	std::optional<ImVec2> p2 = ImGuiUtil::WorldToImGui(_to, proj, view, viewport);
+	float nearZ = cameraSystem.GetNear();
+	float farZ	= cameraSystem.GetFar();
+	auto result = ImGuiUtil::WorldToImGuiClipped(_from, _to, proj, view, viewport, nearZ, farZ);
 
-	if (p1 && p2)
+	if (result)
 	{
-		ImGui::GetWindowDrawList()->AddLine(p1.value(), p2.value(), IM_COL32_WHITE, _thickness);
+		ImGui::GetWindowDrawList()->AddLine(result->first, result->second, IM_COL32_WHITE, _thickness);
 	}
 }
 void mtgb::MTImGui::ShowWindow(ShowType _showType)
@@ -416,7 +397,11 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 
 	if (_showType == ShowType::SCENE_VIEW)
 	{
-		imGui.Begin(GetName(ShowType::SCENE_VIEW), &state.isOpen, ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED);
+		imGui.Begin(
+			GetName(ShowType::SCENE_VIEW),
+			&state.isOpen,
+			ImGuiRenderer::WindowFlag::NO_MOVE_WHEN_HOVERED | ImGuiRenderer::WindowFlag::NO_SCROLL
+		);
 
 		imGui.RenderSceneView();
 		imGui.SetDrawList();
@@ -555,10 +540,4 @@ void mtgb::MTImGui::DrawCone(
 		int nextIdx = (i + 1) % _segments;
 		DrawLine(baseCirclePoints[i], baseCirclePoints[nextIdx], _thickness);
 	}
-}
-
-mtgb::EntityId mtgb::MTImGui::GetSelectedEntityId()
-{
-	EntityId id = Instance().imguiWindowStates_[ShowType::INSPECTOR].entityId;
-	return id;
 }

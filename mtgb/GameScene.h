@@ -60,7 +60,7 @@ namespace mtgb
 		GameObject* GetGameObject(GameObjectTag _tag) const;
 		void GetGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects) const;
 		void GetGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects) const;
-
+		void GetAllGameObjects(std::list<GameObject*>* _gameObjects);
 		/// <summary>
 		/// テンプレートパラメータでオブジェクトを取得
 		/// </summary>
@@ -101,7 +101,6 @@ namespace mtgb
 
 		GameObjectT* pInstance { new GameObjectT { _args... } };
 
-		// TODO: ここも連続した配列にする
 		pGameObjects_.push_back(pInstance);
 
 		return pInstance;

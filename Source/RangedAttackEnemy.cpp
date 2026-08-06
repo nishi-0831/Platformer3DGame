@@ -20,8 +20,8 @@ RangedAttackEnemy::RangedAttackEnemy()
 	pCollider_->SetExtents({ 1.0f, 1.0f, 1.0f });
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(RangedAttackEnemy));
-	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
+	// name_				 = std::format("{} ({})", typeName, generateCounter_++);
+	displayName_ = name_;
 
 	InitializeState();
 }

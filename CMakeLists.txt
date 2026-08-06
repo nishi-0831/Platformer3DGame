@@ -205,7 +205,6 @@ set(03mtgb__CoreType
     "mtgb/Color.cpp"
     "mtgb/Color.h"
     "mtgb/Command.h"
-    "mtgb/Matrix4x4.cpp"
     "mtgb/Matrix4x4.h"
     "mtgb/Quaternion.cpp"
     "mtgb/Quaternion.h"
@@ -237,29 +236,6 @@ set(03mtgb__Library__MTBin
     "mtgb/MTBin/MemoryStream.h"
 )
 source_group("03mtgb\\Library\\MTBin" FILES ${03mtgb__Library__MTBin})
-
-set(03mtgb__Library__MTNet
-#    "mtgb/MTNet/BinaryReader.cpp"
-#    "mtgb/MTNet/BinaryReader.h"
-#    "mtgb/MTNet/BinaryWriter.cpp"
-#    "mtgb/MTNet/BinaryWriter.h"
-#    "mtgb/MTNet/Common.h"
-#    "mtgb/MTNet/EndPoint.cpp"
-#    "mtgb/MTNet/EndPoint.h"
-#    "mtgb/MTNet/HttpClient.cpp"
-#    "mtgb/MTNet/HttpClient.h"
-#    "mtgb/MTNet/HttpHeaderBuilder.cpp"
-#    "mtgb/MTNet/HttpHeaderBuilder.h"
-#    "mtgb/MTNet/Log.cpp"
-#    "mtgb/MTNet/Log.h"
-#    "mtgb/MTNet/Socket.cpp"
-#    "mtgb/MTNet/Socket.h"
-#    "mtgb/MTNet/TcpClient.cpp"
-#    "mtgb/MTNet/TcpClient.h"
-#    "mtgb/MTNet/TcpListener.cpp"
-#    "mtgb/MTNet/TcpListener.h"
-)
-source_group("03mtgb\\Library\\MTNet" FILES ${03mtgb__Library__MTNet})
 
 set(03mtgb__Library__MTStat
     "mtgb/MTStat/MTStat.h"
@@ -307,8 +283,6 @@ source_group("03mtgb\\System\\AssetsManager" FILES ${03mtgb__System__AssetsManag
 set(03mtgb__System__Audio
     "mtgb/Audio.cpp"
     "mtgb/Audio.h"
-    "mtgb/AudioClip.cpp"
-    "mtgb/AudioClip.h"
     "mtgb/WaveData.cpp"
     "mtgb/WaveData.h"
 )
@@ -445,7 +419,6 @@ set(03mtgb__System__DirectX11
 source_group("03mtgb\\System\\DirectX11" FILES ${03mtgb__System__DirectX11})
 
 set(03mtgb__System__Draw
-    "mtgb/IModelPack.h"
     "mtgb/MeshRenderer.h"
     "mtgb/RenderSystem.cpp"
     "mtgb/RenderSystem.h"
@@ -462,12 +435,6 @@ set(03mtgb__System__Draw__FBX
     "mtgb/FbxModel.h"
 )
 source_group("03mtgb\\System\\Draw\\FBX" FILES ${03mtgb__System__Draw__FBX})
-
-set(03mtgb__System__Draw__OBJ
-    "mtgb/OBJ.cpp"
-    "mtgb/OBJ.h"
-)
-source_group("03mtgb\\System\\Draw\\OBJ" FILES ${03mtgb__System__Draw__OBJ})
 
 set(03mtgb__System__Image
     "mtgb/Image.cpp"
@@ -870,10 +837,11 @@ set(MSVC_COMMON_OPTIONS
     ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
     /utf-8;
     ${DEFAULT_CXX_EXCEPTION_HANDLING}
+    /Od
 )
 
 set(CLANGCL_ADDITIONAL_OPTIONS
-    $<$<CONFIG:Debug>:/Zi>
+    $<$<CONFIG:Debug>:/Zi;-g;-O0;-fno-omit-frame-pointer>
     -fms-extensions 
     -fms-compatibility 
     -fms-compatibility-version=19.0
@@ -1076,8 +1044,3 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/lib"
     )
 endif()
-
-# find_package(nlohmann_json CONFIG REQUIRED)
-# target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json)
-# find_package(boost_multi_index CONFIG REQUIRED)
-# target_link_libraries(${PROJECT_NAME} PRIVATE Boost::multi_index)

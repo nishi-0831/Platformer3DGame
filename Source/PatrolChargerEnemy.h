@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
-class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
+class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 {
   public:
 	PatrolChargerEnemy();
@@ -87,4 +87,5 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 
 	// 踏みつけたアクターに加える力
 	float onStompedBounce_;
+	int audioSourceHandle_;
 };

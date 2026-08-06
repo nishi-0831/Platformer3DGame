@@ -17,6 +17,11 @@ SampleScene::SampleScene()
 {
 }
 
+SampleScene::SampleScene(const nlohmann::json& _stageData)
+{
+	stageData_ = _stageData;
+}
+
 SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
@@ -38,15 +43,23 @@ void SampleScene::Initialize()
 	Instantiate<RangedAttackEnemy>();
 	mtgb::Game::System<ScoreManager>().ResetScore();
 	mtgb::Game::System<StageManager>().StartStage(stageID_);
-	std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
-	if (json.has_value())
+	if (stageData_.is_null() == false)
 	{
-		mtgb::GameObjectGenerator::GenerateFromJson(json);
+		mtgb::GameObjectGenerator::GenerateFromJson(stageData_);
 		mtgb::Time::StabilizeDeltaTime();
 	}
 	else
 	{
-		assert(false && "JSONファイルが見つかりません");
+		std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
+		if (json.has_value())
+		{
+			mtgb::GameObjectGenerator::GenerateFromJson(json);
+			mtgb::Time::StabilizeDeltaTime();
+		}
+		else
+		{
+			assert(false && "JSONファイルが見つかりません");
+		}
 	}
 }
 

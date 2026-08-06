@@ -25,15 +25,14 @@ mtgb::RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
 	{
 		return *this;
 	}
-
-	this->velocity_		 = _other.velocity_;
-	this->onHit_		 = _other.onHit_;
-	this->onStay_		 = _other.onStay_;
-	this->onExit_		 = _other.onExit_;
-	this->useGravity_	 = _other.useGravity_;
-	*(this->pTransform_) = *(_other.pTransform_);
-	this->isGround_		 = _other.isGround_;
-	this->isKinematic_	 = _other.isKinematic_;
+	IComponent::operator=(_other);
+	this->velocity_	   = _other.velocity_;
+	this->onHit_	   = _other.onHit_;
+	this->onStay_	   = _other.onStay_;
+	this->onExit_	   = _other.onExit_;
+	this->useGravity_  = _other.useGravity_;
+	this->isGround_	   = _other.isGround_;
+	this->isKinematic_ = _other.isKinematic_;
 
 	return *this;
 }
@@ -45,6 +44,7 @@ void mtgb::RigidBody::UpdateVelocity()
 		velocity_ += Vector3::Up() * gravity * Time::DeltaTimeF();
 	}
 	pTransform_->position += velocity_ * Time::DeltaTimeF();
+	pTransform_->Compute();
 	if (FLT_EPSILON <= std::abs(velocity_.y))
 	{
 		isGround_ = false;

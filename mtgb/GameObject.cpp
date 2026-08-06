@@ -4,6 +4,7 @@
 #include "MTAssert.h"
 #include "EntityManager.h"
 #include "MTStringUtility.h"
+#include "MTImGui.h"
 mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	name_{_desc.name},
 	status_
@@ -18,7 +19,7 @@ mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 {
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	isNotCalledStart_ = true;
-
+	isInspectable_	  = true;
 	Transform* pTransform_ { Component<Transform>() };
 	pTransform_->position = _desc.position;
 	pTransform_->rotate	  = _desc.rotate;
@@ -33,6 +34,7 @@ mtgb::GameObject::GameObject()
 	entityId_		  = Game::System<EntityManager>().CreateEntity();
 	name_			  = std::format("GameObject ({})", std::to_string(entityId_));
 	isNotCalledStart_ = true;
+	isInspectable_	  = true;
 }
 
 mtgb::GameObject::GameObject(const GameObject& _other)
@@ -41,11 +43,18 @@ mtgb::GameObject::GameObject(const GameObject& _other)
 	, tag_ { GameObjectTag::UNTAGGED }
 {
 	isNotCalledStart_ = true;
+	isInspectable_	  = true;
 }
 
 mtgb::GameObject::~GameObject()
 {
 	massert(status_.toDestroy_ && "ゲームオブジェクトを削除するときは直接deleteを呼び出さないでください！");
+}
+
+void mtgb::GameObject::ShowImGui()
+{
+	MTImGui::ShowComponents(Entity::entityId_);
+	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
 nlohmann::json mtgb::GameObject::Serialize() const

@@ -11,7 +11,8 @@
 #include "Entity.h"
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
-void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
+#include "SceneSystem.h"
+void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	if (!pTargetTransform_)
 	{
@@ -29,7 +30,6 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
-
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		// 編集されたworldMatからposition,rotation,scaleに分解
@@ -59,7 +59,54 @@ void mtgb::ImGuizmoManipulator::DrawTransformGuizmo()
 		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
 		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
 	}
+	DrawViewGizmo();
+
 	ImGui::PopID();
+}
+
+void mtgb::ImGuizmoManipulator::DrawViewGizmo()
+{
+	ImVec2 pos = ImGui::GetWindowPos();
+	// ギズモ表示
+	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
+	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImVec2 viewGizmoPos(pos.x + displaySize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
+	Transform& cameraTransform = Game::System<TransformCP>().Get(
+		Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
+	);
+	using namespace DirectX;
+
+	float ident[16];
+
+	ImGuizmo::ViewManipulate(
+		viewMat_,
+		projMat_,
+		operation_,
+		mode_,
+		ident,
+		snapDistanceFromCamera_,
+		viewGizmoPos,
+		viewGizmoSize_,
+		IM_COL32(40, 40, 40, 255)
+	);
+	if (ImGuizmo::IsUsingViewManipulate())
+	{
+		memcpy(&float4x4_, viewMat_, sizeof(viewMat_));
+		viewMatrix4x4_		 = XMLoadFloat4x4(&float4x4_);
+		XMMATRIX worldMatrix = XMMatrixInverse(nullptr, viewMatrix4x4_);
+
+		XMVECTOR outScale;
+		XMVECTOR outRot;
+		XMVECTOR outPosition;
+
+		// 行列を分解
+		XMMatrixDecompose(&outScale, &outRot, &outPosition, worldMatrix);
+		Vector3 rotVec = DirectX::XMVector3Rotate(Vector3::Forward(), outRot);
+		// 上方向を+Yに指定する
+		cameraTransform.rotate	 = Quaternion::LookRotation(rotVec, Vector3::Up());
+		cameraTransform.position = { XMVectorGetX(outPosition), XMVectorGetY(outPosition), XMVectorGetZ(outPosition) };
+	}
 }
 
 void mtgb::ImGuizmoManipulator::SubscribeEvents()
@@ -114,12 +161,15 @@ void mtgb::ImGuizmoManipulator::Calculate()
 }
 
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
-	: ImGuiShowable("Manipulater", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
+	: ImGuiShowable("Manipulator", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
-	, mode_ { ImGuizmo::LOCAL }
+	, mode_ { ImGuizmo::WORLD }
 	, isUsing_ { false }
 	, wasUsing_ { false }
 	, pTargetTransform_ { nullptr }
+	, viewGizmoSize_ { 75.0f, 75.0f }
+	, snapDistanceFromCamera_ { 10.0f }
+	, clipSpaceGizmoSize_ { 0.15f }
 {
 	SubscribeEvents();
 }
@@ -133,7 +183,10 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
-	UpdateManpulator();
+	ImGuizmo::AllowAxisFlip(false);
+	ImGuizmo::SetGizmoSizeClipSpace(clipSpaceGizmoSize_);
+
+	UpdateManipulator();
 	UpdateOperationMode();
 }
 
@@ -141,7 +194,7 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 {
 	// ImGuizmoの操作モードを指定
 
-	DrawTransformGuizmo();
+	DrawTransformGizmo();
 
 	if (ImGui::RadioButton("Translate", operation_ == ImGuizmo::TRANSLATE))
 	{
@@ -167,11 +220,6 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	{
 		mode_ = ImGuizmo::WORLD;
 	}
-
-	isUsing_ = ImGuizmo::IsUsing();
-
-	std::string text = isUsing_ ? "true" : "false";
-	ImGui::Text("%s", text.c_str());
 }
 
 void mtgb::ImGuizmoManipulator::Select(EntityId _id)
@@ -201,7 +249,7 @@ mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 	return pTargetTransform_->GetEntityId();
 }
 
-void mtgb::ImGuizmoManipulator::UpdateManpulator()
+void mtgb::ImGuizmoManipulator::UpdateManipulator()
 {
 	isUsing_ = ImGuizmo::IsUsing();
 

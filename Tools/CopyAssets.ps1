@@ -43,7 +43,7 @@ if(Test-Path $OutputDirectory -PathType Container) {
     # /FFT: タイムスタンプの2秒の誤差は許容する?
     # /R: コピー失敗したときのリトライ数。デフォルトはなんと100万回
     # /W: コピー再試行までの待ち時間。デフォルトだと30秒
-    & robocopy.exe "$SrcPath" "$outputAssetsDir" /MIR /FFT /R:2 /W:1 /NDL /NFL /NP
+    & robocopy.exe "$SrcPath" "$outputAssetsDir" /XO /FFT /R:2 /W:1 /NDL /NFL /NP
     $lastCode = $LASTEXITCODE
     if ($last -ge 8){
         Write-Error "robocopy failed with exit code $lastCode"

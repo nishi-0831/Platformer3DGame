@@ -63,18 +63,12 @@ Interpolator& mtgb::Interpolator::operator=(const Interpolator& _other)
 	{
 		return *this;
 	}
-
-	this->dir_				  = _other.dir_;
-	this->elapsed_			  = _other.elapsed_;
-	this->duration_			  = _other.duration_;
-	this->startPos_			  = _other.startPos_;
-	this->endPos_			  = _other.endPos_;
-	*(this->pTransform_)	  = *(_other.pTransform_);
-	*(this->pStartTransform_) = *(_other.pStartTransform_);
-	*(this->pEndTransform_)	  = *(_other.pEndTransform_);
-	*(this->pStartCollider_)  = *(_other.pStartCollider_);
-	*(this->pEndCollider_)	  = *(_other.pEndCollider_);
-
+	IComponent::operator=(_other);
+	this->dir_		= _other.dir_;
+	this->elapsed_	= _other.elapsed_;
+	this->duration_ = _other.duration_;
+	this->startPos_ = _other.startPos_;
+	this->endPos_	= _other.endPos_;
 	return *this;
 }
 

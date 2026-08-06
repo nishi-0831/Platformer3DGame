@@ -20,7 +20,6 @@ class RangedAttackEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, p
 	MeshRenderer* pMeshRenderer_;
 	Collider* pCollider_;
 
-	static unsigned int generateCounter_;
 	std::optional<FbxAnimationController> animController_;
 
 	enum class STATE
@@ -33,4 +32,5 @@ class RangedAttackEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, p
 	void InitializeState();
 	mtstat::MTStat<STATE> state_;
 	STATE nextState_;
+	static unsigned int generateCounter_;
 };

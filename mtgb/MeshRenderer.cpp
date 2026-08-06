@@ -1,8 +1,10 @@
+#include <fbxsdk.h>
 #include "MeshRenderer.h"
 #include "Fbx.h"
 #include "Draw.h"
 #include "Transform.h"
 #include "ShadowSettings.h"
+
 namespace
 {
 	constexpr size_t BUFFER_SIZE { 256 };
@@ -13,6 +15,7 @@ mtgb::MeshRenderer::MeshRenderer()
 	, layer { AllLayer() }
 	, shaderType { ShaderType::FBX_PARTS }
 	, frame_ { 0 }
+	, pAnimStack_ { nullptr }
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
@@ -25,6 +28,7 @@ mtgb::MeshRenderer::MeshRenderer(EntityId _entityId)
 	, layer { AllLayer() }
 	, shaderType { ShaderType::FBX_PARTS }
 	, frame_ { 0 }
+	, pAnimStack_ { nullptr }
 {
 	enabled_ = true;
 	meshFileName.resize(BUFFER_SIZE);
@@ -47,6 +51,10 @@ void mtgb::MeshRenderer::Render() const
 	}
 	else
 	{
+		if (pAnimStack_ != nullptr)
+		{
+			pAnimStack_->GetScene()->SetCurrentAnimationStack(pAnimStack_);
+		}
 		Draw::FBXModel(meshHandle, Transform::Get(GetEntityId()), frame_, shaderType);
 	}
 }
@@ -54,6 +62,11 @@ void mtgb::MeshRenderer::Render() const
 void mtgb::MeshRenderer::SetFrame(int _frame)
 {
 	frame_ = _frame;
+}
+
+void mtgb::MeshRenderer::SetAnimStack(FbxAnimStack* _pAnimStack)
+{
+	pAnimStack_ = _pAnimStack;
 }
 
 void mtgb::MeshRenderer::OnPostRestore()

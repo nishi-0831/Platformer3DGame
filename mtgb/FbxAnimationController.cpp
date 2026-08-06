@@ -83,6 +83,15 @@ int mtgb::FbxAnimationController::GetCurrentFrame() const
 	return static_cast<int>(currentFrame_);
 }
 
+fbxsdk::FbxAnimStack* mtgb::FbxAnimationController::GetCurrentAnimStack()
+{
+	if (pCurrentClip_)
+	{
+		return pCurrentClip_->pAnimStack;
+	}
+	return nullptr;
+}
+
 void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, bool _isLooping)
 {
 	auto itr = clipMap_.find(_clipName);
@@ -101,6 +110,7 @@ void mtgb::FbxAnimationController::PlayAnimation(std::string_view _clipName, boo
 
 void mtgb::FbxAnimationController::UpdateFrame()
 {
+	// 現在のクリップが未設定、再生中でない場合は処理を行わない
 	if (pCurrentClip_ == nullptr)
 		return;
 
@@ -111,6 +121,8 @@ void mtgb::FbxAnimationController::UpdateFrame()
 
 	int startFrame = pCurrentClip_->startFrame;
 	int endFrame   = pCurrentClip_->endFrame;
+
+	// 再生範囲を超えた場合は、ループまたは終了状態に遷移する
 
 	if (currentFrame_ < startFrame)
 	{
@@ -138,6 +150,7 @@ void mtgb::FbxAnimationController::UpdateFrame()
 			isFinished_	  = true;
 		}
 	}
+	// 現フレームに該当するイベントを確認する
 	CheckEvents();
 }
 
@@ -168,17 +181,15 @@ void mtgb::FbxAnimationController::CheckEvents()
 		// 現在のフレームが、イベント対象のフレームの範囲内か
 		if (currentFrame_ >= event.startFrame && currentFrame_ <= event.endFrame)
 		{
-			using iterator = decltype(eventCallbackMap_)::iterator;
 			// イベント名に該当するコールバック関数を取得
-			std::pair<iterator, iterator> ret = eventCallbackMap_.equal_range(event.eventName);
+			auto [first, last] = eventCallbackMap_.equal_range(event.eventName);
 
-			if (ret.first == eventCallbackMap_.end())
+			if (first == eventCallbackMap_.end())
 				return;
 
-			for (iterator itr = ret.first; itr != ret.second; itr++)
+			for (auto itr = first; itr != last; itr++)
 			{
-				auto& func = itr->second;
-				func(event);
+				itr->second(event);
 			}
 		}
 	}

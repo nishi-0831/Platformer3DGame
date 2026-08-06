@@ -7,7 +7,6 @@ unsigned int PatrolChargerEnemy::generateCounter_ { 0 };
 
 PatrolChargerEnemy::PatrolChargerEnemy()
 	: IActor(GetEntityId())
-	, ImGuiShowable(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pRigidBody_ { Component<RigidBody>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
@@ -38,7 +37,6 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 
 	pRigidBody_->OnCollisionEnter(
 		[this](EntityId _entityId)
@@ -50,14 +48,14 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 
 	InitializeState();
 
-	animController_.value().SetEventCallback(
+	animController_->SetEventCallback(
 		"FootstepRun",
 		[this](const AnimationEvent& _evt)
 		{
 			OnFootstepRun(_evt);
 		}
 	);
-	animController_.value().SetEventCallback(
+	animController_->SetEventCallback(
 		"FootstepWalk",
 		[this](const AnimationEvent& _evt)
 		{
@@ -74,6 +72,7 @@ void PatrolChargerEnemy::Update()
 	{
 		animController_->UpdateFrame();
 		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
+		pMeshRenderer_->SetAnimStack(animController_->GetCurrentAnimStack());
 	}
 	state_.Update();
 }
@@ -96,6 +95,7 @@ void PatrolChargerEnemy::Start()
 
 void PatrolChargerEnemy::ShowImGui()
 {
+	GameObject::ShowImGui();
 	if (state_.Current() == STATE::PATROL)
 	{
 		ImGui::Text("STATE::PATROL");
@@ -112,7 +112,6 @@ void PatrolChargerEnemy::ShowImGui()
 	{
 		ImGui::Text("STATE::RETURN_TO_PATROL");
 	}
-	MTImGui::ShowComponents(Entity::entityId_);
 }
 
 void PatrolChargerEnemy::OnStomped(IActor* _pOther)
@@ -375,11 +374,12 @@ void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
 
-	Game::System<Audio>().Play("FootstepMonsterRun");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterRun");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterRun", audioSourceHandle_);
 }
 
 void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event)
 {
-	Game::System<Audio>().Play("FootstepMonsterWalk");
-	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterWalk");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk", audioSourceHandle_);
 }
