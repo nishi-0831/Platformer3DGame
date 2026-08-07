@@ -21,9 +21,10 @@ mtgb::TextRenderer::TextRenderer(EntityId _entityId)
 void mtgb::TextRenderer::Render() const
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(false);
-	Draw::CheckSetShader(ShaderType::SPRITE2_D);
+	Game::System<Draw>().CheckSetShader(ShaderType::SPRITE2_D);
 
-	FontFormatData* formatData = Game::System<TextCache>().GetOrCreateTextFormat(Draw::CalcScaledFontSize(fontSize_));
+	FontFormatData* formatData =
+		Game::System<TextCache>().GetOrCreateTextFormat(Game::System<mtgb::Draw>().CalcScaledFontSize(fontSize_));
 	Game::System<DirectWrite>().SetTextAlignment(alignment, formatData->format);
 
 	const Vector2F ratio = Game::System<Screen>().GetSizeRatio();
@@ -40,12 +41,12 @@ void mtgb::TextRenderer::Render() const
 
 void mtgb::TextRenderer::Initialize()
 {
-	Draw::RegisterUIElement(this);
+	Game::System<mtgb::Draw>().RegisterUIElement(this);
 }
 
 void mtgb::TextRenderer::Reset()
 {
-	Draw::UnregisterUIElement(this);
+	Game::System<mtgb::Draw>().UnregisterUIElement(this);
 }
 
 bool mtgb::TextRenderer::CanRender() const

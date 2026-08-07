@@ -23,8 +23,7 @@ mtgb::ImageRenderer::ImageRenderer(EntityId _entityId)
 
 void mtgb::ImageRenderer::Render() const
 {
-	// Draw::Image(handle_, drawRect_, uiParams_, color_);
-	Draw::CheckSetShader(ShaderType::SPRITE2_D);
+	Game::System<Draw>().CheckSetShader(ShaderType::SPRITE2_D);
 	Sprite* pSprite = { Game::System<Image>().GetSprite(handle_) };
 	pSprite->Draw(drawRect_, rotationZ_, { Vector2F::Zero(), Image::GetSizeF(handle_) }, color_);
 }
@@ -36,12 +35,12 @@ bool mtgb::ImageRenderer::CanRender() const
 
 void mtgb::ImageRenderer::Initialize()
 {
-	Draw::RegisterUIElement(this);
+	Game::System<mtgb::Draw>().RegisterUIElement(this);
 }
 
 void mtgb::ImageRenderer::Reset()
 {
-	Draw::UnregisterUIElement(this);
+	Game::System<mtgb::Draw>().UnregisterUIElement(this);
 }
 
 GameObjectLayerFlag mtgb::ImageRenderer::GetLayer() const
@@ -60,5 +59,5 @@ void mtgb::ImageRenderer::OnPostRestore()
 	{
 		handle_ = Image::Load(imageFileName_);
 	}
-	Draw::RegisterUIElement(this);
+	Game::System<mtgb::Draw>().RegisterUIElement(this);
 }

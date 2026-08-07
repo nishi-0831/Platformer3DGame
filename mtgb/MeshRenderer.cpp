@@ -43,11 +43,11 @@ void mtgb::MeshRenderer::Render() const
 	}
 	if (shaderType == ShaderType::SEA)
 	{
-		Draw::SeaUVScroll(Transform::Get(GetEntityId()));
+		Game::System<mtgb::Draw>().SeaUVScroll(Transform::Get(GetEntityId()));
 	}
 	else
 	{
-		Draw::FBXModel(meshHandle, Transform::Get(GetEntityId()), frame_, shaderType);
+		Game::System<mtgb::Draw>().FBXModel(meshHandle, Transform::Get(GetEntityId()), frame_, shaderType);
 	}
 }
 

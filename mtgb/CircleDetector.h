@@ -3,7 +3,7 @@
 #include "IDetector.h"
 #include "DetectorConfigs.h"
 #include <functional>
-#include "UIDrawCommand.h"
+#include "UIParams.h"
 namespace mtgb
 {
 	/// <summary>
@@ -33,7 +33,7 @@ namespace mtgb
 		void UpdateAndSetDetection(CircleDetectorConfig&& _config);
 
 		RectF GetDetectionArea() const override;
-		
+
 		/// <summary>
 		/// 点が円内にあるかチェック
 		/// </summary>

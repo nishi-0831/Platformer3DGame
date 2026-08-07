@@ -449,7 +449,7 @@ set(03mtgb__System__Draw
     "mtgb/MeshRenderer.h"
     "mtgb/RenderSystem.cpp"
     "mtgb/RenderSystem.h"
-    "mtgb/UIDrawCommand.h"
+    "mtgb/UIParams.h"
 )
 source_group("03mtgb\\System\\Draw" FILES ${03mtgb__System__Draw})
 
@@ -676,7 +676,6 @@ set(Unfiltered
     "mtgb/ScoreManager.cpp"
     "mtgb/ScoreManager.h"
     "mtgb/ShowAttributes.cpp"
-    "mtgb/UIDrawCommand.cpp"
     "Source/ActorManager.cpp"
     "Source/CircularSaw.cpp"
     "Source/FadeOutScreen.cpp"

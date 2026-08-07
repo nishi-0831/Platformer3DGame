@@ -5,7 +5,7 @@
 #include "IComponentMemento.h"
 
 #include "RectF.h"
-#include "UIDrawCommand.h"
+#include "UIParams.h"
 #include "TextAlignment.h"
 #include "TextRendererCP.h"
 #include "IRenderable.h"

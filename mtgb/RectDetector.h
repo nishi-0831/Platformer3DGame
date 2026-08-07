@@ -9,7 +9,7 @@
 #include "GameObjectTag.h"
 #include "IDetector.h"
 #include "DetectorConfigs.h"
-#include "UIDrawCommand.h"
+#include "UIParams.h"
 namespace mtgb
 {
 	/// <summary>

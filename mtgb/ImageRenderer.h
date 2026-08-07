@@ -5,7 +5,7 @@
 #include "IComponentMemento.h"
 #include "ImageRendererCP.h"
 #include "RectF.h"
-#include "UIDrawCommand.h"
+#include "UIParams.h"
 #include "IRenderable.h"
 #include "ImageRenderer.generated.h"
 

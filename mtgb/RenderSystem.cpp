@@ -31,7 +31,7 @@ void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 
 	DirectX11Draw::Begin();
 	DrawGameObjects(_scene, GameObjectLayer::A);
-	Draw::RenderUI(GameObjectLayer::A);
+	Game::System<mtgb::Draw>().RenderUI(GameObjectLayer::A);
 	DirectX11Draw::End();
 }
 
