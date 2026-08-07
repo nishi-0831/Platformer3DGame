@@ -9,6 +9,7 @@
 #include "TextAlignment.h"
 #include <set>
 #include "UIDrawCommand.h"
+#include "IRenderable.h"
 #include <type_traits>
 
 namespace mtgb
@@ -188,9 +189,10 @@ namespace mtgb
 		~Draw();
 		void Initialize() override;
 		void Update() override;
-		static void FlushUIDrawCommands(GameObjectLayerFlag _layer);
-		static void ClearUICommands();
+		static void RenderUI(GameObjectLayerFlag _layer);
 		static int CalcScaledFontSize(int _baseSize);
+		static void RegisterUIElement(IUIRenderable* _e);
+		static void UnregisterUIElement(IUIRenderable* _e);
 
 	  private:
 		FbxModel* pFbxModel_;
@@ -202,5 +204,7 @@ namespace mtgb
 		static UIParams defaultUIParams_;
 		static ShaderType onceShaderType_;
 		static std::multiset<UIDrawCommand> uiDrawCommands_;
+		static std::vector<IUIRenderable*> uiElements_;
+		static bool uiElementDirty_;
 	};
 } // namespace mtgb

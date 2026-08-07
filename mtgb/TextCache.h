@@ -67,8 +67,6 @@ namespace mtgb
 
 	class TextCache : public ISystem
 	{
-		friend class Draw;
-
 	  public:
 		TextCache();
 		~TextCache();
@@ -110,6 +108,14 @@ namespace mtgb
 		/// <returns></returns>
 		static int Load(const std::string& _str, int _fontSize, Vector2F _layoutBoxSize);
 
+		/// <summary>
+		/// 指定サイズのIDWriteTextFormatを取得または作成
+		/// </summary>
+		/// <param name="size">フォントサイズ</param>
+		/// <returns>IDWriteTextFormatとPixelFontMetricsのペア</returns>
+		FontFormatData* GetOrCreateTextFormat(int _size);
+		TextLayoutData* GetTextLayoutData(int _handle);
+
 	  private:
 		/// <summary>
 		/// 新規または既存のテキストのハンドルを返す
@@ -119,15 +125,6 @@ namespace mtgb
 		/// <returns></returns>
 		int GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size);
 		int GetOrCreateTextLayoutHandle(const std::wstring& _text, int _size, float _width, float _height);
-
-		TextLayoutData* GetTextLayoutData(int _handle);
-
-		/// <summary>
-		/// 指定サイズのIDWriteTextFormatを取得または作成
-		/// </summary>
-		/// <param name="size">フォントサイズ</param>
-		/// <returns>IDWriteTextFormatとPixelFontMetricsのペア</returns>
-		FontFormatData* GetOrCreateTextFormat(int _size);
 
 		// 現在のデフォルトのフォントサイズ
 		int currentDefaultFontSize_;

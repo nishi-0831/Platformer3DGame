@@ -16,6 +16,7 @@ TitleScene::~TitleScene() {}
 
 void TitleScene::Initialize()
 {
+	Game::SetEditMode(false);
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 	Game::System<Audio>().Play("TitleScene", true);
 	Game::System<SceneSystem>().OnMove(

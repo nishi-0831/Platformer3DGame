@@ -5,17 +5,4 @@ void mtgb::TextRendererCP::Update() {}
 
 void mtgb::TextRendererCP::RenderAll() const {}
 
-void mtgb::TextRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
-{
-	for (size_t i = 0; i < poolId_.size(); i++)
-	{
-		if (poolId_[i] == INVALID_ENTITY)
-			continue;
-
-		const TextRenderer& renderer = pool_[i];
-		if (renderer.CanRender() && _layerFlag.Has(renderer.GetLayer()))
-		{
-			renderer.Render();
-		}
-	}
-}
+void mtgb::TextRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const {}

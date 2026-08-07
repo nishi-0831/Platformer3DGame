@@ -14,7 +14,7 @@ namespace mtgb
 {
 	class TextRendererCP;
 
-	class [[MT_COMPONENT()]] TextRenderer : public IRenderable,
+	class [[MT_COMPONENT()]] TextRenderer : public IUIRenderable,
 											public IComponent<TextRendererCP, TextRenderer>,
 											public ISerializableObject
 	{
@@ -25,9 +25,10 @@ namespace mtgb
 		TextRenderer();
 		TextRenderer(EntityId _entityId);
 		void Render() const override;
-
+		void Initialize() override;
+		void Reset() override;
 		bool CanRender() const override;
-
+		UIParams GetUIParams() const override;
 		GameObjectLayerFlag GetLayer() const override
 		{
 			return params_.layerFlag;

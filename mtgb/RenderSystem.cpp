@@ -26,15 +26,13 @@ void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 	WinCtxRes::ChangeResource(WindowContext::FIRST);
 	if (WinCtxRes::Get<CameraResource>(WindowContext::FIRST).NotRegisterCamera())
 	{
-		Draw::ClearUICommands();
 		return;
 	}
 
 	DirectX11Draw::Begin();
 	DrawGameObjects(_scene, GameObjectLayer::A);
-	Draw::FlushUIDrawCommands(GameObjectLayer::A);
+	Draw::RenderUI(GameObjectLayer::A);
 	DirectX11Draw::End();
-	Draw::ClearUICommands();
 }
 
 void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)

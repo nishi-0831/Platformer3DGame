@@ -4,9 +4,9 @@
 #include "Fbx.h"
 #include "Figure.h"
 #include "Game.h"
-#include "ImGuiRenderer.h"
+#include "SceneSystem.h"
 #include "Image.h"
-#include "MTAssert.h"
+
 #include "MTStringUtility.h"
 #include "OBJ.h"
 #include "PlaneUVScroll.h"
@@ -283,25 +283,39 @@ void mtgb::Draw::Initialize()
 	pSeaPlane_ = new PlaneUVScroll();
 	pSeaPlane_->Initialize();
 	pSeaPlane_->LoadTexture(L"Image/sea.png");
+	Game::System<SceneSystem>().OnMove(
+		[this]()
+		{
+			uiElements_.clear();
+			uiElementDirty_ = false;
+		}
+	);
 }
 
 void mtgb::Draw::Update() {}
 
-void mtgb::Draw::FlushUIDrawCommands(GameObjectLayerFlag _layer)
+void mtgb::Draw::RenderUI(GameObjectLayerFlag _layer)
 {
-	using mtbit::operator|;
-	for (auto& drawCommand : uiDrawCommands_)
+	if (uiElementDirty_)
 	{
-		if (drawCommand.params.layerFlag.Has(_layer))
+		std::stable_sort(
+			uiElements_.begin(),
+			uiElements_.end(),
+			[](IUIRenderable* _left, IUIRenderable* _right)
+			{
+				return _left->GetUIParams().depth > _right->GetUIParams().depth;
+			}
+		);
+		uiElementDirty_ = false;
+	}
+	using mtbit::operator|;
+	for (auto element : uiElements_)
+	{
+		if (element->CanRender() && element->GetUIParams().layerFlag.Has(_layer))
 		{
-			drawCommand.drawFunction();
+			element->Render();
 		}
 	}
-}
-
-void mtgb::Draw::ClearUICommands()
-{
-	uiDrawCommands_.clear();
 }
 
 int mtgb::Draw::CalcScaledFontSize(int _baseSize)
@@ -311,8 +325,21 @@ int mtgb::Draw::CalcScaledFontSize(int _baseSize)
 	return static_cast<int>(std::roundf(_baseSize * avg));
 }
 
+void mtgb::Draw::RegisterUIElement(IUIRenderable* _e)
+{
+	uiElements_.push_back(_e);
+	uiElementDirty_ = true;
+}
+
+void mtgb::Draw::UnregisterUIElement(IUIRenderable* _e)
+{
+	uiElements_.erase(std::remove(uiElements_.begin(), uiElements_.end(), _e), uiElements_.end());
+}
+
 mtgb::ShaderType mtgb::Draw::onceShaderType_ { ShaderType::MAX };
 int mtgb::Draw::currentDefaultFontSize_ { 36 };
 mtgb::TextAlignment mtgb::Draw::currentDefaultTextAlignment_ { TextAlignment::CENTER };
 mtgb::UIParams mtgb::Draw::defaultUIParams_ {};
 std::multiset<mtgb::UIDrawCommand> mtgb::Draw::uiDrawCommands_ {};
+bool mtgb::Draw::uiElementDirty_ { true };
+std::vector<mtgb::IUIRenderable*> mtgb::Draw::uiElements_ {};
