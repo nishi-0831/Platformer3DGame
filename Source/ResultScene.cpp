@@ -60,6 +60,7 @@ void ResultScene::Initialize()
 	{
 		mtgb::GameObjectGenerator::GenerateFromJson(json);
 		mtgb::Time::StabilizeDeltaTime();
+		Game::System<CommandHistoryManager>().ClearAllStack();
 	}
 
 	Instantiate<mtgb::SkySphere>();

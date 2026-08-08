@@ -16,7 +16,7 @@ SampleScene::SampleScene()
 {
 }
 
-SampleScene::SampleScene(const nlohmann::json& _stageData) 
+SampleScene::SampleScene(const nlohmann::json& _stageData)
 {
 	stageData_ = _stageData;
 }
@@ -59,6 +59,7 @@ void SampleScene::Initialize()
 			assert(false && "JSONファイルが見つかりません");
 		}
 	}
+	Game::System<CommandHistoryManager>().ClearAllStack();
 }
 
 void SampleScene::Update()

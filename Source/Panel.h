@@ -11,8 +11,10 @@ class Panel : public GameObject
 	void DecrementIndex();
 	void UpdateUI();
 	void AddUIComponent(UIComponent* _pUIComponent);
+	void RemoveUIComponent(UIComponent* _pUIComponent);
 	void Enable();
 	void Disable();
+
   private:
 	void MoveCurrIndex(int _movement);
 	std::vector<UIComponent*> uiComponents_;

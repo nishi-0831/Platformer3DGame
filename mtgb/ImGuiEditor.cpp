@@ -421,8 +421,14 @@ void mtgb::ImGuiEditor::ShowInspector()
 		if (obj->isInspectable_ == false)
 			continue;
 		bool selected = inspectedObjectName_ == obj->GetName();
-		// クリックされた or 表示対象として記録した名前と一致する場合
-		if (ImGui::Selectable(obj->GetName().c_str(), selected, ImGuiSelectableFlags_AllowDoubleClick) || selected)
+		// 表示対象として記録した名前と一致する場合
+		if (selected)
+		{
+			selectedObj			 = obj;
+			inspectedObjectName_ = obj->GetName();
+		}
+		// クリックされた
+		if (ImGui::Selectable(obj->GetName().c_str(), selected, ImGuiSelectableFlags_AllowDoubleClick))
 		{
 			// ダブルクリック時、対象を画面に収める
 			if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
@@ -431,6 +437,8 @@ void mtgb::ImGuiEditor::ShowInspector()
 			}
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
+			GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
+			Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
 		}
 	}
 	ImGui::End();
@@ -438,8 +446,6 @@ void mtgb::ImGuiEditor::ShowInspector()
 	if (selectedObj != nullptr)
 	{
 		selectedObj->ShowImGui();
-		GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
-		Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
 	}
 	ImGui::End();
 }

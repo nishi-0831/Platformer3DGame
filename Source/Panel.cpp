@@ -14,7 +14,7 @@ void Panel::DecrementIndex()
 	MoveCurrIndex(-1);
 }
 
-void Panel::UpdateUI() 
+void Panel::UpdateUI()
 {
 	if (currIdx_ < 0 || currIdx_ >= uiComponents_.size())
 		massert(false && "currIdx_が不正");
@@ -31,11 +31,23 @@ void Panel::AddUIComponent(UIComponent* _pUIComponent)
 	}
 
 	uiComponents_.push_back(_pUIComponent);
+	_pUIComponent->SetPanel(this);
 	if (currIdx_ < 0)
 	{
 		currIdx_ = uiComponents_.size() - 1;
 		uiComponents_[currIdx_]->OnSelected();
 	}
+}
+
+void Panel::RemoveUIComponent(UIComponent* _pUIComponent)
+{
+	std::erase_if(
+		uiComponents_,
+		[_pUIComponent](UIComponent* _com)
+		{
+			return _com == _pUIComponent;
+		}
+	);
 }
 
 void Panel::Enable()
