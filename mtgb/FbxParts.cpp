@@ -221,7 +221,7 @@ bool mtgb::FbxParts::TryGetBonePositionAtNow(std::string_view _boneName, Vector3
 
 void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 {
-	vertexCount_		   = pMesh_->GetControlPointsCount();
+	vertexCount_		   = polygonCount_ * 3;
 	pVertexes_			   = new Vertex[vertexCount_] {};
 	FbxDeformer* pDeformer = pMesh_->GetDeformer(0);
 	hasSkinnedMesh_		   = (pDeformer != nullptr);
@@ -296,92 +296,53 @@ void mtgb::FbxParts::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	{
 		FbxLayerElement::EMappingMode mappingMode	  = pUV->GetMappingMode();
 		FbxLayerElement::EReferenceMode referenceMode = pUV->GetReferenceMode();
+		bool useIndex								  = referenceMode != FbxLayerElement::eDirect;
+		int polyCount								  = pMesh_->GetPolygonCount();
+		int uvNum									  = pUV->GetDirectArray().GetCount();
+		indexCount_									  = useIndex ? pUV->GetIndexArray().GetCount() : 0;
 
 		if (mappingMode == FbxLayerElement::eByControlPoint)
 		{
-			if (referenceMode == FbxLayerElement::eDirect)
+			for (int polyIndex = 0; polyIndex < polyCount; polyIndex++)
 			{
-				// 直接アクセス: コントロールポイントごとに1つのUV
-				int writeCount = (std::min)(uvCount, static_cast<int>(vertexCount_));
-				for (int i = 0; i < writeCount; i++)
+				int polySize = pMesh_->GetPolygonSize(polyIndex);
+				for (int vertIdx = 0; vertIdx < polySize; vertIdx++)
 				{
-					FbxVector2 uv	 = pUV->GetDirectArray().GetAt(i);
-					pVertexes_[i].uv = { static_cast<float>(uv[0]),
-										 static_cast<float>(1.0 - uv[1]), // Y座標を反転
-										 0.0f };
-				}
-			}
-			else if (referenceMode == FbxLayerElement::eIndexToDirect)
-			{
-				// インデックス参照: コントロールポイントごとにインデックス
-				for (uint32_t i = 0; i < vertexCount_; i++)
-				{
-					if (i < static_cast<uint32_t>(pUV->GetIndexArray().GetCount()))
-					{
-						int uvIndex = pUV->GetIndexArray().GetAt(i);
-						if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
-						{
-							FbxVector2 uv	 = pUV->GetDirectArray().GetAt(uvIndex);
-							pVertexes_[i].uv = { static_cast<float>(uv[0]), static_cast<float>(1.0 - uv[1]), 0.0f };
-						}
-					}
+					// 頂点のインデックスを取得
+					int polyVertIdx = pMesh_->GetPolygonVertex(polyIndex, vertIdx);
+					// UVのインデックスを取得。eDirectの場合は頂点のインデックスをそのまま使う。そうでない場合はインデックスバッファから取得
+					int UVIdx = useIndex ? pUV->GetIndexArray().GetAt(polyVertIdx) : polyVertIdx;
+
+					FbxVector2 UVValue = pUV->GetDirectArray().GetAt(UVIdx);
+
+					pVertexes_[polyVertIdx].uv = { static_cast<float>(UVValue[0]),
+												   static_cast<float>(1.0 - UVValue[1]),
+												   0.0f };
 				}
 			}
 		}
 		else if (mappingMode == FbxLayerElement::eByPolygonVertex)
 		{
-			if (referenceMode == FbxLayerElement::eDirect)
+			int polyIdxCounter = 0;
+			for (int polyIdx = 0; polyIdx < polyCount; polyIdx++)
 			{
-				// 直接アクセス: ポリゴン頂点ごとに1つのUV
-				int polygonVertexIndex = 0;
-				for (uint32_t poly = 0; poly < polygonCount_; poly++)
+				int polySize = pMesh_->GetPolygonSize(polyIdx);
+				for (int vertIdx = 0; vertIdx < polySize; vertIdx++)
 				{
-					for (uint32_t vertex = 0; vertex < 3; vertex++)
+					if (polyIdxCounter < indexCount_)
 					{
-						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
+						int polyVertIdx = pMesh_->GetPolygonVertex(polyIdx, vertIdx);
+						int UVIdx		= useIndex ? pUV->GetIndexArray().GetAt(polyIdxCounter) : polyIdxCounter;
 
-						if (polygonVertexIndex < pUV->GetDirectArray().GetCount() && controlPointIndex >= 0 &&
-							controlPointIndex < static_cast<int>(vertexCount_))
-						{
-
-							FbxVector2 uv					 = pUV->GetDirectArray().GetAt(polygonVertexIndex);
-							pVertexes_[controlPointIndex].uv = { static_cast<float>(uv[0]),
-																 static_cast<float>(1.0 - uv[1]),
-																 0.0f };
-						}
-						polygonVertexIndex++;
-					}
-				}
-			}
-			else if (referenceMode == FbxLayerElement::eIndexToDirect)
-			{
-				// インデックス参照: ポリゴン頂点ごとにインデックス
-				int polygonVertexIndex = 0;
-				for (uint32_t poly = 0; poly < polygonCount_; poly++)
-				{
-					for (uint32_t vertex = 0; vertex < 3; vertex++)
-					{
-						int controlPointIndex = pMesh_->GetPolygonVertex(poly, vertex);
-
-						if (polygonVertexIndex < pUV->GetIndexArray().GetCount() && controlPointIndex >= 0 &&
-							controlPointIndex < static_cast<int>(vertexCount_))
-						{
-
-							int uvIndex = pUV->GetIndexArray().GetAt(polygonVertexIndex);
-							if (uvIndex >= 0 && uvIndex < pUV->GetDirectArray().GetCount())
-							{
-								FbxVector2 uv					 = pUV->GetDirectArray().GetAt(uvIndex);
-								pVertexes_[controlPointIndex].uv = { static_cast<float>(uv[0]),
-																	 static_cast<float>(1.0 - uv[1]),
-																	 0.0f };
-							}
-						}
-						polygonVertexIndex++;
+						FbxVector2 UVValue		   = pUV->GetDirectArray().GetAt(UVIdx);
+						pVertexes_[polyVertIdx].uv = { static_cast<float>(UVValue[0]),
+													   static_cast<float>(1.0 - UVValue[1]),
+													   0.0f };
+						polyIdxCounter++;
 					}
 				}
 			}
 		}
-
 		// 骨の処理
 		if (hasSkinnedMesh_)
 		{
