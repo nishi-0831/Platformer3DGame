@@ -27,6 +27,7 @@ void StageEditScene::Initialize()
 	{
 		mtgb::GameObjectGenerator::GenerateFromJson(stageData_);
 		mtgb::Time::StabilizeDeltaTime();
+		Game::System<CommandHistoryManager>().ClearAllStack();
 	}
 }
 

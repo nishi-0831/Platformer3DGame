@@ -59,6 +59,7 @@ void SampleScene::Initialize()
 			assert(false && "JSONファイルが見つかりません");
 		}
 	}
+	Game::System<CommandHistoryManager>().ClearAllStack();
 }
 
 void SampleScene::Update()

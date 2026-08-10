@@ -142,6 +142,7 @@ namespace mtgb
 		friend class InputResource;
 
 	  private:
+		void Initialize();
 		static inline constexpr size_t KEY_COUNT { 256 }; // キーの数
 		std::bitset<KEY_COUNT> keyStateCurrent_;		  // キーの状態現在
 		std::bitset<KEY_COUNT> keyStatePrevious_;		  // キーの状態前回

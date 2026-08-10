@@ -100,6 +100,22 @@ void mtgb::Input::Initialize()
 
 void mtgb::Input::Update()
 {
+	HWND activeWndH = GetForegroundWindow();
+	if (!activeWndH)
+		return;
+
+	DWORD activeProcessId = 0;
+	GetWindowThreadProcessId(activeWndH, &activeProcessId);
+
+	if (activeProcessId != GetCurrentProcessId())
+	{
+		if (pInputData_)
+		{
+			pInputData_->Initialize();
+		}
+		return;
+	}
+
 	UpdateKeyDevice();
 
 	UpdateMouseDevice();
