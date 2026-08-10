@@ -56,7 +56,7 @@ mtgb::Collider& mtgb::Collider::operator=(const Collider& _other)
 	this->center_		= _other.center_;
 	this->radius_		= _other.radius_;
 	this->extents_		= _other.extents_;
-
+	this->pTransform_	= _other.pTransform_;
 	return *this;
 }
 

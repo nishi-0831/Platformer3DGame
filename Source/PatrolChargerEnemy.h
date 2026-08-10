@@ -15,7 +15,6 @@ class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 	void TakeDamage(int _damage) override;
 
   private:
-	void OnCollisionEnter(EntityId _entityId);
 	void OnFootstepRun(const AnimationEvent& _event);
 	void OnFootstepWalk(const AnimationEvent& _event);
 	Transform* pTransform_;

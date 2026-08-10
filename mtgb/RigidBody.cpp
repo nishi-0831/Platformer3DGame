@@ -33,7 +33,7 @@ mtgb::RigidBody& mtgb::RigidBody::operator=(const RigidBody& _other)
 	this->useGravity_  = _other.useGravity_;
 	this->isGround_	   = _other.isGround_;
 	this->isKinematic_ = _other.isKinematic_;
-
+	this->pTransform_  = _other.pTransform_;
 	return *this;
 }
 

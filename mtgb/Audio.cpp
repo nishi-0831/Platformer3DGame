@@ -30,6 +30,7 @@ namespace mtgb
 		audio.Register("MinerFootstep", "Sound/MinerFootstep.mp3");
 		audio.Register("FootstepMonsterWalk", "Sound/FootstepMonsterWalk.mp3");
 		audio.Register("FootstepMonsterRun", "Sound/FootstepMonsterRun.mp3");
+		audio.Register("Shot", "Sound/Motion-Swish07-6.mp3");
 		audio.Register("Saw", "Sound/Saw.mp3");
 		audio.SetClipVolume("Saw", 0.5f);
 		audio.SetClipVolume("FootstepMonsterRun", 0.5f);
