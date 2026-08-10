@@ -1,5 +1,6 @@
 #pragma once
 #include "GameObjectLayer.h"
+#include "UIParams.h"
 namespace mtgb
 {
 	/// <summary>
@@ -45,5 +46,11 @@ namespace mtgb
 		virtual GameObjectLayerFlag GetLayer() const = 0;
 		// 描画を行うか否か
 		bool enabled_;
+	};
+
+	class IUIRenderable : public IRenderable
+	{
+	  public:
+		virtual UIParams GetUIParams() const = 0;
 	};
 } // namespace mtgb

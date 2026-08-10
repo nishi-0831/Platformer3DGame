@@ -52,7 +52,10 @@ RangedAttackEnemy::RangedAttackEnemy()
 	}
 }
 
-RangedAttackEnemy::~RangedAttackEnemy() {}
+RangedAttackEnemy::~RangedAttackEnemy()
+{
+	DestroyEnergyChargeEffect();
+}
 
 void RangedAttackEnemy::Update()
 {

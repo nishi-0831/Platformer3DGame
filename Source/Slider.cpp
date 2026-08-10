@@ -22,13 +22,13 @@ Slider::Slider()
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 
 	pLabelRenderer_->alignment	   = TextAlignment::CENTER;
-	pLabelRenderer_->params_.depth = 3;
+	pLabelRenderer_->params_.depth = 0;
 
 	GameObject* fillArea = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(fillArea);
 	pFillImageRenderer_					 = fillArea->Component<ImageRenderer>();
 	pFillImageRenderer_->handle_		 = Image::Load("Image/FillArea.png");
-	pFillImageRenderer_->uiParams_.depth = 2;
+	pFillImageRenderer_->uiParams_.depth = 1;
 
 	GameObject* emptyArea = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(emptyArea);
@@ -36,19 +36,19 @@ Slider::Slider()
 	pValueTextRenderer_				   = emptyArea->Component<TextRenderer>();
 	pValueTextRenderer_->text_		   = std::to_string(currValue_);
 	pValueTextRenderer_->alignment	   = TextAlignment::CENTER;
-	pValueTextRenderer_->params_.depth = 3;
+	pValueTextRenderer_->params_.depth = 0;
 
 	pEmptyImageRenderer_				  = emptyArea->Component<ImageRenderer>();
 	pEmptyImageRenderer_->handle_		  = Image::Load("Image/EmptyArea.png");
-	pEmptyImageRenderer_->uiParams_.depth = 1;
+	pEmptyImageRenderer_->uiParams_.depth = 2;
 	pBackgroundRenderer_->handle_		  = Image::Load("Image/Black.png");
-	pBackgroundRenderer_->uiParams_.depth = 0;
+	pBackgroundRenderer_->uiParams_.depth = 3;
 
 	GameObject* handle = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(handle);
 	pHandleImageRenderer_				   = handle->Component<ImageRenderer>();
 	pHandleImageRenderer_->handle_		   = Image::Load("Image/Circle.png");
-	pHandleImageRenderer_->uiParams_.depth = 4;
+	pHandleImageRenderer_->uiParams_.depth = 0;
 }
 
 void Slider::Start()
