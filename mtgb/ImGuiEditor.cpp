@@ -129,29 +129,32 @@ void mtgb::ImGuiEditor::Update()
 	pManipulator_->Update();
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		if (InputUtil::GetKeyDown(KeyCode::Z))
+		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 		{
-			Game::System<CommandHistoryManager>().UndoCommand();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::Y))
-		{
-			Game::System<CommandHistoryManager>().RedoCommand();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::S))
-		{
-			SaveMapData();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::O))
-		{
-			LoadMapData();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::D))
-		{
-			DuplicateGameObject();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::F))
-		{
-			Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+			if (InputUtil::GetKeyDown(KeyCode::Z))
+			{
+				Game::System<CommandHistoryManager>().UndoCommand();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::Y))
+			{
+				Game::System<CommandHistoryManager>().RedoCommand();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::S))
+			{
+				SaveMapData();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::O))
+			{
+				LoadMapData();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::D))
+			{
+				DuplicateGameObject();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::F))
+			{
+				Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+			}
 		}
 		if (InputUtil::GetKeyDown(KeyCode::DELETE))
 		{
