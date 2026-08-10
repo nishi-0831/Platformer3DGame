@@ -12,7 +12,7 @@ namespace mtgb
 	struct WaveData
 	{
 		WaveData();
-		WaveData(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2);
+		WaveData(std::string_view _filePath);
 		~WaveData();
 
 		WAVEFORMATEX waveFormat; // フォーマット情報

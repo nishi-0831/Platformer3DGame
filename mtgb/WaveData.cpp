@@ -161,7 +161,7 @@ std::optional<mtbin::MemoryStream> GetMemoryStream(std::string_view _filePath)
 	return ms;
 }
 
-void Load(mtbin::MemoryStream& _ms, ComPtr<IXAudio2> _pXAudio2, WaveData* _pWaveData)
+void Load(mtbin::MemoryStream& _ms, WaveData* _pWaveData)
 {
 	_ms.Seek(0);
 
@@ -195,13 +195,14 @@ mtgb::WaveData::WaveData()
 {
 }
 
-mtgb::WaveData::WaveData(std::string_view _filePath, ComPtr<IXAudio2> _pXAudio2)
+mtgb::WaveData::WaveData(std::string_view _filePath)
+	: WaveData()
 {
 	std::optional<mtbin::MemoryStream> ms = GetMemoryStream(_filePath);
 	if (ms.has_value() == false)
 		return;
 
-	Load(ms.value(), _pXAudio2, this);
+	Load(ms.value(), this);
 }
 
 mtgb::WaveData::~WaveData()

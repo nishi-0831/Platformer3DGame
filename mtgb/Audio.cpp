@@ -133,7 +133,7 @@ void mtgb::Audio::Update()
 
 void mtgb::Audio::Register(std::string_view _soundName, std::string_view _filePath)
 {
-	WaveData* waveData = new WaveData(_filePath, pXAudio2_);
+	WaveData* waveData = new WaveData(_filePath);
 	std::vector<AudioSource> sources;
 	X3DAUDIO_EMITTER pX3DEmitter;
 	pX3DEmitter.pVolumeCurve		= &volumeCurve_;

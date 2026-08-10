@@ -12,14 +12,14 @@ void mtgb::Draw::CheckSetShader(ShaderType _default)
 {
 	if (onceShaderType_ == ShaderType::MAX)
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚È‚¢‚È‚çŠù’èƒVƒF[ƒ_
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ãªã„ãªã‚‰æ—¢å®šã‚·ã‚§ãƒ¼ãƒ€
 		DirectX11Draw::SetShader(_default);
 	}
 	else
 	{
-		// ƒVƒF[ƒ_‚ªƒZƒbƒg‚³‚ê‚Ä‚¢‚é‚È‚ç—Dæ
+		// ã‚·ã‚§ãƒ¼ãƒ€ãŒã‚»ãƒƒãƒˆã•ã‚Œã¦ã„ã‚‹ãªã‚‰å„ªå…ˆ
 		DirectX11Draw::SetShader(onceShaderType_);
-		onceShaderType_ = ShaderType::MAX; // ˆê“xg‚Á‚½‚çŠO‚·
+		onceShaderType_ = ShaderType::MAX; // ä¸€åº¦ä½¿ã£ãŸã‚‰å¤–ã™
 	}
 }
 
@@ -42,6 +42,7 @@ void mtgb::Draw::SeaUVScroll(const Transform& _transform)
 
 mtgb::Draw::Draw()
 	: pSeaPlane_ { nullptr }
+	, onceShaderType_ { ShaderType::MAX }
 {
 }
 

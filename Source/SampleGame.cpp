@@ -13,7 +13,7 @@ SampleGame::SampleGame() {}
 
 SampleGame::~SampleGame() {}
 
-void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
+void SampleGame::SetupSystems()
 {
 	Game::Set<ComponentRegistry>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<GameObjectTypeRegistry>(SystemUpdateType::DONT_CALL_ME);
