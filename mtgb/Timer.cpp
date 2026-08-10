@@ -24,8 +24,12 @@ void mtgb::Timer::Remove(TimerHandle _hTimer)
 
 void mtgb::Timer::Clear()
 {
-	for (auto& pTimer : Instance().pTimerQueue_)
+	for (auto pTimer : Instance().pTimerQueue_)
 	{
+		if (Instance().pReenqueueElements_.contains(pTimer))
+		{
+			Instance().pReenqueueElements_.erase(pTimer);
+		}
 		delete pTimer;
 	}
 
