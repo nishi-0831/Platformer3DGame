@@ -8,7 +8,7 @@ class SampleGame : public mtgb::Game
 	~SampleGame();
 
   private:
-	void SetupSystems(const RegisterSystemFuncHolder& _register) override;
+	void SetupSystems() override;
 
 	inline std::string_view GetVersion() const override
 	{
@@ -16,6 +16,6 @@ class SampleGame : public mtgb::Game
 	};
 	inline std::string_view GetTitle() const override
 	{
-		return "ただのサンプルゲーム";
+		return "サンプルゲーム";
 	};
 };

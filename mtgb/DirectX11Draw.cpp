@@ -6,7 +6,6 @@
 #include "ReleaseUtility.h"
 #include "IShader.h"
 #include "DirectWrite.h"
-#include "OBJ.h"
 #include "Debug.h"
 
 using namespace mtgb;

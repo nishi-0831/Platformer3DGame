@@ -26,7 +26,7 @@ SampleScene::~SampleScene() {}
 void SampleScene::Initialize()
 {
 	using namespace mtgb;
-
+	Game::SetEditMode(false);
 	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
 	mtgb::Game::System<mtgb::Audio>().Play("PlayScene", true);
 	mtgb::Game::System<mtgb::SceneSystem>().OnMove(

@@ -22,7 +22,7 @@ namespace mtgb
 		float rotateAngleSec_;
 		float radius_;
 		int takeDamageAmount_;
-
+		int audioSourceHandle_;
 		// IActor を介して継承されました
 		void OnStomped(IActor* _pOther) override;
 

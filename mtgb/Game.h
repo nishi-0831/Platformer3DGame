@@ -14,13 +14,10 @@
 #include "ISystem.h"
 #include "Vector2Int.h"
 #include <typeindex>
-#include "ReleaseUtility.h"
-#include "IComponentMemento.h"
 #include "IRenderable.h"
 #include "ComponentFactory.h"
 namespace mtgb
 {
-	// using EntityId = int64_t;
 	class IComponentPool;
 
 	/// <summary>
@@ -40,33 +37,6 @@ namespace mtgb
 			FIXED,		  // 一定の間隔
 		};
 
-		/// <summary>
-		/// システム登録のコールバック関数
-		/// </summary>
-		using RegisterSystem = std::function<
-			void(std::type_index _systemTypeName, ISystem* _system, bool _isComponentPool, SystemUpdateType)>;
-
-		/// <summary>
-		/// システム登録の関数ホルダ
-		/// </summary>
-		class RegisterSystemFuncHolder
-		{
-		  public:
-			RegisterSystemFuncHolder(const RegisterSystem& _function)
-				: function_ { _function }
-			{
-			}
-
-			template <typename SystemT> void Set(SystemUpdateType _type, bool _isComponentCP = false) const
-			{
-
-				function_(typeid(SystemT), dynamic_cast<ISystem*>(new SystemT {}), _isComponentCP, _type);
-			}
-
-		  private:
-			RegisterSystem function_;
-		};
-
 	  protected:
 		Game();
 		virtual ~Game();
@@ -75,9 +45,8 @@ namespace mtgb
 		template <typename T> void Set(SystemUpdateType _systemUpdateType);
 		/// <summary>
 		/// <para>任意の更新順番でシステムを設定する</para>
-		/// <para>使うシステムを必要なだけこの関数内でnewしてください</para>
 		/// </summary>
-		virtual void SetupSystems(const RegisterSystemFuncHolder& _registerSystem) = 0;
+		virtual void SetupSystems() = 0;
 		/// <summary>
 		/// ゲームのバージョンを必ず返してください
 		/// </summary>
@@ -91,7 +60,6 @@ namespace mtgb
 
 		virtual Vector2Int GetScreenSize() const;
 
-		
 	  private:
 		std::map<std::type_index, ISystem*> pRegisterSystems_; // 登録済みのシステム
 		std::list<ISystem*> pCycleUpdateSystems_;			   // 毎サイクル更新されるシステム
@@ -104,6 +72,7 @@ namespace mtgb
 
 		ComponentFactory componentFactory_;
 		bool isEditMode_;
+
 	  public:
 		/// <summary>
 		/// ゲームを起動する
@@ -199,9 +168,10 @@ namespace mtgb
 
 		static void SetEditMode(bool _isEditMode);
 		static bool IsEditMode();
-	  template <typename Func>
-		  requires std::is_invocable_v<Func>
+		template <typename Func>
+			requires std::is_invocable_v<Func>
 		static void OnExit(Func&& _onExit);
+
 	  private:
 		/// <summary>
 		/// システムの初期化をする
@@ -265,39 +235,7 @@ namespace mtgb
 		std::list<ISystem*> systems {};
 
 		// 各システムの登録
-		pInstance_->SetupSystems(
-			{ [&](std::type_index _systemType,
-				  ISystem* _pSystem,
-				  const bool _isComponentPool,
-				  const SystemUpdateType _systemUpdateType)
-			  {
-				  assert(
-					  _pSystem != nullptr && "ISystemへのアップキャストに失敗、継承関係がpublicになっているか確認。"
-				  );
-
-				  systems.push_back(_pSystem);
-				  if (_isComponentPool)
-				  {
-					  pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(_pSystem));
-				  }
-				  pInstance_->pRegisterSystems_.insert({ _systemType, _pSystem });
-				  switch (_systemUpdateType)
-				  {
-					  case SystemUpdateType::CYCLE :
-						  pInstance_->pCycleUpdateSystems_.push_back(_pSystem);
-						  break;
-					  case SystemUpdateType::FRAME :
-						  pInstance_->pFrameUpdateSystems_.push_back(_pSystem);
-						  break;
-					  case SystemUpdateType::FIXED :
-						  pInstance_->pFixedUpdateSystems_.push_back(_pSystem);
-						  break;
-					  case SystemUpdateType::DONT_CALL_ME :
-					  default :
-						  break;
-				  }
-			  } }
-		);
+		pInstance_->SetupSystems();
 		// 各システムの初期化
 		pInstance_->InitializeSystems();
 
@@ -327,7 +265,7 @@ namespace mtgb
 	}
 	template <typename Func>
 		requires std::is_invocable_v<Func>
-	inline void Game::OnExit(Func&& _onExit) 
+	inline void Game::OnExit(Func&& _onExit)
 	{
 		pInstance_->onExitCallbacks_.emplace_back(std::forward<Func>(_onExit));
 	}

@@ -26,7 +26,6 @@ class Player : public mtgb::GameObject, public IActor
 	void UpdatePosition();
 	void UpdateRotate();
 	void OnCollisionEnter(EntityId _entityId);
-	void OnFootstep(const AnimationEvent& _event);
 	void InitializeState();
 	enum class STATE
 	{

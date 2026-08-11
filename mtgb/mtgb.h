@@ -53,7 +53,6 @@
 #include "Debug.h"
 #include "Image.h"
 #include "Audio.h"
-#include "OBJ.h"
 #include "ImGuiRenderer.h"
 #include "MeshRenderer.h"
 #include "TextRenderer.h"

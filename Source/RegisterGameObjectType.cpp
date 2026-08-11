@@ -11,6 +11,7 @@
 #include "RespawnManager.h"
 #include "Button.h"
 #include "Slider.h"
+#include "RangedAttackEnemy.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	_pGameObjectRegistrar->Register<MovingFloor>("MovingFloor");
@@ -19,6 +20,7 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 	_pGameObjectRegistrar->Register<Goal>("Goal", true);
 	_pGameObjectRegistrar->Register<GameOverZone>("GameOverZone");
 	_pGameObjectRegistrar->Register<PatrolChargerEnemy>("PatrolChargerEnemy");
+	_pGameObjectRegistrar->Register<RangedAttackEnemy>("RangedAttackEnemy");
 	_pGameObjectRegistrar->Register<SeaPlane>("SeaPlane");
 	_pGameObjectRegistrar->Register<CircularSaw>("CircularSaw");
 	_pGameObjectRegistrar->Register<RespawnPoint>("RespawnPoint");

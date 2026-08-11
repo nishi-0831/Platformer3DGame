@@ -18,6 +18,8 @@ namespace mtgb
 		effectManager.RegisterEffect("Treasure", "Effect/Treasure.efkefc");
 		effectManager.RegisterEffect("WalkSmoke", "Effect/WalkSmoke.efkefc");
 		effectManager.RegisterEffect("JumpSmoke", "Effect/JumpSmoke.efkefc");
+		effectManager.RegisterEffect("EnergyCharge", "Effect/EnergyCharge.efkefc");
+		effectManager.RegisterEffect("MuzzleFlash", "Effect/MuzzleFlash.efkefc");
 	}
 	using namespace Effekseer;
 	using namespace EffekseerRendererDX11;

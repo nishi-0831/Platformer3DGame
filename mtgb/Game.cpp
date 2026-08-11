@@ -14,6 +14,7 @@ mtgb::Game::Game()
 	, pFrameUpdateSystems_ {}
 	, pFixedUpdateSystems_ {}
 	, pComponentPools_ {}
+	, isEditMode_ { true }
 {
 }
 
@@ -131,7 +132,7 @@ std::span<mtgb::IRenderableCP*> mtgb::Game::GetRenderableCPs()
 	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
 }
 
-void mtgb::Game::SetEditMode(bool _isEditMode) 
+void mtgb::Game::SetEditMode(bool _isEditMode)
 {
 	pInstance_->isEditMode_ = _isEditMode;
 }

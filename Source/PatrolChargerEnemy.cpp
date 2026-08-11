@@ -38,30 +38,26 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(PatrolChargerEnemy));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 
-	pRigidBody_->OnCollisionEnter(
-		[this](EntityId _entityId)
-		{
-			OnCollisionEnter(_entityId);
-		}
-	);
 	pRigidBody_->isKinematic_ = false;
 
 	InitializeState();
-
-	animController_.value().SetEventCallback(
-		"FootstepRun",
-		[this](const AnimationEvent& _evt)
-		{
-			OnFootstepRun(_evt);
-		}
-	);
-	animController_.value().SetEventCallback(
-		"FootstepWalk",
-		[this](const AnimationEvent& _evt)
-		{
-			OnFootstepWalk(_evt);
-		}
-	);
+	if (animController_.has_value())
+	{
+		animController_->SetEventCallback(
+			"FootstepRun",
+			[this](const AnimationEvent& _evt)
+			{
+				OnFootstepRun(_evt);
+			}
+		);
+		animController_->SetEventCallback(
+			"FootstepWalk",
+			[this](const AnimationEvent& _evt)
+			{
+				OnFootstepWalk(_evt);
+			}
+		);
+	}
 }
 
 PatrolChargerEnemy::~PatrolChargerEnemy() {}
@@ -72,6 +68,7 @@ void PatrolChargerEnemy::Update()
 	{
 		animController_->UpdateFrame();
 		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
+		pMeshRenderer_->SetAnimStack(animController_->GetCurrentAnimStack());
 	}
 	state_.Update();
 }
@@ -280,7 +277,6 @@ void PatrolChargerEnemy::Charge()
 	// ターゲットとのy座標が異なると空中歩行してしまうから。
 	// 斜面を移動させる場合は修正が必要
 	// ------------------------------------------------------
-	// Vector3 distPos = { pTargetTransform_->position };
 	Vector3 distPos		= { pTargetTransform_->position.x, pTransform_->position.y, pTargetTransform_->position.z };
 	Vector3 toTarget	= distPos - pTransform_->GetWorldPosition();
 	Vector3 toTargetDir = Vector3::Normalize(toTarget);
@@ -354,8 +350,6 @@ bool PatrolChargerEnemy::Search()
 	return false;
 }
 
-void PatrolChargerEnemy::OnCollisionEnter(EntityId _entityId) {}
-
 void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 {
 	// ボーンの名前を取得
@@ -373,11 +367,12 @@ void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
 
-	Game::System<Audio>().Play("FootstepMonsterRun");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterRun");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterRun", audioSourceHandle_);
 }
 
 void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event)
 {
-	Game::System<Audio>().Play("FootstepMonsterWalk");
-	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk");
+	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterWalk");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk", audioSourceHandle_);
 }

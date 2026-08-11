@@ -4,17 +4,15 @@
 #include <fbxsdk.h>
 #include <string>
 
-#include "IModelPack.h"
-
 #include "FbxAnimationController.h"
 namespace mtgb
 {
 	class FbxParts;
-
+	class Transform;
 	/// <summary>
 	/// 1つのFbxファイルを扱うクラス
 	/// </summary>
-	class FbxModel : public IModelPack
+	class FbxModel
 	{
 		friend class FbxParts;
 
@@ -22,11 +20,11 @@ namespace mtgb
 		FbxModel();
 		~FbxModel();
 
-		void Load(const std::string& _fileName) override;
+		void Load(const std::string& _fileName);
 
-		void Draw(const Transform& _transfrom, int _frame) override;
+		void Draw(const Transform& _transfrom, int _frame);
 
-		void Release() override;
+		void Release();
 
 		/// <summary>
 		/// FbxSceneを取得する

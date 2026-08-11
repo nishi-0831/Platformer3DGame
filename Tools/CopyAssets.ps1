@@ -40,10 +40,11 @@ if(Test-Path $OutputDirectory -PathType Container) {
     Write-Output "Synchronizing assets..."
     $outputAssetsDir = Join-Path $OutputDirectory "Assets"
     # /MIR: コピー先と元を一致 
+    # /XO: コピー元がコピー先より古い場合、そのファイルをコピー対象から除外
     # /FFT: タイムスタンプの2秒の誤差は許容する?
     # /R: コピー失敗したときのリトライ数。デフォルトはなんと100万回
     # /W: コピー再試行までの待ち時間。デフォルトだと30秒
-    & robocopy.exe "$SrcPath" "$outputAssetsDir" /XO /FFT /R:2 /W:1 /NDL /NFL /NP
+    & robocopy.exe "$SrcPath" "$outputAssetsDir" /MIR /XO /FFT /R:2 /W:1
     $lastCode = $LASTEXITCODE
     if ($last -ge 8){
         Write-Error "robocopy failed with exit code $lastCode"

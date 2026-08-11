@@ -6,7 +6,7 @@
 #include "Vector3.h"
 #include "GameObjectTag.h"
 #include "Transform.h"
-#include "UIDrawCommand.h"
+#include "UIParams.h"
 namespace mtgb
 {
 	/// <summary>

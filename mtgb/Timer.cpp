@@ -24,8 +24,12 @@ void mtgb::Timer::Remove(TimerHandle _hTimer)
 
 void mtgb::Timer::Clear()
 {
-	for (auto& pTimer : Instance().pTimerQueue_)
+	for (auto pTimer : Instance().pTimerQueue_)
 	{
+		if (Instance().pReenqueueElements_.contains(pTimer))
+		{
+			Instance().pReenqueueElements_.erase(pTimer);
+		}
 		delete pTimer;
 	}
 
@@ -82,23 +86,17 @@ void mtgb::Timer::Update()
 			continue;				  // 後続も終了している可能性があるため継続
 		}
 	}
+
 	// 削除予定のやつを消す
-	for (auto itr = pReenqueueElements_.begin(); itr != pReenqueueElements_.end();)
+	for (auto itr = pTimerQueue_.begin(); itr != pTimerQueue_.end();)
 	{
-		if (toErase_.count(itr->first))
+		if (toErase_.contains(*itr))
 		{
-			for (auto queueItr = pTimerQueue_.begin(); queueItr != pTimerQueue_.end();)
+			if (pReenqueueElements_.contains(*itr))
 			{
-				if ((*queueItr) == itr->first)
-				{
-					queueItr = pTimerQueue_.erase(queueItr);
-				}
-				else
-				{
-					queueItr++;
-				}
+				pReenqueueElements_.erase(*itr);
 			}
-			itr = pReenqueueElements_.erase(itr);
+			itr = pTimerQueue_.erase(itr);
 		}
 		else
 		{

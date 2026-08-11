@@ -48,16 +48,15 @@ mtgb::Collider& mtgb::Collider::operator=(const Collider& _other)
 	{
 		return *this;
 	}
+	IComponent::operator=(_other);
 	this->colliderType_ = _other.colliderType_;
 	this->isStatic_		= _other.isStatic_;
 	this->colliderTag_	= _other.colliderTag_;
 	this->isTrigger_	= _other.isTrigger_;
-
-	*(this->pTransform_) = *(_other.pTransform_);
-	this->center_		 = _other.center_;
-	this->radius_		 = _other.radius_;
-	this->extents_		 = _other.extents_;
-
+	this->center_		= _other.center_;
+	this->radius_		= _other.radius_;
+	this->extents_		= _other.extents_;
+	this->pTransform_	= _other.pTransform_;
 	return *this;
 }
 
@@ -387,6 +386,7 @@ void mtgb::Collider::OnPostRestore()
 			SetExtents(extents_);
 			break;
 	}
+	pTransform_ = &Transform::Get(GetEntityId());
 }
 
 void mtgb::Collider::Reset()
@@ -411,7 +411,7 @@ void mtgb::Collider::Draw() const
 			copyTransform.position += center_;
 			copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 			copyTransform.Compute();
-			Draw::FBXModel(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Draw>().FBXModel(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		case ColliderType::TYPE_AABB :
 
@@ -440,7 +440,7 @@ void mtgb::Collider::Draw() const
 				copyTransform.scale = computeBox_.Extents * 2.0f;
 			}
 			copyTransform.Compute();
-			Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Draw>().FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		case ColliderType::TYPE_OBB :
 			if (isStatic_)
@@ -465,7 +465,7 @@ void mtgb::Collider::Draw() const
 				copyTransform.scale = computeBox_.Extents * 2.0f;
 			}
 			copyTransform.Compute();
-			Draw::FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Draw>().FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		default :
 			break;

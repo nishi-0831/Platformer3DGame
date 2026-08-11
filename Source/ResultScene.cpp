@@ -4,23 +4,15 @@
 #include "SkySphere.h"
 #include "StageManager.h"
 #include "Button.h"
-#include <SerializableGameObject.h>
-namespace
-{
-	// 118,90 , 565,100
-	ImageHandle hTitleImage;
-	ImageHandle hBackgroundImage;
-	ImageHandle hEastButtonImg;
-	RectF draw { 118, 90, 565, 100 };
-	RectF textDrawRect { 118, 450, 565, 80 };
-	UIParams params { .depth = 0, .layerFlag = AllLayer() };
-} // namespace
+
 ResultScene::ResultScene() {}
 
 ResultScene::~ResultScene() {}
 
 void ResultScene::Initialize()
 {
+	Game::SetEditMode(false);
+
 	// エディターのカメラを作成
 	Game::System<ImGuiEditorCamera>().CreateCamera();
 
@@ -53,8 +45,6 @@ void ResultScene::Initialize()
 		Game::System<Audio>().Play("GameOver");
 		json = mtgb::Game::System<StageManager>().GetStageJson(StageID::STAGE_GAME_OVER_SCENE);
 	}
-	hBackgroundImage = Image::Load("Image/Black.png");
-	hEastButtonImg	 = Image::Load("Image/EastButtonPush.png");
 
 	if (json.has_value())
 	{
@@ -66,6 +56,13 @@ void ResultScene::Initialize()
 	Instantiate<mtgb::SkySphere>();
 
 	CreatePanel();
+
+	GameObject* pScoreCount = new GameObject();
+	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pScoreCount);
+	pScoreText_			   = pScoreCount->Component<TextRenderer>();
+	pScoreText_->fontSize_ = 36;
+	pScoreText_->alignment = TextAlignment::MIDDLE_LEFT;
+	pScoreText_->rect_	   = mtgb::RectF { 400, 320, 80, 30 };
 }
 
 void ResultScene::Update()
@@ -77,13 +74,7 @@ void ResultScene::Draw() const
 {
 	int32_t itemCount = Game::System<ScoreManager>().GetScore();
 	std::string scoreText(std::to_string(itemCount));
-	Draw::ImmediateText(
-		scoreText,
-		mtgb::RectF { 400, 320, 80, 30 },
-		36,
-		mtgb::TextAlignment::MIDDLE_LEFT,
-		UIParams { 1, AllLayer() }
-	);
+	pScoreText_->text_ = scoreText;
 }
 
 void ResultScene::End() {}

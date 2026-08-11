@@ -2,8 +2,7 @@
 #include "Game.h"
 
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "Entity.h"
+#include "ReleaseUtility.h"
 #include "ComponentConcept.h"
 #include <string>
 
