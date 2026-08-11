@@ -1,17 +1,18 @@
 #pragma once
 
 #include "Entity.h"
-
+#include <vector>
 namespace mtgb
 {
 	struct GameObjectSelectedEvent
 	{
-		EntityId entityId;
+		std::vector<EntityId> entityIds;
+		bool multiSelect;
 	};
 
 	struct GameObjectDeselectedEvent
 	{
-		EntityId entityId;
+		std::vector<EntityId> entityIds;
 	};
 
 	struct SelectionClearedEvent
@@ -19,6 +20,10 @@ namespace mtgb
 	};
 
 	struct GameObjectCreatedEvent
+	{
+		EntityId entityId;
+	};
+	struct GameObjectDeletedEvent
 	{
 		EntityId entityId;
 	};

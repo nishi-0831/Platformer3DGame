@@ -26,10 +26,7 @@ class Command
 
 	/// <summary>
 	/// <para> コマンドの名前 (表示用) </para>
-	/// <para> コピーによる負荷が大きい場合は string_viewなどへ切り替えることを視野に入れる </para>
 	/// </summary>
 	/// <returns></returns>
 	virtual std::string Name() const = 0;
-
-	virtual mtgb::EntityId GetCommandTargetEntityId() const = 0;
 };

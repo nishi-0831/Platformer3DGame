@@ -5,6 +5,7 @@
 #include "Entity.h"
 #include "ComponentFactory.h"
 #include <typeindex>
+#include <vector>
 
 namespace mtgb
 {
@@ -12,18 +13,17 @@ namespace mtgb
 	{
 	  public:
 		GuizmoManipulateCommand(
-			TransformMemento* _pPrevMemento,
-			TransformMemento* _pMemento
+			const std::vector<TransformMemento*>& _prevMementos,
+			const std::vector<TransformMemento*>& _currMementos
 		);
 		~GuizmoManipulateCommand();
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
 		std::string Name() const override;
-		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		TransformMemento* pPrevMemento_;
-		TransformMemento* pMemento_;
+		std::vector<TransformMemento*> prevMementos_;
+		std::vector<TransformMemento*> currMementos_;
 	};
 } // namespace mtgb

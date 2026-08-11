@@ -2,75 +2,82 @@
 #include "DeleteGameObjectCommand.h"
 #include "SceneSystem.h"
 #include "EntityManager.h"
+
 mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
-	GameObject* _pGameObj,
+	std::span<EntityId> _entityIds,
 	const GameObjectFactory& _gameObjectFactory
 )
 	: gameObjectFactory_ { _gameObjectFactory }
-	, targetEntityId_ { INVALID_ENTITY }
-	, name_ { " Unknown" }
-	, layerFlag_ { AllLayer() }
-	, tag_ { GameObjectTag::UNTAGGED }
-	, typeName_ { "Unknown" }
 {
-	if (_pGameObj == nullptr)
-		return;
-
-	name_	   = _pGameObj->GetName();
-	layerFlag_ = _pGameObj->GetLayerFlag();
-	tag_	   = _pGameObj->GetTag();
-	typeName_  = _pGameObj->GetClassTypeName();
-
-	targetEntityId_ = _pGameObj->GetEntityId();
-	// IDに割り当てられているコンポーネントプールの型情報を取得
-	std::optional<std::vector<std::type_index>> cpTypes =
-		Game::System<ComponentRegistry>().GetComponentPoolTypes(targetEntityId_);
-	if (cpTypes.has_value() == false)
-		return;
-
-	for (std::type_index cpType : cpTypes.value())
+	for (EntityId id : _entityIds)
 	{
-		// コンポーネントプールのインターフェース取得
-		IComponentPool* pComponentPool = Game::GetCP(cpType);
-		if (pComponentPool == nullptr)
-			continue;
+		GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(id);
+		GameObjectSnapshot snapshot { .entityId = id,
+									  .name		= pGameObj->GetName(),
+									  .typeName = pGameObj->GetClassTypeName() };
 
-		// メメントを作成
-		IComponentMemento* pMemento = pComponentPool->SaveToMemento(targetEntityId_);
-		if (pMemento == nullptr)
-			continue;
+		std::vector<IComponentMemento*> mementos;
+		// IDに割り当てられているコンポーネントプールの型情報を取得
+		std::optional<std::vector<std::type_index>> cpTypes =
+			Game::System<ComponentRegistry>().GetComponentPoolTypes(id);
+		if (cpTypes.has_value() == false)
+			return;
 
-		mementos_.push_back(pMemento);
+		for (std::type_index cpType : cpTypes.value())
+		{
+			// コンポーネントプールのインターフェース取得
+			IComponentPool* pComponentPool = Game::GetCP(cpType);
+			if (pComponentPool == nullptr)
+				continue;
+
+			// メメントを作成
+			IComponentMemento* pMemento = pComponentPool->SaveToMemento(id);
+			if (pMemento == nullptr)
+				continue;
+
+			mementos.push_back(pMemento);
+		}
+
+		snapshot.mementos = mementos;
+
+		snapshots_.push_back(snapshot);
 	}
 }
 
 void mtgb::DeleteGameObjectCommand::Execute()
 {
-	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(targetEntityId_);
+	for (const auto& snapshot : snapshots_)
+	{
+		Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(snapshot.entityId);
+	}
 }
 
 void mtgb::DeleteGameObjectCommand::Undo()
 {
-	Game::System<EntityManager>().DecrementCounter();
-	GameObject* pGameObj = gameObjectFactory_.Create(typeName_);
-	pGameObj->SetName(name_);
-	// FIXME: アクセス制限により書き換えできないため、完全なUndoではない
-	// pGameObj->layerFlag_ = layerFlag_;
-	// pGameObj->tag_ = tag_;
-	// pGameObj->isNotCalledStart_ = isNotCalledStart_;
-
-	for (IComponentMemento* pMemento : mementos_)
+	for (size_t i = 0; i < snapshots_.size(); i++)
 	{
-		Game::GetComponentFactory().AddComponentFromMemento(*pMemento);
+		Game::System<EntityManager>().DecrementCounter();
+	}
+	for (const auto& snapshot : snapshots_)
+	{
+		GameObject* pGameObj = gameObjectFactory_.Create(snapshot.typeName);
+		if (pGameObj == nullptr)
+			continue;
+		pGameObj->SetName(snapshot.name);
+
+		for (IComponentMemento* pMemento : snapshot.mementos)
+		{
+			Game::GetComponentFactory().AddComponentFromMemento(*pMemento);
+		}
 	}
 }
 
 std::string mtgb::DeleteGameObjectCommand::Name() const
 {
-	return std::format("delete {},EntityId {}", name_, targetEntityId_);
-}
-
-mtgb::EntityId mtgb::DeleteGameObjectCommand::GetCommandTargetEntityId() const
-{
-	return targetEntityId_;
+	std::string str = "Delete->\n";
+	for (auto& snapshots : snapshots_)
+	{
+		str += std::to_string(snapshots.entityId) + "\n";
+	}
+	return str;
 }

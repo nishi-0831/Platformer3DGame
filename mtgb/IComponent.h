@@ -35,6 +35,7 @@ namespace mtgb
 		/// <para> コンポーネントの状態を初期化するのに使う </para>
 		/// </summary>
 		virtual void Reset() {}
+		virtual void OnChangeEntityId() {}
 		EntityId GetEntityId() const
 		{
 			return entityId_;

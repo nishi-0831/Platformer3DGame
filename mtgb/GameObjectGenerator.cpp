@@ -7,7 +7,6 @@
 #include "DuplicateGameObjectCommand.h"
 #include "CommandHistoryManager.h"
 #include "DeleteGameObjectCommand.h"
-#include "SceneSystem.h"
 
 mtgb::GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_ { nullptr };
 
@@ -63,27 +62,17 @@ void mtgb::GameObjectGenerator::Generate(std::string_view _gameObjName)
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
-void mtgb::GameObjectGenerator::Duplicate(EntityId _srcEntityId)
+void mtgb::GameObjectGenerator::Duplicate(std::span<EntityId> _srcEntityIds)
 {
-	GameObject* src			  = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_srcEntityId);
-	std::string classTypeName = src->GetClassTypeName();
-
 	// 複製コマンドを作成、実行
-	DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand(
-		[classTypeName]()
-		{
-			return GetInstance()->gameObjFactory_.Create(classTypeName);
-		},
-		_srcEntityId
-	);
+	DuplicateGameObjectCommand* cmd = new DuplicateGameObjectCommand(_srcEntityIds, GetInstance()->gameObjFactory_);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
-void mtgb::GameObjectGenerator::Delete(EntityId _entityId)
+void mtgb::GameObjectGenerator::Delete(std::span<EntityId> _entityIds)
 {
-	GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	// 削除コマンドを作成、実行
-	DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(pGameObj, GetInstance()->gameObjFactory_);
+	DeleteGameObjectCommand* cmd = new DeleteGameObjectCommand(_entityIds, GetInstance()->gameObjFactory_);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 

@@ -7,11 +7,11 @@
 
 namespace
 {
-	// å§‹ç‚¹ã€çµ‚ç‚¹ã®åˆæœŸè¨­å®š
+	// n“_AI“_‚Ì‰Šúİ’è
 
-	// åº§æ¨™ã®ã‚ªãƒ•ã‚»ãƒƒãƒˆ
+	// À•W‚ÌƒIƒtƒZƒbƒg
 	mtgb::Vector3 INIT_OFFSET { 1.0f, 0.0f, 0.0f };
-	// ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼(çƒ)ã®åŠå¾„
+	// ƒRƒ‰ƒCƒ_[(‹…)‚Ì”¼Œa
 	float INIT_RADIUS { 1.0f };
 } // namespace
 
@@ -28,27 +28,27 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	, pStartCollider_ { nullptr }
 	, pEndCollider_ { nullptr }
 {
-	// å§‹ç‚¹ã€çµ‚ç‚¹ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆä½œæˆ
+	// n“_AI“_‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒgì¬
 	GameObject* start = new GameObject();
 	GameObject* end	  = new GameObject();
 
-	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ã‚·ãƒ¼ãƒ³ã«ç™»éŒ²
+	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğƒV[ƒ“‚É“o˜^
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(start);
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(end);
 
-	// Transformä½œæˆ
+	// Transformì¬
 	pStartTransform_ = start->Component<Transform>();
 	pEndTransform_	 = end->Component<Transform>();
-	// ã‚ªãƒ•ã‚»ãƒƒãƒˆåˆ†å‹•ã‹ã™
+	// ƒIƒtƒZƒbƒg•ª“®‚©‚·
 
 	pStartTransform_->position = pTransform_->position - Vector3 { pTransform_->scale * INIT_OFFSET };
 	pEndTransform_->position   = pTransform_->position + Vector3 { pTransform_->scale * INIT_OFFSET };
 
-	// ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ä½œæˆ
+	// ƒRƒ‰ƒCƒ_[ì¬
 	pStartCollider_ = start->Component<Collider>();
 	pEndCollider_	= end->Component<Collider>();
 
-	// ã‚³ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’çƒã«è¨­å®š
+	// ƒRƒ‰ƒCƒ_[‚ğ‹…‚Éİ’è
 	pStartCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
 	pStartCollider_->isTrigger_	   = true;
 	pEndCollider_->colliderType_   = ColliderType::TYPE_SPHERE;
@@ -63,18 +63,13 @@ Interpolator& mtgb::Interpolator::operator=(const Interpolator& _other)
 	{
 		return *this;
 	}
-
-	this->dir_				  = _other.dir_;
-	this->elapsed_			  = _other.elapsed_;
-	this->duration_			  = _other.duration_;
-	this->startPos_			  = _other.startPos_;
-	this->endPos_			  = _other.endPos_;
-	*(this->pTransform_)	  = *(_other.pTransform_);
-	*(this->pStartTransform_) = *(_other.pStartTransform_);
-	*(this->pEndTransform_)	  = *(_other.pEndTransform_);
-	*(this->pStartCollider_)  = *(_other.pStartCollider_);
-	*(this->pEndCollider_)	  = *(_other.pEndCollider_);
-
+	IComponent::operator=(_other);
+	this->dir_		  = _other.dir_;
+	this->elapsed_	  = _other.elapsed_;
+	this->duration_	  = _other.duration_;
+	this->startPos_	  = _other.startPos_;
+	this->endPos_	  = _other.endPos_;
+	this->pTransform_ = _other.pTransform_;
 	return *this;
 }
 
@@ -82,10 +77,10 @@ mtgb::Interpolator::~Interpolator() {}
 
 void mtgb::Interpolator::UpdateTransform()
 {
-	// é€²è¡Œåº¦ã‚’æ›´æ–°
+	// is“x‚ğXV
 	UpdateProgress();
 
-	// è£œé–“å€¤ã«åº§æ¨™ã‚’æ›´æ–°
+	// •âŠÔ’l‚ÉÀ•W‚ğXV
 	pTransform_->position = EvaluatePos();
 }
 
@@ -93,7 +88,7 @@ void mtgb::Interpolator::UpdateProgress()
 {
 	elapsed_ += Time::DeltaTimeF() * dir_;
 	float progress = elapsed_ / duration_;
-	// é€²è¡Œåº¦ãŒ0ã‹ã‚‰1ã‚’è¶…ãˆãŸå ´åˆã€é€²è¡Œæ–¹å‘ã‚’åè»¢ã•ã›ã‚‹
+	// is“x‚ª0‚©‚ç1‚ğ’´‚¦‚½ê‡Ais•ûŒü‚ğ”½“]‚³‚¹‚é
 	if (progress > 1.0f || progress < 0.0f)
 	{
 		dir_ *= -1.0f;
@@ -103,7 +98,7 @@ void mtgb::Interpolator::UpdateProgress()
 
 mtgb::Vector3 mtgb::Interpolator::EvaluatePos()
 {
-	// å§‹ç‚¹ã‹ã‚‰çµ‚ç‚¹ã‚’é€²è¡Œåº¦ã§è£œé–“
+	// n“_‚©‚çI“_‚ğis“x‚Å•âŠÔ
 	float progres = elapsed_ / duration_;
 	return Mathf::Lerp(pStartTransform_->position, pEndTransform_->position, progres);
 }
@@ -114,18 +109,18 @@ Quaternion mtgb::Interpolator::CalculateRot()
 
 	if (dir_ < 0.0f)
 	{
-		// çµ‚ç‚¹ã‹ã‚‰å§‹ç‚¹ã¸
+		// I“_‚©‚çn“_‚Ö
 		to	 = pStartTransform_->position;
 		from = pEndTransform_->position;
 	}
 	else
 	{
-		// å§‹ç‚¹ã‹ã‚‰çµ‚ç‚¹ã¸
+		// n“_‚©‚çI“_‚Ö
 		to	 = pEndTransform_->position;
 		from = pStartTransform_->position;
 	}
 
-	// ãƒ™ã‚¯ãƒˆãƒ«ã‹ã‚‰å››å…ƒæ•°ä½œæˆ
+	// ƒxƒNƒgƒ‹‚©‚çlŒ³”ì¬
 	Vector3 rot = Vector3::Normalize(to - from);
 	return Quaternion::LookRotation(rot, Vector3::Up());
 }
@@ -138,16 +133,21 @@ void mtgb::Interpolator::SetEndpoints(const Vector3& _start, const Vector3& _end
 
 void mtgb::Interpolator::OnPostRestore()
 {
-	// èª­ã¿è¾¼ã‚“ã å€¤ã‚’å§‹ç‚¹ã€çµ‚ç‚¹ã®åº§æ¨™ã«ä»£å…¥
+	// “Ç‚İ‚ñ‚¾’l‚ğn“_AI“_‚ÌÀ•W‚É‘ã“ü
 	pStartTransform_->position = startPos_;
 	pEndTransform_->position   = endPos_;
 }
 
 void mtgb::Interpolator::OnPreSave()
 {
-	// ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºç”¨ã®å¤‰æ•°ã«å§‹ç‚¹ã€çµ‚ç‚¹ã®åº§æ¨™ã‚’ä»£å…¥
+	// ƒVƒŠƒAƒ‰ƒCƒY—p‚Ì•Ï”‚Én“_AI“_‚ÌÀ•W‚ğ‘ã“ü
 	startPos_ = pStartTransform_->position;
 	endPos_	  = pEndTransform_->position;
+}
+
+void mtgb::Interpolator::OnChangeEntityId()
+{
+	pTransform_ = &Transform::Get(GetEntityId());
 }
 
 void mtgb::Interpolator::Reset()

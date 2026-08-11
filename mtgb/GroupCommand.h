@@ -13,7 +13,6 @@ namespace mtgb
 		void Undo() override;
 		void Redo() override;
 		std::string Name() const override;
-		EntityId GetCommandTargetEntityId() const override;
 		void ExecuteCommand(Command* _pCommand);
 		void SetGroupName(std::string_view _name);
 

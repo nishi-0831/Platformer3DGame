@@ -5,10 +5,11 @@
 mtgb::AddComponentCommand::AddComponentCommand(
 	mtgb::EntityId _entityId,
 	std::type_index _typeIdx,
-	mtgb::IComponentMemento* _pMemento)
+	mtgb::IComponentMemento* _pMemento
+)
 	: entityId_ { _entityId }
-	, componentType_{_typeIdx}
-	, pMemento_{_pMemento}
+	, componentType_ { _typeIdx }
+	, pMemento_ { _pMemento }
 {
 }
 
@@ -54,9 +55,4 @@ void mtgb::AddComponentCommand::RemoveComponent() const
 std::string mtgb::AddComponentCommand::Name() const
 {
 	return std::string("AddComponent:") + componentType_.name();
-}
-
-mtgb::EntityId mtgb::AddComponentCommand::GetCommandTargetEntityId() const
-{
-	return entityId_;
 }

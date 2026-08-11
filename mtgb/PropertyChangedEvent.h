@@ -10,15 +10,11 @@ namespace mtgb
 	class PropertyChangeCommand : public Command
 	{
 	  public:
-		PropertyChangeCommand(
-			IComponentMemento* _pPrevMemento,
-			IComponentMemento* _pMemento
-		);
+		PropertyChangeCommand(IComponentMemento* _pPrevMemento, IComponentMemento* _pMemento);
 
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;
-		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
 		IComponentMemento* pPrevMemento_;

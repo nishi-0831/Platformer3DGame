@@ -105,11 +105,14 @@ mtgb::ImGuiEditor::~ImGuiEditor()
 
 void mtgb::ImGuiEditor::Initialize()
 {
-	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚ŒãŸã¨ãã«ã€ãã‚Œã‚’è¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹
+	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚½‚Æ‚«‚ÉA‚»‚ê‚ğ•\¦‘ÎÛ‚Æ‚·‚é
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[](const GameObjectSelectedEvent& _handler)
+		[](const GameObjectSelectedEvent& _event)
 		{
-			Game::System<ImGuiEditor>().SelectGameObject(_handler.entityId);
+			if (_event.entityIds.size() == 1)
+			{
+				Game::System<ImGuiEditor>().SelectGameObject(_event.entityIds[0]);
+			}
 		},
 		EventScope::GLOBAL
 	);
@@ -129,38 +132,47 @@ void mtgb::ImGuiEditor::Update()
 	pManipulator_->Update();
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		if (InputUtil::GetKeyDown(KeyCode::Z))
+		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 		{
-			Game::System<CommandHistoryManager>().UndoCommand();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::Y))
-		{
-			Game::System<CommandHistoryManager>().RedoCommand();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::S))
-		{
-			SaveMapData();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::O))
-		{
-			LoadMapData();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::D))
-		{
-			DuplicateGameObject();
-		}
-		if (InputUtil::GetKeyDown(KeyCode::F))
-		{
-			Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+			if (InputUtil::GetKeyDown(KeyCode::Z))
+			{
+				Game::System<CommandHistoryManager>().UndoCommand();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::Y))
+			{
+				Game::System<CommandHistoryManager>().RedoCommand();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::S))
+			{
+				SaveMapData();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::O))
+			{
+				LoadMapData();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::D))
+			{
+				DuplicateGameObject();
+			}
+			if (InputUtil::GetKeyDown(KeyCode::F))
+			{
+				// ‘I‘ğ’†‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªˆê‚Â‚Ìê‡‚Ì‚İÚ‹ß
+				auto entities = pManipulator_->GetSelectedEntityId();
+				if (entities.size() == 1)
+				{
+					Game::System<ImGuiEditorCamera>().FrameSelected(entities[0]);
+				}
+			}
 		}
 		if (InputUtil::GetKeyDown(KeyCode::DELETE))
 		{
-			// ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ãŒé¸æŠã—ã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
+			// ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚ª‘I‘ğ‚µ‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğíœ
 			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+			pManipulator_->DeselectAll();
 		}
 	}
 
-	// ã‚°ãƒªãƒƒãƒ‰ã®æç”»
+	// ƒOƒŠƒbƒh‚Ì•`‰æ
 	int interval = (static_cast<int>(gridHalfExtent_) * 2) / gridDivisionNum_;
 	for (int i = 0; i <= gridDivisionNum_; i++)
 	{
@@ -180,18 +192,22 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+	std::span<EntityId> selectedEntities = pManipulator_->GetSelectedEntityId();
+	if (selectedEntities.size() == 1)
+	{
+		ShowAddComponentDialog(selectedEntities[0]);
+	}
 	ShowGenerateGameObjectButton();
 }
 
 void mtgb::ImGuiEditor::SaveMapData()
 {
-	// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒãªã„å ´åˆã€æ–°è¦ä½œæˆã™ã‚‹
+	// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚ª‚È‚¢ê‡AV‹Kì¬‚·‚é
 	if (editingStagePath_.empty())
 	{
 		SaveMapDataAs();
 	}
-	// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¸Šæ›¸ã
+	// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚Éã‘‚«
 	else
 	{
 		SaveStageJson(editingStagePath_);
@@ -243,12 +259,12 @@ void mtgb::ImGuiEditor::LoadMapData()
 	nlohmann::json json(GetStageJson(filePath));
 	if (json.empty() == false)
 	{
-		// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨˜éŒ²
+		// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚ğ‹L˜^
 		editingStagePath_ = filePath;
 		Game::System<SceneSystem>().Move<StageEditScene>(json);
-		// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+		// •ÒWƒ‚[ƒh‚ğ—LŒø‚É‚·‚é
 		Game::SetEditMode(true);
-		// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’è¨˜éŒ²
+		// Œ»İ‚ÌƒXƒe[ƒW‚ğ‹L˜^
 		tmpStageData_ = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
 	}
 	Time::StabilizeDeltaTime();
@@ -269,7 +285,7 @@ void mtgb::ImGuiEditor::PlayScene()
 
 void mtgb::ImGuiEditor::StopScene()
 {
-	// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ã‚’æœ‰åŠ¹ã«ã™ã‚‹
+	// •ÒWƒ‚[ƒh‚ğ—LŒø‚É‚·‚é
 	Game::SetEditMode(true);
 	Game::System<SceneSystem>().Move<StageEditScene>(tmpStageData_);
 	Time::StabilizeDeltaTime();
@@ -277,16 +293,12 @@ void mtgb::ImGuiEditor::StopScene()
 
 void mtgb::ImGuiEditor::DuplicateGameObject()
 {
-	EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
-	if (currSelectedEntity == INVALID_ENTITY)
-		return;
-
-	GameObjectGenerator::Duplicate(currSelectedEntity);
+	GameObjectGenerator::Duplicate(pManipulator_->GetSelectedEntityId());
 }
 
 void mtgb::ImGuiEditor::AddComponent(std::type_index _componentType, EntityId _entityId)
 {
-	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆæˆåŠŸ
+	// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬¬Œ÷
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
@@ -385,7 +397,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		bool isEditMode = Game::IsEditMode();
 
-		// ãƒ—ãƒ¬ã‚¤ãƒ¢ãƒ¼ãƒ‰ãªã‚‰ç„¡åŠ¹åŒ–
+		// ƒvƒŒƒCƒ‚[ƒh‚È‚ç–³Œø‰»
 		ImGui::BeginDisabled(isEditMode == false);
 		if (ImGui::Button("Play"))
 		{
@@ -393,7 +405,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		ImGui::EndDisabled();
 
-		// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ãªã‚‰ç„¡åŠ¹åŒ–
+		// •ÒWƒ‚[ƒh‚È‚ç–³Œø‰»
 		ImGui::BeginDisabled(isEditMode);
 		if (ImGui::Button("Stop"))
 		{
@@ -411,33 +423,43 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 
 void mtgb::ImGuiEditor::ShowInspector()
 {
+	// •¡”‘I‘ğ‚³‚ê‚Ä‚¢‚é‚È‚ç‚ÎA•\¦‚µ‚È‚¢
+	std::span<EntityId> entityIds = pManipulator_->GetSelectedEntityId();
+	if (entityIds.size() > 1)
+	{
+		return;
+	}
 	std::list<GameObject*> gameObjects;
 	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjects);
 	ImGui::Begin("Inspector");
 	GameObject* selectedObj = nullptr;
 	for (auto obj : gameObjects)
 	{
-		// éè¡¨ç¤ºè¨­å®šã•ã‚Œã¦ã„ã‚‹ãªã‚‰ã°ã‚¹ã‚­ãƒƒãƒ—
+		// ”ñ•\¦İ’è‚³‚ê‚Ä‚¢‚é‚È‚ç‚ÎƒXƒLƒbƒv
 		if (obj->isInspectable_ == false)
 			continue;
 		bool selected = inspectedObjectName_ == obj->GetName();
-		// è¡¨ç¤ºå¯¾è±¡ã¨ã—ã¦è¨˜éŒ²ã—ãŸåå‰ã¨ä¸€è‡´ã™ã‚‹å ´åˆ
+		// •\¦‘ÎÛ‚Æ‚µ‚Ä‹L˜^‚µ‚½–¼‘O‚Æˆê’v‚·‚éê‡
 		if (selected)
 		{
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
 		}
-		// ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸ
+		// ƒNƒŠƒbƒN‚³‚ê‚½
 		if (ImGui::Selectable(obj->GetName().c_str(), selected, ImGuiSelectableFlags_AllowDoubleClick))
 		{
-			// ãƒ€ãƒ–ãƒ«ã‚¯ãƒªãƒƒã‚¯æ™‚ã€å¯¾è±¡ã‚’ç”»é¢ã«åã‚ã‚‹
+			// ƒ_ƒuƒ‹ƒNƒŠƒbƒNA‘ÎÛ‚ğ‰æ–Ê‚Éû‚ß‚é
 			if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
 			{
 				Game::System<ImGuiEditorCamera>().FrameSelected(obj->GetEntityId());
 			}
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
-			GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
+			GameObjectSelectedEvent event { .entityIds = { selectedObj->GetEntityId() }, .multiSelect = false };
+			if (ImGui::IsKeyPressed(ImGuiKey_LeftCtrl, false))
+			{
+				event.multiSelect = true;
+			}
 			Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
 		}
 	}

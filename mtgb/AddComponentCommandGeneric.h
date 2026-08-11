@@ -30,10 +30,6 @@ namespace mtgb
 		{
 			return std::string("AddComponent:") + T::TypeName();
 		}
-		mtgb::EntityId GetCommandTargetEntityId() const override
-		{
-			return pMemento_->GetEntityId();
-		}
 
 	  private:
 		T::Memento* pMemento_;

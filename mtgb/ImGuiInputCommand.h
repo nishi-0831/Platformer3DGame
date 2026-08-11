@@ -30,17 +30,6 @@ namespace mtgb
 		{
 			return "Input:" + name_;
 		}
-		EntityId GetCommandTargetEntityId() const override
-		{
-			if constexpr (std::is_base_of_v<Entity, T>)
-			{
-				return pTarget_->GetEntityId();
-			}
-			else
-			{
-				return INVALID_ENTITY;
-			}
-		}
 
 	  private:
 		T* pTarget_;

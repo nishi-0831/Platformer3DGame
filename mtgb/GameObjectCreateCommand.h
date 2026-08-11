@@ -16,19 +16,19 @@ namespace mtgb
 	{
 	  public:
 		using CreateFunc = std::function<GameObject*()>;
-		 template<typename Func>
-		 requires std::is_invocable_r_v<GameObject*,Func>
+		template <typename Func>
+			requires std::is_invocable_r_v<GameObject*, Func>
 		GameObjectCreateCommand(Func&& _createFunc);
 
 		template <typename Func>
-			 requires std::is_invocable_r_v<GameObject*, Func>
+			requires std::is_invocable_r_v<GameObject*, Func>
 		GameObjectCreateCommand(Func&& _createFunc, const nlohmann::json& _json);
 		void Execute() override;
 		void Undo() override;
 		void Redo() override;
 
 		std::string Name() const override;
-		EntityId GetCommandTargetEntityId() const override;
+		EntityId GetCommandTargetEntityId() const;
 
 	  private:
 		void CreateGameObject();
@@ -40,12 +40,11 @@ namespace mtgb
 	};
 	template <typename Func>
 		requires std::is_invocable_r_v<GameObject*, Func>
-	inline GameObjectCreateCommand::GameObjectCreateCommand(Func&& _createFunc) 
-		: entityId_ {INVALID_ENTITY}
+	inline GameObjectCreateCommand::GameObjectCreateCommand(Func&& _createFunc)
+		: entityId_ { INVALID_ENTITY }
 		, createFunc_ { std::forward<Func>(_createFunc) }
 		, json_ {}
 	{
-		
 	}
 	template <typename Func>
 		requires std::is_invocable_r_v<GameObject*, Func>

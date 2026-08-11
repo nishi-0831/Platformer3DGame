@@ -30,7 +30,7 @@ namespace mtgb
 
 		void UpdateVelocity();
 		void OnGround();
-
+		void OnChangeEntityId() override;
 		/// <summary>
 		/// コライダ同士の衝突に対するコールバック
 		/// </summary>

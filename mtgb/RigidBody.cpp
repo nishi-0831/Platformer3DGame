@@ -58,6 +58,11 @@ void mtgb::RigidBody::OnGround()
 	velocity_.y = (std::max)(velocity_.y, 0.0f);
 }
 
+void mtgb::RigidBody::OnChangeEntityId()
+{
+	pTransform_ = &Transform::Get(GetEntityId());
+}
+
 bool mtgb::RigidBody::IsJumping()
 {
 	return velocity_.y > 0.0f;

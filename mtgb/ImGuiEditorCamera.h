@@ -39,7 +39,7 @@ namespace mtgb
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
 		float rotateSensitivity_;
 		float moveSpeed_;
-
+		EntityId selectedEntityId_;
 		std::string windowName_;
 		// オブジェクトを画面の中央に表示する際の、距離に掛ける倍率
 		// ちょうど収まる距離を基準に、カメラ位置を調整するのに使う

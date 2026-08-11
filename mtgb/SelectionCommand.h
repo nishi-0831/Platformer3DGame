@@ -7,88 +7,46 @@
 #include <concepts>
 #include <typeindex>
 #include <type_traits>
+#include <vector>
+#include <span>
 #include "CallbackConcepts.h"
 #include "Entity.h"
+
 namespace mtgb
 {
+	class ImGuizmoManipulator;
 	class SelectionCommand : public Command
 	{
 	  public:
-		template <EntityCallable FuncA, EntityCallable FuncB>
-		SelectionCommand(EntityId _entityId, FuncA&& _selectFunc, FuncB&& _deselectFunc);
+		SelectionCommand(std::span<const EntityId> _entityIds, bool _multiSelect, ImGuizmoManipulator& _manipulator);
 
-		void Execute() override
-		{
-			if (selectFunc_)
-			{
-				selectFunc_(entityId_);
-			}
-		}
-		void Undo() override
-		{
-			if (deselectFunc_)
-			{
-				deselectFunc_(entityId_);
-			}
-		}
+		void Execute() override;
+		void Undo() override;
 		std::string Name() const override
 		{
 			return "SelectionCommand";
 		}
-		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		EntityId entityId_;
-		EntityCallback selectFunc_;
-		EntityCallback deselectFunc_;
+		std::vector<EntityId> entityIds_;
+		bool multiSelect_;
+		ImGuizmoManipulator& manipulator_;
 	};
 
 	class DeselectionCommand : public Command
 	{
 	  public:
-		template <EntityCallable FuncA, EntityCallable FuncB>
-		DeselectionCommand(EntityId _entityId, FuncA&& _deselectFunc, FuncB&& _selectFunc);
+		DeselectionCommand(std::span<const EntityId> _entityIds, ImGuizmoManipulator& _manipulator);
 
-		void Execute() override
-		{
-			if (deselectFunc_)
-			{
-				deselectFunc_(entityId_);
-			}
-		}
-		void Undo() override
-		{
-			if (selectFunc_)
-			{
-				selectFunc_(entityId_);
-			}
-		}
+		void Execute() override;
+		void Undo() override;
 		std::string Name() const override
 		{
 			return "DeselectionCommand";
 		}
-		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
-		EntityId entityId_;
-		EntityCallback deselectFunc_;
-		EntityCallback selectFunc_;
+		std::vector<EntityId> entityIds_;
+		ImGuizmoManipulator& manipulator_;
 	};
-
-	template <EntityCallable FuncA, EntityCallable FuncB>
-	inline SelectionCommand::SelectionCommand(EntityId _entityId, FuncA&& _selectFunc, FuncB&& _deselectFunc)
-		: entityId_ { _entityId }
-		, selectFunc_ { std::forward<FuncA>(_selectFunc) }
-		, deselectFunc_ { std::forward<FuncB>(_deselectFunc) }
-	{
-	}
-
-	template <EntityCallable FuncA, EntityCallable FuncB>
-	inline DeselectionCommand::DeselectionCommand(EntityId _entityId, FuncA&& _deselectFunc, FuncB&& _selectFunc)
-		: entityId_ { _entityId }
-		, deselectFunc_ { std::forward<FuncA>(_deselectFunc) }
-		, selectFunc_ { std::forward<FuncB>(_selectFunc) }
-	{
-	}
-
 } // namespace mtgb

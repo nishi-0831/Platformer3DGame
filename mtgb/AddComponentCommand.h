@@ -25,7 +25,6 @@ namespace mtgb
 		void Undo() override;
 
 		std::string Name() const override;
-		EntityId GetCommandTargetEntityId() const override;
 
 	  private:
 		EntityId entityId_;

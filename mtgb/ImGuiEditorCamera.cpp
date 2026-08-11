@@ -352,25 +352,19 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	{
 		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
 		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
-
-		mtgb::GameObjectSelectedEvent event { .entityId = entityId };
+		selectedEntityId_ = entityId;
+		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .multiSelect = false };
+		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
+		{
+			event.multiSelect = true;
+		}
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:Selected");
 	}
 	else
 	{
-		mtgb::GameObjectDeselectedEvent event;
-		if (pTargetTransform_ != nullptr)
-		{
-			event			  = { .entityId = pTargetTransform_->GetEntityId() };
-			pTargetTransform_ = nullptr;
-		}
-		else
-		{
-			event = { .entityId = INVALID_ENTITY };
-		}
-
-		Game::System<EventManager>().GetEvent<mtgb::GameObjectDeselectedEvent>().Invoke(event);
+		pTargetTransform_ = nullptr;
+		Game::System<EventManager>().GetEvent<mtgb::SelectionClearedEvent>().Invoke(SelectionClearedEvent {});
 		LOGIMGUI("EditorCamera:No Select");
 	}
 }

@@ -44,6 +44,7 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void OnPreSave() override;
+		void OnChangeEntityId() override;
 		void Reset() override;
 
 	  private:

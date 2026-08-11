@@ -22,12 +22,12 @@ namespace mtgb
 		/// <summary>
 		/// ゲームオブジェクトを複製する
 		/// </summary>
-		static void Duplicate(EntityId _srcEntityId);
+		static void Duplicate(std::span<EntityId> _srcEntityIds);
 		/// <summary>
 		/// ゲームオブジェクトを削除する
 		/// </summary>
 		/// <param name="_entityId"></param>
-		static void Delete(EntityId _entityId);
+		static void Delete(std::span<EntityId> _entityIds);
 
 	  private:
 		GameObjectGenerator() = default;

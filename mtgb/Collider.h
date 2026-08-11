@@ -70,6 +70,7 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void Reset() override;
+		void OnChangeEntityId() override;
 
 		[[MT_PROPERTY()]]
 		// 当たり判定の形

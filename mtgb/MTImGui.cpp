@@ -289,13 +289,15 @@ void mtgb::MTImGui::ShowListView(ShowType _show)
 {
 	ImGui::BeginChild("List", ImVec2(200, 0), true);
 	std::function<void()> selectedFunc = GetSelectedFunc(_show);
+	ImGui::EndChild();
+	// Listの横に property表示
+	ImGui::SameLine();
 	if (selectedFunc != nullptr)
 	{
 		ImGui::BeginChild("property", ImVec2(0, 0), true);
 		selectedFunc();
 		ImGui::EndChild();
 	}
-	ImGui::EndChild();
 }
 std::function<void()> mtgb::MTImGui::GetSelectedFunc(ShowType _show)
 {

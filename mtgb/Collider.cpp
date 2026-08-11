@@ -395,6 +395,11 @@ void mtgb::Collider::Reset()
 	onCollidersPrev_.clear();
 }
 
+void mtgb::Collider::OnChangeEntityId()
+{
+	pTransform_ = &Transform::Get(GetEntityId());
+}
+
 void mtgb::Collider::Draw() const
 {
 	static Transform copyTransform {};
