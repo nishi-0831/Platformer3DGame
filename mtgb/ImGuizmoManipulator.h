@@ -38,6 +38,7 @@ namespace mtgb
 		void DrawTransformGizmo();
 		void DrawViewGizmo();
 		void CalculateGizmoMatrix();
+		void CalculateOriginalScale();
 
 		ImGuizmo::OPERATION operation_;
 		ImGuizmo::MODE mode_;
@@ -58,6 +59,7 @@ namespace mtgb
 		float clipSpaceGizmoSize_;
 		std::vector<EntityId> selectedIdList_;
 		std::vector<Matrix4x4> originalWorldMatrices_;
-		Matrix4x4 selectionWorldBefore_;
+		// 選択したオブジェクトの、ギズモを使用する直前のスケール
+		std::vector<DirectX::XMVECTOR> preManipulationScales_;
 	};
 } // namespace mtgb
