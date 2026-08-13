@@ -35,6 +35,8 @@ namespace mtgb
 
 		void MoveCameraSphericalOnTheSpot();
 		void SelectTransform();
+		void ProcessDrag();
+		void RectSelect();
 		CameraHandleInScene hCamera_;
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
 		float rotateSensitivity_;
@@ -45,5 +47,16 @@ namespace mtgb
 		// ちょうど収まる距離を基準に、カメラ位置を調整するのに使う
 		// 1.0fでぴったり、1.2fで20%分さらに離れる
 		float frameSelectedDistanceScale_;
+		bool dragging_;
+		RectF dragRect_;
+		bool multiRectSelect_;
+		ImVec2 windowPos_;
+		// 選択範囲となる矩形の枠の色
+		ImU32 rectFrameColor_;
+		// 選択範囲となる矩形を塗りつぶす色
+		ImU32 rectFillColor_;
+		// ドラッグ状態に遷移する条件となる、マウスの閾値
+		// 長押ししてからのマウス移動量がこの値を超えるとドラッグ状態になる
+		float dragThresholdMovement_;
 	};
 } // namespace mtgb

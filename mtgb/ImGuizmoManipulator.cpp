@@ -16,7 +16,7 @@
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	using namespace DirectX;
-	if (selectedIdList_.empty())
+	if (selectedIds_.empty())
 	{
 		ImGuizmo::Enable(false);
 		return;
@@ -36,9 +36,9 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 		{
 			XMVECTOR scale, trans, rot;
 			XMMatrixDecompose(&scale, &rot, &trans, mat);
-			for (int i = 0; i < selectedIdList_.size(); i++)
+			for (int i = 0; i < selectedIds_.size(); i++)
 			{
-				Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+				Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 				transform.scale		 = XMVectorMultiply(preManipulationScales_[i], scale);
 			}
 		}
@@ -53,9 +53,9 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 			// オブジェクトの座標系に戻す
 			// P^-1 ・ Δ ・ P
 			XMMATRIX pivotDelta = XMMatrixMultiply(XMMatrixMultiply(invPrev, delta), prevMat);
-			for (int i = 0; i < selectedIdList_.size(); i++)
+			for (int i = 0; i < selectedIds_.size(); i++)
 			{
-				Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+				Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 				// Wi ・ (P^-1 ・ Δ ・ P)
 				XMMATRIX newWorld = XMMatrixMultiply(originalWorldMatrices_[i], pivotDelta);
 
@@ -81,7 +81,7 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 {
 	using namespace DirectX;
-	if (selectedIdList_.empty())
+	if (selectedIds_.empty())
 	{
 		ImGuizmo::Enable(false);
 		return;
@@ -155,7 +155,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
 		[this](const SelectionClearedEvent& _event)
 		{
-			GenerateDeselectedCommand({ .entityIds = selectedIdList_ });
+			GenerateDeselectedCommand({ .entityIds = selectedIds_ });
 		},
 		EventScope::GLOBAL
 	);
@@ -182,12 +182,13 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 
 void mtgb::ImGuizmoManipulator::CalculateGizmoMatrix()
 {
-	// float[16]の配列を作成
 	using namespace DirectX;
 	Vector3 center { 0, 0, 0 };
 	originalWorldMatrices_.clear();
+
+	// マニピュレーターの座標を計算する。選択しているオブジェクトの座標を足して、その数で割る
 	int count = 0;
-	for (EntityId id : selectedIdList_)
+	for (EntityId id : selectedIds_)
 	{
 		Transform& trans = Game::System<TransformCP>().Get(id);
 		Matrix4x4 worldMat;
@@ -224,9 +225,9 @@ void mtgb::ImGuizmoManipulator::CalculateGizmoMatrix()
 void mtgb::ImGuizmoManipulator::CalculateOriginalScale()
 {
 	preManipulationScales_.clear();
-	for (size_t i = 0; i < selectedIdList_.size(); i++)
+	for (size_t i = 0; i < selectedIds_.size(); i++)
 	{
-		Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+		Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 		preManipulationScales_.push_back(transform.scale);
 	}
 }
@@ -299,41 +300,59 @@ void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, boo
 	if (_entityIds.empty())
 	{
 		DeselectAll();
+		return;
+	}
+
+	ImGuizmo::Enable(true);
+	if (_multiSelect)
+	{
+		for (auto id : _entityIds)
+		{
+			if (selectedIndex_.contains(id) == false)
+			{
+				selectedIndex_[id] = selectedIds_.size();
+				selectedIds_.push_back(id);
+			}
+		}
 	}
 	else
 	{
-		ImGuizmo::Enable(true);
-		if (_multiSelect)
+		selectedIds_.clear();
+		selectedIndex_.clear();
+		for (auto id : _entityIds)
 		{
-			std::ranges::copy(_entityIds, std::back_inserter(selectedIdList_));
-		}
-		else
-		{
-			selectedIdList_.clear();
-			selectedIdList_ = { _entityIds.begin(), _entityIds.end() };
+			selectedIndex_[id] = selectedIds_.size();
+			selectedIds_.push_back(id);
 		}
 	}
 }
 
 void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 {
-	std::erase_if(
-		selectedIdList_,
-		[_entityIds](EntityId _id)
+	for (auto id : _entityIds)
+	{
+		// 選択中のEntityIdを除去する
+		if (selectedIndex_.contains(id))
 		{
-			return std::ranges::find(_entityIds, _id) != _entityIds.end();
+			size_t selectedEntityIdx = selectedIndex_[id];
+			EntityId backEntityId	 = selectedIds_.back();
+
+			std::swap(selectedIds_[selectedIndex_[id]], selectedIds_.back());
+			selectedIds_.pop_back();
+			selectedIndex_.erase(id);
+			selectedIndex_[backEntityId] = selectedEntityIdx;
 		}
-	);
+	}
 }
 
 void mtgb::ImGuizmoManipulator::DeselectAll()
 {
-	selectedIdList_.clear();
+	selectedIds_.clear();
 }
 
 std::span<mtgb::EntityId> mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 {
-	return selectedIdList_;
+	return selectedIds_;
 }
 
 void mtgb::ImGuizmoManipulator::UpdateManipulator()
@@ -342,9 +361,9 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 	if (isUsing_ == false)
 	{
 		preManipulationScales_.clear();
-		for (size_t i = 0; i < selectedIdList_.size(); i++)
+		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
-			Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 			preManipulationScales_.push_back(transform.scale);
 		}
 	}
@@ -353,9 +372,9 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 	{
 		SAFE_CLEAR_CONTAINER_DELETE(transformMementos_);
 		preManipulationScales_.clear();
-		for (size_t i = 0; i < selectedIdList_.size(); i++)
+		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
-			Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 			transformMementos_.push_back(transform.SaveToMemento());
 
 			preManipulationScales_.push_back(transform.scale);
@@ -366,9 +385,9 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 	if (wasUsing_ == true && isUsing_ == false)
 	{
 		std::vector<TransformMemento*> currTransformMementos;
-		for (size_t i = 0; i < selectedIdList_.size(); i++)
+		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
-			Transform& transform = Game::System<TransformCP>().Get(selectedIdList_[i]);
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 			currTransformMementos.push_back(transform.SaveToMemento());
 		}
 		GuizmoManipulateCommand* cmd = new GuizmoManipulateCommand(transformMementos_, currTransformMementos);

@@ -22,6 +22,7 @@
 #include <d3d11.h>
 #include "Mathf.h"
 #include "QuatToEuler.h"
+#include "Screen.h"
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -36,6 +37,10 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }
 	, frameSelectedDistanceScale_ { 1.2f }
+	, dragging_ { false }
+	, rectFrameColor_ { IM_COL32(0, 0, 150, 255) }
+	, rectFillColor_ { IM_COL32(0, 0, 100, 50) }
+	, dragThresholdMovement_ { 1.0f }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
@@ -115,6 +120,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 							SelectTransform();
 						}
 				}
+				ProcessDrag();
 			}
 		)
 		.RegisterTransition(
@@ -147,16 +153,15 @@ mtgb::ImGuiEditorCamera::~ImGuiEditorCamera() {}
 
 void mtgb::ImGuiEditorCamera::ShowImGui()
 {
-	ImVec2 mousePos	 = ImGui::GetMousePos();
-	ImVec2 windowPos = ImGui::GetWindowPos();
-
-	ImVec2 localPos = ImVec2(mousePos.x - windowPos.x, mousePos.y - windowPos.y);
-
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->position, "cameraPos");
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->rotate, "cameraRot");
+	PropertyDisplayRegistry::Instance().ShowProperty(&dragRect_, "dragRect");
 	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
+	ImGui::InputFloat("windowX", &windowPos_.x);
+	ImGui::InputFloat("windowY", &windowPos_.y);
+	ImGui::Checkbox("drag", &dragging_);
 
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
@@ -367,6 +372,135 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 		Game::System<EventManager>().GetEvent<mtgb::SelectionClearedEvent>().Invoke(SelectionClearedEvent {});
 		LOGIMGUI("EditorCamera:No Select");
 	}
+}
+
+void mtgb::ImGuiEditorCamera::ProcessDrag()
+{
+	windowPos_ = ImGui::FindWindowByName(windowName_.c_str())->WorkRect.Min;
+	// マウスを押下した瞬間
+	if (InputUtil::GetMouseDown(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()))
+	{
+		// 選択範囲の始点を記録する
+		ImVec2 mousePos = ImGui::GetMousePos();
+		Vector2F mousePosInSceneView { mousePos.x - windowPos_.x, mousePos.y - windowPos_.y };
+		dragRect_.point	 = mousePosInSceneView;
+		dragRect_.size.x = 0.0f;
+		dragRect_.size.y = 0.0f;
+	}
+	// マウスを押下している、ギズモを操作していない場合
+	if (InputUtil::GetMouse(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()) && ImGuizmo::IsUsingAny() == false)
+	{
+		ImVec2 mousePos = ImGui::GetMousePos();
+		Vector2F mousePosInSceneView { mousePos.x - windowPos_.x, mousePos.y - windowPos_.y };
+		// 押下した際の座標と現在の座標で矩形を作成
+		dragRect_ = RectF::FromLine(dragRect_.point, mousePosInSceneView);
+
+		float movementX = std::abs(dragRect_.size.x);
+		float movementY = std::abs(dragRect_.size.y);
+		// 矩形のサイズが閾値を超えたら、ドラッグ状態にする
+		if (movementX > dragThresholdMovement_ && movementY > dragThresholdMovement_)
+		{
+			dragging_ = true;
+		}
+	}
+	if (dragging_)
+	{
+		// 選択範囲を描画
+		MTImGui::DirectShow(
+			[this]()
+			{
+				Vector2F begin = dragRect_.GetBegin();
+				Vector2F end   = dragRect_.GetEnd();
+
+				ImVec2 minPoint(begin.x, begin.y);
+				ImVec2 maxPoint(end.x, end.y);
+
+				// 矩形の中身を描画
+				ImGui::GetWindowDrawList()->AddRectFilled(minPoint + windowPos_, maxPoint + windowPos_, rectFillColor_);
+				// 矩形の枠を描画
+				ImGui::GetWindowDrawList()->AddRect(minPoint + windowPos_, maxPoint + windowPos_, rectFrameColor_);
+			},
+			"",
+			ShowType::SCENE_VIEW
+		);
+	}
+	if (InputUtil::GetMouseUp(MouseCode::LEFT))
+	{
+		if (dragging_)
+		{
+			RectSelect();
+		}
+		dragging_ = false;
+	}
+}
+
+void mtgb::ImGuiEditorCamera::RectSelect()
+{
+	using DirectX::XMConvertToRadians;
+	using DirectX::XMMatrixPerspectiveFovLH;
+	// REF: 透視投影行列の式 https: // marina.sys.wakayama-u.ac.jp/~tokoi/?date=20090907
+
+	Vector2F windowPosVec2 = Vector2F(windowPos_.x, windowPos_.y);
+	Vector2F begin		   = dragRect_.GetBegin();
+	Vector2F end		   = dragRect_.GetEnd();
+	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
+	float viewW = static_cast<float>(SCREEN_SIZE.x);
+	float viewH = static_cast<float>(SCREEN_SIZE.y);
+
+	// 選択範囲(スクリーン座標)をNDCに変換する
+	float x0 = 2.0f * (begin.x / viewW) - 1.0f;
+	float x1 = 2.0f * (end.x / viewW) - 1.0f;
+	float y0 = 1.0f - 2.0f * (begin.y / viewH);
+	float y1 = 1.0f - 2.0f * (end.y / viewH);
+
+	CameraSystem& cameraSystem = Game::System<CameraSystem>();
+	float nearZ				   = cameraSystem.GetNear();
+	float farZ				   = cameraSystem.GetFar();
+	float fov				   = XMConvertToRadians(cameraSystem.GetFov());
+	float aspect			   = viewW / viewH;
+	float tanHalfY			   = std::tanf(fov * 0.5f);
+	float tanHalfX			   = tanHalfY * aspect;
+
+	// 選択範囲の矩形を、ニアクリップ平面に射影した値を求める
+
+	// 画面全体のニアクリップ平面の幅/高さを求める
+	float halfWidth	 = nearZ * tanHalfX;
+	float halfHeight = nearZ * tanHalfY;
+
+	// 幅、高さを選択範囲にクリッピングする
+	float left	 = halfWidth * x0;
+	float right	 = halfWidth * x1;
+	float top	 = halfHeight * y0;
+	float bottom = halfHeight * y1;
+
+	// 透視投影行列を作成
+	DirectX::XMMATRIX projMat = DirectX::XMMatrixPerspectiveOffCenterLH(left, right, bottom, top, nearZ, farZ);
+	DirectX::BoundingFrustum frustum(projMat);
+	DirectX::BoundingFrustum transformedFrustum;
+	frustum.Transform(transformedFrustum, 1.0f, pCameraTransform_->rotate, pCameraTransform_->position);
+
+	// 全ゲームオブジェクトと当たり判定を取る
+	std::list<GameObject*> gameObjList;
+	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjList);
+	std::vector<EntityId> containsEntitiesId;
+	for (auto obj : gameObjList)
+	{
+		// トランスフォーム取得
+		EntityId id			  = obj->GetEntityId();
+		Transform* pTransform = nullptr;
+		Game::System<TransformCP>().TryGet(pTransform, id);
+		if (pTransform == nullptr)
+			continue;
+
+		// ゲームオブジェクト自体の座標と判定をとる
+		DirectX::ContainmentType containmentType = transformedFrustum.Contains(pTransform->position);
+		if (containmentType == DirectX::ContainmentType::CONTAINS)
+		{
+			containsEntitiesId.push_back(id);
+		}
+	}
+	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntitiesId, .multiSelect = multiRectSelect_ };
+	Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 }
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation)

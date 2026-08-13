@@ -57,7 +57,8 @@ namespace mtgb
 		// ギズモの大きさ
 		// クリップ空間(-1.0～1.0)における値を指定する。0.2なら画面の10%になる
 		float clipSpaceGizmoSize_;
-		std::vector<EntityId> selectedIdList_;
+		std::vector<EntityId> selectedIds_;
+		std::unordered_map<EntityId, size_t> selectedIndex_;
 		std::vector<Matrix4x4> originalWorldMatrices_;
 		// 選択したオブジェクトの、ギズモを使用する直前のスケール
 		std::vector<DirectX::XMVECTOR> preManipulationScales_;
