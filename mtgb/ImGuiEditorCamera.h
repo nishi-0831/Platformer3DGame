@@ -37,6 +37,7 @@ namespace mtgb
 		void SelectTransform();
 		void ProcessDrag();
 		void RectSelect();
+		void SurfaceSnap();
 		CameraHandleInScene hCamera_;
 		mtstat::MTStat<CameraOperation> sCameraOperation_;
 		float rotateSensitivity_;

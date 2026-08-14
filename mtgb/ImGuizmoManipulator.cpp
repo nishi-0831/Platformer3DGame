@@ -355,6 +355,11 @@ std::span<mtgb::EntityId> mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 	return selectedIds_;
 }
 
+ImGuizmo::OPERATION mtgb::ImGuizmoManipulator::GetOperation()
+{
+	return operation_;
+}
+
 void mtgb::ImGuizmoManipulator::UpdateManipulator()
 {
 	isUsing_ = ImGuizmo::IsUsing();

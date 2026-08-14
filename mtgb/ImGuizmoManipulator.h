@@ -27,6 +27,7 @@ namespace mtgb
 		void Deselect(std::span<const EntityId> _entityIds);
 		void DeselectAll();
 		std::span<EntityId> GetSelectedEntityId();
+		ImGuizmo::OPERATION GetOperation();
 
 	  private:
 		void UpdateManipulator();

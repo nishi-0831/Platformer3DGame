@@ -18,6 +18,8 @@ namespace mtgb
 
 		void ShowMenuBar();
 		void ShowInspector();
+		std::span<EntityId> GetSelectedEntityId();
+		ImGuizmo::OPERATION GetOperation();
 
 	  private:
 		void SaveMapData();

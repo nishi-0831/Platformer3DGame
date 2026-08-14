@@ -185,18 +185,23 @@ bool mtgb::Collider::IsHit(const Collider& _other) const
 	return false;
 }
 
-bool mtgb::Collider::IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const
+bool mtgb::Collider::IsHit(
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float _maxDistance,
+	Intersection::RaycastInfo* _info
+) const
 {
 	switch (colliderType_)
 	{
 		case ColliderType::TYPE_SPHERE :
-			return Intersection::IsHit(computeSphere_, _origin, _dir, _dist);
+			return Intersection::IsHit(computeSphere_, _origin, _dir, _maxDistance, _info);
 			break;
 		case ColliderType::TYPE_AABB :
-			return Intersection::IsHit(computeBox_, _origin, _dir, _dist);
+			return Intersection::IsHit(computeBox_, _origin, _dir, _maxDistance, _info);
 			break;
 		case ColliderType::TYPE_OBB :
-			return Intersection::IsHit(computeOBB_, _origin, _dir, _dist);
+			return Intersection::IsHit(computeOBB_, _origin, _dir, _maxDistance, _info);
 		default :
 			return false;
 	}

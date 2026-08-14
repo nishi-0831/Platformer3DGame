@@ -105,7 +105,7 @@ mtgb::ImGuiEditor::~ImGuiEditor()
 
 void mtgb::ImGuiEditor::Initialize()
 {
-	// ƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ª‘I‘ğ‚³‚ê‚½‚Æ‚«‚ÉA‚»‚ê‚ğ•\¦‘ÎÛ‚Æ‚·‚é
+	// ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒé¸æŠã•ã‚ŒãŸã¨ãã«ã€ãã‚Œã‚’è¡¨ç¤ºå¯¾è±¡ã¨ã™ã‚‹
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[](const GameObjectSelectedEvent& _event)
 		{
@@ -156,7 +156,7 @@ void mtgb::ImGuiEditor::Update()
 			}
 			if (InputUtil::GetKeyDown(KeyCode::F))
 			{
-				// ‘I‘ğ’†‚ÌƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ªˆê‚Â‚Ìê‡‚Ì‚İÚ‹ß
+				// é¸æŠä¸­ã®ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒä¸€ã¤ã®å ´åˆã®ã¿æ¥è¿‘
 				auto entities = pManipulator_->GetSelectedEntityId();
 				if (entities.size() == 1)
 				{
@@ -166,13 +166,13 @@ void mtgb::ImGuiEditor::Update()
 		}
 		if (InputUtil::GetKeyDown(KeyCode::DELETE))
 		{
-			// ƒ}ƒjƒsƒ…ƒŒ[ƒ^‚ª‘I‘ğ‚µ‚Ä‚¢‚éƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ğíœ
+			// ãƒãƒ‹ãƒ”ãƒ¥ãƒ¬ãƒ¼ã‚¿ãŒé¸æŠã—ã¦ã„ã‚‹ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å‰Šé™¤
 			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
 			pManipulator_->DeselectAll();
 		}
 	}
 
-	// ƒOƒŠƒbƒh‚Ì•`‰æ
+	// ã‚°ãƒªãƒƒãƒ‰ã®æç”»
 	int interval = (static_cast<int>(gridHalfExtent_) * 2) / gridDivisionNum_;
 	for (int i = 0; i <= gridDivisionNum_; i++)
 	{
@@ -202,12 +202,12 @@ void mtgb::ImGuiEditor::ShowImGui()
 
 void mtgb::ImGuiEditor::SaveMapData()
 {
-	// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚ª‚È‚¢ê‡AV‹Kì¬‚·‚é
+	// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ãŒãªã„å ´åˆã€æ–°è¦ä½œæˆã™ã‚‹
 	if (editingStagePath_.empty())
 	{
 		SaveMapDataAs();
 	}
-	// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚Éã‘‚«
+	// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã«ä¸Šæ›¸ã
 	else
 	{
 		SaveStageJson(editingStagePath_);
@@ -259,12 +259,12 @@ void mtgb::ImGuiEditor::LoadMapData()
 	nlohmann::json json(GetStageJson(filePath));
 	if (json.empty() == false)
 	{
-		// •ÒW’†‚Ìƒtƒ@ƒCƒ‹‚ğ‹L˜^
+		// ç·¨é›†ä¸­ã®ãƒ•ã‚¡ã‚¤ãƒ«ã‚’è¨˜éŒ²
 		editingStagePath_ = filePath;
 		Game::System<SceneSystem>().Move<StageEditScene>(json);
-		// •ÒWƒ‚[ƒh‚ğ—LŒø‚É‚·‚é
+		// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 		Game::SetEditMode(true);
-		// Œ»İ‚ÌƒXƒe[ƒW‚ğ‹L˜^
+		// ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ã‚¸ã‚’è¨˜éŒ²
 		tmpStageData_ = Game::System<SceneSystem>().GetActiveScene()->SerializeGameObjects();
 	}
 	Time::StabilizeDeltaTime();
@@ -285,7 +285,7 @@ void mtgb::ImGuiEditor::PlayScene()
 
 void mtgb::ImGuiEditor::StopScene()
 {
-	// •ÒWƒ‚[ƒh‚ğ—LŒø‚É‚·‚é
+	// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 	Game::SetEditMode(true);
 	Game::System<SceneSystem>().Move<StageEditScene>(tmpStageData_);
 	Time::StabilizeDeltaTime();
@@ -298,7 +298,7 @@ void mtgb::ImGuiEditor::DuplicateGameObject()
 
 void mtgb::ImGuiEditor::AddComponent(std::type_index _componentType, EntityId _entityId)
 {
-	// ƒRƒ“ƒ|[ƒlƒ“ƒgì¬¬Œ÷
+	// ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆä½œæˆæˆåŠŸ
 	AddComponentCommand* cmd = new AddComponentCommand(_entityId, _componentType, nullptr);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
@@ -397,7 +397,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		bool isEditMode = Game::IsEditMode();
 
-		// ƒvƒŒƒCƒ‚[ƒh‚È‚ç–³Œø‰»
+		// ãƒ—ãƒ¬ã‚¤ãƒ¢ãƒ¼ãƒ‰ãªã‚‰ç„¡åŠ¹åŒ–
 		ImGui::BeginDisabled(isEditMode == false);
 		if (ImGui::Button("Play"))
 		{
@@ -405,7 +405,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		ImGui::EndDisabled();
 
-		// •ÒWƒ‚[ƒh‚È‚ç–³Œø‰»
+		// ç·¨é›†ãƒ¢ãƒ¼ãƒ‰ãªã‚‰ç„¡åŠ¹åŒ–
 		ImGui::BeginDisabled(isEditMode);
 		if (ImGui::Button("Stop"))
 		{
@@ -423,7 +423,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 
 void mtgb::ImGuiEditor::ShowInspector()
 {
-	// •¡”‘I‘ğ‚³‚ê‚Ä‚¢‚é‚È‚ç‚ÎA•\¦‚µ‚È‚¢
+	// è¤‡æ•°é¸æŠã•ã‚Œã¦ã„ã‚‹ãªã‚‰ã°ã€è¡¨ç¤ºã—ãªã„
 	std::span<EntityId> entityIds = pManipulator_->GetSelectedEntityId();
 	if (entityIds.size() > 1)
 	{
@@ -435,20 +435,20 @@ void mtgb::ImGuiEditor::ShowInspector()
 	GameObject* selectedObj = nullptr;
 	for (auto obj : gameObjects)
 	{
-		// ”ñ•\¦İ’è‚³‚ê‚Ä‚¢‚é‚È‚ç‚ÎƒXƒLƒbƒv
+		// éè¡¨ç¤ºè¨­å®šã•ã‚Œã¦ã„ã‚‹ãªã‚‰ã°ã‚¹ã‚­ãƒƒãƒ—
 		if (obj->isInspectable_ == false)
 			continue;
 		bool selected = inspectedObjectName_ == obj->GetName();
-		// •\¦‘ÎÛ‚Æ‚µ‚Ä‹L˜^‚µ‚½–¼‘O‚Æˆê’v‚·‚éê‡
+		// è¡¨ç¤ºå¯¾è±¡ã¨ã—ã¦è¨˜éŒ²ã—ãŸåå‰ã¨ä¸€è‡´ã™ã‚‹å ´åˆ
 		if (selected)
 		{
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
 		}
-		// ƒNƒŠƒbƒN‚³‚ê‚½
+		// ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸ
 		if (ImGui::Selectable(obj->GetName().c_str(), selected, ImGuiSelectableFlags_AllowDoubleClick))
 		{
-			// ƒ_ƒuƒ‹ƒNƒŠƒbƒNA‘ÎÛ‚ğ‰æ–Ê‚Éû‚ß‚é
+			// ãƒ€ãƒ–ãƒ«ã‚¯ãƒªãƒƒã‚¯æ™‚ã€å¯¾è±¡ã‚’ç”»é¢ã«åã‚ã‚‹
 			if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
 			{
 				Game::System<ImGuiEditorCamera>().FrameSelected(obj->GetEntityId());
@@ -470,4 +470,14 @@ void mtgb::ImGuiEditor::ShowInspector()
 		selectedObj->ShowImGui();
 	}
 	ImGui::End();
+}
+
+std::span<EntityId> mtgb::ImGuiEditor::GetSelectedEntityId()
+{
+	return pManipulator_->GetSelectedEntityId();
+}
+
+ImGuizmo::OPERATION mtgb::ImGuiEditor::GetOperation()
+{
+	return pManipulator_->GetOperation();
 }
