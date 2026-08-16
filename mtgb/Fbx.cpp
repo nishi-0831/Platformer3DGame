@@ -44,7 +44,7 @@ mtgb::FBXModelHandle mtgb::Fbx::Load(const std::string& _fileName)
 	return handle;
 }
 
-void mtgb::Fbx::Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame)
+void mtgb::Fbx::Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame, ShaderType _shader)
 {
 	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT);
 
@@ -52,7 +52,7 @@ void mtgb::Fbx::Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _f
 
 	massert(pFbxModels_.count(_hModel) != 0 && "モデルが存在しない @Fbx::Draw");
 
-	pFbxModels_[_hModel]->Draw(_transfrom, _frame);
+	pFbxModels_[_hModel]->Draw(_transfrom, _frame, _shader);
 }
 
 void mtgb::Fbx::Release()

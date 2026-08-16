@@ -1,11 +1,13 @@
 #pragma once
 #include <functional>
 #include <d3d11.h>
+#include <unordered_map>
 #include "DirectX11Draw.h"
 #include "Screen.h"
 #include "Transform.h"
 #include <wrl/client.h>
-
+#include "MeshAsset.h"
+#include "ReflectiveConstantBuffer.h"
 using Microsoft::WRL::ComPtr;
 
 struct ID3D11Buffer;
@@ -21,222 +23,40 @@ namespace mtgb
 		/// <summary>
 		/// シェーダの初期化処理
 		/// </summary>
-		virtual void Initialize();
+		virtual void Initialize(ID3D11Device* _pDevice) = 0;
 		// virtual void Draw() = 0;
 		virtual void Release();
+		virtual void Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame) = 0;
+		void Bind(ID3D11DeviceContext* _pCtx);
+		ReflectiveConstantBuffer* GetConstantBuffer(const std::string& _name);
 
 	  protected:
+		void InitializeCommonGpuResources(ID3D11Device* _pDevice, std::wstring_view _fileName);
+		// ComPtr<ID3D11Buffer> pConstantBuffer_;
+		std::unordered_map<std::string, ReflectiveConstantBuffer> cBufferMap_;
 		/// <summary>
-		/// 頂点バッファの初期化
+		/// <para>頂点レイアウト</para>
+		/// <para></para>
 		/// </summary>
-		virtual void InitializeVertexBuffer(ID3D11Device* _pDevice) = 0;
-		/// <summary>
-		/// インデックスバッファの初期化
-		/// </summary>
-		virtual void InitializeIndexBuffer(ID3D11Device* _pDevice) = 0;
-		/// <summary>
-		/// コンスタントバッファの初期化
-		/// </summary>
-		virtual void InitializeConstantBuffer(ID3D11Device* _pDevice) = 0;
+		ComPtr<ID3D11InputLayout> pVertexLayout;
 
 		/// <summary>
-		/// シェーダの描画処理(共通)
+		/// <para>頂点シェーダ</para>
+		/// <para>頂点の情報</para>
 		/// </summary>
-		/// <typeparam name="ConstantBufferT">コンスタントバッファの型</typeparam>
-		/// <typeparam name="VertexT">頂点の型</typeparam>
-		/// <param name="_makeConstantBufferCallback">
-		/// <para>コンスタントバッファに入れる用のコールバック関数</para>
-		/// <para>コールバック関数:(ConstantBufferT* _pCB)->void</para>
-		/// </param>
-		/// <param name="_contextSetterCallback">
-		/// <para>コンスタントバッファ送信後のコンテキスト処理のコールバック関数</para>
-		/// <para>コールバック関数:(ID3D11DeviceContext*)->void</para>
-		/// </param>
-		template <typename ConstantBufferT, typename VertexT>
-		void Draw(
-			const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
-			const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-			const int _drawIndexCount = 6
-		);
-		template <typename ConstantBufferT, typename VertexT>
-		void Draw(
-			const std::function<void(VertexT* _pVertex)>& _makeVertexBufferCallback,
-			const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
-			const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-			const int _drawIndexCount = 6
-		);
+		ComPtr<ID3D11VertexShader> pVertexShader;
 
 		/// <summary>
-		/// カメラの座標系を取得
+		/// <para>ピクセルシェーダ</para>
+		/// <para></para>
 		/// </summary>
-		/// <returns>カメラTransfromの参照ポインタ</returns>
-		// const mtgb::Transform& GetCameraTransfrom();
+		ComPtr<ID3D11PixelShader> pPixelShader;
 
-	  protected:
-		ComPtr<ID3D11Buffer> pVertexBuffer_;   // 頂点の位置、色
-		ComPtr<ID3D11Buffer> pIndexBuffer_;	   // ポリゴンを結ぶ順番
-		ComPtr<ID3D11Buffer> pConstantBuffer_; // 　シェーダのグローバル変数
+		/// <summary>
+		/// <para>ラスタライザ</para>
+		/// <para>どのピクセルを光らせるかの情報</para>
+		/// </summary>
+		ComPtr<ID3D11RasterizerState> pRasterizerState;
 	};
 
-	template <typename ConstantBufferT, typename VertexT>
-	inline void IShader::Draw(
-		const std::function<void(ConstantBufferT*)>& _makeConstantBufferCallback,
-		const std::function<void(ID3D11DeviceContext*)>& _contextSetterCallback,
-		const int _drawIndexCount
-	)
-	{
-		UINT stride { 0U };
-		UINT offset { 0U };
-
-		stride = sizeof(VertexT);
-		offset = 0;
-		DirectX11Draw::pContext_->IASetVertexBuffers(
-			0U,
-			1U,
-			pVertexBuffer_.GetAddressOf(),
-			&stride,
-			&offset
-		); // 頂点バッファをセット
-		DirectX11Draw::pContext_->IASetIndexBuffer(
-			pIndexBuffer_.Get(),
-			DXGI_FORMAT_R32_UINT,
-			0
-		); // インデックスバッファをセット
-		DirectX11Draw::pContext_->VSSetConstantBuffers(
-			0,
-			1,
-			pConstantBuffer_.GetAddressOf()
-		); // 頂点シェーダのコンスタントバッファをセット
-		DirectX11Draw::pContext_->PSSetConstantBuffers(
-			0,
-			1,
-			pConstantBuffer_.GetAddressOf()
-		); // ピクセルシェーダのコンスタントバッファをセット
-
-		ConstantBufferT constantBuffer {};
-
-		_makeConstantBufferCallback(&constantBuffer);
-
-		HRESULT hResult {};
-
-		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
-
-		// GPUからのデータアクセスをせき止める
-		hResult = DirectX11Draw::pContext_
-					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
-
-		massert(
-			SUCCEEDED(hResult) // GPUデータアクセスせき止めに成功
-			&& "GPUデータアクセスせき止めに失敗"
-		);
-
-		// データ書き込み
-		memcpy_s(
-			mappedSubresource.pData,
-			mappedSubresource.RowPitch,
-			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT)
-		);
-
-		// GPUデータアクセスせき止め解除
-		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
-
-		_contextSetterCallback(DirectX11Draw::pContext_.Get());
-
-		DirectX11Draw::pContext_->DrawIndexed(_drawIndexCount, 0, 0);
-	}
-
-	template <typename ConstantBufferT, typename VertexT>
-	inline void IShader::Draw(
-		const std::function<void(VertexT* _pVertex)>& _makeVertexBufferCallback,
-		const std::function<void(ConstantBufferT* _pConstantBuffer)>& _makeConstantBufferCallback,
-		const std::function<void(ID3D11DeviceContext* _pContext)>& _contextSetterCallback,
-		const int _drawIndexCount
-	)
-	{
-		UINT stride { 0U };
-		UINT offset { 0U };
-
-		stride = sizeof(VertexT);
-		offset = 0;
-		DirectX11Draw::pContext_->IASetVertexBuffers(
-			0U,
-			1U,
-			pVertexBuffer_.Get(),
-			&stride,
-			&offset
-		); // 頂点バッファをセット
-		DirectX11Draw::pContext_->IASetIndexBuffer(
-			pIndexBuffer_,
-			DXGI_FORMAT_R32_UINT,
-			0
-		); // インデックスバッファをセット
-		DirectX11Draw::pContext_->VSSetConstantBuffers(
-			0,
-			1,
-			pConstantBuffer_.Get()
-		); // 頂点シェーダのコンスタントバッファをセット
-		DirectX11Draw::pContext_->PSSetConstantBuffers(
-			0,
-			1,
-			pConstantBuffer_.Get()
-		); // ピクセルシェーダのコンスタントバッファをセット
-
-		ConstantBufferT constantBuffer {};
-
-		_makeConstantBufferCallback(&constantBuffer);
-
-		HRESULT hResult {};
-
-		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
-
-		// GPUからのデータアクセスをせき止める
-		hResult = DirectX11Draw::pContext_
-					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
-
-		massert(
-			SUCCEEDED(hResult) // GPUデータアクセスせき止めに成功
-			&& "GPUデータアクセスせき止めに失敗"
-		);
-
-		// データ書き込み
-		memcpy_s(
-			mappedSubresource.pData,
-			mappedSubresource.RowPitch,
-			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT)
-		);
-
-		// GPUデータアクセスせき止め解除
-		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
-
-		// シェーダに渡すためのデータ
-		D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
-
-		// GPUからのデータアクセスをせき止める
-		hResult = DirectX11Draw::pContext_
-					  ->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
-
-		massert(
-			SUCCEEDED(hResult) // GPUデータアクセスせき止めに成功
-			&& "GPUデータアクセスせき止めに失敗"
-		);
-
-		// データ書き込み
-		memcpy_s(
-			mappedSubresource.pData,
-			mappedSubresource.RowPitch,
-			static_cast<void*>(&constantBuffer),
-			sizeof(ConstantBufferT)
-		);
-
-		// GPUデータアクセスせき止め解除
-		DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
-
-		_contextSetterCallback(DirectX11Draw::pContext_.Get());
-
-		DirectX11Draw::pContext_->DrawIndexed(_drawIndexCount, 0, 0);
-	}
 } // namespace mtgb

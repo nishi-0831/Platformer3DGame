@@ -1,6 +1,5 @@
 #pragma once
 #include <mtgb.h>
-#include <PlaneUVScroll.h>
 
 class SeaPlane : public GameObject
 {

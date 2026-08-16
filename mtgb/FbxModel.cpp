@@ -3,7 +3,7 @@
 #include "ReleaseUtility.h"
 #include "Fbx.h"
 #include "MTAssert.h"
-
+#include "ShaderManager.h"
 mtgb::FbxModel::FbxModel()
 	: pFbxScene_ { nullptr }
 	, frameRate_ { FbxTime::EMode::eFrames60 }
@@ -94,50 +94,43 @@ void mtgb::FbxModel::Load(const std::string& _fileName)
 		if (pNode->GetMesh() == nullptr)
 			continue;
 
-		FbxParts* pParts = new FbxParts(pNode, unitScaleFactor_);
-		pParts->Initialize();
-		pParts_.push_back(pParts);
+		MeshAsset* pMeshAsset = MeshAsset::LoadFromFbx(pNode, unitScaleFactor_);
+		pMeshAsset->CreateGpuResources(DirectX11Draw::pDevice_.Get());
+		pMeshAssets_.push_back(pMeshAsset);
 	}
 
 	SetCurrentDirectory(defaultCurrentDirectory);
 }
 
-void mtgb::FbxModel::Draw(const Transform& _transform, int _frame)
+void mtgb::FbxModel::Draw(const Transform& _transform, int _frame, ShaderType _shader)
 {
-	for (int i = 0; i < pParts_.size(); i++)
+	IShader& shader = Game::System<ShaderManager>().GetShader(_shader);
+
+	for (int i = 0; i < pMeshAssets_.size(); i++)
 	{
 		// アニメーションタイムの姿勢行列を取得する
 		FbxTime time;
 		time.SetTime(0, 0, 0, _frame, 0, 0, frameRate_);
-
-		// ボーンがあるスキンアニメーション
-		if (pParts_[i]->GetSkin() != nullptr)
-		{
-			pParts_[i]->DrawSkinAnimation(_transform, time);
-		}
-		else // メッシュアニメーション
-		{
-			pParts_[i]->DrawMeshAnimation(_transform, time);
-		}
+		shader.Bind(DirectX11Draw::pContext_.Get());
+		shader.Draw(DirectX11Draw::pContext_.Get(), _transform, pMeshAssets_[i], _frame);
 	}
 }
 
 void mtgb::FbxModel::Release()
 {
-	for (FbxParts* fbxParts : pParts_)
+	for (auto asset : pMeshAssets_)
 	{
-		fbxParts->Release();
-		delete fbxParts;
-		fbxParts = nullptr;
+		asset->ReleaseGpuResources();
+		delete asset;
 	}
 }
 
 mtgb::Vector3 mtgb::FbxModel::GetBonePosition(std::string_view _boneName)
 {
 	Vector3 position_ = Vector3(0, 0, 0);
-	for (int i = 0; i < pParts_.size(); i++)
+	for (int i = 0; i < pMeshAssets_.size(); i++)
 	{
-		if (pParts_[i]->TryGetBonePosition(_boneName, &position_))
+		if (pMeshAssets_[i]->TryGetBonePosition(_boneName, &position_))
 			break;
 	}
 	return position_;
@@ -146,40 +139,12 @@ mtgb::Vector3 mtgb::FbxModel::GetBonePosition(std::string_view _boneName)
 mtgb::Vector3 mtgb::FbxModel::GetAnimBonePosition(std::string_view _boneName)
 {
 	Vector3 position_ = Vector3(0, 0, 0);
-	for (int i = 0; i < pParts_.size(); i++)
+	for (int i = 0; i < pMeshAssets_.size(); i++)
 	{
-		if (pParts_[i]->TryGetBonePositionAtNow(_boneName, &position_))
+		if (pMeshAssets_[i]->TryGetBonePositionAtNow(_boneName, &position_))
 			break;
 	}
 	return position_;
-}
-
-void mtgb::FbxModel::CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _pPartsList)
-{
-	// ノードの属性情報
-	FbxNodeAttribute* pNodeAttribute { _pNode->GetNodeAttribute() };
-
-	if (pNodeAttribute == nullptr)
-	{
-		return; // ノードが nullptr なら回帰
-	}
-
-	// メッシュの情報が入っているなら
-	if (pNodeAttribute->GetAttributeType() == FbxNodeAttribute::eMesh)
-	{
-		FbxParts* pParts = new FbxParts(_pNode, unitScaleFactor_);
-		pParts->Initialize();
-		_pPartsList.push_back(pParts);
-	}
-
-	// 子の数
-	int childCount { _pNode->GetChildCount() };
-
-	// 1つずつチェック
-	for (int i = 0; i < childCount; i++)
-	{
-		CheckNode(_pNode->GetChild(i), _pPartsList);
-	}
 }
 
 std::optional<mtgb::FbxAnimationController> mtgb::FbxModel::GetAnimationController()

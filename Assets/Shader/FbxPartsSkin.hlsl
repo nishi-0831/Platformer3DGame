@@ -1,48 +1,48 @@
 #include "3DCommon.hlsli"
 
-//’è‹`
+//å®šç¾©
 #define MAX_BONE_MATRICES 128
 
-cbuffer BoneMatrices : register(b1) //ƒ{[ƒ“‚Ìƒ|[ƒYs—ñ‚ª“ü‚é
+cbuffer BoneMatrices : register(b1) //ãƒœãƒ¼ãƒ³ã®ãƒãƒ¼ã‚ºè¡Œåˆ—ãŒå…¥ã‚‹
 {
 	matrix g_boneMatrices[MAX_BONE_MATRICES];
 };
 
-//ƒXƒLƒjƒ“ƒOŒã‚Ì’¸“_E–@ü‚ª“ü‚é
+//ã‚¹ã‚­ãƒ‹ãƒ³ã‚°å¾Œã®é ‚ç‚¹ãƒ»æ³•ç·šãŒå…¥ã‚‹
 struct Skin
 {
 	float4 position;
 	float3 normal;
 };
 
-//’¸“_ƒoƒbƒtƒ@[‚Ì“ü—Í
+//é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ãƒ¼ã®å…¥åŠ›
 struct VSSkinIn
 {
-	float3 position : POSITION; //ˆÊ’u   
-	float3 normal : NORMAL; //’¸“_–@ü
-	float3 uv : TEXCOORD; //ƒeƒNƒXƒ`ƒƒ[À•W
-	uint4 boneIndex : BONE_INDEX; //ƒ{[ƒ“‚ÌƒCƒ“ƒfƒbƒNƒX
-	float4 boneWeight : BONE_WEIGHT; //ƒ{[ƒ“‚Ìd‚İ
+	float4 position : POSITION; //ä½ç½®   
+	float4 normal : NORMAL; //é ‚ç‚¹æ³•ç·š
+	float2 uv : TEXCOORD; //ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ¼åº§æ¨™
+	uint4 boneIndex : BONE_INDEX; //ãƒœãƒ¼ãƒ³ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹
+	float4 boneWeight : BONE_WEIGHT; //ãƒœãƒ¼ãƒ³ã®é‡ã¿
 };
 
-//ƒsƒNƒZƒ‹ƒVƒF[ƒ_[‚Ì“ü—Í(’¸“_ƒoƒbƒtƒ@[‚Ìo—Í)
+//ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®å…¥åŠ›(é ‚ç‚¹ãƒãƒƒãƒ•ã‚¡ãƒ¼ã®å‡ºåŠ›)
 struct PSSkinIn
 {
-	float4 position : SV_Position; //ˆÊ’u
-	float4 normal : NORMAL0; //’¸“_–@ü
-	float2 uv : TEXCOORD; //ƒeƒNƒXƒ`ƒƒ[À•W
-	float4 worldPosition : NORMAL1; //ƒ[ƒ‹ƒhÀ•W
-	float4 eye : NORMAL2; //‹üƒxƒNƒgƒ‹
+	float4 position : SV_Position; //ä½ç½®
+	float4 normal : NORMAL0; //é ‚ç‚¹æ³•ç·š
+	float2 uv : TEXCOORD; //ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒ¼åº§æ¨™
+	float4 worldPosition : NORMAL1; //ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™
+	float4 eye : NORMAL2; //è¦–ç·šãƒ™ã‚¯ãƒˆãƒ«
 };
 
-//’¸“_‚ğƒXƒLƒjƒ“ƒO‚·‚éB’¸“_ƒVƒF[ƒ_[‚Åg—p
+//é ‚ç‚¹ã‚’ã‚¹ã‚­ãƒ‹ãƒ³ã‚°ã™ã‚‹ã€‚é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã§ä½¿ç”¨
 Skin SkinVert(VSSkinIn input)
 {
 	Skin Output = (Skin) 0;
-	float4 pos = float4(input.position, 1.0f);
-	float3 normal = input.normal;
+	float4 pos = input.position;
+	float3 normal = input.normal.xyz;
 	
-	// ƒXƒLƒ“ƒƒbƒVƒ…‚Ìê‡
+	// ã‚¹ã‚­ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥ã®å ´åˆ
 	if (any(input.boneWeight > 0.0f))
 	{
 		Output.position = float4(0, 0, 0, 0);
@@ -52,20 +52,20 @@ Skin SkinVert(VSSkinIn input)
         {
             if (input.boneWeight[i] > 0.0f)
             {
-				// i”Ô–Ú‚Ìƒ{[ƒ“‚Ì•ÏŠ·s—ñ‚ğæ“¾
+				// iç•ªç›®ã®ãƒœãƒ¼ãƒ³ã®å¤‰æ›è¡Œåˆ—ã‚’å–å¾—
                 matrix boneMatrix = g_boneMatrices[input.boneIndex[i]];
 		
-				// ’¸“_À•W‚ğ•ÏŠ·(s—ñ~ƒxƒNƒgƒ‹ ‚Ì‡˜)
+				// é ‚ç‚¹åº§æ¨™ã‚’å¤‰æ›(è¡Œåˆ—Ã—ãƒ™ã‚¯ãƒˆãƒ« ã®é †åº)
                 Output.position += input.boneWeight[i] * mul(pos, boneMatrix);
 		
-				// –@ü‚à•ÏŠ·(‰ñ“]‚Ì‚İ“K—p)
+				// æ³•ç·šã‚‚å¤‰æ›(å›è»¢ã®ã¿é©ç”¨)
                 Output.normal += input.boneWeight[i] * mul(normal, (float3x3) boneMatrix);
             }
         }
 	}
 	else
 	{
-		// ƒXƒLƒ“ƒƒbƒVƒ…‚Å‚È‚¢ê‡‚ÍŒ³‚Ì’¸“_‚ğ‚»‚Ì‚Ü‚Üg‚¤
+		// ã‚¹ã‚­ãƒ³ãƒ¡ãƒƒã‚·ãƒ¥ã§ãªã„å ´åˆã¯å…ƒã®é ‚ç‚¹ã‚’ãã®ã¾ã¾ä½¿ã†
 		Output.position = pos;
 		Output.normal = normal;
 	}
@@ -73,7 +73,7 @@ Skin SkinVert(VSSkinIn input)
 	return Output;
 }
 
-// ’¸“_ƒVƒF[ƒ_[
+// é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
 PSSkinIn VS(VSSkinIn input)
 {
 	PSSkinIn output;
@@ -86,51 +86,51 @@ PSSkinIn VS(VSSkinIn input)
 	
 	output.worldPosition = mul(vSkinned.position, g_matrixW);
 	
-	// ‹üƒxƒNƒgƒ‹
+	// è¦–ç·šãƒ™ã‚¯ãƒˆãƒ«
 	output.eye = normalize(g_cameraPosition - output.worldPosition);
 	
 	return output;
 }
 
-//ƒsƒNƒZƒ‹ƒVƒF[ƒ_[
+//ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
 float4 PS(PSSkinIn inData) : SV_Target
 {
-	// ŒõŒ¹•ûŒü
+	// å…‰æºæ–¹å‘
 	float4 lightDir = normalize(g_lightDir);
 	
-	// –@ü
+	// æ³•ç·š
 	inData.normal = normalize(inData.normal);
 	
-	// ŠgU”½Ë‚ÌŒvZ
+	// æ‹¡æ•£åå°„ã®è¨ˆç®—
 	float4 shade = saturate(dot(inData.normal, -lightDir));
-	shade.a = 1; // “§–¾“x‚Í‘€ì‚µ‚½‚­‚È‚¢‚½‚ßA‹­§“I‚ÉƒAƒ‹ƒtƒ@’l1
+	shade.a = 1; // é€æ˜åº¦ã¯æ“ä½œã—ãŸããªã„ãŸã‚ã€å¼·åˆ¶çš„ã«ã‚¢ãƒ«ãƒ•ã‚¡å€¤1
 	
 	float4 diffuse;
 	if (g_hasTexture == true)
 	{
-		// ƒeƒNƒXƒ`ƒƒ
+		// ãƒ†ã‚¯ã‚¹ãƒãƒ£
 		diffuse = g_texture.Sample(g_sampler, inData.uv);
 	}
 	else
 	{
-		// ŠgU”½Ë¬•ª
+		// æ‹¡æ•£åå°„æˆåˆ†
 		diffuse = g_diffuseColor;
 	}
 	
-	// ŠÂ‹«Œõ
+	// ç’°å¢ƒå…‰
 	float4 ambient = float4(1, 1, 1, 1);
 	
-	// ‹¾–Ê”½Ë¬•ª
+	// é¡é¢åå°„æˆåˆ†
 	float4 specuer = float4(0, 0, 0, 0);
 	if (g_speculerColor.a != 0)
 	{
-		// ³”½ËƒxƒNƒgƒ‹
+		// æ­£åå°„ãƒ™ã‚¯ãƒˆãƒ«
 		float4 r = reflect(lightDir, inData.normal);
-		// ‹¾–Ê”½Ë¬•ªŒvZ
+		// é¡é¢åå°„æˆåˆ†è¨ˆç®—
 		specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
 	}
 	
-	// ÅI“I‚ÈF
+	// æœ€çµ‚çš„ãªè‰²
 	float4 color = diffuse * shade + diffuse * ambient + specuer;
 	return color;
 }

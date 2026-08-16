@@ -56,13 +56,18 @@ void mtgb::Direct2D::CreateD2DRenderTarget(IDXGISurface* _pIdxgiSurface, ID2D1Re
 	HRESULT hResult =
 		pD2DFactory_->CreateDxgiSurfaceRenderTarget(_pIdxgiSurface, renderTargetProperties, _ppRenderTarget);
 
-	// massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget");
+	massert(SUCCEEDED(hResult) && "CreateDxgiSurfaceRenderTargetに失敗 @Direct2D::CreateDXGISurfaceRenderTarget");
 	if (FAILED(hResult))
 	{
 		_com_error error(hResult);
 		LPCTSTR message = error.ErrorMessage();
 		std::string str = mtgb::MultiToUTF8(message);
-		MessageBoxW(NULL, mtgb::UTF8ToWide(str.c_str()).c_str(), L"f", MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL);
+		MessageBoxW(
+			NULL,
+			mtgb::UTF8ToWide(str.c_str()).c_str(),
+			L"Direct2D::CreateDxgiSurface",
+			MB_YESNOCANCEL | MB_ICONSTOP | MB_SYSTEMMODAL
+		);
 	}
 }
 

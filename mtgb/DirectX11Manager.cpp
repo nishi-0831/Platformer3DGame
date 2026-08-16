@@ -103,7 +103,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		(void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf()
 	);
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
-	InitializeShaderBundle(); // シェーダバンドルの初期化
+	// InitializeShaderBundle(); // シェーダバンドルの初期化
 
 	const D3D11_SAMPLER_DESC SAMPLER_DESC {
 		.Filter	  = D3D11_FILTER_MIN_MAG_MIP_LINEAR,

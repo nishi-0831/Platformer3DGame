@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.17.0)
 
-# g—p‚·‚éOS‚Ìƒo[ƒWƒ‡ƒ“
+# ä½¿ç”¨ã™ã‚‹OSã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
-# ƒvƒƒWƒFƒNƒg–¼ g—pŒ¾Œê
+# ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆå ä½¿ç”¨è¨€èª
 project(Game LANGUAGES C CXX)
 set(PROJECT_NAME Project1)
 
@@ -32,7 +32,7 @@ set(CMAKE_CONFIGURATION_TYPES
     CACHE STRING "" FORCE
 )
 
-# compile_commands.json‚Ì¶¬‚ğ—LŒø‚É‚·‚é
+# compile_commands.jsonã®ç”Ÿæˆã‚’æœ‰åŠ¹ã«ã™ã‚‹
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 ################################################################################
@@ -40,11 +40,11 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 ################################################################################
 if(MSVC)
     # remove default flags provided with CMake for MSVC
-    # ƒrƒ‹ƒhƒ‚[ƒh‹¤’Ê‚ÌƒRƒ“ƒpƒCƒ‹ƒIƒvƒVƒ‡ƒ“
+    # ãƒ“ãƒ«ãƒ‰ãƒ¢ãƒ¼ãƒ‰å…±é€šã®ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     set(CMAKE_CXX_FLAGS "")
-    # ƒfƒoƒbƒOƒrƒ‹ƒh‚É’Ç‰Á‚³‚ê‚éƒRƒ“ƒpƒCƒ‹ƒIƒvƒVƒ‡ƒ“
+    # ãƒ‡ãƒãƒƒã‚°ãƒ“ãƒ«ãƒ‰æ™‚ã«è¿½åŠ ã•ã‚Œã‚‹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     set(CMAKE_CXX_FLAGS_DEBUG "")
-    # ƒŠƒŠ[ƒXƒrƒ‹ƒh‚É’Ç‰Á‚³‚ê‚éƒRƒ“ƒpƒCƒ‹ƒIƒvƒVƒ‡ƒ“
+    # ãƒªãƒªãƒ¼ã‚¹ãƒ“ãƒ«ãƒ‰æ™‚ã«è¿½åŠ ã•ã‚Œã‚‹ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     set(CMAKE_CXX_FLAGS_RELEASE "")
 endif()
 
@@ -80,7 +80,7 @@ include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
 
 ################################################################################
 # Use solution folders feature
-# ƒtƒ@ƒCƒ‹‚ÌƒtƒBƒ‹ƒ^ƒŠƒ“ƒO‹@”\‚ğ—LŒø‚É‚·‚é
+# ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ•ã‚£ãƒ«ã‚¿ãƒªãƒ³ã‚°æ©Ÿèƒ½ã‚’æœ‰åŠ¹ã«ã™ã‚‹
 ################################################################################
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -90,7 +90,7 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 ################################################################################
 # Source groups
-# source_group("”CˆÓ‚ÌƒtƒBƒ‹ƒ^–¼" FILES <ƒ\[ƒXƒR[ƒh‚ÌƒpƒX>)
+# source_group("ä»»æ„ã®ãƒ•ã‚£ãƒ«ã‚¿å" FILES <ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã®ãƒ‘ã‚¹>)
 ################################################################################
 set(no_group_source_files
     ".clang-format"
@@ -248,13 +248,8 @@ set(03mtgb__Library__Nlohmann-json
 source_group("03mtgb\\Library\\Nlohmann-json" FILES ${03mtgb__Library__Nlohmann-json})
 
 set(03mtgb__Shader
-    "mtgb/FbxParts.cpp"
-    "mtgb/FbxParts.h"
-    "mtgb/Figure.cpp"
-    "mtgb/Figure.h"
     "mtgb/IShader.cpp"
     "mtgb/IShader.h"
-    "mtgb/PlaneUVScroll.h"
     "mtgb/Sprite.cpp"
     "mtgb/Sprite.h"
 )
@@ -634,7 +629,6 @@ set(Unfiltered
     "mtgb/MonitorInfo.h"
     "mtgb/MouseStateProxy.cpp"
     "mtgb/MTBit/BitFlag.h"
-    "mtgb/PlaneUVScroll.cpp"
     "mtgb/QuatToEuler.cpp"
     "mtgb/QuatToEuler.h"
     "mtgb/RayDetector.cpp"
@@ -736,9 +730,9 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp" "mtgb/SerializableGameObject.h" "mtgb/SerializableGameObject.cpp" "mtgb/ShadowSettings.h" "mtgb/ShadowSettings.cpp" "Source/RangedAttackEnemy.h" "Source/RangedAttackEnemy.cpp"  "mtgb/GameObjectSnapshot.h" "Source/Bullet.h" "Source/Bullet.cpp")
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp" "mtgb/SerializableGameObject.h" "mtgb/SerializableGameObject.cpp" "mtgb/ShadowSettings.h" "mtgb/ShadowSettings.cpp" "Source/RangedAttackEnemy.h" "Source/RangedAttackEnemy.cpp"  "mtgb/GameObjectSnapshot.h" "Source/Bullet.h" "Source/Bullet.cpp" "mtgb/MeshAsset.h" "mtgb/MeshAsset.cpp" "mtgb/ShaderManager.h" "mtgb/ShaderManager.cpp" "mtgb/SkinnedMeshShader.cpp" "mtgb/SkinnedMeshShader.h" "mtgb/CompileShaderUtility.h" "mtgb/CompileShaderUtility.cpp" "mtgb/Box3DShader.h" "mtgb/ReflectiveConstantBuffer.h" "mtgb/ReflectiveConstantBuffer.cpp" "mtgb/Box3DShader.cpp" "mtgb/MeshShader.h" "mtgb/MeshShader.cpp" "mtgb/Debug3DShader.h" "mtgb/3DCommonConstantBuffer.h" "mtgb/Debug3DShader.cpp" "mtgb/UVScrollShader.h" "mtgb/UVScrollShader.cpp")
 
-# ƒvƒŠƒRƒ“ƒpƒCƒ‹Ï‚İƒwƒbƒ_‚ğİ’è‚·‚é
+# ãƒ—ãƒªã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ãƒ˜ãƒƒãƒ€ã‚’è¨­å®šã™ã‚‹
 target_precompile_headers(${PROJECT_NAME} PRIVATE
     "$<$<COMPILE_LANGUAGE:CXX>:${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h>"
 )
@@ -780,9 +774,9 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_include_directories(${PROJECT_NAME} PUBLIC
-        # ƒŠƒŠ[ƒXƒrƒ‹ƒh‚ÌƒCƒ“ƒNƒ‹[ƒhƒfƒBƒŒƒNƒgƒŠ
+        # ãƒªãƒªãƒ¼ã‚¹ãƒ“ãƒ«ãƒ‰æ™‚ã®ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª
         "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
-        # ‚Ç‚Ìƒrƒ‹ƒhEƒ‚[ƒh‚Å‚à‹¤’Ê
+        # ã©ã®ãƒ“ãƒ«ãƒ‰ãƒ»ãƒ¢ãƒ¼ãƒ‰ã§ã‚‚å…±é€š
         "$ENV{FBX_SDK}/include;"
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty;"
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/include/Effekseer;"
@@ -796,9 +790,9 @@ endif()
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_compile_definitions(${PROJECT_NAME} PRIVATE
-        # ƒfƒoƒbƒOƒrƒ‹ƒh
+        # ãƒ‡ãƒãƒƒã‚°ãƒ“ãƒ«ãƒ‰
         "$<$<CONFIG:Debug>:_DEBUG>"
-        # ƒŠƒŠ[ƒXƒrƒ‹ƒh
+        # ãƒªãƒªãƒ¼ã‚¹ãƒ“ãƒ«ãƒ‰
         "$<$<CONFIG:Release>:NDEBUG>"
         "_WINDOWS;"
         "_AMD64_;"
@@ -816,21 +810,21 @@ elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
 endif()
 
 set(MSVC_COMMON_OPTIONS
-    # ƒfƒoƒbƒOƒrƒ‹ƒh‚ÌƒIƒvƒVƒ‡ƒ“
+    # ãƒ‡ãƒãƒƒã‚°ãƒ“ãƒ«ãƒ‰æ™‚ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     $<$<CONFIG:Debug>:/wd4005>
-    # ƒŠƒŠ[ƒXƒrƒ‹ƒh‚ÌƒIƒvƒVƒ‡ƒ“
+    # ãƒªãƒªãƒ¼ã‚¹ãƒ“ãƒ«ãƒ‰æ™‚ã®ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     $<$<CONFIG:Release>:/Oi;/Gy>
-    # C++‚Ì•W€‹KŠi‚É€‹’‚µ‚½ƒRƒ“ƒpƒCƒ‹‚ğ‹­§‚·‚é
+    # C++ã®æ¨™æº–è¦æ ¼ã«æº–æ‹ ã—ãŸã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ã‚’å¼·åˆ¶ã™ã‚‹
     /permissive-;
-    # __cplusplus‚Ì’l‚ÅC++‚Ìƒo[ƒWƒ‡ƒ“‚ğ”»’è‚µ‚Ä‚¢‚é‰ÓŠ‚ª³‚µ‚­‹@”\‚·‚é‚æ‚¤‚É
+    # __cplusplusã®å€¤ã§C++ã®ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’åˆ¤å®šã—ã¦ã„ã‚‹ç®‡æ‰€ãŒæ­£ã—ãæ©Ÿèƒ½ã™ã‚‹ã‚ˆã†ã«
     /Zc:__cplusplus;
     /sdl;
     /W4;
-    # –³–¼‹¤—p‘Ì/\‘¢‘Ì‚ğ’è‹`‚µ‚½Û‚ÌŒx‚ğ—}§
+    # ç„¡åå…±ç”¨ä½“/æ§‹é€ ä½“ã‚’å®šç¾©ã—ãŸéš›ã®è­¦å‘Šã‚’æŠ‘åˆ¶
     /wd4201;
-    # ”F¯‚³‚ê‚È‚¢‘®«‚ğ•t—^‚µ‚½Û‚ÌŒx‚ğ—}§
+    # èªè­˜ã•ã‚Œãªã„å±æ€§ã‚’ä»˜ä¸ã—ãŸéš›ã®è­¦å‘Šã‚’æŠ‘åˆ¶
     /wd5030;
-    # Œx‚ğƒGƒ‰[‚Æ‚µ‚Äˆµ‚¤
+    # è­¦å‘Šã‚’ã‚¨ãƒ©ãƒ¼ã¨ã—ã¦æ‰±ã†
     # /WX;
     /FI ${CMAKE_CURRENT_SOURCE_DIR}/mtgb/stdafx.h
     ${DEFAULT_CXX_DEBUG_INFORMATION_FORMAT};
@@ -868,9 +862,9 @@ if(MSVC)
     else()
         target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_20)
         set_target_properties(${PROJECT_NAME} PROPERTIES
-            # w’è‚µ‚½C++•W€ƒo[ƒWƒ‡ƒ“‚ğ•K{‚Æ‚·‚éBƒRƒ“ƒpƒCƒ‰‚ªƒTƒ|[ƒg‚µ‚Ä‚¢‚È‚¢‚È‚ç‚Îƒrƒ‹ƒh¸”s
+            # æŒ‡å®šã—ãŸC++æ¨™æº–ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã‚’å¿…é ˆã¨ã™ã‚‹ã€‚ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©ãŒã‚µãƒãƒ¼ãƒˆã—ã¦ã„ãªã„ãªã‚‰ã°ãƒ“ãƒ«ãƒ‰å¤±æ•—
             CXX_STANDARD_REQUIRED ON
-            # ƒRƒ“ƒpƒCƒ‰ŒÅ—L‚ÌŠg’£‹@”\‚ğ–³Œø‚É‚·‚é
+            # ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©å›ºæœ‰ã®æ‹¡å¼µæ©Ÿèƒ½ã‚’ç„¡åŠ¹ã«ã™ã‚‹
             CXX_EXTENSIONS OFF
     )
     endif()
@@ -881,13 +875,13 @@ if(MSVC)
         target_compile_options(${PROJECT_NAME} PRIVATE ${MSVC_COMMON_OPTIONS} ${CLANGCL_ADDITIONAL_OPTIONS})
     endif()
 
-    # "/Y-" ‚ÍƒvƒŠƒRƒ“ƒpƒCƒ‹Ï‚İƒwƒbƒ_‚ğ–³‹‚·‚éƒIƒvƒVƒ‡ƒ“
+    # "/Y-" ã¯ãƒ—ãƒªã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ãƒ˜ãƒƒãƒ€ã‚’ç„¡è¦–ã™ã‚‹ã‚ªãƒ—ã‚·ãƒ§ãƒ³
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         string(CONCAT FILE_CL_OPTIONS
             "/Y-"
         )
     endif()
-    # ƒvƒŠƒRƒ“ƒpƒCƒ‹Ï‚İƒwƒbƒ_‚ğ–³‹‚·‚éƒ\[ƒX
+    # ãƒ—ãƒªã‚³ãƒ³ãƒ‘ã‚¤ãƒ«æ¸ˆã¿ãƒ˜ãƒƒãƒ€ã‚’ç„¡è¦–ã™ã‚‹ã‚½ãƒ¼ã‚¹
     source_file_compile_options(ImGui/GraphEditor.cpp ${FILE_CL_OPTIONS})
     if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
         string(CONCAT FILE_CL_OPTIONS
@@ -983,18 +977,18 @@ if(MSVC)
 endif()
 
 ################################################################################
-# Pre build events (ƒrƒ‹ƒh‘OƒCƒxƒ“ƒg)
+# Pre build events (ãƒ“ãƒ«ãƒ‰å‰ã‚¤ãƒ™ãƒ³ãƒˆ)
 ################################################################################
 
-# ƒR[ƒh¶¬ƒc[ƒ‹‚ğÀs‚·‚éƒRƒ}ƒ“ƒh
+# ã‚³ãƒ¼ãƒ‰ç”Ÿæˆãƒ„ãƒ¼ãƒ«ã‚’å®Ÿè¡Œã™ã‚‹ã‚³ãƒãƒ³ãƒ‰
 set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe> " --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}")
  add_custom_target(generate_source_code
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND}
     USES_TERMINAL)
-# ƒRƒ“ƒpƒCƒ‹‘O‚ÉÀs‚³‚ê‚é‚æ‚¤‚ÉˆË‘¶‚³‚¹‚é
+# ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«å‰ã«å®Ÿè¡Œã•ã‚Œã‚‹ã‚ˆã†ã«ä¾å­˜ã•ã›ã‚‹
  add_dependencies(${PROJECT_NAME} generate_source_code)
 
- # ƒLƒƒƒbƒVƒ…‚ğíœ‚µAÄ¶¬‚ğs‚¤
+ # ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚’å‰Šé™¤ã—ã€å†ç”Ÿæˆã‚’è¡Œã†
  add_custom_target(force_generate_source_code
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND} --force
     USES_TERMINAL
@@ -1027,19 +1021,19 @@ endif()
  endif()
 
 ################################################################################
-# Dependencies (ƒŠƒ“ƒNæ)
+# Dependencies (ãƒªãƒ³ã‚¯å…ˆ)
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_link_directories(${PROJECT_NAME} PRIVATE
-        # ƒfƒoƒbƒOƒrƒ‹ƒh
+        # ãƒ‡ãƒãƒƒã‚°ãƒ“ãƒ«ãƒ‰
         "$<$<CONFIG:Debug>:"
             "$ENV{FBX_SDK}/lib/x64/debug;"
         ">"
-        # ƒŠƒŠ[ƒXƒrƒ‹ƒh
+        # ãƒªãƒªãƒ¼ã‚¹ãƒ“ãƒ«ãƒ‰
         "$<$<CONFIG:Release>:"
             "$ENV{FBX_SDK}/lib/x64/release;"
         ">"
-        # ‚Ç‚Ìƒrƒ‹ƒhƒ‚[ƒh‚Å‚à‹¤’Ê
+        # ã©ã®ãƒ“ãƒ«ãƒ‰ãƒ¢ãƒ¼ãƒ‰ã§ã‚‚å…±é€š
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty/EffekseeLib/install_msvc2022_x64/lib"
     )
 endif()

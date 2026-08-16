@@ -6,7 +6,7 @@
 #include "Transform.h"
 #include "RigidBody.h"
 #include "Intersection.h"
-
+#include "Fbx.h"
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
 	, colliderType_ { ColliderType::TYPE_SPHERE }
@@ -416,7 +416,7 @@ void mtgb::Collider::Draw() const
 			copyTransform.position += center_;
 			copyTransform.scale *= Vector3::One() * computeSphere_.Radius;
 			copyTransform.Compute();
-			Game::System<mtgb::Draw>().FBXModel(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Fbx>().Draw(hSphereModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		case ColliderType::TYPE_AABB :
 
@@ -445,7 +445,7 @@ void mtgb::Collider::Draw() const
 				copyTransform.scale = computeBox_.Extents * 2.0f;
 			}
 			copyTransform.Compute();
-			Game::System<mtgb::Draw>().FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Fbx>().Draw(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		case ColliderType::TYPE_OBB :
 			if (isStatic_)
@@ -470,7 +470,7 @@ void mtgb::Collider::Draw() const
 				copyTransform.scale = computeBox_.Extents * 2.0f;
 			}
 			copyTransform.Compute();
-			Game::System<mtgb::Draw>().FBXModel(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
+			Game::System<mtgb::Fbx>().Draw(hBoxModel_, copyTransform, 0, ShaderType::DEBUG3_D);
 			break;
 		default :
 			break;

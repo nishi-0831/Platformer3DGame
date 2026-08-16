@@ -6,7 +6,7 @@
 #include "ISystem.h"
 #include "FbxModel.h"
 #include "Handlers.h"
-
+#include "ShaderType.h"
 #pragma comment(lib, "LibFbxSDK-MT.lib")
 #pragma comment(lib, "LibXml2-MT.lib")
 #pragma comment(lib, "zlib-MT.lib")
@@ -19,7 +19,6 @@ namespace mtgb
 	/// </summary>
 	class Fbx : public ISystem
 	{
-		friend class FbxParts;
 
 	  public:
 		Fbx();
@@ -47,7 +46,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_transfrom">座標系</param>
 		/// <param name="_frame">アニメーションフレーム</param>
-		void Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame);
+		void Draw(FBXModelHandle _hModel, const Transform& _transfrom, int _frame, ShaderType _shader);
 		/// <summary>
 		/// 解放処理
 		/// </summary>

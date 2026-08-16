@@ -21,7 +21,6 @@ mtgb::TextRenderer::TextRenderer(EntityId _entityId)
 void mtgb::TextRenderer::Render() const
 {
 	DirectX11Draw::SetIsWriteToDepthBuffer(false);
-	Game::System<Draw>().CheckSetShader(ShaderType::SPRITE2_D);
 
 	FontFormatData* formatData =
 		Game::System<TextCache>().GetOrCreateTextFormat(Game::System<mtgb::Draw>().CalcScaledFontSize(fontSize_));
