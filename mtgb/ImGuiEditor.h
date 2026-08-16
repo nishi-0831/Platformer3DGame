@@ -18,6 +18,7 @@ namespace mtgb
 
 		void ShowMenuBar();
 		void ShowInspector();
+		void DrawSelectedObjectOutline();
 		std::span<EntityId> GetSelectedEntityId();
 		ImGuizmo::OPERATION GetOperation();
 

@@ -142,7 +142,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::DEFAULT)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::DEFAULT)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -150,29 +150,59 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		&& "BlendMode::Defaultの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
 	);
 
-	// BlendMode::Spriteの作成
-	DEPTH_STENCIL_DESC = { .DepthEnable		 = FALSE, // 深度テストを行うかどうか
-						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ZERO,
+	// StencilMode::WriteSelected
+	DEPTH_STENCIL_DESC = { .DepthEnable		 = TRUE, // 深度テストを行うかどうか
+						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ALL,
 						   .DepthFunc		 = D3D11_COMPARISON_LESS_EQUAL,
-						   .StencilEnable	 = FALSE, // ステンシルテストを行うかどうか
-						   .StencilReadMask	 = {},
-						   .StencilWriteMask = {},
+						   .StencilEnable	 = TRUE, // ステンシルテストを行うかどうか
+						   .StencilReadMask	 = 0xFF,
+						   .StencilWriteMask = 0xFF,
 						   .FrontFace {
 							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
 							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_REPLACE,
 							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
 						   },
 						   .BackFace {
 							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
 							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_REPLACE,
 							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
 						   } };
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::SPRITE)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::WriteSelected)].ReleaseAndGetAddressOf()
+	);
+
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
+		&& "BlendMode::Spriteの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
+
+	// StencilMode::DrawOutline
+	DEPTH_STENCIL_DESC = { .DepthEnable		 = TRUE, // 深度テストを行うかどうか
+						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ALL,
+						   .DepthFunc		 = D3D11_COMPARISON_LESS_EQUAL,
+						   .StencilEnable	 = TRUE, // ステンシルテストを行うかどうか
+						   .StencilReadMask	 = 0xFF,
+						   .StencilWriteMask = 0xFF,
+						   .FrontFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_NOT_EQUAL,
+						   },
+						   .BackFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_NOT_EQUAL,
+						   } };
+
+	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
+		&DEPTH_STENCIL_DESC,
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::DrawOutline)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -347,7 +377,7 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 		.Height	   = static_cast<UINT>(_bufSize.y),
 		.MipLevels = 1,
 		.ArraySize = 1,
-		.Format	   = DXGI_FORMAT_D32_FLOAT,
+		.Format	   = DXGI_FORMAT_D24_UNORM_S8_UINT,
 		.SampleDesc { .Count = 1, .Quality = 0 },
 		.Usage			= D3D11_USAGE_DEFAULT,
 		.BindFlags		= D3D11_BIND_DEPTH_STENCIL,

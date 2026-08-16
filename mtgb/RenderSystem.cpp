@@ -70,6 +70,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	DirectX11Draw::Begin();
 	Game::System<ImGuiEditorCamera>().SetCamera();
 	DrawGameObjects(_scene, AllLayer());
+	Game::System<ImGuiEditor>().DrawSelectedObjectOutline();
 
 	MTImGui::ShowWindow(ShowType::SCENE_VIEW);
 

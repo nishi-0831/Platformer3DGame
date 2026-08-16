@@ -19,6 +19,7 @@ namespace mtgb
 		TERRAIN,
 		BOX3_D,
 		SEA,
+		OUTLINE,
 		MAX,
 	};
 } // namespace mtgb

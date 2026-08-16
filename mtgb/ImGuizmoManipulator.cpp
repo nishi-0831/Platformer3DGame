@@ -12,7 +12,9 @@
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "SceneSystem.h"
-
+#include "DirectX11Draw.h"
+#include "Fbx.h"
+#include "MeshRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	using namespace DirectX;
@@ -358,6 +360,49 @@ std::span<mtgb::EntityId> mtgb::ImGuizmoManipulator::GetSelectedEntityId()
 ImGuizmo::OPERATION mtgb::ImGuizmoManipulator::GetOperation()
 {
 	return operation_;
+}
+
+void mtgb::ImGuizmoManipulator::DrawSelectedObjectOutline()
+{
+	DirectX11Draw::SetStencilMode(StencilMode::WriteSelected);
+	for (EntityId id : selectedIds_)
+	{
+		MeshRenderer* pMeshRenderer = nullptr;
+		Game::System<MeshRendererCP>().TryGet(pMeshRenderer, id);
+		if (pMeshRenderer == nullptr)
+		{
+			continue;
+		}
+		Transform* pTransform = nullptr;
+		Game::System<TransformCP>().TryGet(pTransform, id);
+
+		if (pTransform == nullptr)
+		{
+			continue;
+		}
+
+		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, ShaderType::FBX_PARTS);
+	}
+	DirectX11Draw::SetStencilMode(StencilMode::DrawOutline);
+	for (EntityId id : selectedIds_)
+	{
+		MeshRenderer* pMeshRenderer = nullptr;
+		Game::System<MeshRendererCP>().TryGet(pMeshRenderer, id);
+		if (pMeshRenderer == nullptr)
+		{
+			continue;
+		}
+		Transform* pTransform = nullptr;
+		Game::System<TransformCP>().TryGet(pTransform, id);
+
+		if (pTransform == nullptr)
+		{
+			continue;
+		}
+
+		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, ShaderType::OUTLINE);
+	}
+	DirectX11Draw::SetStencilMode(StencilMode::DEFAULT);
 }
 
 void mtgb::ImGuizmoManipulator::UpdateManipulator()

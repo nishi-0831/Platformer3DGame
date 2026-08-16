@@ -18,7 +18,7 @@ IDXGISwapChain* DirectX11Draw::pSwapChain_ { nullptr };						  // ダブルバ�
 ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_ { nullptr }; // 描画先
 ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_ { nullptr };
 ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_ { nullptr }; // 深度バッファ
-std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::MAX)> DirectX11Draw::pDepthStencilState_ {
+std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(StencilMode::MAX)> DirectX11Draw::pDepthStencilState_ {
 	nullptr
 }; // ブレンドによる深度バッファへの書き込み情報
 ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_ { nullptr }; // ブレンドの情報
@@ -35,9 +35,13 @@ void mtgb::DirectX11Draw::SetBlendMode(BlendMode _mode)
 	// 加算合成
 	float blendFactor[] { D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO };
 	pContext_->OMSetBlendState(pBlendState_[INDEX].Get(), blendFactor, 0xffffffffU);
+}
 
+void mtgb::DirectX11Draw::SetStencilMode(StencilMode _mode)
+{
+	const int INDEX { static_cast<int>(_mode) };
 	// 深度ステンシルへの書き込み
-	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 0);
+	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 1);
 }
 
 void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(bool _enabled)
@@ -60,7 +64,7 @@ void mtgb::DirectX11Draw::Begin()
 	pContext_->ClearRenderTargetView(pRenderTargetView_.Get(), backgroundColor_.f);
 
 	// 深度バッファクリア
-	pContext_->ClearDepthStencilView(pDepthStencilView_.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0U);
+	pContext_->ClearDepthStencilView(pDepthStencilView_.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0U);
 }
 
 void mtgb::DirectX11Draw::End()

@@ -5,6 +5,7 @@
 #include "SkinnedMeshShader.h"
 #include "Debug3DShader.h"
 #include "UVScrollShader.h"
+#include "OutlineShader.h"
 void mtgb::ShaderManager::Initialize()
 {
 	shaders_.fill(nullptr);
@@ -23,13 +24,15 @@ void mtgb::ShaderManager::Initialize()
 
 	shaders_[static_cast<int8_t>(ShaderType::SEA)] = new UVScrollShader();
 	shaders_[static_cast<int8_t>(ShaderType::SEA)]->Initialize(DirectX11Draw::pDevice_.Get());
+
+	shaders_[static_cast<int8_t>(ShaderType::OUTLINE)] = new OutlineShader();
+	shaders_[static_cast<int8_t>(ShaderType::OUTLINE)]->Initialize(DirectX11Draw::pDevice_.Get());
 }
 
 void mtgb::ShaderManager::Update() {}
 
 void mtgb::ShaderManager::Release()
 {
-
 	for (auto shader : shaders_)
 	{
 		if (shader != nullptr)

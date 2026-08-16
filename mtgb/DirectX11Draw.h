@@ -40,7 +40,13 @@ namespace mtgb
 		SPRITE,
 		MAX,
 	};
-
+	enum struct StencilMode : int8_t
+	{
+		DEFAULT,
+		WriteSelected,
+		DrawOutline,
+		MAX,
+	};
 	class DirectX11Draw final
 	{
 	  public:
@@ -66,6 +72,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_mode">ブレンドモード</param>
 		static void SetBlendMode(BlendMode _mode);
+		static void SetStencilMode(StencilMode _mode);
 		/// <summary>
 		/// 深度バッファへの書き込みをするか
 		/// </summary>
@@ -91,7 +98,7 @@ namespace mtgb
 		static ComPtr<IDXGISwapChain1> pSwapChain1_;
 		static ComPtr<ID3D11RenderTargetView> pRenderTargetView_; // 描画先
 		static ComPtr<ID3D11DepthStencilView> pDepthStencilView_; // 深度バッファ
-		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::MAX)>
+		static std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(StencilMode::MAX)>
 			pDepthStencilState_;					   // ブレンドによる深度バッファへの書き込み情報
 		static ComPtr<ID3D11Texture2D> pDepthStencil_; // 深度ステンシル
 		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> pBlendState_; // ブレンドの情報

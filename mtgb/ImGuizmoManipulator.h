@@ -28,6 +28,7 @@ namespace mtgb
 		void DeselectAll();
 		std::span<EntityId> GetSelectedEntityId();
 		ImGuizmo::OPERATION GetOperation();
+		void DrawSelectedObjectOutline();
 
 	  private:
 		void UpdateManipulator();

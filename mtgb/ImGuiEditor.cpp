@@ -472,6 +472,11 @@ void mtgb::ImGuiEditor::ShowInspector()
 	ImGui::End();
 }
 
+void mtgb::ImGuiEditor::DrawSelectedObjectOutline()
+{
+	pManipulator_->DrawSelectedObjectOutline();
+}
+
 std::span<EntityId> mtgb::ImGuiEditor::GetSelectedEntityId()
 {
 	return pManipulator_->GetSelectedEntityId();
