@@ -8,6 +8,8 @@
 #include <wrl/client.h>
 #include "MeshAsset.h"
 #include "ReflectiveConstantBuffer.h"
+#include "StringComparators.h"
+
 using Microsoft::WRL::ComPtr;
 
 struct ID3D11Buffer;
@@ -28,35 +30,33 @@ namespace mtgb
 		virtual void Release();
 		virtual void Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame) = 0;
 		void Bind(ID3D11DeviceContext* _pCtx);
-		ReflectiveConstantBuffer* GetConstantBuffer(const std::string& _name);
+		ReflectiveConstantBuffer* GetConstantBuffer(std::string_view _name);
 
 	  protected:
 		void InitializeCommonGpuResources(ID3D11Device* _pDevice, std::wstring_view _fileName);
-		// ComPtr<ID3D11Buffer> pConstantBuffer_;
-		std::unordered_map<std::string, ReflectiveConstantBuffer> cBufferMap_;
+		std::unordered_map<std::string, ReflectiveConstantBuffer, TransparentStringHash, TransparentStringEq>
+			cBufferMap_;
 		/// <summary>
-		/// <para>頂点レイアウト</para>
+		/// <para>入力レイアウト</para>
 		/// <para></para>
 		/// </summary>
-		ComPtr<ID3D11InputLayout> pVertexLayout;
+		ComPtr<ID3D11InputLayout> pInputLayout_;
 
 		/// <summary>
 		/// <para>頂点シェーダ</para>
 		/// <para>頂点の情報</para>
 		/// </summary>
-		ComPtr<ID3D11VertexShader> pVertexShader;
+		ComPtr<ID3D11VertexShader> pVertexShader_;
 
 		/// <summary>
 		/// <para>ピクセルシェーダ</para>
-		/// <para></para>
 		/// </summary>
-		ComPtr<ID3D11PixelShader> pPixelShader;
+		ComPtr<ID3D11PixelShader> pPixelShader_;
 
 		/// <summary>
 		/// <para>ラスタライザ</para>
-		/// <para>どのピクセルを光らせるかの情報</para>
 		/// </summary>
-		ComPtr<ID3D11RasterizerState> pRasterizerState;
+		ComPtr<ID3D11RasterizerState> pRasterizerState_;
 	};
 
 } // namespace mtgb

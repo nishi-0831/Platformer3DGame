@@ -31,9 +31,6 @@ struct ID3D11Texture2D;
 
 namespace mtgb
 {
-	class Figure;
-	class IShader;
-
 	/// <summary>
 	/// ブレンドモード
 	/// </summary>
@@ -42,38 +39,6 @@ namespace mtgb
 		DEFAULT,
 		SPRITE,
 		MAX,
-	};
-
-	/// <summary>
-	/// GPUで行う処理のバンドル
-	/// </summary>
-	struct ShaderBundle
-	{
-		~ShaderBundle();
-
-		/// <summary>
-		/// <para>頂点レイアウト</para>
-		/// <para></para>
-		/// </summary>
-		ComPtr<ID3D11InputLayout> pVertexLayout;
-
-		/// <summary>
-		/// <para>頂点シェーダ</para>
-		/// <para>頂点の情報</para>
-		/// </summary>
-		ComPtr<ID3D11VertexShader> pVertexShader;
-
-		/// <summary>
-		/// <para>ピクセルシェーダ</para>
-		/// <para></para>
-		/// </summary>
-		ComPtr<ID3D11PixelShader> pPixelShader;
-
-		/// <summary>
-		/// <para>ラスタライザ</para>
-		/// <para>どのピクセルを光らせるかの情報</para>
-		/// </summary>
-		ComPtr<ID3D11RasterizerState> pRasterizerState;
 	};
 
 	class DirectX11Draw final
@@ -96,11 +61,6 @@ namespace mtgb
 		/// </summary>
 		static void Release();
 
-		/// <summary>
-		/// 描画するシェーダをセットする
-		/// </summary>
-		/// <param name="_type">シェーダの種類</param>
-		static void SetShader(ShaderType _type);
 		/// <summary>
 		/// 描画するブレンドモードをセットする
 		/// </summary>
@@ -135,7 +95,6 @@ namespace mtgb
 			pDepthStencilState_;					   // ブレンドによる深度バッファへの書き込み情報
 		static ComPtr<ID3D11Texture2D> pDepthStencil_; // 深度ステンシル
 		static std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> pBlendState_; // ブレンドの情報
-		static ShaderBundle shaderBundle_[static_cast<int8_t>(ShaderType::MAX)]; // シェーダのバンドル
 		static Vector4 backgroundColor_;
 	};
 } // namespace mtgb

@@ -8,13 +8,13 @@ mtgb::IShader::IShader() {}
 
 void mtgb::IShader::Bind(ID3D11DeviceContext* _pCtx)
 {
-	_pCtx->RSSetState(pRasterizerState.Get());
-	_pCtx->VSSetShader(pVertexShader.Get(), nullptr, 0);
-	_pCtx->PSSetShader(pPixelShader.Get(), nullptr, 0);
-	_pCtx->IASetInputLayout(pVertexLayout.Get());
+	_pCtx->RSSetState(pRasterizerState_.Get());
+	_pCtx->VSSetShader(pVertexShader_.Get(), nullptr, 0);
+	_pCtx->PSSetShader(pPixelShader_.Get(), nullptr, 0);
+	_pCtx->IASetInputLayout(pInputLayout_.Get());
 }
 
-ReflectiveConstantBuffer* mtgb::IShader::GetConstantBuffer(const std::string& _name)
+ReflectiveConstantBuffer* mtgb::IShader::GetConstantBuffer(std::string_view _name)
 {
 	auto itr = cBufferMap_.find(_name);
 	if (itr == cBufferMap_.end())
@@ -57,12 +57,12 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		&& "頂点シェーダのコンパイルに失敗 @IShader::CompileShader"
 	);
 
-	pVertexLayout.Attach(CreateInputLayout(_pDevice, pCompileVS));
+	pInputLayout_.Attach(CreateInputLayout(_pDevice, pCompileVS));
 	hResult = _pDevice->CreateVertexShader(
 		pCompileVS->GetBufferPointer(),
 		pCompileVS->GetBufferSize(),
 		nullptr,
-		pVertexShader.ReleaseAndGetAddressOf()
+		pVertexShader_.ReleaseAndGetAddressOf()
 	);
 	massert(
 		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
@@ -95,7 +95,7 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		pCompilePS->GetBufferPointer(), // コンパイルされたバッファのポインタ
 		pCompilePS->GetBufferSize(),	// バッファのサイズ
 		nullptr,						// リンケージクラス: 無し
-		pPixelShader.ReleaseAndGetAddressOf()
+		pPixelShader_.ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -103,6 +103,7 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		&& "ピクセルシェーダの作成に失敗 @IShader::CompileShader"
 	);
 
+	// シェーダーのリフレクション情報を取得
 	ID3D11ShaderReflection* reflection = nullptr;
 	hResult							   = D3DReflect(
 		   pCompileVS->GetBufferPointer(),
@@ -110,16 +111,18 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		   IID_ID3D11ShaderReflection,
 		   reinterpret_cast<void**>(&reflection)
 	   );
-	D3D11_SHADER_BUFFER_DESC cbDesc;
 	D3D11_SHADER_INPUT_BIND_DESC bindDesc;
 	D3D11_SHADER_DESC desc;
 	reflection->GetDesc(&desc);
 	for (UINT i = 0; i < desc.ConstantBuffers; i++)
 	{
-		auto cbReflection = reflection->GetConstantBufferByIndex(i);
+		// 定数バッファのリフレクション情報
+		ID3D11ShaderReflectionConstantBuffer* cbReflection = reflection->GetConstantBufferByIndex(i);
 		D3D11_SHADER_BUFFER_DESC cbDesc;
 		cbReflection->GetDesc(&cbDesc);
 		reflection->GetResourceBindingDescByName(cbDesc.Name, &bindDesc);
+
+		// 定数バッファ作成
 		ReflectiveConstantBuffer cBuf;
 		cBuf.Initialize(_pDevice, cbReflection, bindDesc.BindPoint);
 		cBufferMap_[cbDesc.Name] = cBuf;
@@ -131,5 +134,13 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 
 void mtgb::IShader::Release()
 {
-	// pConstantBuffer_.Reset();
+	for (auto& [name, buffer] : cBufferMap_)
+	{
+		buffer.Release();
+	}
+	cBufferMap_.clear();
+	pInputLayout_.Reset();
+	pVertexShader_.Reset();
+	pPixelShader_.Reset();
+	pRasterizerState_.Reset();
 }

@@ -16,7 +16,7 @@ Player::Player()
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
-	, pRigidBody_ { Component<RigidBody>() } //, pCamera_{Instantiate<Camera>(this)}
+	, pRigidBody_ { Component<RigidBody>() }
 	, pCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
 	, pCameraTransform_ { &Transform::Get(pCamera_->GetEntityId()) }
 	, hp_ { 3 }

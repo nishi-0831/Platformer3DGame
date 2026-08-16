@@ -22,7 +22,7 @@ void mtgb::MeshShader::Initialize(ID3D11Device* _pDevice)
 		.MultisampleEnable	   = {},
 		.AntialiasedLineEnable = {},
 	});
-	_pDevice->CreateRasterizerState(&cRasterizerDesc, pRasterizerState.ReleaseAndGetAddressOf());
+	_pDevice->CreateRasterizerState(&cRasterizerDesc, pRasterizerState_.ReleaseAndGetAddressOf());
 }
 
 void mtgb::MeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)

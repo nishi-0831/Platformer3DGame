@@ -1,6 +1,5 @@
 #include "Fbx.h"
 #include "ReleaseUtility.h"
-#include "FbxParts.h"
 #include "DirectX11Draw.h"
 #include "MTAssert.h"
 

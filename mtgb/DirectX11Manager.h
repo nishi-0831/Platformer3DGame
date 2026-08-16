@@ -10,7 +10,6 @@
 
 #pragma comment(lib, "d3d11.lib") // DirectX11のライブラリ
 #pragma comment(lib, "dxgi.lib")
-#pragma comment(lib, "d3dcompiler.lib") // シェーダコンパイラ用ライブラリ
 
 using Microsoft::WRL::ComPtr;
 struct D3D11_INPUT_ELEMENT_DESC;
@@ -26,8 +25,6 @@ typedef struct HWND__* HWND;
 
 namespace mtgb
 {
-	enum struct ShaderType : int8_t;
-
 	class DirectX11Manager : public ISystem
 	{
 	  public:
@@ -40,7 +37,6 @@ namespace mtgb
 		void InitializeCommonResources();
 		void CreateDXGISurface(IDXGISwapChain1* _pSwapChain1, IDXGISurface** _ppDxgiSurface);
 
-		// void CreateOutput(int index, IDXGIOutput** ppOutput);
 		void CreateSwapChain(HWND _hWnd, IDXGIOutput* _pOutput, IDXGISwapChain1** _ppSwapChain1);
 		void CreateRenderTargetView(IDXGISwapChain1* _pSwapChain1, ID3D11RenderTargetView** _ppRenderTargetView);
 		void CreateViewport(const Vector2Int& _size, D3D11_VIEWPORT& _viewport);
@@ -80,25 +76,5 @@ namespace mtgb
 		/// 利用可能なモニターを列挙する
 		/// </summary>
 		void EnumAvailableMonitors();
-		/// <summary>
-		/// シェーダバンドルを初期化する
-		/// </summary>
-		void InitializeShaderBundle();
-
-		/// <summary>
-		/// シェーダファイルをコンパイルする
-		/// </summary>
-		/// <param name="_fileName">ファイルパス</param>
-		/// <param name="_type">シェーダタイプ</param>
-		/// <param name="_pHLSLLayout">入力情報配列</param>
-		/// <param name="_layoutLength">入力情報配列の要素数</param>
-		/// <param name="_pRasterizerDesc">ラスタライザの設定</param>
-		void CompileShader(
-			const std::wstring& _fileName,
-			ShaderType _type,
-			const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-			unsigned int _layoutLength,
-			const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
-		);
 	};
 } // namespace mtgb

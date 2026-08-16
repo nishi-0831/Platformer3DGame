@@ -2,13 +2,15 @@
 
 ReflectiveConstantBuffer::ReflectiveConstantBuffer()
 	: pBuffer_ { nullptr }
+	, bufferSize_ { 0 }
+	, bindSlot_ { 0 }
 {
 }
 
 bool ReflectiveConstantBuffer::Initialize(
 	ID3D11Device* _pDevice,
 	ID3D11ShaderReflectionConstantBuffer* _pCbReflection,
-	int _bindSlot
+	UINT _bindSlot
 )
 {
 	Release();
@@ -44,7 +46,10 @@ bool ReflectiveConstantBuffer::Initialize(
 	return SUCCEEDED(hr);
 }
 
-void ReflectiveConstantBuffer::Release() {}
+void ReflectiveConstantBuffer::Release()
+{
+	SAFE_RELEASE(pBuffer_);
+}
 
 void ReflectiveConstantBuffer::ApplyChanges(ID3D11DeviceContext* _pContext)
 {
@@ -65,7 +70,7 @@ void ReflectiveConstantBuffer::BindPS(ID3D11DeviceContext* _pContext)
 	_pContext->PSSetConstantBuffers(bindSlot_, 1, &pBuffer_);
 }
 
-int ReflectiveConstantBuffer::GetBindSlot()
+UINT ReflectiveConstantBuffer::GetBindSlot()
 {
 	return bindSlot_;
 }
