@@ -78,6 +78,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_enabled">書き込みをする true / false</param>
 		static void SetIsWriteToDepthBuffer(bool _enabled);
+		static void SetIsWriteToRenderTarget(bool _enabled);
 
 	  private:
 		DirectX11Draw()	 = delete;

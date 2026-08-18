@@ -1,8 +1,8 @@
 #include "OutlineShader.h"
 #include "CameraSystem.h"
 mtgb::OutlineShader::OutlineShader()
-	: outlineColor_ { 255, 140, 0, 1 }
-	, outlineScale_ { 1.05 }
+	: outlineColor_ { 1, 0.6, 0, 1 }
+	, outlineScale_ { 1.02 }
 {
 }
 void mtgb::OutlineShader::Initialize(ID3D11Device* _pDevice)

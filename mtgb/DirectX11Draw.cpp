@@ -46,15 +46,36 @@ void mtgb::DirectX11Draw::SetStencilMode(StencilMode _mode)
 
 void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(bool _enabled)
 {
+	ID3D11RenderTargetView* pRTV = nullptr;
+	ID3D11DepthStencilView* pDSV = nullptr;
+
+	pContext_->OMGetRenderTargets(1, &pRTV, &pDSV);
 	if (_enabled)
 	{
 		// 深度バッファを指定する
-		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDepthStencilView_.Get());
+		pContext_->OMSetRenderTargets(1, &pRTV, pDepthStencilView_.Get());
 	}
 	else
 	{
 		// 深度バッファを外す nullptrを指定する
-		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), nullptr);
+		pContext_->OMSetRenderTargets(1, &pRTV, nullptr);
+	}
+}
+
+void mtgb::DirectX11Draw::SetIsWriteToRenderTarget(bool _enabled)
+{
+	ID3D11RenderTargetView* pRTV = nullptr;
+	ID3D11DepthStencilView* pDSV = nullptr;
+
+	pContext_->OMGetRenderTargets(1, &pRTV, &pDSV);
+	if (_enabled)
+	{
+		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDSV);
+	}
+	else
+	{
+		ID3D11RenderTargetView* pNullRTV = nullptr;
+		pContext_->OMSetRenderTargets(1, &pNullRTV, pDSV);
 	}
 }
 

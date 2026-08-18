@@ -103,11 +103,20 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		&& "ピクセルシェーダの作成に失敗 @IShader::CompileShader"
 	);
 
+	ParseAndCreateConstantBuffer(_pDevice, pCompileVS);
+	ParseAndCreateConstantBuffer(_pDevice, pCompilePS);
+
+	SAFE_RELEASE(pCompileVS);
+	SAFE_RELEASE(pCompilePS);
+}
+
+void mtgb::IShader::ParseAndCreateConstantBuffer(ID3D11Device* _pDevice, ID3DBlob* _pBlob)
+{
 	// シェーダーのリフレクション情報を取得
 	ID3D11ShaderReflection* reflection = nullptr;
-	hResult							   = D3DReflect(
-		   pCompileVS->GetBufferPointer(),
-		   pCompileVS->GetBufferSize(),
+	HRESULT hResult					   = D3DReflect(
+		   _pBlob->GetBufferPointer(),
+		   _pBlob->GetBufferSize(),
 		   IID_ID3D11ShaderReflection,
 		   reinterpret_cast<void**>(&reflection)
 	   );
@@ -122,14 +131,14 @@ void mtgb::IShader::InitializeCommonGpuResources(ID3D11Device* _pDevice, std::ws
 		cbReflection->GetDesc(&cbDesc);
 		reflection->GetResourceBindingDescByName(cbDesc.Name, &bindDesc);
 
-		// 定数バッファ作成
-		ReflectiveConstantBuffer cBuf;
-		cBuf.Initialize(_pDevice, cbReflection, bindDesc.BindPoint);
-		cBufferMap_[cbDesc.Name] = cBuf;
+		if (cBufferMap_.contains(cbDesc.Name) == false)
+		{
+			// 定数バッファ作成
+			ReflectiveConstantBuffer cBuf;
+			cBuf.Initialize(_pDevice, cbReflection, bindDesc.BindPoint);
+			cBufferMap_[cbDesc.Name] = cBuf;
+		}
 	}
-
-	SAFE_RELEASE(pCompileVS);
-	SAFE_RELEASE(pCompilePS);
 }
 
 void mtgb::IShader::Release()

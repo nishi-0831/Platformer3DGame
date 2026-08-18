@@ -17,7 +17,7 @@ mtgb::Box3D::Box3D()
 	pMeshRenderer_->meshFileName = "Model/WallBox.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
-	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS;
+	pMeshRenderer_->shaderType	 = ShaderType::BOX3_D;
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Box3D));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);

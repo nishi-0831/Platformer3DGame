@@ -28,8 +28,8 @@ void mtgb::MeshShader::Initialize(ID3D11Device* _pDevice)
 void mtgb::MeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
 {
 	using namespace DirectX;
-	DirectX11Draw::SetIsWriteToDepthBuffer(true);
-	// 描画情報をシェーダに渡す
+	// DirectX11Draw::SetIsWriteToDepthBuffer(true);
+	//  描画情報をシェーダに渡す
 	UINT stride { sizeof(Vertex) };
 	UINT offset { 0 };
 	_pCtx->IASetVertexBuffers(0, 1, _pAsset->pVertexBuffer.GetAddressOf(), &stride, &offset);

@@ -364,6 +364,8 @@ ImGuizmo::OPERATION mtgb::ImGuizmoManipulator::GetOperation()
 
 void mtgb::ImGuizmoManipulator::DrawSelectedObjectOutline()
 {
+	DirectX11Draw::SetIsWriteToRenderTarget(false);
+	DirectX11Draw::SetIsWriteToDepthBuffer(true);
 	DirectX11Draw::SetStencilMode(StencilMode::WriteSelected);
 	for (EntityId id : selectedIds_)
 	{
@@ -380,9 +382,10 @@ void mtgb::ImGuizmoManipulator::DrawSelectedObjectOutline()
 		{
 			continue;
 		}
-
 		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, ShaderType::FBX_PARTS);
 	}
+	DirectX11Draw::SetIsWriteToRenderTarget(true);
+
 	DirectX11Draw::SetStencilMode(StencilMode::DrawOutline);
 	for (EntityId id : selectedIds_)
 	{

@@ -57,6 +57,9 @@ namespace mtgb
 		/// <para>ラスタライザ</para>
 		/// </summary>
 		ComPtr<ID3D11RasterizerState> pRasterizerState_;
+
+	  private:
+		void ParseAndCreateConstantBuffer(ID3D11Device* _pDevice, ID3DBlob* _pBlob);
 	};
 
 } // namespace mtgb
