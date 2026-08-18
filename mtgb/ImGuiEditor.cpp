@@ -59,15 +59,17 @@ static std::filesystem::path GetJsonFilePath()
 {
 	TCHAR fileName[255] = "";
 	OPENFILENAME ofn	= { 0 };
-
+	fs::path cp			= fs::current_path();
+	cp.append("Stage");
+	std::string str = cp.string();
 	ofn.lStructSize = sizeof(ofn);
 
-	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ofn.lpstrFilter = "JSON File(*.json)\0*.json";
-	ofn.lpstrFile	= fileName;
-	ofn.nMaxFile	= 255;
-	ofn.Flags		= OFN_OVERWRITEPROMPT;
-
+	ofn.hwndOwner		= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ofn.lpstrFilter		= "JSON File(*.json)\0*.json";
+	ofn.lpstrFile		= fileName;
+	ofn.nMaxFile		= 255;
+	ofn.Flags			= OFN_OVERWRITEPROMPT | OFN_NOCHANGEDIR;
+	ofn.lpstrInitialDir = str.c_str();
 	if (GetSaveFileName(&ofn))
 	{
 		std::filesystem::path filePath(fileName);
@@ -241,12 +243,16 @@ void mtgb::ImGuiEditor::LoadMapData()
 	TCHAR fileName[255] = "";
 	OPENFILENAME ifn	= { 0 };
 
-	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ifn.lpstrFilter = "JSON File(*.json)\0*.json";
-	ifn.lpstrFile	= fileName;
-	ifn.nMaxFile	= 255;
-
+	fs::path cp = fs::current_path();
+	cp.append("Stage");
+	std::string str		= cp.string();
+	ifn.lStructSize		= sizeof(ifn);
+	ifn.hwndOwner		= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ifn.lpstrFilter		= "JSON File(*.json)\0*.json";
+	ifn.lpstrFile		= fileName;
+	ifn.nMaxFile		= 255;
+	ifn.lpstrInitialDir = str.c_str();
+	ifn.Flags			= OFN_NOCHANGEDIR;
 	if (GetOpenFileName(&ifn) == false)
 		return;
 
@@ -371,7 +377,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			}
 			if (ImGui::MenuItem("New Scene"))
 			{
-				std::filesystem::path filePath("default.json");
+				std::filesystem::path filePath("Stage/default.json");
 				if (std::filesystem::exists(filePath))
 				{
 					Game::System<SceneSystem>().Move<StageEditScene>(GetStageJson(filePath));

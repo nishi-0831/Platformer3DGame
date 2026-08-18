@@ -65,6 +65,21 @@
           "CMAKE_BUILD_TYPE": "Debug"
 
         }
+      },
+      {
+        "name": "submission-build",
+        "displayName": "submission-build",
+        "generator": "Visual Studio 18 2026",
+        "architecture": "x64",
+        "toolset": "v145",
+        "binaryDir": "${sourceDir}/out/build/${presetName}",
+        "cacheVariables": {
+          "CMAKE_C_COMPILER": "cl",
+          "CMAKE_CXX_COMPILER": "cl",
+          "CMAKE_BUILD_TYPE": "Debug",
+          "ENABLE_AUTO_CODE_GEN": "OFF",
+          "ENABLE_AUTO_SYNCHRONIZE": "OFF"
+        }
       }
     ]
 }
