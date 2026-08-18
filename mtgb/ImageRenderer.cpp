@@ -23,7 +23,6 @@ mtgb::ImageRenderer::ImageRenderer(EntityId _entityId)
 
 void mtgb::ImageRenderer::Render() const
 {
-	Game::System<Draw>().CheckSetShader(ShaderType::SPRITE2_D);
 	Sprite* pSprite = { Game::System<Image>().GetSprite(handle_) };
 	pSprite->Draw(drawRect_, rotationZ_, { Vector2F::Zero(), Image::GetSizeF(handle_) }, color_);
 }

@@ -13,7 +13,7 @@ SeaPlane::SeaPlane()
 	pCollider_->isStatic_	  = false;
 	pCollider_->isTrigger_	  = true;
 	pCollider_->SetExtents(pTransform_->scale * 0.5f);
-	pMeshRenderer_->meshFileName = "Model/Box.fbx";
+	pMeshRenderer_->meshFileName = "Model/SeaPlane.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
 	pMeshRenderer_->shaderType	 = ShaderType::SEA;

@@ -15,15 +15,15 @@ namespace mtgb
 {
 	class Transform;
 
-	class Sprite : public IShader
+	class Sprite
 	{
 		/// <summary>
 		/// 頂点情報
 		/// </summary>
 		struct Vertex
 		{
-			Vector3 position;
-			Vector3 uv;
+			Vector4 position;
+			Vector4 uv;
 		};
 
 		/// <summary>
@@ -38,12 +38,13 @@ namespace mtgb
 			Matrix4x4 g_matrixTexture;		   // テクスチャ座標変換行列
 			Vector4 g_color;				   // 色
 			Vector2 g_angle;				   // 角度
+			float padding[2];
 		};
 
 	  public:
 		Sprite();
 		~Sprite();
-
+		void Initialize();
 		/// <summary>
 		/// 画像を読み込む
 		/// </summary>
@@ -59,23 +60,6 @@ namespace mtgb
 		void Draw(const RectF& _draw, const float _rotationZ, const RectF& _cut, const Color& _color);
 
 		/// <summary>
-		/// Transformをもとに描画する
-		/// </summary>
-		/// <param name="_pTransform">画像のTransform</param>
-		/// <param name="_pCameraTransform">
-		/// <para>カメラのTransform</para>
-		/// <para>nullptr指定可能</para>
-		/// </param>
-		/// <param name="_imageSize">画像サイズ</param>
-		/// <param name="_color">色</param>
-		void Draw(
-			const Transform* _pTransform,
-			const Transform* _pCameraTransform,
-			const Vector2Int& _imageSize,
-			const Color& _color
-		);
-
-		/// <summary>
 		/// 読み込まれた画像のサイズを取得
 		/// </summary>
 		/// <returns></returns>
@@ -88,13 +72,40 @@ namespace mtgb
 		{
 			return fileName_;
 		}
+		void InitializeVertexBuffer();
+		void InitializeIndexBuffer();
+		void InitializeConstantBuffer();
+
+	  protected:
+		ComPtr<ID3D11Buffer> pVertexBuffer_;   // 頂点の位置、色
+		ComPtr<ID3D11Buffer> pIndexBuffer_;	   // ポリゴンを結ぶ順番
+		ComPtr<ID3D11Buffer> pConstantBuffer_; // 　シェーダのグローバル変数
+		/// <summary>
+		/// <para>頂点レイアウト</para>
+		/// <para></para>
+		/// </summary>
+		ComPtr<ID3D11InputLayout> pVertexLayout;
+
+		/// <summary>
+		/// <para>頂点シェーダ</para>
+		/// <para>頂点の情報</para>
+		/// </summary>
+		ComPtr<ID3D11VertexShader> pVertexShader;
+
+		/// <summary>
+		/// <para>ピクセルシェーダ</para>
+		/// <para></para>
+		/// </summary>
+		ComPtr<ID3D11PixelShader> pPixelShader;
+
+		/// <summary>
+		/// <para>ラスタライザ</para>
+		/// <para>どのピクセルを光らせるかの情報</para>
+		/// </summary>
+		ComPtr<ID3D11RasterizerState> pRasterizerState;
 
 	  private:
-		void InitializeVertexBuffer(ID3D11Device* _pDevice) override;
-		void InitializeIndexBuffer(ID3D11Device* _pDevice) override;
-		void InitializeConstantBuffer(ID3D11Device* _pDevice) override;
-
-	  private:
+		void InitializeShader();
 		Texture2D texture2D_;	// 2Dのテクスチャ
 		std::wstring fileName_; // 読み込んだファイル
 	};

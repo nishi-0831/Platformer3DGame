@@ -1,23 +1,24 @@
-Texture2D g_texture : register(t0);  // ƒeƒNƒXƒ`ƒƒ
-SamplerState g_sampler : register(s0);  // ƒeƒNƒXƒ`ƒƒ‚ÌƒTƒ“ƒvƒ‰
+Texture2D g_texture : register(t0);  // ãƒ†ã‚¯ã‚¹ãƒãƒ£
+SamplerState g_sampler : register(s0);  // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ã‚µãƒ³ãƒ—ãƒ©
 
 /*
- * ƒRƒ“ƒXƒ^ƒ“ƒgƒoƒbƒtƒ@(constant buffer)
- * DirectX ‚©‚ç‘—‚ç‚ê‚Ä‚­‚éî•ñ(ƒ|ƒŠƒSƒ“’¸“_‚ğœ‚­)
+ * ã‚³ãƒ³ã‚¹ã‚¿ãƒ³ãƒˆãƒãƒƒãƒ•ã‚¡(constant buffer)
+ * DirectX ã‹ã‚‰é€ã‚‰ã‚Œã¦ãã‚‹æƒ…å ±(ãƒãƒªã‚´ãƒ³é ‚ç‚¹ã‚’é™¤ã)
 */
-cbuffer global
+cbuffer global : register(b0)
 {
-    matrix g_matrixCameraTranslate; // ƒJƒƒ‰•ÏŠ·s—ñ
-    matrix g_matrixCameraRotation;  // ƒJƒƒ‰‰ñ“]s—ñ
-    matrix g_matrixWorldTranslate;  // ƒ[ƒ‹ƒh•ÏŠ·s—ñ
-    matrix g_matrixWorldRotation;   // ƒ[ƒ‹ƒh‰ñ“]s—ñ
-    matrix g_matrixTexture;         // ƒeƒNƒXƒ`ƒƒÀ•W•ÏŠ·s—ñ
-    float4 g_color;                 // ƒeƒNƒXƒ`ƒƒ‚Ì‡¬F
-    float2 g_angle;                 // ƒeƒNƒXƒ`ƒƒ‚ÌŠp“x
+    matrix g_matrixCameraTranslate; // ã‚«ãƒ¡ãƒ©å¤‰æ›è¡Œåˆ—
+    matrix g_matrixCameraRotation;  // ã‚«ãƒ¡ãƒ©å›è»¢è¡Œåˆ—
+    matrix g_matrixWorldTranslate;  // ãƒ¯ãƒ¼ãƒ«ãƒ‰å¤‰æ›è¡Œåˆ—
+    matrix g_matrixWorldRotation;   // ãƒ¯ãƒ¼ãƒ«ãƒ‰å›è»¢è¡Œåˆ—
+    matrix g_matrixTexture;         // ãƒ†ã‚¯ã‚¹ãƒãƒ£åº§æ¨™å¤‰æ›è¡Œåˆ—
+    float4 g_color;                 // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®åˆæˆè‰²
+    float2 g_angle;                 // ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®è§’åº¦
+    float2 g_padding;
 };
 
 /*
- * ’¸“_(Vertex)ƒVƒF[ƒ_‚Ìo—Í
+ * é ‚ç‚¹(Vertex)ã‚·ã‚§ãƒ¼ãƒ€ã®å‡ºåŠ›
 */
 struct VSOutput
 {

@@ -26,8 +26,8 @@ namespace mtgb
 		void Update() override;
 		void SetCaster(EntityId _id);
 		void SetCB();
+
 	  private:
 		ShadowParams params;
-		ComPtr<ID3D11Buffer> pShadowCB_;
 	};
 } // namespace mtgb

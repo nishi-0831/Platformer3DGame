@@ -45,18 +45,13 @@ void mtgb::MeshRenderer::Render() const
 	{
 		Game::System<ShadowSettings>().SetCB();
 	}
-	if (shaderType == ShaderType::SEA)
+
+	if (pAnimStack_ != nullptr)
 	{
-		Game::System<mtgb::Draw>().SeaUVScroll(Transform::Get(GetEntityId()));
+		pAnimStack_->GetScene()->SetCurrentAnimationStack(pAnimStack_);
 	}
-	else
-	{
-		if (pAnimStack_ != nullptr)
-		{
-			pAnimStack_->GetScene()->SetCurrentAnimationStack(pAnimStack_);
-		}
-		Game::System<mtgb::Draw>().FBXModel(meshHandle, Transform::Get(GetEntityId()), frame_, shaderType);
-	}
+
+	Game::System<Fbx>().Draw(meshHandle, Transform::Get(GetEntityId()), frame_, shaderType);
 }
 
 void mtgb::MeshRenderer::SetFrame(int _frame)

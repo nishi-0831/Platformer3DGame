@@ -59,15 +59,17 @@ static std::filesystem::path GetJsonFilePath()
 {
 	TCHAR fileName[255] = "";
 	OPENFILENAME ofn	= { 0 };
-
+	fs::path cp			= fs::current_path();
+	cp.append("Stage");
+	std::string str = cp.string();
 	ofn.lStructSize = sizeof(ofn);
 
-	ofn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ofn.lpstrFilter = "JSON File(*.json)\0*.json";
-	ofn.lpstrFile	= fileName;
-	ofn.nMaxFile	= 255;
-	ofn.Flags		= OFN_OVERWRITEPROMPT;
-
+	ofn.hwndOwner		= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ofn.lpstrFilter		= "JSON File(*.json)\0*.json";
+	ofn.lpstrFile		= fileName;
+	ofn.nMaxFile		= 255;
+	ofn.Flags			= OFN_OVERWRITEPROMPT | OFN_NOCHANGEDIR;
+	ofn.lpstrInitialDir = str.c_str();
 	if (GetSaveFileName(&ofn))
 	{
 		std::filesystem::path filePath(fileName);
@@ -107,9 +109,12 @@ void mtgb::ImGuiEditor::Initialize()
 {
 	// ゲームオブジェクトが選択されたときに、それを表示対象とする
 	Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Subscribe(
-		[](const GameObjectSelectedEvent& _handler)
+		[](const GameObjectSelectedEvent& _event)
 		{
-			Game::System<ImGuiEditor>().SelectGameObject(_handler.entityId);
+			if (_event.entityIds.size() == 1)
+			{
+				Game::System<ImGuiEditor>().SelectGameObject(_event.entityIds[0]);
+			}
 		},
 		EventScope::GLOBAL
 	);
@@ -153,13 +158,19 @@ void mtgb::ImGuiEditor::Update()
 			}
 			if (InputUtil::GetKeyDown(KeyCode::F))
 			{
-				Game::System<ImGuiEditorCamera>().FrameSelected(pManipulator_->GetSelectedEntityId());
+				// 選択中のゲームオブジェクトが一つの場合のみ接近
+				auto entities = pManipulator_->GetSelectedEntityId();
+				if (entities.size() == 1)
+				{
+					Game::System<ImGuiEditorCamera>().FrameSelected(entities[0]);
+				}
 			}
 		}
 		if (InputUtil::GetKeyDown(KeyCode::DELETE))
 		{
-			// マニピュレータが選択しているゲームオブジェクトを取得
+			// マニピュレータが選択しているゲームオブジェクトを削除
 			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());
+			pManipulator_->DeselectAll();
 		}
 	}
 
@@ -183,7 +194,11 @@ void mtgb::ImGuiEditor::Update()
 
 void mtgb::ImGuiEditor::ShowImGui()
 {
-	ShowAddComponentDialog(pManipulator_->GetSelectedEntityId());
+	std::span<EntityId> selectedEntities = pManipulator_->GetSelectedEntityId();
+	if (selectedEntities.size() == 1)
+	{
+		ShowAddComponentDialog(selectedEntities[0]);
+	}
 	ShowGenerateGameObjectButton();
 }
 
@@ -228,12 +243,16 @@ void mtgb::ImGuiEditor::LoadMapData()
 	TCHAR fileName[255] = "";
 	OPENFILENAME ifn	= { 0 };
 
-	ifn.lStructSize = sizeof(ifn);
-	ifn.hwndOwner	= WinCtxRes::GetHWND(WindowContext::FIRST);
-	ifn.lpstrFilter = "JSON File(*.json)\0*.json";
-	ifn.lpstrFile	= fileName;
-	ifn.nMaxFile	= 255;
-
+	fs::path cp = fs::current_path();
+	cp.append("Stage");
+	std::string str		= cp.string();
+	ifn.lStructSize		= sizeof(ifn);
+	ifn.hwndOwner		= WinCtxRes::GetHWND(WindowContext::FIRST);
+	ifn.lpstrFilter		= "JSON File(*.json)\0*.json";
+	ifn.lpstrFile		= fileName;
+	ifn.nMaxFile		= 255;
+	ifn.lpstrInitialDir = str.c_str();
+	ifn.Flags			= OFN_NOCHANGEDIR;
 	if (GetOpenFileName(&ifn) == false)
 		return;
 
@@ -280,11 +299,7 @@ void mtgb::ImGuiEditor::StopScene()
 
 void mtgb::ImGuiEditor::DuplicateGameObject()
 {
-	EntityId currSelectedEntity = pManipulator_->GetSelectedEntityId();
-	if (currSelectedEntity == INVALID_ENTITY)
-		return;
-
-	GameObjectGenerator::Duplicate(currSelectedEntity);
+	GameObjectGenerator::Duplicate(pManipulator_->GetSelectedEntityId());
 }
 
 void mtgb::ImGuiEditor::AddComponent(std::type_index _componentType, EntityId _entityId)
@@ -362,7 +377,7 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 			}
 			if (ImGui::MenuItem("New Scene"))
 			{
-				std::filesystem::path filePath("default.json");
+				std::filesystem::path filePath("Stage/default.json");
 				if (std::filesystem::exists(filePath))
 				{
 					Game::System<SceneSystem>().Move<StageEditScene>(GetStageJson(filePath));
@@ -414,6 +429,12 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 
 void mtgb::ImGuiEditor::ShowInspector()
 {
+	// 複数選択されているならば、表示しない
+	std::span<EntityId> entityIds = pManipulator_->GetSelectedEntityId();
+	if (entityIds.size() > 1)
+	{
+		return;
+	}
 	std::list<GameObject*> gameObjects;
 	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjects);
 	ImGui::Begin("Inspector");
@@ -440,7 +461,11 @@ void mtgb::ImGuiEditor::ShowInspector()
 			}
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
-			GameObjectSelectedEvent event { .entityId = selectedObj->GetEntityId() };
+			GameObjectSelectedEvent event { .entityIds = { selectedObj->GetEntityId() }, .multiSelect = false };
+			if (ImGui::IsKeyPressed(ImGuiKey_LeftCtrl, false))
+			{
+				event.multiSelect = true;
+			}
 			Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
 		}
 	}
@@ -451,4 +476,19 @@ void mtgb::ImGuiEditor::ShowInspector()
 		selectedObj->ShowImGui();
 	}
 	ImGui::End();
+}
+
+void mtgb::ImGuiEditor::DrawSelectedObjectOutline()
+{
+	pManipulator_->DrawSelectedObjectOutline();
+}
+
+std::span<EntityId> mtgb::ImGuiEditor::GetSelectedEntityId()
+{
+	return pManipulator_->GetSelectedEntityId();
+}
+
+ImGuizmo::OPERATION mtgb::ImGuiEditor::GetOperation()
+{
+	return pManipulator_->GetOperation();
 }

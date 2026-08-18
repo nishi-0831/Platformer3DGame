@@ -9,7 +9,6 @@
 #include "GameObjectSelectionEvent.h"
 #include "SelectionCommand.h"
 #include "Transform.h"
-#include "ComponentFactory.h"
 namespace mtgb
 {
 	class GameObject;
@@ -24,22 +23,25 @@ namespace mtgb
 		void Update();
 		void ShowImGui() override;
 
-		void Select(EntityId _id);
-		void Deselect();
-		EntityId GetSelectedEntityId();
+		void Select(std::span<const EntityId> _entityIds, bool _multiSelect);
+		void Deselect(std::span<const EntityId> _entityIds);
+		void DeselectAll();
+		std::span<EntityId> GetSelectedEntityId();
+		ImGuizmo::OPERATION GetOperation();
+		void DrawSelectedObjectOutline();
 
 	  private:
 		void UpdateManipulator();
 		void UpdateOperationMode();
-		void GenerateCommand(const GameObjectSelectedEvent& _event);
-		void GenerateCommand(const GameObjectDeselectedEvent& _event);
+		void GenerateSelectedCommand(const GameObjectSelectedEvent& _event);
+		void GenerateDeselectedCommand(const GameObjectDeselectedEvent& _event);
 		void SubscribeEvents();
 
 		void DrawTransformGizmo();
 		void DrawViewGizmo();
-		void Calculate();
+		void CalculateGizmoMatrix();
+		void CalculateOriginalScale();
 
-		Transform* pTargetTransform_;
 		ImGuizmo::OPERATION operation_;
 		ImGuizmo::MODE mode_;
 
@@ -53,9 +55,14 @@ namespace mtgb
 		float snapDistanceFromCamera_;
 		bool wasUsing_;
 		bool isUsing_;
-		TransformMemento* pTargetPrevTransformMemento_;
+		std::vector<TransformMemento*> transformMementos_;
 		// ギズモの大きさ
 		// クリップ空間(-1.0～1.0)における値を指定する。0.2なら画面の10%になる
 		float clipSpaceGizmoSize_;
+		std::vector<EntityId> selectedIds_;
+		std::unordered_map<EntityId, size_t> selectedIndex_;
+		std::vector<Matrix4x4> originalWorldMatrices_;
+		// 選択したオブジェクトの、ギズモを使用する直前のスケール
+		std::vector<DirectX::XMVECTOR> preManipulationScales_;
 	};
 } // namespace mtgb

@@ -16,7 +16,12 @@ namespace mtgb::Intersection
 		Vector3 closest;
 		Vector3 push;
 	};
-
+	struct RaycastInfo
+	{
+		float distance;
+		Vector3 normal;
+		Vector3 point;
+	};
 	/// <summary>
 	/// レイと球の交差判定
 	/// </summary>
@@ -27,7 +32,13 @@ namespace mtgb::Intersection
 	/// <para> レイの原点が球の内側の場合は、球を出る点までの距離</para>
 	/// </param>
 	/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-	bool IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* _dist);
+	bool IsHit(
+		const DirectX::BoundingSphere& _sphere,
+		const Vector3& _origin,
+		const Vector3& _dir,
+		float _maxDistance,
+		RaycastInfo* _info
+	);
 
 	/// <summary>
 	/// レイとAABBの交差判定
@@ -37,7 +48,13 @@ namespace mtgb::Intersection
 	/// <param name="_dir">レイの方向</param>
 	/// <param name="_dist">レイの原点とAABBの距離を格納</param>
 	/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-	bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist);
+	bool IsHit(
+		const DirectX::BoundingBox& _aabb,
+		const Vector3& _origin,
+		const Vector3& _dir,
+		float _maxDistance,
+		RaycastInfo* _info
+	);
 
 	/// <summary>
 	/// レイとOBBの交差判定
@@ -47,7 +64,13 @@ namespace mtgb::Intersection
 	/// <param name="_dir">レイの方向</param>
 	/// <param name="_dist">レイの原点とOBBの距離を格納</param>
 	/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-	bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* _dist);
+	bool IsHit(
+		const DirectX::BoundingOrientedBox& _obb,
+		const Vector3& _origin,
+		const Vector3& _dir,
+		float _maxDistance,
+		RaycastInfo* _info
+	);
 
 	/// <summary>
 	/// 球とAABBの交差判定

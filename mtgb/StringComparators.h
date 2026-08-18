@@ -53,5 +53,13 @@ namespace mtgb
 		{
 			return _a == _b;
 		}
+		bool operator()(const std::string& _a, const char* _b) const noexcept
+		{
+			return _a == _b;
+		}
+		bool operator()(const char* _a, const std::string& _b) const noexcept
+		{
+			return _a == _b;
+		}
 	};
 } // namespace mtgb

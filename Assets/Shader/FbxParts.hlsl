@@ -6,19 +6,19 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
 
     outData.position = mul(position, g_matrixWVP);
 
-    // –@ü‚Ì•ÏŒ`
+    // æ³•ç·šã®å¤‰å½¢
     normal.w = 0;
     outData.normal = mul(normal, g_matrixNormalTrans);
     
     float4 worldPosition = mul(position, g_matrixW);
-    // ‹üƒxƒNƒgƒ‹
-    outData.eye = normalize(g_cameraPosition - worldPosition);  // ’¸“_‚Ö‚Ì‹ü
+    // è¦–ç·šãƒ™ã‚¯ãƒˆãƒ«
+    outData.eye = normalize(g_cameraPosition - worldPosition);  // é ‚ç‚¹ã¸ã®è¦–ç·š
     
     float3 absNormal = abs(outData.normal.xyz);
     
     float selectedScale;
     
-    // UVÀ•W
+    // UVåº§æ¨™
     outData.uv = uv;
     
     return outData;
@@ -26,44 +26,44 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
 
 float4 PS(VS_OUT inData) : SV_Target
 {
-    // ŒõŒ¹•ûŒü
+    // å…‰æºæ–¹å‘
     float4 lightDir = normalize(g_lightDir);
     
-    // –@ü
+    // æ³•ç·š
     inData.normal = normalize(inData.normal);
     
     // 
     float4 shade = saturate(dot(inData.normal, -lightDir));
-    shade.a = 1;  // “§–¾“x‚Í‘€ì‚µ‚½‚­‚È‚¢‚½‚ßA‹­§“I‚ÉƒAƒ‹ƒtƒ@’l1
+    shade.a = 1;  // é€æ˜åº¦ã¯æ“ä½œã—ãŸããªã„ãŸã‚ã€å¼·åˆ¶çš„ã«ã‚¢ãƒ«ãƒ•ã‚¡å€¤1
     
     
     float4 diffuse;
     if (g_hasTexture == true)
     {
-        // ƒeƒNƒXƒ`ƒƒ
+        // ãƒ†ã‚¯ã‚¹ãƒãƒ£
         diffuse = g_texture.Sample(g_sampler, inData.uv);
     }
     else
     {
-        // ŠgU”½Ë¬•ª
+        // æ‹¡æ•£åå°„æˆåˆ†
         diffuse = g_diffuseColor;
     }
     
-    // ŠÂ‹«Œõ
+    // ç’°å¢ƒå…‰
     float4 ambient = float4(1,1,1,1);
     
-    // ‹¾–Ê”½Ë¬•ª (‚¢‚Á‚½‚ñ0‚É)
+    // é¡é¢åå°„æˆåˆ† (ã„ã£ãŸã‚“0ã«)
     float4 specuer = float4(0, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
-        // ³”½ËƒxƒNƒgƒ‹
+        // æ­£åå°„ãƒ™ã‚¯ãƒˆãƒ«
         float4 r = reflect(lightDir, inData.normal);
-        // ‹¾–Ê”½Ë¬•ªŒvZ
+        // é¡é¢åå°„æˆåˆ†è¨ˆç®—
         specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
     
     
-    // ÅI“I‚ÈF
+    // æœ€çµ‚çš„ãªè‰²
     //float4 color = diffuse;
     float4 color = diffuse * shade + diffuse * ambient + specuer;
     return color;

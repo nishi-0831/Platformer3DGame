@@ -156,7 +156,9 @@ namespace mtgb
 
 		destCom			  = srcCom;
 		destCom.entityId_ = _dest;
-		srcCom.entityId_  = _src;
+		destCom.OnChangeEntityId();
+		srcCom.entityId_ = _src;
+		srcCom.OnChangeEntityId();
 	}
 
 	template <typename ComponentT, typename DerivedT>
@@ -174,6 +176,7 @@ namespace mtgb
 
 		ComponentT* pComponent = &pool_[_index];
 		pComponent->entityId_  = _entityId;
+		pComponent->OnChangeEntityId();
 		return pComponent;
 	}
 

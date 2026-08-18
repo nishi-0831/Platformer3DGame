@@ -2,55 +2,38 @@
 #include "Transform.h"
 #include "ColliderCP.h"
 #include "DirectX11Draw.h"
+#include "ShaderManager.h"
 mtgb::ShadowSettings::ShadowSettings()
 	: params {}
 {
 }
 
-void mtgb::ShadowSettings::Initialize() 
-{
-	
-	const D3D11_BUFFER_DESC BUFFER_DESC{
-		.ByteWidth = sizeof(ShadowParams),
-		.Usage = D3D11_USAGE_DYNAMIC,
-		.BindFlags = D3D11_BIND_CONSTANT_BUFFER,
-		.CPUAccessFlags		 = D3D11_CPU_ACCESS_WRITE,
-		.MiscFlags			 = 0,
-		.StructureByteStride = 0,
-	};
-
-	HRESULT hResult {};
-	hResult = DirectX11Draw::pDevice_->CreateBuffer(
-		&BUFFER_DESC,
-		nullptr, // 初期データなし
-		pShadowCB_.ReleaseAndGetAddressOf()
-	);
-	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗");
-}
+void mtgb::ShadowSettings::Initialize() {}
 
 void mtgb::ShadowSettings::Update() {}
 
-void mtgb::ShadowSettings::SetCaster(EntityId _id) 
+void mtgb::ShadowSettings::SetCaster(EntityId _id)
 {
 	Transform& casterTransform = Game::System<TransformCP>().Get(_id);
 
-	params.casterPos   = Vector4 { casterTransform.position.x, casterTransform.position.y, casterTransform.position.z,1.0f };
+	params.casterPos =
+		Vector4 { casterTransform.position.x, casterTransform.position.y, casterTransform.position.z, 1.0f };
 }
 
-void mtgb::ShadowSettings::SetCB() 
+void mtgb::ShadowSettings::SetCB()
 {
-	DirectX11Draw::SetShader(ShaderType::BOX3_D);
-
-	DirectX11Draw::pContext_->PSSetConstantBuffers(1, 1, pShadowCB_.GetAddressOf());
-
-	D3D11_MAPPED_SUBRESOURCE pData_;
-	DirectX11Draw::pContext_->Map(pShadowCB_.Get(), 0, D3D11_MAP_WRITE_DISCARD, 0, &pData_);
-	memcpy_s(pData_.pData, pData_.RowPitch, (void*)(&params), sizeof(params));
-	DirectX11Draw::pContext_->Unmap(pShadowCB_.Get(), 0);
+	ReflectiveConstantBuffer* cBuf =
+		Game::System<ShaderManager>().GetShader(ShaderType::BOX3_D).GetConstantBuffer("ShadowParam");
+	if (cBuf != nullptr)
+	{
+		cBuf->SetConstantBuffer(params);
+		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
+		cBuf->BindPS(DirectX11Draw::pContext_.Get());
+	}
 }
 
 mtgb::ShadowParams::ShadowParams()
 	: casterPos {}
-	, softness {1.0f}
+	, softness { 1.0f }
 {
 }

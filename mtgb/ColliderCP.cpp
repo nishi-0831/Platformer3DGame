@@ -75,41 +75,52 @@ void mtgb::ColliderCP::Draw()
 mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(
 	const Vector3& _origin,
 	const Vector3& _dir,
-	float* _dist,
-	ColliderTag _tag
+	float _maxDistance,
+	Intersection::RaycastInfo* _info,
+	ColliderTag _tag,
+	EntityId _ignoreEntityId
 )
 {
 	EntityId nearestEntity = INVALID_ENTITY;
-	float nearest		   = *_dist;
+	float nearest		   = _maxDistance;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
-		if (poolId_[i] == INVALID_ENTITY)
+		EntityId id = poolId_[i];
+		if (id == INVALID_ENTITY)
 		{
 			continue;
 		}
-		
-		ColliderTag tag = Get(poolId_[i]).colliderTag_;
+		if (id == _ignoreEntityId)
+		{
+			continue;
+		}
+
+		ColliderTag tag = Get(id).colliderTag_;
 		if (tag != _tag && _tag != ColliderTag::GAME_OBJECT)
 		{
 			continue;
 		}
 
-		float distance = 0.0f;
-		EntityId id	   = poolId_[i];
-		if (RayCastHit(_origin, _dir, &distance, id))
+		if (RayCastHit(_origin, _dir, _maxDistance, _info, id))
 		{
-			if (distance < nearest)
+			if (_info->distance < nearest)
 			{
-				nearest		  = distance;
+				nearest		  = _info->distance;
 				nearestEntity = id;
 			}
 		}
 	}
-	*_dist = nearest;
+	_info->distance = nearest;
 	return nearestEntity;
 }
 
-bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, float* _dist, EntityId _entityId)
+bool mtgb::ColliderCP::RayCastHit(
+	const Vector3& _origin,
+	const Vector3& _dir,
+	float _maxDistance,
+	mtgb::Intersection::RaycastInfo* _info,
+	EntityId _entityId
+)
 {
 	std::vector<Collider*> colliders {};
 	if (!TryGet(&colliders, _entityId))
@@ -118,7 +129,7 @@ bool mtgb::ColliderCP::RayCastHit(const Vector3& _origin, const Vector3& _dir, f
 	// WARNING: コライダーが一つしかないと断定している。複数になる場合は追加の処理が必要
 	if (colliders.empty() == false)
 	{
-		return colliders.back()->IsHit(_origin, _dir, _dist);
+		return colliders.back()->IsHit(_origin, _dir, _maxDistance, _info);
 	}
 	return false;
 }

@@ -37,11 +37,6 @@ std::string mtgb::GroupCommand::Name() const
 	return commandName_;
 }
 
-EntityId mtgb::GroupCommand::GetCommandTargetEntityId() const
-{
-	return INVALID_ENTITY;
-}
-
 void mtgb::GroupCommand::ExecuteCommand(Command* _pCommand)
 {
 	commandHistory_.ExecuteCommand(_pCommand);

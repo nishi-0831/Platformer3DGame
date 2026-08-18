@@ -2,38 +2,39 @@
 #include "ReleaseUtility.h"
 
 mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
-	TransformMemento* _pPrevMemento,
-	TransformMemento* _pMemento
+	const std::vector<TransformMemento*>& _prevMementos,
+	const std::vector<TransformMemento*>& _currMementos
 )
-	: pPrevMemento_ { _pPrevMemento }
-	, pMemento_ { _pMemento }
+	: prevMementos_ { _prevMementos }
+	, currMementos_ { _currMementos }
 {
 }
 
 mtgb::GuizmoManipulateCommand::~GuizmoManipulateCommand()
 {
-	SAFE_DELETE(pPrevMemento_);
-	SAFE_DELETE(pMemento_);
+	SAFE_CLEAR_CONTAINER_DELETE(prevMementos_);
+	SAFE_CLEAR_CONTAINER_DELETE(currMementos_);
 }
 
 void mtgb::GuizmoManipulateCommand::Execute() {}
 
 void mtgb::GuizmoManipulateCommand::Undo()
 {
-	Game::GetComponentFactory().AddComponentFromMemento(*pPrevMemento_);
+	for (auto memento : prevMementos_)
+	{
+		Game::GetComponentFactory().AddComponentFromMemento(*memento);
+	}
 }
 
 void mtgb::GuizmoManipulateCommand::Redo()
 {
-	Game::GetComponentFactory().AddComponentFromMemento(*pMemento_);
+	for (auto memento : currMementos_)
+	{
+		Game::GetComponentFactory().AddComponentFromMemento(*memento);
+	}
 }
 
 std::string mtgb::GuizmoManipulateCommand::Name() const
 {
 	return "GuizmoManipulatedEvent";
-}
-
-mtgb::EntityId mtgb::GuizmoManipulateCommand::GetCommandTargetEntityId() const
-{
-	return pMemento_->GetEntityId();
 }

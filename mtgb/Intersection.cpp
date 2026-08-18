@@ -44,15 +44,22 @@ namespace mtgb
 				}
 			}
 		}
-		bool IsHit(const DirectX::BoundingSphere& _sphere, const Vector3& _origin, const Vector3& _dir, float* _dist)
+		bool IsHit(
+			const DirectX::BoundingSphere& _sphere,
+			const Vector3& _origin,
+			const Vector3& _dir,
+			float _maxDistance,
+			RaycastInfo* _info
+		)
 		{
+			bool result = false;
+			float dist	= _maxDistance;
 			/////
 			// DirectXCollision.hのBoundingSphere::Intersectsをコピペした。
 			// 何故かIntersectsに実引数が正常に渡されないから。
 			/////
 			using namespace DirectX;
 			// まずBoundingSphereを最新状態に更新
-			// const_cast<Collider*>(this)->UpdateBoundingData();
 
 			// 方向ベクトルを正規化（元のベクトルは保持）
 			Vector3 normalizedDir = Vector3::Normalize(_dir);
@@ -129,21 +136,104 @@ namespace mtgb
 
 			if (XMVector4NotEqualInt(NoIntersection, XMVectorTrueInt()))
 			{
-				DirectX::XMStoreFloat(_dist, t);
-				return true;
+				DirectX::XMStoreFloat(&dist, t);
+				result			= true;
+				_info->point	= _origin + dist * _dir;
+				_info->normal	= Vector3::Normalize(_info->point - _sphere.Center);
+				_info->distance = dist;
 			}
 
-			return false;
+			return result;
 		}
 
-		bool IsHit(const DirectX::BoundingBox& _aabb, const Vector3& _origin, const Vector3& _dir, float* _dist)
+		bool IsHit(
+			const DirectX::BoundingBox& _aabb,
+			const Vector3& _origin,
+			const Vector3& _dir,
+			float _maxDistance,
+			RaycastInfo* _info
+		)
 		{
-			return _aabb.Intersects(_origin, _dir, *_dist);
+			float dist	= _maxDistance;
+			bool result = _aabb.Intersects(_origin, _dir, dist);
+			if (result == false)
+			{
+				return false;
+			}
+			_info->distance	 = dist;
+			Vector3 hitPoint = _origin + _dir * dist;
+			_info->point	 = hitPoint;
+			Vector3 extents	 = _aabb.Extents;
+			Vector3 center	 = _aabb.Center;
+			Vector3 p		 = hitPoint - center;
+
+			float dx = std::abs(extents.x - std::abs(p.x));
+			float dy = std::abs(extents.y - std::abs(p.y));
+			float dz = std::abs(extents.z - std::abs(p.z));
+			// xが最も近い
+			if (dx < dy && dx < dz)
+			{
+				_info->normal = Vector3(std::copysign(1.0f, p.x), 0.0f, 0.0f);
+			}
+			// yが最も近い
+			else if (dy < dz)
+			{
+				_info->normal = Vector3(0.0f, std::copysign(1.0f, p.y), 0.0f);
+			}
+			else
+			{
+				_info->normal = Vector3(0.0f, 0.0f, std::copysign(1.0f, p.z));
+			}
+			return result;
 		}
 
-		bool IsHit(const DirectX::BoundingOrientedBox& _obb, const Vector3& _origin, const Vector3& _dir, float* _dist)
+		bool IsHit(
+			const DirectX::BoundingOrientedBox& _obb,
+			const Vector3& _origin,
+			const Vector3& _dir,
+			float _maxDistance,
+			RaycastInfo* _info
+		)
 		{
-			return _obb.Intersects(_origin, _dir, *_dist);
+			float dist	= _maxDistance;
+			bool result = _obb.Intersects(_origin, _dir, dist);
+			if (result == false)
+			{
+				return false;
+			}
+			_info->distance		   = dist;
+			Vector3 hitPoint	   = _origin + _dir * dist;
+			_info->point		   = hitPoint;
+			Vector3 extents		   = _obb.Extents;
+			Vector3 center		   = _obb.Center;
+			Vector3 p			   = hitPoint - center;
+			Quaternion rotate	   = _obb.Orientation;
+			Matrix4x4 rotMat	   = DirectX::XMMatrixRotationQuaternion(rotate);
+			Vector3 rotatedExtents = DirectX::XMVector3TransformCoord(extents, rotMat);
+			rotatedExtents.x	   = std::abs(rotatedExtents.x);
+			rotatedExtents.y	   = std::abs(rotatedExtents.y);
+			rotatedExtents.z	   = std::abs(rotatedExtents.z);
+			float dx			   = std::abs(rotatedExtents.x - std::abs(p.x));
+			float dy			   = std::abs(rotatedExtents.y - std::abs(p.y));
+			float dz			   = std::abs(rotatedExtents.z - std::abs(p.z));
+
+			// xが最も近い
+			if (dx < dy && dx < dz)
+			{
+				_info->normal = Vector3(std::copysign(1.0f, p.x), 0.0f, 0.0f);
+			}
+			// yが最も近い
+			else if (dy < dz)
+			{
+				_info->normal = Vector3(0.0f, std::copysign(1.0f, p.y), 0.0f);
+			}
+			else
+			{
+				_info->normal = Vector3(0.0f, 0.0f, std::copysign(1.0f, p.z));
+			}
+			_info->normal = _info->normal * rotMat;
+
+			return result;
 		}
 
 		std::optional<IntersectInfo> Intersect(

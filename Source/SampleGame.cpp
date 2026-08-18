@@ -6,7 +6,7 @@
 #include "CommandHistoryManager.h"
 #include "ActorManager.h"
 #include <ShadowSettings.h>
-
+#include "ShaderManager.h"
 using namespace mtgb;
 
 SampleGame::SampleGame() {}
@@ -72,6 +72,7 @@ void SampleGame::SetupSystems()
 	Game::Set<ImGuiEditor>(SystemUpdateType::FRAME);
 	Game::Set<EffectManager>(SystemUpdateType::FRAME);
 	Game::Set<ShadowSettings>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<ShaderManager>(SystemUpdateType::DONT_CALL_ME);
 
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<SceneSystem>(SystemUpdateType::FRAME);

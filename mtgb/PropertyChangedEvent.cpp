@@ -1,9 +1,6 @@
 #include "PropertyChangedEvent.h"
 #include "Game.h"
-mtgb::PropertyChangeCommand::PropertyChangeCommand(
-	IComponentMemento* _pPrevMemento,
-	IComponentMemento* _pMemento
-)
+mtgb::PropertyChangeCommand::PropertyChangeCommand(IComponentMemento* _pPrevMemento, IComponentMemento* _pMemento)
 	: pPrevMemento_ { _pPrevMemento }
 	, pMemento_ { _pMemento }
 {
@@ -22,9 +19,4 @@ void mtgb::PropertyChangeCommand::Undo()
 std::string mtgb::PropertyChangeCommand::Name() const
 {
 	return "PropertyChanged";
-}
-
-mtgb::EntityId mtgb::PropertyChangeCommand::GetCommandTargetEntityId() const
-{
-	return pMemento_->GetEntityId();
 }

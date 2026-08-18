@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.17.0)
+cmake_minimum_required(VERSION 3.19.0)
 
 # 使用するOSのバージョン
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
@@ -22,6 +22,8 @@ endif()
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME})
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME}/Debug)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE ${CMAKE_CURRENT_SOURCE_DIR}/${CMAKE_VS_PLATFORM_NAME}/Release)
+
+
 
 ################################################################################
 # Global configuration types
@@ -72,11 +74,6 @@ endif()
 # Common utils
 ################################################################################
 include(CMake/Utils.cmake)
-
-################################################################################
-# Additional Global Settings(add specific info there)
-################################################################################
-include(CMake/GlobalSettingsInclude.cmake OPTIONAL)
 
 ################################################################################
 # Use solution folders feature
@@ -248,13 +245,8 @@ set(03mtgb__Library__Nlohmann-json
 source_group("03mtgb\\Library\\Nlohmann-json" FILES ${03mtgb__Library__Nlohmann-json})
 
 set(03mtgb__Shader
-    "mtgb/FbxParts.cpp"
-    "mtgb/FbxParts.h"
-    "mtgb/Figure.cpp"
-    "mtgb/Figure.h"
     "mtgb/IShader.cpp"
     "mtgb/IShader.h"
-    "mtgb/PlaneUVScroll.h"
     "mtgb/Sprite.cpp"
     "mtgb/Sprite.h"
 )
@@ -634,7 +626,6 @@ set(Unfiltered
     "mtgb/MonitorInfo.h"
     "mtgb/MouseStateProxy.cpp"
     "mtgb/MTBit/BitFlag.h"
-    "mtgb/PlaneUVScroll.cpp"
     "mtgb/QuatToEuler.cpp"
     "mtgb/QuatToEuler.h"
     "mtgb/RayDetector.cpp"
@@ -736,7 +727,7 @@ set(ALL_FILES
 ################################################################################
 # Target
 ################################################################################
-add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp" "mtgb/SerializableGameObject.h" "mtgb/SerializableGameObject.cpp" "mtgb/ShadowSettings.h" "mtgb/ShadowSettings.cpp" "Source/RangedAttackEnemy.h" "Source/RangedAttackEnemy.cpp" "Source/Bullet.h" "Source/Bullet.cpp")
+add_executable(${PROJECT_NAME} ${ALL_FILES} "mtgb/Intersection.h" "mtgb/Intersection.cpp" "mtgb/CallbackConcepts.h" "Source/UIComponent.h" "Source/UIComponent.cpp" "mtgb/SerializableGameObject.h" "mtgb/SerializableGameObject.cpp" "mtgb/ShadowSettings.h" "mtgb/ShadowSettings.cpp" "Source/RangedAttackEnemy.h" "Source/RangedAttackEnemy.cpp"  "mtgb/GameObjectSnapshot.h" "Source/Bullet.h" "Source/Bullet.cpp" "mtgb/MeshAsset.h" "mtgb/MeshAsset.cpp" "mtgb/ShaderManager.h" "mtgb/ShaderManager.cpp" "mtgb/SkinnedMeshShader.cpp" "mtgb/SkinnedMeshShader.h" "mtgb/CompileShaderUtility.h" "mtgb/CompileShaderUtility.cpp" "mtgb/Box3DShader.h" "mtgb/ReflectiveConstantBuffer.h" "mtgb/ReflectiveConstantBuffer.cpp" "mtgb/Box3DShader.cpp" "mtgb/MeshShader.h" "mtgb/MeshShader.cpp" "mtgb/Debug3DShader.h" "mtgb/3DCommonConstantBuffer.h" "mtgb/Debug3DShader.cpp" "mtgb/UVScrollShader.h" "mtgb/UVScrollShader.cpp" "mtgb/OutlineShader.h" "mtgb/OutlineShader.cpp")
 
 # プリコンパイル済みヘッダを設定する
 target_precompile_headers(${PROJECT_NAME} PRIVATE
@@ -745,6 +736,10 @@ target_precompile_headers(${PROJECT_NAME} PRIVATE
 
 use_props(${PROJECT_NAME} "${CMAKE_CONFIGURATION_TYPES}" "${DEFAULT_CXX_PROPS}")
 set(ROOT_NAMESPACE AirPlaneGame)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES 
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}"
+)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     VS_GLOBAL_KEYWORD "Win32Proj"
@@ -986,13 +981,20 @@ endif()
 # Pre build events (ビルド前イベント)
 ################################################################################
 
+option(ENABLE_AUTO_CODE_GEN "Run code generator tool" ON)
+
 # コード生成ツールを実行するコマンド
 set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe> " --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}")
- add_custom_target(generate_source_code
-    COMMAND ${GENERATE_SOURCE_CODE_COMMAND}
+
+add_custom_target(generate_source_code
+    COMMAND ${GENERATE_SOURCE_CODE_COMMAND} || exit 0
     USES_TERMINAL)
-# コンパイル前に実行されるように依存させる
- add_dependencies(${PROJECT_NAME} generate_source_code)
+
+# 自動実行が有効になっている場合
+if(ENABLE_AUTO_CODE_GEN)
+    # コンパイル前に実行されるように依存させる
+     add_dependencies(${PROJECT_NAME} generate_source_code)
+endif()
 
  # キャッシュを削除し、再生成を行う
  add_custom_target(force_generate_source_code
@@ -1006,12 +1008,27 @@ elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
      set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 endif()
 
+set(COPY_ASSETS_COMMAND powershell -NoProfile -ExecutionPolicy Bypass -File "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/CopyAssets.ps1>"
+            -AssetsDirectory "${CMAKE_CURRENT_SOURCE_DIR}" -OutputDirectory "${OUTPUT_DIRECTORY}")
  add_custom_target(synchronize_assets
-    COMMAND powershell -NoProfile -ExecutionPolicy Bypass -File "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/CopyAssets.ps1>"
-            -AssetsDirectory "${CMAKE_CURRENT_SOURCE_DIR}" -OutputDirectory "${OUTPUT_DIRECTORY}"
+    COMMAND ${COPY_ASSETS_COMMAND} || exit 0
     USES_TERMINAL
  )
+
+# ソース側とビルド側の双方向でアセットを同期させるか否か
+option(ENABLE_AUTO_SYNCHRONIZE "Synchronize Asset" ON)
+
+if(ENABLE_AUTO_SYNCHRONIZE)
  add_dependencies(${PROJECT_NAME} synchronize_assets)
+else()
+ # ソース側から一方向でコピー
+ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            "${CMAKE_CURRENT_SOURCE_DIR}/Assets"
+            "${OUTPUT_DIRECTORY}/Assets"
+    COMMENT "Copying assets to output directory..."
+)
+endif()
 
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/RunClangTidy.cmake")
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/GeneratePch.cmake")

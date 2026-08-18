@@ -5,6 +5,8 @@
 #include <string>
 
 #include "FbxAnimationController.h"
+#include "MeshAsset.h"
+#include "ShaderType.h"
 namespace mtgb
 {
 	class FbxParts;
@@ -22,7 +24,7 @@ namespace mtgb
 
 		void Load(const std::string& _fileName);
 
-		void Draw(const Transform& _transfrom, int _frame);
+		void Draw(const Transform& _transfrom, int _frame, ShaderType _shader);
 
 		void Release();
 
@@ -33,16 +35,6 @@ namespace mtgb
 		inline FbxScene* GetFbxScene()
 		{
 			return pFbxScene_;
-		}
-
-		/// <summary>
-		/// Fbxパーツを取得する
-		/// </summary>
-		/// <param name="_index">インデックス</param>
-		/// <returns>Fbxパーツのポインタ</returns>
-		inline FbxParts* GetFbxParts(int _index)
-		{
-			return pParts_[_index];
 		}
 
 		/// <summary>
@@ -72,16 +64,9 @@ namespace mtgb
 		std::optional<FbxAnimationController> GetAnimationController();
 
 	  private:
-		/// <summary>
-		/// ノードの中身を調べる
-		/// </summary>
-		/// <param name="_pNode">調べたいノード</param>
-		/// <param name="_parts">パーツリスト</param>
-		void CheckNode(FbxNode* _pNode, std::vector<FbxParts*>& _parts);
-
 	  private:
-		std::vector<FbxParts*> pParts_; // 複数あるかもしれないパーツ
-
+		// std::vector<FbxParts*> pParts_; // 複数あるかもしれないパーツ
+		std::vector<MeshAsset*> pMeshAssets_;
 		FbxScene* pFbxScene_; // Fbxファイル内のシーン
 
 		FbxTime::EMode frameRate_; // アニメーションフレームレート

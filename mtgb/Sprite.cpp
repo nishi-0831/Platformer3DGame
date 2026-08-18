@@ -1,13 +1,22 @@
 #include "Sprite.h"
 #include "Transform.h"
 #include "Debug.h"
-
+#include "CompileShaderUtility.h"
+#include "HLSLInclude.h"
 mtgb::Sprite::Sprite()
 	: texture2D_ {}
 {
 }
 
 mtgb::Sprite::~Sprite() {}
+
+void mtgb::Sprite::Initialize()
+{
+	InitializeVertexBuffer();
+	InitializeIndexBuffer();
+	InitializeConstantBuffer();
+	InitializeShader();
+}
 
 void mtgb::Sprite::Load(const std::wstring& _fileName)
 {
@@ -23,229 +32,138 @@ void mtgb::Sprite::Draw(const RectF& _draw, const float _rotationZ, const RectF&
 	using DirectX::XMMatrixTranslation; // 平行移動
 	using DirectX::XMMatrixTranspose;	// 行と列を入れ替える
 
-	DirectX11Draw::SetBlendMode(BlendMode::SPRITE); // ブレンドモードデフォルト
-	DirectX11Draw::SetIsWriteToDepthBuffer(false);	// 深度バッファへの書き込みなし
+	DirectX11Draw::pContext_->RSSetState(pRasterizerState.Get());
+	DirectX11Draw::pContext_->VSSetShader(pVertexShader.Get(), nullptr, 0);
+	DirectX11Draw::pContext_->PSSetShader(pPixelShader.Get(), nullptr, 0);
+	DirectX11Draw::pContext_->IASetInputLayout(pVertexLayout.Get());
+	DirectX11Draw::SetIsWriteToDepthBuffer(false); // 深度バッファへの書き込みなし
+	DirectX11Draw::SetBlendMode(BlendMode::SPRITE);
 
-	IShader::Draw<ConstantBuffer, Vertex>(
-		// シェーダに渡すやつ
-		[&, this](ConstantBuffer* _pCB)
-		{
-			_pCB->g_color				  = _color.ToVector4Norm();
-			_pCB->g_angle				  = {};
-			_pCB->g_matrixCameraRotation  = XMMatrixIdentity(); // カメラは無し = UI座標
-			_pCB->g_matrixCameraTranslate = XMMatrixIdentity();
-			_pCB->g_matrixWorldRotation	  = XMMatrixRotationZ(_rotationZ);
+	ConstantBuffer cb;
+	cb.g_color				   = _color.ToVector4Norm();
+	cb.g_angle				   = {};
+	cb.g_matrixCameraRotation  = XMMatrixIdentity(); // カメラは無し = UI座標
+	cb.g_matrixCameraTranslate = XMMatrixIdentity();
+	cb.g_matrixWorldRotation   = XMMatrixRotationZ(_rotationZ);
 
-#pragma region TODO: 計算見直し必要
-			// スクリーンサイズを取得
-			const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
+	// スクリーンサイズを取得
+	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
-			// 数学座標と描画座標のy軸差異解消
-			RectF cartesianBox { _draw };
-			cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
-			cartesianBox.height *= -1;
+	// 数学座標と描画座標のy軸差異解消
+	RectF cartesianBox { _draw };
+	cartesianBox.y = SCREEN_SIZE.y - cartesianBox.y;
+	cartesianBox.height *= -1;
 
-			const Vector2F VIEW_BEGIN { cartesianBox.GetBegin() };
-			const Vector2F VIEW_END { cartesianBox.GetEnd() };
+	const Vector2F VIEW_BEGIN { cartesianBox.GetBegin() };
+	const Vector2F VIEW_END { cartesianBox.GetEnd() };
 
-			// 表示するサイズに合わせる
-			Matrix4x4 scalingBox = XMMatrixScaling(
-				std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f,
-				std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f,
-				1.0f
-			);
+	// 表示するサイズに合わせる
+	Matrix4x4 scalingBox =
+		XMMatrixScaling(std::abs(VIEW_END.x - VIEW_BEGIN.x) * 2.0f, std::abs(VIEW_END.y - VIEW_BEGIN.y) * 2.0f, 1.0f);
 
-			// 表示するボックスの位置を移動する
-			Matrix4x4 moveBox = XMMatrixTranslation(
-				((VIEW_END.x - VIEW_BEGIN.x) / 2.0f + VIEW_BEGIN.x) / (SCREEN_SIZE.x / 2.0f),
-				((VIEW_BEGIN.y - VIEW_END.y) / 2.0f + VIEW_END.y) / (SCREEN_SIZE.y / 2.0f),
-				0.0f
-			);
-
-			// 画面に合わせる
-			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
-
-			// オフセット - 画面中心は(0, 0) 左下は(-1, -1)
-			Matrix4x4 offsetView { XMMatrixTranslation(-1.0f, -1.0f, 0.0f) };
-
-			// 最終的な行列
-			Matrix4x4 world { scalingBox * scalingView * moveBox * offsetView };
-
-			_pCB->g_matrixWorldTranslate = XMMatrixTranspose(world);
-#pragma endregion
-
-#pragma region UV計算
-			// トリミング計算
-
-			const Vector2F CUT_BEGIN { _cut.GetBegin() };
-			const Vector2F CUT_END { _cut.GetEnd() };
-
-			// トリミング矩形の左上点を並行移動
-			Matrix4x4 uvMove = XMMatrixTranslation(
-				CUT_BEGIN.x * 1.0f / texture2D_.GetSize().x,
-				CUT_BEGIN.y * 1.0f / texture2D_.GetSize().y,
-				0.0f
-			);
-
-			// トリミング矩形の拡縮
-			Matrix4x4 uvScaling = XMMatrixScaling(
-				static_cast<float>(CUT_END.x) / texture2D_.GetSize().x,
-				static_cast<float>(CUT_END.y) / texture2D_.GetSize().y,
-				1.0f
-			);
-
-			Matrix4x4 uv { uvScaling * uvMove };
-
-			_pCB->g_matrixTexture = XMMatrixTranspose(uv);
-#pragma endregion
-		},
-		[&, this](ID3D11DeviceContext* _pDC)
-		{
-			ID3D11SamplerState* pSamplerState { texture2D_.GetSamplerState() };
-			_pDC->PSSetSamplers(0, 1, &pSamplerState);
-
-			ID3D11ShaderResourceView* pSRV { texture2D_.GetShaderResourceView() };
-			_pDC->PSSetShaderResources(0, 1, &pSRV);
-		}
+	// 表示するボックスの位置を移動する
+	Matrix4x4 moveBox = XMMatrixTranslation(
+		((VIEW_END.x - VIEW_BEGIN.x) / 2.0f + VIEW_BEGIN.x) / (SCREEN_SIZE.x / 2.0f),
+		((VIEW_BEGIN.y - VIEW_END.y) / 2.0f + VIEW_END.y) / (SCREEN_SIZE.y / 2.0f),
+		0.0f
 	);
 
-#if 0 // テスト用 (GPUに送ったデータを参照する)
-	{  // 頂点バッフ
-		// 1. ステージングバッファの作成
-		ID3D11Buffer* pStagingBuffer = nullptr;
-		D3D11_BUFFER_DESC stagingDesc;
-		ZeroMemory(&stagingDesc, sizeof(stagingDesc));
-		stagingDesc.ByteWidth = sizeof(Vertex) * 4;
-		stagingDesc.Usage = D3D11_USAGE_STAGING;
-		stagingDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-		stagingDesc.StructureByteStride = 0;
+	// 画面に合わせる
+	Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 2), 1.0f / (SCREEN_SIZE.y * 2), 1.0f);
 
-		DirectX11Draw::pDevice_->CreateBuffer(&stagingDesc, nullptr, &pStagingBuffer);
+	// オフセット - 画面中心は(0, 0) 左下は(-1, -1)
+	Matrix4x4 offsetView { XMMatrixTranslation(-1.0f, -1.0f, 0.0f) };
 
-		// 2. GPUバッファからコピー
-		DirectX11Draw::pContext_->CopyResource(pStagingBuffer, pVertexBuffer_);
+	// 最終的な行列
+	Matrix4x4 world { scalingBox * scalingView * moveBox * offsetView };
 
-		// 3. データマッピング
-		D3D11_MAPPED_SUBRESOURCE mappedResource;
-		if (SUCCEEDED(DirectX11Draw::pContext_->Map(pStagingBuffer, 0, D3D11_MAP_READ, 0, &mappedResource)))
-		{
-			Vertex retrievedData[4];
-			memcpy(&retrievedData, mappedResource.pData, sizeof(Vertex) * 4);
+	cb.g_matrixWorldTranslate = XMMatrixTranspose(world);
 
-			DirectX11Draw::pContext_->Unmap(pStagingBuffer, 0);
-		}
+	// トリミング計算
 
-		// 4. リソース解放
-		pStagingBuffer->Release();
-	}
+	const Vector2F CUT_BEGIN { _cut.GetBegin() };
+	const Vector2F CUT_END { _cut.GetEnd() };
 
-	{  // コンスタントバッフ
-		// 1. ステージングバッファの作成
-		ID3D11Buffer* pStagingBuffer = nullptr;
-		D3D11_BUFFER_DESC stagingDesc;
-		ZeroMemory(&stagingDesc, sizeof(stagingDesc));
-		stagingDesc.ByteWidth = sizeof(ConstantBuffer);
-		stagingDesc.Usage = D3D11_USAGE_STAGING;
-		stagingDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
-		stagingDesc.StructureByteStride = 0;
-
-		DirectX11Draw::pDevice_->CreateBuffer(&stagingDesc, nullptr, &pStagingBuffer);
-
-		// 2. GPUバッファからコピー
-		DirectX11Draw::pContext_->CopyResource(pStagingBuffer, pConstantBuffer_);
-
-		// 3. データマッピング
-		D3D11_MAPPED_SUBRESOURCE mappedResource;
-		if (SUCCEEDED(DirectX11Draw::pContext_->Map(pStagingBuffer, 0, D3D11_MAP_READ, 0, &mappedResource)))
-		{
-			ConstantBuffer retrievedData;
-			memcpy(&retrievedData, mappedResource.pData, sizeof(ConstantBuffer));
-
-			DirectX11Draw::pContext_->Unmap(pStagingBuffer, 0);
-		}
-
-		// 4. リソース解放
-		pStagingBuffer->Release();
-	}
-#endif
-}
-
-void mtgb::Sprite::Draw(
-	const Transform* _pTransform,
-	const Transform* _pCameraTransform,
-	const Vector2Int& _imageSize,
-	const Color& _color
-)
-{
-	massert(_pTransform != nullptr && "描画する_pTransformにnullptrが指定された @Sprite::Draw");
-
-	using DirectX::XMMatrixIdentity;		   // 単位行列
-	using DirectX::XMMatrixRotationQuaternion; // 回転行列
-	using DirectX::XMMatrixScaling;			   // 拡縮
-	using DirectX::XMMatrixTranslation;		   // 平行移動
-	using DirectX::XMMatrixTranspose;		   // 行と列を入れ替える
-
-	DirectX11Draw::SetBlendMode(BlendMode::DEFAULT); // ブレンドモードデフォルト
-	DirectX11Draw::SetIsWriteToDepthBuffer(false);	 // 深度バッファへの書き込みなし
-
-	IShader::Draw<ConstantBuffer, Vertex>(
-		// シェーダに渡すやつ
-		[&](ConstantBuffer* _pCB)
-		{
-			_pCB->g_color = _color.ToVector4Norm();
-			_pCB->g_angle = {};
-
-			_pCB->g_matrixCameraTranslate = XMMatrixIdentity();
-			if (_pCameraTransform != nullptr)
-			{
-				// カメラがあるならカメラのワールド行列を生成して入れておく
-				_pCameraTransform->GenerateWorldMatrix(&_pCB->g_matrixCameraTranslate);
-				_pCB->g_matrixCameraTranslate = XMMatrixTranspose(_pCB->g_matrixCameraTranslate);
-
-				_pCameraTransform->GenerateWorldRotationMatrix(&_pCB->g_matrixCameraRotation);
-				_pCB->g_matrixCameraTranslate = XMMatrixTranspose(_pCB->g_matrixCameraRotation);
-			}
-			// スクリーンサイズを一度だけ取得
-			static const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
-
-			// ボックスの座標変換
-			Matrix4x4 boxTranslate {};
-			_pTransform->GenerateLocalMatrix(&boxTranslate);
-
-			//// 画像サイズに合わせる
-			Matrix4x4 scalingBox =
-				XMMatrixScaling(static_cast<float>(_imageSize.x), static_cast<float>(_imageSize.y), 1.0f);
-
-			// 画面に合わせる
-			Matrix4x4 scalingView = XMMatrixScaling(1.0f / (SCREEN_SIZE.x * 1), 1.0f / (SCREEN_SIZE.y * 1), 1.0f);
-
-			// 最終的な行列
-			Matrix4x4 worldTranslate { scalingBox * scalingView * boxTranslate };
-			_pCB->g_matrixWorldTranslate = XMMatrixTranspose(worldTranslate);
-
-			_pTransform->GenerateWorldRotationMatrix(&_pCB->g_matrixWorldRotation);
-			_pCB->g_matrixWorldRotation = XMMatrixTranspose(_pCB->g_matrixWorldRotation);
-
-			_pCB->g_matrixTexture = XMMatrixIdentity();
-		},
-		[&, this](ID3D11DeviceContext* _pDC)
-		{
-			ID3D11SamplerState* pSamplerState { texture2D_.GetSamplerState() };
-			_pDC->PSSetSamplers(0, 1, &pSamplerState);
-
-			ID3D11ShaderResourceView* pSRV { texture2D_.GetShaderResourceView() };
-			_pDC->PSSetShaderResources(0, 1, &pSRV);
-		}
+	// トリミング矩形の左上点を並行移動
+	Matrix4x4 uvMove = XMMatrixTranslation(
+		CUT_BEGIN.x * 1.0f / texture2D_.GetSize().x,
+		CUT_BEGIN.y * 1.0f / texture2D_.GetSize().y,
+		0.0f
 	);
+
+	// トリミング矩形の拡縮
+	Matrix4x4 uvScaling = XMMatrixScaling(
+		static_cast<float>(CUT_END.x) / texture2D_.GetSize().x,
+		static_cast<float>(CUT_END.y) / texture2D_.GetSize().y,
+		1.0f
+	);
+
+	Matrix4x4 uv { uvScaling * uvMove };
+
+	cb.g_matrixTexture = XMMatrixTranspose(uv);
+
+	UINT stride { 0U };
+	UINT offset { 0U };
+
+	stride = sizeof(Vertex);
+	offset = 0;
+	DirectX11Draw::pContext_->IASetVertexBuffers(
+		0U,
+		1U,
+		pVertexBuffer_.GetAddressOf(),
+		&stride,
+		&offset
+	); // 頂点バッファをセット
+	DirectX11Draw::pContext_->IASetIndexBuffer(
+		pIndexBuffer_.Get(),
+		DXGI_FORMAT_R32_UINT,
+		0
+	); // インデックスバッファをセット
+	DirectX11Draw::pContext_->VSSetConstantBuffers(
+		0,
+		1,
+		pConstantBuffer_.GetAddressOf()
+	); // 頂点シェーダのコンスタントバッファをセット
+	DirectX11Draw::pContext_->PSSetConstantBuffers(
+		0,
+		1,
+		pConstantBuffer_.GetAddressOf()
+	); // ピクセルシェーダのコンスタントバッファをセット
+
+	HRESULT hResult {};
+
+	// シェーダに渡すためのデータ
+	D3D11_MAPPED_SUBRESOURCE mappedSubresource {};
+
+	// GPUからのデータアクセスをせき止める
+	hResult =
+		DirectX11Draw::pContext_->Map(pConstantBuffer_.Get(), NULL, D3D11_MAP_WRITE_DISCARD, NULL, &mappedSubresource);
+
+	massert(
+		SUCCEEDED(hResult) // GPUデータアクセスせき止めに成功
+		&& "GPUデータアクセスせき止めに失敗"
+	);
+
+	// データ書き込み
+	memcpy_s(mappedSubresource.pData, mappedSubresource.RowPitch, reinterpret_cast<void*>(&cb), sizeof(ConstantBuffer));
+	// GPUデータアクセスせき止め解除
+	DirectX11Draw::pContext_->Unmap(pConstantBuffer_.Get(), 0);
+	ID3D11SamplerState* pSamplerState { texture2D_.GetSamplerState() };
+	DirectX11Draw::pContext_.Get()->PSSetSamplers(0, 1, &pSamplerState);
+
+	ID3D11ShaderResourceView* pSRV { texture2D_.GetShaderResourceView() };
+	DirectX11Draw::pContext_.Get()->PSSetShaderResources(0, 1, &pSRV);
+
+	DirectX11Draw::pContext_->DrawIndexed(6, 0, 0);
 }
 
-void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
+void mtgb::Sprite::InitializeVertexBuffer()
 {
 	Vertex vertexes[] {
-		{ Vector3 { -1, 1, 0 }, Vector3 { 0, 0, 0 } },	// 左上
-		{ Vector3 { 1, 1, 0 }, Vector3 { 1, 0, 0 } },	// 右上
-		{ Vector3 { -1, -1, 0 }, Vector3 { 0, 1, 0 } }, // 左下
-		{ Vector3 { 1, -1, 0 }, Vector3 { 1, 1, 0 } },	// 右下
+		{ Vector4 { -1, 1, 0, 1 }, Vector4 { 0, 0, 0, 0 } },  // 左上
+		{ Vector4 { 1, 1, 0, 1 }, Vector4 { 1, 0, 0, 0 } },	  // 右上
+		{ Vector4 { -1, -1, 0, 1 }, Vector4 { 0, 1, 0, 0 } }, // 左下
+		{ Vector4 { 1, -1, 0, 1 }, Vector4 { 1, 1, 0, 0 } },  // 右下
 	};
 
 	const D3D11_BUFFER_DESC BUFFER_DESC {
@@ -264,7 +182,8 @@ void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	};
 
 	HRESULT hResult {};
-	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
+	hResult =
+		DirectX11Draw::pDevice_->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pVertexBuffer_.ReleaseAndGetAddressOf());
 
 	massert(
 		SUCCEEDED(hResult) // 頂点バッファの作成に成功
@@ -272,10 +191,9 @@ void mtgb::Sprite::InitializeVertexBuffer(ID3D11Device* _pDevice)
 	);
 }
 
-void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
+void mtgb::Sprite::InitializeIndexBuffer()
 {
 	static const int INDEXES[] { 2, 1, 0, 2, 3, 1 };
-	// static const int INDEXES[]{ 0, 1, 2, 2, 1, 3 };
 
 	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(INDEXES),
@@ -293,7 +211,8 @@ void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	};
 
 	HRESULT hResult {};
-	hResult = _pDevice->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pIndexBuffer_.ReleaseAndGetAddressOf());
+	hResult =
+		DirectX11Draw::pDevice_->CreateBuffer(&BUFFER_DESC, &INITIALIZE_DATA, pIndexBuffer_.ReleaseAndGetAddressOf());
 
 	massert(
 		SUCCEEDED(hResult) // インデックスバッファの作成に成功
@@ -301,7 +220,7 @@ void mtgb::Sprite::InitializeIndexBuffer(ID3D11Device* _pDevice)
 	);
 }
 
-void mtgb::Sprite::InitializeConstantBuffer(ID3D11Device* _pDevice)
+void mtgb::Sprite::InitializeConstantBuffer()
 {
 	const D3D11_BUFFER_DESC BUFFER_DESC {
 		.ByteWidth			 = sizeof(ConstantBuffer),
@@ -313,11 +232,104 @@ void mtgb::Sprite::InitializeConstantBuffer(ID3D11Device* _pDevice)
 	};
 
 	HRESULT hResult {};
-	hResult = _pDevice->CreateBuffer(
+	hResult = DirectX11Draw::pDevice_->CreateBuffer(
 		&BUFFER_DESC,
 		nullptr, // 初期データなし
 		pConstantBuffer_.ReleaseAndGetAddressOf()
 	);
 
 	massert(SUCCEEDED(hResult) && "コンスタントバッファの作成に失敗 @Sprite::InitializeConstantBuffer");
+}
+
+void mtgb::Sprite::InitializeShader()
+{
+	HLSLInclude hlslInclude {};
+	HRESULT hResult {};
+	const wchar_t* fileName = L"Shader/Sprite.hlsl";
+	// 項点シェーダのインタフェース
+	ID3DBlob* pCompileVS { nullptr };
+	// 頂点シェーダのコンパイル
+	hResult = D3DCompileFromFile(
+		fileName,	  // ファイルパス
+		nullptr,	  // シェーダマクロの配列
+		&hlslInclude, // インクルードするやつ
+		"VS",		  // エントリポイントの関数名
+		"vs_5_0",	  // シェーダのバージョン (オプションで付けるやつ)
+		0,			  // オプションフラグ1
+		0,			  // オプションフラグ2
+		&pCompileVS,  // コンパイル済みコードへのアクセスインタフェース
+		nullptr
+	); // エラーメッセージ受信用 無し
+	massert(
+		SUCCEEDED(hResult) // 頂点シェーダのコンパイルに成功
+		&& "頂点シェーダのコンパイルに失敗 @IShader::CompileShader"
+	);
+
+	pVertexLayout.Attach(CreateInputLayout(DirectX11Draw::pDevice_.Get(), pCompileVS));
+	// ピクセルシェーダを作成し、指定タイプのバンドルに格納する
+	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
+		pCompileVS->GetBufferPointer(), // コンパイルされたバッファのポインタ
+		pCompileVS->GetBufferSize(),	// バッファのサイズ
+		nullptr,						// リンケージクラス: 無し
+		pVertexShader.ReleaseAndGetAddressOf()
+	);
+	massert(
+		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
+		&& "頂点シェーダの作成に失敗 @IShader::CompileShader"
+	);
+
+	// ピクセルシェーダのインタフェース
+	ID3DBlob* pCompilePS { nullptr };
+
+	// ピクセルシェーダのコンパイル
+	hResult = D3DCompileFromFile(
+		fileName,	  // ファイルパス
+		nullptr,	  // シェーダマクロの配列
+		&hlslInclude, // インクルードするやつ
+		"PS",		  // エントリポイントの関数名
+		"ps_5_0",	  // シェーダのバージョン (オプションで付けるやつ)
+		0,			  // オプションフラグ1
+		0,			  // オプションフラグ2
+		&pCompilePS,  // コンパイル済みコードへのアクセスインタフェース
+		nullptr
+	); // エラーメッセージ受信用 無し
+
+	massert(
+		SUCCEEDED(hResult) // ピクセルシェーダのコンパイルに成功
+		&& "ピクセルシェーダのコンパイルに失敗 @IShader::CompileShader"
+	);
+
+	// ピクセルシェーダを作成し、指定タイプのバンドルに格納する
+	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
+		pCompilePS->GetBufferPointer(), // コンパイルされたバッファのポインタ
+		pCompilePS->GetBufferSize(),	// バッファのサイズ
+		nullptr,						// リンケージクラス: 無し
+		pPixelShader.ReleaseAndGetAddressOf()
+	);
+
+	massert(
+		SUCCEEDED(hResult) // ピクセルシェーダの作成に成功
+		&& "ピクセルシェーダの作成に失敗 @IShader::CompileShader"
+	);
+
+	CD3D11_RASTERIZER_DESC cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
+		.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
+		.CullMode			   = D3D11_CULL_NONE,  // カリング:
+		.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
+		.DepthBias			   = {},
+		.DepthBiasClamp		   = {},
+		.SlopeScaledDepthBias  = {},
+		.DepthClipEnable	   = true, // クリッピングを有効にする
+		.ScissorEnable		   = {},
+		.MultisampleEnable	   = {},
+		.AntialiasedLineEnable = {},
+	});
+	hResult =
+		DirectX11Draw::pDevice_->CreateRasterizerState(&cRasterizerDesc, pRasterizerState.ReleaseAndGetAddressOf());
+	massert(
+		SUCCEEDED(hResult) // ラスタライザーステート作成に成功
+		&& "ラスタライザーステート作成に失敗 @IShader::CompileShader"
+	);
+	SAFE_RELEASE(pCompileVS);
+	SAFE_RELEASE(pCompilePS);
 }

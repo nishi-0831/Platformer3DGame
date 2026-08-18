@@ -3,59 +3,17 @@
 #include "Game.h"
 #include "SceneSystem.h"
 
-#include "PlaneUVScroll.h"
 #include "ReleaseUtility.h"
 #include "Transform.h"
+#include "Screen.h"
 #include <cmath>
 
-void mtgb::Draw::CheckSetShader(ShaderType _default)
-{
-	if (onceShaderType_ == ShaderType::MAX)
-	{
-		// シェーダがセットされていないなら既定シェーダ
-		DirectX11Draw::SetShader(_default);
-	}
-	else
-	{
-		// シェーダがセットされているなら優先
-		DirectX11Draw::SetShader(onceShaderType_);
-		onceShaderType_ = ShaderType::MAX; // 一度使ったら外す
-	}
-}
+mtgb::Draw::Draw() {}
 
-void mtgb::Draw::FBXModel(
-	const FBXModelHandle _hFBXModel,
-	const Transform& _pTransform,
-	const int _frame,
-	ShaderType _shaderType
-)
-{
-	CheckSetShader(_shaderType);
-
-	Game::System<mtgb::Fbx>().Draw(_hFBXModel, _pTransform, _frame);
-}
-
-void mtgb::Draw::SeaUVScroll(const Transform& _transform)
-{
-	Game::System<Draw>().pSeaPlane_->Draw(_transform);
-}
-
-mtgb::Draw::Draw()
-	: pSeaPlane_ { nullptr }
-	, onceShaderType_ { ShaderType::MAX }
-{
-}
-
-mtgb::Draw::~Draw()
-{
-	SAFE_DELETE(pSeaPlane_);
-}
+mtgb::Draw::~Draw() {}
 
 void mtgb::Draw::Initialize()
 {
-	pSeaPlane_ = new PlaneUVScroll();
-	pSeaPlane_->Initialize();
-	pSeaPlane_->LoadTexture(L"Image/sea.png");
 	Game::System<SceneSystem>().OnMove(
 		[this]()
 		{

@@ -2,10 +2,7 @@
 #include <d3d11.h>
 #include <dxgi1_2.h>
 #include <DirectXMath.h>
-#include "Texture2D.h"
 #include "ReleaseUtility.h"
-#include "IShader.h"
-#include "DirectWrite.h"
 #include "Debug.h"
 
 using namespace mtgb;
@@ -21,7 +18,7 @@ IDXGISwapChain* DirectX11Draw::pSwapChain_ { nullptr };						  // ダブルバ�
 ComPtr<ID3D11RenderTargetView> DirectX11Draw::pRenderTargetView_ { nullptr }; // 描画先
 ComPtr<IDXGISwapChain1> DirectX11Draw::pSwapChain1_ { nullptr };
 ComPtr<ID3D11DepthStencilView> DirectX11Draw::pDepthStencilView_ { nullptr }; // 深度バッファ
-std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(BlendMode::MAX)> DirectX11Draw::pDepthStencilState_ {
+std::array<ComPtr<ID3D11DepthStencilState>, static_cast<int8_t>(StencilMode::MAX)> DirectX11Draw::pDepthStencilState_ {
 	nullptr
 }; // ブレンドによる深度バッファへの書き込み情報
 ComPtr<ID3D11Texture2D> DirectX11Draw::pDepthStencil_ { nullptr }; // ブレンドの情報
@@ -29,17 +26,7 @@ std::array<ComPtr<ID3D11BlendState>, static_cast<int8_t>(BlendMode::MAX)> Direct
 	nullptr
 }; // ブレンドの情報
 ComPtr<ID3D11SamplerState> DirectX11Draw::pDefaultSamplerState_ { nullptr };
-ShaderBundle DirectX11Draw::shaderBundle_[static_cast<int8_t>(ShaderType::MAX)] {}; // シェーダのバンドル
 Vector4 DirectX11Draw::backgroundColor_ { 0, 1, 0, 1 };
-
-void mtgb::DirectX11Draw::SetShader(ShaderType _type)
-{
-	const int INDEX { static_cast<int>(_type) };
-	pContext_->RSSetState(shaderBundle_[INDEX].pRasterizerState.Get());
-	pContext_->VSSetShader(shaderBundle_[INDEX].pVertexShader.Get(), nullptr, 0);
-	pContext_->PSSetShader(shaderBundle_[INDEX].pPixelShader.Get(), nullptr, 0);
-	pContext_->IASetInputLayout(shaderBundle_[INDEX].pVertexLayout.Get());
-}
 
 void mtgb::DirectX11Draw::SetBlendMode(BlendMode _mode)
 {
@@ -48,22 +35,47 @@ void mtgb::DirectX11Draw::SetBlendMode(BlendMode _mode)
 	// 加算合成
 	float blendFactor[] { D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO, D3D11_BLEND_ZERO };
 	pContext_->OMSetBlendState(pBlendState_[INDEX].Get(), blendFactor, 0xffffffffU);
+}
 
+void mtgb::DirectX11Draw::SetStencilMode(StencilMode _mode)
+{
+	const int INDEX { static_cast<int>(_mode) };
 	// 深度ステンシルへの書き込み
-	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 0);
+	pContext_->OMSetDepthStencilState(pDepthStencilState_[INDEX].Get(), 1);
 }
 
 void mtgb::DirectX11Draw::SetIsWriteToDepthBuffer(bool _enabled)
 {
+	ID3D11RenderTargetView* pRTV = nullptr;
+	ID3D11DepthStencilView* pDSV = nullptr;
+
+	pContext_->OMGetRenderTargets(1, &pRTV, &pDSV);
 	if (_enabled)
 	{
 		// 深度バッファを指定する
-		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDepthStencilView_.Get());
+		pContext_->OMSetRenderTargets(1, &pRTV, pDepthStencilView_.Get());
 	}
 	else
 	{
 		// 深度バッファを外す nullptrを指定する
-		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), nullptr);
+		pContext_->OMSetRenderTargets(1, &pRTV, nullptr);
+	}
+}
+
+void mtgb::DirectX11Draw::SetIsWriteToRenderTarget(bool _enabled)
+{
+	ID3D11RenderTargetView* pRTV = nullptr;
+	ID3D11DepthStencilView* pDSV = nullptr;
+
+	pContext_->OMGetRenderTargets(1, &pRTV, &pDSV);
+	if (_enabled)
+	{
+		pContext_->OMSetRenderTargets(1, pRenderTargetView_.GetAddressOf(), pDSV);
+	}
+	else
+	{
+		ID3D11RenderTargetView* pNullRTV = nullptr;
+		pContext_->OMSetRenderTargets(1, &pNullRTV, pDSV);
 	}
 }
 
@@ -73,7 +85,7 @@ void mtgb::DirectX11Draw::Begin()
 	pContext_->ClearRenderTargetView(pRenderTargetView_.Get(), backgroundColor_.f);
 
 	// 深度バッファクリア
-	pContext_->ClearDepthStencilView(pDepthStencilView_.Get(), D3D11_CLEAR_DEPTH, 1.0f, 0U);
+	pContext_->ClearDepthStencilView(pDepthStencilView_.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0U);
 }
 
 void mtgb::DirectX11Draw::End()
@@ -117,12 +129,4 @@ void mtgb::DirectX11Draw::Release()
 		pDebug->Release();
 	}
 	pDevice_.Reset();
-}
-
-mtgb::ShaderBundle::~ShaderBundle()
-{
-	pVertexLayout.Reset();
-	pVertexShader.Reset();
-	pPixelShader.Reset();
-	pRasterizerState.Reset();
 }

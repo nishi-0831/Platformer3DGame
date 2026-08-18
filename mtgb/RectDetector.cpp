@@ -92,7 +92,8 @@ bool mtgb::RectDetector::IsLineOfSight(const Vector3& _cameraPos, const ScreenCo
 {
 	Vector3 toTarget	   = Vector3::Normalize(_targetInfo.worldPos - _cameraPos);
 	ColliderCP& colliderCP = Game::System<ColliderCP>();
-	float dist			   = 0.0f;
+
+	Intersection::RaycastInfo info;
 	for (const auto& other : detectedTargets_)
 	{
 		// 自分自身とは判定をしない
@@ -100,7 +101,7 @@ bool mtgb::RectDetector::IsLineOfSight(const Vector3& _cameraPos, const ScreenCo
 			continue;
 
 		// 遮られていたら false
-		if (colliderCP.RayCastHit(_targetInfo.worldPos, toTarget, &dist, other.entityId))
+		if (colliderCP.RayCastHit(_targetInfo.worldPos, toTarget, FLT_MAX, &info, other.entityId))
 		{
 			return false;
 		}

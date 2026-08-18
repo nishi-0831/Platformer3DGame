@@ -12,70 +12,90 @@
 #include "GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "SceneSystem.h"
+#include "DirectX11Draw.h"
+#include "Fbx.h"
+#include "MeshRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
-	if (!pTargetTransform_)
+	using namespace DirectX;
+	if (selectedIds_.empty())
 	{
 		ImGuizmo::Enable(false);
 		return;
 	}
 	ImGuizmo::Enable(true);
 
-	Calculate();
-
-	uintptr_t ptrId = reinterpret_cast<uintptr_t>(pTargetTransform_);
-	ImGui::PushID(&ptrId);
-
 	ImVec2 pos = ImGui::GetWindowPos();
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	Matrix4x4 prevMat = worldMatrix4x4;
+
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
-		// 編集されたworldMatからposition,rotation,scaleに分解
-		DirectX::XMMATRIX mat = DirectX::XMMATRIX(
-			worldMat_[0],
-			worldMat_[1],
-			worldMat_[2],
-			worldMat_[3],
-			worldMat_[4],
-			worldMat_[5],
-			worldMat_[6],
-			worldMat_[7],
-			worldMat_[8],
-			worldMat_[9],
-			worldMat_[10],
-			worldMat_[11],
-			worldMat_[12],
-			worldMat_[13],
-			worldMat_[14],
-			worldMat_[15]
-		);
+		DirectX::XMMATRIX mat = XMLoadFloat4x4(reinterpret_cast<XMFLOAT4X4*>(worldMat_));
+		if (operation_ == ImGuizmo::OPERATION::SCALE)
+		{
+			XMVECTOR scale, trans, rot;
+			XMMatrixDecompose(&scale, &rot, &trans, mat);
+			for (int i = 0; i < selectedIds_.size(); i++)
+			{
+				Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+				transform.scale		 = XMVectorMultiply(preManipulationScales_[i], scale);
+			}
+		}
+		else
+		{
+			// Δ
+			Matrix4x4 delta = XMMatrixMultiply(mat, XMMatrixInverse(nullptr, prevMat));
+			// P^-1
+			XMMATRIX invPrev = XMMatrixInverse(nullptr, prevMat);
+			// マニピュレーターの座標系に変換
+			// 変化量を掛ける
+			// オブジェクトの座標系に戻す
+			// P^-1 ・ Δ ・ P
+			XMMATRIX pivotDelta = XMMatrixMultiply(XMMatrixMultiply(invPrev, delta), prevMat);
+			for (int i = 0; i < selectedIds_.size(); i++)
+			{
+				Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+				// Wi ・ (P^-1 ・ Δ ・ P)
+				XMMATRIX newWorld = XMMatrixMultiply(originalWorldMatrices_[i], pivotDelta);
 
-		DirectX::XMVECTOR scale, trans;
-		bool result = DirectX::XMMatrixDecompose(&scale, &pTargetTransform_->rotate.v, &trans, mat);
-		massert(result && "XMMatrixDecomposeに失敗 @MTImGui::DrawTransformGuizmo");
+				// 親がいる場合の処理
+				if (Transform* parent = transform.GetParent(); parent != nullptr)
+				{
+					Matrix4x4 parentWorld;
+					parent->GenerateWorldMatrix(&parentWorld);
+					XMMATRIX invParent = XMMatrixInverse(nullptr, parentWorld);
+					newWorld		   = XMMatrixMultiply(invParent, newWorld);
+				}
 
-		DirectX::XMStoreFloat3(&pTargetTransform_->position, trans);
-		DirectX::XMStoreFloat3(&pTargetTransform_->scale, scale);
+				DirectX::XMVECTOR scale, trans, rot;
+				bool result = DirectX::XMMatrixDecompose(&scale, &transform.rotate.v, &trans, newWorld);
+				massert(result && "XMMatrixDecomposeに失敗 @MTImGui::DrawTransformGuizmo");
+				DirectX::XMStoreFloat3(&transform.position, trans);
+				DirectX::XMStoreFloat3(&transform.scale, scale);
+			}
+		}
 	}
-	DrawViewGizmo();
-
-	ImGui::PopID();
 }
 
 void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 {
+	using namespace DirectX;
+	if (selectedIds_.empty())
+	{
+		ImGuizmo::Enable(false);
+		return;
+	}
+	ImGuizmo::Enable(true);
 	ImVec2 pos = ImGui::GetWindowPos();
 	// ギズモ表示
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+
 	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 	ImVec2 viewGizmoPos(pos.x + displaySize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
-	Transform& cameraTransform = Game::System<TransformCP>().Get(
-		Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
-	);
-	using namespace DirectX;
 
 	float ident[16];
 
@@ -92,8 +112,7 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 	);
 	if (ImGuizmo::IsUsingViewManipulate())
 	{
-		memcpy(&float4x4_, viewMat_, sizeof(viewMat_));
-		viewMatrix4x4_		 = XMLoadFloat4x4(&float4x4_);
+		viewMatrix4x4_		 = XMLoadFloat4x4(reinterpret_cast<XMFLOAT4X4*>(viewMat_));
 		XMMATRIX worldMatrix = XMMatrixInverse(nullptr, viewMatrix4x4_);
 
 		XMVECTOR outScale;
@@ -103,6 +122,10 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 		// 行列を分解
 		XMMatrixDecompose(&outScale, &outRot, &outPosition, worldMatrix);
 		Vector3 rotVec = DirectX::XMVector3Rotate(Vector3::Forward(), outRot);
+
+		Transform& cameraTransform = Game::System<TransformCP>().Get(
+			Game::System<SceneSystem>().GetActiveScene()->GetGameObject("EditorCamera")->GetEntityId()
+		);
 		// 上方向を+Yに指定する
 		cameraTransform.rotate	 = Quaternion::LookRotation(rotVec, Vector3::Up());
 		cameraTransform.position = { XMVectorGetX(outPosition), XMVectorGetY(outPosition), XMVectorGetZ(outPosition) };
@@ -116,16 +139,25 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<GameObjectSelectedEvent>().Subscribe(
 		[this](const GameObjectSelectedEvent& _event)
 		{
-			GenerateCommand(_event);
+			GenerateSelectedCommand(_event);
 		},
 		EventScope::GLOBAL
 	);
 
-	// 今後、同時に複数のオブジェクトを選択可能な場合になった際には修正
+	// 選択解除イベント
 	eventManager.GetEvent<GameObjectDeselectedEvent>().Subscribe(
 		[this](const GameObjectDeselectedEvent& _event)
 		{
-			GenerateCommand(_event);
+			GenerateDeselectedCommand(_event);
+		},
+		EventScope::GLOBAL
+	);
+
+	// 選択全解除イベント
+	eventManager.GetEvent<SelectionClearedEvent>().Subscribe(
+		[this](const SelectionClearedEvent& _event)
+		{
+			GenerateDeselectedCommand({ .entityIds = selectedIds_ });
 		},
 		EventScope::GLOBAL
 	);
@@ -134,19 +166,51 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
-			Select(_event.entityId);
+			Select(std::vector<EntityId> { _event.entityId }, false);
+		},
+		EventScope::GLOBAL
+	);
+
+	// ゲームオブジェクト削除イベント
+	eventManager.GetEvent<GameObjectDeletedEvent>().Subscribe(
+		[this](const GameObjectDeletedEvent& _event)
+		{
+			// 削除されたゲームオブジェクトを選択解除
+			Deselect(std::vector<EntityId> { _event.entityId });
 		},
 		EventScope::GLOBAL
 	);
 }
 
-void mtgb::ImGuizmoManipulator::Calculate()
+void mtgb::ImGuizmoManipulator::CalculateGizmoMatrix()
 {
-	// float[16]の配列を作成
-	pTargetTransform_->GenerateWorldMatrix(&worldMatrix4x4);
+	using namespace DirectX;
+	Vector3 center { 0, 0, 0 };
+	originalWorldMatrices_.clear();
+
+	// マニピュレーターの座標を計算する。選択しているオブジェクトの座標を足して、その数で割る
+	int count = 0;
+	for (EntityId id : selectedIds_)
+	{
+		Transform& trans = Game::System<TransformCP>().Get(id);
+		Matrix4x4 worldMat;
+		trans.GenerateWorldMatrix(&worldMat);
+		originalWorldMatrices_.push_back(worldMat);
+
+		center.x += XMVectorGetX(worldMat.r[3]);
+		center.y += XMVectorGetY(worldMat.r[3]);
+		center.z += XMVectorGetZ(worldMat.r[3]);
+
+		count++;
+	}
+	if (count != 0)
+	{
+		center /= static_cast<float>(count);
+	}
 	Game::System<mtgb::CameraSystem>().GetViewMatrix(&viewMatrix4x4_);
 	Game::System<mtgb::CameraSystem>().GetProjMatrix(&projMatrix4x4_);
 
+	worldMatrix4x4 = XMMatrixTranslation(center.x, center.y, center.z);
 	// ワールド行列
 	DirectX::XMStoreFloat4x4(&float4x4_, worldMatrix4x4);
 	memcpy(worldMat_, &float4x4_, sizeof(worldMat_));
@@ -160,13 +224,22 @@ void mtgb::ImGuizmoManipulator::Calculate()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
+void mtgb::ImGuizmoManipulator::CalculateOriginalScale()
+{
+	preManipulationScales_.clear();
+	for (size_t i = 0; i < selectedIds_.size(); i++)
+	{
+		Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+		preManipulationScales_.push_back(transform.scale);
+	}
+}
+
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	: ImGuiShowable("Manipulator", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
 	, mode_ { ImGuizmo::WORLD }
 	, isUsing_ { false }
 	, wasUsing_ { false }
-	, pTargetTransform_ { nullptr }
 	, viewGizmoSize_ { 75.0f, 75.0f }
 	, snapDistanceFromCamera_ { 10.0f }
 	, clipSpaceGizmoSize_ { 0.15f }
@@ -186,15 +259,17 @@ void mtgb::ImGuizmoManipulator::Update()
 	ImGuizmo::AllowAxisFlip(false);
 	ImGuizmo::SetGizmoSizeClipSpace(clipSpaceGizmoSize_);
 
-	UpdateManipulator();
 	UpdateOperationMode();
+	UpdateManipulator();
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
 {
 	// ImGuizmoの操作モードを指定
+	CalculateGizmoMatrix();
 
 	DrawTransformGizmo();
+	DrawViewGizmo();
 
 	if (ImGui::RadioButton("Translate", operation_ == ImGuizmo::TRANSLATE))
 	{
@@ -222,57 +297,157 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	}
 }
 
-void mtgb::ImGuizmoManipulator::Select(EntityId _id)
+void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, bool _multiSelect)
 {
-	if (_id == INVALID_ENTITY)
+	if (_entityIds.empty())
 	{
-		ImGuizmo::Enable(false);
-		pTargetTransform_ = nullptr;
+		DeselectAll();
+		return;
+	}
+
+	ImGuizmo::Enable(true);
+	if (_multiSelect)
+	{
+		for (auto id : _entityIds)
+		{
+			if (selectedIndex_.contains(id) == false)
+			{
+				selectedIndex_[id] = selectedIds_.size();
+				selectedIds_.push_back(id);
+			}
+		}
 	}
 	else
 	{
-		ImGuizmo::Enable(true);
-		Game::System<TransformCP>().TryGet(pTargetTransform_, _id);
+		selectedIds_.clear();
+		selectedIndex_.clear();
+		for (auto id : _entityIds)
+		{
+			selectedIndex_[id] = selectedIds_.size();
+			selectedIds_.push_back(id);
+		}
 	}
 }
 
-void mtgb::ImGuizmoManipulator::Deselect()
+void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 {
-	ImGuizmo::Enable(false);
-	pTargetTransform_ = nullptr;
+	for (auto id : _entityIds)
+	{
+		// 選択中のEntityIdを除去する
+		if (selectedIndex_.contains(id))
+		{
+			size_t selectedEntityIdx = selectedIndex_[id];
+			EntityId backEntityId	 = selectedIds_.back();
+
+			std::swap(selectedIds_[selectedIndex_[id]], selectedIds_.back());
+			selectedIds_.pop_back();
+			selectedIndex_.erase(id);
+			selectedIndex_[backEntityId] = selectedEntityIdx;
+		}
+	}
 }
 
-mtgb::EntityId mtgb::ImGuizmoManipulator::GetSelectedEntityId()
+void mtgb::ImGuizmoManipulator::DeselectAll()
 {
-	if (pTargetTransform_ == nullptr)
-		return INVALID_ENTITY;
-	return pTargetTransform_->GetEntityId();
+	selectedIds_.clear();
+}
+
+std::span<mtgb::EntityId> mtgb::ImGuizmoManipulator::GetSelectedEntityId()
+{
+	return selectedIds_;
+}
+
+ImGuizmo::OPERATION mtgb::ImGuizmoManipulator::GetOperation()
+{
+	return operation_;
+}
+
+void mtgb::ImGuizmoManipulator::DrawSelectedObjectOutline()
+{
+	DirectX11Draw::SetIsWriteToRenderTarget(false);
+	DirectX11Draw::SetIsWriteToDepthBuffer(true);
+	DirectX11Draw::SetStencilMode(StencilMode::WriteSelected);
+	for (EntityId id : selectedIds_)
+	{
+		MeshRenderer* pMeshRenderer = nullptr;
+		Game::System<MeshRendererCP>().TryGet(pMeshRenderer, id);
+		if (pMeshRenderer == nullptr)
+		{
+			continue;
+		}
+		Transform* pTransform = nullptr;
+		Game::System<TransformCP>().TryGet(pTransform, id);
+
+		if (pTransform == nullptr)
+		{
+			continue;
+		}
+		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, ShaderType::FBX_PARTS);
+	}
+	DirectX11Draw::SetIsWriteToRenderTarget(true);
+
+	DirectX11Draw::SetStencilMode(StencilMode::DrawOutline);
+	for (EntityId id : selectedIds_)
+	{
+		MeshRenderer* pMeshRenderer = nullptr;
+		Game::System<MeshRendererCP>().TryGet(pMeshRenderer, id);
+		if (pMeshRenderer == nullptr)
+		{
+			continue;
+		}
+		Transform* pTransform = nullptr;
+		Game::System<TransformCP>().TryGet(pTransform, id);
+
+		if (pTransform == nullptr)
+		{
+			continue;
+		}
+
+		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, ShaderType::OUTLINE);
+	}
+	DirectX11Draw::SetStencilMode(StencilMode::DEFAULT);
 }
 
 void mtgb::ImGuizmoManipulator::UpdateManipulator()
 {
 	isUsing_ = ImGuizmo::IsUsing();
-
+	if (isUsing_ == false)
+	{
+		preManipulationScales_.clear();
+		for (size_t i = 0; i < selectedIds_.size(); i++)
+		{
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+			preManipulationScales_.push_back(transform.scale);
+		}
+	}
 	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
 	if (wasUsing_ == false && isUsing_ == true)
 	{
-		if (pTargetTransform_ == nullptr)
-			return;
-		pTargetPrevTransformMemento_ = pTargetTransform_->SaveToMemento();
+		SAFE_CLEAR_CONTAINER_DELETE(transformMementos_);
+		preManipulationScales_.clear();
+		for (size_t i = 0; i < selectedIds_.size(); i++)
+		{
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+			transformMementos_.push_back(transform.SaveToMemento());
+
+			preManipulationScales_.push_back(transform.scale);
+		}
 	}
 
 	// ギズモの使用を終了
 	if (wasUsing_ == true && isUsing_ == false)
 	{
-		if (pTargetPrevTransformMemento_ == nullptr || pTargetTransform_ == nullptr)
-			return;
-
-		TransformMemento* memento	 = pTargetTransform_->SaveToMemento();
-		GuizmoManipulateCommand* cmd = new GuizmoManipulateCommand(pTargetPrevTransformMemento_, memento);
+		std::vector<TransformMemento*> currTransformMementos;
+		for (size_t i = 0; i < selectedIds_.size(); i++)
+		{
+			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
+			currTransformMementos.push_back(transform.SaveToMemento());
+		}
+		GuizmoManipulateCommand* cmd = new GuizmoManipulateCommand(transformMementos_, currTransformMementos);
 		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 
-		// メモリの解放はコマンドが行うと断定して、ポインタを空にする
-		pTargetPrevTransformMemento_ = nullptr;
+		// メモリの解放はコマンドが行うと断定して、コンテナを空にする
+		transformMementos_.clear();
 	}
 	wasUsing_ = isUsing_;
 }
@@ -296,34 +471,14 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 	}
 }
 
-void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectSelectedEvent& _event)
+void mtgb::ImGuizmoManipulator::GenerateSelectedCommand(const GameObjectSelectedEvent& _event)
 {
-	SelectionCommand* cmd = new SelectionCommand(
-		_event.entityId,
-		[this](EntityId _entityId)
-		{
-			Select(_entityId);
-		},
-		[this](EntityId _entityId)
-		{
-			Deselect();
-		}
-	);
+	SelectionCommand* cmd = new SelectionCommand(_event.entityIds, _event.multiSelect, *this);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
-void mtgb::ImGuizmoManipulator::GenerateCommand(const GameObjectDeselectedEvent& _event)
+void mtgb::ImGuizmoManipulator::GenerateDeselectedCommand(const GameObjectDeselectedEvent& _event)
 {
-	DeselectionCommand* cmd = new DeselectionCommand(
-		(_event.entityId),
-		[this](EntityId _entityId)
-		{
-			Deselect();
-		},
-		[this](EntityId _entityId)
-		{
-			Select(_entityId);
-		}
-	);
+	DeselectionCommand* cmd = new DeselectionCommand(_event.entityIds, *this);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }

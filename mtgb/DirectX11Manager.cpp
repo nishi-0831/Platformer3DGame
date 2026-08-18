@@ -6,11 +6,7 @@
 
 #include <dxgi.h>
 #include <DirectXMath.h>
-#include "ImGuiRenderer.h"
 #include "Screen.h"
-#include "Vector3.h"
-#include <d3dcompiler.h>
-#include "HLSLInclude.h"
 #include "WindowContext.h"
 #include "ReleaseUtility.h"
 #include "Direct2D/Direct2D.h"
@@ -103,7 +99,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		(void**)DirectX11Draw::pDXGIDevice_.ReleaseAndGetAddressOf()
 	);
 	massert(SUCCEEDED(hResult) && "QueryInterfaceに失敗 @DirectX11Manager::InitializeCommonResources");
-	InitializeShaderBundle(); // シェーダバンドルの初期化
+	// InitializeShaderBundle(); // シェーダバンドルの初期化
 
 	const D3D11_SAMPLER_DESC SAMPLER_DESC {
 		.Filter	  = D3D11_FILTER_MIN_MAG_MIP_LINEAR,
@@ -146,7 +142,7 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::DEFAULT)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::DEFAULT)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -154,29 +150,59 @@ void mtgb::DirectX11Manager::InitializeCommonResources()
 		&& "BlendMode::Defaultの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
 	);
 
-	// BlendMode::Spriteの作成
-	DEPTH_STENCIL_DESC = { .DepthEnable		 = FALSE, // 深度テストを行うかどうか
-						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ZERO,
+	// StencilMode::WriteSelected
+	DEPTH_STENCIL_DESC = { .DepthEnable		 = TRUE, // 深度テストを行うかどうか
+						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ALL,
 						   .DepthFunc		 = D3D11_COMPARISON_LESS_EQUAL,
-						   .StencilEnable	 = FALSE, // ステンシルテストを行うかどうか
-						   .StencilReadMask	 = {},
-						   .StencilWriteMask = {},
+						   .StencilEnable	 = TRUE, // ステンシルテストを行うかどうか
+						   .StencilReadMask	 = 0xFF,
+						   .StencilWriteMask = 0xFF,
 						   .FrontFace {
 							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
 							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_REPLACE,
 							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
 						   },
 						   .BackFace {
 							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
 							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
-							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_REPLACE,
 							   .StencilFunc		   = D3D11_COMPARISON_ALWAYS,
 						   } };
 
 	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
 		&DEPTH_STENCIL_DESC,
-		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(BlendMode::SPRITE)].ReleaseAndGetAddressOf()
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::WriteSelected)].ReleaseAndGetAddressOf()
+	);
+
+	massert(
+		SUCCEEDED(hResult) // 深度ステンシルステートの作成に成功
+		&& "BlendMode::Spriteの深度ステンシルステートの作成に失敗 @DirectX11Manager::InitializeCommonResources"
+	);
+
+	// StencilMode::DrawOutline
+	DEPTH_STENCIL_DESC = { .DepthEnable		 = TRUE, // 深度テストを行うかどうか
+						   .DepthWriteMask	 = D3D11_DEPTH_WRITE_MASK_ALL,
+						   .DepthFunc		 = D3D11_COMPARISON_LESS_EQUAL,
+						   .StencilEnable	 = TRUE, // ステンシルテストを行うかどうか
+						   .StencilReadMask	 = 0xFF,
+						   .StencilWriteMask = 0xFF,
+						   .FrontFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_NOT_EQUAL,
+						   },
+						   .BackFace {
+							   .StencilFailOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilDepthFailOp = D3D11_STENCIL_OP_KEEP,
+							   .StencilPassOp	   = D3D11_STENCIL_OP_KEEP,
+							   .StencilFunc		   = D3D11_COMPARISON_NOT_EQUAL,
+						   } };
+
+	hResult = DirectX11Draw::pDevice_->CreateDepthStencilState(
+		&DEPTH_STENCIL_DESC,
+		DirectX11Draw::pDepthStencilState_[static_cast<size_t>(StencilMode::DrawOutline)].ReleaseAndGetAddressOf()
 	);
 
 	massert(
@@ -351,7 +377,7 @@ void mtgb::DirectX11Manager::CreateDepthStencilAndDepthStencilView(
 		.Height	   = static_cast<UINT>(_bufSize.y),
 		.MipLevels = 1,
 		.ArraySize = 1,
-		.Format	   = DXGI_FORMAT_D32_FLOAT,
+		.Format	   = DXGI_FORMAT_D24_UNORM_S8_UINT,
 		.SampleDesc { .Count = 1, .Quality = 0 },
 		.Usage			= D3D11_USAGE_DEFAULT,
 		.BindFlags		= D3D11_BIND_DEPTH_STENCIL,
@@ -456,16 +482,11 @@ void mtgb::DirectX11Manager::ClearState()
 	DirectX11Draw::pDepthStencil_.Reset();
 	DirectX11Draw::pDepthStencilView_.Reset();
 	DirectX11Draw::pRenderTargetView_.Reset();
-	// DirectX11Draw::pSwapChain1_.Reset();
 }
 
 void mtgb::DirectX11Manager::SetDefaultStates()
 {
-	// PrimitiveTopology を再設定
 	DirectX11Draw::pContext_->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
-
-	// 必要に応じて他のデフォルト状態も再設定
-	// 例：デフォルトサンプラーステート、ブレンドステートなど
 }
 
 void mtgb::DirectX11Manager::EnumAvailableMonitors()
@@ -494,396 +515,4 @@ void mtgb::DirectX11Manager::EnumAvailableMonitors()
 			outputIndex++;
 		}
 	}
-}
-
-void mtgb::DirectX11Manager::InitializeShaderBundle()
-{
-	DWORD vectorSize { sizeof(Vector3) };
-
-	CD3D11_RASTERIZER_DESC cRasterizerDesc {};
-
-	// 2D共通のインプットレイアウト
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_2D[] {
-		{
-			.SemanticName		  = "POSITION",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = vectorSize * 0,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "TEXCOORD",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = vectorSize * 1,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-	};
-
-	// 3D共通のインプットレイアウト
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_3D[] {
-		{
-			.SemanticName		  = "POSITION",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = vectorSize * 0,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "NORMAL",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = vectorSize * 1,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "TEXCOORD",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = vectorSize * 2,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-	};
-
-	const D3D11_INPUT_ELEMENT_DESC INPUT_ELEMENT_DESC_SKINNED[] {
-		{
-			.SemanticName		  = "POSITION",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = 0,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "NORMAL",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "TEXCOORD",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "BONE_INDEX",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32A32_UINT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-		{
-			.SemanticName		  = "BONE_WEIGHT",
-			.SemanticIndex		  = 0,
-			.Format				  = DXGI_FORMAT_R32G32B32A32_FLOAT,
-			.InputSlot			  = 0,
-			.AlignedByteOffset	  = D3D11_APPEND_ALIGNED_ELEMENT,
-			.InputSlotClass		  = D3D11_INPUT_PER_VERTEX_DATA,
-			.InstanceDataStepRate = 0,
-		},
-	};
-
-	// 2D図形用シェーダの読み込み
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/Figure.hlsl",
-			ShaderType::FIGURE,
-			INPUT_ELEMENT_DESC_2D,
-			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	// 2Dスプライトシェーダの読み込み
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_NONE,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/Sprite.hlsl",
-			ShaderType::SPRITE2_D,
-			INPUT_ELEMENT_DESC_2D,
-			sizeof(INPUT_ELEMENT_DESC_2D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	// FbxPartsシェーダの読み込み
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/FbxParts.hlsl",
-			ShaderType::FBX_PARTS,
-			INPUT_ELEMENT_DESC_3D,
-			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	{
-		CompileShader(
-			L"Shader/SeaUVScroll.hlsl",
-			ShaderType::SEA,
-			INPUT_ELEMENT_DESC_3D,
-			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	// Unlit3Dシェーダの読み込み
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/Unlit3D.hlsl",
-			ShaderType::UNLIT3_D,
-			INPUT_ELEMENT_DESC_3D,
-			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	// Debug3Dシェーダの読み込み
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_WIREFRAME, // 枠だけ: wireframe
-			.CullMode			   = D3D11_CULL_NONE,	   // カリング: 隠面消去しない
-			.FrontCounterClockwise = FALSE,				   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/Debug3D.hlsl",
-			ShaderType::DEBUG3_D,
-			INPUT_ELEMENT_DESC_3D,
-			sizeof(INPUT_ELEMENT_DESC_3D) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-
-	{
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-
-		CompileShader(
-			L"Shader/FbxPartsSkin.hlsl",
-			ShaderType::FBX_PARTS_SKIN,
-			INPUT_ELEMENT_DESC_SKINNED,
-			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-
-		cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-			.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
-			.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
-			.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
-			.DepthBias			   = {},
-			.DepthBiasClamp		   = {},
-			.SlopeScaledDepthBias  = {},
-			.DepthClipEnable	   = true, // クリッピングを有効にする
-			.ScissorEnable		   = {},
-			.MultisampleEnable	   = {},
-			.AntialiasedLineEnable = {},
-		});
-	}
-
-	{
-		CompileShader(
-			L"Shader/Box3D.hlsl",
-			ShaderType::BOX3_D,
-			INPUT_ELEMENT_DESC_SKINNED,
-			sizeof(INPUT_ELEMENT_DESC_SKINNED) / sizeof(D3D11_INPUT_ELEMENT_DESC),
-			&cRasterizerDesc
-		);
-	}
-}
-
-void mtgb::DirectX11Manager::CompileShader(
-	const std::wstring& _fileName,
-	ShaderType _type,
-	const D3D11_INPUT_ELEMENT_DESC* _pHLSLLayout,
-	unsigned int _layoutLength,
-	const CD3D11_RASTERIZER_DESC* _pRasterizerDesc
-)
-{
-	HLSLInclude hlslInclude {};
-	HRESULT hResult {};
-
-	// 項点シェーダのインタフェース
-	ID3DBlob* pCompileVS { nullptr };
-
-	// 頂点シェーダのコンパイル
-	hResult = D3DCompileFromFile(
-		_fileName.c_str(), // ファイルパス
-		nullptr,		   // シェーダマクロの配列
-		&hlslInclude,	   // インクルードするやつ
-		"VS",			   // エントリポイントの関数名
-		"vs_5_0",		   // シェーダのバージョン (オプションで付けるやつ)
-		0,				   // オプションフラグ1
-		0,				   // オプションフラグ2
-		&pCompileVS,	   // コンパイル済みコードへのアクセスインタフェース
-		nullptr
-	); // エラーメッセージ受信用 無し
-
-	massert(
-		SUCCEEDED(hResult) // 頂点シェーダのコンパイルに成功
-		&& "頂点シェーダのコンパイルに失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// 頂点シェーダを作成し、指定タイプのバンドルに格納する
-	hResult = DirectX11Draw::pDevice_->CreateVertexShader(
-		pCompileVS->GetBufferPointer(), // コンパイルされたバッファのポインタ
-		pCompileVS->GetBufferSize(),	// バッファのサイズ
-		nullptr,						// リンケージクラス: 無し
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexShader.ReleaseAndGetAddressOf()
-	);
-	massert(
-		SUCCEEDED(hResult) // 頂点シェーダの作成に成功
-		&& "頂点シェーダの作成に失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// ピクセルシェーダのインタフェース
-	ID3DBlob* pCompilePS { nullptr };
-
-	// ピクセルシェーダのコンパイル
-	hResult = D3DCompileFromFile(
-		_fileName.c_str(), // ファイルパス
-		nullptr,		   // シェーダマクロの配列
-		&hlslInclude,	   // インクルードするやつ
-		"PS",			   // エントリポイントの関数名
-		"ps_5_0",		   // シェーダのバージョン (オプションで付けるやつ)
-		0,				   // オプションフラグ1
-		0,				   // オプションフラグ2
-		&pCompilePS,	   // コンパイル済みコードへのアクセスインタフェース
-		nullptr
-	); // エラーメッセージ受信用 無し
-
-	massert(
-		SUCCEEDED(hResult) // ピクセルシェーダのコンパイルに成功
-		&& "ピクセルシェーダのコンパイルに失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// ピクセルシェーダを作成し、指定タイプのバンドルに格納する
-	hResult = DirectX11Draw::pDevice_->CreatePixelShader(
-		pCompilePS->GetBufferPointer(), // コンパイルされたバッファのポインタ
-		pCompilePS->GetBufferSize(),	// バッファのサイズ
-		nullptr,						// リンケージクラス: 無し
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pPixelShader.ReleaseAndGetAddressOf()
-	);
-
-	massert(
-		SUCCEEDED(hResult) // ピクセルシェーダの作成に成功
-		&& "ピクセルシェーダの作成に失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// 頂点レイアウトを作成し、指定タイプのバンドルに格納する
-	hResult = DirectX11Draw::pDevice_->CreateInputLayout(
-		_pHLSLLayout,					// 入力データ型配列
-		_layoutLength,					// 入力データ型配列の要素数
-		pCompileVS->GetBufferPointer(), // コンパイルされたバッファのポインタ
-		pCompileVS->GetBufferSize(),	// バッファのサイズ
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pVertexLayout.ReleaseAndGetAddressOf()
-	);
-
-	massert(
-		SUCCEEDED(hResult) // 頂点レイアウトの作成に成功
-		&& "頂点レイアウトの作成に失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// ラスタライザを作成し、指定タイプのバンドルに格納する
-	DirectX11Draw::pDevice_->CreateRasterizerState(
-		_pRasterizerDesc, // ラスタライザの設定
-		DirectX11Draw::shaderBundle_[static_cast<int8_t>(_type)].pRasterizerState.ReleaseAndGetAddressOf()
-	);
-
-	massert(
-		SUCCEEDED(hResult) // ラスタライザの作成に成功
-		&& "ラスタライザの作成に失敗 @DirectX11Manager::CompileShader"
-	);
-
-	// 解放していく
-	SAFE_RELEASE(pCompileVS);
-	SAFE_RELEASE(pCompilePS);
 }

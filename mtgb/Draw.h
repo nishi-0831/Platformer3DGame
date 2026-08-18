@@ -7,27 +7,12 @@
 namespace mtgb
 {
 	class Transform;
-	class PlaneUVScroll;
 
 	class Draw final : public ISystem
 	{
 		friend class RenderSystem;
 
 	  public:
-		/// <summary>
-		/// シェーダがセットされているかチェックする
-		/// </summary>
-		/// <param name="_default">セットされていない場合のデフォルトシェーダ</param>
-		void CheckSetShader(ShaderType _default);
-
-		void FBXModel(
-			FBXModelHandle _hFBXModel,
-			const Transform& _pTransform,
-			int _frame,
-			ShaderType _shaderType = ShaderType::FBX_PARTS
-		);
-		void SeaUVScroll(const Transform& _transform);
-
 	  public:
 		Draw();
 		~Draw();
@@ -57,8 +42,6 @@ namespace mtgb
 		void UnregisterUIElement(IUIRenderable* _e);
 
 	  private:
-		PlaneUVScroll* pSeaPlane_;
-		ShaderType onceShaderType_;
 		// UI要素の配列
 		std::vector<IUIRenderable*> uiElements_;
 		// ダーティフラグ。UI要素の配列が更新された時にオンになる

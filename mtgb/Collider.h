@@ -43,9 +43,11 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_origin">レイの原点</param>
 		/// <param name="_dir">レイの方向</param>
-		/// <param name="_dist">レイの原点とコライダーの距離を格納</param>
+		/// <param name="_maxDistance">レイキャストの有効距離</param>
+		/// <param name="_info">レイキャストの結果を格納する構造体</param>
 		/// <returns>交差している場合はtrue、していない場合はfalse</returns>
-		bool IsHit(const Vector3& _origin, const Vector3& _dir, float* _dist) const;
+		bool IsHit(const Vector3& _origin, const Vector3& _dir, float _maxDistance, Intersection::RaycastInfo* _info)
+			const;
 		bool IsHit(const Vector3& _center, float _radius) const;
 
 		void ForEachCollisionEnter(const EntityCallback& _func);
@@ -70,6 +72,7 @@ namespace mtgb
 
 		void OnPostRestore() override;
 		void Reset() override;
+		void OnChangeEntityId() override;
 
 		[[MT_PROPERTY()]]
 		// 当たり判定の形
