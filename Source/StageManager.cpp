@@ -25,7 +25,7 @@ void StageManager::Initialize()
 	stageJsons_[StageID::STAGE_ONE]				= GetJson("Stage/data12.json");
 	stageJsons_[StageID::STAGE_CLEAR_SCENE]		= GetJson("Stage/result_scene.json");
 	stageJsons_[StageID::STAGE_GAME_OVER_SCENE] = GetJson("Stage/game_over_scene2.json");
-	stageJsons_[StageID::STAGE_TITLE_SCENE]		= GetJson("Stage/title_scene_2.json");
+	stageJsons_[StageID::STAGE_TITLE_SCENE]		= GetJson("Stage/title_scene3.json");
 }
 
 void StageManager::Update() {}
