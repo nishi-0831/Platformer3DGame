@@ -6,16 +6,10 @@ cbuffer outline : register(b0)
     float3 padding;
 };
 
-float4 VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOORD) : SV_Position
-{
-    //ピクセルシェーダーへ渡す情報
-    float4 outData;
-
-    normal.w = 0;
-    
+float4 VS(float4 position : POSITION) : SV_Position
+{    
     position.xyz = position * scale;
-    position = mul(position, matWVP);
-    
+    position = mul(position, matWVP);   
     return position;
 }
 struct VS_OUT

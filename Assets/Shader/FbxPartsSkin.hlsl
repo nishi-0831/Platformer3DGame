@@ -55,7 +55,7 @@ Skin SkinVert(VSSkinIn input)
 				// i番目のボーンの変換行列を取得
                 matrix boneMatrix = g_boneMatrices[input.boneIndex[i]];
 		
-				// 頂点座標を変換(行列×ベクトル の順序)
+				// 頂点座標を変換
                 Output.position += input.boneWeight[i] * mul(pos, boneMatrix);
 		
 				// 法線も変換(回転のみ適用)

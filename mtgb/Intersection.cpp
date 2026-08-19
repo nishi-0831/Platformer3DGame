@@ -180,6 +180,7 @@ namespace mtgb
 			{
 				_info->normal = Vector3(0.0f, std::copysign(1.0f, p.y), 0.0f);
 			}
+			// zが最も近い
 			else
 			{
 				_info->normal = Vector3(0.0f, 0.0f, std::copysign(1.0f, p.z));
