@@ -83,6 +83,7 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(
 {
 	EntityId nearestEntity = INVALID_ENTITY;
 	float nearest		   = _maxDistance;
+	Intersection::RaycastInfo nearestInfo;
 	for (size_t i = 0; i < poolId_.size(); i++)
 	{
 		EntityId id = poolId_[i];
@@ -100,17 +101,18 @@ mtgb::EntityId mtgb::ColliderCP::RayCastHitAll(
 		{
 			continue;
 		}
-
-		if (RayCastHit(_origin, _dir, _maxDistance, _info, id))
+		Intersection::RaycastInfo info;
+		if (RayCastHit(_origin, _dir, _maxDistance, &info, id))
 		{
-			if (_info->distance < nearest)
+			if (info.distance < nearest)
 			{
-				nearest		  = _info->distance;
+				nearest		  = info.distance;
 				nearestEntity = id;
+				nearestInfo	  = info;
 			}
 		}
 	}
-	_info->distance = nearest;
+	*_info = nearestInfo;
 	return nearestEntity;
 }
 
