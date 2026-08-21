@@ -1,6 +1,5 @@
 #pragma once
 #include "ISystem.h"
-#include "cmtgb.h"
 
 typedef union _LARGE_INTEGER LARGE_INTEGER;
 
@@ -24,7 +23,15 @@ namespace mtgb
 		}
 		static inline float DeltaTimeF()
 		{
-			return static_cast<const float>(deltaTime_);
+			return static_cast<float>(deltaTime_);
+		}
+		static inline double TargetFrameRate()
+		{
+			return targetFrameRate_;
+		}
+		static inline float TargetFrameRateF()
+		{
+			return static_cast<float>(targetFrameRate_);
 		}
 		static inline void WaitFrame(unsigned int _frame)
 		{
@@ -44,16 +51,17 @@ namespace mtgb
 		/// <summary>
 		/// デルタタイムを安定させるために待機するフレーム数
 		/// </summary>
-		inline static constexpr unsigned int DELTA_TIME_WARMUP_FRAMES = 2;
-		static const LONGLONG SEC_TO_MICRO; // マイクロ秒を１秒に変換する
-		static const double MICRO_TO_SEC;	// 1秒をマイクロ秒に変換する
-		static double deltaTime_;			// フレーム間時間 (秒)
+		static constexpr unsigned int DELTA_TIME_WARMUP_FRAMES = 2;
+		static double deltaTime_; // フレーム間時間 (秒)
+		static constexpr double MAX_DELTA_TIME { 0.1 };
+		static double targetFrameRate_;
 
-		static inline constexpr double MAX_DELTA_TIME { 0.1 };
-
-	  private:
-		LARGE_INTEGER current_;	 // 現在のCPU時間 (マイクロ秒)
-		LARGE_INTEGER previous_; // 前回のCPU時間 (マイクロ秒)
-		static unsigned int waitFrame_;
+		LARGE_INTEGER current_;			// 現在のCPU時間 (マイクロ秒)
+		LARGE_INTEGER previous_;		// 前回のCPU時間 (マイクロ秒)
+		LARGE_INTEGER frequency_;		// 周波数
+		static unsigned int waitFrame_; // 更新を待機するフレーム数
+		int currentFps_;				// 現在のFPS
+		int frameCount_;				// 更新間の経過フレーム数
+		double elapsed_;				// 前回更新からの経過時間
 	};
 } // namespace mtgb
