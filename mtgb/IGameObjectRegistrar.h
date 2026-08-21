@@ -14,11 +14,11 @@ namespace mtgb
 	  public:
 		virtual ~IGameObjectRegistrar() = default;
 
-		template <typename T> void Register(std::string_view _typeName, bool _isUnique = false)
+		template <typename T> void Register(const SpawnObjectDesc& _desc, bool _isUnique = false)
 		{
-			Game::System<GameObjectTypeRegistry>().Register<T>(_typeName);
+			Game::System<GameObjectTypeRegistry>().Register<T>(_desc);
 			RegisterFactory(
-				_typeName,
+				_desc.typeName,
 				[]() -> GameObject*
 				{
 					return GameObject::Instantiate<T>();

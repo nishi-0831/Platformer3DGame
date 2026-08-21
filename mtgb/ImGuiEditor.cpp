@@ -18,6 +18,48 @@
 #include "../Source/StageEditScene.h"
 #include "../Source/TitleScene.h"
 
+static void ShowGameObjectMenu(const mtgb::SpawnObjectDesc& _desc)
+{
+	// カテゴリーが存在する場合
+	if (_desc.category != "")
+	{
+		if (ImGui::BeginMenu(_desc.category.c_str()))
+		{
+			// アイテム表示
+			if (ImGui::MenuItem(_desc.displayName.c_str()))
+			{
+				mtgb::GameObjectGenerator::Generate(_desc.typeName);
+			}
+			// ツールチップ
+			if (ImGui::IsItemHovered())
+			{
+				if (_desc.tooltip.empty() == false)
+				{
+					ImGui::SetItemTooltip(_desc.tooltip.c_str());
+				}
+			}
+			ImGui::EndMenu();
+		}
+	}
+	// カテゴリーなし
+	else
+	{
+		// アイテム表示
+		if (ImGui::MenuItem(_desc.displayName.c_str()))
+		{
+			GameObjectGenerator::Generate(_desc.typeName);
+		}
+		// ツールチップ
+		if (ImGui::IsItemHovered())
+		{
+			if (_desc.tooltip.empty() == false)
+			{
+				ImGui::SetItemTooltip(_desc.tooltip.c_str());
+			}
+		}
+	}
+}
+
 static nlohmann::json GetStageJson(std::filesystem::path _filePath)
 {
 	std::ifstream inputFile(_filePath);
@@ -199,7 +241,6 @@ void mtgb::ImGuiEditor::ShowImGui()
 	{
 		ShowAddComponentDialog(selectedEntities[0]);
 	}
-	ShowGenerateGameObjectButton();
 }
 
 void mtgb::ImGuiEditor::SaveMapData()
@@ -359,11 +400,11 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 	{
 		if (ImGui::BeginMenu("File"))
 		{
-			if (ImGui::MenuItem("Load"))
+			if (ImGui::MenuItem("Load", "Ctrl+O"))
 			{
 				LoadMapData();
 			}
-			if (ImGui::MenuItem("Save"))
+			if (ImGui::MenuItem("Save", "Ctrl+S"))
 			{
 				SaveMapData();
 			}
@@ -391,13 +432,13 @@ void mtgb::ImGuiEditor::ShowMenuBar()
 		}
 		if (ImGui::BeginMenu("GameObject"))
 		{
-			std::vector<std::string> names = Game::System<GameObjectTypeRegistry>().GetRegisteredNames();
-			for (const std::string& name : names)
+			auto descs = Game::System<GameObjectTypeRegistry>().GetSpawnObjectDescs();
+			// 並び順取得
+			auto order = Game::System<GameObjectTypeRegistry>().GetObjectPriorityOrder();
+
+			for (size_t idx : order)
 			{
-				if (ImGui::MenuItem(name.c_str()))
-				{
-					GameObjectGenerator::Generate(name);
-				}
+				ShowGameObjectMenu(descs[idx]);
 			}
 			ImGui::EndMenu();
 		}

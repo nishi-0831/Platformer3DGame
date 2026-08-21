@@ -64,6 +64,9 @@ PatrolChargerEnemy::~PatrolChargerEnemy() {}
 
 void PatrolChargerEnemy::Update()
 {
+	if (pTargetTransform_ == nullptr)
+		return;
+
 	if (animController_.has_value())
 	{
 		animController_->UpdateFrame();
