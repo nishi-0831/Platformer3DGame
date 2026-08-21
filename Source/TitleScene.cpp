@@ -6,9 +6,34 @@
 #include "../Source/SkySphere.h"
 #include "../Source/StageManager.h"
 #include "../Source/ResultScene.h"
+#include "StageEditScene.h"
 #include "Slider.h"
 #include "Button.h"
 #include <SerializableGameObject.h>
+#include <filesystem>
+#include <fstream>
+
+static nlohmann::json GetStageJson(std::filesystem::path _filePath)
+{
+	std::ifstream inputFile(_filePath);
+	if (inputFile.fail())
+	{
+		assert(false);
+		return nlohmann::json();
+	}
+	nlohmann::json json;
+	try
+	{
+		inputFile >> json;
+		return json;
+	}
+	catch (const nlohmann::json::parse_error& e)
+	{
+		const char* errMsg = e.what();
+		assert(false && errMsg);
+	}
+	return nlohmann::json();
+}
 
 TitleScene::TitleScene() {}
 
@@ -148,6 +173,25 @@ void TitleScene::CreatePanel()
 		}
 	);
 
+	auto pBtn6 = std::find_if(
+		btns.begin(),
+		btns.end(),
+		[](Button* _pBtn)
+		{
+			return _pBtn->GetName() == "Button (5)";
+		}
+	);
+	(*pBtn6)->SetOnPressed(
+		[this]()
+		{
+			std::filesystem::path filePath("Stage/default.json");
+			if (std::filesystem::exists(filePath))
+			{
+				Game::System<SceneSystem>().Move<StageEditScene>(GetStageJson(filePath));
+			}
+		}
+	);
+
 	std::vector<Slider*> sliders;
 	GetGameObjects<Slider>(&sliders);
 	auto pSlider1 = std::find_if(
@@ -170,9 +214,9 @@ void TitleScene::CreatePanel()
 
 		Panel* pPanel = pCurrScene->Instantiate<Panel>();
 		pPanel->AddUIComponent(*pBtn1);
-		pPanel->AddUIComponent(*pBtn2);
+		pPanel->AddUIComponent(*pBtn6);
 		pPanel->AddUIComponent(*pBtn3);
-
+		pPanel->AddUIComponent(*pBtn2);
 		panelManager_.AddPanel("TitleMenu", pPanel);
 	}
 

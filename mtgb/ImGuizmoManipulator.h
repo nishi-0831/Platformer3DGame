@@ -9,6 +9,7 @@
 #include "GameObjectSelectionEvent.h"
 #include "SelectionCommand.h"
 #include "Transform.h"
+#include "ShaderType.h"
 namespace mtgb
 {
 	class GameObject;
@@ -39,6 +40,7 @@ namespace mtgb
 
 		void DrawTransformGizmo();
 		void DrawViewGizmo();
+		void DrawSelectedObject(ShaderType _shaderType);
 		void CalculateGizmoMatrix();
 		void CalculateOriginalScale();
 

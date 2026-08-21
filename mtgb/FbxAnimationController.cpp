@@ -117,7 +117,7 @@ void mtgb::FbxAnimationController::UpdateFrame()
 	if (isPlaying_ == false)
 		return;
 
-	currentFrame_ += animationSpeed_;
+	currentFrame_ += Time::TargetFrameRateF() * animationSpeed_ * Time::DeltaTimeF();
 
 	int startFrame = pCurrentClip_->startFrame;
 	int endFrame   = pCurrentClip_->endFrame;

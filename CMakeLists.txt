@@ -977,10 +977,6 @@ if(MSVC)
     endif()
 endif()
 
-################################################################################
-# Pre build events (ビルド前イベント)
-################################################################################
-
 option(ENABLE_AUTO_CODE_GEN "Run code generator tool" ON)
 
 # コード生成ツールを実行するコマンド
@@ -990,7 +986,7 @@ add_custom_target(generate_source_code
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND} || exit 0
     USES_TERMINAL)
 
-# 自動実行が有効になっている場合
+# コード生成の自動実行が有効になっている場合
 if(ENABLE_AUTO_CODE_GEN)
     # コンパイル前に実行されるように依存させる
      add_dependencies(${PROJECT_NAME} generate_source_code)
@@ -1008,31 +1004,18 @@ elseif("${CMAKE_BUILD_TYPE}" STREQUAL "Release")
      set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY_RELEASE})
 endif()
 
-set(COPY_ASSETS_COMMAND powershell -NoProfile -ExecutionPolicy Bypass -File "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/CopyAssets.ps1>"
-            -AssetsDirectory "${CMAKE_CURRENT_SOURCE_DIR}" -OutputDirectory "${OUTPUT_DIRECTORY}")
- add_custom_target(synchronize_assets
-    COMMAND ${COPY_ASSETS_COMMAND} || exit 0
-    USES_TERMINAL
- )
-
-# ソース側とビルド側の双方向でアセットを同期させるか否か
-option(ENABLE_AUTO_SYNCHRONIZE "Synchronize Asset" ON)
-
-if(ENABLE_AUTO_SYNCHRONIZE)
- add_dependencies(${PROJECT_NAME} synchronize_assets)
-else()
- # ソース側から一方向でコピー
+ # アセットを実行ファイルのフォルダにコピー
  add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory
             "${CMAKE_CURRENT_SOURCE_DIR}/Assets"
             "${OUTPUT_DIRECTORY}/Assets"
     COMMENT "Copying assets to output directory..."
 )
-endif()
 
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/RunClangTidy.cmake")
  include("${CMAKE_CURRENT_SOURCE_DIR}/CMake/GeneratePch.cmake")
 
+ # 自動生成されたソースファイルが配置されるGeneratedフォルダのcppを列挙して、ターゲットに追加する
  if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/Generated")
     file(GLOB_RECURSE GENERATED_SOURCE CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/Generated/*.gen.cpp")
     target_sources(${PROJECT_NAME}

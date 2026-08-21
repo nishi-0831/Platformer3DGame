@@ -442,8 +442,7 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 
 void mtgb::ImGuiEditorCamera::RectSelect()
 {
-	using DirectX::XMConvertToRadians;
-	using DirectX::XMMatrixPerspectiveFovLH;
+	using namespace DirectX;
 	// REF: 透視投影行列の式 https: // marina.sys.wakayama-u.ac.jp/~tokoi/?date=20090907
 
 	Vector2F windowPosVec2 = Vector2F(windowPos_.x, windowPos_.y);
@@ -480,15 +479,16 @@ void mtgb::ImGuiEditorCamera::RectSelect()
 	float bottom = halfHeight * y1;
 
 	// 透視投影行列を作成
-	DirectX::XMMATRIX projMat = DirectX::XMMatrixPerspectiveOffCenterLH(left, right, bottom, top, nearZ, farZ);
-	DirectX::BoundingFrustum frustum(projMat);
-	DirectX::BoundingFrustum transformedFrustum;
-	frustum.Transform(transformedFrustum, 1.0f, pCameraTransform_->rotate, pCameraTransform_->position);
+	XMMATRIX projMat = XMMatrixPerspectiveOffCenterLH(left, right, bottom, top, nearZ, farZ);
+	// 視錐台作成
+	BoundingFrustum frustum(projMat);
+	// カメラの座標、姿勢に変換
+	frustum.Transform(frustum, 1.0f, pCameraTransform_->rotate, pCameraTransform_->position);
 
 	// 全ゲームオブジェクトと当たり判定を取る
 	std::list<GameObject*> gameObjList;
 	Game::System<SceneSystem>().GetActiveScene()->GetAllGameObjects(&gameObjList);
-	std::vector<EntityId> containsEntitiesId;
+	std::vector<EntityId> containsEntityIds;
 	for (auto obj : gameObjList)
 	{
 		// トランスフォーム取得
@@ -499,13 +499,13 @@ void mtgb::ImGuiEditorCamera::RectSelect()
 			continue;
 
 		// ゲームオブジェクト自体の座標と判定をとる
-		DirectX::ContainmentType containmentType = transformedFrustum.Contains(pTransform->position);
-		if (containmentType == DirectX::ContainmentType::CONTAINS)
+		ContainmentType containmentType = frustum.Contains(pTransform->position);
+		if (containmentType == ContainmentType::CONTAINS)
 		{
-			containsEntitiesId.push_back(id);
+			containsEntityIds.push_back(id);
 		}
 	}
-	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntitiesId, .multiSelect = multiRectSelect_ };
+	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntityIds, .multiSelect = multiRectSelect_ };
 	Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 }
 
