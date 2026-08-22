@@ -1,7 +1,6 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
 #include "RegisterCommonGameObjectType.h"
-#include "../Source/RegisterGameObjectType.h"
 #include "InputData.h"
 #include "GameObjectGenerator.h"
 #include "AddComponentCommand.h"
@@ -266,6 +265,7 @@ void mtgb::ImGuiEditor::SaveMapDataAs()
 		return;
 	}
 	SaveStageJson(filePath);
+	// 編集中のファイルパスを変更
 	editingStagePath_ = filePath;
 }
 
@@ -516,6 +516,77 @@ void mtgb::ImGuiEditor::ShowInspector()
 	{
 		selectedObj->ShowImGui();
 	}
+	ImGui::End();
+}
+
+void mtgb::ImGuiEditor::ShowHelpMenuWindow()
+{
+	if (ImGui::Begin("Help") == false)
+	{
+		ImGui::End();
+		return;
+	}
+
+	auto AddRow = [](const char* action, const char* shortcut)
+	{
+		ImGui::TableNextRow();
+		ImGui::TableNextColumn();
+		ImGui::TextUnformatted(action);
+		ImGui::TableNextColumn();
+		ImGui::TextColored(ImVec4(0.4f, 0.8f, 1.0f, 1.0f), "%s", shortcut);
+	};
+	if (ImGui::CollapsingHeader("Operations", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::BeginTable("table_shortcuts", 2, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_RowBg))
+		{
+			ImGui::TableSetupColumn("Action", ImGuiTableColumnFlags_WidthFixed, 140.0f);
+			ImGui::TableSetupColumn("Shortcut", ImGuiTableColumnFlags_WidthStretch);
+			ImGui::TableHeadersRow();
+
+			AddRow("Select", "Left Click");
+			AddRow("Multi Select", "Ctrl + Left Click");
+			AddRow("Rect Select", "Left Click + Drag");
+			AddRow("Translate Mode", "W");
+			AddRow("Rotate Mode", "R");
+			AddRow("Scale Mode", "E");
+
+			ImGui::EndTable();
+		}
+	}
+	if (ImGui::CollapsingHeader("Shortcuts", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::BeginTable("table_shortcuts", 2, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_RowBg))
+		{
+			ImGui::TableSetupColumn("Action", ImGuiTableColumnFlags_WidthFixed, 140.0f);
+			ImGui::TableSetupColumn("Shortcut", ImGuiTableColumnFlags_WidthStretch);
+			ImGui::TableHeadersRow();
+
+			AddRow("Duplicate", "Ctrl + D");
+			AddRow("Delete", "Delete");
+			AddRow("Undo / Redo", "Ctrl + Z / Ctrl + Y");
+			AddRow("Focus Selection", "Ctrl + F or Double Click in Inspector");
+			AddRow("Toggle Surface Snap", "Shift + Translate Mode");
+
+			ImGui::EndTable();
+		}
+	}
+
+	if (ImGui::CollapsingHeader("Camera Controls", ImGuiTreeNodeFlags_DefaultOpen))
+	{
+		if (ImGui::BeginTable("table_shortcuts", 2, ImGuiTableFlags_BordersInnerH | ImGuiTableFlags_RowBg))
+		{
+			ImGui::TableSetupColumn("Action", ImGuiTableColumnFlags_WidthFixed, 140.0f);
+			ImGui::TableSetupColumn("Shortcut", ImGuiTableColumnFlags_WidthStretch);
+			ImGui::TableHeadersRow();
+
+			AddRow("Pan", "Right Click + Drag");
+			AddRow("Dolly", "Mouse Middle + Drag");
+			AddRow("Track", "Mouse Wheel");
+
+			ImGui::EndTable();
+		}
+	}
+
 	ImGui::End();
 }
 

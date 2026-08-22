@@ -52,7 +52,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	ImGui::DockSpace(dockspace_id);
 
 	Game::System<ImGuiEditor>().ShowMenuBar();
-
+	Game::System<ImGuiEditor>().ShowHelpMenuWindow();
 	ImGui::End();
 
 	// Inspector表示
