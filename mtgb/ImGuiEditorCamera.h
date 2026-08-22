@@ -48,6 +48,7 @@ namespace mtgb
 		// ちょうど収まる距離を基準に、カメラ位置を調整するのに使う
 		// 1.0fでぴったり、1.2fで20%分さらに離れる
 		float frameSelectedDistanceScale_;
+		bool mouseDownInWindow_;
 		bool dragging_;
 		RectF dragRect_;
 		bool multiRectSelect_;

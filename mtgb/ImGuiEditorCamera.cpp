@@ -109,7 +109,11 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			[this]
 			{
 				if (IsMouseInWindow(windowName_.c_str()) == false)
+				{
+					mouseDownInWindow_ = false;
+					dragging_		   = false;
 					return;
+				}
 
 				DoTrack();
 				if (InputUtil::GetMouseDown(MouseCode::LEFT))
@@ -383,9 +387,12 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 void mtgb::ImGuiEditorCamera::ProcessDrag()
 {
 	windowPos_ = ImGui::FindWindowByName(windowName_.c_str())->WorkRect.Min;
+
 	// マウスを押下した瞬間
 	if (InputUtil::GetMouseDown(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()))
 	{
+		mouseDownInWindow_ = true;
+
 		// 選択範囲の始点を記録する
 		ImVec2 mousePos = ImGui::GetMousePos();
 		Vector2F mousePosInSceneView { mousePos.x - windowPos_.x, mousePos.y - windowPos_.y };
@@ -393,8 +400,10 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 		dragRect_.size.x = 0.0f;
 		dragRect_.size.y = 0.0f;
 	}
+
 	// マウスを押下している、ギズモを操作していない場合
-	if (InputUtil::GetMouse(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()) && ImGuizmo::IsUsingAny() == false)
+	if (InputUtil::GetMouse(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()) &&
+		ImGuizmo::IsUsingAny() == false && mouseDownInWindow_)
 	{
 		ImVec2 mousePos = ImGui::GetMousePos();
 		Vector2F mousePosInSceneView { mousePos.x - windowPos_.x, mousePos.y - windowPos_.y };
@@ -430,13 +439,14 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 			ShowType::SCENE_VIEW
 		);
 	}
-	if (InputUtil::GetMouseUp(MouseCode::LEFT))
+	if (InputUtil::GetMouseUp(MouseCode::LEFT) && mouseDownInWindow_)
 	{
 		if (dragging_)
 		{
 			RectSelect();
 		}
-		dragging_ = false;
+		dragging_		   = false;
+		mouseDownInWindow_ = false;
 	}
 }
 
