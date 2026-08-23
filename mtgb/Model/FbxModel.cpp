@@ -1,6 +1,6 @@
 #include "FbxModel.h"
 #include "ReleaseUtility.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 #include "MTAssert.h"
 #include "ShaderManager.h"
 mtgb::FbxModel::FbxModel()

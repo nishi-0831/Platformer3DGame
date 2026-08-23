@@ -6,7 +6,7 @@
 #include "Transform.h"
 #include "RigidBody.h"
 #include "Intersection.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
 	, colliderType_ { ColliderType::TYPE_SPHERE }

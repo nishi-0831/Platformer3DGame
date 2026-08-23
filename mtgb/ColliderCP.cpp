@@ -1,6 +1,6 @@
 #include "ColliderCP.h"
 #include "Transform.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 
 #include "GameObject.h"
 mtgb::ColliderCP::ColliderCP() {}

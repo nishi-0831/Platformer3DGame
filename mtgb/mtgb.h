@@ -57,7 +57,7 @@
 #include "TextRenderer.h"
 #include "ImageRenderer.h"
 #include "Text/TextCache.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 #include "WindowContext/WindowContext.h"
 #include "WindowContext/WindowContextResourceManager.h"
 #include "WindowManager.h"

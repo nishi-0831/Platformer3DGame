@@ -1,6 +1,6 @@
 #include <fbxsdk.h>
 #include "MeshRenderer.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 #include "Draw.h"
 #include "Transform.h"
 #include "ShadowSettings.h"

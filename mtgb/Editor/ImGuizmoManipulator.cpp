@@ -13,7 +13,7 @@
 #include "MTImGui.h"
 #include "SceneSystem.h"
 #include "DirectX11Draw.h"
-#include "Fbx.h"
+#include "Model/Fbx.h"
 #include "MeshRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {

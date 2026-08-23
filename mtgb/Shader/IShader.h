@@ -6,7 +6,7 @@
 #include "Screen.h"
 #include "Transform.h"
 #include <wrl/client.h>
-#include "MeshAsset.h"
+#include "Model/MeshAsset.h"
 #include "ReflectiveConstantBuffer.h"
 #include "StringComparators.h"
 
