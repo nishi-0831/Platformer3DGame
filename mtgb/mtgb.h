@@ -18,7 +18,7 @@
 
 #include "Easing.h"
 #include "Mathf.h"
-#include "RectDetector.h"
+#include "Detector/RectDetector.h"
 #include "Interpolator.h"
 
 #pragma endregion
@@ -84,8 +84,8 @@
 #include "WindowContext/Direct3DResource.h"
 #include "WindowContext/Direct2DResource.h"
 #include "WindowContext/InputResource.h"
-#include "Input/Input.h"
 #include "WindowContext/CameraResource.h"
+#include "Input/Input.h"
 
 #pragma endregion
 #pragma region Data
