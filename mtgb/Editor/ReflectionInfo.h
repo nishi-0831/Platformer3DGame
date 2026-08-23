@@ -4,7 +4,7 @@
 #include "Quaternion.h"
 #include "JoystickProxy.h"
 #include "MouseStateProxy.h"
-#include "PropertyDisplayRegistry.h"
+#include "Editor/PropertyDisplayRegistry.h"
 #include "ShowAttributes.h"
 #include "Interpolator.h"
 #include "Matrix4x4.h"

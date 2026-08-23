@@ -3,7 +3,7 @@
 #include "RegisterCommonGameObjectType.h"
 #include "InputData.h"
 #include "GameObjectGenerator.h"
-#include "AddComponentCommand.h"
+#include "Command/AddComponentCommand.h"
 #include "PropertyDisplayRegistry.h"
 #include "WindowContextUtil.h"
 #include <fstream>
@@ -11,7 +11,7 @@
 #include "GameScene.h"
 #include "Debug.h"
 #include "GameTime.h"
-#include "CommandHistoryManager.h"
+#include "Command/CommandHistoryManager.h"
 #include "MTImGui.h"
 #include "../Source/Scenes/SampleScene.h"
 #include "../Source/StageEditScene.h"

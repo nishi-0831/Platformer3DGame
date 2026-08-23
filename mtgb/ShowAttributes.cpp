@@ -1,9 +1,9 @@
 #include "ShowAttributes.h"
 #include "ImGui/imgui.h"
 
-#include "ImGuiInputCommand.h"
+#include "Editor/Command/ImGuiInputCommand.h"
 #include "QuatToEuler.h"
-#include "GroupCommand.h"
+#include "Editor/Command/GroupCommand.h"
 Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {
 	mtgb::Vector3 old = *_vec;
@@ -53,7 +53,7 @@ Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) cons
 {
 	Vector4Show xShow;
 	Command* cmdX = xShow(&_mat->r[0], "x");
-	
+
 	Vector4Show yShow;
 	Command* cmdY = yShow(&_mat->r[1], "y");
 
@@ -62,7 +62,7 @@ Command* MatrixShow::operator()(DirectX::XMMATRIX* _mat, const char* _name) cons
 
 	Vector4Show wShow;
 	Command* cmdW = wShow(&_mat->r[3], "w");
-	
+
 	mtgb::GroupCommand* pGrpCmd = new mtgb::GroupCommand();
 	if (cmdX != nullptr)
 	{

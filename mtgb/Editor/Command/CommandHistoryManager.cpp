@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "CommandHistoryManager.h"
 #include "ReleaseUtility.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()
 	: inner_ { new NamedCommandHistory(new CommandHistory()) }

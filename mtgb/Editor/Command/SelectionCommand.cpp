@@ -1,5 +1,5 @@
 #include "SelectionCommand.h"
-#include "ImGuizmoManipulator.h"
+#include "Editor/ImGuizmoManipulator.h"
 mtgb::SelectionCommand::SelectionCommand(
 	std::span<const EntityId> _entityIds,
 	SelectionMode _mode,

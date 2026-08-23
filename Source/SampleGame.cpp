@@ -3,7 +3,7 @@
 #include "StageManager.h"
 #include "TitleScene.h"
 #include "StageEditScene.h"
-#include "CommandHistoryManager.h"
+#include "Editor/Command/CommandHistoryManager.h"
 #include "ActorManager.h"
 #include <ShadowSettings.h>
 #include "ShaderManager.h"

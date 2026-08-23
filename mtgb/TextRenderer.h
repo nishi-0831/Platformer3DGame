@@ -1,5 +1,5 @@
 #pragma once
-#include "ReflectionMacro.h"
+#include "Editor/ReflectionMacro.h"
 #include "IComponent.h"
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"

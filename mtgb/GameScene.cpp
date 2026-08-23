@@ -5,7 +5,7 @@
 #include "CameraSystem.h"
 #include "GameObjectTypeRegistry.h"
 #include "EventManager.h"
-#include "SelectionCommand.h"
+#include "Editor/Command/SelectionCommand.h"
 mtgb::GameScene::GameScene() {}
 
 mtgb::GameScene::~GameScene()

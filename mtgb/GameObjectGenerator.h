@@ -1,6 +1,6 @@
 #pragma once
 #include "Entity.h"
-#include "Command.h"
+#include "Editor/Command/Command.h"
 #include "ComponentFactory.h"
 #include "GameObjectFactory.h"
 namespace mtgb

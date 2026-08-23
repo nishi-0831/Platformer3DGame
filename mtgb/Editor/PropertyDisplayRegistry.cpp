@@ -1,6 +1,6 @@
 #include "PropertyDisplayRegistry.h"
 #include "PropertyDisplayRegistryImpl.h"
-#include "Command.h"
+#include "Editor/Command/Command.h"
 
 PropertyDisplayRegistry& PropertyDisplayRegistry::Instance()
 {

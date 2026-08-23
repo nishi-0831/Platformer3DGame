@@ -1,7 +1,7 @@
 #include "GameTime.h"
 #include "IncludingWindows.h"
 #include "Game.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 #pragma comment(lib, "Winmm.lib")
 
 mtgb::Time::Time()

@@ -1,8 +1,8 @@
 #include "ImGuiShowable.h"
 #include "Game.h"
 #include "ImGuiRenderer.h"
-#include "ImGuizmoManipulator.h"
-#include "MTImGui.h"
+#include "Editor/ImGuizmoManipulator.h"
+#include "Editor/MTImGui.h"
 
 namespace
 {

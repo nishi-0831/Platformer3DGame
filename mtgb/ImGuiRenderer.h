@@ -5,8 +5,8 @@
 #include "ImGui/imgui.h"
 
 #include "ISystem.h"
-#include "ImGuizmoManipulator.h"
-#include "ImGuiEditorCamera.h"
+#include "Editor/ImGuizmoManipulator.h"
+#include "Editor/ImGuiEditorCamera.h"
 using Microsoft::WRL::ComPtr;
 struct ID3D11RenderTargetView;
 struct ID3D11ShaderResourceView;

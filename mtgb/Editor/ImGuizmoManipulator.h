@@ -5,9 +5,9 @@
 #include "ImGui/imgui_impl_win32.h"
 #include "ImGui/ImGuizmo.h"
 #include <functional>
-#include "Command.h"
+#include "Editor/Command/Command.h"
 #include "GameObjectSelectionEvent.h"
-#include "SelectionCommand.h"
+#include "Editor/Command/SelectionCommand.h"
 #include "Transform.h"
 #include "ShaderType.h"
 #include "SelectionMode.h"

@@ -3,12 +3,12 @@
 #include "DirectX11Draw.h"
 #include "ImGuiRenderer.h"
 #include "ImGuiShowable.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 #include "Draw.h"
 #include "ColliderCP.h"
 #include "CameraResource.h"
 #include "EffekseerVFX.h"
-#include "ImGuiEditor.h"
+#include "Editor/ImGuiEditor.h"
 void mtgb::RenderSystem::Initialize() {}
 
 void mtgb::RenderSystem::Update() {}

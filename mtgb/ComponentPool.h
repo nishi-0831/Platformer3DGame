@@ -6,8 +6,8 @@
 #include <nlohmann/json.hpp>
 #include "ComponentRegistry.h"
 #include "JsonConverter.h"
-#include "AddComponentCommandGeneric.h"
-#include "CommandHistoryManager.h"
+#include "Editor/Command/AddComponentCommandGeneric.h"
+#include "Editor/Command/CommandHistoryManager.h"
 #include "MTAssert.h"
 namespace mtgb
 {

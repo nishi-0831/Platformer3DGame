@@ -1,12 +1,12 @@
 
 #include "GameObjectGenerator.h"
 #include "GameObject.h"
-#include "GameObjectCreateCommand.h"
+#include "Editor/Command/GameObjectCreateCommand.h"
 #include "RegisterCommonGameObjectType.h"
 #include "../Source/RegisterGameObjectType.h"
-#include "DuplicateGameObjectCommand.h"
-#include "CommandHistoryManager.h"
-#include "DeleteGameObjectCommand.h"
+#include "Editor/Command/DuplicateGameObjectCommand.h"
+#include "Editor/Command/CommandHistoryManager.h"
+#include "Editor/Command/DeleteGameObjectCommand.h"
 
 mtgb::GameObjectGenerator* mtgb::GameObjectGenerator::pInstance_ { nullptr };
 

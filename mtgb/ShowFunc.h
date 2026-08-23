@@ -1,15 +1,14 @@
 #pragma once
 #include <type_traits>
 
-#include "Command.h"
+#include "Editor/Command/Command.h"
 
 template <typename Func, typename ValueT>
 concept IsShowFunc = requires(Func _f, ValueT _val, const char* _name) {
 	{ _f(_val, _name) } -> std::same_as<Command*>;
 };
 
-template <typename Func>
-struct ShowFunc : refl::attr::usage::type
+template <typename Func> struct ShowFunc : refl::attr::usage::type
 {
   private:
 	Func func;
@@ -20,7 +19,7 @@ struct ShowFunc : refl::attr::usage::type
 	{
 	}
 	template <typename T>
-		requires IsShowFunc<Func,T>
+		requires IsShowFunc<Func, T>
 	Command* operator()(T _value, const char* _name) const
 	{
 		return func(_value, _name);

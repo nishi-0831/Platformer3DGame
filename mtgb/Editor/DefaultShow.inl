@@ -1,5 +1,5 @@
-#include "Command.h"
-#include "ImGuiInputCommand.h"
+#include "Editor/Command/Command.h"
+#include "Editor/Command/ImGuiInputCommand.h"
 // DefaultShow.inl - テンプレート実装ファイル
 namespace mtgb
 {

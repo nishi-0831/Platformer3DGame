@@ -4,7 +4,7 @@
 #include "MTAssert.h"
 #include "EntityManager.h"
 #include "MTStringUtility.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	name_{_desc.name},
 	status_

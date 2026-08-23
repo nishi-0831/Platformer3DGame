@@ -4,7 +4,7 @@
 #include "WindowContextUtil.h"
 #include "IncludingInput.h"
 #include "JoystickProxy.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 using namespace mtgb;
 
 mtgb::InputResource::InputResource(WindowContext _windowContext)
