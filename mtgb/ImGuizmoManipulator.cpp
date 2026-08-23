@@ -187,7 +187,7 @@ void mtgb::ImGuizmoManipulator::SubscribeEvents()
 	eventManager.GetEvent<GameObjectCreatedEvent>().Subscribe(
 		[this](const GameObjectCreatedEvent& _event)
 		{
-			Select(std::vector<EntityId> { _event.entityId }, false);
+			Select(std::vector<EntityId> { _event.entityId }, SelectionMode::REPLACE);
 		},
 		EventScope::GLOBAL
 	);
@@ -318,7 +318,7 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	}
 }
 
-void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, bool _multiSelect)
+void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, SelectionMode _mode)
 {
 	if (_entityIds.empty())
 	{
@@ -327,7 +327,7 @@ void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, boo
 	}
 
 	ImGuizmo::Enable(true);
-	if (_multiSelect)
+	if (_mode == SelectionMode::ADD)
 	{
 		for (auto id : _entityIds)
 		{
@@ -338,7 +338,7 @@ void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, boo
 			}
 		}
 	}
-	else
+	else if (_mode == SelectionMode::REPLACE)
 	{
 		selectedIds_.clear();
 		selectedIndex_.clear();
@@ -461,7 +461,7 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 
 void mtgb::ImGuizmoManipulator::GenerateSelectedCommand(const GameObjectSelectedEvent& _event)
 {
-	SelectionCommand* cmd = new SelectionCommand(_event.entityIds, _event.multiSelect, *this);
+	SelectionCommand* cmd = new SelectionCommand(_event.entityIds, _event.selectionMode, *this);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 

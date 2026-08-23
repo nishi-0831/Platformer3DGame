@@ -42,6 +42,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, rectFrameColor_ { IM_COL32(0, 0, 150, 255) }
 	, rectFillColor_ { IM_COL32(0, 0, 100, 50) }
 	, dragThresholdMovement_ { 1.0f }
+	, selectionMode_ { SelectionMode::REPLACE }
 {
 	distance_	= 10.0f;
 	orbitSpeed_ = 1.0f;
@@ -120,7 +121,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 				{
 					if (ImGuizmo::IsViewManipulateHovered() == false && ImGuizmo::IsUsing() == false)
 					{
-						SelectTransform();
+						SelectGameObject();
 					}
 				}
 				if (InputUtil::GetMouse(MouseCode::LEFT) && InputUtil::GetKey(KeyCode::LEFT_SHIFT) &&
@@ -291,7 +292,7 @@ void mtgb::ImGuiEditorCamera::DoPan()
 		// 鉛直角度を制限
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
-		MoveCameraSphericalOnTheSpot();
+		MoveCameraOnTheSpot();
 	}
 }
 
@@ -308,7 +309,7 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 	}
 }
 
-void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
+void mtgb::ImGuiEditorCamera::MoveCameraOnTheSpot()
 {
 	// ref:https://ja.wikipedia.org/wiki/%E7%90%83%E9%9D%A2%E5%BA%A7%E6%A8%99%E7%B3%BB
 
@@ -330,7 +331,7 @@ void mtgb::ImGuiEditorCamera::MoveCameraSphericalOnTheSpot()
 	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
 }
 
-void mtgb::ImGuiEditorCamera::SelectTransform()
+void mtgb::ImGuiEditorCamera::SelectGameObject()
 {
 	Vector3 origin, end, vec;
 	Matrix4x4 proj, view;
@@ -367,11 +368,10 @@ void mtgb::ImGuiEditorCamera::SelectTransform()
 	{
 		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
 		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
-		selectedEntityId_ = entityId;
-		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .multiSelect = false };
+		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .selectionMode = SelectionMode::REPLACE };
 		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 		{
-			event.multiSelect = true;
+			event.selectionMode = SelectionMode::ADD;
 		}
 		Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 		LOGIMGUI("EditorCamera:Selected");
@@ -515,7 +515,7 @@ void mtgb::ImGuiEditorCamera::RectSelect()
 			containsEntityIds.push_back(id);
 		}
 	}
-	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntityIds, .multiSelect = multiRectSelect_ };
+	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntityIds, .selectionMode = selectionMode_ };
 	Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 }
 

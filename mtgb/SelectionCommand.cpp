@@ -2,18 +2,18 @@
 #include "ImGuizmoManipulator.h"
 mtgb::SelectionCommand::SelectionCommand(
 	std::span<const EntityId> _entityIds,
-	bool _multiSelect,
+	SelectionMode _mode,
 	ImGuizmoManipulator& _manipulator
 )
 	: entityIds_ { _entityIds.begin(), _entityIds.end() }
-	, multiSelect_ { _multiSelect }
+	, selectionMode_ { _mode }
 	, manipulator_ { _manipulator }
 {
 }
 
 void mtgb::SelectionCommand::Execute()
 {
-	manipulator_.Select(entityIds_, multiSelect_);
+	manipulator_.Select(entityIds_, selectionMode_);
 }
 
 void mtgb::SelectionCommand::Undo()
@@ -34,5 +34,5 @@ void mtgb::DeselectionCommand::Execute()
 
 void mtgb::DeselectionCommand::Undo()
 {
-	manipulator_.Select(entityIds_, false);
+	manipulator_.Select(entityIds_, SelectionMode::REPLACE);
 }

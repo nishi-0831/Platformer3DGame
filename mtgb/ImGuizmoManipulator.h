@@ -10,6 +10,7 @@
 #include "SelectionCommand.h"
 #include "Transform.h"
 #include "ShaderType.h"
+#include "SelectionMode.h"
 namespace mtgb
 {
 	/// <summary>
@@ -30,7 +31,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_entityIds">選択するエンティティのIDの配列</param>
 		/// <param name="_multiSelect"></param>
-		void Select(std::span<const EntityId> _entityIds, bool _multiSelect);
+		void Select(std::span<const EntityId> _entityIds, SelectionMode _mode);
 		/// <summary>
 		/// エンティティを選択解除
 		/// </summary>

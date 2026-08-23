@@ -1,13 +1,14 @@
 #pragma once
 
 #include "Entity.h"
+#include "SelectionMode.h"
 #include <vector>
 namespace mtgb
 {
 	struct GameObjectSelectedEvent
 	{
 		std::vector<EntityId> entityIds;
-		bool multiSelect;
+		SelectionMode selectionMode;
 	};
 
 	struct GameObjectDeselectedEvent

@@ -502,10 +502,11 @@ void mtgb::ImGuiEditor::ShowInspector()
 			}
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();
-			GameObjectSelectedEvent event { .entityIds = { selectedObj->GetEntityId() }, .multiSelect = false };
+			GameObjectSelectedEvent event { .entityIds	   = { selectedObj->GetEntityId() },
+											.selectionMode = SelectionMode::REPLACE };
 			if (ImGui::IsKeyPressed(ImGuiKey_LeftCtrl, false))
 			{
-				event.multiSelect = true;
+				event.selectionMode = SelectionMode::REPLACE;
 			}
 			Game::System<EventManager>().GetEvent<GameObjectSelectedEvent>().Invoke(event);
 		}

@@ -11,14 +11,14 @@
 #include <span>
 #include "CallbackConcepts.h"
 #include "Entity.h"
-
+#include "SelectionMode.h"
 namespace mtgb
 {
 	class ImGuizmoManipulator;
 	class SelectionCommand : public Command
 	{
 	  public:
-		SelectionCommand(std::span<const EntityId> _entityIds, bool _multiSelect, ImGuizmoManipulator& _manipulator);
+		SelectionCommand(std::span<const EntityId> _entityIds, SelectionMode _mode, ImGuizmoManipulator& _manipulator);
 
 		void Execute() override;
 		void Undo() override;
@@ -29,7 +29,7 @@ namespace mtgb
 
 	  private:
 		std::vector<EntityId> entityIds_;
-		bool multiSelect_;
+		SelectionMode selectionMode_;
 		ImGuizmoManipulator& manipulator_;
 	};
 
