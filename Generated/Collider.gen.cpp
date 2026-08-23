@@ -1,5 +1,5 @@
 // Collider.generated.h
-#include "Collider.h"
+#include "Components/Collider/Collider.h"
 #include "Editor/MTImGui.h"
 
 

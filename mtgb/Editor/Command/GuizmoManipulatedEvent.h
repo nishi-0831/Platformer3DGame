@@ -1,9 +1,9 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "Transform.h"
-#include "Entity.h"
-#include "ComponentFactory.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Components/Transform/Transform.h"
+#include "Core/Entity.h"
+#include "Core/Component/ComponentFactory.h"
 #include <typeindex>
 #include <vector>
 

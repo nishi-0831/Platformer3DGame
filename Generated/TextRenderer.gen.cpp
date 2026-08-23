@@ -1,5 +1,5 @@
 // TextRenderer.generated.h
-#include "TextRenderer.h"
+#include "Components/TextRenderer/TextRenderer.h"
 #include "Editor/MTImGui.h"
 
 

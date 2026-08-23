@@ -2,7 +2,7 @@
 #include "WindowContext/WindowContext.h"
 #include "WindowManager.h"
 #include "string"
-#include "Game.h"
+#include "Core/Game.h"
 #include "Screen.h"
 #include "DirectX11Manager.h"
 #include "DirectX11Draw.h"

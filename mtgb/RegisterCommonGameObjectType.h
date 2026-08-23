@@ -1,5 +1,5 @@
 #pragma once
-#include "GameObjectFactory.h"
+#include "Core/GameObject/GameObjectFactory.h"
 
 namespace mtgb
 {

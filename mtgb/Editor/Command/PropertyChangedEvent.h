@@ -1,8 +1,8 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "Entity.h"
-#include "ComponentFactory.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Core/Entity.h"
+#include "Core/Component/ComponentFactory.h"
 #include <typeindex>
 
 namespace mtgb

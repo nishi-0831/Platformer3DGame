@@ -1,7 +1,7 @@
 #pragma once
 #include "WindowContextResource.h"
 #include "WindowContextResourceManager.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "ISystem.h"
 #include "DirectX11Manager.h"
 #include "MTAssert.h"

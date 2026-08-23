@@ -1,6 +1,6 @@
 #include "GameObjectCreateCommand.h"
 #include "SceneSystem.h"
-#include "EntityManager.h"
+#include "Core/EntityManager.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 

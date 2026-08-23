@@ -8,7 +8,7 @@
 #include "Editor/Command/Command.h"
 #include "GameObjectSelectionEvent.h"
 #include "Editor/Command/SelectionCommand.h"
-#include "Transform.h"
+#include "Components/Transform/Transform.h"
 #include "ShaderType.h"
 #include "SelectionMode.h"
 namespace mtgb

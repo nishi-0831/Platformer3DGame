@@ -3,7 +3,7 @@
 #include "Input.h"
 #include "WindowContext/WindowContextResourceManager.h"
 #include "WindowContext/InputResource.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "ISystem.h"
 #include "JoystickProxy.h"
 #include <limits>

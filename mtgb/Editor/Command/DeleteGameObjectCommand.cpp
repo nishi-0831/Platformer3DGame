@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "DeleteGameObjectCommand.h"
 #include "SceneSystem.h"
-#include "EntityManager.h"
+#include "Core/EntityManager.h"
 
 mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	std::span<EntityId> _entityIds,

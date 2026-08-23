@@ -1,7 +1,7 @@
 #pragma once
 #include "ISystem.h"
-#include "GameScene.h"
-#include "GameObjectLayer.h"
+#include "Core/GameScene.h"
+#include "Core/GameObject/GameObjectLayer.h"
 namespace mtgb
 {
 	/// <summary>

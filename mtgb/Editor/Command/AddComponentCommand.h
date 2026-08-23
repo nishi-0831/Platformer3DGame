@@ -1,6 +1,6 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
+#include "Core/Component/IComponentMemento.h"
 #include <typeindex>
 #include <string>
 #include "cmtgb.h"

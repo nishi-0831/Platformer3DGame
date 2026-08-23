@@ -1,5 +1,5 @@
 #include "EventManager.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "SceneSystem.h"
 #include "ReleaseUtility.h"
 mtgb::EventManager::~EventManager()

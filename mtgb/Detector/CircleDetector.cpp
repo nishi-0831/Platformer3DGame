@@ -1,7 +1,7 @@
 #include "CircleDetector.h"
 #include "CameraSystem.h"
-#include "Game.h"
-#include "GameObject.h"
+#include "Core/Game.h"
+#include "Core/GameObject/GameObject.h"
 #include <cmath>
 #include <string>
 #include "Screen.h"

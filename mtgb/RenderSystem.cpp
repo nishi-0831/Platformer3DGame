@@ -5,7 +5,7 @@
 #include "ImGuiShowable.h"
 #include "Editor/MTImGui.h"
 #include "Draw.h"
-#include "ColliderCP.h"
+#include "Components/Collider/ColliderCP.h"
 #include "WindowContext/CameraResource.h"
 #include "EffekseerVFX.h"
 #include "Editor/ImGuiEditor.h"

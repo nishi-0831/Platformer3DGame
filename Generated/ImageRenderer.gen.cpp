@@ -1,5 +1,5 @@
 // ImageRenderer.generated.h
-#include "ImageRenderer.h"
+#include "Components/ImageRenderer/ImageRenderer.h"
 #include "Editor/MTImGui.h"
 
 

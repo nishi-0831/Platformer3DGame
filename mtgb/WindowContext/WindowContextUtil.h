@@ -1,6 +1,6 @@
 #pragma once
 #include "WindowContextResourceManager.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "ISystem.h"
 namespace mtgb
 {

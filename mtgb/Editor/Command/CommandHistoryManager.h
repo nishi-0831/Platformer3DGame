@@ -3,7 +3,7 @@
 #include "CommandHistory.h"
 #include "NamedCommandHistory.h"
 #include "GroupCommand.h"
-#include "IComponentMemento.h"
+#include "Core/Component/IComponentMemento.h"
 #include "ComponentConcept.h"
 
 namespace mtgb

@@ -4,8 +4,8 @@
 #include "Math/RectF.h"
 #include "Math/Vector2F.h"
 #include "Math/Vector3.h"
-#include "GameObjectTag.h"
-#include "Transform.h"
+#include "Core/GameObject/GameObjectTag.h"
+#include "Components/Transform/Transform.h"
 #include "UIParams.h"
 namespace mtgb
 {

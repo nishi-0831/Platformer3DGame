@@ -2,7 +2,7 @@
 #include "Direct2D/Direct2D.h"
 #include <d2d1helper.h>
 #include "IncludingWindows.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "WindowContext.h"
 #include "WindowContextResource.h"
 #include "Direct3DResource.h"

@@ -10,7 +10,7 @@
 #include <vector>
 #include <span>
 #include "CallbackConcepts.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 #include "SelectionMode.h"
 namespace mtgb
 {

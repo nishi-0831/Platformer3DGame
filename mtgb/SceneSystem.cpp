@@ -1,5 +1,5 @@
 #include "SceneSystem.h"
-#include "GameObject.h"
+#include "Core/GameObject/GameObject.h"
 #include "WindowContext/WindowContextResourceManager.h"
 #include "Input/Input.h"
 #include "WindowContext/WindowContext.h"
@@ -7,7 +7,7 @@
 #include "Editor/MTImGui.h"
 #include "RenderSystem.h"
 #include "Input/InputData.h"
-#include "GameObjectGenerator.h"
+#include "Core/GameObject/GameObjectGenerator.h"
 
 mtgb::SceneSystem::SceneSystem()
 	: pNextScene_ { nullptr }

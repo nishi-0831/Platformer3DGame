@@ -1,6 +1,6 @@
 #include "ImGuizmoManipulator.h"
 #include "Math/Vector3.h"
-#include "Game.h"
+#include "Core/Game.h"
 
 #include "ImGui/imgui_internal.h"
 #include "ImGui/imgui.h"
@@ -8,13 +8,13 @@
 #include "CameraSystem.h"
 #include "Input/InputData.h"
 #include "EventManager.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 #include "Command/GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "SceneSystem.h"
 #include "DirectX11Draw.h"
 #include "Model/Fbx.h"
-#include "MeshRenderer.h"
+#include "Components/MeshRenderer/MeshRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	using namespace DirectX;

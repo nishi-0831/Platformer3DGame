@@ -4,7 +4,7 @@
 #include <DirectXMath.h>
 #include "Math/Quaternion.h"
 #include "Math/Matrix4x4.h"
-#include "GameObject.h"
+#include "Core/GameObject/GameObject.h"
 #include "CameraSystem.h"
 #include "Screen.h"
 #include "SceneSystem.h"

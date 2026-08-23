@@ -3,7 +3,7 @@
 #include <system_error>
 #include "IncludingWindows.h"
 #include <string>
-#include "Game.h"
+#include "Core/Game.h"
 #include "MTStringUtility.h"
 #if _DEBUG
 

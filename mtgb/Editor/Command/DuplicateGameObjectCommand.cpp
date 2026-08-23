@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "DuplicateGameObjectCommand.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "SceneSystem.h"
-#include "ComponentRegistry.h"
-#include "EntityManager.h"
+#include "Core/Component/ComponentRegistry.h"
+#include "Core/EntityManager.h"
 #include <format>
 mtgb::DuplicateGameObjectCommand::DuplicateGameObjectCommand(
 	std::span<EntityId> _entityIds,

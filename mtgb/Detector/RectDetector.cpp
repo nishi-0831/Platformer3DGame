@@ -1,12 +1,12 @@
 #include "RectDetector.h"
 #include <cmath>
-#include "Game.h"
+#include "Core/Game.h"
 #include "ISystem.h"
-#include "ColliderCP.h"
+#include "Components/Collider/ColliderCP.h"
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/CameraResource.h"
 #include "CameraSystem.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 #include "Screen.h"
 #include "Intersection.h"
 using namespace mtgb;

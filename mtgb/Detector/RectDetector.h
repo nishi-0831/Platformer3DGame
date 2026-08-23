@@ -6,7 +6,7 @@
 #include "WindowContext/WindowContext.h"
 #include "Math/RectF.h"
 #include "RectContainsInfo.h"
-#include "GameObjectTag.h"
+#include "Core/GameObject/GameObjectTag.h"
 #include "IDetector.h"
 #include "DetectorConfigs.h"
 #include "UIParams.h"

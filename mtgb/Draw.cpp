@@ -1,10 +1,10 @@
 #include "Draw.h"
 #include "Model/Fbx.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "SceneSystem.h"
 
 #include "ReleaseUtility.h"
-#include "Transform.h"
+#include "Components/Transform/Transform.h"
 #include "Screen.h"
 #include <cmath>
 

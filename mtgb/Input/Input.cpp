@@ -4,7 +4,7 @@
 #include "InputData.h"
 #include "MTAssert.h"
 #include <algorithm>
-#include "Game.h"
+#include "Core/Game.h"
 #include "SceneSystem.h"
 #include "Debug.h"
 #include "Timer.h"

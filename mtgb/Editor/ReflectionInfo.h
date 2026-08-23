@@ -6,7 +6,7 @@
 #include "Input/MouseStateProxy.h"
 #include "Editor/PropertyDisplayRegistry.h"
 #include "ShowAttributes.h"
-#include "Interpolator.h"
+#include "Components/Interpolator/Interpolator.h"
 #include "Math/Matrix4x4.h"
 #include "Math/RectF.h"
 #include "UIParams.h"

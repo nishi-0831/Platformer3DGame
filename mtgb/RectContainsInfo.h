@@ -1,7 +1,7 @@
 #pragma once
 #include "Math/Vector3.h"
 #include "Math/Vector2F.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 namespace mtgb
 {
 	/// <summary>

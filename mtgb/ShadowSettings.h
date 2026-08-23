@@ -2,7 +2,7 @@
 #include "ISystem.h"
 #include "Math/Vector3.h"
 #include "Math/Vector4.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 #include <d3d11.h>
 #include <wrl/client.h>
 using Microsoft::WRL::ComPtr;

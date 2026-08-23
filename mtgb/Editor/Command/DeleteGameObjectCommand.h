@@ -1,10 +1,10 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "Entity.h"
-#include "ComponentFactory.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Core/Entity.h"
+#include "Core/Component/ComponentFactory.h"
 #include "GameObjectSnapshot.h"
-#include "GameObjectFactory.h"
+#include "Core/GameObject/GameObjectFactory.h"
 #include "GameObjectSelectionEvent.h"
 #include <typeindex>
 #include <functional>

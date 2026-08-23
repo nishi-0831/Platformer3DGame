@@ -1,5 +1,5 @@
 #include "WindowContextUtil.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "WindowResource.h"
 #include "Direct3DResource.h"
 #include "ISystem.h"

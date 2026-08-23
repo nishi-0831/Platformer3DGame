@@ -1,6 +1,6 @@
 #include "CameraResource.h"
 #include "WindowContextResource.h"
-#include "GameObject.h"
+#include "Core/GameObject/GameObject.h"
 #include "ReleaseUtility.h"
 #include "SceneSystem.h"
 #include "MTAssert.h"

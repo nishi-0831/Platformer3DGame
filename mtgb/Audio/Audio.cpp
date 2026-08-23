@@ -8,7 +8,7 @@
 #include "WaveData.h"
 #include "GameTime.h"
 #include "Debug.h"
-#include "Transform.h"
+#include "Components/Transform/Transform.h"
 namespace mtgb
 {
 	/// <summary>

@@ -1,9 +1,9 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "ComponentFactory.h"
-#include "GameObject.h"
-#include "GameObjectFactory.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Core/Component/ComponentFactory.h"
+#include "Core/GameObject/GameObject.h"
+#include "Core/GameObject/GameObjectFactory.h"
 
 #include "GameObjectSnapshot.h"
 #include <vector>

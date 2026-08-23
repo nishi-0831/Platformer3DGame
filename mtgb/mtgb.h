@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Game.h"
+#include "Core/Game.h"
 #include "cmtgb.h"
 
 #pragma region Utilities
@@ -19,7 +19,7 @@
 #include "Easing.h"
 #include "Mathf.h"
 #include "Detector/RectDetector.h"
-#include "Interpolator.h"
+#include "Components/Interpolator/Interpolator.h"
 
 #pragma endregion
 
@@ -28,18 +28,18 @@
 #include "AssetsManager.h"
 #include "Screen.h"
 #include "ScoreManager.h"
-#include "ComponentRegistry.h"
-#include "GameObjectTypeRegistry.h"
+#include "Core/Component/ComponentRegistry.h"
+#include "Core/GameObject/GameObjectTypeRegistry.h"
 #include "DirectX11Manager.h"
 #include "Direct2D/Direct2D.h"
 #include "Text/DirectWrite.h"
-#include "RigidBodyCP.h"
-#include "TransformCP.h"
-#include "TextRendererCP.h"
-#include "ImageRendererCP.h"
-#include "ColliderCP.h"
-#include "MeshRendererCP.h"
-#include "InterpolatorCP.h"
+#include "Components/RigidBody/RigidBodyCP.h"
+#include "Components/Transform/TransformCP.h"
+#include "Components/TextRenderer/TextRendererCP.h"
+#include "Components/ImageRenderer/ImageRendererCP.h"
+#include "Components/Collider/ColliderCP.h"
+#include "Components/MeshRenderer/MeshRendererCP.h"
+#include "Components/Interpolator/InterpolatorCP.h"
 #include "GameTime.h"
 #include "Timer.h"
 #include "Draw.h"
@@ -53,9 +53,9 @@
 #include "Image/Image.h"
 #include "Audio/Audio.h"
 #include "ImGuiRenderer.h"
-#include "MeshRenderer.h"
-#include "TextRenderer.h"
-#include "ImageRenderer.h"
+#include "Components/MeshRenderer/MeshRenderer.h"
+#include "Components/TextRenderer/TextRenderer.h"
+#include "Components/ImageRenderer/ImageRenderer.h"
 #include "Text/TextCache.h"
 #include "Model/Fbx.h"
 #include "WindowContext/WindowContext.h"
@@ -66,14 +66,14 @@
 #include "ImGuiShowable.h"
 #include "Editor/MTImGui.h"
 #include "EventManager.h"
-#include "EntityManager.h"
-#include "GameObjectGenerator.h"
-#include "ComponentFactory.h"
+#include "Core/EntityManager.h"
+#include "Core/GameObject/GameObjectGenerator.h"
+#include "Core/Component/ComponentFactory.h"
 #include "ShadowSettings.h"
 #pragma endregion
 
-#include "GameObjectBuilder.h"
-#include "GameObject.h"
+#include "Core/GameObject/GameObjectBuilder.h"
+#include "Core/GameObject/GameObject.h"
 #include "ICamera.h"
 
 #pragma region Resource

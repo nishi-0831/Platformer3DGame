@@ -9,7 +9,7 @@
 #include "PropertyDisplayRegistry.h"
 #include <unordered_map>
 #include "cmtgb.h"
-#include "GameObject.h"
+#include "Core/GameObject/GameObject.h"
 
 namespace mtgb
 {

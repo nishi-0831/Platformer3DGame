@@ -3,7 +3,7 @@
 #include <string>
 
 #include "ShowType.h"
-#include "Entity.h"
+#include "Core/Entity.h"
 
 namespace mtgb
 {

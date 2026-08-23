@@ -1,6 +1,6 @@
 #pragma once
 #include "ISystem.h"
-#include "GameScene.h"
+#include "Core/GameScene.h"
 #include "ReleaseUtility.h"
 #include <functional>
 #include <vector>
@@ -52,7 +52,7 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_callback">登録するコールバック</param>
 		template <typename Func>
-		requires std::is_invocable_v<Func>
+			requires std::is_invocable_v<Func>
 		void RegisterPendingCallback(Func&& _callback);
 
 		/// <summary>
@@ -86,8 +86,8 @@ namespace mtgb
 	}
 	template <typename Func>
 		requires std::is_invocable_v<Func>
-	inline void SceneSystem::RegisterPendingCallback(Func&& _callback) 
+	inline void SceneSystem::RegisterPendingCallback(Func&& _callback)
 	{
-		pendingCallbacks_.emplace(std::forward<Func>(_callback));		
+		pendingCallbacks_.emplace(std::forward<Func>(_callback));
 	}
 } // namespace mtgb

@@ -1,7 +1,7 @@
 #include "RayDetector.h"
 #include "CameraSystem.h"
-#include "Game.h"
-#include "GameObject.h"
+#include "Core/Game.h"
+#include "Core/GameObject/GameObject.h"
 #include "Math/Vector3.h"
 #include <cmath>
 #include <DirectXMath.h>

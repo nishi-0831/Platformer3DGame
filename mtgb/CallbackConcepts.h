@@ -3,7 +3,7 @@
 #include <concepts>
 #include <type_traits>
 
-#include "Entity.h"
+#include "Core/Entity.h"
 
 namespace mtgb
 {

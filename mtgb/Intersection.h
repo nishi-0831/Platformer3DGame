@@ -7,7 +7,7 @@
 #include "Math/Vector3.h"
 #include "RectContainsInfo.h"
 #include "WindowContext/WindowContext.h"
-#include "GameObjectTag.h"
+#include "Core/GameObject/GameObjectTag.h"
 namespace mtgb::Intersection
 {
 	/// <summary>

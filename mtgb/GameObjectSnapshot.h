@@ -1,7 +1,7 @@
 #pragma once
-#include "Entity.h"
-#include "IComponentMemento.h"
-#include "GameObject.h"
+#include "Core/Entity.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Core/GameObject/GameObject.h"
 
 namespace mtgb
 {

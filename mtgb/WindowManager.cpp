@@ -6,7 +6,7 @@
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/DXGIResource.h"
 #include "MTAssert.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "ISystem.h"
 #include "MTStringUtility.h"
 #include "ImGuiRenderer.h"

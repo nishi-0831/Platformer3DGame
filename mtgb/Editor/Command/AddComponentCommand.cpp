@@ -1,7 +1,7 @@
 #include "AddComponentCommand.h"
-#include "IComponentPool.h"
-#include "ComponentRegistry.h"
-#include "Game.h"
+#include "Core/Component/IComponentPool.h"
+#include "Core/Component/ComponentRegistry.h"
+#include "Core/Game.h"
 mtgb::AddComponentCommand::AddComponentCommand(
 	mtgb::EntityId _entityId,
 	std::type_index _typeIdx,

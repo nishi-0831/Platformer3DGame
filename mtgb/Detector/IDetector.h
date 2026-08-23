@@ -5,7 +5,7 @@
 #include <concepts>
 #include "WindowContext/WindowContext.h"
 #include "RectContainsInfo.h"
-#include "GameObjectTag.h"
+#include "Core/GameObject/GameObjectTag.h"
 #include "Math/RectF.h"
 namespace mtgb
 {

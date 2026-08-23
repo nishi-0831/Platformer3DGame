@@ -1,6 +1,6 @@
 #include "GameTime.h"
 #include "IncludingWindows.h"
-#include "Game.h"
+#include "Core/Game.h"
 #include "Editor/MTImGui.h"
 #pragma comment(lib, "Winmm.lib")
 

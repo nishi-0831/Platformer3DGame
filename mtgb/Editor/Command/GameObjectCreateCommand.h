@@ -1,12 +1,12 @@
 #pragma once
 #include "Command.h"
-#include "IComponentMemento.h"
-#include "Entity.h"
-#include "ComponentFactory.h"
+#include "Core/Component/IComponentMemento.h"
+#include "Core/Entity.h"
+#include "Core/Component/ComponentFactory.h"
 #include <typeindex>
 #include <functional>
 #include <vector>
-#include "GameObject.h"
+#include "Core/GameObject/GameObject.h"
 #include <nlohmann/json.hpp>
 #include <concepts>
 namespace mtgb
