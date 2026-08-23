@@ -137,10 +137,13 @@ namespace mtgb
 			if (XMVector4NotEqualInt(NoIntersection, XMVectorTrueInt()))
 			{
 				DirectX::XMStoreFloat(&dist, t);
-				result			= true;
-				_info->point	= _origin + dist * _dir;
-				_info->normal	= Vector3::Normalize(_info->point - _sphere.Center);
-				_info->distance = dist;
+				if (dist <= _maxDistance)
+				{
+					result			= true;
+					_info->point	= _origin + dist * _dir;
+					_info->normal	= Vector3::Normalize(_info->point - _sphere.Center);
+					_info->distance = dist;
+				}
 			}
 
 			return result;
@@ -160,6 +163,11 @@ namespace mtgb
 			{
 				return false;
 			}
+			if (dist > _maxDistance)
+			{
+				return false;
+			}
+
 			_info->distance	 = dist;
 			Vector3 hitPoint = _origin + _dir * dist;
 			_info->point	 = hitPoint;
@@ -199,6 +207,10 @@ namespace mtgb
 			float dist	= _maxDistance;
 			bool result = _obb.Intersects(_origin, _dir, dist);
 			if (result == false)
+			{
+				return false;
+			}
+			if (dist > _maxDistance)
 			{
 				return false;
 			}
