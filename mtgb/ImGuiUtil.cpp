@@ -3,8 +3,8 @@
 #include <d3d11.h>
 
 void mtgb::ImGuiUtil::GetMouseRay(
-	Vector3& _near,
-	Vector3& _far,
+	Vector3& _start,
+	Vector3& _end,
 	const Matrix4x4& _proj,
 	const Matrix4x4& _view,
 	const D3D11_VIEWPORT& _viewport,
@@ -17,7 +17,7 @@ void mtgb::ImGuiUtil::GetMouseRay(
 
 	Vector3 nearVec = { localPos.x, localPos.y, 0.0f };
 
-	_near = DirectX::XMVector3Unproject(
+	_start = DirectX::XMVector3Unproject(
 		nearVec,
 		_viewport.TopLeftX,
 		_viewport.TopLeftY,
@@ -32,7 +32,7 @@ void mtgb::ImGuiUtil::GetMouseRay(
 
 	Vector3 farVec = { static_cast<float>(localPos.x), static_cast<float>(localPos.y), 1.0f };
 
-	_far = DirectX::XMVector3Unproject(
+	_end = DirectX::XMVector3Unproject(
 		farVec,
 		_viewport.TopLeftX,
 		_viewport.TopLeftY,

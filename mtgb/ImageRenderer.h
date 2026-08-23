@@ -35,9 +35,18 @@ namespace mtgb
 		ImageHandle handle_;
 		[[MT_PROPERTY()]]
 		std::string imageFileName_;
+		/// <summary>
+		/// 描画範囲(スクリーン座標系)
+		/// </summary>
 		[[MT_PROPERTY()]]
 		RectF drawRect_;
+		/// <summary>
+		/// 画像から切り取って描画する範囲
+		/// </summary>
 		RectF cutRect_;
+		/// <summary>
+		/// 画像の角度
+		/// </summary>
 		float rotationZ_;
 		[[MT_PROPERTY()]]
 		UIParams uiParams_;

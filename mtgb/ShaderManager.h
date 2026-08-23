@@ -14,7 +14,14 @@ namespace mtgb
 		/// 解放処理
 		/// </summary>
 		void Release() override;
-		std::array<IShader*, static_cast<int8_t>(ShaderType::MAX)> shaders_;
+		/// <summary>
+		/// ShaderTypeの列挙値に対応するシェーダーを取得する
+		/// </summary>
+		/// <param name="_shaderType"></param>
+		/// <returns></returns>
 		IShader& GetShader(ShaderType _shaderType);
+
+	  private:
+		std::array<IShader*, static_cast<int8_t>(ShaderType::MAX)> shaders_;
 	};
 } // namespace mtgb

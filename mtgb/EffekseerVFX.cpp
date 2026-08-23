@@ -116,7 +116,7 @@ namespace mtgb
 
 	void EffectManager::Initialize()
 	{
-		fps_ = Game::System<Screen>().GetFPS();
+		fps_ = Time::TargetFrameRateF();
 
 		// 描画に使用するレンダラー
 		rendererRef_ = Renderer::Create(DirectX11Draw::pDevice_.Get(), DirectX11Draw::pContext_.Get(), MAX_SQUARE);

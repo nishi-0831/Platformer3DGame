@@ -17,10 +17,7 @@ mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)
 
 void mtgb::JoystickProxy::UpdateFromInput(GUID _guid)
 {
-	Input& input = Game::System<Input>();
-
-	/*isConnected = input.IsJoystickConnected(guid);
-	isAssigned = input.IsJoystickAssigned(guid);*/
+	Input& input	  = Game::System<Input>();
 	connectionStatus  = input.IsJoystickConnected(_guid) ? "接続中" : "切断";
 	assignmentStatus  = input.IsJoystickAssigned(_guid) ? "割り当て済み" : "未割当";
 	lastErrorMessage  = input.GetJoystickStatusMessage(_guid);

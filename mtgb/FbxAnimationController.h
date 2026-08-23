@@ -15,6 +15,10 @@ namespace fbxsdk
 } // namespace fbxsdk
 namespace mtgb
 {
+	/// <summary>
+	/// アニメーションを管理するクラス。
+	/// アニメーションのフレーム更新やイベント呼び出し、クリップ登録を行う
+	/// </summary>
 	class FbxAnimationController
 	{
 	  public:

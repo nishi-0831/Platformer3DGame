@@ -22,11 +22,6 @@ void mtgb::EntityManager::ChangeCounter(EntityId _counter)
 	entityCounter_ = _counter;
 }
 
-mtgb::EntityId mtgb::EntityManager::RegenerateEntity()
-{
-	return entityCounter_;
-}
-
 void mtgb::EntityManager::DecrementCounter()
 {
 	entityCounter_--;

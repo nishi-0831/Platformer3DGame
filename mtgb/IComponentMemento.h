@@ -12,6 +12,11 @@ namespace mtgb
 		virtual EntityId GetEntityId() const			 = 0;
 	};
 
+	/// <summary>
+	/// Undo/Redoに使用する、コンポーネントのメメント
+	/// </summary>
+	/// <typeparam name="TComponent">コンポーネントの型</typeparam>
+	/// <typeparam name="TState"Undo/Redoするうコンポーネントのデータ部分の型></typeparam>
 	template <typename TComponent, typename TState> class ComponentMemento : public IComponentMemento
 	{
 	  public:
@@ -24,14 +29,26 @@ namespace mtgb
 		{
 		}
 
+		/// <summary>
+		/// メメントのコンポーネントの型情報を返す
+		/// </summary>
+		/// <returns></returns>
 		std::type_index GetComponentType() const override
 		{
 			return typeid(TComponent);
 		}
+		/// <summary>
+		/// メメントのEntityIdを返す
+		/// </summary>
+		/// <returns></returns>
 		EntityId GetEntityId() const override
 		{
 			return entityId_;
 		}
+		/// <summary>
+		/// コンポーネントの以前のデータを返す
+		/// </summary>
+		/// <returns></returns>
 		const State& GetState() const
 		{
 			return state_;

@@ -1,16 +1,8 @@
 #pragma once
 #include "WindowContextResource.h"
-#include "Game.h"
-#include "ISystem.h"
-#include "DirectX11Manager.h"
-#include "MTAssert.h"
 #include "WindowContext.h"
-#include "WindowManager.h"
 
 #include "IncludingWindows.h"
-
-#include <map>
-#include <typeindex>
 
 namespace mtgb
 {
@@ -56,6 +48,10 @@ namespace mtgb
 		{
 			return isFullscreen_;
 		}
+		/// <summary>
+		/// モニターの座標を設定する
+		/// </summary>
+		/// <param name="_monitorRect"></param>
 		void SetPosition(const RECT& _monitorRect);
 
 	  private:

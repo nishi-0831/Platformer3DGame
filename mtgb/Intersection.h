@@ -10,12 +10,17 @@
 #include "GameObjectTag.h"
 namespace mtgb::Intersection
 {
-
+	/// <summary>
+	/// 接触の情報を格納する構造体
+	/// </summary>
 	struct IntersectInfo
 	{
 		Vector3 closest;
 		Vector3 push;
 	};
+	/// <summary>
+	/// レイキャストの情報を格納する構造体
+	/// </summary>
 	struct RaycastInfo
 	{
 		float distance;

@@ -6,6 +6,9 @@
 #include <d3d11.h>
 namespace mtgb
 {
+	/// <summary>
+	/// ワールド座標をスクリーン座標に変換する際に使用するデータ
+	/// </summary>
 	struct WorldToScreenData
 	{
 		Matrix4x4 viewMat, projMat;

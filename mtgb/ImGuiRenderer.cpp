@@ -19,7 +19,6 @@ mtgb::ImGuiRenderer::ImGuiRenderer()
 	, pTexture_ { nullptr }
 	, pDepthStencil_ { nullptr }
 	, pDepthStencilView_ { nullptr }
-	, gameViewRectValid_ { false }
 	, viewport_ {}
 {
 }
@@ -128,15 +127,7 @@ void mtgb::ImGuiRenderer::SetDrawList()
 
 void mtgb::ImGuiRenderer::RenderSceneView()
 {
-
 	ImGui::Image((void*)pSRV_.Get(), ImVec2(static_cast<float>(winWidth_), static_cast<float>(winHeight_)));
-}
-
-void mtgb::ImGuiRenderer::UpdateGameViewRect()
-{
-	gameViewPos_	   = ImGui::GetWindowPos();
-	gameViewSize_	   = ImGui::GetWindowSize();
-	gameViewRectValid_ = true;
 }
 
 void mtgb::ImGuiRenderer::End()
@@ -165,9 +156,6 @@ void mtgb::ImGuiRenderer::ResetComPtrs()
 void mtgb::ImGuiRenderer::OnResize(UINT _width, UINT _height)
 {
 	CreateD3DResources();
-	// ウィンドウサイズを更新
-	// GameView の矩形情報をリセット
-	gameViewRectValid_ = false;
 }
 
 void mtgb::ImGuiRenderer::CreateD3DResources()

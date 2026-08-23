@@ -3,6 +3,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// デバッグ用のコライダーのシェーダー
+	/// </summary>
 	class Debug3DShader : public IShader
 	{
 	  public:

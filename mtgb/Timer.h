@@ -20,12 +20,21 @@ namespace mtgb
 		};
 
 	  public:
+		/// <summary>
+		/// 指定した秒数後に呼ばれるコールバックを設定
+		/// </summary>
+		/// <param name="_time"></param>
+		/// <param name="_callback"></param>
+		/// <returns></returns>
 		static TimerHandle AddAram(float _time, const std::function<void()>& _callback);
-		static TimerHandle AddInterval(
-			float _time,
-			const std::function<void()>& _callback,
-			bool _firstCall = false
-		);
+		/// <summary>
+		/// 指定した間隔(秒単位)で呼ばれるコールバックを設定
+		/// </summary>
+		/// <param name="_time">呼び出す間隔</param>
+		/// <param name="_callback"></param>
+		/// <param name="_firstCall">コールバックを設定したフレームに即座に呼び出すか否か</param>
+		/// <returns></returns>
+		static TimerHandle AddInterval(float _time, const std::function<void()>& _callback, bool _firstCall = false);
 		static void Remove(TimerHandle _hTimer);
 
 		/// <summary>

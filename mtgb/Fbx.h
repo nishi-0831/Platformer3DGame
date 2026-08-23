@@ -13,9 +13,8 @@
 
 namespace mtgb
 {
-	class FbxParts;
 	/// <summary>
-	/// 3DモデルのFbxを読み込みするクラス
+	/// fbxファイルを管理するクラス
 	/// </summary>
 	class Fbx : public ISystem
 	{

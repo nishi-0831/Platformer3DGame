@@ -144,6 +144,9 @@ namespace mtgb
 		Quaternion GetWorldRotate() const;
 
 		void OnPostRestore() override;
+		/// <summary>
+		/// 親のEntityId
+		/// </summary>
 		[[MT_PROPERTY()]]
 		EntityId parent;
 		[[MT_PROPERTY()]]

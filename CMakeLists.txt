@@ -491,12 +491,6 @@ set(03mtgb__System__Window
 )
 source_group("03mtgb\\System\\Window" FILES ${03mtgb__System__Window})
 
-set(03mtgb__System__Window__DoubleWindow
-    "mtgb/DoubleWindow.cpp"
-    "mtgb/DoubleWindow.h"
-)
-source_group("03mtgb\\System\\Window\\DoubleWindow" FILES ${03mtgb__System__Window__DoubleWindow})
-
 source_group("03mtgb\\System\\Window\\MainWindow" FILES ${03mtgb__System__Window__MainWindow})
 
 source_group("03mtgb\\System\\Window\\SubWindow" FILES ${03mtgb__System__Window__SubWindow})

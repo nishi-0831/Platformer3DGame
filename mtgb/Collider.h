@@ -49,21 +49,56 @@ namespace mtgb
 		bool IsHit(const Vector3& _origin, const Vector3& _dir, float _maxDistance, Intersection::RaycastInfo* _info)
 			const;
 		bool IsHit(const Vector3& _center, float _radius) const;
-
+		/// <summary>
+		/// 接触した瞬間のコライダーにコールバックを呼ぶ
+		/// </summary>
+		/// <param name="_func"></param>
 		void ForEachCollisionEnter(const EntityCallback& _func);
+		/// <summary>
+		/// 接触中のコライダーにコールバックを呼ぶ
+		/// </summary>
+		/// <param name="_func"></param>
 		void ForEachCollisionStay(const EntityCallback& _func);
+		/// <summary>
+		/// 接触して離れた瞬間のコライダーにコールバックを呼ぶ
+		/// </summary>
+		/// <param name="_func"></param>
 		void ForEachCollisionExit(const EntityCallback& _func);
 
 		void Draw() const;
 
 		// BoundingSphereを初期化
 		void UpdateBoundingData();
-
+		/// <summary>
+		/// コライダーの中心を設定する。
+		/// 接続されているエンティティの座標のオフセットとなる。
+		/// </summary>
+		/// <param name="_center"></param>
 		void SetCenter(const Vector3& _center);
+		/// <summary>
+		/// コライダー(AABB、OBB)の、一辺の半分の長さを設定する
+		/// </summary>
+		/// <param name="_extents"></param>
 		void SetExtents(const Vector3& _extents);
+		/// <summary>
+		/// コライダー(球)の半径を返す
+		/// </summary>
+		/// <param name="_radius"></param>
 		void SetRadius(float _radius);
+		/// <summary>
+		/// コライダーの中心(接続されているエンティティの座標のオフセット)を返す
+		/// </summary>
+		/// <returns></returns>
 		Vector3 GetCenter() const;
+		/// <summary>
+		/// コライダー(AABB、OBB)の、一辺の半分の長さを返す
+		/// </summary>
+		/// <returns></returns>
 		Vector3 GetExtents() const;
+		/// <summary>
+		/// コライダー(球)の半径を返す
+		/// </summary>
+		/// <returns></returns>
 		float GetRadius() const;
 		inline ColliderTag GetColliderTag() const
 		{
@@ -88,7 +123,16 @@ namespace mtgb
 	  private:
 		std::unordered_set<Collider*> onColliders_;
 		std::unordered_set<Collider*> onCollidersPrev_;
+		/// <summary>
+		/// コライダー同士で押し出し合う
+		/// </summary>
+		/// <param name="_other"></param>
 		void Push(const Collider& _other);
+		/// <summary>
+		/// 押し出しの判定をする。
+		/// どちらかがisKinematicやisTriggerの場合は押し出しをしない
+		/// </summary>
+		/// <param name="_other"></param>
 		void HandleCollision(const Collider& _other);
 		void UpdateBoundingSphere();
 		void UpdateBoundingBox();
@@ -101,13 +145,16 @@ namespace mtgb
 
 		Transform* pTransform_;
 
-		static FBXModelHandle hSphereModel_;
-		static FBXModelHandle hBoxModel_;
 		[[MT_PROPERTY()]]
 		Vector3 center_;
 		[[MT_PROPERTY()]]
 		float radius_;
 		[[MT_PROPERTY()]]
 		Vector3 extents_;
+
+		// コライダー(球)の3Dモデルのハンドル。デバッグ表示用
+		static FBXModelHandle hSphereModel_;
+		// コライダー(AABB、OBB)の3Dモデルのハンドル。デバッグ表示用
+		static FBXModelHandle hBoxModel_;
 	};
 } // namespace mtgb

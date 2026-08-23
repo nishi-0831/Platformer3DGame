@@ -1,5 +1,4 @@
 #pragma once
-// #include "World.h"
 #include "cmtgb.h"
 #include <list>
 #include "nlohmann/json.hpp"
@@ -13,9 +12,7 @@ namespace mtgb
 	using EntityId = int64_t;
 
 	class GameObject;
-	class Transform;
 
-	// using GameScene = World;
 	class GameScene
 	{
 		friend class SceneSystem;
@@ -67,7 +64,11 @@ namespace mtgb
 		/// <typeparam name="T"></typeparam>
 		/// <returns>存在していない、GameObjectを継承していないならnullptr</returns>
 		template <typename T> T* GetGameObject() const;
-
+		/// <summary>
+		/// テンプレートパラメータでオブジェクト配列を取得
+		/// </summary>
+		/// <typeparam name="T"></typeparam>
+		/// <param name="_pFoundGameObjects"></param>
 		template <typename T> void GetGameObjects(std::vector<T*>* _pFoundGameObjects) const;
 
 		/// <summary>
@@ -76,9 +77,16 @@ namespace mtgb
 		/// <param name="_entityId"></param>
 		/// <returns>存在しないならnullptr</returns>
 		GameObject* GetGameObject(EntityId _entityId) const;
-
+		/// <summary>
+		/// 指定されたEntityIdのオブジェクトを破棄
+		/// </summary>
+		/// <param name="_entityId"></param>
 		void DestroyGameObject(EntityId _entityId);
 
+		/// <summary>
+		/// シーン内のゲームオブジェクトをすべてシリアライズする
+		/// </summary>
+		/// <returns>シリアライズしたデータ</returns>
 		nlohmann::json SerializeGameObjects() const;
 
 	  protected:

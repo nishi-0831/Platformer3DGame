@@ -55,8 +55,19 @@ namespace mtgb
 		{
 			return hCurrentCamera_;
 		}
-
+		/// <summary>
+		/// ワールド座標をスクリーン座標に変換
+		/// </summary>
+		/// <param name="_pos">変換対象のワールド座標</param>
+		/// <param name="_data">変換に使うデータ</param>
+		/// <returns>変換後のスクリーン座標</returns>
 		mtgb::Vector3 GetWorldToScreenPos(const Vector3& _pos, const WorldToScreenData& _data) const;
+		/// <summary>
+		/// ワールド座標をスクリーン座標に変換
+		/// </summary>
+		/// <param name="_pos">変換対象のワールド座標</param>
+		/// <param name="_context">変換対象のウィンドウ</param>
+		/// <returns>変換後のスクリーン座標</returns>
 		mtgb::Vector3 GetWorldToScreenPos(const Vector3& _pos, WindowContext _context) const;
 		const Transform& GetTransform() const;
 		const Transform& GetTransform(CameraHandleInScene _hCamera) const;
@@ -68,6 +79,11 @@ namespace mtgb
 		float GetNear() const;
 		float GetFar() const;
 		float GetFov() const;
+		/// <summary>
+		/// ワールド座標をスクリーン座標に変換する際に使用するデータを計算する
+		/// </summary>
+		/// <param name="_context">変換対象のウィンドウ</param>
+		/// <returns></returns>
 		const WorldToScreenData& GetWorldToScreenData(WindowContext _context);
 
 	  private:

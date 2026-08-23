@@ -19,11 +19,21 @@ struct ShaderVariableInfo
 	UINT size;
 };
 
+/// <summary>
+/// リフレクションされた定数バッファ。
+/// バッファ名、変数名を指定して値を設定できる
+/// </summary>
 class ReflectiveConstantBuffer
 {
   public:
 	ReflectiveConstantBuffer();
-
+	/// <summary>
+	///
+	/// </summary>
+	/// <param name="_pDevice"></param>
+	/// <param name="_pCbReflection">DirectX11にリフレクションされた定数バッファ</param>
+	/// <param name="_bindSlot">レジスタ番号</param>
+	/// <returns></returns>
 	bool Initialize(ID3D11Device* _pDevice, ID3D11ShaderReflectionConstantBuffer* _pCbReflection, UINT _bindSlot);
 	void Release();
 	/// <summary>
@@ -59,6 +69,10 @@ class ReflectiveConstantBuffer
 	/// <param name="_data">送信する値</param>
 	/// <returns>設定に成功: true、失敗: false</returns>
 	template <typename T> bool SetConstantBuffer(const T& _data);
+	/// <summary>
+	/// レジスタ番号を返す
+	/// </summary>
+	/// <returns></returns>
 	UINT GetBindSlot();
 
   private:

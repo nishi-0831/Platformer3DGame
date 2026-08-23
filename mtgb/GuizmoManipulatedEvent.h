@@ -9,6 +9,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// エディタでギズモを操作した際のコマンド
+	/// </summary>
 	class GuizmoManipulateCommand : public Command
 	{
 	  public:

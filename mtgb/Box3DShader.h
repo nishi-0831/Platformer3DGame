@@ -3,6 +3,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// 地形用のシェーダー。丸影を描画する
+	/// </summary>
 	class Box3DShader : public IShader
 	{
 	  public:

@@ -3,6 +3,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// UVをスクロールさせるシェーダー
+	/// </summary>
 	class UVScrollShader : public IShader
 	{
 		struct TimeBuffer

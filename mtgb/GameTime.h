@@ -25,14 +25,26 @@ namespace mtgb
 		{
 			return static_cast<float>(deltaTime_);
 		}
+		/// <summary>
+		/// FPSの目標値
+		/// </summary>
+		/// <returns></returns>
 		static inline double TargetFrameRate()
 		{
 			return targetFrameRate_;
 		}
+		/// <summary>
+		/// FPSの目標値
+		/// </summary>
+		/// <returns></returns>
 		static inline float TargetFrameRateF()
 		{
 			return static_cast<float>(targetFrameRate_);
 		}
+		/// <summary>
+		/// 指定したフレーム数だけゲームの更新を待機する
+		/// </summary>
+		/// <param name="_frame"></param>
 		static inline void WaitFrame(unsigned int _frame)
 		{
 			waitFrame_ = _frame;

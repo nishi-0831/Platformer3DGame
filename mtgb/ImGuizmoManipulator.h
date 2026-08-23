@@ -12,8 +12,9 @@
 #include "ShaderType.h"
 namespace mtgb
 {
-	class GameObject;
-	struct Vector3;
+	/// <summary>
+	/// ImGuizmoのギズモを操作するマニピュレーター
+	/// </summary>
 	class ImGuizmoManipulator : public ImGuiShowable
 	{
 	  public:
@@ -24,11 +25,34 @@ namespace mtgb
 		void Update();
 		void ShowImGui() override;
 
+		/// <summary>
+		/// エンティティを選択する
+		/// </summary>
+		/// <param name="_entityIds">選択するエンティティのIDの配列</param>
+		/// <param name="_multiSelect"></param>
 		void Select(std::span<const EntityId> _entityIds, bool _multiSelect);
+		/// <summary>
+		/// エンティティを選択解除
+		/// </summary>
+		/// <param name="_entityIds"></param>
 		void Deselect(std::span<const EntityId> _entityIds);
+		/// <summary>
+		/// 現在選択中のエンティティを全て解除
+		/// </summary>
 		void DeselectAll();
+		/// <summary>
+		/// 選択中のEntityIdを返す
+		/// </summary>
+		/// <returns></returns>
 		std::span<EntityId> GetSelectedEntityId();
+		/// <summary>
+		/// 現在の操作モード(Translation,Rotate,Scaleなど)を返す
+		/// </summary>
+		/// <returns></returns>
 		ImGuizmo::OPERATION GetOperation();
+		/// <summary>
+		/// 選択中のオブジェクトのアウトラインを描画
+		/// </summary>
 		void DrawSelectedObjectOutline();
 
 	  private:

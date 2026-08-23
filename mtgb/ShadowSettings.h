@@ -16,7 +16,9 @@ namespace mtgb
 		float softness;
 		float padding[3];
 	};
-
+	/// <summary>
+	/// 丸影を描画するシステム
+	/// </summary>
 	class ShadowSettings : public ISystem
 	{
 	  public:

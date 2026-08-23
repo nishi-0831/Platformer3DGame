@@ -175,8 +175,6 @@ void mtgb::Input::UpdateMouseDevice()
 		SUCCEEDED(hResult) // マウス操作の取得に成功
 		&& "マウス操作の取得に失敗 @Input::Update"
 	);
-
-#pragma endregion
 }
 
 void mtgb::Input::UpdateJoystickDevice()
@@ -295,8 +293,6 @@ void mtgb::Input::ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice)
 
 void mtgb::Input::SetJoystickGuid(GUID _guid)
 {
-	/*massert(assignedJoystickGuids_.contains(_guid)
-		&& "無効なGUIDが渡されました @Input::SetJoystickGuid");*/
 	currJoystickGuid_ = _guid;
 }
 
@@ -556,11 +552,6 @@ DeviceType mtgb::Input::GetDeviceType(const DIDEVICEINSTANCE& _inst)
 	return deviceType;
 }
 
-HRESULT mtgb::Input::UpdateJoystickState(GUID _guid)
-{
-	return E_NOTIMPL;
-}
-
 int mtgb::Input::FindReservationIndexForDevice(DeviceType _devType) const
 {
 	int firstUnknown = -1;
@@ -591,7 +582,7 @@ std::string_view mtgb::Input::GetJoystickStatusMessage(GUID _guid) const
 
 bool mtgb::Input::IsJoystickConnected(GUID _guid) const
 {
-	const auto& itr = joystickContext_.find(_guid);
+	auto itr = joystickContext_.find(_guid);
 	if (itr == joystickContext_.end())
 	{
 		return false;

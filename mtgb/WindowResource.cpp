@@ -9,6 +9,8 @@
 #include "Direct3DResource.h"
 #include "MTAssert.h"
 #include "Screen.h"
+#include "WindowManager.h"
+
 using namespace mtgb;
 
 /// <summary>

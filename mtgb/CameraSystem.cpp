@@ -92,7 +92,6 @@ void mtgb::CameraSystem::SetDrawCamera(CameraHandleInScene _hCamera)
 
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, const WorldToScreenData& _data) const
 {
-	// Vector3 screenPos = DirectX::XMVector3Project(
 	return DirectX::XMVector3Project(
 		_pos,
 		_data.viewport.TopLeftX,
@@ -105,10 +104,6 @@ mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, const
 		_data.viewMat,
 		DirectX::XMMatrixIdentity()
 	);
-
-	/*if (screenPos.z < 0.0f || screenPos.z > 1.0f)
-		return Vector2F(-1, -1);
-	return Vector2F(screenPos.x, screenPos.y);*/
 }
 
 mtgb::Vector3 mtgb::CameraSystem::GetWorldToScreenPos(const Vector3& _pos, WindowContext _context) const
@@ -141,7 +136,6 @@ const mtgb::Transform& mtgb::CameraSystem::GetTransform() const
 
 const mtgb::Transform& mtgb::CameraSystem::GetTransform(CameraHandleInScene _hCamera) const
 {
-	// massert(0 <= _hCamera && _hCamera < pTransforms_.size() && "カメラハンドルが無効です。");
 
 	Transform* pTransform { pTransforms_[_hCamera] };
 
@@ -164,7 +158,7 @@ void mtgb::CameraSystem::GetViewMatrix(Matrix4x4* _pView, CameraHandleInScene _h
 {
 	const Transform& cameraTransform { GetTransform(_hCamera) };
 
-	Vector4 vEyePt { cameraTransform.GetWorldPosition() };			   // カメラ（視点）位置
+	Vector4 vEyePt { cameraTransform.GetWorldPosition() };			   // カメラ位置
 	Vector4 vLookatPt { Vector4(cameraTransform.Forward()) + vEyePt }; // 注視位置
 	Vector4 vUpVec { cameraTransform.Up() };						   // 上方位置
 	*_pView = XMMatrixLookAtLH(vEyePt, vLookatPt, vUpVec);

@@ -12,23 +12,57 @@ using ShowPropertyFunc = std::function<Command*(std::any, const char*)>;
 template <typename Func>
 concept ShowPropFuncCallable = std::is_convertible_v<Func, ShowPropertyFunc>;
 
+/// <summary>
+/// 型に対応したImGui表示関数を登録するクラス
+/// </summary>
 class PropertyDisplayRegistry
 {
   public:
+	static PropertyDisplayRegistry& Instance();
+	void Initialize();
+
+	/// <summary>
+	/// refl-cppでリフレクションした型を登録
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
 	template <typename T> void RegisterType();
+	/// <summary>
+	/// 型に対応した表示関数を登録
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <typeparam name="Func"></typeparam>
+	/// <param name="_func"></param>
 	template <typename T, ShowPropFuncCallable Func> void RegisterFunc(Func&& _func);
 
-	static PropertyDisplayRegistry& Instance();
 	// プログラム開始時に登録したい関数を登録
 	template <typename Func>
 		requires std::is_invocable_v<Func>
 	void ProvisionalRegister(std::type_index _typeIdx, Func&& _registerFunc);
-	void Initialize();
+	/// <summary>
+	/// 型に対応した表示関数を呼び出す
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="_instance"></param>
+	/// <param name="_name"></param>
 	template <typename T> void ShowProperty(T* _instance, const char* _name);
-
+	/// <summary>
+	/// 型に対応した表示関数を呼び出す
+	/// </summary>
+	/// <param name="_typeIdx"></param>
+	/// <param name="_instance"></param>
+	/// <param name="_name"></param>
 	void ShowProperty(std::type_index _typeIdx, std::any _instance, const char* _name);
+	/// <summary>
+	/// 指定したtype_indexに対応する表示関数が登録されているか否か
+	/// </summary>
+	/// <param name="_typeIdx"></param>
+	/// <returns></returns>
 	bool IsRegisteredType(std::type_index _typeIdx);
-
+	/// <summary>
+	/// 表示関数で値を操作した際のコマンドを受け取るリスナーを設定する
+	/// </summary>
+	/// <typeparam name="Func"></typeparam>
+	/// <param name="_commandListener"></param>
 	template <typename Func>
 		requires std::is_invocable_v<Func, Command*>
 	void RegisterCommandListener(Func&& _commandListener);

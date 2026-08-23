@@ -19,7 +19,11 @@ namespace mtgb
 
 		WindowContextResource*& operator[](const std::type_index& _key);
 		const WindowContextResource* operator[](const std::type_index& _key) const;
-
+		/// <summary>
+		/// 指定されたtype_indexをキーにリソースを挿入
+		/// </summary>
+		/// <param name="_key"></param>
+		/// <param name="_pResource"></param>
 		void Insert(const std::type_index& _key, WindowContextResource* _pResource);
 		void Swap(ResourceCollection& _other);
 		void Release();

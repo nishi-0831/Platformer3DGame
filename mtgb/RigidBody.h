@@ -28,7 +28,13 @@ namespace mtgb
 		~RigidBody();
 		RigidBody& operator=(const RigidBody& _other);
 
+		/// <summary>
+		/// 速度や、速度をもとにした座標を更新
+		/// </summary>
 		void UpdateVelocity();
+		/// <summary>
+		/// 接地した際に呼ばれる
+		/// </summary>
 		void OnGround();
 		void OnChangeEntityId() override;
 		/// <summary>
@@ -73,8 +79,17 @@ namespace mtgb
 		bool isKinematic_;
 
 	  private:
+		/// <summary>
+		/// 接触した瞬間に呼ばれるコールバック
+		/// </summary>
 		std::function<void(EntityId)> onHit_;
+		/// <summary>
+		/// 接触している間呼ばれるコールバック
+		/// </summary>
 		std::function<void(EntityId)> onStay_;
+		/// <summary>
+		/// 接触してから離れた瞬間に呼ばれるコールバック
+		/// </summary>
 		std::function<void(EntityId)> onExit_;
 		Transform* pTransform_;
 	};

@@ -5,6 +5,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// ゲームオブジェクトのスナップショット。Undo/Redoに使う
+	/// </summary>
 	struct GameObjectSnapshot
 	{
 		EntityId entityId;

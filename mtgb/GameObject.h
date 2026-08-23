@@ -53,18 +53,46 @@ namespace mtgb
 		/// <param name="..._args">コンストラクタ可変長引数</param>
 		/// <returns>インスタンスされたゲームオブジェクトのポインタ</returns>
 		template <class GameObjectT, typename... Args> static GameObjectT* Instantiate(Args... _args);
-
+		/// <summary>
+		/// ゲームオブジェクトが所属するシーンを指定された型で取得する
+		/// </summary>
+		/// <typeparam name="GameSceneT"></typeparam>
+		/// <returns></returns>
 		template <typename GameSceneT> GameSceneT& GetScene();
 
 		template <typename T> static T* FindGameObject();
 
 		template <typename T> static void FindGameObjects(std::vector<T*>* _pFoundGameObjects);
 
+		/// <summary>
+		/// 指定されたタグに一致するゲームオブジェクトを返す
+		/// </summary>
+		/// <param name="_tag"></param>
+		/// <returns>一番最初に一致したゲームオブジェクトを返す。存在しない場合はnullptr</returns>
 		static GameObject* FindGameObject(GameObjectTag _tag);
-		static GameObject* FindGameObject(std::string_view _name);
-		static void FindGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects);
-		static GameObject* FindGameObject(EntityId _entityId);
+		/// <summary>
+		/// 指定されたタグに一致するゲームオブジェクトを取得
+		/// </summary>
+		/// <param name="_tag"></param>
+		/// <param name="_pFoundGameObjects"></param>
 		static void FindGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects);
+		/// <summary>
+		/// 指定された名前に一致するゲームオブジェクトを返す
+		/// </summary>
+		/// <param name="_name"></param>
+		/// <returns>一番最初に一致したゲームオブジェクトを返す。存在しない場合はnullptr</returns>
+		static GameObject* FindGameObject(std::string_view _name);
+		/// <summary>
+		/// 指定された名前に一致するゲームオブジェクトを取得
+		/// </summary>
+		/// <param name="_name"></param>
+		static void FindGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects);
+		/// <summary>
+		/// 指定されたEntityIdに一致するゲームオブジェクトを返す
+		/// </summary>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
+		static GameObject* FindGameObject(EntityId _entityId);
 
 		/// <summary>
 		/// このオブジェクトを削除する
@@ -81,10 +109,15 @@ namespace mtgb
 		{
 			return status_.toDestroy_;
 		}
+
 		std::string GetName() const
 		{
 			return name_;
 		}
+		/// <summary>
+		/// 型名を返す
+		/// </summary>
+		/// <returns></returns>
 		std::string GetClassTypeName() const;
 		/// <summary>
 		/// レイヤーフラグを取得
@@ -103,11 +136,17 @@ namespace mtgb
 		{
 			return tag_;
 		}
-
+		/// <summary>
+		/// Start関数が呼ばれたか否か
+		/// </summary>
+		/// <returns></returns>
 		inline bool IsNotCalledStart() const
 		{
 			return isNotCalledStart_;
 		}
+		/// <summary>
+		/// Start関数が呼ばれたフラグをオンにする
+		/// </summary>
 		inline void MarkAsCalledStart()
 		{
 			isNotCalledStart_ = false;

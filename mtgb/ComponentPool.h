@@ -34,11 +34,31 @@ namespace mtgb
 		virtual void Update() override {}
 
 		void Release() override;
+		/// <summary>
+		/// JSONにシリアライズする
+		/// </summary>
+		/// <param name="_entityId">シリアライズするEntityのID</param>
+		/// <returns>シリアライズしたJSON</returns>
 		nlohmann::json Serialize(EntityId _entityId) override;
+		/// <summary>
+		/// メメントを作成する
+		/// </summary>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
 		IComponentMemento* SaveToMemento(EntityId _entityId) override;
+		/// <summary>
+		/// JSONをもとにデシリアライズする
+		/// </summary>
+		/// <param name="_entityId">JSONデータを反映するEntityのID</param>
+		/// <param name="_json">デシリアライズに使うJSON</param>
 		void Deserialize(EntityId _entityId, const nlohmann::json& _json) override;
+		/// <summary>
+		/// コンポーネントのデータをコピーする
+		/// </summary>
+		/// <param name="_dest">コピー先</param>
+		/// <param name="_src">コピー元</param>
 		void Copy(EntityId _dest, EntityId _src) override;
-		ComponentT* Reuse(size_t _index, EntityId _entityId);
+
 		/// <summary>
 		/// コンポーネントを作成/取得する
 		/// </summary>
@@ -46,8 +66,19 @@ namespace mtgb
 		/// <returns>コンポーネントの参照(確実に存在する)</returns>
 		template <typename... Args> ComponentT& Get(EntityId _entityId, Args&&... _args);
 
+		/// <summary>
+		/// コンポーネント取得を試す。存在しない場合は失敗
+		/// </summary>
+		/// <param name="_pComponent">取得したコンポーネントを格納するポインタ</param>
+		/// <param name="_entityId">取得を試すEntityのID</param>
+		/// <returns>成功したらtrue/失敗したらfalse</returns>
 		bool TryGet(ComponentT*& _pComponent, EntityId _entityId);
-
+		/// <summary>
+		/// コンポーネント取得を試す。存在しない場合は失敗
+		/// </summary>
+		/// <param name="_pComponent">取得したコンポーネントを格納ポインタ配列</param>
+		/// <param name="_entityId">取得を試すEntityのID</param>
+		/// <returns>成功したらtrue/失敗したらfalse</returns>
 		bool TryGet(std::vector<ComponentT*>* _pComponents, EntityId _entityId);
 
 		/// <summary>
@@ -159,25 +190,6 @@ namespace mtgb
 		destCom.OnChangeEntityId();
 		srcCom.entityId_ = _src;
 		srcCom.OnChangeEntityId();
-	}
-
-	template <typename ComponentT, typename DerivedT>
-	inline ComponentT* ComponentPool<ComponentT, DerivedT>::Reuse(size_t _index, EntityId _entityId)
-	{
-		if (poolId_.size() <= _index)
-			return nullptr;
-		if (poolId_[_index] != INVALID_ENTITY)
-			return nullptr;
-
-		poolId_[_index] = _entityId;
-
-		// EntityIdに割り当てられたComponentとして登録
-		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
-
-		ComponentT* pComponent = &pool_[_index];
-		pComponent->entityId_  = _entityId;
-		pComponent->OnChangeEntityId();
-		return pComponent;
 	}
 
 	template <typename ComponentT, typename DerivedT>

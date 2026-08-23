@@ -22,7 +22,7 @@ namespace mtgb
 	class ImGuiRenderer final : public ISystem
 	{
 	  public:
-		 using WindowFlags = int;
+		using WindowFlags = int;
 		enum WindowFlag
 		{
 			NONE,
@@ -35,28 +35,43 @@ namespace mtgb
 		~ImGuiRenderer();
 		void Initialize() override;
 		void Update() override;
+		/// <summary>
+		/// ImGuiのフレームを開始
+		/// </summary>
 		void BeginFrame();
+		/// <summary>
+		/// ImGuizmoのフレームを開始
+		/// </summary>
 		void BeginImGuizmoFrame();
-
+		/// <summary>
+		/// ImGuiのウィンドウを開始
+		/// </summary>
+		/// <param name="_str">ウィンドウ名</param>
+		/// <param name="_isOpen"></param>
+		/// <param name="_flag">表示フラグ</param>
 		void Begin(const char* _str, bool* _isOpen = NULL, WindowFlags _flag = 0);
+		/// <summary>
+		/// ImGuiのウィンドウを終了
+		/// </summary>
+		void End();
+		void Draw();
+		/// <summary>
+		/// ImGuiのフレームを終了
+		/// </summary>
+		void EndFrame();
+		void SetDrawList();
 
 		/// <summary>
 		/// ImGuizmoウィンドウを描画するためにRTVをセット
 		/// </summary>
 		void SetImGuizmoRenderTargetView();
-
-		void Draw();
-
-		void EndFrame();
-		void SetDrawList();
-
-		void RenderSceneView();
-		void UpdateGameViewRect();
-		void End();
-		void Release() override;
-
 		/// <summary>
-		///
+		/// シーンビューを描画
+		/// </summary>
+		void RenderSceneView();
+		void Release() override;
+		/// <summary>
+		/// ImGuiが保持しているリソースを解放
 		/// </summary>
 		void ResetComPtrs();
 		/// <summary>
@@ -75,12 +90,8 @@ namespace mtgb
 		void CreateD3DResources();
 		UINT winWidth_, winHeight_;
 
-		// Game Viewウィンドウの前フレーム情報
-		ImVec2 gameViewPos_;
-		ImVec2 gameViewSize_;
-		bool gameViewRectValid_;
+		// シーンビューの描画に使用するオブジェクト
 
-		// ImGuiIO io;
 		ComPtr<ID3D11RenderTargetView> pRenderTargetView_;
 		ComPtr<ID3D11ShaderResourceView> pSRV_;
 		ComPtr<ID3D11Texture2D> pSRVTexture_;

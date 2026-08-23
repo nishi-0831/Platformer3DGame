@@ -103,7 +103,10 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pJoystickDevice">切り替え対象のキーボードデバイス</param>
 		void ChangeKeyDevice(ComPtr<IDirectInputDevice8> _pKeyDevice);
-
+		/// <summary>
+		/// 入力状態を取得するジョイスティックのGUIDを設定する
+		/// </summary>
+		/// <param name="_guid"></param>
 		void SetJoystickGuid(GUID _guid);
 
 		/// <summary>
@@ -133,7 +136,11 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pJoystickDevice">割り当て希望のデバイス</param>
 		void RequestJoystickDevice(const JoystickReservation& _reservation);
-
+		/// <summary>
+		/// ジョイスティックが接続された場合に割り当てられるよう予約する
+		/// 先着順で割り当てられます
+		/// </summary>
+		/// <param name="_pJoystickDevice">割り当て希望のデバイス</param>
 		void RequestJoystickDevice(JoystickReservation&& _reservation);
 
 		/// <summary>
@@ -190,7 +197,15 @@ namespace mtgb
 		/// <param name="_pInputDevice">デバイス</param>
 		/// <returns>デバイス名</returns>
 		std::string GetDeviceProductName(ComPtr<IDirectInputDevice8> _pInputDevice);
+		/// <summary>
+		/// デバイスの製品名を取得
+		/// </summary>
+		/// <param name="_pInputDevice">デバイスのGUID</param>
+		/// <returns>デバイス名</returns>
 		std::string GetDeviceProductName(GUID _guid);
+		/// <summary>
+		/// HResultを文字列へ変換
+		/// </summary>
 		std::string_view ConvertHResultToMessage(HRESULT _hr) const;
 
 		/// <summary>
@@ -198,10 +213,13 @@ namespace mtgb
 		/// </summary>
 		/// <param name="_pInputDevice">デバイス</param>
 		/// <returns>デバイスタイプ</returns>
-		///
 		static DeviceType GetDeviceType(ComPtr<IDirectInputDevice8> _pInputDevice);
+		/// <summary>
+		/// デバイスのタイプを判別
+		/// </summary>
+		/// <param name="_inst">デバイス</param>
+		/// <returns>デバイスタイプ</returns>
 		static DeviceType GetDeviceType(const DIDEVICEINSTANCE& _inst);
-		HRESULT UpdateJoystickState(GUID _guid);
 
 		/// <summary>
 		/// <para> 予約の中から指定された種類のデバイスを要求しているものを探し、先着順で割り当てを行う </para>
@@ -211,6 +229,7 @@ namespace mtgb
 		/// <returns></returns>
 		int FindReservationIndexForDevice(DeviceType _devType) const;
 		std::string_view GetJoystickStatusMessage(GUID _guid) const;
+
 		bool IsJoystickConnected(GUID _guid) const;
 		bool IsJoystickAssigned(GUID _guid) const;
 

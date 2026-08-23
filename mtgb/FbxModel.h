@@ -9,15 +9,12 @@
 #include "ShaderType.h"
 namespace mtgb
 {
-	class FbxParts;
 	class Transform;
 	/// <summary>
 	/// 1つのFbxファイルを扱うクラス
 	/// </summary>
 	class FbxModel
 	{
-		friend class FbxParts;
-
 	  public:
 		FbxModel();
 		~FbxModel();
@@ -64,8 +61,6 @@ namespace mtgb
 		std::optional<FbxAnimationController> GetAnimationController();
 
 	  private:
-	  private:
-		// std::vector<FbxParts*> pParts_; // 複数あるかもしれないパーツ
 		std::vector<MeshAsset*> pMeshAssets_;
 		FbxScene* pFbxScene_; // Fbxファイル内のシーン
 

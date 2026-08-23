@@ -88,7 +88,6 @@ void mtgb::RenderSystem::DrawGameObjects(GameScene& _scene, GameObjectLayerFlag 
 	{
 		cp->RenderLayer(_layer);
 	}
-	// TODO:EffectManager,ColliderCPもIRenderableCPインターフェースを継承させる
 	Game::System<EffectManager>().Draw();
 	if (_layer.Has(GameObjectLayer::SCENE_VIEW))
 	{

@@ -1,5 +1,4 @@
 #pragma once
-// #include "GameScene.h"
 #include <nlohmann/json.hpp>
 #include <string>
 #include <functional>

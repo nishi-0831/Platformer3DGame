@@ -34,7 +34,13 @@ namespace mtgb
 		void RegisterFactory(std::string_view _typeName, const CreateFunc& _creator, bool _isUnique) override;
 
 	  private:
+		/// <summary>
+		/// ゲームオブジェクトの型名:作成関数
+		/// </summary>
 		std::unordered_map<std::string, CreateFunc, TransparentStringHash, TransparentStringEq> creators_;
+		/// <summary>
+		/// 一つのシーンに一つしか存在しないゲームオブジェクトの型名:作成関数
+		/// </summary>
 		std::unordered_set<std::string, TransparentStringHash, TransparentStringEq> uniqueGameObjectNames_;
 	};
 } // namespace mtgb

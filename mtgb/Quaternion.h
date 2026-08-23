@@ -77,8 +77,6 @@ namespace mtgb
 			return DirectX::XMQuaternionIdentity();
 		}
 
-		// static
-
 		/// <summary>
 		/// オイラー角を四元数に変換
 		/// </summary>

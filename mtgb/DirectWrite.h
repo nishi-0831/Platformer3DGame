@@ -24,17 +24,24 @@ struct ID2D1Brush;
 
 namespace mtgb
 {
-	// using TextLayoutKey = std::tuple<std::wstring, int>; // 文字列とサイズのペア
-
+	/// <summary>
+	/// ピクセル単位でのフォント・メトリック
+	/// </summary>
 	struct PixelFontMetrics
 	{
+		// ベースラインから上方向への長さ
 		float ascentPx;
+		// ベースラインから下方向への長さ
 		float descentPx;
+		// 行と行の間の空白の長さ
 		float lineGapPx;
+		// テキストの上端を指定座標にほぼぴったり揃えるためのオフセット
 		float textTopOffset;
 	};
 
-	// フォントフォーマットのキャッシュエントリ
+	/// <summary>
+	/// フォントフォーマットのキャッシュ
+	/// </summary>
 	struct FontFormatData
 	{
 		int fontSize;
@@ -46,7 +53,9 @@ namespace mtgb
 		~FontFormatData();
 	};
 
-	// テキストレイアウトのキャッシュエントリ
+	/// <summary>
+	/// テキストレイアウトのキャッシュ
+	/// </summary>
 	struct TextLayoutData
 	{
 		std::wstring str;
@@ -69,7 +78,7 @@ namespace mtgb
 	};
 
 	/// <summary>
-	/// DirectWrite用のシステム
+	/// DirectWrite用のシステム。フォントフォーマットやレイアウトのキャッシュやテキスト描画の関数を提供
 	/// </summary>
 	class DirectWrite : public ISystem
 	{

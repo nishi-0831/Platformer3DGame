@@ -109,11 +109,6 @@ mtgb::WindowConfig mtgb::WindowManager::GetWindowConfig(WindowContext _windowCon
 	return itr->second;
 }
 
-mtgb::WindowResource& mtgb::WindowManager::GetWindowResource(WindowContext _windowContext)
-{
-	return Game::System<WindowContextResourceManager>().Get<WindowResource>(_windowContext);
-}
-
 void mtgb::WindowManager::ChangeFullScreenState(WindowContext _ctx)
 {
 	ChangeFullScreenState(_ctx, WinCtxRes::Get<DXGIResource>(_ctx).GetAssignedMonitorRect());

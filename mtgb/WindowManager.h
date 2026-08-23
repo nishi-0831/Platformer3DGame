@@ -26,8 +26,17 @@ namespace mtgb
 	  public:
 		WindowManager();
 		~WindowManager();
-
+		/// <summary>
+		/// ウィンドウを作成
+		/// </summary>
+		/// <param name="_windowResource"></param>
+		/// <returns></returns>
 		HWND CreateWindowContext(WindowResource* _windowResource);
+		/// <summary>
+		/// ウィンドウサイズを返す
+		/// </summary>
+		/// <param name="_context">ウィンドウの識別子</param>
+		/// <returns></returns>
 		Vector2Int GetWindowSize(WindowContext _context);
 
 		void Initialize() override;
@@ -47,8 +56,6 @@ namespace mtgb
 		/// <param name="windowContext">ウィンドウの識別子</param>
 		/// <returns>ウィンドウ設定</returns>
 		static WindowConfig GetWindowConfig(WindowContext _windowContext);
-
-		static WindowResource& GetWindowResource(WindowContext _windowContext);
 
 		/// <summary>
 		/// <para> フルスクリーン状態を切り替える </para>
