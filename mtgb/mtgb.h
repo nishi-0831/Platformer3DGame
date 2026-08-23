@@ -14,7 +14,7 @@
 #include "RectT.h"
 #include "RectInt.h"
 #include "RectF.h"
-#include "WindowContextUtil.h"
+#include "WindowContext/WindowContextUtil.h"
 
 #include "Easing.h"
 #include "Mathf.h"
@@ -58,8 +58,8 @@
 #include "ImageRenderer.h"
 #include "TextCache.h"
 #include "Fbx.h"
-#include "WindowContext.h"
-#include "WindowContextResourceManager.h"
+#include "WindowContext/WindowContext.h"
+#include "WindowContext/WindowContextResourceManager.h"
 #include "WindowManager.h"
 #include "SingleWindow.h"
 #include "CameraSystem.h"
@@ -78,14 +78,14 @@
 
 #pragma region Resource
 
-#include "WindowContextResource.h"
-#include "WindowResource.h"
-#include "DXGIResource.h"
-#include "Direct3DResource.h"
-#include "Direct2DResource.h"
-#include "InputResource.h"
+#include "WindowContext/WindowContextResource.h"
+#include "WindowContext/WindowResource.h"
+#include "WindowContext/DXGIResource.h"
+#include "WindowContext/Direct3DResource.h"
+#include "WindowContext/Direct2DResource.h"
+#include "WindowContext/InputResource.h"
 #include "Input.h"
-#include "CameraResource.h"
+#include "WindowContext/CameraResource.h"
 
 #pragma endregion
 #pragma region Data

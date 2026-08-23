@@ -6,10 +6,10 @@
 #include <DirectXMath.h>
 
 #include "Debug.h"
-#include "WindowContextUtil.h"
 #include "Vector2Int.h"
-#include "Direct3DResource.h"
-#include "CameraResource.h"
+#include "WindowContext/WindowContextUtil.h"
+#include "WindowContext/Direct3DResource.h"
+#include "WindowContext/CameraResource.h"
 #include "Editor/MTImGui.h"
 #include "Audio.h"
 namespace

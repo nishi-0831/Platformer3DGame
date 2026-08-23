@@ -5,7 +5,7 @@
 #include "GameObjectGenerator.h"
 #include "Command/AddComponentCommand.h"
 #include "PropertyDisplayRegistry.h"
-#include "WindowContextUtil.h"
+#include "WindowContext/WindowContextUtil.h"
 #include <fstream>
 #include "SceneSystem.h"
 #include "GameScene.h"

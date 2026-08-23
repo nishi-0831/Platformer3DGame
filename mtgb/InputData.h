@@ -13,7 +13,7 @@
 #include "InputPadCode.h"
 
 #include "cmtgb.h"
-#include "WindowContext.h"
+#include "WindowContext/WindowContext.h"
 #include "InputConfig.h"
 #include "Input.h"
 #include "Axis.h"

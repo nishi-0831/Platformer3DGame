@@ -3,7 +3,7 @@
 #include <vector>
 #include <string>
 #include <concepts>
-#include "WindowContext.h"
+#include "WindowContext/WindowContext.h"
 #include "RectContainsInfo.h"
 #include "GameObjectTag.h"
 #include "RectF.h"
@@ -26,7 +26,7 @@ namespace mtgb
 		/// 検出された対象があるかどうか
 		/// </summary>
 		/// <returns>対象が一つでもあるなら true</returns>
-		bool HasDetectedTargets() const 
+		bool HasDetectedTargets() const
 		{
 			return !detectedTargets_.empty();
 		};

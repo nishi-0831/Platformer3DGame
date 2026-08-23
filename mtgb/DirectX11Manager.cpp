@@ -7,7 +7,7 @@
 #include <dxgi.h>
 #include <DirectXMath.h>
 #include "Screen.h"
-#include "WindowContext.h"
+#include "WindowContext/WindowContext.h"
 #include "ReleaseUtility.h"
 #include "Direct2D/Direct2D.h"
 #include "Editor/MTImGui.h"
