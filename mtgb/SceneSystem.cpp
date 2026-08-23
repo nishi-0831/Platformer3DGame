@@ -1,12 +1,12 @@
 #include "SceneSystem.h"
 #include "GameObject.h"
 #include "WindowContext/WindowContextResourceManager.h"
-#include "Input.h"
+#include "Input/Input.h"
 #include "WindowContext/WindowContext.h"
 #include "WindowContext/WindowContextUtil.h"
 #include "Editor/MTImGui.h"
 #include "RenderSystem.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "GameObjectGenerator.h"
 
 mtgb::SceneSystem::SceneSystem()

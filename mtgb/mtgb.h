@@ -84,13 +84,13 @@
 #include "WindowContext/Direct3DResource.h"
 #include "WindowContext/Direct2DResource.h"
 #include "WindowContext/InputResource.h"
-#include "Input.h"
+#include "Input/Input.h"
 #include "WindowContext/CameraResource.h"
 
 #pragma endregion
 #pragma region Data
 
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "RectContainsInfo.h"
 //
 #pragma endregion

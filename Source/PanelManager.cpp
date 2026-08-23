@@ -1,5 +1,5 @@
 #include "PanelManager.h"
-#include <InputData.h>
+#include <Input/InputData.h>
 PanelManager::PanelManager()
 	: pCurrPanel_ { nullptr }
 {

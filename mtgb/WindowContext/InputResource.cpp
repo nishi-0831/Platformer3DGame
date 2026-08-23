@@ -1,9 +1,9 @@
 #include "InputResource.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "ReleaseUtility.h"
 #include "WindowContextUtil.h"
 #include "IncludingInput.h"
-#include "JoystickProxy.h"
+#include "Input/JoystickProxy.h"
 #include "Editor/MTImGui.h"
 using namespace mtgb;
 

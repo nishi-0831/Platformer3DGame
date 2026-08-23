@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "ISystem.h"
-#include "Input.h"
+#include "Input/Input.h"
 #include "WindowResource.h"
 #include "ImGui/imgui.h"
 #include "ImGui/imgui_impl_win32.h"

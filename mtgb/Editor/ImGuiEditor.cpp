@@ -1,7 +1,7 @@
 #include "ImGuiEditor.h"
 #include "ReleaseUtility.h"
 #include "RegisterCommonGameObjectType.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "GameObjectGenerator.h"
 #include "Command/AddComponentCommand.h"
 #include "PropertyDisplayRegistry.h"

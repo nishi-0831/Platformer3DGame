@@ -7,7 +7,7 @@
 #include "GameObject.h"
 #include "Transform.h"
 #include "SceneSystem.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "CameraSystem.h"
 #include "GameTime.h"
 #include "ColliderCP.h"

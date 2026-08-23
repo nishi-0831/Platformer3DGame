@@ -6,7 +6,7 @@
 #include "ImGui/imgui.h"
 
 #include "CameraSystem.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "EventManager.h"
 #include "Entity.h"
 #include "Command/GuizmoManipulatedEvent.h"

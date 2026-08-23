@@ -2,8 +2,8 @@
 #include <refl-cpp/refl.hpp>
 #include "Vector3.h"
 #include "Quaternion.h"
-#include "JoystickProxy.h"
-#include "MouseStateProxy.h"
+#include "Input/JoystickProxy.h"
+#include "Input/MouseStateProxy.h"
 #include "Editor/PropertyDisplayRegistry.h"
 #include "ShowAttributes.h"
 #include "Interpolator.h"

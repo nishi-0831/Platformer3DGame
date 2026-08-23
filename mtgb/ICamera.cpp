@@ -1,5 +1,5 @@
 #include "ICamera.h"
-#include "InputData.h"
+#include "Input/InputData.h"
 #include "GameTime.h"
 #include "Transform.h"
 mtgb::ICamera::ICamera()

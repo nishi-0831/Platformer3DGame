@@ -1,10 +1,10 @@
 #pragma once
 #include "WindowContextResource.h"
 #include "WindowContextResourceManager.h"
-#include "Input.h"
+#include "Input/Input.h"
 #include "WindowContext.h"
-#include "JoystickProxy.h"
-#include "MouseStateProxy.h"
+#include "Input/JoystickProxy.h"
+#include "Input/MouseStateProxy.h"
 #include <string>
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "dInput8.lib")
