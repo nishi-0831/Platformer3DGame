@@ -2,7 +2,7 @@
 #include <array>
 #include "ISystem.h"
 #include "ShaderType.h"
-#include "IShader.h"
+#include "Shader/IShader.h"
 namespace mtgb
 {
 	class ShaderManager : public ISystem

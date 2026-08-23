@@ -1,5 +1,5 @@
 #pragma once
-#include "IShader.h"
+#include "Shader/IShader.h"
 #include "Vector3.h"
 #include "Matrix4x4.h"
 #include "Vector4.h"
