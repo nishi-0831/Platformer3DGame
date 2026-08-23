@@ -1,6 +1,5 @@
 #pragma once
 #include <mtgb.h>
-#include "SphericalCamera.h"
 #include "QuaternionCamera.h"
 #include "IActor.h"
 #include "HPViewer.h"
