@@ -2,7 +2,7 @@
 #include "PropertyDisplayRegistry.h"
 #include <refl-cpp/refl.hpp>
 #include "ImGui/imgui.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 
 #include "DefaultShow.h"
 #include "ShowAttributes.h"

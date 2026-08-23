@@ -1,6 +1,6 @@
 #include "Image/Image.h"
 #include "Sprite.h"
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 
 mtgb::Image::Image()
 	: handleCounter_ { 0 }

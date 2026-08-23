@@ -1,7 +1,7 @@
 #include "MeshAsset.h"
-#include "MTStringUtility.h"
-#include "MTAssert.h"
-#include "ReleaseUtility.h"
+#include "Utility/MTStringUtility.h"
+#include "Utility/MTAssert.h"
+#include "Utility/ReleaseUtility.h"
 mtgb::MeshAsset::~MeshAsset() {}
 
 void LoadSkelton(mtgb::MeshAsset* _asset)

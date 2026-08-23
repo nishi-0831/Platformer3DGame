@@ -1,4 +1,4 @@
-#include "Color.h"
+#include "Math/Color.h"
 
 mtgb::Color::Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const uint8_t _alpha)
 {

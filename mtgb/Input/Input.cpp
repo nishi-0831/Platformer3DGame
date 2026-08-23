@@ -2,7 +2,7 @@
 #include "IncludingWindows.h"
 #include "IncludingInput.h"
 #include "InputData.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include <algorithm>
 #include "Core/Game.h"
 #include "Core/SceneSystem.h"

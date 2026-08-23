@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 #include "ImGui/imgui.h"
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 
 class Command;
 namespace mtgb

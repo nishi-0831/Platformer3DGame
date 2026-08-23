@@ -1,5 +1,5 @@
 #include "DirectWrite.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Direct2D/Direct2D.h"
 #include <d2d1.h>
 #include <dwrite.h>

@@ -1,7 +1,7 @@
 #include "Model/Fbx.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "DirectX11Draw.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 
 mtgb::Fbx::Fbx()
 	: pFbxManager_ { nullptr }

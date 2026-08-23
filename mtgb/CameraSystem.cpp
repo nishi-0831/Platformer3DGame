@@ -1,7 +1,7 @@
 #include "CameraSystem.h"
 #include "Core/SceneSystem.h"
 #include <algorithm>
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Screen.h"
 #include <DirectXMath.h>
 

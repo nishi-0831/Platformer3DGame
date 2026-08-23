@@ -4,7 +4,7 @@
 #include "IncludingWindows.h"
 #include <string>
 #include "Core/Game.h"
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 #if _DEBUG
 
 #define massert(expression)                                                                                  \

@@ -7,7 +7,7 @@
 #include "ImGui/imgui_impl_dx11.h"
 #include "WindowContextUtil.h"
 #include "Direct3DResource.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Screen.h"
 #include "WindowManager.h"
 

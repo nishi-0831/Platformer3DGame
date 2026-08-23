@@ -6,7 +6,7 @@
 #include <nlohmann/json.hpp>
 #include "Core/ISystem.h"
 #include "cmtgb.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 namespace mtgb
 {
 	/// <summary>

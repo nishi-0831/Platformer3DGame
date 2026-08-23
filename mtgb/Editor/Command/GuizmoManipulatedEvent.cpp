@@ -1,5 +1,5 @@
 #include "GuizmoManipulatedEvent.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 
 mtgb::GuizmoManipulateCommand::GuizmoManipulateCommand(
 	const std::vector<TransformMemento*>& _prevMementos,

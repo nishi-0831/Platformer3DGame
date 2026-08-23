@@ -7,7 +7,7 @@
 #include <cmath>
 
 #include "Math/RectInt.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "TextAlignment.h"
 #include <wrl/client.h>
 

@@ -26,7 +26,7 @@ namespace mtgb
 			return Extend();
 		}
 		virtual inline const T Get() const = 0;
-		virtual void Write(T _value) = 0;
+		virtual void Write(T _value)	   = 0;
 		static inline ExtendT Load()
 		{
 			return ExtendT {};
@@ -55,10 +55,7 @@ namespace mtgb
 		}
 		void Write(int _value) override
 		{
-			WritePrivateProfileString(section_,
-				param_,
-				std::to_string(_value).data(),
-				PATH);
+			WritePrivateProfileString(section_, param_, std::to_string(_value).data(), PATH);
 		}
 	};
 

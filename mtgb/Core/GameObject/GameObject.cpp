@@ -1,9 +1,9 @@
 #include "Core/GameObject/GameObject.h"
 #include "Core/SceneSystem.h"
 #include "Components/Transform/Transform.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Core/EntityManager.h"
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 #include "Editor/MTImGui.h"
 mtgb::GameObject::GameObject(const GAME_OBJECT_DESC& _desc) :
 	name_{_desc.name},

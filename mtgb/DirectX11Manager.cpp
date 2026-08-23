@@ -1,6 +1,6 @@
 #include "DirectX11Manager.h"
 #include "Core/Game.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "IncludingWindows.h"
 #include <d3d11.h>
 
@@ -8,7 +8,7 @@
 #include <DirectXMath.h>
 #include "Screen.h"
 #include "WindowContext/WindowContext.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Direct2D/Direct2D.h"
 #include "Editor/MTImGui.h"
 #include "DirectX11Draw.h"

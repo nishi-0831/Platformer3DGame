@@ -2,7 +2,7 @@
 #include <d3d11.h>
 #include <dxgi1_2.h>
 #include <DirectXMath.h>
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Debug.h"
 
 using namespace mtgb;

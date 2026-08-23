@@ -1,7 +1,7 @@
 #include "Direct2D.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "DirectX11Draw.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 
 #include <d3d11_1.h>
 #include <comdef.h>

@@ -1,7 +1,7 @@
 #include "FbxModel.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Model/Fbx.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "ShaderManager.h"
 mtgb::FbxModel::FbxModel()
 	: pFbxScene_ { nullptr }

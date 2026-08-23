@@ -1,7 +1,7 @@
 #include "CommandHistory.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "NamedCommandHistory.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 CommandHistory::CommandHistory()
 	: ICommandHistory()
 	, isCommandExecuting_ { false }

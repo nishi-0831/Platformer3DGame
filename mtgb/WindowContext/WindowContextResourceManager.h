@@ -9,7 +9,7 @@
 #include "Core/ISystem.h"
 #include "WindowContext.h"
 #include "WindowContextResource.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "ResourceCollection.h"
 typedef struct HWND__* HWND;
 

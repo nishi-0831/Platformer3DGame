@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Math/Vector3.h"
 #include "GameTime.h"
 

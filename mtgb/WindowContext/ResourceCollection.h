@@ -3,7 +3,7 @@
 #include <vector>
 #include <typeindex>
 
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 
 namespace mtgb
 {

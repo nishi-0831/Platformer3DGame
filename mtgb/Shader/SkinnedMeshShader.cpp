@@ -1,6 +1,6 @@
 #include "SkinnedMeshShader.h"
 #include "CameraSystem.h"
-#include "CompileShaderUtility.h"
+#include "Utility/CompileShaderUtility.h"
 #include "3DCommonConstantBuffer.h"
 
 namespace

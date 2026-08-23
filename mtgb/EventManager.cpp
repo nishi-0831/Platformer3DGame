@@ -1,7 +1,7 @@
 #include "EventManager.h"
 #include "Core/Game.h"
 #include "Core/SceneSystem.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 mtgb::EventManager::~EventManager()
 {
 	for (auto& itr : events_)

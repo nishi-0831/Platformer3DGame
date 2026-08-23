@@ -6,7 +6,7 @@
 #include <span>
 #include <tuple>
 #include "Core/ISystem.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 namespace mtgb
 {
 	/// <summary>

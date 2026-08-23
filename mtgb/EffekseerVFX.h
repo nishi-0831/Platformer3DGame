@@ -9,7 +9,7 @@
 #include <DirectXMath.h>
 #include "Core/ISystem.h"
 #include "Math/Matrix4x4.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 
 namespace fs = std::filesystem;
 

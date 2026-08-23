@@ -1,6 +1,6 @@
 #include "NamedCommandHistory.h"
 #include "ImGui/imgui.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 namespace
 {
 	const size_t HISTORY_CAPACITY = 256;

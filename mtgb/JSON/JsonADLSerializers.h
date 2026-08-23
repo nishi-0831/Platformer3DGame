@@ -2,7 +2,7 @@
 #include "nlohmann/json.hpp"
 #include <bitset>
 #include "Core/GameObject/GameObjectLayer.h"
-#include "Color.h"
+#include "Math/Color.h"
 namespace nlohmann
 {
 	// adl_serializerを特殊化してシリアライズ、デシリアライズ関数を定義する

@@ -5,7 +5,7 @@
 #include "IGameObjectCreator.h"
 #include "IGameObjectRegistrar.h"
 #include "GameObjectTypeRegistry.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 #include <unordered_map>
 #include <string_view>
 #include <unordered_set>

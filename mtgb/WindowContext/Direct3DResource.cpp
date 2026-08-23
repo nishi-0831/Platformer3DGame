@@ -1,5 +1,5 @@
 #include "Direct3DResource.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Screen.h"
 #include "WindowManager.h"
 using namespace mtgb;

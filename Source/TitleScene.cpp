@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include <mtgb.h>
-#include <ProfileUtlity.h>
+#include <Utility/ProfileUtlity.h>
 #include "TitleScene.h"
 #include "Scenes/SampleScene.h"
 #include "../Source/SkySphere.h"

@@ -2,7 +2,7 @@
 #include "Core/Game.h"
 
 #include "Command.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "ComponentConcept.h"
 #include <string>
 

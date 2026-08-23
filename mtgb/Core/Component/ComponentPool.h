@@ -5,10 +5,10 @@
 #include "Core/ISystem.h"
 #include <nlohmann/json.hpp>
 #include "Core/Component/ComponentRegistry.h"
-#include "JsonConverter.h"
+#include "JSON/JsonConverter.h"
 #include "Editor/Command/AddComponentCommandGeneric.h"
 #include "Editor/Command/CommandHistoryManager.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 namespace mtgb
 {
 	inline constexpr size_t COMPONENT_CAPACITY { 8192 };

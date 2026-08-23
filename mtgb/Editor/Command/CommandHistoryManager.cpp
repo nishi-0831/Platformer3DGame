@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "CommandHistoryManager.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Editor/MTImGui.h"
 #include "assert.h"
 CommandHistoryManager::CommandHistoryManager()

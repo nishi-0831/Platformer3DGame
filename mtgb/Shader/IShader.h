@@ -8,7 +8,7 @@
 #include <wrl/client.h>
 #include "Model/MeshAsset.h"
 #include "ReflectiveConstantBuffer.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 
 using Microsoft::WRL::ComPtr;
 

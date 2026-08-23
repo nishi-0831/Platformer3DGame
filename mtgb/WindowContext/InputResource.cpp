@@ -1,6 +1,6 @@
 #include "InputResource.h"
 #include "Input/InputData.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "WindowContextUtil.h"
 #include "IncludingInput.h"
 #include "Input/JoystickProxy.h"

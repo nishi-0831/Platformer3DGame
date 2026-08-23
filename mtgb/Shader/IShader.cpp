@@ -1,8 +1,8 @@
 #include "IShader.h"
 #include <d3d11.h>
 #include "Core/SceneSystem.h"
-#include "ReleaseUtility.h"
-#include "CompileShaderUtility.h"
+#include "Utility/ReleaseUtility.h"
+#include "Utility/CompileShaderUtility.h"
 #include "HLSLInclude.h"
 mtgb::IShader::IShader() {}
 

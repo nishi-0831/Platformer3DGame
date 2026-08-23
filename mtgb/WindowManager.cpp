@@ -5,10 +5,10 @@
 #include "WindowContext/WindowResource.h"
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/DXGIResource.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "Core/Game.h"
 #include "Core/ISystem.h"
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 #include "Editor/ImGuiRenderer.h"
 #include "Screen.h"
 

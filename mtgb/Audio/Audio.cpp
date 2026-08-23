@@ -2,9 +2,9 @@
 #include <xaudio2.h>
 #include <xaudio2fx.h>
 #include <fileapi.h>
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "MTBin/MemoryStream.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "WaveData.h"
 #include "GameTime.h"
 #include "Debug.h"

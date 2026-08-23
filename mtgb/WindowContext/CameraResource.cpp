@@ -1,9 +1,9 @@
 #include "CameraResource.h"
 #include "WindowContextResource.h"
 #include "Core/GameObject/GameObject.h"
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Core/SceneSystem.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "CameraSystem.h"
 
 mtgb::CameraResource::CameraResource(WindowContext _windowContext)

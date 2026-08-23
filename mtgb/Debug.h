@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <list>
 #include <source_location>
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 #ifdef _DEBUG
 
 #define LOGF(format, ...) mtgb::Debug::LogF(format, __VA_ARGS__)

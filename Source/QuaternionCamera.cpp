@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "QuaternionCamera.h"
-#include "ProfileUtlity.h"
+#include "Utility/ProfileUtlity.h"
 #include <cmath>
 #include <numbers>
 float EaseOutQuart(float _x)

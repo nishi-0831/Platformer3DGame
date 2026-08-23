@@ -1,8 +1,8 @@
 #include "Texture2D.h"
 #include <d3d11.h>
 #include <wincodec.h>
-#include "MTAssert.h"
-#include "ReleaseUtility.h"
+#include "Utility/MTAssert.h"
+#include "Utility/ReleaseUtility.h"
 #include "DirectX11Draw.h"
 
 mtgb::Texture2D::Texture2D()

@@ -5,7 +5,7 @@
 #include "Math/Vector4.h"
 #include "Math/Vector2.h"
 #include "Math/RectInt.h"
-#include "Color.h"
+#include "Math/Color.h"
 #include <string>
 #include "Texture2D.h"
 #include "Math/RectF.h"

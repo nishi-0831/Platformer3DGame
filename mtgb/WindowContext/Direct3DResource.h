@@ -2,7 +2,7 @@
 #include "WindowContextResource.h"
 #include "WindowContextResourceManager.h"
 #include "DXGIResource.h"
-#include "MTAssert.h"
+#include "Utility/MTAssert.h"
 #include "WindowContext.h"
 #include <map>
 #include <typeindex>

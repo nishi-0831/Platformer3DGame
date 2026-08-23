@@ -4,7 +4,7 @@
 #include <vector>
 #include <functional>
 #include "FbxAnimationClip.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 #include "Handlers.h"
 #include "AnimationEvent.h"
 

@@ -7,7 +7,7 @@
 #include <d3d11.h>
 #include <unordered_map>
 #include "Math/Vector4.h"
-#include "StringComparators.h"
+#include "Utility/StringComparators.h"
 
 #include "Math/Vector3.h"
 #include "Math/Vector2.h"

@@ -3,7 +3,7 @@
 #include "Core/Game.h"
 #include "Core/SceneSystem.h"
 
-#include "ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 #include "Components/Transform/Transform.h"
 #include "Screen.h"
 #include <cmath>
