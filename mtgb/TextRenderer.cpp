@@ -2,8 +2,8 @@
 #include "TextRenderer.h"
 #include "Draw.h"
 #include "DirectX11Draw.h"
-#include "TextCache.h"
-#include "DirectWrite.h"
+#include "Text/TextCache.h"
+#include "Text/DirectWrite.h"
 #include "Screen.h"
 #include <dwrite.h>
 

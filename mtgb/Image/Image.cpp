@@ -1,4 +1,4 @@
-#include "Image.h"
+#include "Image/Image.h"
 #include "Sprite.h"
 #include "MTStringUtility.h"
 

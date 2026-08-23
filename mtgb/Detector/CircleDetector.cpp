@@ -6,7 +6,7 @@
 #include <string>
 #include "Screen.h"
 #include "Draw.h"
-#include "Image.h"
+#include "Image/Image.h"
 namespace mtgb
 {
 	CircleDetector::CircleDetector() {}

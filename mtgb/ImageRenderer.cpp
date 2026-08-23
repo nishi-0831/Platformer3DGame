@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "ImageRenderer.h"
 #include "Draw.h"
-#include "Image.h"
+#include "Image/Image.h"
 #include "DirectX11Draw.h"
-#include "Sprite.h"
+#include "Image/Sprite.h"
 
 mtgb::ImageRenderer::ImageRenderer()
 	: color_ { Color::WHITE }

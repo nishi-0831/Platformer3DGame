@@ -6,7 +6,7 @@
 
 #include "Math/RectF.h"
 #include "UIParams.h"
-#include "TextAlignment.h"
+#include "Text/TextAlignment.h"
 #include "TextRendererCP.h"
 #include "IRenderable.h"
 #include "TextRenderer.generated.h"
