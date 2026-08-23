@@ -15,6 +15,10 @@ class ActorManager : public ISystem
 	/// </summary>
 	/// <param name="_pActor"></param>
 	void RegisterActor(IActor* _pActor);
+	/// <summary>
+	/// EntityIdに対応するアクターを登録解除
+	/// </summary>
+	/// <param name="_id"></param>
 	void UnregisterActor(EntityId _id);
 	/// <summary>
 	/// アクターのポインタを返す

@@ -13,6 +13,7 @@ Bullet::Bullet(EntityId _gunnerId)
 	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
 	pMeshRenderer_->shaderType = ShaderType::FBX_PARTS;
 
+	// 指定した秒数後に破棄
 	despawnTimerHandle_ = Timer::AddAram(
 		despawnTime_,
 		[this]()
@@ -41,9 +42,11 @@ void Bullet::OnHit(IActor* _pOther)
 	if (_pOther == nullptr)
 		return;
 
+	// 自分を射出したガンナーにはダメージを与えない
 	if (_pOther->GetId() == gunnerId_)
 		return;
 
+	// 接触したアクターにダメージを与えて、自分を破棄
 	_pOther->TakeDamage(takeDamageAmount_);
 	DestroyMe();
 	Timer::Remove(despawnTimerHandle_);

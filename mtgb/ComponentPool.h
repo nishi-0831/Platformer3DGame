@@ -58,6 +58,13 @@ namespace mtgb
 		/// <param name="_dest">コピー先</param>
 		/// <param name="_src">コピー元</param>
 		void Copy(EntityId _dest, EntityId _src) override;
+		/// <summary>
+		/// 指定されたインデックスのコンポーネントの再利用を試みる
+		//  コンポーネントが自他含むエンティティに利用されていないなら取得できる
+		/// </summary>
+		/// <param name="_index"></param>
+		/// <param name="_entityId"></param>
+		/// <returns></returns>
 		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する

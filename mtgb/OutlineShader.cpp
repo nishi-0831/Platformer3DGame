@@ -1,8 +1,8 @@
 #include "OutlineShader.h"
 #include "CameraSystem.h"
 mtgb::OutlineShader::OutlineShader()
-	: outlineColor_ { 1, 0.6, 0, 1 }
-	, outlineScale_ { 1.06 }
+	: outlineColor_ { 1.0f, 0.6f, 0.0f, 1.0f }
+	, outlineScale_ { 1.06f }
 {
 }
 void mtgb::OutlineShader::Initialize(ID3D11Device* _pDevice)
@@ -53,7 +53,6 @@ void mtgb::OutlineShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tra
 		_pCtx->IASetIndexBuffer(_pAsset->ppIndexBuffer[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
-		D3D11_MAPPED_SUBRESOURCE pdata_;
 		ConstantBuffer cb {};
 		Matrix4x4 mWorld {};
 		_transform.GenerateWorldMatrix(&mWorld);

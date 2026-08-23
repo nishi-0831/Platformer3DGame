@@ -54,7 +54,6 @@ void mtgb::MeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transf
 		_pCtx->IASetIndexBuffer(_pAsset->ppIndexBuffer[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
-		D3D11_MAPPED_SUBRESOURCE pdata_;
 		ConstantBuffer cb {};
 		Matrix4x4 mWorld {};
 		_transform.GenerateWorldMatrix(&mWorld);

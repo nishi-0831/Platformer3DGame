@@ -4,6 +4,9 @@
 
 namespace mtgb
 {
+	/// <summary>
+	/// プレイヤーのHPを表示するゲームオブジェクト
+	/// </summary>
 	class HPViewer : public GameObject
 	{
 	  public:

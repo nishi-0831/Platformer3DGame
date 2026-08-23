@@ -126,7 +126,7 @@ void LoadSkelton(mtgb::MeshAsset* _asset)
 		{
 			for (size_t y = 0; y < 4; y++)
 			{
-				pose(x, y) = (float)matrix.Get(x, y);
+				pose(x, y) = static_cast<float>(matrix.Get(x, y));
 			}
 		}
 

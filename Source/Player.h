@@ -22,6 +22,10 @@ class Player : public mtgb::GameObject, public IActor
 	void TakeDamage(int _damage) override;
 
   private:
+	/// <summary>
+	/// プレイヤーの移動方向を取得
+	/// </summary>
+	/// <returns></returns>
 	Vector3 GetMoveDir();
 	void UpdatePosition();
 	void UpdateRotate();
@@ -41,11 +45,14 @@ class Player : public mtgb::GameObject, public IActor
 	Collider* pCollider_;
 	MeshRenderer* pMeshRenderer_;
 	RigidBody* pRigidBody_;
+
 	QuaternionCamera* pCamera_;
 	const Transform* pCameraTransform_;
 	std::optional<FbxAnimationController> animController_;
-	int hp_;
+	JumpController jumpController_;
 	HPViewer* pHPViewer_;
+
+	int hp_;
 	// 無敵かどうか
 	bool isInvincible_;
 	// 被弾時、無敵になる時間(秒)
@@ -56,7 +63,6 @@ class Player : public mtgb::GameObject, public IActor
 	float elapsedInvincibilityTime_;
 	// 描画有無を切り替える処理のハンドル
 	TimerHandle hTimerChangeVisibility_;
-	JumpController jumpController_;
 
 	// 歩いている際に煙のエフェクトを再生する間隔
 	float walkSmokeInterval_;

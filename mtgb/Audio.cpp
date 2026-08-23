@@ -287,15 +287,15 @@ int mtgb::Audio::Play(std::string_view _soundName, bool _loop)
 	}
 
 	IXAudio2SourceVoice* bestVoice = nullptr;
-	int min						   = INT_MAX;
+	uint64_t min				   = UINT64_MAX;
 	int idx						   = -1;
 	for (int i = 0; i < voices.size(); i++)
 	{
 		XAUDIO2_VOICE_STATE state;
 		voices[i].pSourceVoice->GetState(&state);
 
-		int totalSample = waveData->bufferSize / waveData->waveFormat.nBlockAlign;
-		int remaining	= totalSample - state.SamplesPlayed;
+		uint64_t totalSample = waveData->bufferSize / waveData->waveFormat.nBlockAlign;
+		uint64_t remaining	 = totalSample - state.SamplesPlayed;
 		if (remaining < min)
 		{
 			bestVoice = voices[i].pSourceVoice;

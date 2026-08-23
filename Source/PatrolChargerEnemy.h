@@ -1,6 +1,9 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
+/// <summary>
+/// 二地点間を巡回して、プレイヤーが近づくと突進してくる敵
+/// </summary>
 class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 {
   public:
