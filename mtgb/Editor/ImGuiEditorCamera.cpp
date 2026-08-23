@@ -21,7 +21,7 @@
 #include "Debug.h"
 #include <d3d11.h>
 #include "Mathf.h"
-#include "QuatToEuler.h"
+#include "Math/QuatToEuler.h"
 #include "Screen.h"
 #include "ImGuiEditor.h"
 using namespace mtgb::ImGuiUtil;

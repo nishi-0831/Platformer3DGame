@@ -2,7 +2,7 @@
 #include "ImGui/imgui.h"
 
 #include "Editor/Command/ImGuiInputCommand.h"
-#include "QuatToEuler.h"
+#include "Math/QuatToEuler.h"
 #include "Editor/Command/GroupCommand.h"
 Command* Vector3Show::operator()(mtgb::Vector3* _vec, const char* _name) const
 {

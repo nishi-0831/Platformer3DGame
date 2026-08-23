@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
-#include "Vector3.h"
-#include "Quaternion.h"
+#include "Math/Vector3.h"
+#include "Math/Quaternion.h"
 #include "GameObjectLayer.h"
 #include "GameObjectTag.h"
 

@@ -1,7 +1,7 @@
 #pragma once
 #include <cstdint>
-#include "Vector3.h"
-#include "Vector4.h"
+#include "Math/Vector3.h"
+#include "Math/Vector4.h"
 
 namespace mtgb
 {

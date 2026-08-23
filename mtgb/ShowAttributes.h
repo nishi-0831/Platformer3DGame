@@ -1,7 +1,7 @@
 
 #pragma once
 #include <refl-cpp/refl.hpp>
-#include "Vector3.h"
+#include "Math/Vector3.h"
 
 class Command;
 struct Vector3Show : refl::attr::usage::type

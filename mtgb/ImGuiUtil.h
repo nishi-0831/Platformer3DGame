@@ -2,9 +2,9 @@
 #include <optional>
 #include "ImGui/imgui.h"
 
-#include "Vector3.h"
-#include "Matrix4x4.h"
-#include "Vector2F.h"
+#include "Math/Vector3.h"
+#include "Math/Matrix4x4.h"
+#include "Math/Vector2F.h"
 struct D3D11_VIEWPORT;
 namespace mtgb
 {

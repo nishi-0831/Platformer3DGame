@@ -1,9 +1,9 @@
 #pragma once
 
 #include "WindowContext/WindowContext.h"
-#include "RectF.h"
-#include "Vector2F.h"
-#include "Vector3.h"
+#include "Math/RectF.h"
+#include "Math/Vector2F.h"
+#include "Math/Vector3.h"
 #include "GameObjectTag.h"
 #include "Transform.h"
 #include "UIParams.h"

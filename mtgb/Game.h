@@ -11,7 +11,7 @@
 #include <type_traits>
 #include "Entity.h"
 #include "ISystem.h"
-#include "Vector2Int.h"
+#include "Math/Vector2Int.h"
 #include <typeindex>
 #include "IRenderable.h"
 #include "ComponentFactory.h"

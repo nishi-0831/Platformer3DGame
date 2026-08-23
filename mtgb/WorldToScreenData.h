@@ -1,7 +1,7 @@
 #pragma once
-#include "Matrix4x4.h"
-#include "Vector3.h"
-#include "Vector2.h"
+#include "Math/Matrix4x4.h"
+#include "Math/Vector3.h"
+#include "Math/Vector2.h"
 #include "Handlers.h"
 #include <d3d11.h>
 namespace mtgb

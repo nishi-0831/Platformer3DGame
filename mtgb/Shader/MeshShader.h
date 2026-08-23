@@ -1,6 +1,6 @@
 #pragma once
 #include "IShader.h"
-#include "Vector2.h"
+#include "Math/Vector2.h"
 
 namespace mtgb
 {

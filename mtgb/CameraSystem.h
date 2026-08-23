@@ -1,12 +1,12 @@
 #pragma once
 #include "ISystem.h"
 #include "Transform.h"
-#include "Matrix4x4.h"
+#include "Math/Matrix4x4.h"
 #include "Handlers.h"
-#include "Vector4.h"
+#include "Math/Vector4.h"
 #include "WorldToScreenData.h"
 #include "WindowContext/WindowContext.h"
-#include "Vector2F.h"
+#include "Math/Vector2F.h"
 namespace mtgb
 {
 	class CameraSystem : public ISystem

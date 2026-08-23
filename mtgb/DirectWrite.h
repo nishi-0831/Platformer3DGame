@@ -6,7 +6,7 @@
 #include <tuple>
 #include <cmath>
 
-#include "RectInt.h"
+#include "Math/RectInt.h"
 #include "ReleaseUtility.h"
 #include "TextAlignment.h"
 #include <wrl/client.h>

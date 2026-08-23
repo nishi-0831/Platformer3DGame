@@ -1,7 +1,7 @@
 #pragma once
 #include "ISystem.h"
-#include "Vector2Int.h"
-#include "Vector2F.h"
+#include "Math/Vector2Int.h"
+#include "Math/Vector2F.h"
 namespace mtgb
 {
 	class Screen : public ISystem

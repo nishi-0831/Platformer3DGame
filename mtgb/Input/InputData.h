@@ -5,9 +5,9 @@
 #include "IncludingInput.h"
 #include <bitset>
 
-#include "Vector3.h"
-#include "Vector2Int.h"
-#include "Vector2F.h"
+#include "Math/Vector3.h"
+#include "Math/Vector2Int.h"
+#include "Math/Vector2F.h"
 #include "InputKeyCode.h"
 #include "InputMouseCode.h"
 #include "InputPadCode.h"

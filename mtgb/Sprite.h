@@ -1,15 +1,15 @@
 #pragma once
 #include "Shader/IShader.h"
-#include "Vector3.h"
-#include "Matrix4x4.h"
-#include "Vector4.h"
-#include "Vector2.h"
-#include "RectInt.h"
+#include "Math/Vector3.h"
+#include "Math/Matrix4x4.h"
+#include "Math/Vector4.h"
+#include "Math/Vector2.h"
+#include "Math/RectInt.h"
 #include "Color.h"
 #include <string>
 #include "Texture2D.h"
-#include "RectF.h"
-#include "Vector2F.h"
+#include "Math/RectF.h"
+#include "Math/Vector2F.h"
 
 namespace mtgb
 {

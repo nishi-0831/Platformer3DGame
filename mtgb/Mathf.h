@@ -1,7 +1,7 @@
 #pragma once
 #include <cmath>
 #include "MTAssert.h"
-#include "Vector3.h"
+#include "Math/Vector3.h"
 #include "GameTime.h"
 
 namespace mtgb::Mathf

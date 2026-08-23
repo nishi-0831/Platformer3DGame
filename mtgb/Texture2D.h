@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "Vector2Int.h"
+#include "Math/Vector2Int.h"
 
 #pragma comment(lib, "WindowsCodecs.lib")
 #include <wrl/client.h>

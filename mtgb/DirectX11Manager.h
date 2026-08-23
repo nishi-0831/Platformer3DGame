@@ -2,7 +2,7 @@
 #include "ISystem.h"
 #include <string>
 #include <wrl/client.h>
-#include "Vector2Int.h"
+#include "Math/Vector2Int.h"
 #include <dxgi1_2.h>
 #include <vector>
 #include <optional>

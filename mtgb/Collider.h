@@ -5,7 +5,7 @@
 #include "IComponent.h"
 #include <unordered_set>
 #include <DirectXCollision.h>
-#include "Vector3.h"
+#include "Math/Vector3.h"
 #include "ColliderType.h"
 #include "ColliderCP.h"
 #include <concepts>

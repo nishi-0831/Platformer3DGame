@@ -1,6 +1,6 @@
-#include "Quaternion.h"
-#include "Matrix4x4.h"
-#include "Vector4.h"
+#include "Math/Quaternion.h"
+#include "Math/Matrix4x4.h"
+#include "Math/Vector4.h"
 
 mtgb::Quaternion mtgb::Quaternion::LookRotation(const Vector3& _dir, const Vector3& _upVec)
 {

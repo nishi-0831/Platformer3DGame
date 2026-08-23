@@ -4,7 +4,7 @@
 #include "IComponent.h"
 #include "Transform.h"
 #include "Collider.h"
-#include "Vector3.h"
+#include "Math/Vector3.h"
 #include "InterpolatorCP.h"
 #include "Interpolator.generated.h"
 

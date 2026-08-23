@@ -4,7 +4,7 @@
 #include "ISerializableObject.h"
 #include "IComponentMemento.h"
 
-#include "RectF.h"
+#include "Math/RectF.h"
 #include "UIParams.h"
 #include "TextAlignment.h"
 #include "TextRendererCP.h"

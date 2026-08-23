@@ -1,6 +1,6 @@
 #pragma once
-#include "Vector3.h"
-#include "Vector2F.h"
+#include "Math/Vector3.h"
+#include "Math/Vector2F.h"
 #include "Entity.h"
 namespace mtgb
 {

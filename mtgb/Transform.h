@@ -4,9 +4,9 @@
 #include "IComponent.h"
 #include "IComponentMemento.h"
 
-#include "Vector3.h"
-#include "Quaternion.h"
-#include "Matrix4x4.h"
+#include "Math/Vector3.h"
+#include "Math/Quaternion.h"
+#include "Math/Matrix4x4.h"
 #include "cmtgb.h"
 #include "TransformCP.h"
 #include "Transform.generated.h"

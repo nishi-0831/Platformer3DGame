@@ -5,15 +5,15 @@
 
 #pragma region Utilities
 
-#include "Vector3.h"
-#include "Vector2.h"
-#include "Vector2T.h"
-#include "Vector2F.h"
-#include "Vector2Int.h"
+#include "Math/Vector3.h"
+#include "Math/Vector2.h"
+#include "Math/Vector2T.h"
+#include "Math/Vector2F.h"
+#include "Math/Vector2Int.h"
 
-#include "RectT.h"
-#include "RectInt.h"
-#include "RectF.h"
+#include "Math/RectT.h"
+#include "Math/RectInt.h"
+#include "Math/RectF.h"
 #include "WindowContext/WindowContextUtil.h"
 
 #include "Easing.h"

@@ -6,7 +6,7 @@
 #include <DirectXMath.h>
 
 #include "Debug.h"
-#include "Vector2Int.h"
+#include "Math/Vector2Int.h"
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/Direct3DResource.h"
 #include "WindowContext/CameraResource.h"

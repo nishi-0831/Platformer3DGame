@@ -1,6 +1,6 @@
 #pragma once
 #include "cmtgb.h"
-#include "Vector4.h"
+#include "Math/Vector4.h"
 #include <wrl/client.h>
 #include <array>
 #include "ShaderType.h"

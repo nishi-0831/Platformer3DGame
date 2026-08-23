@@ -2,8 +2,8 @@
 #include <cfloat>
 #include <algorithm>
 #include <DirectXMath.h>
-#include "Quaternion.h"
-#include "Matrix4x4.h"
+#include "Math/Quaternion.h"
+#include "Math/Matrix4x4.h"
 #include "GameObject.h"
 #include "CameraSystem.h"
 #include "Screen.h"

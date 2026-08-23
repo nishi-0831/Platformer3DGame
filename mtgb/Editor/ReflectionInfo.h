@@ -1,14 +1,14 @@
 #pragma once
 #include <refl-cpp/refl.hpp>
-#include "Vector3.h"
-#include "Quaternion.h"
+#include "Math/Vector3.h"
+#include "Math/Quaternion.h"
 #include "Input/JoystickProxy.h"
 #include "Input/MouseStateProxy.h"
 #include "Editor/PropertyDisplayRegistry.h"
 #include "ShowAttributes.h"
 #include "Interpolator.h"
-#include "Matrix4x4.h"
-#include "RectF.h"
+#include "Math/Matrix4x4.h"
+#include "Math/RectF.h"
 #include "UIParams.h"
 // #include "TypeRegistryImpl.h"
 #include "ShowFunc.h"

@@ -8,7 +8,7 @@
 #include <vector>
 #include <DirectXMath.h>
 #include "ISystem.h"
-#include "Matrix4x4.h"
+#include "Math/Matrix4x4.h"
 #include "StringComparators.h"
 
 namespace fs = std::filesystem;

@@ -1,7 +1,7 @@
 #pragma once
 #include <DirectXMath.h>
 #include <string>
-#include "Vector3.h"
+#include "Math/Vector3.h"
 
 namespace mtgb
 {

@@ -3,7 +3,7 @@
 #include "Collider.h"
 #include "MeshRenderer.h"
 #include "RigidBody.h"
-#include "Vector3.h"
+#include "Math/Vector3.h"
 #include "ImGuiRenderer.h"
 #include "ImGui/imgui.h"
 #include "ImGui/ImGuizmo.h"

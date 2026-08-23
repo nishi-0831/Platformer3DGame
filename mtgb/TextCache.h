@@ -4,7 +4,7 @@
 #include <string>
 #include "DirectWrite.h"
 #include "TextAlignment.h"
-#include "Vector2F.h"
+#include "Math/Vector2F.h"
 
 #include <boost/multi_index_container.hpp>
 #include <boost/multi_index/ordered_index.hpp>

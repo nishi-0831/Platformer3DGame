@@ -3,8 +3,8 @@
 #include <optional>
 #include <string>
 #include <vector>
-#include "RectF.h"
-#include "Vector3.h"
+#include "Math/RectF.h"
+#include "Math/Vector3.h"
 #include "RectContainsInfo.h"
 #include "WindowContext/WindowContext.h"
 #include "GameObjectTag.h"

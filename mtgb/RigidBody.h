@@ -4,7 +4,7 @@
 #include "IComponent.h"
 #include "IComponentMemento.h"
 
-#include "Vector3.h"
+#include "Math/Vector3.h"
 #include "RigidBodyCP.h"
 #include "CallbackConcepts.h"
 
