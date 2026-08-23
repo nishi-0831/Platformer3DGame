@@ -6,12 +6,12 @@
 #include "Core/Game.h"
 #include "Core/GameObject/GameObject.h"
 #include "Components/Transform/Transform.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Input/InputData.h"
 #include "CameraSystem.h"
 #include "GameTime.h"
 #include "Components/Collider/ColliderCP.h"
-#include "ImGuiUtil.h"
+#include "Editor/ImGuiUtil.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 #include "MTImGui.h"
@@ -20,7 +20,7 @@
 #include <algorithm>
 #include "Debug.h"
 #include <d3d11.h>
-#include "Mathf.h"
+#include "Math/Mathf.h"
 #include "Math/QuatToEuler.h"
 #include "Screen.h"
 #include "ImGuiEditor.h"

@@ -2,7 +2,7 @@
 #include "WindowContextResource.h"
 #include "Core/GameObject/GameObject.h"
 #include "ReleaseUtility.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "MTAssert.h"
 #include "CameraSystem.h"
 

@@ -2,10 +2,10 @@
 #include <string>
 #include "Handlers.h"
 #include "MTStat/MTStat.h"
-#include "ImGuiShowable.h"
-#include "ISystem.h"
+#include "Editor/ImGuiShowable.h"
+#include "Core/ISystem.h"
 #include "ICamera.h"
-#include "SelectionMode.h"
+#include "Editor/SelectionMode.h"
 namespace mtgb
 {
 	class Transform;

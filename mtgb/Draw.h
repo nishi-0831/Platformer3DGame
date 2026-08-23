@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "ShaderType.h"
 #include "IRenderable.h"
 

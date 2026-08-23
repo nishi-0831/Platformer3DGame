@@ -6,7 +6,7 @@
 #include <typeinfo>
 #include <typeindex>
 #include <initializer_list>
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "WindowContext.h"
 #include "WindowContextResource.h"
 #include "ReleaseUtility.h"

@@ -2,7 +2,7 @@
 #include <vector>
 #include "cmtgb.h"
 #include "Core/Component/IComponentPool.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include <nlohmann/json.hpp>
 #include "Core/Component/ComponentRegistry.h"
 #include "JsonConverter.h"

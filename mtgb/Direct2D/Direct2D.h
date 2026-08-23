@@ -1,6 +1,6 @@
 #pragma once
 #include "cmtgb.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include <d2d1.h>
 #include <wrl/client.h>
 using Microsoft::WRL::ComPtr;

@@ -1,5 +1,5 @@
 #include "Core/Component/IComponentPool.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 
 mtgb::IComponentPool::IComponentPool() {}
 

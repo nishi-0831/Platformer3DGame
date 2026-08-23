@@ -10,7 +10,7 @@
 #include <string_view>
 #include <type_traits>
 #include "Core/Entity.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "Math/Vector2Int.h"
 #include <typeindex>
 #include "IRenderable.h"

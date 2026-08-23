@@ -1,5 +1,5 @@
 #include "Core/GameObject/GameObject.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Components/Transform/Transform.h"
 #include "MTAssert.h"
 #include "Core/EntityManager.h"

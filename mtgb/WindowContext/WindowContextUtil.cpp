@@ -2,7 +2,7 @@
 #include "Core/Game.h"
 #include "WindowResource.h"
 #include "Direct3DResource.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "Screen.h"
 #include "Direct2DResource.h"
 

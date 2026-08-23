@@ -4,7 +4,7 @@
 #include "WindowContext/WindowContextResourceManager.h"
 #include "WindowContext/InputResource.h"
 #include "Core/Game.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "JoystickProxy.h"
 #include <limits>
 

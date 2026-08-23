@@ -1,6 +1,6 @@
 #include "IShader.h"
 #include <d3d11.h>
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "ReleaseUtility.h"
 #include "CompileShaderUtility.h"
 #include "HLSLInclude.h"

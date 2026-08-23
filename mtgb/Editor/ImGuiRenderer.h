@@ -4,7 +4,7 @@
 #include <wrl/client.h>
 #include "ImGui/imgui.h"
 
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "Editor/ImGuizmoManipulator.h"
 #include "Editor/ImGuiEditorCamera.h"
 using Microsoft::WRL::ComPtr;

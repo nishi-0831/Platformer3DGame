@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Interpolator.h"
 #include "GameTime.h"
-#include "Mathf.h"
+#include "Math/Mathf.h"
 #include "Core/GameObject/GameObject.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 
 namespace
 {

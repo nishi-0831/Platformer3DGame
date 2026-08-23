@@ -1,7 +1,7 @@
 #pragma once
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "ImGuizmoManipulator.h"
-#include "ImGuiShowable.h"
+#include "Editor/ImGuiShowable.h"
 #include <filesystem>
 namespace mtgb
 {

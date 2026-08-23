@@ -1,5 +1,5 @@
 #pragma once
-#include "ISystem.h"
+#include "Core/ISystem.h"
 
 typedef union _LARGE_INTEGER LARGE_INTEGER;
 

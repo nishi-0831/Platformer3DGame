@@ -1,7 +1,7 @@
 #pragma once
 #include <list>
 #include "IActor.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 
 class ActorManager : public ISystem
 {

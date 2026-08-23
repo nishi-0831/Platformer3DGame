@@ -4,7 +4,7 @@
 #include <optional>
 #include <set>
 #include <nlohmann/json.hpp>
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "cmtgb.h"
 #include "StringComparators.h"
 namespace mtgb

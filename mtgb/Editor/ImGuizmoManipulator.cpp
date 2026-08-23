@@ -11,7 +11,7 @@
 #include "Core/Entity.h"
 #include "Command/GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "DirectX11Draw.h"
 #include "Model/Fbx.h"
 #include "Components/MeshRenderer/MeshRenderer.h"

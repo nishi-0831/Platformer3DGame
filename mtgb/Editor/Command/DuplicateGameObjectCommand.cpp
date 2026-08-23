@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "DuplicateGameObjectCommand.h"
 #include "Core/Game.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Core/Component/ComponentRegistry.h"
 #include "Core/EntityManager.h"
 #include <format>

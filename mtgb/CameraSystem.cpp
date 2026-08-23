@@ -1,5 +1,5 @@
 #include "CameraSystem.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include <algorithm>
 #include "MTAssert.h"
 #include "Screen.h"

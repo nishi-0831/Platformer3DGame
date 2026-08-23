@@ -1,7 +1,7 @@
 #include "Draw.h"
 #include "Model/Fbx.h"
 #include "Core/Game.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 
 #include "ReleaseUtility.h"
 #include "Components/Transform/Transform.h"

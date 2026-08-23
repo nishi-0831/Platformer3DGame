@@ -7,7 +7,7 @@
 #include "ImGuiRenderer.h"
 #include "ImGui/imgui.h"
 #include "ImGui/ImGuizmo.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "RectContainsInfo.h"
 #include "Detector/RectDetector.h"
 #include <string>
@@ -16,7 +16,7 @@
 #include "WindowContext/WindowResource.h"
 #include "CameraSystem.h"
 #include "Debug.h"
-#include "ImGuiUtil.h"
+#include "Editor/ImGuiUtil.h"
 #include "EventManager.h"
 #include "GameObjectSelectionEvent.h"
 

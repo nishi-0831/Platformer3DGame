@@ -7,7 +7,7 @@
 #include "PropertyDisplayRegistry.h"
 #include "WindowContext/WindowContextUtil.h"
 #include <fstream>
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Core/GameScene.h"
 #include "Debug.h"
 #include "GameTime.h"

@@ -1,7 +1,7 @@
 #pragma once
 #include "WindowContextResourceManager.h"
 #include "Core/Game.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 namespace mtgb
 {
 	using WinCtxResManager = WindowContextResourceManager;

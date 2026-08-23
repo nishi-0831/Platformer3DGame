@@ -5,7 +5,7 @@
 #include <typeindex>
 #include <functional>
 #include "ShowType.h"
-#include "ImGuiShowable.h"
+#include "Editor/ImGuiShowable.h"
 #include "PropertyDisplayRegistry.h"
 #include <unordered_map>
 #include "cmtgb.h"

@@ -2,7 +2,7 @@
 #include "WindowContextResource.h"
 #include "WindowContextResourceManager.h"
 #include "Core/Game.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "DirectX11Manager.h"
 #include "MTAssert.h"
 #include <dxgi1_2.h>

@@ -5,7 +5,7 @@
 #include "MTAssert.h"
 #include <algorithm>
 #include "Core/Game.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Debug.h"
 #include "Timer.h"
 

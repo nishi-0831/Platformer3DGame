@@ -7,7 +7,7 @@
 #include <unordered_map>
 #include <vector>
 #include <DirectXMath.h>
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "Math/Matrix4x4.h"
 #include "StringComparators.h"
 

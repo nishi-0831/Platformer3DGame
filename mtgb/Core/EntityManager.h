@@ -1,7 +1,7 @@
 
 #pragma once
 #include "cmtgb.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "Core/Entity.h"
 namespace mtgb
 {

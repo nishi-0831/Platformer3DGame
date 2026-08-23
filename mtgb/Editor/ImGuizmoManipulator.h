@@ -1,5 +1,5 @@
 #pragma once
-#include "ImGuiShowable.h"
+#include "Editor/ImGuiShowable.h"
 #include "Math/Matrix4x4.h"
 
 #include "ImGui/imgui_impl_win32.h"
@@ -10,7 +10,7 @@
 #include "Editor/Command/SelectionCommand.h"
 #include "Components/Transform/Transform.h"
 #include "ShaderType.h"
-#include "SelectionMode.h"
+#include "Editor/SelectionMode.h"
 namespace mtgb
 {
 	/// <summary>

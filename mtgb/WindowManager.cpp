@@ -7,9 +7,9 @@
 #include "WindowContext/DXGIResource.h"
 #include "MTAssert.h"
 #include "Core/Game.h"
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "MTStringUtility.h"
-#include "ImGuiRenderer.h"
+#include "Editor/ImGuiRenderer.h"
 #include "Screen.h"
 
 MSG* mtgb::WindowManager::pPeekedMessage_ { nullptr };

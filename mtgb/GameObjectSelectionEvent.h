@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core/Entity.h"
-#include "SelectionMode.h"
+#include "Editor/SelectionMode.h"
 #include <vector>
 namespace mtgb
 {

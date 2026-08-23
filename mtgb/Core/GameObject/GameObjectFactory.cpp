@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "GameObjectFactory.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 mtgb::GameObject* mtgb::GameObjectFactory::Create(std::string_view _typeName) const
 {
 	if (uniqueGameObjectNames_.contains(_typeName))

@@ -11,7 +11,7 @@
 #include <span>
 #include "CallbackConcepts.h"
 #include "Core/Entity.h"
-#include "SelectionMode.h"
+#include "Editor/SelectionMode.h"
 namespace mtgb
 {
 	class ImGuizmoManipulator;

@@ -1,5 +1,5 @@
 #pragma once
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "cmtgb.h"
 #include "IncludingInput.h"
 #include <wrl/client.h> // 追加

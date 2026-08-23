@@ -7,7 +7,7 @@
 #include "Core/GameObject/GameObject.h"
 #include "CameraSystem.h"
 #include "Screen.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 
 namespace mtgb
 {

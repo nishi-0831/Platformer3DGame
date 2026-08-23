@@ -1,5 +1,5 @@
 #pragma once
-#include "ISystem.h"
+#include "Core/ISystem.h"
 #include "CommandHistory.h"
 #include "NamedCommandHistory.h"
 #include "GroupCommand.h"

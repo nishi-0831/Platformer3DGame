@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "DeleteGameObjectCommand.h"
-#include "SceneSystem.h"
+#include "Core/SceneSystem.h"
 #include "Core/EntityManager.h"
 
 mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
