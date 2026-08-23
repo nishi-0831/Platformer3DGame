@@ -11,7 +11,7 @@
 #include "WindowContext/Direct3DResource.h"
 #include "WindowContext/CameraResource.h"
 #include "Editor/MTImGui.h"
-#include "Audio.h"
+#include "Audio/Audio.h"
 namespace
 {
 	constexpr float DEFAULT_FOV { 60.0f };	   // デフォルトの視野角 (Field Of View)
