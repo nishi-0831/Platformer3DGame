@@ -58,7 +58,7 @@ namespace mtgb
 		/// <param name="_dest">コピー先</param>
 		/// <param name="_src">コピー元</param>
 		void Copy(EntityId _dest, EntityId _src) override;
-
+		ComponentT* Reuse(size_t _index, EntityId _entityId);
 		/// <summary>
 		/// コンポーネントを作成/取得する
 		/// </summary>
@@ -191,7 +191,24 @@ namespace mtgb
 		srcCom.entityId_ = _src;
 		srcCom.OnChangeEntityId();
 	}
+	template <typename ComponentT, typename DerivedT>
+	inline ComponentT* ComponentPool<ComponentT, DerivedT>::Reuse(size_t _index, EntityId _entityId)
+	{
+		if (poolId_.size() <= _index)
+			return nullptr;
+		if (poolId_[_index] != INVALID_ENTITY)
+			return nullptr;
 
+		poolId_[_index] = _entityId;
+
+		// EntityIdに割り当てられたComponentとして登録
+		Game::System<ComponentRegistry>().RegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
+
+		ComponentT* pComponent = &pool_[_index];
+		pComponent->entityId_  = _entityId;
+		pComponent->OnChangeEntityId();
+		return pComponent;
+	}
 	template <typename ComponentT, typename DerivedT>
 	template <typename... Args>
 	inline ComponentT& ComponentPool<ComponentT, DerivedT>::Get(EntityId _entityId, Args&&... _args)
