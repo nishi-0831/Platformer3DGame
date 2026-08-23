@@ -20,8 +20,8 @@ void mtgb::SingleWindow::Initialize()
 {
 	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
 
-	WindowConfig config1 = { .title		= "Player1",
-							 .className = "Player1WindowClass",
+	WindowConfig config1 = { .title		= "Game",
+							 .className = "GameWindowClass",
 							 .width		= SCREEN_SIZE.x,
 							 .height	= SCREEN_SIZE.y,
 							 .x			= 0,
