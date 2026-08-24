@@ -2,7 +2,7 @@
 #include "WindowContextResource.h"
 #include "WindowContext.h"
 
-#include "IncludingWindows.h"
+#include "Window/IncludingWindows.h"
 
 namespace mtgb
 {

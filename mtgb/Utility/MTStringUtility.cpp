@@ -1,5 +1,5 @@
 #include "Utility/MTStringUtility.h"
-#include "IncludingWindows.h"
+#include "Window/IncludingWindows.h"
 #include "Utility/MTAssert.h"
 
 size_t mtgb::GetSizeUTF8Characters(const std::u8string& _string)

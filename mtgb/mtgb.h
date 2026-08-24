@@ -18,7 +18,7 @@
 
 #include "Math/Easing.h"
 #include "Math/Mathf.h"
-#include "Detector/RectDetector.h"
+#include "Collision/Detector/RectDetector.h"
 #include "Components/Interpolator/Interpolator.h"
 
 #pragma endregion
@@ -31,7 +31,7 @@
 #include "Core/Component/ComponentRegistry.h"
 #include "Core/GameObject/GameObjectTypeRegistry.h"
 #include "Graphics/DirectX11Manager.h"
-#include "Direct2D/Direct2D.h"
+#include "Graphics/Direct2D.h"
 #include "Graphics/Text/DirectWrite.h"
 #include "Components/RigidBody/RigidBodyCP.h"
 #include "Components/Transform/TransformCP.h"

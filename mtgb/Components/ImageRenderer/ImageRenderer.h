@@ -1,7 +1,7 @@
 #pragma once
 #include "Editor/ReflectionMacro.h"
 #include "Core/Component/IComponent.h"
-#include "ISerializableObject.h"
+#include "Editor/ISerializableObject.h"
 #include "Core/Component/IComponentMemento.h"
 #include "Components/ImageRenderer/ImageRendererCP.h"
 #include "Math/RectF.h"

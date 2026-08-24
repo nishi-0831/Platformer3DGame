@@ -9,7 +9,6 @@
 #include <type_traits>
 #include <vector>
 #include <span>
-#include "CallbackConcepts.h"
 #include "Core/Entity.h"
 #include "Editor/SelectionMode.h"
 namespace mtgb

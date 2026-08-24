@@ -1,6 +1,6 @@
 #pragma once
 #include "Editor/ReflectionMacro.h"
-#include "ISerializableObject.h"
+#include "Editor/ISerializableObject.h"
 #include "Core/Component/IComponent.h"
 #include "Components/Transform/Transform.h"
 #include "Components/Collider/Collider.h"

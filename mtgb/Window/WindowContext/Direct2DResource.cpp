@@ -1,7 +1,7 @@
 #include "Direct2DResource.h"
-#include "Direct2D/Direct2D.h"
+#include "Graphics/Direct2D.h"
 #include <d2d1helper.h>
-#include "IncludingWindows.h"
+#include "Window/IncludingWindows.h"
 #include "Core/Game.h"
 #include "WindowContext.h"
 #include "WindowContextResource.h"

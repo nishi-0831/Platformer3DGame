@@ -1,6 +1,6 @@
 #include "DirectWrite.h"
 #include "Utility/MTAssert.h"
-#include "Direct2D/Direct2D.h"
+#include "Graphics/Direct2D.h"
 #include <d2d1.h>
 #include <dwrite.h>
 #pragma comment(lib, "dwrite.lib")

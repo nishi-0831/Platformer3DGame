@@ -1,6 +1,6 @@
 #pragma once
 #include "Editor/ReflectionMacro.h"
-#include "ISerializableObject.h"
+#include "Editor/ISerializableObject.h"
 #include "Core/Component/IComponentMemento.h"
 #include "Core/Component/IComponent.h"
 #include <unordered_set>
@@ -9,7 +9,7 @@
 #include "Collision/ColliderType.h"
 #include "Components/Collider/ColliderCP.h"
 #include <concepts>
-#include "CallbackConcepts.h"
+#include "Utility/CallbackConcepts.h"
 #include "Collider.generated.h"
 
 namespace mtgb

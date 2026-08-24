@@ -1,12 +1,12 @@
 #pragma once
 #include "Editor/ReflectionMacro.h"
-#include "ISerializableObject.h"
+#include "Editor/ISerializableObject.h"
 #include "Core/Component/IComponent.h"
 #include "Core/Component/IComponentMemento.h"
 
 #include "Math/Vector3.h"
 #include "Components/RigidBody/RigidBodyCP.h"
-#include "CallbackConcepts.h"
+#include "Utility/CallbackConcepts.h"
 
 #include <functional>
 #include <DirectXCollision.h>

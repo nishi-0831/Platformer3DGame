@@ -4,7 +4,7 @@
 #include "DirectWrite.h"
 #include "Utility/MTStringUtility.h"
 #include <dwrite.h>
-#include "Direct2D/Direct2D.h"
+#include "Graphics/Direct2D.h"
 const wchar_t* mtgb::TextCache::DEFAULT_FONT_FAMILY_NAME { L"Noto Sans JP" };
 
 namespace

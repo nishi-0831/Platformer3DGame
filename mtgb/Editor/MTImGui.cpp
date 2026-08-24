@@ -9,7 +9,7 @@
 #include "ImGui/ImGuizmo.h"
 #include "Core/SceneSystem.h"
 #include "Collision/RectContainsInfo.h"
-#include "Detector/RectDetector.h"
+#include "Collision/Detector/RectDetector.h"
 #include <string>
 #include "Window/WindowContext/WindowContextUtil.h"
 #include "Window/WindowContext/InputResource.h"
