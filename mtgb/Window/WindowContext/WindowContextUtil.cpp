@@ -3,7 +3,7 @@
 #include "WindowResource.h"
 #include "Direct3DResource.h"
 #include "Core/ISystem.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "Direct2DResource.h"
 
 using namespace mtgb;

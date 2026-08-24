@@ -4,7 +4,7 @@
 #include "Graphics/DirectX11Draw.h"
 #include "Graphics/Text/TextCache.h"
 #include "Graphics/Text/DirectWrite.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include <dwrite.h>
 
 mtgb::TextRenderer::TextRenderer() {}

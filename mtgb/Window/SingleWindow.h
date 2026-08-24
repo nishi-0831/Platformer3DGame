@@ -1,6 +1,6 @@
 #pragma once
 #include "Core/ISystem.h"
-#include "WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContext.h"
 typedef struct HWND__* HWND;
 
 namespace mtgb

@@ -1,11 +1,11 @@
 #include "SingleWindow.h"
-#include "WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContext.h"
 #include "WindowManager.h"
 #include "Core/Game.h"
 #include "Screen.h"
-#include "WindowContext/WindowContextResourceManager.h"
-#include "WindowContext/WindowContextUtil.h"
-#include "WindowContext/WindowResource.h"
+#include "Window/WindowContext/WindowContextResourceManager.h"
+#include "Window/WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/WindowResource.h"
 mtgb::SingleWindow::SingleWindow()
 {
 	context_ = WindowContext::FIRST;

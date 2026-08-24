@@ -2,11 +2,11 @@
 #include "Core/Game.h"
 #include "Graphics/DirectX11Draw.h"
 #include "Graphics/DirectX11Manager.h"
-#include "WindowContext/WindowContext.h"
-#include "WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContextUtil.h"
 #include "ImGui/imgui_impl_win32.h"
 #include "ImGui/imgui_impl_dx11.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "Editor/ImGuiUtil.h"
 #include <filesystem>
 

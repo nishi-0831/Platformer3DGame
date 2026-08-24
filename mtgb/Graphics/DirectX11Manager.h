@@ -6,7 +6,7 @@
 #include <dxgi1_2.h>
 #include <vector>
 #include <optional>
-#include "MonitorInfo.h"
+#include "Window/MonitorInfo.h"
 
 #pragma comment(lib, "d3d11.lib") // DirectX11のライブラリ
 #pragma comment(lib, "dxgi.lib")

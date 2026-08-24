@@ -5,7 +5,7 @@
 #include <array>
 #include "Graphics/ShaderType.h"
 #include <dxgi.h>
-#include "MonitorInfo.h"
+#include "Window/MonitorInfo.h"
 using Microsoft::WRL::ComPtr;
 
 struct ID3D11Device;

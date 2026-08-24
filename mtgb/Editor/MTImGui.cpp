@@ -11,9 +11,9 @@
 #include "Collision/RectContainsInfo.h"
 #include "Detector/RectDetector.h"
 #include <string>
-#include "WindowContext/WindowContextUtil.h"
-#include "WindowContext/InputResource.h"
-#include "WindowContext/WindowResource.h"
+#include "Window/WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/InputResource.h"
+#include "Window/WindowContext/WindowResource.h"
 #include "Camera/CameraSystem.h"
 #include "Debug.h"
 #include "Editor/ImGuiUtil.h"

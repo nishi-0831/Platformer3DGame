@@ -10,7 +10,7 @@
 #include <map>
 #include <typeindex>
 #include <string>
-#include "MonitorInfo.h"
+#include "Window/MonitorInfo.h"
 typedef struct HWND__* HWND;
 
 namespace mtgb

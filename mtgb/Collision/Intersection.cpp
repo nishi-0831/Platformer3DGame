@@ -6,7 +6,7 @@
 #include "Math/Matrix4x4.h"
 #include "Core/GameObject/GameObject.h"
 #include "Camera/CameraSystem.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "Core/SceneSystem.h"
 
 namespace mtgb

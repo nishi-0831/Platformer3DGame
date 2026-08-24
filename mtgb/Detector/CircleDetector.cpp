@@ -2,7 +2,7 @@
 #include "Camera/CameraSystem.h"
 #include "Core/Game.h"
 #include "Core/GameObject/GameObject.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 namespace mtgb
 {
 	CircleDetector::CircleDetector() {}

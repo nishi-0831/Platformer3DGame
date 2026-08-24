@@ -5,7 +5,7 @@
 
 #include "Utility/ReleaseUtility.h"
 #include "Components/Transform/Transform.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include <cmath>
 
 mtgb::Draw::Draw() {}

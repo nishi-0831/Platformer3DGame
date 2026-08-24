@@ -1,7 +1,7 @@
 #include "Direct3DResource.h"
 #include "Utility/ReleaseUtility.h"
-#include "Screen.h"
-#include "WindowManager.h"
+#include "Window/Screen.h"
+#include "Window/WindowManager.h"
 using namespace mtgb;
 
 mtgb::Direct3DResource::Direct3DResource(WindowContext _windowContext)

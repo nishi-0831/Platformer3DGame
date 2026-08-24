@@ -3,11 +3,11 @@
 #include "Core/Game.h"
 #include "Core/ISystem.h"
 #include "Components/Collider/ColliderCP.h"
-#include "WindowContext/WindowContextUtil.h"
-#include "WindowContext/CameraResource.h"
+#include "Window/WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/CameraResource.h"
 #include "Camera/CameraSystem.h"
 #include "Core/Entity.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "Collision/Intersection.h"
 using namespace mtgb;
 

@@ -1,8 +1,8 @@
 #include "InputData.h"
 
 #include "Input.h"
-#include "WindowContext/WindowContextResourceManager.h"
-#include "WindowContext/InputResource.h"
+#include "Window/WindowContext/WindowContextResourceManager.h"
+#include "Window/WindowContext/InputResource.h"
 #include "Core/Game.h"
 #include "Core/ISystem.h"
 #include "JoystickProxy.h"

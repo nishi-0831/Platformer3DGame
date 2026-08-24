@@ -8,8 +8,8 @@
 #include "WindowContextUtil.h"
 #include "Direct3DResource.h"
 #include "Utility/MTAssert.h"
-#include "Screen.h"
-#include "WindowManager.h"
+#include "Window/Screen.h"
+#include "Window/WindowManager.h"
 
 using namespace mtgb;
 

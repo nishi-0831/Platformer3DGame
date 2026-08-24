@@ -3,7 +3,7 @@
 #include "Camera/CameraSystem.h"
 #include "Core/Time/GameTime.h"
 #include "Graphics/DirectX11Draw.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "Debug.h"
 namespace mtgb
 {

@@ -3,7 +3,7 @@
 #include <map>
 #include <string>
 #include "Core/ISystem.h"
-#include "WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContext.h"
 #include "Math/Vector2Int.h"
 typedef struct HWND__* HWND;
 typedef struct tagMSG MSG;

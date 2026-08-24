@@ -22,7 +22,7 @@
 #include <d3d11.h>
 #include "Math/Mathf.h"
 #include "Math/QuatToEuler.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "ImGuiEditor.h"
 using namespace mtgb::ImGuiUtil;
 

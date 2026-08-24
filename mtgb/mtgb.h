@@ -14,7 +14,7 @@
 #include "Math/RectT.h"
 #include "Math/RectInt.h"
 #include "Math/RectF.h"
-#include "WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/WindowContextUtil.h"
 
 #include "Math/Easing.h"
 #include "Math/Mathf.h"
@@ -26,7 +26,7 @@
 #pragma region Systems
 
 #include "AssetsManager.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include "ScoreManager.h"
 #include "Core/Component/ComponentRegistry.h"
 #include "Core/GameObject/GameObjectTypeRegistry.h"
@@ -58,10 +58,10 @@
 #include "Components/ImageRenderer/ImageRenderer.h"
 #include "Graphics/Text/TextCache.h"
 #include "Graphics/Model/Fbx.h"
-#include "WindowContext/WindowContext.h"
-#include "WindowContext/WindowContextResourceManager.h"
-#include "WindowManager.h"
-#include "SingleWindow.h"
+#include "Window/WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContextResourceManager.h"
+#include "Window/WindowManager.h"
+#include "Window/SingleWindow.h"
 #include "Camera/CameraSystem.h"
 #include "Editor/ImGuiShowable.h"
 #include "Editor/MTImGui.h"
@@ -78,13 +78,13 @@
 
 #pragma region Resource
 
-#include "WindowContext/WindowContextResource.h"
-#include "WindowContext/WindowResource.h"
-#include "WindowContext/DXGIResource.h"
-#include "WindowContext/Direct3DResource.h"
-#include "WindowContext/Direct2DResource.h"
-#include "WindowContext/InputResource.h"
-#include "WindowContext/CameraResource.h"
+#include "Window/WindowContext/WindowContextResource.h"
+#include "Window/WindowContext/WindowResource.h"
+#include "Window/WindowContext/DXGIResource.h"
+#include "Window/WindowContext/Direct3DResource.h"
+#include "Window/WindowContext/Direct2DResource.h"
+#include "Window/WindowContext/InputResource.h"
+#include "Window/WindowContext/CameraResource.h"
 #include "Input/Input.h"
 
 #pragma endregion

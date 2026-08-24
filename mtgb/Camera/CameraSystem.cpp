@@ -2,14 +2,14 @@
 #include "Core/SceneSystem.h"
 #include <algorithm>
 #include "Utility/MTAssert.h"
-#include "Screen.h"
+#include "Window/Screen.h"
 #include <DirectXMath.h>
 
 #include "Debug.h"
 #include "Math/Vector2Int.h"
-#include "WindowContext/WindowContextUtil.h"
-#include "WindowContext/Direct3DResource.h"
-#include "WindowContext/CameraResource.h"
+#include "Window/WindowContext/WindowContextUtil.h"
+#include "Window/WindowContext/Direct3DResource.h"
+#include "Window/WindowContext/CameraResource.h"
 #include "Editor/MTImGui.h"
 #include "Audio/Audio.h"
 namespace

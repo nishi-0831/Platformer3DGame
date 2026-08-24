@@ -3,7 +3,7 @@
 #include "Utility/ProfileUtlity.h"
 #include "WindowManager.h"
 #include "Core/Game.h"
-#include "WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContext.h"
 mtgb::Screen::Screen()
 	: sizeRatio_ { 1.0f, 1.0f }
 	, initialSize_ { 0, 0 }

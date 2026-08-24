@@ -5,7 +5,7 @@
 #include "Handlers.h"
 #include "Math/Vector4.h"
 #include "WorldToScreenData.h"
-#include "WindowContext/WindowContext.h"
+#include "Window/WindowContext/WindowContext.h"
 #include "Math/Vector2F.h"
 namespace mtgb
 {
