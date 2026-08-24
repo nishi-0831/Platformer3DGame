@@ -427,7 +427,14 @@ void Player::TakeDamage(int _damage)
 		changeVisibilitySpan_,
 		[this]
 		{
-			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			if (isInvincible_)
+			{
+				pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			}
+			else
+			{
+				pMeshRenderer_->enabled_ = true;
+			}
 		},
 		true // firstCall: 即座に処理を呼ぶ
 	);
