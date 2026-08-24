@@ -12,8 +12,8 @@
 #include "Command/GuizmoManipulatedEvent.h"
 #include "MTImGui.h"
 #include "Core/SceneSystem.h"
-#include "DirectX11Draw.h"
-#include "Model/Fbx.h"
+#include "Graphics/DirectX11Draw.h"
+#include "Graphics/Model/Fbx.h"
 #include "Components/MeshRenderer/MeshRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {

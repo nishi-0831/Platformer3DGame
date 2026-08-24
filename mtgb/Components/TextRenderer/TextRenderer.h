@@ -5,10 +5,10 @@
 #include "Core/Component/IComponentMemento.h"
 
 #include "Math/RectF.h"
-#include "UIParams.h"
-#include "Text/TextAlignment.h"
+#include "Graphics/UIParams.h"
+#include "Graphics/Text/TextAlignment.h"
 #include "Components/TextRenderer/TextRendererCP.h"
-#include "IRenderable.h"
+#include "Graphics/IRenderable.h"
 #include "TextRenderer.generated.h"
 namespace mtgb
 {

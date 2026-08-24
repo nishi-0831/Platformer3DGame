@@ -3,7 +3,7 @@
 #include <wincodec.h>
 #include "Utility/MTAssert.h"
 #include "Utility/ReleaseUtility.h"
-#include "DirectX11Draw.h"
+#include "Graphics/DirectX11Draw.h"
 
 mtgb::Texture2D::Texture2D()
 	: pSamplerLinear_ { nullptr }

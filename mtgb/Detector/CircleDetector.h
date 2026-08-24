@@ -3,7 +3,7 @@
 #include "IDetector.h"
 #include "DetectorConfigs.h"
 #include <functional>
-#include "UIParams.h"
+#include "Graphics/UIParams.h"
 namespace mtgb
 {
 	/// <summary>

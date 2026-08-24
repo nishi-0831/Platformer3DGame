@@ -9,7 +9,7 @@
 #include "Components/Interpolator/Interpolator.h"
 #include "Math/Matrix4x4.h"
 #include "Math/RectF.h"
-#include "UIParams.h"
+#include "Graphics/UIParams.h"
 // #include "TypeRegistryImpl.h"
 #include "ShowFunc.h"
 using namespace mtgb;

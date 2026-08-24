@@ -1,6 +1,6 @@
 #pragma once
 #include "Core/GameObject/GameObjectLayer.h"
-#include "UIParams.h"
+#include "Graphics/UIParams.h"
 namespace mtgb
 {
 	/// <summary>

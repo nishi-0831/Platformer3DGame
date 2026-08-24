@@ -2,7 +2,7 @@
 #include "Core/Component/ComponentPool.h"
 #include "Components/MeshRenderer/MeshRenderer.h"
 #include "Core/GameObject/GameObjectLayer.h"
-#include "IRenderable.h"
+#include "Graphics/IRenderable.h"
 namespace mtgb
 {
 	class MeshRenderer;

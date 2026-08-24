@@ -11,7 +11,7 @@
 #include "Utility/ReleaseUtility.h"
 #include "Direct2D/Direct2D.h"
 #include "Editor/MTImGui.h"
-#include "DirectX11Draw.h"
+#include "Graphics/DirectX11Draw.h"
 
 mtgb::DirectX11Manager::DirectX11Manager() {}
 

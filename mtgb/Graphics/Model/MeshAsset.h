@@ -12,7 +12,7 @@
 #include "Math/Vector3.h"
 #include "Math/Vector2.h"
 #include "Math/Matrix4x4.h"
-#include "Image/Texture2D.h"
+#include "Graphics/Image/Texture2D.h"
 #include <memory>
 #include <string>
 #include <cstdint>

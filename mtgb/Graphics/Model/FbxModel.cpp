@@ -1,8 +1,8 @@
 #include "FbxModel.h"
 #include "Utility/ReleaseUtility.h"
-#include "Model/Fbx.h"
+#include "Graphics/Model/Fbx.h"
 #include "Utility/MTAssert.h"
-#include "ShaderManager.h"
+#include "Graphics/ShaderManager.h"
 mtgb::FbxModel::FbxModel()
 	: pFbxScene_ { nullptr }
 	, frameRate_ { FbxTime::EMode::eFrames60 }

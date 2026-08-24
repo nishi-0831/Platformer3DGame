@@ -1,12 +1,12 @@
 #include "Components/Collider/Collider.h"
 #include <DirectXMath.h>
 #include "Math/Matrix4x4.h"
-#include "Draw.h"
+#include "Graphics/ShaderType.h"
 #include "Debug.h"
 #include "Components/Transform/Transform.h"
 #include "Components/RigidBody/RigidBody.h"
 #include "Intersection.h"
-#include "Model/Fbx.h"
+#include "Graphics/Model/Fbx.h"
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)
 	, colliderType_ { ColliderType::TYPE_SPHERE }

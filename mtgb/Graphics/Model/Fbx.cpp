@@ -1,6 +1,6 @@
-#include "Model/Fbx.h"
+#include "Graphics/Model/Fbx.h"
 #include "Utility/ReleaseUtility.h"
-#include "DirectX11Draw.h"
+#include "Graphics/DirectX11Draw.h"
 #include "Utility/MTAssert.h"
 
 mtgb::Fbx::Fbx()

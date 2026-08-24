@@ -6,7 +6,7 @@
 
 #include "FbxAnimationController.h"
 #include "MeshAsset.h"
-#include "ShaderType.h"
+#include "Graphics/ShaderType.h"
 namespace mtgb
 {
 	class Transform;

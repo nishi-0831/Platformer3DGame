@@ -3,7 +3,7 @@
 #include "Core/SceneSystem.h"
 #include "Utility/ReleaseUtility.h"
 #include "Utility/CompileShaderUtility.h"
-#include "HLSLInclude.h"
+#include "Graphics/HLSLInclude.h"
 mtgb::IShader::IShader() {}
 
 void mtgb::IShader::Bind(ID3D11DeviceContext* _pCtx)

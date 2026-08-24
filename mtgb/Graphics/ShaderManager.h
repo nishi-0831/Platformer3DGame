@@ -1,8 +1,8 @@
 #pragma once
 #include <array>
 #include "Core/ISystem.h"
-#include "ShaderType.h"
-#include "Shader/IShader.h"
+#include "Graphics/ShaderType.h"
+#include "Graphics/Shader/IShader.h"
 namespace mtgb
 {
 	class ShaderManager : public ISystem

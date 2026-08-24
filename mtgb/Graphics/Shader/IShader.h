@@ -2,12 +2,12 @@
 #include <functional>
 #include <d3d11.h>
 #include <unordered_map>
-#include "DirectX11Draw.h"
+#include "Graphics/DirectX11Draw.h"
 #include "Screen.h"
 #include "Components/Transform/Transform.h"
 #include <wrl/client.h>
-#include "Model/MeshAsset.h"
-#include "ReflectiveConstantBuffer.h"
+#include "Graphics/Model/MeshAsset.h"
+#include "Graphics/ReflectiveConstantBuffer.h"
 #include "Utility/StringComparators.h"
 
 using Microsoft::WRL::ComPtr;

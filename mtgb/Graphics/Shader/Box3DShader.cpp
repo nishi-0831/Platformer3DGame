@@ -1,18 +1,20 @@
-#include "Debug3DShader.h"
+#include "Box3DShader.h"
 #include "CameraSystem.h"
-#include "3DCommonConstantBuffer.h"
+#include "Graphics/3DCommonConstantBuffer.h"
+
 namespace
 {
 	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
 }
-void mtgb::Debug3DShader::Initialize(ID3D11Device* _pDevice)
+
+void Box3DShader::Initialize(ID3D11Device* _pDevice)
 {
-	InitializeCommonGpuResources(_pDevice, L"Shader/Debug3D.hlsl");
+	InitializeCommonGpuResources(_pDevice, L"Shader/Box3D.hlsl");
 
 	CD3D11_RASTERIZER_DESC cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
-		.FillMode			   = D3D11_FILL_WIREFRAME, // 塗りつぶし: solid
-		.CullMode			   = D3D11_CULL_BACK,	   // カリング: 陰面消去
-		.FrontCounterClockwise = FALSE,				   // 三角形の正面向き = 時計回り
+		.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
+		.CullMode			   = D3D11_CULL_BACK,  // カリング: 陰面消去
+		.FrontCounterClockwise = FALSE,			   // 三角形の正面向き = 時計回り
 		.DepthBias			   = {},
 		.DepthBiasClamp		   = {},
 		.SlopeScaledDepthBias  = {},
@@ -24,7 +26,7 @@ void mtgb::Debug3DShader::Initialize(ID3D11Device* _pDevice)
 	_pDevice->CreateRasterizerState(&cRasterizerDesc, pRasterizerState_.ReleaseAndGetAddressOf());
 }
 
-void mtgb::Debug3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
+void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
 {
 	using namespace DirectX;
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
@@ -53,6 +55,7 @@ void mtgb::Debug3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tra
 		_pCtx->IASetIndexBuffer(_pAsset->ppIndexBuffer[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
+		D3D11_MAPPED_SUBRESOURCE pdata_;
 		ConstantBuffer cb {};
 		Matrix4x4 mWorld {};
 		_transform.GenerateWorldMatrix(&mWorld);

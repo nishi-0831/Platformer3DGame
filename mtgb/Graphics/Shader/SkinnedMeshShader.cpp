@@ -1,15 +1,16 @@
-#include "Box3DShader.h"
+#include "SkinnedMeshShader.h"
 #include "CameraSystem.h"
-#include "3DCommonConstantBuffer.h"
+#include "Utility/CompileShaderUtility.h"
+#include "Graphics/3DCommonConstantBuffer.h"
 
 namespace
 {
 	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
 }
 
-void Box3DShader::Initialize(ID3D11Device* _pDevice)
+void SkinnedMeshShader::Initialize(ID3D11Device* _pDevice)
 {
-	InitializeCommonGpuResources(_pDevice, L"Shader/Box3D.hlsl");
+	InitializeCommonGpuResources(_pDevice, L"Shader/FbxPartsSkin.hlsl");
 
 	CD3D11_RASTERIZER_DESC cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 		.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
@@ -26,7 +27,7 @@ void Box3DShader::Initialize(ID3D11Device* _pDevice)
 	_pDevice->CreateRasterizerState(&cRasterizerDesc, pRasterizerState_.ReleaseAndGetAddressOf());
 }
 
-void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
+void SkinnedMeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
 {
 	using namespace DirectX;
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
@@ -46,6 +47,19 @@ void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, 
 	cBuffer.BindVS(_pCtx);
 	cBuffer.BindPS(_pCtx);
 
+	if (_pAsset->hasSkinnedMesh)
+	{
+		auto itr = cBufferMap_.find("BoneMatrices");
+		if (itr == cBufferMap_.end())
+		{
+			assert(false);
+			return;
+		}
+		auto& boneCBuffer = itr->second;
+		boneCBuffer.BindVS(_pCtx);
+		SetBoneMatrix(_pCtx, _pAsset, _frame); // ボーン行列
+	}
+
 	// カメラシステムへのアクセス用
 	const CameraSystem& CAMERA { Game::System<CameraSystem>() };
 
@@ -55,7 +69,6 @@ void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, 
 		_pCtx->IASetIndexBuffer(_pAsset->ppIndexBuffer[i].Get(), DXGI_FORMAT_R32_UINT, 0);
 
 		// パラメータの受け渡し
-		D3D11_MAPPED_SUBRESOURCE pdata_;
 		ConstantBuffer cb {};
 		Matrix4x4 mWorld {};
 		_transform.GenerateWorldMatrix(&mWorld);
@@ -110,4 +123,47 @@ void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, 
 		// ポリゴンメッシュを描画する
 		_pCtx->DrawIndexed(_pAsset->materials[i].polygonCount * 3, 0, 0);
 	}
+}
+
+void SkinnedMeshShader::SetBoneMatrix(ID3D11DeviceContext* _pCtx, MeshAsset* _pAsset, int _frame)
+{
+	using namespace DirectX;
+	auto frameRate = _pAsset->pFbxNode->GetScene()->GetGlobalSettings().GetTimeMode();
+	BoneMatrices boneMatrices_;
+	FbxTime time;
+	time.SetTime(0, 0, 0, _frame, 0, 0, frameRate);
+	for (int i = 0; i < _pAsset->boneCount; i++)
+	{
+		FbxAnimEvaluator* evaluator { _pAsset->ppCluster[i]->GetLink()->GetScene()->GetAnimationEvaluator() };
+		FbxMatrix mCurrent { evaluator->GetNodeGlobalTransform(_pAsset->ppCluster[i]->GetLink(), time) };
+
+		// FbxMatrix を DirectX::XMMATRIX に変換
+		XMFLOAT4X4 pose {};
+		for (DWORD x = 0; x < 4; x++)
+		{
+			for (DWORD y = 0; y < 4; y++)
+			{
+				pose(x, y) = static_cast<float>(mCurrent.Get(x, y));
+			}
+		}
+		Matrix4x4 currentPose = XMLoadFloat4x4(&pose);
+
+		// バインドポーズの逆行列
+		Matrix4x4 bindPoseInv = XMMatrixInverse(nullptr, _pAsset->bones[i].bindPose);
+
+		// 最終的なボーン行列 = バインドポーズの逆行列 × 現在のポーズ
+		Matrix4x4 finalBoneMatrix = bindPoseInv * currentPose;
+
+		boneMatrices_.boneMatrices[i] = XMMatrixTranspose(finalBoneMatrix);
+	}
+
+	auto itr = cBufferMap_.find("BoneMatrices");
+	if (itr == cBufferMap_.end())
+	{
+		assert(false);
+		return;
+	}
+	auto& boneCBuffer = itr->second;
+	boneCBuffer.SetConstantBuffer(boneMatrices_);
+	boneCBuffer.ApplyChanges(_pCtx);
 }

@@ -6,7 +6,7 @@
 #include "Math/Vector3.h"
 #include "Core/GameObject/GameObjectTag.h"
 #include "Components/Transform/Transform.h"
-#include "UIParams.h"
+#include "Graphics/UIParams.h"
 namespace mtgb
 {
 	/// <summary>

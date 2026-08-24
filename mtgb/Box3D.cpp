@@ -1,6 +1,6 @@
 #include "Box3D.h"
 #include "Components/Transform/Transform.h"
-#include "Model/Fbx.h"
+#include "Graphics/Model/Fbx.h"
 #include "Core/Entity.h"
 #include <format>
 unsigned int mtgb::Box3D::generateCounter_ { 0 };

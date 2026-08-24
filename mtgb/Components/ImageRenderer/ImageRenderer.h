@@ -5,8 +5,8 @@
 #include "Core/Component/IComponentMemento.h"
 #include "Components/ImageRenderer/ImageRendererCP.h"
 #include "Math/RectF.h"
-#include "UIParams.h"
-#include "IRenderable.h"
+#include "Graphics/UIParams.h"
+#include "Graphics/IRenderable.h"
 #include "ImageRenderer.generated.h"
 
 namespace mtgb

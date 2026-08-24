@@ -6,7 +6,7 @@
 #include "Core/ISystem.h"
 #include "FbxModel.h"
 #include "Handlers.h"
-#include "ShaderType.h"
+#include "Graphics/ShaderType.h"
 #pragma comment(lib, "LibFbxSDK-MT.lib")
 #pragma comment(lib, "LibXml2-MT.lib")
 #pragma comment(lib, "zlib-MT.lib")

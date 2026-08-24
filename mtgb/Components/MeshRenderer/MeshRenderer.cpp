@@ -1,9 +1,9 @@
 #include <fbxsdk.h>
 #include "Components/MeshRenderer/MeshRenderer.h"
-#include "Model/Fbx.h"
-#include "Draw.h"
+#include "Graphics/Model/Fbx.h"
+#include "Graphics/ShaderType.h"
 #include "Components/Transform/Transform.h"
-#include "ShadowSettings.h"
+#include "Graphics/ShadowSettings.h"
 
 namespace
 {

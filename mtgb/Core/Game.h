@@ -13,7 +13,7 @@
 #include "Core/ISystem.h"
 #include "Math/Vector2Int.h"
 #include <typeindex>
-#include "IRenderable.h"
+#include "Graphics/IRenderable.h"
 #include "Core/Component/ComponentFactory.h"
 namespace mtgb
 {

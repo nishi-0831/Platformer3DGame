@@ -1,7 +1,7 @@
 #pragma once
 #include "Core/Component/ComponentPool.h"
 #include "Components/TextRenderer/TextRenderer.h"
-#include "IRenderable.h"
+#include "Graphics/IRenderable.h"
 
 namespace mtgb
 {

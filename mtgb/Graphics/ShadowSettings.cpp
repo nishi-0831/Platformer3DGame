@@ -1,7 +1,7 @@
 #include "ShadowSettings.h"
 #include "Components/Transform/Transform.h"
 #include "Components/Collider/ColliderCP.h"
-#include "DirectX11Draw.h"
+#include "Graphics/DirectX11Draw.h"
 #include "ShaderManager.h"
 mtgb::ShadowSettings::ShadowSettings()
 	: params {}

@@ -1,5 +1,5 @@
 #include "Draw.h"
-#include "Model/Fbx.h"
+#include "Graphics/Model/Fbx.h"
 #include "Core/Game.h"
 #include "Core/SceneSystem.h"
 

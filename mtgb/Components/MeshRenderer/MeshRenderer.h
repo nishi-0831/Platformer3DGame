@@ -6,8 +6,8 @@
 #include "Components/MeshRenderer/MeshRendererCP.h"
 #include "Handlers.h"
 #include "Core/GameObject/GameObjectLayer.h"
-#include "ShaderType.h"
-#include "IRenderable.h"
+#include "Graphics/ShaderType.h"
+#include "Graphics/IRenderable.h"
 #include "cmtgb.h"
 #include "MeshRenderer.generated.h"
 

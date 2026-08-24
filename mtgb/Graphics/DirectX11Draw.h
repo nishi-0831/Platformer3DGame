@@ -3,7 +3,7 @@
 #include "Math/Vector4.h"
 #include <wrl/client.h>
 #include <array>
-#include "ShaderType.h"
+#include "Graphics/ShaderType.h"
 #include <dxgi.h>
 #include "MonitorInfo.h"
 using Microsoft::WRL::ComPtr;

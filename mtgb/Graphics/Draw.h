@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Core/ISystem.h"
-#include "ShaderType.h"
-#include "IRenderable.h"
+#include "Graphics/ShaderType.h"
+#include "Graphics/IRenderable.h"
 
 namespace mtgb
 {

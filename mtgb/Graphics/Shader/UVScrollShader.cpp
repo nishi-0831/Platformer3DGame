@@ -1,5 +1,5 @@
 #include "UVScrollShader.h"
-#include "3DCommonConstantBuffer.h"
+#include "Graphics/3DCommonConstantBuffer.h"
 #include "CameraSystem.h"
 #include "GameTime.h"
 

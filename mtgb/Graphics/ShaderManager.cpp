@@ -1,11 +1,11 @@
 #include "ShaderManager.h"
 
-#include "Shader/Box3DShader.h"
-#include "Shader/MeshShader.h"
-#include "Shader/SkinnedMeshShader.h"
-#include "Shader/Debug3DShader.h"
-#include "Shader/UVScrollShader.h"
-#include "Shader/OutlineShader.h"
+#include "Graphics/Shader/Box3DShader.h"
+#include "Graphics/Shader/MeshShader.h"
+#include "Graphics/Shader/SkinnedMeshShader.h"
+#include "Graphics/Shader/Debug3DShader.h"
+#include "Graphics/Shader/UVScrollShader.h"
+#include "Graphics/Shader/OutlineShader.h"
 void mtgb::ShaderManager::Initialize()
 {
 	shaders_.fill(nullptr);

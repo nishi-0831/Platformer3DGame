@@ -2,7 +2,7 @@
 #include "Components/Transform/Transform.h"
 #include "Debug.h"
 #include "Utility/CompileShaderUtility.h"
-#include "HLSLInclude.h"
+#include "Graphics/HLSLInclude.h"
 mtgb::Sprite::Sprite()
 	: texture2D_ {}
 {

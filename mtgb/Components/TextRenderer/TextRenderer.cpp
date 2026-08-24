@@ -1,9 +1,9 @@
 #include "stdafx.h"
 #include "Components/TextRenderer/TextRenderer.h"
-#include "Draw.h"
-#include "DirectX11Draw.h"
-#include "Text/TextCache.h"
-#include "Text/DirectWrite.h"
+#include "Graphics/Draw.h"
+#include "Graphics/DirectX11Draw.h"
+#include "Graphics/Text/TextCache.h"
+#include "Graphics/Text/DirectWrite.h"
 #include "Screen.h"
 #include <dwrite.h>
 
