@@ -1,5 +1,5 @@
 #include "Debug3DShader.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Graphics/3DCommonConstantBuffer.h"
 namespace
 {

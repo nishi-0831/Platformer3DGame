@@ -62,7 +62,7 @@
 #include "WindowContext/WindowContextResourceManager.h"
 #include "WindowManager.h"
 #include "SingleWindow.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Editor/ImGuiShowable.h"
 #include "Editor/MTImGui.h"
 #include "EventManager.h"
@@ -74,7 +74,7 @@
 
 #include "Core/GameObject/GameObjectBuilder.h"
 #include "Core/GameObject/GameObject.h"
-#include "ICamera.h"
+#include "Camera/ICamera.h"
 
 #pragma region Resource
 

@@ -4,7 +4,7 @@
 #include "Utility/ReleaseUtility.h"
 #include "Core/SceneSystem.h"
 #include "Utility/MTAssert.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 
 mtgb::CameraResource::CameraResource(WindowContext _windowContext)
 	: WindowContextResource(_windowContext)

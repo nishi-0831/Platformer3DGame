@@ -1,5 +1,5 @@
 #include "MeshShader.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 
 namespace
 {

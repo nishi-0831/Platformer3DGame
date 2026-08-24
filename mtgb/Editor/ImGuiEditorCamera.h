@@ -4,7 +4,7 @@
 #include "MTStat/MTStat.h"
 #include "Editor/ImGuiShowable.h"
 #include "Core/ISystem.h"
-#include "ICamera.h"
+#include "Camera/ICamera.h"
 #include "Editor/SelectionMode.h"
 namespace mtgb
 {

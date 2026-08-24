@@ -2,7 +2,7 @@
 #include "Core/SceneSystem.h"
 #include "Core/GameObject/GameObject.h"
 #include "Components/Transform/Transform.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "GameObject/GameObjectTypeRegistry.h"
 #include "EventManager.h"
 #include "Editor/Command/SelectionCommand.h"

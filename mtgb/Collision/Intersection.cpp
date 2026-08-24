@@ -5,7 +5,7 @@
 #include "Math/Quaternion.h"
 #include "Math/Matrix4x4.h"
 #include "Core/GameObject/GameObject.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Screen.h"
 #include "Core/SceneSystem.h"
 

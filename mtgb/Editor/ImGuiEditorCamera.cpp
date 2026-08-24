@@ -8,7 +8,7 @@
 #include "Components/Transform/Transform.h"
 #include "Core/SceneSystem.h"
 #include "Input/InputData.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Core/Time/GameTime.h"
 #include "Components/Collider/ColliderCP.h"
 #include "Editor/ImGuiUtil.h"

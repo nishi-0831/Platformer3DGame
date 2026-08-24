@@ -1,5 +1,5 @@
 #include "SkinnedMeshShader.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Utility/CompileShaderUtility.h"
 #include "Graphics/3DCommonConstantBuffer.h"
 

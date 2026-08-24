@@ -5,7 +5,7 @@
 #include "ImGui/imgui_internal.h"
 #include "ImGui/imgui.h"
 
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Input/InputData.h"
 #include "EventManager.h"
 #include "Core/Entity.h"

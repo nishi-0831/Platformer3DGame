@@ -1,5 +1,5 @@
 #include "RayDetector.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Core/Game.h"
 #include "Core/GameObject/GameObject.h"
 #include "Math/Vector3.h"

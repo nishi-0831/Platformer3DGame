@@ -5,7 +5,7 @@
 #include "Components/Collider/ColliderCP.h"
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/CameraResource.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Core/Entity.h"
 #include "Screen.h"
 #include "Collision/Intersection.h"

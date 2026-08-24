@@ -1,6 +1,6 @@
 #include "assert.h"
 #include "EffekseerVFX.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Core/Time/GameTime.h"
 #include "Graphics/DirectX11Draw.h"
 #include "Screen.h"

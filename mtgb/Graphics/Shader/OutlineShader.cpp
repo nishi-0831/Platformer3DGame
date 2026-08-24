@@ -1,5 +1,5 @@
 #include "OutlineShader.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 mtgb::OutlineShader::OutlineShader()
 	: outlineColor_ { 1.0f, 0.6f, 0.0f, 1.0f }
 	, outlineScale_ { 1.06f }

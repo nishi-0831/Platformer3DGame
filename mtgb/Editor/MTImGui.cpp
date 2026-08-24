@@ -14,7 +14,7 @@
 #include "WindowContext/WindowContextUtil.h"
 #include "WindowContext/InputResource.h"
 #include "WindowContext/WindowResource.h"
-#include "CameraSystem.h"
+#include "Camera/CameraSystem.h"
 #include "Debug.h"
 #include "Editor/ImGuiUtil.h"
 #include "EventManager.h"
