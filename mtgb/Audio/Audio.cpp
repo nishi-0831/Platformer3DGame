@@ -6,7 +6,7 @@
 #include "MTBin/MemoryStream.h"
 #include "Utility/ReleaseUtility.h"
 #include "WaveData.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Debug.h"
 #include "Components/Transform/Transform.h"
 namespace mtgb

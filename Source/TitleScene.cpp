@@ -9,7 +9,7 @@
 #include "StageEditScene.h"
 #include "Slider.h"
 #include "Button.h"
-#include <SerializableGameObject.h>
+#include <CommonGameObject/SerializableGameObject.h>
 #include <filesystem>
 #include <fstream>
 

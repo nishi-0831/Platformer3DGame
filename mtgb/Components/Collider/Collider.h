@@ -6,7 +6,7 @@
 #include <unordered_set>
 #include <DirectXCollision.h>
 #include "Math/Vector3.h"
-#include "ColliderType.h"
+#include "Collision/ColliderType.h"
 #include "Components/Collider/ColliderCP.h"
 #include <concepts>
 #include "CallbackConcepts.h"

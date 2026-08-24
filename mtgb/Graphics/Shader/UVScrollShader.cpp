@@ -1,7 +1,7 @@
 #include "UVScrollShader.h"
 #include "Graphics/3DCommonConstantBuffer.h"
 #include "CameraSystem.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 
 namespace
 {

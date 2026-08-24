@@ -5,7 +5,7 @@
 #include "Core/GameObject/GameObject.h"
 #include "Core/GameObject/GameObjectFactory.h"
 
-#include "GameObjectSnapshot.h"
+#include "Editor/GameObjectSnapshot.h"
 #include <vector>
 
 namespace mtgb

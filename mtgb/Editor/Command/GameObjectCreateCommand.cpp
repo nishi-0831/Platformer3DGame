@@ -2,7 +2,7 @@
 #include "Core/SceneSystem.h"
 #include "Core/EntityManager.h"
 #include "EventManager.h"
-#include "GameObjectSelectionEvent.h"
+#include "Editor/GameObjectSelectionEvent.h"
 
 void mtgb::GameObjectCreateCommand::Execute()
 {

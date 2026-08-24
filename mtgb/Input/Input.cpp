@@ -7,7 +7,7 @@
 #include "Core/Game.h"
 #include "Core/SceneSystem.h"
 #include "Debug.h"
-#include "Timer.h"
+#include "Core/Time/Timer.h"
 
 namespace
 {

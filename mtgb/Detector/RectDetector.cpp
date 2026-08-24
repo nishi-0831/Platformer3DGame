@@ -8,7 +8,7 @@
 #include "CameraSystem.h"
 #include "Core/Entity.h"
 #include "Screen.h"
-#include "Intersection.h"
+#include "Collision/Intersection.h"
 using namespace mtgb;
 
 mtgb::RectDetector::RectDetector(const RectDetectorConfig& _config)

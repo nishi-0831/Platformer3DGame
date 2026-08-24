@@ -2,7 +2,7 @@
 #include "Core/GameObject/GameObjectGenerator.h"
 #include "Core/GameObject/GameObject.h"
 #include "Editor/Command/GameObjectCreateCommand.h"
-#include "RegisterCommonGameObjectType.h"
+#include "CommonGameObject/RegisterCommonGameObjectType.h"
 #include "../Source/RegisterGameObjectType.h"
 #include "Editor/Command/DuplicateGameObjectCommand.h"
 #include "Editor/Command/CommandHistoryManager.h"

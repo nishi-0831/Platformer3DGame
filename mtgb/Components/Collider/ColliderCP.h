@@ -2,7 +2,7 @@
 #include "Core/ISystem.h"
 #include "Core/Component/ComponentPool.h"
 #include "Components/Collider/Collider.h"
-#include "Intersection.h"
+#include "Collision/Intersection.h"
 
 #include <vector>
 namespace mtgb

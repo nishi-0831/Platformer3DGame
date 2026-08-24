@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <fbxsdk.h>
 #include "FbxAnimationController.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Debug.h"
 
 #include <filesystem>

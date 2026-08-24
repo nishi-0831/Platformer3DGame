@@ -3,7 +3,7 @@
 #include <DirectXCollision.h>
 #include <tuple>
 #include <vector>
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 namespace
 {
 	// TODO:重力を外部から設定可能にする

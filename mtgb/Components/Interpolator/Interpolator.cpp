@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "Interpolator.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Math/Mathf.h"
 #include "Core/GameObject/GameObject.h"
 #include "Core/SceneSystem.h"

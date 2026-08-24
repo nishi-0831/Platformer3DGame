@@ -1,7 +1,7 @@
 #include "assert.h"
 #include "EffekseerVFX.h"
 #include "CameraSystem.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Graphics/DirectX11Draw.h"
 #include "Screen.h"
 #include "Debug.h"

@@ -40,8 +40,8 @@
 #include "Components/Collider/ColliderCP.h"
 #include "Components/MeshRenderer/MeshRendererCP.h"
 #include "Components/Interpolator/InterpolatorCP.h"
-#include "GameTime.h"
-#include "Timer.h"
+#include "Core/Time/GameTime.h"
+#include "Core/Time/Timer.h"
 #include "Graphics/Draw.h"
 #include "Core/SceneSystem.h"
 #include "Graphics/RenderSystem.h"
@@ -91,7 +91,7 @@
 #pragma region Data
 
 #include "Input/InputData.h"
-#include "RectContainsInfo.h"
+#include "Collision/RectContainsInfo.h"
 //
 #pragma endregion
 

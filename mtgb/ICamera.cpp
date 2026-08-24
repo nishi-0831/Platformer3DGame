@@ -1,6 +1,6 @@
 #include "ICamera.h"
 #include "Input/InputData.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Components/Transform/Transform.h"
 mtgb::ICamera::ICamera()
 	: polarAngleRad_ { 0.0f }

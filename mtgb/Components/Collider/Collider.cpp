@@ -5,7 +5,7 @@
 #include "Debug.h"
 #include "Components/Transform/Transform.h"
 #include "Components/RigidBody/RigidBody.h"
-#include "Intersection.h"
+#include "Collision/Intersection.h"
 #include "Graphics/Model/Fbx.h"
 mtgb::Collider::Collider(EntityId _entityId)
 	: IComponent(_entityId)

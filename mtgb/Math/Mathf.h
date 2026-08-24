@@ -2,7 +2,7 @@
 #include <cmath>
 #include "Utility/MTAssert.h"
 #include "Math/Vector3.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 
 namespace mtgb::Mathf
 {

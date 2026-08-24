@@ -3,9 +3,9 @@
 #include "Core/Component/IComponentMemento.h"
 #include "Core/Entity.h"
 #include "Core/Component/ComponentFactory.h"
-#include "GameObjectSnapshot.h"
+#include "Editor/GameObjectSnapshot.h"
 #include "Core/GameObject/GameObjectFactory.h"
-#include "GameObjectSelectionEvent.h"
+#include "Editor/GameObjectSelectionEvent.h"
 #include <typeindex>
 #include <functional>
 #include <vector>

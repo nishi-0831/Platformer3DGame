@@ -9,7 +9,7 @@
 #include "Core/SceneSystem.h"
 #include "Input/InputData.h"
 #include "CameraSystem.h"
-#include "GameTime.h"
+#include "Core/Time/GameTime.h"
 #include "Components/Collider/ColliderCP.h"
 #include "Editor/ImGuiUtil.h"
 #include "EventManager.h"

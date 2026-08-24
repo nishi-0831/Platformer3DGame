@@ -1,6 +1,6 @@
 #pragma once
 
-#include "GameObjectSelectionEvent.h"
+#include "Editor/GameObjectSelectionEvent.h"
 #include <functional>
 #include "Command.h"
 

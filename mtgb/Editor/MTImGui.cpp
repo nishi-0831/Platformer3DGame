@@ -8,7 +8,7 @@
 #include "ImGui/imgui.h"
 #include "ImGui/ImGuizmo.h"
 #include "Core/SceneSystem.h"
-#include "RectContainsInfo.h"
+#include "Collision/RectContainsInfo.h"
 #include "Detector/RectDetector.h"
 #include <string>
 #include "WindowContext/WindowContextUtil.h"
