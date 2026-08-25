@@ -35,7 +35,7 @@ mtgb::InputResource::InputResource(WindowContext _windowContext)
 	// 入力の時間範囲を設定
 	pInputData_->config_.SetRange(1000);
 	pInputData_->config_.SetDeadZone(0.1f);
-	pInputData_->config_.SetMaxMouseMovement(1.0f);
+	pInputData_->config_.SetMaxMouseMovement(20.0f);
 
 	JoystickReservation reservation;
 	reservation.config = pInputData_->config_;
