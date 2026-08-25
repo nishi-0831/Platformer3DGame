@@ -518,6 +518,36 @@ void mtgb::ImGuiEditor::ShowInspector()
 		selectedObj->ShowImGui();
 	}
 	ImGui::End();
+
+	// インスペクターからゲームオブジェクトを作成できるAdd GameObjectボタンを作成
+
+	ImGui::Begin("Inspector");
+	if (ImGui::Button("Add GameObject", ImVec2(-1, 0)))
+	{
+		ImGui::OpenPopup("AddGameObject");
+	}
+
+	ImGui::SetNextWindowSize(ImVec2(220, 260), ImGuiCond_Appearing);
+
+	if (ImGui::BeginPopup("AddGameObject"))
+	{
+		ImGui::Text("GameObjects");
+		ImGui::Separator();
+
+		ImGui::BeginChild("GameObjectList", ImVec2(0, 0), false);
+
+		auto descs = Game::System<GameObjectTypeRegistry>().GetSpawnObjectDescs();
+		// 並び順取得
+		auto order = Game::System<GameObjectTypeRegistry>().GetObjectPriorityOrder();
+
+		for (size_t idx : order)
+		{
+			ShowGameObjectMenu(descs[idx]);
+		}
+		ImGui::EndChild();
+		ImGui::EndPopup();
+	}
+	ImGui::End();
 }
 
 void mtgb::ImGuiEditor::ShowHelpMenuWindow()
