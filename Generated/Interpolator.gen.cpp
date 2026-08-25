@@ -1,6 +1,6 @@
 // Interpolator.generated.h
-#include "Interpolator.h"
-#include "MTImGui.h"
+#include "Components/Interpolator/Interpolator.h"
+#include "Editor/MTImGui.h"
 
 
 

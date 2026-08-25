@@ -5,24 +5,18 @@
 #include "ResultScene.h"
 #include "GameEvents.h"
 #include <algorithm>
-namespace
-{
-	float speed		 = 5.0f;
-	float jumpHeight = 5.0f;
-} // namespace
 
 Player::Player()
 	: GameObject(GameObjectBuilder()
 					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-					 .SetPosition({ 0, 5, 10 })
+					 .SetPosition({ 0, 1, 0 })
 					 .SetTag(GameObjectTag::PLAYER)
 					 .Build())
-	, ImGuiShowable(ShowType::INSPECTOR, GetEntityId())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
-	, pRigidBody_ { Component<RigidBody>() } //, pCamera_{Instantiate<Camera>(this)}
+	, pRigidBody_ { Component<RigidBody>() }
 	, pCamera_ { Instantiate<QuaternionCamera>(GetEntityId()) }
 	, pCameraTransform_ { &Transform::Get(pCamera_->GetEntityId()) }
 	, hp_ { 3 }
@@ -34,6 +28,8 @@ Player::Player()
 	, jumpController_ { GetEntityId() }
 	, walkSmokeInterval_ { 0.3f }
 	, walkSmokeElapsedTime_ { 0.0f }
+	, jumpHeight_ { 5.0f }
+	, moveSpeed_ { 5.0f }
 {
 	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
@@ -45,11 +41,9 @@ Player::Player()
 	);
 	pMeshRenderer_->meshFileName = "Model/MinerAnim.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
-
-	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
+	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS_SKIN;
+	pCollider_->colliderType_	 = ColliderType::TYPE_SPHERE;
 	pCollider_->SetRadius(pTransform_->scale.x);
-
-	displayName_ = name_;
 
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
@@ -70,19 +64,27 @@ Player::~Player() {}
 
 void Player::Update()
 {
+	// 丸影を落とす位置を指定する
 	Game::System<ShadowSettings>().SetCaster(GetEntityId());
+	// オーディオリスナーの位置を指定する
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
 
+	// 力尽きた状態、勝利状態でない場合
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
+		// 座標更新
 		UpdatePosition();
+		// ジャンプボタン押下処理
 		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
 		{
-			if (pRigidBody_->isGround_ == true)
+			if (pRigidBody_->isGround_)
 			{
-				jumpController_.StartJump(jumpHeight);
+				// ジャンプ開始
+				jumpController_.StartJump(jumpHeight_);
+				// ジャンプ時のSE
 				Game::System<Audio>().Play("Jump");
 
+				// ジャンプ時の煙エフェクト
 				Matrix4x4 worldMat;
 				pTransform_->GenerateWorldMatrix(&worldMat);
 				EffectParameters params;
@@ -91,6 +93,7 @@ void Player::Update()
 				Game::System<EffectManager>().Play("JumpSmoke", params);
 			}
 		}
+		// ジャンプボタンを離した処理
 		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
 		{
 			if (pRigidBody_->IsJumping())
@@ -98,11 +101,12 @@ void Player::Update()
 				jumpController_.ReleaseButton();
 			}
 		}
+		// 姿勢更新
 		UpdateRotate();
 	}
-
+	// アニメーションのステート更新
 	state_.Update();
-
+	// ジャンプ処理の更新
 	jumpController_.Update();
 
 	// ダメージを受けた後の無敵時間
@@ -135,6 +139,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// IDLE状態の処理
 		.OnStart(
 			STATE::IDLE,
 			[this]
@@ -146,11 +151,13 @@ void Player::InitializeState()
 			STATE::IDLE,
 			[this]
 			{
+				// +Y方向に移動している場合、ジャンプ状態に遷移
 				if (pRigidBody_->velocity_.y > 0.0f)
 				{
 					state_.Change(STATE::JUMP);
 					return;
 				}
+				// 水平方向に移動している場合、走る状態に遷移
 				if (GetMoveDir().Size() != 0)
 				{
 					state_.Change(STATE::RUN);
@@ -158,6 +165,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// RUN状態の処理
 		.OnStart(
 			STATE::RUN,
 			[this]
@@ -170,27 +178,33 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
+				// 停止しているならIDLEに遷移
 				if (pRigidBody_->velocity_.Size() == 0.0f)
 				{
 					state_.Change(STATE::IDLE);
 					return;
 				}
+				// +Y方向に移動している場合、ジャンプ状態に遷移
 				if (pRigidBody_->velocity_.y > 0.0f)
 				{
 					state_.Change(STATE::JUMP);
 					return;
 				}
+				// -Y方向に移動している場合、落下状態に遷移
 				if (pRigidBody_->velocity_.y < 0.0f)
 				{
 					state_.Change(STATE::FALL);
 					return;
 				}
 
+				// 歩いているときの煙エフェクトを発生させる
 				walkSmokeElapsedTime_ += Time::DeltaTimeF();
 				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
 				{
 					EffectParameters params;
+					// ループなし
 					params.isLoop = false;
+					// エフェクトの発生位置をプレイヤーの座標に設定
 					Matrix4x4 worldMat;
 					pTransform_->GenerateWorldMatrix(&worldMat);
 					params.worldMat = worldMat;
@@ -200,6 +214,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// JUMP状態の処理
 		.OnStart(
 			STATE::JUMP,
 			[this]
@@ -211,11 +226,13 @@ void Player::InitializeState()
 			STATE::JUMP,
 			[this]
 			{
+				// ジャンプアニメーションが終了したら落下状態に遷移
 				if (animController_->IsFinishedAnimation() && pRigidBody_->isGround_ == false)
 				{
 					state_.Change(STATE::FALL);
 					return;
 				}
+				// 設置しているならIDLEに遷移
 				if (pRigidBody_->isGround_)
 				{
 					state_.Change(STATE::IDLE);
@@ -223,6 +240,7 @@ void Player::InitializeState()
 				}
 			}
 		)
+		// FALL状態の処理
 		.OnStart(
 			STATE::FALL,
 			[this]
@@ -234,6 +252,7 @@ void Player::InitializeState()
 			STATE::FALL,
 			[this]
 			{
+				// 接地しているならIDLEに遷移
 				if (pRigidBody_->isGround_)
 				{
 					state_.Change(STATE::IDLE);
@@ -261,23 +280,25 @@ void Player::Draw() const {}
 
 void Player::Start()
 {
+	// ステート更新処理の初期化
 	InitializeState();
 	state_.Change(STATE::IDLE);
 	pHPViewer_ = Instantiate<HPViewer>(hp_);
 
-	animController_.value().SetEventCallback(
-		"Footstep",
+	animController_->SetEventCallback(
+		"Footstep", // イベント名
 		[this](const AnimationEvent& _evt)
 		{
-			OnFootstep(_evt);
+			Game::System<Audio>().Play("MinerFootstep");
 		}
 	);
 }
 
 void Player::ShowImGui()
 {
-	MTImGui::ShowComponents(Entity::entityId_);
+	GameObject::ShowImGui();
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
+	PropertyDisplayRegistry::Instance().ShowProperty(&pRigidBody_->velocity_, "vel");
 }
 
 Vector3 Player::GetMoveDir()
@@ -321,7 +342,7 @@ void Player::UpdatePosition()
 
 	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
 	{
-		Vector3 movement = moveDir * speed;
+		Vector3 movement = moveDir * moveSpeed_;
 
 		velocity.x = movement.x;
 		velocity.z = movement.z;
@@ -348,14 +369,17 @@ void Player::UpdateRotate()
 
 void Player::OnCollisionEnter(EntityId _entityId)
 {
+	// _entityIdに該当するゲームオブジェクトが存在するか確認
 	GameObject* otherObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
 	if (!otherObj)
 		return;
 
+	// _entityIdに該当するアクターを取得
 	IActor* pOtherActor = Game::System<ActorManager>().GetActor(_entityId);
 	if (pOtherActor == nullptr)
 		return;
 
+	// 衝突したエンティティのトランスフォーム取得
 	Transform& otherTransform = Transform::Get(_entityId);
 	bool isStomping			  = (pTransform_->position.y > otherTransform.position.y);
 
@@ -367,11 +391,6 @@ void Player::OnCollisionEnter(EntityId _entityId)
 	{
 		pOtherActor->OnHitSide(this);
 	}
-}
-
-void Player::OnFootstep(const AnimationEvent& _event)
-{
-	Game::System<Audio>().Play("MinerFootstep");
 }
 
 void Player::OnStomped(IActor* _pOther) {}
@@ -401,12 +420,21 @@ void Player::TakeDamage(int _damage)
 
 	pHPViewer_->TakeDamage(_damage);
 
-	isInvincible_			= true;
+	// 一定時間無敵にする
+	isInvincible_ = true;
+	// プレイヤーを点滅させる
 	hTimerChangeVisibility_ = Timer::AddInterval(
 		changeVisibilitySpan_,
 		[this]
 		{
-			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			if (isInvincible_)
+			{
+				pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			}
+			else
+			{
+				pMeshRenderer_->enabled_ = true;
+			}
 		},
 		true // firstCall: 即座に処理を呼ぶ
 	);

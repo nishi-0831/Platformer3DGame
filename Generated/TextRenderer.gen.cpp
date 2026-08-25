@@ -1,6 +1,6 @@
 // TextRenderer.generated.h
-#include "TextRenderer.h"
-#include "MTImGui.h"
+#include "Components/TextRenderer/TextRenderer.h"
+#include "Editor/MTImGui.h"
 
 
 

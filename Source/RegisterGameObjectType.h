@@ -1,6 +1,6 @@
 #pragma once
-#include "../mtgb/GameObjectFactory.h"
-#include "../mtgb/IGameObjectRegistrar.h"
+#include <Core/GameObject/GameObjectFactory.h>
+#include <Core/GameObject/IGameObjectRegistrar.h>
 namespace mtgb
 {
 	void RegisterGameObjectType(IGameObjectRegistrar* _pGameObjectRegistrar);

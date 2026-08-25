@@ -5,9 +5,11 @@ unsigned int mtgb::CircularSaw::generateCounter_ { 0 };
 
 mtgb::CircularSaw::CircularSaw()
 	: GameObject()
-	, ImGuiShowable(ShowType::INSPECTOR, Entity::entityId_)
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, pPillarTransform_ { nullptr }
+	, pPillarMeshRenderer_ { nullptr }
+	, pSaw_ { nullptr }
 	, pCollider_ { Component<Collider>() }
 	, sawOffset_ { 5.0f }
 	, rotateAngleSec_ { 45.0f }
@@ -22,13 +24,15 @@ mtgb::CircularSaw::CircularSaw()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
-	displayName_		 = name_;
 }
 
 mtgb::CircularSaw::~CircularSaw()
 {
 	Game::System<Audio>().Stop("Saw");
-	pSaw_->DestroyMe();
+	if (pSaw_)
+	{
+		pSaw_->DestroyMe();
+	}
 }
 
 void mtgb::CircularSaw::Update()
@@ -40,7 +44,11 @@ void mtgb::CircularSaw::Update()
 
 void mtgb::CircularSaw::Draw() const {}
 
-void mtgb::CircularSaw::ShowImGui() {}
+void mtgb::CircularSaw::ShowImGui()
+{
+	GameObject::ShowImGui();
+	ImGui::InputFloat("RotateAngleSec", &rotateAngleSec_);
+}
 
 void mtgb::CircularSaw::Start()
 {
@@ -74,7 +82,6 @@ void mtgb::CircularSaw::Start()
 
 mtgb::Saw::Saw()
 	: GameObject()
-	, ImGuiShowable(GetEntityId())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
@@ -83,6 +90,7 @@ mtgb::Saw::Saw()
 	, rotateAngleSec_ { 360.0f }
 	, radius_ { 3.0f }
 	, takeDamageAmount_ { 1 }
+	, audioSourceHandle_ { -1 }
 {
 	pTransform_->scale			 = Vector3 { radius_, 1.0f, radius_ };
 	pCollider_->colliderType_	 = ColliderType::TYPE_OBB;
@@ -98,19 +106,20 @@ void mtgb::Saw::Update()
 	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
 
-	Game::System<Audio>().SetEmitter(GetEntityId(), "Saw");
+	Game::System<Audio>().SetEmitter(GetEntityId(), "Saw", audioSourceHandle_);
 }
 
 void mtgb::Saw::Draw() const {}
 
 void mtgb::Saw::Start()
 {
-	Game::System<Audio>().Play("Saw", true);
+	audioSourceHandle_ = Game::System<Audio>().Play("Saw", true);
 }
 
 void mtgb::Saw::ShowImGui()
 {
-	MTImGui::ShowComponents(Entity::entityId_);
+	GameObject::ShowImGui();
+	ImGui::InputFloat("RotateAngleSec", &rotateAngleSec_);
 }
 
 void mtgb::Saw::OnStomped(IActor* _pOther)

@@ -1,6 +1,6 @@
 #include "MemoryStream.h"
 #include <utility>
-#include "../ReleaseUtility.h"
+#include "Utility/ReleaseUtility.h"
 mtbin::MemoryStream::MemoryStream(mtbin::Byte* _pBuffer, size_t _bufferSize)
 	: BUFFER_SIZE { _bufferSize }
 	, pBuffer_ { _pBuffer }

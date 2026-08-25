@@ -1,7 +1,10 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
-class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, public IActor
+/// <summary>
+/// 二地点間を巡回して、プレイヤーが近づくと突進してくる敵
+/// </summary>
+class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 {
   public:
 	PatrolChargerEnemy();
@@ -15,7 +18,6 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 	void TakeDamage(int _damage) override;
 
   private:
-	void OnCollisionEnter(EntityId _entityId);
 	void OnFootstepRun(const AnimationEvent& _event);
 	void OnFootstepWalk(const AnimationEvent& _event);
 	Transform* pTransform_;
@@ -87,4 +89,5 @@ class PatrolChargerEnemy : public mtgb::GameObject, public mtgb::ImGuiShowable, 
 
 	// 踏みつけたアクターに加える力
 	float onStompedBounce_;
+	int audioSourceHandle_;
 };

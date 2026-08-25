@@ -1,0 +1,184 @@
+#include "Core/Game.h"
+#include "Core/Component/ComponentPool.h"
+// #include "Windows.h"
+#include "Core/Component/IComponentPool.h"
+#include "Core/Entity.h"
+
+namespace
+{
+	static const mtgb::Vector2Int DEFAULT_SCREEN_SIZE { 800, 600 };
+}
+
+mtgb::Game::Game()
+	: pRegisterSystems_ {}
+	, pFrameUpdateSystems_ {}
+	, pFixedUpdateSystems_ {}
+	, pComponentPools_ {}
+	, isEditMode_ { true }
+{
+}
+
+mtgb::Game::~Game() {}
+
+mtgb::Vector2Int mtgb::Game::GetScreenSize() const
+{
+	return DEFAULT_SCREEN_SIZE;
+}
+
+void mtgb::Game::Exit()
+{
+	toExit_ = true;
+}
+
+void mtgb::Game::UpdateFrame()
+{
+	for (auto&& updateSystem : pInstance_->pFrameUpdateSystems_)
+	{
+		updateSystem->Update();
+	}
+}
+
+void mtgb::Game::UpdateFixed()
+{
+	for (auto&& updateSystem : pInstance_->pFixedUpdateSystems_)
+	{
+		updateSystem->Update();
+	}
+}
+
+mtgb::IComponentPool* mtgb::Game::GetCP(std::type_index _typeIndex)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return nullptr;
+
+	return dynamic_cast<IComponentPool*>(itr->second);
+}
+
+void mtgb::Game::RemoveEntityAllComponent(EntityId _entityId)
+{
+	for (IComponentPool* cpSystem : pInstance_->pComponentPools_)
+	{
+		cpSystem->Remove(_entityId);
+	}
+}
+
+void mtgb::Game::RemoveEntityComponent(std::type_index _typeIndex, EntityId _entityId)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return;
+
+	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
+
+	if (pComponentPool == nullptr)
+		return;
+
+	pComponentPool->Remove(_entityId);
+}
+
+nlohmann::json mtgb::Game::SerializeComponent(std::type_index _typeIndex, EntityId _entityId)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+	nlohmann::json j;
+
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return j;
+
+	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
+
+	if (pComponentPool != nullptr)
+	{
+		j = pComponentPool->Serialize(_entityId);
+	}
+
+	return j;
+}
+
+void mtgb::Game::DeserializeComponent(std::type_index _typeIndex, EntityId _entityId, const nlohmann::json& _json)
+{
+	auto itr = pInstance_->pRegisterSystems_.find(_typeIndex);
+	if (itr == pInstance_->pRegisterSystems_.end())
+		return;
+
+	IComponentPool* pComponentPool = dynamic_cast<IComponentPool*>(itr->second);
+	if (pComponentPool == nullptr)
+		return;
+
+	pComponentPool->Deserialize(_entityId, _json);
+}
+
+void mtgb::Game::DeserializeComponents(EntityId _entityId, const nlohmann::json& _json)
+{
+	std::optional<std::set<std::type_index>> components = Game::System<ComponentRegistry>().GetComponentTypes(_json);
+	if (components.has_value() == false)
+		return;
+
+	for (std::type_index typeIndex : components.value())
+	{
+		std::optional<std::type_index> componentPoolType =
+			Game::System<ComponentRegistry>().GetComponentPoolType(typeIndex);
+
+		if (componentPoolType.has_value() == false)
+			continue;
+
+		Game::DeserializeComponent(componentPoolType.value(), _entityId, _json);
+	}
+}
+
+std::span<mtgb::IRenderableCP*> mtgb::Game::GetRenderableCPs()
+{
+	return { pInstance_->pRenderablePools_.data(), pInstance_->pRenderablePools_.size() };
+}
+
+void mtgb::Game::SetEditMode(bool _isEditMode)
+{
+	pInstance_->isEditMode_ = _isEditMode;
+}
+
+bool mtgb::Game::IsEditMode()
+{
+	return pInstance_->isEditMode_;
+}
+
+void mtgb::Game::InitializeSystems()
+{
+	for (auto itr = pInstance_->registerOrder_.begin(); itr != pInstance_->registerOrder_.end(); itr++)
+	{
+		pInstance_->pRegisterSystems_[*itr]->Initialize();
+	}
+}
+
+void mtgb::Game::ReleaseSystems()
+{
+	for (auto itr = pInstance_->registerOrder_.rbegin(); itr != pInstance_->registerOrder_.rend(); itr++)
+	{
+		ISystem* pSystem = pInstance_->pRegisterSystems_[*itr];
+		pSystem->Release();
+		delete pSystem;
+	}
+}
+
+void mtgb::Game::RunLoopGameCycle()
+{
+	while (true)
+	{
+		for (auto&& updateSystem : pInstance_->pCycleUpdateSystems_)
+		{
+			updateSystem->Update();
+		}
+
+		if (toExit_) // 終了フラグが立っていたらサイクル離脱
+		{
+			for (std::function<void()>& onExit : pInstance_->onExitCallbacks_)
+			{
+				onExit();
+			}
+			break;
+		}
+	}
+}
+
+mtgb::Game* mtgb::Game::pInstance_ { nullptr };
+bool mtgb::Game::toExit_ { false };

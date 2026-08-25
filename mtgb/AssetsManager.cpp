@@ -1,6 +1,7 @@
 #include "AssetsManager.h"
 #include "Windows.h"
-
+#include <filesystem>
+namespace fs = std::filesystem;
 namespace
 {
 	static const char* ASSETS_DIRECTORY_PATH { "Assets" };

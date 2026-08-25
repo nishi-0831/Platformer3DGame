@@ -1,5 +1,6 @@
 #pragma once
-#include "GameScene.h"
+#include <Core/GameScene.h>
+
 #include "PanelManager.h"
 
 class ResultScene : public mtgb::GameScene
@@ -16,4 +17,5 @@ class ResultScene : public mtgb::GameScene
   private:
 	void CreatePanel();
 	PanelManager panelManager_;
+	mtgb::TextRenderer* pScoreText_;
 };

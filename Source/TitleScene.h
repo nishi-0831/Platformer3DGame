@@ -1,5 +1,6 @@
 #pragma once
-#include "GameScene.h"
+#include <Core/GameScene.h>
+
 #include "PanelManager.h"
 
 class TitleScene : public mtgb::GameScene

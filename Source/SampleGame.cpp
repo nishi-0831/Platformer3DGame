@@ -3,17 +3,17 @@
 #include "StageManager.h"
 #include "TitleScene.h"
 #include "StageEditScene.h"
-#include "CommandHistoryManager.h"
+#include <Editor/Command/CommandHistoryManager.h>
 #include "ActorManager.h"
-#include <ShadowSettings.h>
-
+#include <Graphics/ShadowSettings.h>
+#include <Graphics/ShaderManager.h>
 using namespace mtgb;
 
 SampleGame::SampleGame() {}
 
 SampleGame::~SampleGame() {}
 
-void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
+void SampleGame::SetupSystems()
 {
 	Game::Set<ComponentRegistry>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<GameObjectTypeRegistry>(SystemUpdateType::DONT_CALL_ME);
@@ -53,7 +53,6 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 
 	Game::Set<Image>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<Audio>(SystemUpdateType::FRAME);
-	Game::Set<OBJ>(SystemUpdateType::FRAME);
 	Game::Set<Fbx>(SystemUpdateType::FRAME);
 	Game::Set<TextCache>(SystemUpdateType::FRAME);
 
@@ -73,6 +72,7 @@ void SampleGame::SetupSystems(const RegisterSystemFuncHolder& _register)
 	Game::Set<ImGuiEditor>(SystemUpdateType::FRAME);
 	Game::Set<EffectManager>(SystemUpdateType::FRAME);
 	Game::Set<ShadowSettings>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<ShaderManager>(SystemUpdateType::DONT_CALL_ME);
 
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);
 	Game::Set<SceneSystem>(SystemUpdateType::FRAME);

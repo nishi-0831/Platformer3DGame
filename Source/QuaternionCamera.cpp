@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "QuaternionCamera.h"
-#include "ProfileUtlity.h"
+#include "Utility/ProfileUtlity.h"
 #include <cmath>
 #include <numbers>
 float EaseOutQuart(float _x)
@@ -47,28 +47,20 @@ void mtgb::QuaternionCamera::Update()
 
 	UpdateLerpSpeed();
 	Vector3 movement;
-
-	// デバイスから入力を取得する
-	switch (inputType_)
+	Vector3 mouseAxis = InputUtil::GetMouseAxis();
+	if (mouseAxis.Size() != 0.0f)
 	{
-			// マウス
-		case InputType::MOUSE :
-		{
-			movement   = InputUtil::GetMouseAxis();
-			float tmp  = movement.x;
-			movement.x = movement.y;
-			movement.y = tmp;
-			break;
-		}
-			// ゲームパッド
-		case InputType::JOYPAD :
-		{
-			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
-			movement.x	  = vec2.y;
-			movement.y	  = vec2.x;
-			break;
-		}
+		movement.x = mouseAxis.y;
+		movement.y = mouseAxis.x;
 	}
+
+	Vector2F stickAxis = InputUtil::GetAxis(StickType::RIGHT);
+	if (stickAxis.Size() != 0.0f)
+	{
+		movement.x = stickAxis.y;
+		movement.y = stickAxis.x;
+	}
+
 	Quaternion& rotate		= pTransform_->rotate;
 	Quaternion worldRotateY = Quaternion::AngleAxis(
 		DirectX::XMConvertToRadians(rotationSpeedDegPerSec_ * Time::DeltaTimeF() * movement.y),
@@ -109,16 +101,6 @@ void mtgb::QuaternionCamera::Update()
 
 	Vector3 toTargetDir	  = DirectX::XMVector3Rotate(Vector3::Forward(), rotate.v);
 	pTransform_->position = lookAtPos_ - (toTargetDir * distance_) + lookAtPositionOffset_;
-
-	MTImGui::DirectShow(
-		[this]()
-		{
-			ImGui::InputFloat("s", &cameraEasedProgress_);
-			PropertyDisplayRegistry::Instance().ShowProperty(&pTargetRigidBody_->velocity_, "vel");
-		},
-		"lerpSpeed",
-		ShowType::INSPECTOR
-	);
 }
 
 void mtgb::QuaternionCamera::UpdateLerpSpeed()

@@ -1,6 +1,6 @@
 // {{ class_name }}.generated.h
 #include "{{ class_name }}.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 
 {{ # 名前空間を含む型名を返す }}
 {{- func get_fully_qualified_type(member)
@@ -67,7 +67,9 @@ end
 		RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name)
 			{ 
 {{- for member in properties }}
+	{{- if (array.contains member.meta_options "HideInEditor") == false }}
 				PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}");
+	{{- end }}
 {{- end }}
 			});
 		MTImGui::RegisterComponentViewer<{{ class_name }}>();

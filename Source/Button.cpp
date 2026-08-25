@@ -11,11 +11,12 @@ Button::Button()
 	, pTextRenderer_ { Component<mtgb::TextRenderer>() }
 	, onPressed_ { nullptr }
 {
-	Button::hImageOnSelected_	 = mtgb::Image::Load("Image/OnSelected.png");
-	Button::hImageOnNotSelected_ = mtgb::Image::Load("Image/OnNotSelected.png");
-	pTextRenderer_->alignment	 = mtgb::TextAlignment::CENTER;
-	pImageRenderer_->handle_	 = Button::hImageOnNotSelected_;
-
+	Button::hImageOnSelected_		 = mtgb::Image::Load("Image/OnSelected.png");
+	Button::hImageOnNotSelected_	 = mtgb::Image::Load("Image/OnNotSelected.png");
+	pTextRenderer_->alignment		 = mtgb::TextAlignment::CENTER;
+	pImageRenderer_->handle_		 = Button::hImageOnNotSelected_;
+	pTextRenderer_->params_.depth	 = 0;
+	pImageRenderer_->uiParams_.depth = 1;
 	std::string typeName = mtgb::Game::System<mtgb::GameObjectTypeRegistry>().GetNameFromType(typeid(Button));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }

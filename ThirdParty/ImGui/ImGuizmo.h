@@ -1,9 +1,9 @@
 // https://github.com/CedricGuillemet/ImGuizmo
-// v1.91.3 WIP
+// v1.92.5 WIP
 //
 // The MIT License(MIT)
 //
-// Copyright(c) 2021 Cedric Guillemet
+// Copyright(c) 2016-2026 Cedric Guillemet and contributors
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files(the "Software"), to deal
@@ -25,6 +25,7 @@
 //
 // -------------------------------------------------------------------------------------------
 // History :
+// 2026/05/03 v1.9 release. CMake build system, vcpkg support, many fixes and new features from contributors.
 // 2019/11/03 View gizmo
 // 2016/09/11 Behind camera culling. Scaling Delta matrix not multiplied by source matrix scales. local/world rotation and translation fixed. Display message is incorrect (X: ... Y:...) in local mode.
 // 2016/09/09 Hatched negative axis. Snapping. Documentation update.
@@ -169,9 +170,16 @@ namespace IMGUIZMO_NAMESPACE
    // default is false
    IMGUI_API void SetOrthographic(bool isOrthographic);
 
+   // Render coordinate system axes (red X, green Y and blue Z). Usefull for debug/tests
+   IMGUI_API void DrawAxes(const float* view, const float* projection, const float* matrices, int matrixCount);
    // Render a cube with face color corresponding to face normal. Usefull for debug/tests
    IMGUI_API void DrawCubes(const float* view, const float* projection, const float* matrices, int matrixCount);
    IMGUI_API void DrawGrid(const float* view, const float* projection, const float* matrix, const float gridSize);
+   // Render grid with customizable major line step and amount of segments between major lines.
+   // NOTE(m.wlasiuk) : calling this function with majorStep = 1.0f and subdivision = 1 is equivalent to DrawGrid in terms of the end result but performs more calculations
+   IMGUI_API void DrawGridCustom(const float* view, const float* projection, const float* matrix, const float gridSize, const float majorStep, const unsigned int subdivision);
+   // Render grid with customizable major line step and amount of segments between major lines and with possibility to set custom colors for major, minor and center lines
+   IMGUI_API void DrawGridCustomColor(const float* view, const float* projection, const float* matrix, const float gridSize, const float majorStep, const unsigned int subdivision, const ImU32 majorCol, const ImU32 minorCol, const ImU32 centerCol);
 
    // call it when you want a gizmo
    // Needs view and projection matrices.
@@ -266,7 +274,6 @@ namespace IMGUIZMO_NAMESPACE
    // from a x,y,z point in space and using Manipulation view/projection matrix, check if mouse is in pixel radius distance of that projected point
    IMGUI_API bool IsOver(float* position, float pixelRadius);
 
-   IMGUI_API bool IsHoveringWindow();
    enum COLOR
    {
       DIRECTION_X,      // directionColor[0]

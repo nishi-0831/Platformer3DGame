@@ -15,6 +15,9 @@ class RespawnManager : public mtgb::GameObject, public mtgb::ImGuiShowable
 	EntityId currentRespawnPointEntityId_;
 };
 
+/// <summary>
+/// プレイヤーが落下した際の復活場所
+/// </summary>
 class RespawnPoint : public mtgb::GameObject, public mtgb::ImGuiShowable
 {
   public:
@@ -25,6 +28,9 @@ class RespawnPoint : public mtgb::GameObject, public mtgb::ImGuiShowable
 
   private:
 	void OnCollisionEnter(EntityId _entityId);
+	/// <summary>
+	/// 複数の復活場所がある場合の優先度
+	/// </summary>
 	int priority_;
 	Transform* pTransform_;
 	Collider* pCollider_;

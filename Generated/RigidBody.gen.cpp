@@ -1,6 +1,6 @@
 // RigidBody.generated.h
-#include "RigidBody.h"
-#include "MTImGui.h"
+#include "Components/RigidBody/RigidBody.h"
+#include "Editor/MTImGui.h"
 
 
 

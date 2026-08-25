@@ -61,7 +61,9 @@ void MovingFloor::ShowImGui()
 void MovingFloor::OnCollisionEnter(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag	= gameObj->GetTag();
+	if (gameObj == nullptr)
+		return;
+	GameObjectTag tag = gameObj->GetTag();
 
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
@@ -84,7 +86,9 @@ void MovingFloor::OnCollisionEnter(EntityId _entityId)
 void MovingFloor::OnCollisionExit(EntityId _entityId)
 {
 	GameObject* gameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(_entityId);
-	GameObjectTag tag	= gameObj->GetTag();
+	if (gameObj == nullptr)
+		return;
+	GameObjectTag tag = gameObj->GetTag();
 
 	// プレイヤーのみ対象にする
 	// TODO: プレイヤー以外のアクターも対象にする
