@@ -7,11 +7,13 @@
 #include <algorithm>
 
 Player::Player()
-	: GameObject(GameObjectBuilder()
-					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-					 .SetPosition({ 0, 1, 0 })
-					 .SetTag(GameObjectTag::PLAYER)
-					 .Build())
+	: GameObject(
+		  GameObjectBuilder()
+			  .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
+			  .SetPosition({ 0, 1, 0 })
+			  .SetTag(GameObjectTag::PLAYER)
+			  .Build()
+	  )
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
@@ -74,8 +76,11 @@ void Player::Update()
 	{
 		// 座標更新
 		UpdatePosition();
+		bool jumpBtnPressed = InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE);
+		// ジャンプ処理の更新
+		jumpController_.Update(jumpBtnPressed);
 		// ジャンプボタン押下処理
-		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
+		if (jumpController_.CanJump())
 		{
 			if (pRigidBody_->isGround_)
 			{
@@ -106,8 +111,6 @@ void Player::Update()
 	}
 	// アニメーションのステート更新
 	state_.Update();
-	// ジャンプ処理の更新
-	jumpController_.Update();
 
 	// ダメージを受けた後の無敵時間
 	if (isInvincible_)
@@ -178,10 +181,10 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
-				// 停止しているならIDLEに遷移
-				if (pRigidBody_->velocity_.Size() == 0.0f)
+				// -Y方向に移動している場合、落下状態に遷移
+				if (pRigidBody_->velocity_.y < 0.0f && pRigidBody_->isGround_ == false)
 				{
-					state_.Change(STATE::IDLE);
+					state_.Change(STATE::FALL);
 					return;
 				}
 				// +Y方向に移動している場合、ジャンプ状態に遷移
@@ -190,10 +193,10 @@ void Player::InitializeState()
 					state_.Change(STATE::JUMP);
 					return;
 				}
-				// -Y方向に移動している場合、落下状態に遷移
-				if (pRigidBody_->velocity_.y < 0.0f)
+				// 停止しているならIDLEに遷移
+				if (pRigidBody_->velocity_.x == 0.0f && pRigidBody_->velocity_.z == 0.0f)
 				{
-					state_.Change(STATE::FALL);
+					state_.Change(STATE::IDLE);
 					return;
 				}
 
@@ -299,6 +302,8 @@ void Player::ShowImGui()
 	GameObject::ShowImGui();
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 	PropertyDisplayRegistry::Instance().ShowProperty(&pRigidBody_->velocity_, "vel");
+	float jumpBufferRemainTime = jumpController_.GetJumpBufferRemainTime();
+	PropertyDisplayRegistry::Instance().ShowProperty(&jumpBufferRemainTime, "jumpBufferRemainTime");
 }
 
 Vector3 Player::GetMoveDir()

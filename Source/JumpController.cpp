@@ -14,8 +14,21 @@ JumpController::JumpController(EntityId _targetId)
 
 JumpController::~JumpController() {}
 
-void JumpController::Update()
+void JumpController::Update(bool _jumpPressed)
 {
+	if (_jumpPressed)
+	{
+		jumpBufferTimer_ = JUMP_BUFFER_TIME;
+	}
+	else
+	{
+		jumpBufferTimer_ -= Time::DeltaTimeF();
+		if (jumpBufferTimer_ < 0.0f)
+		{
+			jumpBufferTimer_ = 0.0f;
+		}
+	}
+
 	Vector3& velocity = pTargetRigidBody_->velocity_;
 	float g			  = gravity_;
 	if (isHolding_ == false && velocity.y > minAscentVelocityThreshold_)
@@ -27,6 +40,7 @@ void JumpController::Update()
 
 void JumpController::StartJump(float _maxHeight)
 {
+	jumpBufferTimer_			   = 0.0f;
 	isHolding_					   = true;
 	pTargetRigidBody_->velocity_.y = std::sqrt(2.0f * std::abs(gravity_) * _maxHeight);
 }
@@ -34,4 +48,14 @@ void JumpController::StartJump(float _maxHeight)
 void JumpController::ReleaseButton()
 {
 	isHolding_ = false;
+}
+
+float JumpController::GetJumpBufferRemainTime() const
+{
+	return jumpBufferTimer_;
+}
+
+bool JumpController::CanJump() const
+{
+	return jumpBufferTimer_ > 0.0f;
 }
