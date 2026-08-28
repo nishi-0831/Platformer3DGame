@@ -16,7 +16,13 @@ namespace mtgb
 	  private:
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
+		/// <summary>
+		/// 一秒あたりの回転角度
+		/// </summary>
 		float rotateAngleSec_;
+		/// <summary>
+		/// スカイスフィアの大きさ
+		/// </summary>
 		float sphereScale_;
 	};
 } // namespace mtgb

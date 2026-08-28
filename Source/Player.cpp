@@ -7,11 +7,13 @@
 #include <algorithm>
 
 Player::Player()
-	: GameObject(GameObjectBuilder()
-					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-					 .SetPosition({ 0, 1, 0 })
-					 .SetTag(GameObjectTag::PLAYER)
-					 .Build())
+	: GameObject(
+		  GameObjectBuilder()
+			  .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
+			  .SetPosition({ 0, 1, 0 })
+			  .SetTag(GameObjectTag::PLAYER)
+			  .Build()
+	  )
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
@@ -74,24 +76,24 @@ void Player::Update()
 	{
 		// 座標更新
 		UpdatePosition();
+		bool jumpBtnPressed = InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE);
+		// ジャンプ処理の更新
+		jumpController_.Update(jumpBtnPressed);
 		// ジャンプボタン押下処理
-		if (InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE))
+		if (jumpController_.CanJump())
 		{
-			if (pRigidBody_->isGround_)
-			{
-				// ジャンプ開始
-				jumpController_.StartJump(jumpHeight_);
-				// ジャンプ時のSE
-				Game::System<Audio>().Play("Jump");
+			// ジャンプ開始
+			jumpController_.StartJump(jumpHeight_);
+			// ジャンプ時のSE
+			Game::System<Audio>().Play("Jump");
 
-				// ジャンプ時の煙エフェクト
-				Matrix4x4 worldMat;
-				pTransform_->GenerateWorldMatrix(&worldMat);
-				EffectParameters params;
-				params.isLoop	= false;
-				params.worldMat = worldMat;
-				Game::System<EffectManager>().Play("JumpSmoke", params);
-			}
+			// ジャンプ時の煙エフェクト
+			Matrix4x4 worldMat;
+			pTransform_->GenerateWorldMatrix(&worldMat);
+			EffectParameters params;
+			params.isLoop	= false;
+			params.worldMat = worldMat;
+			Game::System<EffectManager>().Play("JumpSmoke", params);
 		}
 		// ジャンプボタンを離した処理
 		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
@@ -106,8 +108,6 @@ void Player::Update()
 	}
 	// アニメーションのステート更新
 	state_.Update();
-	// ジャンプ処理の更新
-	jumpController_.Update();
 
 	// ダメージを受けた後の無敵時間
 	if (isInvincible_)
@@ -178,10 +178,10 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
-				// 停止しているならIDLEに遷移
-				if (pRigidBody_->velocity_.Size() == 0.0f)
+				// 落下状態に遷移
+				if (jumpController_.IsFalling())
 				{
-					state_.Change(STATE::IDLE);
+					state_.Change(STATE::FALL);
 					return;
 				}
 				// +Y方向に移動している場合、ジャンプ状態に遷移
@@ -190,10 +190,10 @@ void Player::InitializeState()
 					state_.Change(STATE::JUMP);
 					return;
 				}
-				// -Y方向に移動している場合、落下状態に遷移
-				if (pRigidBody_->velocity_.y < 0.0f)
+				// 停止しているならIDLEに遷移
+				if (pRigidBody_->velocity_.x == 0.0f && pRigidBody_->velocity_.z == 0.0f)
 				{
-					state_.Change(STATE::FALL);
+					state_.Change(STATE::IDLE);
 					return;
 				}
 
@@ -299,6 +299,8 @@ void Player::ShowImGui()
 	GameObject::ShowImGui();
 	ImGui::Checkbox("isGrounded", &pRigidBody_->isGround_);
 	PropertyDisplayRegistry::Instance().ShowProperty(&pRigidBody_->velocity_, "vel");
+	float jumpBufferRemainTime = jumpController_.GetJumpBufferRemainTime();
+	PropertyDisplayRegistry::Instance().ShowProperty(&jumpBufferRemainTime, "jumpBufferRemainTime");
 }
 
 Vector3 Player::GetMoveDir()
@@ -427,7 +429,14 @@ void Player::TakeDamage(int _damage)
 		changeVisibilitySpan_,
 		[this]
 		{
-			pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			if (isInvincible_)
+			{
+				pMeshRenderer_->enabled_ = !pMeshRenderer_->enabled_;
+			}
+			else
+			{
+				pMeshRenderer_->enabled_ = true;
+			}
 		},
 		true // firstCall: 即座に処理を呼ぶ
 	);

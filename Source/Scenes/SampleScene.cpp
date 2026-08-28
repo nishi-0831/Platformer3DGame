@@ -6,7 +6,7 @@
 
 #include "../Source/GameOverManager.h"
 #include "../Source/RespawnManager.h"
-#include <SerializableGameObject.h>
+#include <CommonGameObject/SerializableGameObject.h>
 namespace
 {
 }

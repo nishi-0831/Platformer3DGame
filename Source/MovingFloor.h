@@ -11,7 +11,7 @@ class MovingFloor : public GameObject, public ImGuiShowable
   private:
 	void OnCollisionEnter(EntityId _entityId);
 	void OnCollisionExit(EntityId _entityId);
-	// このコンポーネントが割り当てられているEntityに着地しているEntityのId
+	// 自身に接地しているEntityのId
 	EntityId groundedEntity_;
 	Transform* pTransform_;
 	MeshRenderer* pMeshRenderer_;

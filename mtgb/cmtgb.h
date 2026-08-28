@@ -2,7 +2,7 @@
 // MTGameBase Common includes, type alias and constant values
 
 #include <cstdint>
-// #include "MTAssert.h"
+// #include "Utility/MTAssert.h"
 #include "Handlers.h"
 
 namespace mtgb

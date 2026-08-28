@@ -1,0 +1,19 @@
+#pragma once
+#include "Core/Component/ComponentPool.h"
+#include "ImageRenderer.h"
+#include "Core/GameObject/GameObjectLayer.h"
+#include "Graphics/IRenderable.h"
+namespace mtgb
+{
+	class ImageRenderer;
+	/// <summary>
+	/// ImageRendererコンポーネントシステム
+	/// </summary>
+	class ImageRendererCP : public IRenderableCP, public ComponentPool<ImageRenderer, ImageRendererCP>
+	{
+	  public:
+		void Update() override;
+		void RenderAll() const override;
+		void RenderLayer(GameObjectLayerFlag _layerFlag) const override;
+	};
+} // namespace mtgb

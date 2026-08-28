@@ -59,6 +59,9 @@ RangedAttackEnemy::~RangedAttackEnemy()
 
 void RangedAttackEnemy::Update()
 {
+	if (pTargetTransform_ == nullptr)
+		return;
+
 	if (animController_.has_value())
 	{
 		animController_->UpdateFrame();
@@ -172,9 +175,9 @@ void RangedAttackEnemy::Shot()
 	// 弾丸を生成
 	GameObject* bullet = Instantiate<Bullet>(GetEntityId());
 
-	Collider* pCollier		  = bullet->Component<Collider>();
-	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
-	RigidBody* pRigidBody	  = bullet->Component<RigidBody>();
+	Collider* pCollider		 = bullet->Component<Collider>();
+	pCollider->colliderType_ = ColliderType::TYPE_SPHERE;
+	RigidBody* pRigidBody	 = bullet->Component<RigidBody>();
 
 	// プレイヤーの方向に飛ばす
 	Vector3 toTarget						 = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();

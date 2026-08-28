@@ -1,4 +1,4 @@
-#include "IncludingWindows.h"
+#include "Window/IncludingWindows.h"
 #include <mtgb.h>
 #include "SampleGame.h"
 // エントリポイント

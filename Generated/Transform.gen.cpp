@@ -1,6 +1,6 @@
 // Transform.generated.h
-#include "Transform.h"
-#include "MTImGui.h"
+#include "Components/Transform/Transform.h"
+#include "Editor/MTImGui.h"
 
 
 

@@ -13,8 +13,11 @@ class JumpController
 	/// <param name="_targetId"></param>
 	JumpController(EntityId _targetId);
 	~JumpController();
-
-	void Update();
+	/// <summary>
+	/// ジャンプの状態を更新
+	/// </summary>
+	/// <param name="_jumpPressed">ジャンプボタンを押したか否か</param>
+	void Update(bool _jumpPressed);
 	/// <summary>
 	/// ジャンプを開始
 	/// 引数の値を最大高度とする
@@ -26,7 +29,22 @@ class JumpController
 	/// ボタンを離した際に呼ぶ
 	/// </summary>
 	void ReleaseButton();
-
+	/// <summary>
+	/// ジャンプが可能か否か
+	/// </summary>
+	/// <returns></returns>
+	bool CanJump() const;
+	/// <summary>
+	/// ジャンプバッファの残り時間を返す。
+	/// 接地していなくても、着地と同時にジャンプする猶予時間
+	/// </summary>
+	/// <returns></returns>
+	float GetJumpBufferRemainTime() const;
+	/// <summary>
+	/// 落下中か否か
+	/// </summary>
+	/// <returns></returns>
+	bool IsFalling() const;
   private:
 	Transform* pTargetTransform_;
 	RigidBody* pTargetRigidBody_;
@@ -36,4 +54,12 @@ class JumpController
 	float lowJumpGravityMultiplier_;
 	// これ以上の速度であれば上昇中である、とみなす閾値
 	float minAscentVelocityThreshold_;
+	// ジャンプボタンの押下をバッファリングする時間
+	static constexpr float JUMP_BUFFER_TIME = 0.15f;
+	// 地面から離れても、ジャンプできる時間
+	static constexpr float COYOTE_TIME		= 0.15f;
+	// 接地していなくても、着地と同時にジャンプする猶予時間
+	float jumpBufferTimer_;
+	// 地面から離れても、ジャンプできる猶予時間
+	float coyoteTimer_;
 };

@@ -1,6 +1,6 @@
 // MeshRenderer.generated.h
-#include "MeshRenderer.h"
-#include "MTImGui.h"
+#include "Components/MeshRenderer/MeshRenderer.h"
+#include "Editor/MTImGui.h"
 
 
 

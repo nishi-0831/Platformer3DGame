@@ -4,7 +4,7 @@
 #include <typeindex>
 #include <unordered_map>
 #include <queue>
-#include "ISystem.h"
+#include "Core/ISystem.h"
 namespace mtgb
 {
 	class EventBase
@@ -16,6 +16,11 @@ namespace mtgb
 	};
 
 	using EventHandlerId = std::size_t;
+	/// <summary>
+	/// 登録したイベントの寿命。
+	/// SCENEの場合はシーン遷移すると登録解除される。
+	/// GLOBALの場合はゲーム終了まで解除されない。
+	/// </summary>
 	enum class EventScope
 	{
 		SCENE,
@@ -109,10 +114,17 @@ namespace mtgb
 			EventScope scope;
 		};
 		std::unordered_map<EventHandlerId, HandlerEntry> handlers_;
+		/// <summary>
+		/// 保留中の解除要求イベントのキュー
+		/// </summary>
 		std::queue<EventHandlerId> pendingUnsubscribeIds;
 		EventHandlerId nextId = 1;
 	};
 
+	/// <summary>
+	/// <para> イベント管理クラス。</para>
+	/// <para> 任意のイベントに対するハンドラの登録、イベント呼び出しを行う</para>
+	/// </summary>
 	class EventManager : public ISystem
 	{
 	  public:

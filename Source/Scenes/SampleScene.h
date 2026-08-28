@@ -1,5 +1,5 @@
 #pragma once
-#include "GameScene.h"
+#include <Core/GameScene.h>
 #include "../Source/StageID.h"
 class SampleScene : public mtgb::GameScene
 {

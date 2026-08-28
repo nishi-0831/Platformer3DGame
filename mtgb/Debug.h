@@ -1,11 +1,11 @@
 #pragma once
-#include "ISystem.h"
-#include "IncludingWindows.h"
+#include "Core/ISystem.h"
+#include "Window/IncludingWindows.h"
 #include <string>
 #include <unordered_map>
 #include <list>
 #include <source_location>
-#include "MTStringUtility.h"
+#include "Utility/MTStringUtility.h"
 #ifdef _DEBUG
 
 #define LOGF(format, ...) mtgb::Debug::LogF(format, __VA_ARGS__)
