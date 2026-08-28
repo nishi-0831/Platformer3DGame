@@ -40,7 +40,11 @@ class JumpController
 	/// </summary>
 	/// <returns></returns>
 	float GetJumpBufferRemainTime() const;
-
+	/// <summary>
+	/// 落下中か否か
+	/// </summary>
+	/// <returns></returns>
+	bool IsFalling() const;
   private:
 	Transform* pTargetTransform_;
 	RigidBody* pTargetRigidBody_;
@@ -52,6 +56,10 @@ class JumpController
 	float minAscentVelocityThreshold_;
 	// ジャンプボタンの押下をバッファリングする時間
 	static constexpr float JUMP_BUFFER_TIME = 0.15f;
+	// 地面から離れても、ジャンプできる時間
+	static constexpr float COYOTE_TIME		= 0.15f;
 	// 接地していなくても、着地と同時にジャンプする猶予時間
 	float jumpBufferTimer_;
+	// 地面から離れても、ジャンプできる猶予時間
+	float coyoteTimer_;
 };

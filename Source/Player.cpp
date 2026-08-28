@@ -82,21 +82,18 @@ void Player::Update()
 		// ジャンプボタン押下処理
 		if (jumpController_.CanJump())
 		{
-			if (pRigidBody_->isGround_)
-			{
-				// ジャンプ開始
-				jumpController_.StartJump(jumpHeight_);
-				// ジャンプ時のSE
-				Game::System<Audio>().Play("Jump");
+			// ジャンプ開始
+			jumpController_.StartJump(jumpHeight_);
+			// ジャンプ時のSE
+			Game::System<Audio>().Play("Jump");
 
-				// ジャンプ時の煙エフェクト
-				Matrix4x4 worldMat;
-				pTransform_->GenerateWorldMatrix(&worldMat);
-				EffectParameters params;
-				params.isLoop	= false;
-				params.worldMat = worldMat;
-				Game::System<EffectManager>().Play("JumpSmoke", params);
-			}
+			// ジャンプ時の煙エフェクト
+			Matrix4x4 worldMat;
+			pTransform_->GenerateWorldMatrix(&worldMat);
+			EffectParameters params;
+			params.isLoop	= false;
+			params.worldMat = worldMat;
+			Game::System<EffectManager>().Play("JumpSmoke", params);
 		}
 		// ジャンプボタンを離した処理
 		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
@@ -181,8 +178,8 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
-				// -Y方向に移動している場合、落下状態に遷移
-				if (pRigidBody_->velocity_.y < 0.0f && pRigidBody_->isGround_ == false)
+				// 落下状態に遷移
+				if (jumpController_.IsFalling())
 				{
 					state_.Change(STATE::FALL);
 					return;

@@ -16,6 +16,19 @@ JumpController::~JumpController() {}
 
 void JumpController::Update(bool _jumpPressed)
 {
+	if (pTargetRigidBody_->isGround_)
+	{
+		coyoteTimer_ = COYOTE_TIME;
+	}
+	else
+	{
+		coyoteTimer_ -= Time::DeltaTimeF();
+		if (coyoteTimer_ < 0.0f)
+		{
+			coyoteTimer_ = 0.0f;
+		}
+	}
+
 	if (_jumpPressed)
 	{
 		jumpBufferTimer_ = JUMP_BUFFER_TIME;
@@ -55,7 +68,12 @@ float JumpController::GetJumpBufferRemainTime() const
 	return jumpBufferTimer_;
 }
 
+bool JumpController::IsFalling() const
+{
+	return pTargetRigidBody_->velocity_.y < 0.0f && pTargetRigidBody_->isGround_ == false && coyoteTimer_ == 0.0f;
+}
+
 bool JumpController::CanJump() const
 {
-	return jumpBufferTimer_ > 0.0f;
+	return jumpBufferTimer_ > 0.0f && coyoteTimer_ > 0.0f;
 }
