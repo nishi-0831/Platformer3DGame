@@ -201,10 +201,7 @@ void mtgb::ImGuiEditor::Update()
 			{
 				// 選択中のゲームオブジェクトが一つの場合のみ接近
 				auto entities = pManipulator_->GetSelectedEntityId();
-				if (entities.size() == 1)
-				{
-					Game::System<ImGuiEditorCamera>().FrameSelected(entities[0]);
-				}
+				Game::System<ImGuiEditorCamera>().FrameSelected(entities);
 			}
 		}
 		if (InputUtil::GetKeyDown(KeyCode::DELETE))
@@ -498,7 +495,8 @@ void mtgb::ImGuiEditor::ShowInspector()
 			// ダブルクリック時、対象を画面に収める
 			if (ImGui::IsMouseDoubleClicked(ImGuiMouseButton_Left))
 			{
-				Game::System<ImGuiEditorCamera>().FrameSelected(obj->GetEntityId());
+				std::vector<mtgb::EntityId> id { obj->GetEntityId() };
+				Game::System<ImGuiEditorCamera>().FrameSelected(id);
 			}
 			selectedObj			 = obj;
 			inspectedObjectName_ = obj->GetName();

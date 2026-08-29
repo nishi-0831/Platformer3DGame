@@ -37,8 +37,8 @@ namespace mtgb
 		/// <summary>
 		/// 指定されたオブジェクトに急接近する
 		/// </summary>
-		/// <param name="_entityId"></param>
-		void FrameSelected(EntityId _entityId);
+		/// <param name="_ids"></param>
+		void FrameSelected(std::span<EntityId> _ids);
 
 	  private:
 		void DoDolly();

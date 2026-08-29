@@ -230,36 +230,76 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
 
-void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
+void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 {
-	if (_entityId == INVALID_ENTITY)
+	if (_ids.empty())
 		return;
-	Collider* pCollider = nullptr;
-	Game::System<ColliderCP>().TryGet(pCollider, _entityId);
+	using namespace DirectX;
+	std::vector<BoundingBox> aabbs;
+	for (auto id : _ids)
+	{
+		if (id == INVALID_ENTITY)
+			continue;
 
-	if (pCollider == nullptr)
+		Collider* pCollider = nullptr;
+		Game::System<ColliderCP>().TryGet(pCollider, id);
+		if (pCollider == nullptr)
+			continue;
+
+		// Transform* pTransform = nullptr;
+		// Game::System<TransformCP>().TryGet(pTransform, id);
+		// if (pTransform == nullptr)
+		//	continue;
+
+		Vector3 pos = Game::System<TransformCP>().Get(id).position;
+		if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
+		{
+			BoundingBox aabb;
+			BoundingBox::CreateFromSphere(aabb, pCollider->GetBoundingSphere());
+			aabb.Center = aabb.Center;
+			// aabb.Center = aabb.Center + pos;
+			aabbs.push_back(aabb);
+		}
+		else if (pCollider->colliderType_ == ColliderType::TYPE_AABB)
+		{
+			BoundingBox aabb = pCollider->GetAABB();
+			aabb.Center		 = aabb.Center;
+			// aabb.Center		 = aabb.Center + pos;
+			aabbs.push_back(aabb);
+		}
+		else if (pCollider->colliderType_ == ColliderType::TYPE_OBB)
+		{
+			BoundingOrientedBox obb = pCollider->GetOBB();
+			BoundingBox aabb(obb.Center, obb.Extents);
+			// aabb.Center = aabb.Center + pos;
+			aabbs.push_back(aabb);
+		}
+	}
+	BoundingBox mergedAABB;
+	if (aabbs.empty())
 		return;
+
+	mergedAABB = aabbs.front();
+
+	for (int i = 1; i < aabbs.size(); i++)
+	{
+		BoundingBox::CreateMerged(mergedAABB, mergedAABB, aabbs[i]);
+	}
 
 	float fovRad = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
 
 	float radius = 0.0f;
-	if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
-	{
-		radius = pCollider->GetRadius();
-	}
-	if (pCollider->colliderType_ == ColliderType::TYPE_AABB || pCollider->colliderType_ == ColliderType::TYPE_OBB)
-	{
-		Vector3 extents = pCollider->GetExtents();
-		// 一番大きな値を半径とする
-		radius = (std::max)({ extents.x, extents.y, extents.z });
-	}
+
+	Vector3 extents = mergedAABB.Extents;
+	// 一番大きな値を半径とする
+	radius = (std::max)({ extents.x, extents.y, extents.z });
 	// 対象を画面に収めるために必要な距離を計算
 	float baseDistance = radius / std::sinf(fovRad / 2.0f);
 	// 倍率をかけた最終的なカメラ距離
 	float distance = baseDistance * frameSelectedDistanceScale_;
 
 	// カメラの位置を設定
-	Vector3 center				= pCollider->GetCenter() + Game::System<TransformCP>().Get(_entityId).position;
+	Vector3 center				= mergedAABB.Center;
 	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
 }
 
