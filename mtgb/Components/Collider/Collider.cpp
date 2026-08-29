@@ -327,7 +327,7 @@ void mtgb::Collider::Push(const Collider& _other)
 	std::optional<Intersection::IntersectInfo> info = std::nullopt;
 
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
-
+	EntityId pusherEntityId		= INVALID_ENTITY;
 	switch (colliderType_)
 	{
 		case ColliderType::TYPE_SPHERE :
@@ -341,6 +341,7 @@ void mtgb::Collider::Push(const Collider& _other)
 					break;
 			}
 			sphereTypeEntityId = GetEntityId();
+			pusherEntityId	   = _other.GetEntityId();
 			break;
 		case ColliderType::TYPE_AABB :
 			switch (_other.colliderType_)
@@ -350,6 +351,7 @@ void mtgb::Collider::Push(const Collider& _other)
 					break;
 			}
 			sphereTypeEntityId = _other.GetEntityId();
+			pusherEntityId	   = GetEntityId();
 			break;
 		case ColliderType::TYPE_OBB :
 			switch (_other.colliderType_)
@@ -359,20 +361,49 @@ void mtgb::Collider::Push(const Collider& _other)
 					break;
 			}
 			sphereTypeEntityId = _other.GetEntityId();
+			pusherEntityId	   = GetEntityId();
 			break;
 	}
-
-	Transform& transform = Transform::Get(sphereTypeEntityId);
-
 	if (info.has_value() == false)
 		return;
 
-	if (info.value().closest.y < transform.position.y)
+	if (pusherEntityId == INVALID_ENTITY || sphereTypeEntityId == INVALID_ENTITY)
+		return;
+
+	Transform& pushedTransform = Transform::Get(sphereTypeEntityId);
+	Collider& pushedCollider = Collider::Get(sphereTypeEntityId);
+
+	Collider& pusherCollider = Collider::Get(pusherEntityId);
+	Transform& pusherTransform = Transform::Get(pusherEntityId);
+
+	// 押し出す
+	pushedTransform.position += info.value().push;
+
+	// 接地判定をする
+
+	// 押出し側の中心点から+Y方向の面までの距離を取得
+	float radius = 0.0f;
+	if (pusherCollider.colliderType_ == ColliderType::TYPE_SPHERE)
+	{
+		radius = pusherCollider.GetRadius();
+	}
+	else if (pusherCollider.colliderType_ == ColliderType::TYPE_AABB ||
+		pusherCollider.colliderType_ == ColliderType::TYPE_OBB)
+	{
+		radius = pusherCollider.GetExtents().y;
+	}
+
+	// 押出し側(地面)の+Y方向の面の座標を計算する
+	float pusherTopFaceHeight = pusherTransform.position.y + radius;
+
+	// 押し出される側のコライダーの底を計算
+	float pushedCenter		  = pushedTransform.position.y + pushedCollider.GetCenter().y;
+	float pushedBottom		  = pushedCenter -  pushedCollider.GetRadius();
+	if (pusherTopFaceHeight <= pushedBottom)
 	{
 		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
 		rigidBody.OnGround();
 	}
-	transform.position += info.value().push;
 }
 
 void mtgb::Collider::OnPostRestore()
