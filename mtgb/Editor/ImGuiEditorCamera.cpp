@@ -32,7 +32,6 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
-	mtgb::EntityId boxId { INVALID_ENTITY };
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: ImGuiShowable { "EditorCamera", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL }
@@ -182,9 +181,7 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	PropertyDisplayRegistry::Instance().ShowProperty(&euler, "euler");
 }
 
-void mtgb::ImGuiEditorCamera::Initialize() 
-{
-}
+void mtgb::ImGuiEditorCamera::Initialize() {}
 
 void mtgb::ImGuiEditorCamera::SetCamera()
 {
@@ -211,8 +208,6 @@ void mtgb::ImGuiEditorCamera::Update()
 	polarAngleRad_				= coord.theta;
 	azimuthalAngleRad_			= coord.phi;
 	polarAngleRad_				= std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
-
-	Transform::Get(boxId).position = pivotPos_;
 }
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
@@ -235,8 +230,6 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	// 初期角度を設定
 	polarAngleRad_	   = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
-
-	boxId = GameObject::Instantiate<Box3D>()->GetEntityId();
 }
 
 void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
@@ -255,32 +248,23 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 		if (pCollider == nullptr)
 			continue;
 
-		// Transform* pTransform = nullptr;
-		// Game::System<TransformCP>().TryGet(pTransform, id);
-		// if (pTransform == nullptr)
-		//	continue;
-
 		Vector3 pos = Game::System<TransformCP>().Get(id).position;
 		if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
 		{
 			BoundingBox aabb;
 			BoundingBox::CreateFromSphere(aabb, pCollider->GetBoundingSphere());
 			aabb.Center = aabb.Center;
-			// aabb.Center = aabb.Center + pos;
-			aabbs.push_back(aabb);
 		}
 		else if (pCollider->colliderType_ == ColliderType::TYPE_AABB)
 		{
 			BoundingBox aabb = pCollider->GetAABB();
 			aabb.Center		 = aabb.Center;
-			// aabb.Center		 = aabb.Center + pos;
 			aabbs.push_back(aabb);
 		}
 		else if (pCollider->colliderType_ == ColliderType::TYPE_OBB)
 		{
 			BoundingOrientedBox obb = pCollider->GetOBB();
 			BoundingBox aabb(obb.Center, obb.Extents);
-			// aabb.Center = aabb.Center + pos;
 			aabbs.push_back(aabb);
 		}
 	}
@@ -355,7 +339,7 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 	{
 		Vector3 forward = pCameraTransform_->Forward();
 
-		float dir  = 0.0f;
+		float dir = 0.0f;
 		if (mouseMove.z > 0.0f)
 		{
 			dir = 1.0f;
@@ -365,9 +349,9 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 			dir = -1.0f;
 		}
 		float move = dir * distance_ * Time::DeltaTimeF();
-		
-		distance_ -= move ;
-		if (distance_ < MIN_DISTANCE_TO_PIVOT)	
+
+		distance_ -= move;
+		if (distance_ < MIN_DISTANCE_TO_PIVOT)
 		{
 			distance_ = MIN_DISTANCE_TO_PIVOT;
 		}
