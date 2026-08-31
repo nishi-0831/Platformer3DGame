@@ -24,6 +24,7 @@
 #include "Math/QuatToEuler.h"
 #include "Window/Screen.h"
 #include "ImGuiEditor.h"
+#include <CommonGameObject/Box3D.h>
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -31,6 +32,7 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 namespace
 {
 	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
+	mtgb::EntityId boxId { INVALID_ENTITY };
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: ImGuiShowable { "EditorCamera", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL }
@@ -166,8 +168,9 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->position, "cameraPos");
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->rotate, "cameraRot");
 	PropertyDisplayRegistry::Instance().ShowProperty(&dragRect_, "dragRect");
-	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
+	PropertyDisplayRegistry::Instance().ShowProperty(&pivotPos_, "pivot");
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
+	ImGui::InputFloat("distance", &distance_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
 	ImGui::InputFloat("windowX", &windowPos_.x);
 	ImGui::InputFloat("windowY", &windowPos_.y);
@@ -179,7 +182,9 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	PropertyDisplayRegistry::Instance().ShowProperty(&euler, "euler");
 }
 
-void mtgb::ImGuiEditorCamera::Initialize() {}
+void mtgb::ImGuiEditorCamera::Initialize() 
+{
+}
 
 void mtgb::ImGuiEditorCamera::SetCamera()
 {
@@ -206,6 +211,8 @@ void mtgb::ImGuiEditorCamera::Update()
 	polarAngleRad_				= coord.theta;
 	azimuthalAngleRad_			= coord.phi;
 	polarAngleRad_				= std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
+
+	Transform::Get(boxId).position = pivotPos_;
 }
 
 void mtgb::ImGuiEditorCamera::CreateCamera()
@@ -228,6 +235,8 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	// 初期角度を設定
 	polarAngleRad_	   = DirectX::XMConvertToRadians(INIT_ANGLE.x + 90.0f);
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
+
+	boxId = GameObject::Instantiate<Box3D>()->GetEntityId();
 }
 
 void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
@@ -261,6 +270,7 @@ void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
 	// カメラの位置を設定
 	Vector3 center				= pCollider->GetCenter() + Game::System<TransformCP>().Get(_entityId).position;
 	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
+	pivotPos_					= pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
@@ -276,6 +286,7 @@ void mtgb::ImGuiEditorCamera::DoDolly()
 		Vector3 move = right * -mouseMove.x + up * mouseMove.y;
 
 		pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
+		pivotPos_ = pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
 	}
 }
 
@@ -293,19 +304,34 @@ void mtgb::ImGuiEditorCamera::DoPan()
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
 		MoveCameraOnTheSpot();
+		pivotPos_ = pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
 	}
 }
 
 void mtgb::ImGuiEditorCamera::DoTrack()
 {
 	Vector3 mouseMove = InputUtil::GetMouseMove();
-	if (mouseMove.Size() != 0)
+	if (mouseMove.z != 0.0f)
 	{
 		Vector3 forward = pCameraTransform_->Forward();
 
-		Vector3 move = forward * mouseMove.z;
-
-		pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
+		float dir  = 0.0f;
+		if (mouseMove.z > 0.0f)
+		{
+			dir = 1.0f;
+		}
+		else
+		{
+			dir = -1.0f;
+		}
+		float move = dir * distance_ * Time::DeltaTimeF();
+		
+		distance_ -= move ;
+		if (distance_ < MIN_DISTANCE_TO_PIVOT)	
+		{
+			distance_ = MIN_DISTANCE_TO_PIVOT;
+		}
+		pCameraTransform_->position = pivotPos_ - (pCameraTransform_->Forward() * distance_);
 	}
 }
 
@@ -329,6 +355,7 @@ void mtgb::ImGuiEditorCamera::MoveCameraOnTheSpot()
 
 	// その場回転の時はoffsetの方向を向く
 	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
+	pCameraTransform_->Compute();
 }
 
 void mtgb::ImGuiEditorCamera::SelectGameObject()
