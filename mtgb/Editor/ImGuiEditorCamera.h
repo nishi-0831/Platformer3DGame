@@ -94,8 +94,7 @@ namespace mtgb
 		// ドラッグ状態に遷移する条件となる、マウスの閾値
 		// 長押ししてからのマウス移動量がこの値を超えるとドラッグ状態になる
 		float dragThresholdMovement_;
-		// カメラ回転の中心座標
-		Vector3 pivotPos_;
+		
 		static constexpr float MIN_DISTANCE_TO_PIVOT { 0.01f };
 	};
 } // namespace mtgb

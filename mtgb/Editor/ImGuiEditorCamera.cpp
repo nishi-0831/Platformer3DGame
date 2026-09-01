@@ -168,11 +168,13 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->rotate, "cameraRot");
 	PropertyDisplayRegistry::Instance().ShowProperty(&dragRect_, "dragRect");
 	PropertyDisplayRegistry::Instance().ShowProperty(&pivotPos_, "pivot");
+	ImGui::InputFloat4("Quat", pCameraTransform_->rotate.f);
+
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("distance", &distance_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
-	ImGui::InputFloat("windowX", &windowPos_.x);
-	ImGui::InputFloat("windowY", &windowPos_.y);
+	float deltaTime = Time::DeltaTimeF();
+	ImGui::InputFloat("DeltaTime", &deltaTime);
 	ImGui::Checkbox("drag", &dragging_);
 
 	const char* statName = ShowState(sCameraOperation_.Current());
@@ -294,7 +296,8 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 	// カメラの位置を設定
 	Vector3 center				= mergedAABB.Center;
 	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
-	pivotPos_					= pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
+	pivotPos_					= center;
+	distance_					= distance;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
@@ -334,6 +337,7 @@ void mtgb::ImGuiEditorCamera::DoPan()
 
 void mtgb::ImGuiEditorCamera::DoTrack()
 {
+	const float TRACK_FACTOR = 0.15f;
 	Vector3 mouseMove = InputUtil::GetMouseMove();
 	if (mouseMove.z != 0.0f)
 	{
@@ -342,15 +346,13 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 		float dir = 0.0f;
 		if (mouseMove.z > 0.0f)
 		{
-			dir = 1.0f;
+			distance_ *= (1.0f - TRACK_FACTOR);
 		}
 		else
 		{
-			dir = -1.0f;
+			distance_ *= (1.0f + TRACK_FACTOR);
 		}
-		float move = dir * distance_ * Time::DeltaTimeF();
-
-		distance_ -= move;
+		
 		if (distance_ < MIN_DISTANCE_TO_PIVOT)
 		{
 			distance_ = MIN_DISTANCE_TO_PIVOT;
@@ -417,8 +419,7 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance, &info);
 	if (entityId != INVALID_ENTITY)
 	{
-		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
-		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
+		hasTarget_ = true;
 		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .selectionMode = SelectionMode::REPLACE };
 		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 		{
@@ -429,7 +430,7 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	}
 	else
 	{
-		pTargetTransform_ = nullptr;
+		hasTarget_ = false;
 		Game::System<EventManager>().GetEvent<mtgb::SelectionClearedEvent>().Invoke(SelectionClearedEvent {});
 		LOGIMGUI("EditorCamera:No Select");
 	}
