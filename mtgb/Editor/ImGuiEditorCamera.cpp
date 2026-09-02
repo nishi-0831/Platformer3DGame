@@ -24,6 +24,7 @@
 #include "Math/QuatToEuler.h"
 #include "Window/Screen.h"
 #include "ImGuiEditor.h"
+#include <CommonGameObject/Box3D.h>
 using namespace mtgb::ImGuiUtil;
 
 const char* ShowState(mtgb::CameraOperation _cameraOperation);
@@ -166,11 +167,14 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->position, "cameraPos");
 	PropertyDisplayRegistry::Instance().ShowProperty(&pCameraTransform_->rotate, "cameraRot");
 	PropertyDisplayRegistry::Instance().ShowProperty(&dragRect_, "dragRect");
-	ImGui::InputFloat4("quat", pCameraTransform_->rotate.f);
+	PropertyDisplayRegistry::Instance().ShowProperty(&pivotPos_, "pivot");
+	ImGui::InputFloat4("Quat", pCameraTransform_->rotate.f);
+
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
+	ImGui::InputFloat("distance", &distance_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
-	ImGui::InputFloat("windowX", &windowPos_.x);
-	ImGui::InputFloat("windowY", &windowPos_.y);
+	float deltaTime = Time::DeltaTimeF();
+	ImGui::InputFloat("DeltaTime", &deltaTime);
 	ImGui::Checkbox("drag", &dragging_);
 
 	const char* statName = ShowState(sCameraOperation_.Current());
@@ -230,37 +234,70 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 	azimuthalAngleRad_ = DirectX::XMConvertToRadians(INIT_ANGLE.y + 90.0f);
 }
 
-void mtgb::ImGuiEditorCamera::FrameSelected(EntityId _entityId)
+void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 {
-	if (_entityId == INVALID_ENTITY)
+	if (_ids.empty())
 		return;
-	Collider* pCollider = nullptr;
-	Game::System<ColliderCP>().TryGet(pCollider, _entityId);
+	using namespace DirectX;
+	std::vector<BoundingBox> aabbs;
+	for (auto id : _ids)
+	{
+		if (id == INVALID_ENTITY)
+			continue;
 
-	if (pCollider == nullptr)
+		Collider* pCollider = nullptr;
+		Game::System<ColliderCP>().TryGet(pCollider, id);
+		if (pCollider == nullptr)
+			continue;
+
+		Vector3 pos = Game::System<TransformCP>().Get(id).position;
+		if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
+		{
+			BoundingBox aabb;
+			BoundingBox::CreateFromSphere(aabb, pCollider->GetBoundingSphere());
+			aabb.Center = aabb.Center;
+		}
+		else if (pCollider->colliderType_ == ColliderType::TYPE_AABB)
+		{
+			BoundingBox aabb = pCollider->GetAABB();
+			aabb.Center		 = aabb.Center;
+			aabbs.push_back(aabb);
+		}
+		else if (pCollider->colliderType_ == ColliderType::TYPE_OBB)
+		{
+			BoundingOrientedBox obb = pCollider->GetOBB();
+			BoundingBox aabb(obb.Center, obb.Extents);
+			aabbs.push_back(aabb);
+		}
+	}
+	BoundingBox mergedAABB;
+	if (aabbs.empty())
 		return;
+
+	mergedAABB = aabbs.front();
+
+	for (int i = 1; i < aabbs.size(); i++)
+	{
+		BoundingBox::CreateMerged(mergedAABB, mergedAABB, aabbs[i]);
+	}
 
 	float fovRad = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
 
 	float radius = 0.0f;
-	if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
-	{
-		radius = pCollider->GetRadius();
-	}
-	if (pCollider->colliderType_ == ColliderType::TYPE_AABB || pCollider->colliderType_ == ColliderType::TYPE_OBB)
-	{
-		Vector3 extents = pCollider->GetExtents();
-		// 一番大きな値を半径とする
-		radius = (std::max)({ extents.x, extents.y, extents.z });
-	}
+
+	Vector3 extents = mergedAABB.Extents;
+	// 一番大きな値を半径とする
+	radius = (std::max)({ extents.x, extents.y, extents.z });
 	// 対象を画面に収めるために必要な距離を計算
 	float baseDistance = radius / std::sinf(fovRad / 2.0f);
 	// 倍率をかけた最終的なカメラ距離
 	float distance = baseDistance * frameSelectedDistanceScale_;
 
 	// カメラの位置を設定
-	Vector3 center				= pCollider->GetCenter() + Game::System<TransformCP>().Get(_entityId).position;
+	Vector3 center				= mergedAABB.Center;
 	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
+	pivotPos_					= center;
+	distance_					= distance;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
@@ -276,6 +313,7 @@ void mtgb::ImGuiEditorCamera::DoDolly()
 		Vector3 move = right * -mouseMove.x + up * mouseMove.y;
 
 		pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
+		pivotPos_ = pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
 	}
 }
 
@@ -293,19 +331,33 @@ void mtgb::ImGuiEditorCamera::DoPan()
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
 		MoveCameraOnTheSpot();
+		pivotPos_ = pCameraTransform_->position + pCameraTransform_->Forward() * distance_;
 	}
 }
 
 void mtgb::ImGuiEditorCamera::DoTrack()
 {
+	const float TRACK_FACTOR = 0.15f;
 	Vector3 mouseMove = InputUtil::GetMouseMove();
-	if (mouseMove.Size() != 0)
+	if (mouseMove.z != 0.0f)
 	{
 		Vector3 forward = pCameraTransform_->Forward();
 
-		Vector3 move = forward * mouseMove.z;
-
-		pCameraTransform_->position += move * moveSpeed_ * Time::DeltaTimeF();
+		float dir = 0.0f;
+		if (mouseMove.z > 0.0f)
+		{
+			distance_ *= (1.0f - TRACK_FACTOR);
+		}
+		else
+		{
+			distance_ *= (1.0f + TRACK_FACTOR);
+		}
+		
+		if (distance_ < MIN_DISTANCE_TO_PIVOT)
+		{
+			distance_ = MIN_DISTANCE_TO_PIVOT;
+		}
+		pCameraTransform_->position = pivotPos_ - (pCameraTransform_->Forward() * distance_);
 	}
 }
 
@@ -329,6 +381,7 @@ void mtgb::ImGuiEditorCamera::MoveCameraOnTheSpot()
 
 	// その場回転の時はoffsetの方向を向く
 	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
+	pCameraTransform_->Compute();
 }
 
 void mtgb::ImGuiEditorCamera::SelectGameObject()
@@ -366,8 +419,7 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	EntityId entityId = Game::System<ColliderCP>().RayCastHitAll(origin, direction, distance, &info);
 	if (entityId != INVALID_ENTITY)
 	{
-		// EntityがTransformコンポーネントを持っていない可能性があるのでTryGet
-		Game::System<TransformCP>().TryGet(pTargetTransform_, entityId);
+		hasTarget_ = true;
 		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .selectionMode = SelectionMode::REPLACE };
 		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
 		{
@@ -378,7 +430,7 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	}
 	else
 	{
-		pTargetTransform_ = nullptr;
+		hasTarget_ = false;
 		Game::System<EventManager>().GetEvent<mtgb::SelectionClearedEvent>().Invoke(SelectionClearedEvent {});
 		LOGIMGUI("EditorCamera:No Select");
 	}

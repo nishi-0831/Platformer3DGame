@@ -37,8 +37,8 @@ namespace mtgb
 		/// <summary>
 		/// 指定されたオブジェクトに急接近する
 		/// </summary>
-		/// <param name="_entityId"></param>
-		void FrameSelected(EntityId _entityId);
+		/// <param name="_ids"></param>
+		void FrameSelected(std::span<EntityId> _ids);
 
 	  private:
 		void DoDolly();
@@ -94,5 +94,7 @@ namespace mtgb
 		// ドラッグ状態に遷移する条件となる、マウスの閾値
 		// 長押ししてからのマウス移動量がこの値を超えるとドラッグ状態になる
 		float dragThresholdMovement_;
+		
+		static constexpr float MIN_DISTANCE_TO_PIVOT { 0.01f };
 	};
 } // namespace mtgb

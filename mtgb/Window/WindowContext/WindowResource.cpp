@@ -79,7 +79,9 @@ LRESULT WindowResource::HandleWindowMessage(HWND _hWnd, UINT _msg, WPARAM _wPara
 		{
 			return S_OK;
 		}
-
+		case WM_DEVICECHANGE :
+			Game::System<Input>().EnumJoystick();
+			return S_OK;
 		default : // それ以外のメッセージは譲渡
 			break;
 	}

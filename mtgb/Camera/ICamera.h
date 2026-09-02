@@ -14,7 +14,6 @@ namespace mtgb
 		ICamera();
 		void DoOrbit();
 		virtual void MoveCameraSpherical(float _distance);
-		void FollowTarget();
 
 	  protected:
 		/// <summary>
@@ -36,7 +35,6 @@ namespace mtgb
 		float rotateSensitivity_;
 		float orbitSpeed_;
 		Transform* pCameraTransform_;
-		Transform* pTargetTransform_;
 		InputType inputType_;
 		float distance_;
 		bool followTarget_;
@@ -46,5 +44,8 @@ namespace mtgb
 		// +X側、右側が0度、-X側、左側が90度
 		float minAzimuthalAngleRad_, maxAzimuthalAngleRad_;
 		Vector3 lookAtPositionOffset_;
+		// カメラ回転の中心座標
+		Vector3 pivotPos_;
+		bool hasTarget_;
 	};
 } // namespace mtgb

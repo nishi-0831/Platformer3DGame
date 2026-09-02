@@ -8,7 +8,6 @@ mtgb::ICamera::ICamera()
 	, rotateSensitivity_ { 1.0f }
 	, orbitSpeed_ { 1.0f }
 	, pCameraTransform_ { nullptr }
-	, pTargetTransform_ { nullptr }
 	, inputType_ { InputType::MOUSE }
 	, distance_ { 5.0f }
 	, followTarget_ { false }
@@ -27,11 +26,9 @@ void mtgb::ICamera::MoveCameraSpherical(float _distance)
 	// 現在のカメラ位置から回転中心を計算
 	Vector3 center = Vector3::Zero();
 	// ターゲットを中心に回転
-	if (pTargetTransform_)
+	if (hasTarget_)
 	{
-		// Vector3 toTarget = pTargetTransform_->position - pCameraTransform_->position;
-		center = pTargetTransform_->position + lookAtPositionOffset_;
-		// center = pTargetTransform_->position + (Vector3::Normalize(-toTarget) * _distance) + lookAtPositionOffset_;
+		center = pivotPos_ + lookAtPositionOffset_;
 	}
 	// ターゲットがいない場合は正面を向いて回転
 	else
@@ -51,16 +48,15 @@ void mtgb::ICamera::MoveCameraSpherical(float _distance)
 	// 回転中心の方向を向く
 
 	// 変換
-	offset.x = _distance * sinf(theta) * cos(phi);
-	offset.y = -_distance * cos(theta);
-	offset.z = -_distance * sin(theta) * sin(phi);
+	offset.x = sinf(theta) * cos(phi);
+	offset.y = cos(theta);
+	offset.z = sin(theta) * sin(phi);
 
+	pCameraTransform_->rotate = Quaternion::LookRotation(offset, Vector3::Up());
+	pCameraTransform_->Compute();
 	// 位置を反映
-	pCameraTransform_->position = center + offset;
-
-	Vector3 lookDir = center - pCameraTransform_->position;
-
-	pCameraTransform_->rotate = Quaternion::LookRotation(lookDir.Normalize(), Vector3::Up());
+	pCameraTransform_->position = center + pCameraTransform_->Back() * _distance;
+	pCameraTransform_->Compute();
 }
 
 void mtgb::ICamera::DoOrbit()
@@ -87,29 +83,10 @@ void mtgb::ICamera::DoOrbit()
 		polarAngleRad_ = std::clamp(polarAngleRad_, minPolarAngleRad_, maxPolarAngleRad_);
 
 		float distance = distance_;
-		if (pTargetTransform_ != nullptr)
+		if (hasTarget_)
 		{
-			distance = (pTargetTransform_->position - pCameraTransform_->position).Size();
+			distance = (pivotPos_ - pCameraTransform_->position).Size();
 		}
 		MoveCameraSpherical(distance);
-	}
-}
-
-void mtgb::ICamera::FollowTarget()
-{
-	if (pTargetTransform_)
-	{
-		if (!followTarget_)
-			return;
-
-		if (adjustTargetDirection_)
-		{
-			pCameraTransform_->rotate	= pTargetTransform_->rotate;
-			pCameraTransform_->position = pTargetTransform_->position + (pTargetTransform_->Back() * distance_);
-		}
-		else
-		{
-			MoveCameraSpherical(distance_);
-		}
 	}
 }
