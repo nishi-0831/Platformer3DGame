@@ -31,7 +31,8 @@ const char* ShowState(mtgb::CameraOperation _cameraOperation);
 
 namespace
 {
-	const mtgb::Vector3 INIT_ANGLE { 0, 0, 0 };
+	const mtgb::Vector3 INIT_POS { 0, 15, -23 };
+	const mtgb::Vector3 INIT_ANGLE { 0.25, 0, 0 };
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: ImGuiShowable { "EditorCamera", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL }
@@ -39,7 +40,9 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }
 	, frameSelectedDistanceScale_ { 1.2f }
+	, mouseDownInWindow_ {false}
 	, dragging_ { false }
+	, dragRect_ {}
 	, rectFrameColor_ { IM_COL32(0, 0, 150, 255) }
 	, rectFillColor_ { IM_COL32(0, 0, 100, 50) }
 	, dragThresholdMovement_ { 1.0f }
@@ -216,7 +219,7 @@ void mtgb::ImGuiEditorCamera::CreateCamera()
 {
 	// カメラに使うGameObject作成
 	GameObject* pCamera		= new GameObject(GameObjectBuilder()
-											 .SetPosition({ 0, 0, 0 })
+											 .SetPosition(INIT_POS)
 											 .SetRotate(Quaternion::Euler(INIT_ANGLE))
 											 .SetName("EditorCamera")
 											 .Build());
