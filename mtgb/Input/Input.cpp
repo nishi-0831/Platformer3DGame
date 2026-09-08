@@ -88,14 +88,6 @@ void mtgb::Input::Initialize()
 		SUCCEEDED(hResult) // DirectInput8のデバイス作成に成功
 		&& "DirectInput8のデバイス作成に失敗 @Input::Initialize"
 	);
-	// 起動時、遷移時のシーンで定期的にジョイスティックの取得を試みるよう設定
-	Game::System<Input>().ScheduleJoystickEnum();
-	Game::System<SceneSystem>().OnMove(
-		[]
-		{
-			Game::System<Input>().ScheduleJoystickEnum();
-		}
-	);
 }
 
 void mtgb::Input::Update()
@@ -412,21 +404,6 @@ void mtgb::Input::UnregisterJoystickGuid(GUID _guid)
 bool mtgb::Input::RegisterJoystickGuid(GUID _guid)
 {
 	return assignedJoystickGuids_.insert(_guid).second;
-}
-
-void mtgb::Input::ScheduleJoystickEnum()
-{
-	if (enumTimerHandle_)
-	{
-		Timer::Remove(enumTimerHandle_);
-	}
-	enumTimerHandle_ = Timer::AddInterval(
-		ENUM_INTERVAL,
-		[this]()
-		{
-			EnumJoystick();
-		}
-	);
 }
 
 bool mtgb::Input::IsNotSubscribed()

@@ -450,11 +450,11 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 		}
 		if (InputUtil::GetKeyDown(KeyCode::E))
 		{
-			operation_ = ImGuizmo::SCALE;
+			operation_ = ImGuizmo::ROTATE;
 		}
 		if (InputUtil::GetKeyDown(KeyCode::R))
 		{
-			operation_ = ImGuizmo::ROTATE;
+			operation_ = ImGuizmo::SCALE;
 		}
 	}
 }

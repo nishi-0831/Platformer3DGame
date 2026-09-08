@@ -104,6 +104,9 @@ namespace mtgb
 		{
 			return colliderTag_;
 		}
+		const DirectX::BoundingSphere& GetBoundingSphere() const;
+		const DirectX::BoundingBox& GetAABB() const;
+		const DirectX::BoundingOrientedBox& GetOBB() const;
 
 		void OnPostRestore() override;
 		void Reset() override;

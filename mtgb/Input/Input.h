@@ -166,11 +166,6 @@ namespace mtgb
 		/// <param name="_guid">登録するジョイスティックのGUID</param>
 		/// <returns>登録済みの場合はfalseを返す</returns>
 		bool RegisterJoystickGuid(GUID _guid);
-
-		/// <summary>
-		/// 一定間隔でジョイスティックの取得をするよう設定する
-		/// </summary>
-		void ScheduleJoystickEnum();
 		/// <summary>
 		/// 割り当て予約がされていないか否か
 		/// </summary>
