@@ -43,7 +43,8 @@ void mtgb::ImGuiRenderer::Initialize()
 	io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard; // Enable Keyboard Controls
 	io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;  // Enable Gamepad Controls
-
+	io.ConfigViewportsNoAutoMerge	  = true;
+	io.ConfigViewportsNoDefaultParent = true;
 	ImFont* font =
 		io.Fonts->AddFontFromFileTTF("c:\\Windows\\Fonts\\meiryo.ttc", 18.0f, NULL, io.Fonts->GetGlyphRangesJapanese());
 	IM_ASSERT(font != nullptr);
