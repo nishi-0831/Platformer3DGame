@@ -1,55 +1,75 @@
 #include <mtgb.h>
 #include "SampleScene.h"
-#include "../mtgb/Box3D.h"
 #include "../Source/StageManager.h"
-#include "../Source/Camera.h"
-#include "../Source/Player.h"
-#include "../Source/ScoreViewer.h"
 #include "../Source/ResultScene.h"
+#include "../Source/SkySphere.h"
+
+#include "../Source/GameOverManager.h"
+#include "../Source/RespawnManager.h"
+#include <CommonGameObject/SerializableGameObject.h>
+namespace
+{
+}
 
 SampleScene::SampleScene()
-	: stageID_{StageID::STAGE_ONE}
+	: stageID_ { StageID::STAGE_ONE }
 {
 }
 
-SampleScene::~SampleScene()
+SampleScene::SampleScene(const nlohmann::json& _stageData)
 {
+	stageData_ = _stageData;
 }
+
+SampleScene::~SampleScene() {}
 
 void SampleScene::Initialize()
 {
-	Game::System<ImGuiEditorCamera>().CreateCamera();
+	using namespace mtgb;
+	Game::SetEditMode(false);
+	mtgb::Game::System<mtgb::ImGuiEditorCamera>().CreateCamera();
+	mtgb::Game::System<mtgb::Audio>().Play("PlayScene", true);
+	mtgb::Game::System<mtgb::SceneSystem>().OnMove(
+		[]()
+		{
+			mtgb::Game::System<mtgb::Audio>().Stop("PlayScene");
+		}
+	);
 
-	TypeRegistry::Instance();
-	TypeRegistry::Instance().Initialize();
-	MTImGui::Instance().Initialize();
-
-	std::optional<nlohmann::json> json = Game::System<StageManger>().GetStageJson(stageID_);
-	if (json.has_value())
+	Instantiate<GameOverManager>();
+	Instantiate<mtgb::SkySphere>();
+	Instantiate<RespawnManager>();
+	mtgb::Game::System<ScoreManager>().ResetScore();
+	mtgb::Game::System<StageManager>().StartStage(stageID_);
+	if (stageData_.is_null() == false)
 	{
-		GameObjectGenerator::GenerateFromJson(json);
-		// 読み込み時間で値が大きくなったデルタタイムを安定させるために2フレーム待機させる
-		// TODO: マジックナンバーを修正
-		Time::WaitFrame(2);
+		mtgb::GameObjectGenerator::GenerateFromJson(stageData_);
+		mtgb::Time::StabilizeDeltaTime();
 	}
 	else
 	{
-		assert(false && "JSONファイルが見つかりません");
+		std::optional<nlohmann::json> json = mtgb::Game::System<StageManager>().GetStageJson(stageID_);
+		if (json.has_value())
+		{
+			mtgb::GameObjectGenerator::GenerateFromJson(json);
+			mtgb::Time::StabilizeDeltaTime();
+		}
+		else
+		{
+			assert(false && "JSON繝輔ぃ繧､繝ｫ縺瑚ｦ九▽縺九ｊ縺ｾ縺帙ｓ");
+		}
 	}
+	Game::System<CommandHistoryManager>().ClearAllStack();
 }
 
 void SampleScene::Update()
 {
-	if (InputUtil::GetKeyDown(KeyCode::Escape))
+	if (mtgb::InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{
-		Game::Exit();
+		mtgb::Game::System<mtgb::SceneSystem>().Move<ResultScene>();
 	}
 }
 
-void SampleScene::Draw() const
-{
-}
+void SampleScene::Draw() const {}
 
-void SampleScene::End()
-{
-}
+void SampleScene::End() {}

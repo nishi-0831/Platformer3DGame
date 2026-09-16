@@ -1,0 +1,53 @@
+// RigidBody.generated.h
+#pragma once
+
+#include <nlohmann/json.hpp>
+#include "JSON/JsonConverter.h"
+#include <string>
+
+
+
+// ============================================================================
+// RigidBodyの状態を保存するState構造体の定義、Undo/Redoに使うMementoのusing宣言
+// ============================================================================
+struct RigidBodyState
+{
+		bool useGravity_;
+		bool isKinematic_;
+};
+
+// クラスの前方宣言
+	namespace mtgb
+	{
+		class RigidBody;
+	}
+
+
+
+	
+
+using RigidBodyMemento = mtgb::ComponentMemento<mtgb::RigidBody, RigidBodyState>;
+
+// ============================================================================
+// RigidBodyとRigidBodyMementoの相互変換処理を実装
+// ============================================================================
+#define MT_GENERATED_BODY_RigidBody() \
+	public: \
+	using Memento = RigidBodyMemento; \
+	RigidBodyMemento* SaveToMemento(); \
+	\
+	void RestoreFromMemento(const Memento& _memento); \
+	\
+	friend struct RigidBody_Register; \
+	friend void to_json(nlohmann::json& _j,const RigidBody& _target); \
+	friend void from_json(const nlohmann::json& _j, RigidBody& _target); \
+	\
+	static std::string TypeName(){ return "RigidBody" ;} \
+	/* ImGui表示処理の登録 */ \
+	static void RegisterImGui(); \
+
+#pragma warning(push)
+#pragma warning(disable:4005)
+// マクロ上書き
+#define MT_GENERATED_BODY() MT_GENERATED_BODY_RigidBody()
+#pragma warning(pop)

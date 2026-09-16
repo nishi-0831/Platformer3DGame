@@ -1,0 +1,28 @@
+#pragma once
+#include "cmtgb.h"
+
+namespace mtgb
+{
+	/// <summary>
+	/// ECSのEntity
+	/// </summary>
+	class Entity
+	{
+	  public:
+		Entity() {}
+
+		virtual ~Entity() {}
+
+		/// <summary>
+		/// エンティティIdを取得する
+		/// </summary>
+		/// <returns>エンティティ識別番号</returns>
+		inline EntityId GetEntityId() const
+		{
+			return entityId_;
+		}
+
+	  protected:
+		EntityId entityId_ { INVALID_ENTITY }; // エンティティの識別子
+	};
+} // namespace mtgb

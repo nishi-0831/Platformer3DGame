@@ -1,22 +1,25 @@
 #pragma once
 #include <mtgb.h>
 
-class Goal : public mtgb::GameObject , public ImGuiShowable
+class Goal : public mtgb::GameObject
 {
-public:
+  public:
 	Goal();
 	~Goal();
 
 	void Update() override;
 	void Start() override;
 	void Draw() const override;
-	void ShowImGui() override;
 
-	std::vector<IComponentMemento*> GetDefaultMementos(EntityId _entityId) const override;
-private:
+  private:
+	void OnClear();
 	Transform* pTransform_;
 	Collider* pCollider_;
 	RigidBody* pRigidBody_;
+	MeshRenderer* pMeshRenderer_;
 	static unsigned int generateCounter_;
-
+	// ゴールの3Dモデルと一緒に描画するエフェクト
+	std::weak_ptr<EffectParameters> pEffect_;
+	// ゴールに触れてからリザルトシーンに遷移するまでの猶予
+	float transitionSceneDelay_;
 };

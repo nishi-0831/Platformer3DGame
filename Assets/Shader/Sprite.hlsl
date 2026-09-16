@@ -1,7 +1,7 @@
 #include "2DCommon.hlsli"
 
 /*
-* í∏ì_ÉVÉFÅ[É_
+* È†ÇÁÇπ„Ç∑„Çß„Éº„ÉÄ
 */
 VSOutput VS(float4 position : POSITION, float4 uv : TEXCOORD)
 {
@@ -17,12 +17,10 @@ VSOutput VS(float4 position : POSITION, float4 uv : TEXCOORD)
 }
 
 /*
-* ÉsÉNÉZÉãÉVÉFÅ[É_
+* „Éî„ÇØ„Çª„É´„Ç∑„Çß„Éº„ÉÄ
 */
 float4 PS(VSOutput input) : SV_Target
 {
     float4 color = g_color * g_texture.Sample(g_sampler, input.uv);
-    //return fwidth(color.a);
-    //return fwidth(color);  // MEMO: Ç®óVÇ— abs(ddx(color)) + abs(ddy(color))
     return color;
 }

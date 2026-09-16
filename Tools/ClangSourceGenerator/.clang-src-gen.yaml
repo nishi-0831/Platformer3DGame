@@ -1,0 +1,20 @@
+CacheFileDirectory: "Tools/ClangSourceGenerator"
+ExcludeDirectories:
+  - "ThirdParty"
+  - "vcpkg_installed"
+  - "ImGui" 
+  - "packages" 
+MaxDegreeOfParallelism: 4
+OutputDirectory: "Generated"
+CodeGenerationRules:
+  -  ClassMetadataType: "MT_COMPONENT"
+     MemberMetadataType: "MT_PROPERTY"
+     OutputTemplate: "Tools/ClangSourceGenerator/GenerateComponentHeader.sbn"
+     OutputFileName: "{}.generated.h"
+  -  ClassMetadataType: "MT_COMPONENT"
+     MemberMetadataType: "MT_PROPERTY"
+     OutputTemplate: "Tools/ClangSourceGenerator/GenerateComponentCpp.sbn"
+     OutputFileName: "{}.gen.cpp"
+  -  ClassMetadataType: "MT_ENUM"
+     OutputTemplate: "Tools/ClangSourceGenerator/GenerateEnumHeader.sbn"
+     OutputFileName: "{}.generatedEnum.h"

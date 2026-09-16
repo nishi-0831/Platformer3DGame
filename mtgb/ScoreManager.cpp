@@ -1,31 +1,23 @@
 #include "ScoreManager.h"
-#include "MTImGui.h"
+#include "Editor/MTImGui.h"
 
 namespace
 {
-	const int32_t QUATA_SCORE_MAX{ 35 };
-	int GAUGE_COUNT{ 30 };  // ÉQÅ[ÉWêî
-}
+	const int32_t QUATA_SCORE_MAX { 35 };
+	int GAUGE_COUNT { 30 }; // „Ç≤„Éº„Ç∏Êï∞
+} // namespace
 
-int32_t mtgb::ScoreManager::score_{ 0 };
-int32_t mtgb::ScoreManager::quotaScore_{ 0 };
+int32_t mtgb::ScoreManager::score_ { 0 };
+int32_t mtgb::ScoreManager::quotaScore_ { 0 };
 
 mtgb::ScoreManager::ScoreManager()
 {
 	quotaScore_ = GAUGE_COUNT;
 }
 
-mtgb::ScoreManager::~ScoreManager()
-{
-}
+mtgb::ScoreManager::~ScoreManager() {}
 
-void mtgb::ScoreManager::Update()
-{
-	MTImGui::Instance().DirectShow([this]()
-		{
-			ImGui::LabelText("Score","%d", score_);
-		}, "CurrentScore", ShowType::Inspector);
-}
+void mtgb::ScoreManager::Update() {}
 void mtgb::ScoreManager::AddScore(uint32_t _score)
 {
 	score_ += _score;

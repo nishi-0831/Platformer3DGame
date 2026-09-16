@@ -3,12 +3,12 @@
 
 class SampleGame : public mtgb::Game
 {
-public:
+  public:
 	SampleGame();
 	~SampleGame();
 
-private:
-	void SetupSystems(const RegisterSystemFuncHolder& _register) override;
+  private:
+	void SetupSystems() override;
 
 	inline std::string_view GetVersion() const override
 	{
@@ -16,6 +16,6 @@ private:
 	};
 	inline std::string_view GetTitle() const override
 	{
-		return "‚½‚¾‚ÌƒTƒ“ƒvƒ‹ƒQ[ƒ€";
+		return "ã‚µãƒ³ãƒ—ãƒ«ã‚²ãƒ¼ãƒ ";
 	};
 };

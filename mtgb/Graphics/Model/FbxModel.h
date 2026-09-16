@@ -1,0 +1,75 @@
+#pragma once
+#include <vector>
+#include "Math/Vector3.h"
+#include <fbxsdk.h>
+#include <string>
+
+#include "FbxAnimationController.h"
+#include "MeshAsset.h"
+#include "Graphics/ShaderType.h"
+namespace mtgb
+{
+	class Transform;
+	/// <summary>
+	/// 1つのFbxファイルを扱うクラス
+	/// </summary>
+	class FbxModel
+	{
+	  public:
+		FbxModel();
+		~FbxModel();
+
+		void Load(const std::string& _fileName);
+
+		void Draw(const Transform& _transfrom, int _frame, ShaderType _shader);
+
+		void Release();
+
+		/// <summary>
+		/// FbxSceneを取得する
+		/// </summary>
+		/// <returns>FbxSceneのポインタ</returns>
+		inline FbxScene* GetFbxScene()
+		{
+			return pFbxScene_;
+		}
+
+		/// <summary>
+		/// 任意のボーンの位置を取得
+		/// </summary>
+		/// <param name="_boneName">ボーンの名前</param>
+		Vector3 GetBonePosition(std::string_view _boneName);
+		/// <summary>
+		/// スキンメッシュアニメ中の現在の任意のボーンの位置を取得
+		/// </summary>
+		/// <param name="_boneName">ボーンの名前</param>
+		Vector3 GetAnimBonePosition(std::string_view _boneName);
+
+		/// <summary>
+		/// ロードしたときのモデルファイルの名前を取得
+		/// </summary>
+		/// <returns>ファイル名</returns>
+		std::string GetFileName() const
+		{
+			return fileName_;
+		}
+
+		/// <summary>
+		/// アニメーションのコントローラを返す
+		/// </summary>
+		/// <returns></returns>
+		std::optional<FbxAnimationController> GetAnimationController();
+
+	  private:
+		std::vector<MeshAsset*> pMeshAssets_;
+		FbxScene* pFbxScene_; // Fbxファイル内のシーン
+
+		FbxTime::EMode frameRate_; // アニメーションフレームレート
+		float animationSpeed_;	   // アニメーションの再生速度
+		int startFrame_;		   // アニメーション最初のフレーム
+		int endFrame_;			   // アニメーション最後のフレーム
+
+		std::string fileName_;	 // モデルファイルのパス
+		double unitScaleFactor_; // FbxSceneから取得したスケール単位
+	};
+} // namespace mtgb

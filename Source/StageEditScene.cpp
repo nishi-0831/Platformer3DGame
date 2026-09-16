@@ -1,36 +1,37 @@
 #include "stdafx.h"
 #include <mtgb.h>
+#include <fstream>
 #include "StageEditScene.h"
-#include "BuddiesSkyCombatStageGenerator.h"
+#include "Scenes/SampleScene.h"
 StageEditScene::StageEditScene()
+	: stageData_ {}
 {
 }
 
-StageEditScene::~StageEditScene()
+StageEditScene::StageEditScene(const nlohmann::json& _stageData)
 {
+	stageData_ = _stageData;
 }
+
+StageEditScene::~StageEditScene() {}
 
 void StageEditScene::Initialize()
 {
+	Game::SetEditMode(true);
 	Game::System<ImGuiEditorCamera>().CreateCamera();
-
-	TypeRegistry::Instance();
-	TypeRegistry::Instance().Initialize();
-	MTImGui::Instance().Initialize();
-}
-
-void StageEditScene::Update()
-{
-	if (InputUtil::GetKeyDown(KeyCode::Space))
+	PropertyDisplayRegistry::Instance();
+	PropertyDisplayRegistry::Instance().Initialize();
+	MTImGui::Initialize();
+	if (stageData_.empty() == false)
 	{
-		BuddiesSkyCombatStageGenerate();
+		mtgb::GameObjectGenerator::GenerateFromJson(stageData_);
+		mtgb::Time::StabilizeDeltaTime();
+		Game::System<CommandHistoryManager>().ClearAllStack();
 	}
 }
 
-void StageEditScene::Draw() const
-{
-}
+void StageEditScene::Update() {}
 
-void StageEditScene::End()
-{
-}
+void StageEditScene::Draw() const {}
+
+void StageEditScene::End() {}

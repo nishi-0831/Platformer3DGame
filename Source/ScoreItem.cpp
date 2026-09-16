@@ -1,75 +1,60 @@
 #include "stdafx.h"
 #include "ScoreItem.h"
 #include <format>
-unsigned int ScoreItem::generateCounter_{ 0 };
+unsigned int ScoreItem::generateCounter_ { 0 };
 
 ScoreItem::ScoreItem()
 	: GameObject()
-	, addScore_{100}
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, addScore_ { 1 }
 {
-	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(ScoreItem));
-	name_ = std::format("{} ({})", typeName, generateCounter_++);
-}
+	pCollider_->colliderType_ = ColliderType::TYPE_SPHERE;
+	pCollider_->isStatic_	  = false;
+	pCollider_->SetRadius(pTransform_->scale.x * 0.5f);
 
-ScoreItem::~ScoreItem()
-{
-}
-
-void ScoreItem::Update()
-{
-}
-
-void ScoreItem::Start()
-{
-	pTransform_ = Component<Transform>();
-	pCollider_ = Component<Collider>();
-	pRigidBody_ = Component<RigidBody>();
-
-	pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _entityId)
 		{
 			GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-			if (tag == GameObjectTag::Player)
+			// 自身に触れたのがプレイヤーだった場合
+			if (tag == GameObjectTag::PLAYER)
 			{
+				// スコアを追加
 				Game::System<ScoreManager>().AddScore(addScore_);
+
+				// エフェクト描画
+				EffectParameters params;
+				params.isLoop = false;
+				Matrix4x4 worldMat;
+				pTransform_->GenerateWorldMatrix(&worldMat);
+				params.worldMat = worldMat;
+				Game::System<EffectManager>().Play("ScoreItem", params);
+
+				// SE再生
+				Game::System<Audio>().Play("ItemGet");
+
+				// 破棄を要請
 				DestroyMe();
 			}
-		});
+		}
+	);
+
+	pMeshRenderer_->meshFileName = "Model/Ruby.fbx";
+	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
+	pMeshRenderer_->layer	   = AllLayer();
+	pMeshRenderer_->shaderType = ShaderType::FBX_PARTS;
+
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(ScoreItem));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }
 
-void ScoreItem::Draw() const
-{
-}
+ScoreItem::~ScoreItem() {}
 
-std::vector<IComponentMemento*> ScoreItem::GetDefaultMementos(EntityId _entityId) const
-{
-    std::vector<IComponentMemento*> mementos;
+void ScoreItem::Update() {}
 
-	TransformState transformState
-	{
-		.position{0,0,0},
-		.scale{1,1,1}
-	};
+void ScoreItem::Start() {}
 
-	ColliderState colliderState
-	{
-		.colliderType{ColliderType::TYPE_SPHERE},
-		.isStatic{false},
-		.colliderTag{},
-		.center{transformState.position},
-		.radius{transformState.scale.x * 0.5f},
-		.extents{transformState.scale * 0.5f},
-	};
-
-	MeshRendererState meshData
-	{
-		.meshFileName{"Model/Ruby.fbx"},
-		.meshHandle{Fbx::Load(meshData.meshFileName)},
-		.layer{AllLayer()},
-		.shaderType{ShaderType::FbxParts}
-	};
-
-	mementos.push_back(new TransformMemento(_entityId, transformState));
-	mementos.push_back(new ColliderMemento(_entityId, colliderState));
-	mementos.push_back(new MeshRendererMemento(_entityId, meshData));
-    return mementos;
-}
+void ScoreItem::Draw() const {}

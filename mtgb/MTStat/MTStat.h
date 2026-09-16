@@ -7,143 +7,134 @@
 
 namespace mtstat
 {
-	template<typename T>
+	template <typename T>
 	concept EnumT = std::is_enum_v<T>;
+
+	/// <summary>
+	/// ç‰¹å®šã®ã‚¿ã‚¤ãƒŸãƒ³ã‚°(start,update,end)ã§å‘¼ã°ã‚Œã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®å‹
+	/// </summary>
+	using Callback = std::function<void(void)>;
+
+	template<typename Func>
+	concept MTStatCallback = std::is_convertible_v<Func, Callback>;
 	
 	/// <summary>
-	/// <para> ƒ|ƒŠƒ‚ƒ‹ƒtƒBƒYƒ€‚ğ”²‚«‚É‚µ‚½ƒXƒe[ƒgƒNƒ‰ƒX </para>
-	/// <para> ƒƒ\ƒbƒhƒ`ƒF[ƒ“‚Åó‘Ô‚ğ‹Lq‚·‚é‚±‚Æ‚ª‚Å‚«‚é</para>
+	/// é·ç§»æ¡ä»¶ã¨ãªã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã®å‹ã€‚trueã‚’è¿”ã™ã¨é·ç§»ã™ã‚‹
 	/// </summary>
-	/// <typeparam name="StatEnumT">ƒXƒe[ƒg‚Ég—p‚·‚é—ñ‹“Œ^</typeparam>
-	template<EnumT StatEnumT>
-	class MTStat
+	using TransitionCallback = std::function<bool()>;
+
+	template <typename Func>
+	concept MTStatTransitionCallback = std::is_convertible_v<Func, TransitionCallback>;
+
+	/// <summary>
+	/// <para> ãƒãƒªãƒ¢ãƒ«ãƒ•ã‚£ã‚ºãƒ ã‚’æŠœãã«ã—ãŸã‚¹ãƒ†ãƒ¼ãƒˆã‚¯ãƒ©ã‚¹ </para>
+	/// <para> ãƒ¡ã‚½ãƒƒãƒ‰ãƒã‚§ãƒ¼ãƒ³ã§çŠ¶æ…‹ã‚’è¨˜è¿°ã™ã‚‹ã“ã¨ãŒã§ãã‚‹</para>
+	/// </summary>
+	/// <typeparam name="StatEnumT">ã‚¹ãƒ†ãƒ¼ãƒˆã«ä½¿ç”¨ã™ã‚‹åˆ—æŒ™å‹</typeparam>
+	template <EnumT StatEnumT> class MTStat
 	{
-	public:
-		MTStat() : stat_{} {}
+	  public:
+
+		MTStat()
+			: stat_ {}
+		{
+		}
 		~MTStat() {}
 
-		MTStat& OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback);
-		MTStat& OnEnd(const StatEnumT _statEnum, const std::function<void()>& _callback);
+		template <MTStatCallback Func> MTStat& OnStart(StatEnumT _statEnum, Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnUpdate(StatEnumT _statEnum, Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnEnd(StatEnumT _statEnum, Func&& _callback);
 
-		// ‚Ç‚Ìó‘Ô‚Å‚àŒÄ‚Î‚ê‚é‹¤’ÊŠÖ”
-		MTStat& OnAnyStart(const std::function<void()>& _callback);
-		MTStat& OnAnyUpdate(const std::function<void()>& _callback);
-		MTStat& OnAnyEnd(const std::function<void()>& _callback);
+		// ã©ã®çŠ¶æ…‹ã§ã‚‚å‘¼ã°ã‚Œã‚‹å…±é€šé–¢æ•°
+		template <MTStatCallback Func> MTStat& OnAnyStart(Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnAnyUpdate(Func&& _callback);
+		template <MTStatCallback Func> MTStat& OnAnyEnd(Func&& _callback);
 
 		/// <summary>
-		/// <para> w’è‚µ‚½ó‘Ô‚©‚ç•Ê‚Ìó‘Ô‚Ö‚Ì‘JˆÚğŒ‚ğ“o˜^ </para>
-		/// <para> “o˜^‡‚Å•]‰¿‚³‚êA—Dæ“x‚Í•t‚¯‚ç‚ê‚È‚¢ </para>
+		/// <para> æŒ‡å®šã—ãŸçŠ¶æ…‹ã‹ã‚‰åˆ¥ã®çŠ¶æ…‹ã¸ã®é·ç§»æ¡ä»¶ã‚’ç™»éŒ² </para>
+		/// <para> ç™»éŒ²é †ã§è©•ä¾¡ã•ã‚Œã€å„ªå…ˆåº¦ã¯ä»˜ã‘ã‚‰ã‚Œãªã„ </para>
 		/// </summary>
-		/// <param name="_from">‘JˆÚŒ³‚Æ‚È‚éó‘ÔB‚±‚Ìó‘Ô‚É‚¢‚é‚Æ‚«‚É‘JˆÚğŒ‚ª•]‰¿‚³‚ê‚é </param>
-		/// <param name="_to">‘JˆÚæ‚Æ‚È‚éó‘ÔBğŒ‚ª–‚½‚³‚ê‚½‚Æ‚«‚É‚±‚Ìó‘Ô‚É‘JˆÚ‚·‚é</param>
-		/// <param name="_callback">‘JˆÚğŒ‚ğ”»’è‚·‚éƒR[ƒ‹ƒoƒbƒNBtrue‚ğ•Ô‚·‚Æ‘JˆÚ‚·‚é</param>
+		/// <param name="_from">é·ç§»å…ƒã¨ãªã‚‹çŠ¶æ…‹ã€‚ã“ã®çŠ¶æ…‹ã«ã„ã‚‹ã¨ãã«é·ç§»æ¡ä»¶ãŒè©•ä¾¡ã•ã‚Œã‚‹ </param>
+		/// <param name="_to">é·ç§»å…ˆã¨ãªã‚‹çŠ¶æ…‹ã€‚æ¡ä»¶ãŒæº€ãŸã•ã‚ŒãŸã¨ãã«ã“ã®çŠ¶æ…‹ã«é·ç§»ã™ã‚‹</param>
+		/// <param name="_callback">é·ç§»æ¡ä»¶ã‚’åˆ¤å®šã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã€‚trueã‚’è¿”ã™ã¨é·ç§»ã™ã‚‹</param>
 		/// <returns></returns>
-		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback);
-		
+		template<MTStatTransitionCallback Func>
+		MTStat& RegisterTransition(StatEnumT _from, StatEnumT _to, Func&& _callback);
+
 		/// <summary>
-		/// <para> ‚ ‚ç‚ä‚éó‘Ô‚©‚ç•Ê‚Ìó‘Ô‚Ö‚Ì‘JˆÚğŒ‚ğ“o˜^ </para>
-		/// <para> “o˜^‡‚Å•]‰¿‚³‚êA—Dæ“x‚Í•t‚¯‚ç‚ê‚È‚¢ </para>
+		/// <para> ã‚ã‚‰ã‚†ã‚‹çŠ¶æ…‹ã‹ã‚‰åˆ¥ã®çŠ¶æ…‹ã¸ã®é·ç§»æ¡ä»¶ã‚’ç™»éŒ² </para>
+		/// <para> ç™»éŒ²é †ã§è©•ä¾¡ã•ã‚Œã€å„ªå…ˆåº¦ã¯ä»˜ã‘ã‚‰ã‚Œãªã„ </para>
 		/// </summary>
-		/// <param name="_to">‘JˆÚæ‚Æ‚È‚éó‘ÔBğŒ‚ª–‚½‚³‚ê‚½‚Æ‚«‚É‚±‚Ìó‘Ô‚É‘JˆÚ‚·‚é</param>
-		/// <param name="_callback">ğŒ‚ª–‚½‚³‚ê‚½‚Æ‚«‚É‚±‚Ìó‘Ô‚É‘JˆÚ‚·‚é</param>
+		/// <param name="_to">é·ç§»å…ˆã¨ãªã‚‹çŠ¶æ…‹ã€‚æ¡ä»¶ãŒæº€ãŸã•ã‚ŒãŸã¨ãã«ã“ã®çŠ¶æ…‹ã«é·ç§»ã™ã‚‹</param>
+		/// <param name="_callback">é·ç§»æ¡ä»¶ã‚’åˆ¤å®šã™ã‚‹ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯ã€‚trueã‚’è¿”ã™ã¨é·ç§»ã™ã‚‹</param>
 		/// <returns></returns>
-		MTStat& RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback);
-		
+		template<MTStatTransitionCallback Func>
+		MTStat& RegisterAnyTransition(StatEnumT _to, Func&& _callback);
+
 		/// <summary>
-		/// <para> ‘JˆÚğŒ‚ğ–‚½‚µ‚½ó‘Ô‚Ìæ“¾‚ğ‚İ‚é </para>
-		/// <para> ğŒ‚ğ–‚½‚µ‚Ä‚¢‚éê‡ true‚ª•Ô‚Á‚Ä‚«‚ÄAˆø”‚É‚Í‘JˆÚæ‚Ìó‘Ô‚ªŠi”[‚³‚ê‚é</para>
+		/// <para> é·ç§»æ¡ä»¶ã‚’æº€ãŸã—ãŸçŠ¶æ…‹ã®å–å¾—ã‚’è©¦ã¿ã‚‹ </para>
+		/// <para> æ¡ä»¶ã‚’æº€ãŸã—ã¦ã„ã‚‹å ´åˆ trueãŒè¿”ã£ã¦ãã¦ã€å¼•æ•°ã«ã¯é·ç§»å…ˆã®çŠ¶æ…‹ãŒæ ¼ç´ã•ã‚Œã‚‹</para>
 		/// </summary>
-		/// <param name="_nextState"> ‘JˆÚ‰Â”\‚Èó‘Ô‚ª‚ ‚ê‚Î‚»‚Ì’l‚ªŠi”[‚³‚ê‚éB–ß‚è’l‚ªtrue‚Ìê‡‚Ì‚İ—LŒø </param>
-		/// <returns> ‘JˆÚ‰Â”\‚ÈğŒ‚ª‚ ‚ê‚ÎtrueA‚È‚¯‚ê‚Îfalse </returns>
-		bool TryGetNextState(StatEnumT& _nextState);
+		/// <param name="_nextState"> é·ç§»å¯èƒ½ãªçŠ¶æ…‹ãŒã‚ã‚Œã°ãã®å€¤ãŒæ ¼ç´ã•ã‚Œã‚‹ã€‚æˆ»ã‚Šå€¤ãŒtrueã®å ´åˆã®ã¿æœ‰åŠ¹ </param>
+		/// <returns> é·ç§»å¯èƒ½ãªæ¡ä»¶ãŒã‚ã‚Œã°trueã€ãªã‘ã‚Œã°false </returns>
+		bool TryGetNextState(StatEnumT& _nextState) const;
 		void Update() const;
-		void Change(const StatEnumT _nextStat);
+		void Change(StatEnumT _nextStat);
 
-		const StatEnumT Current() const { return stat_; }
+		StatEnumT Current() const
+		{
+			return stat_;
+		}
 
 		struct StateTransition
 		{
 			StatEnumT toState;
-			std::function<bool()> condition;
+			TransitionCallback condition;
 		};
-	private:
-		StatEnumT stat_;  // Œ»İ‚ÌƒXƒe[ƒg
-		
-		std::map<StatEnumT, std::function<void()>> updateFuncs_;  // “o˜^‚³‚ê‚Ä‚¢‚éXVŠÖ”
-		std::map<StatEnumT, std::function<void()>> startFuncs_;   // “o˜^‚³‚ê‚Ä‚¢‚éŠJnŠÖ”
-		std::map<StatEnumT, std::function<void()>> endFuncs_;     // “o˜^‚³‚ê‚Ä‚¢‚éI—¹ŠÖ”
 
-		std::function<void()> anyUpdateFunc_;
-		std::function<void()> anyStartFunc_;
-		std::function<void()> anyEndFunc_;
-		
-		
-		std::map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
+	  private:
+		StatEnumT stat_; // ç¾åœ¨ã®ã‚¹ãƒ†ãƒ¼ãƒˆ
+
+		std::unordered_map<StatEnumT, Callback> updateFuncs_; // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹æ›´æ–°é–¢æ•°
+		std::unordered_map<StatEnumT, Callback> startFuncs_;  // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹é–‹å§‹é–¢æ•°
+		std::unordered_map<StatEnumT, Callback> endFuncs_;	   // ç™»éŒ²ã•ã‚Œã¦ã„ã‚‹çµ‚äº†é–¢æ•°
+
+		Callback anyUpdateFunc_;
+		Callback anyStartFunc_;
+		Callback anyEndFunc_;
+
+		std::unordered_map<StatEnumT, std::vector<StateTransition>> transitionsMap_;
 		std::vector<StateTransition> anyTransition_;
 	};
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT>
+	template <MTStatTransitionCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(
+		StatEnumT _from,
+		StatEnumT _to,
+		Func&& _callback
+	)
 	{
-		startFuncs_.insert({ _statEnum, _callback });
+		transitionsMap_[_from].emplace_back(_to, std::forward<Func>(_callback));
 		return *this;
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT>
+	template <MTStatTransitionCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(
+		StatEnumT _to,
+		Func&& _callback
+	)
 	{
-		updateFuncs_.insert({ _statEnum, _callback });
-		return *this;
+		anyTransition_.emplace_back(_to, std::forward<Func>(_callback));
 	}
 
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(const StatEnumT _statEnum, const std::function<void()>& _callback)
+	template <EnumT StatEnumT> inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState) const
 	{
-		endFuncs_.insert({ _statEnum, _callback });
-		return *this;
-	}
-
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyStart(const std::function<void()>& _callback)
-	{
-		anyStartFunc_ = _callback;
-		return *this;
-	}
-
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyUpdate(const std::function<void()>& _callback)
-	{
-		anyUpdateFunc_ = _callback;
-		return *this;
-	}
-
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyEnd(const std::function<void()>& _callback)
-	{
-		anyEndFunc_ = _callback;
-		return *this;
-	}
-
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterTransition(StatEnumT _from, StatEnumT _to,const std::function<bool()>& _callback)
-	{
-		transitionsMap_[_from].emplace_back(_to,_callback);
-		return *this;
-	}
-
-	template<EnumT StatEnumT>
-	inline MTStat<StatEnumT>& MTStat<StatEnumT>::RegisterAnyTransition(StatEnumT _to, const std::function<bool()>& _callback)
-	{
-		anyTransition_.emplace_back(_to, _callback);
-	}
-
-	template<EnumT StatEnumT>
-	inline bool MTStat<StatEnumT>::TryGetNextState(StatEnumT& _nextState)
-	{
-		if(transitionsMap_.count(stat_))
-		{ 
-			for (auto transition : transitionsMap_.at(stat_))
+		if (transitionsMap_.count(stat_))
+		{
+			const std::vector<StateTransition>& transitions = transitionsMap_.at(stat_);
+			for (const StateTransition& transition : transitions)
 			{
 				if (transition.condition())
 				{
@@ -155,8 +146,7 @@ namespace mtstat
 		return false;
 	}
 
-	template<EnumT StatEnumT>
-	inline void MTStat<StatEnumT>::Update() const
+	template <EnumT StatEnumT> inline void MTStat<StatEnumT>::Update() const
 	{
 		if (anyUpdateFunc_)
 		{
@@ -167,9 +157,8 @@ namespace mtstat
 			updateFuncs_.at(stat_)();
 		}
 	}
-	
-	template<EnumT StatEnumT>
-	inline void MTStat<StatEnumT>::Change(const StatEnumT _nextStat)
+
+	template <EnumT StatEnumT> inline void MTStat<StatEnumT>::Change(const StatEnumT _nextStat)
 	{
 		if (anyEndFunc_)
 		{
@@ -191,4 +180,46 @@ namespace mtstat
 			startFuncs_[_nextStat]();
 		}
 	}
-}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnStart(StatEnumT _statEnum, Func&& _callback)
+	{
+		startFuncs_.emplace( _statEnum, std::forward<Func>(_callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnUpdate(StatEnumT _statEnum, Func&& _callback)
+	{
+		updateFuncs_.emplace(_statEnum, std::forward<Func>( _callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnEnd(StatEnumT _statEnum, Func&& _callback)
+	{
+		endFuncs_.emplace( _statEnum, std::forward<Func>( _callback ));
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyStart(Func&& _callback)
+	{
+		anyStartFunc_ = std::forward<Func>( _callback);
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyUpdate(Func&& _callback)
+	{
+		anyUpdateFunc_ = std::forward<Func>( _callback);
+		return *this;
+	}
+	template <EnumT StatEnumT>
+	template <MTStatCallback Func>
+	inline MTStat<StatEnumT>& MTStat<StatEnumT>::OnAnyEnd(Func&& _callback)
+	{
+		anyEndFunc_ = std::forward<Func>(_callback);
+		return *this;
+	}
+} // namespace mtstat

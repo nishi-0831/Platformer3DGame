@@ -1,0 +1,45 @@
+---
+Checks: '-*,
+  clang-diagnostic-*,
+  clang-analyzer-*,
+  clang-bugprone-*,
+  readability-identifier-naming,
+  -Wnullability-declspec'
+# 命名規則
+CheckOptions:
+  - { key: readability-identifier-naming.ConstantParameterPrefix, value: _}
+  - { key: readability-identifier-naming.ConstantParameterCase,
+    value: camelBack}
+  - { key: readability-identifier-naming.ParameterPrefix,
+    value: _}
+  - { key: readability-identifier-naming.ParameterCase,
+    value: camelBack}
+  - { key: readability-identifier-naming.PointerParameterPrefix,
+    value: _}
+  - { key: readability-identifier-naming.PointerParameterCase,
+    value: camelBack}
+  - { key: readability-identifier-naming.ConstantPointerParameterPrefix,
+    value: _}
+  - { key: readability-identifier-naming.ConstantPointerParameterCase,
+    value: camelBack}
+  - { key: readability-identifier-naming.EnumCase,
+    value: CamelCase}
+  - { key: readability-identifier-naming.EnumConstantCase,
+    value: UPPER_CASE}
+WarningsAsErrors: ''
+HeaderFileExtensions:
+  - ''
+  - h
+  - hh
+  - hpp
+  - hxx
+  - inl
+ImplementationFileExtensions:
+  - c
+  - cc
+  - cpp
+HeaderFilterRegex: '.*(mtgb|Source)[\\/].*'
+ExcludeHeaderFilterRegex: '.*[\\/](ImGui)[\\/].*'
+FormatStyle:     none
+User:            nishi
+SystemHeaders:   false

@@ -1,20 +1,11 @@
 #include "Debug.h"
-#include "..\ImGui\imgui.h"
+#include "ImGui/imgui.h"
 
+mtgb::Debug::Debug() {}
 
+mtgb::Debug::~Debug() {}
 
-mtgb::Debug::Debug()
-{
-}
-
-mtgb::Debug::~Debug()
-{
-}
-
-void mtgb::Debug::Initialize()
-{
-	
-}
+void mtgb::Debug::Initialize() {}
 
 void mtgb::Debug::Update()
 {
@@ -27,20 +18,24 @@ void mtgb::Debug::Update()
 	}
 }
 
-
-
 std::list<mtgb::LogEntry> mtgb::Debug::GetLog()
 {
 	return logs_;
 }
 
-mtgb::Debug::LogItr mtgb::Debug::RemoveLog(LogItr itr)
+mtgb::Debug::LogItr mtgb::Debug::RemoveLog(LogItr _itr)
 {
-	logMap_.erase(itr->msgDetail);
-	return logs_.erase(itr);
+	logMap_.erase(_itr->msgDetail);
+	return logs_.erase(_itr);
 }
 
-std::string mtgb::Debug::MakeKey(const std::string& object, const char* file, int line, const char* func, const std::string msg)
+std::string mtgb::Debug::MakeKey(
+	const std::string& _object,
+	const char* _file,
+	int _line,
+	const char* _func,
+	const std::string _msg
+)
 {
-	return msg + "|" + object + "|" + file + "|" + std::to_string(line) + func;
+	return _msg + "|" + _object + "|" + _file + "|" + std::to_string(_line) + _func;
 }

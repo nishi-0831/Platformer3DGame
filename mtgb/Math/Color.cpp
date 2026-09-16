@@ -1,0 +1,16 @@
+#include "Math/Color.h"
+
+mtgb::Color::Color(const uint8_t _r, const uint8_t _g, const uint8_t _b, const uint8_t _alpha)
+{
+	component[static_cast<int32_t>(Component::RED)]	  = _r;
+	component[static_cast<int32_t>(Component::GREEN)] = _g;
+	component[static_cast<int32_t>(Component::BLUE)]  = _b;
+	component[static_cast<int32_t>(Component::ALPHA)] = _alpha;
+}
+
+mtgb::Color::Color(uint32_t _code)
+{
+	code = _code;
+	// アルファ値は強制的に100%にする
+	component[static_cast<int32_t>(Component::ALPHA)] = UINT8_MAX;
+}

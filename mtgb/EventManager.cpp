@@ -1,7 +1,7 @@
 #include "EventManager.h"
-#include "Game.h"
-#include "SceneSystem.h"
-#include "ReleaseUtility.h"
+#include "Core/Game.h"
+#include "Core/SceneSystem.h"
+#include "Utility/ReleaseUtility.h"
 mtgb::EventManager::~EventManager()
 {
 	for (auto& itr : events_)
@@ -12,8 +12,10 @@ mtgb::EventManager::~EventManager()
 }
 void mtgb::EventManager::Initialize()
 {
-	Game::System<SceneSystem>().OnMove([this]()
+	Game::System<SceneSystem>().OnMove(
+		[this]()
 		{
 			ClearSceneSubscriptions();
-		});
+		}
+	);
 }

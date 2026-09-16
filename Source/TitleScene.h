@@ -1,9 +1,11 @@
 #pragma once
-#include "GameScene.h"
+#include <Core/GameScene.h>
+
+#include "PanelManager.h"
 
 class TitleScene : public mtgb::GameScene
 {
-public:
+  public:
 	TitleScene();
 	~TitleScene();
 
@@ -11,4 +13,8 @@ public:
 	void Update() override;
 	void Draw() const override;
 	void End() override;
+
+  private:
+	void CreatePanel();
+	PanelManager panelManager_;
 };

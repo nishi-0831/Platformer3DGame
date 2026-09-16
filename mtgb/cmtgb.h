@@ -2,13 +2,11 @@
 // MTGameBase Common includes, type alias and constant values
 
 #include <cstdint>
-//#include "MTAssert.h"
+// #include "Utility/MTAssert.h"
 #include "Handlers.h"
 
 namespace mtgb
 {
-	using EntityId = int64_t;  // エンティティの識別番号
-	static const EntityId INVALID_ENTITY{ -1 };  // -1番は無効Id
-	template <typename T>
-	constexpr bool false_v = false;
-}
+	using EntityId = int64_t;						 // 繧ｨ繝ｳ繝�繧｣繝�繧｣縺ｮ隴伜挨逡ｪ蜿ｷ
+	inline constexpr EntityId INVALID_ENTITY { -1 }; // -1逡ｪ縺ｯ辟｡蜉ｹId
+} // namespace mtgb

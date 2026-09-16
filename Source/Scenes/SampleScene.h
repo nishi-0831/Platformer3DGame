@@ -1,16 +1,19 @@
 #pragma once
-#include "GameScene.h"
+#include <Core/GameScene.h>
 #include "../Source/StageID.h"
 class SampleScene : public mtgb::GameScene
 {
-public:
+  public:
 	SampleScene();
+	SampleScene(const nlohmann::json& _stageData);
 	~SampleScene();
 
 	void Initialize() override;
 	void Update() override;
 	void Draw() const override;
 	void End() override;
-private:
+
+  private:
 	StageID stageID_;
+	nlohmann::json stageData_;
 };

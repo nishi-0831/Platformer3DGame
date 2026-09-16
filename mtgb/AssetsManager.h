@@ -1,15 +1,15 @@
 #pragma once
-#include "ISystem.h"
+#include "Core/ISystem.h"
 
 namespace mtgb
 {
 	class AssetsManager : public ISystem
 	{
-	public:
+	  public:
 		AssetsManager();
 		~AssetsManager();
 
 		void Initialize() override;
 		void Update() override;
 	};
-}
+} // namespace mtgb

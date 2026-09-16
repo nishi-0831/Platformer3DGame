@@ -2,81 +2,83 @@
 #include "Goal.h"
 #include "ResultScene.h"
 #include "StageManager.h"
-unsigned int Goal::generateCounter_{ 0 };
+#include "GameEvents.h"
+unsigned int Goal::generateCounter_ { 0 };
 
 Goal::Goal()
-    :GameObject()
+	: GameObject()
+	, pTransform_ { Component<Transform>() }
+	, pCollider_ { Component<Collider>() }
+	, pRigidBody_ { Component<RigidBody>() }
+	, pMeshRenderer_ { Component<MeshRenderer>() }
+	, transitionSceneDelay_ { 4.0f }
 {
-    std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
-    name_ = std::format("{} ({})", typeName, generateCounter_++);
-    displayName_ = name_;
+	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+	pCollider_->isStatic_	  = false;
+	pCollider_->SetExtents(pTransform_->scale * 0.5f);
+	pMeshRenderer_->meshFileName = "Model/Goal.fbx";
+	pMeshRenderer_->SetMesh(Fbx::Load(pMeshRenderer_->meshFileName));
+	pMeshRenderer_->layer	   = AllLayer();
+	pMeshRenderer_->shaderType = ShaderType::FBX_PARTS;
 
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Goal));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
 }
 
 Goal::~Goal()
 {
+	if (auto effect = pEffect_.lock())
+	{
+		effect->destroyMe = true;
+		effect->isLoop	  = true;
+	}
 }
 
-void Goal::Update()
-{
-}
+void Goal::Update() {}
 
 void Goal::Start()
 {
-    pTransform_ = Component<Transform>();
-    pRigidBody_ = Component<RigidBody>();
+	pTransform_ = Component<Transform>();
+	pRigidBody_ = Component<RigidBody>();
 
-    pRigidBody_->OnCollisionEnter([this](EntityId _entityId)
-        {
-            GameObjectTag tag = FindGameObject(_entityId)->GetTag();
-            if (tag == GameObjectTag::Player)
-            {
-                Game::System<StageManger>().ClearCurrentStage();
-                Game::System<SceneSystem>().Move<ResultScene>();
-            }
-        });
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _entityId)
+		{
+			GameObject* pGameObj = FindGameObject(_entityId);
+			if (pGameObj == nullptr)
+				return;
+
+			GameObjectTag tag = pGameObj->GetTag();
+			if (tag == GameObjectTag::PLAYER)
+			{
+				OnClear();
+			}
+		}
+	);
+
+	Matrix4x4 mat;
+	pTransform_->GenerateWorldMatrix(&mat);
+	EffectParameters params;
+	params.isLoop	= true;
+	params.worldMat = mat;
+	pEffect_		= Game::System<EffectManager>().Play("Treasure", params);
 }
 
-void Goal::Draw() const
+void Goal::Draw() const {}
+
+void Goal::OnClear()
 {
+	Game::System<Audio>().StopAll();
+	Game::System<Audio>().Play("GetTreasure");
 
-}
+	Timer::AddAram(
+		transitionSceneDelay_,
+		[]
+		{
+			Game::System<StageManager>().ClearCurrentStage();
+			Game::System<SceneSystem>().Move<ResultScene>();
+		}
+	);
 
-void Goal::ShowImGui()
-{
-    MTImGui::Instance().ShowComponents(Entity::entityId_);
-    ImGui::Text("EntityId:%d", Entity::entityId_);
-}
-
-std::vector<IComponentMemento*> Goal::GetDefaultMementos(EntityId _entityId) const
-{
-    std::vector<IComponentMemento*> mementos;
-
-    TransformState transformState
-    {
-        .position{0,1,5},
-        .scale{1,1,1}
-    };
-
-    ColliderState colliderState
-    {
-        .colliderType{ColliderType::TYPE_AABB},
-        .isStatic{false},
-        .colliderTag{},
-        .center{transformState.position},
-        .extents{transformState.scale * 0.5f}
-    };
-
-    MeshRendererState meshData
-    {
-        .meshFileName{"Model/Box.fbx"},
-        .meshHandle{Fbx::Load(meshData.meshFileName)},
-        .layer{AllLayer()},
-        .shaderType{ShaderType::FbxParts}
-    };
-
-    mementos.push_back(new TransformMemento(_entityId, transformState));
-    mementos.push_back(new ColliderMemento(_entityId, colliderState));
-    mementos.push_back(new MeshRendererMemento(_entityId, meshData));
-    return mementos;
+	Game::System<EventManager>().GetEvent<PlayerReachedGoalEvent>().Invoke(PlayerReachedGoalEvent {});
 }

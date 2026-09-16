@@ -1,0 +1,186 @@
+#pragma once
+#include "Editor/ReflectionMacro.h"
+#include "Editor/ISerializableObject.h"
+#include "Core/Component/IComponent.h"
+#include "Core/Component/IComponentMemento.h"
+
+#include "Math/Vector3.h"
+#include "Math/Quaternion.h"
+#include "Math/Matrix4x4.h"
+#include "cmtgb.h"
+#include "Components/Transform/TransformCP.h"
+#include "Transform.generated.h"
+namespace mtgb
+{
+
+	class [[MT_COMPONENT()]] Transform : public IComponent<TransformCP, Transform>, public ISerializableObject
+	{
+	  public:
+		MT_GENERATED_BODY()
+
+		friend TransformCP;
+		using IComponent::IComponent;
+
+		Transform();
+		Transform(EntityId _entityId);
+		~Transform();
+
+		/// <summary>
+		/// 計算する
+		/// </summary>
+		void Compute();
+
+		/// <summary>
+		/// ローカル行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateLocalMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// ワールド行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateWorldMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// ワールド回転行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateWorldRotationMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// 親の行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateParentMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// 親の回転行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateParentRotationMatrix(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// 行列をスケール、回転、移動成分に分割、適用する
+		/// </summary>
+		/// <param name="_matrix">変換に使用する行列</param>
+		/// <returns>  </returns>
+		bool DecomposeMatrix(const Matrix4x4& _matrix);
+		/// <summary>
+		/// 親のStatefulTransformを取得
+		/// </summary>
+		/// <returns>StatefulTransformのポインタ</returns>
+		Transform* GetParent() const;
+		/// <summary>
+		/// 親のStatefulTransformを設定
+		/// </summary>
+		/// <param name="_entityId">親にするエンティティ識別子</param>
+		void SetParent(EntityId _entityId);
+		/// <summary>
+		/// 回転する
+		/// </summary>
+		/// <param name="_rotate">オイラー角(ラジアン)</param>
+		void Rotation(const Vector3& _rotate);
+		/// <summary>
+		/// 軸ベクトルで回転する
+		/// </summary>
+		/// <param name="_axis">軸のベクトル</param>
+		/// <param name="_angle">回転角度(ラジアン)</param>
+		void Rotation(const Vector3& _axis, const float _angle);
+
+		/// <summary>
+		/// 上方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Up() const
+		{
+			return Vector3::Up() * matrixWorldRot_;
+		}
+		/// <summary>
+		/// 下方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Down() const
+		{
+			return Vector3::Down() * matrixWorldRot_;
+		}
+		/// <summary>
+		/// 左方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Left() const
+		{
+			return Vector3::Left() * matrixWorldRot_;
+		}
+		/// <summary>
+		/// 右方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Right() const
+		{
+			return Vector3::Right() * matrixWorldRot_;
+		}
+		/// <summary>
+		/// 後方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Back() const
+		{
+			return Vector3::Back() * matrixWorldRot_;
+		}
+		/// <summary>
+		/// 前方向のワールドベクトル
+		/// </summary>
+		/// <returns>ワールド回転行列がかけられたベクトル</returns>
+		Vector3 Forward() const;
+
+		/// <summary>
+		/// ワールド座標を取得
+		/// </summary>
+		/// <returns>ワールド座標のベクトル</returns>
+		Vector3 GetWorldPosition() const
+		{
+			return Vector3::Zero() * matrixWorld_;
+		}
+		/// <summary>
+		/// ワールド回転を取得
+		/// </summary>
+		/// <returns>ワールド回転の四元数</returns>
+		Quaternion GetWorldRotate() const;
+
+		void OnPostRestore() override;
+		/// <summary>
+		/// 親のEntityId
+		/// </summary>
+		[[MT_PROPERTY()]]
+		EntityId parent;
+		[[MT_PROPERTY()]]
+		Vector3 position;
+		[[MT_PROPERTY()]]
+		Vector3 scale;
+		[[MT_PROPERTY()]]
+		Quaternion rotate;
+
+	  private:
+		bool DecomposeMatrixImpl(Vector3* _pPos, Quaternion* _pRot, Vector3* _pScale, const Matrix4x4& _matrix);
+
+		/// <summary>
+		/// 計算用自分自身のワールド行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateWorldMatrixSelf(Matrix4x4* _pMatrix) const;
+		/// <summary>
+		/// 計算用自分自身のワールド回転行列を生成する
+		/// </summary>
+		/// <param name="_pMatrix">行列のポインタ渡し</param>
+		void GenerateWorldRotMatrixSelf(Matrix4x4* _pMatrix) const;
+
+	  public:						   // private:
+		Matrix4x4 matrixTranslate_ {}; // 計算された移動行列
+		Matrix4x4 matrixRotate_ {};	   // 計算された回転行列
+		Matrix4x4 matrixScale_ {};	   // 計算された拡縮行列
+		Matrix4x4 matrixWorld_ {};	   // 計算されたワールド行列
+		Matrix4x4 matrixWorldRot_ {};  // 計算されたワールド回転行列
+		Matrix4x4 matrixLocal_ {};
+		Matrix4x4 prevParentMatrix_ {};
+		Vector3 localPosition_;
+		Quaternion localRotate_;
+		Vector3 localScale_;
+	};
+
+} // namespace mtgb
