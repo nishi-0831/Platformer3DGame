@@ -37,9 +37,6 @@ void mtgb::RenderSystem::RenderDirectXWindows(GameScene& _scene)
 
 void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 {
-	using mtbit::operator|;
-
-	// ImGuiは一つ目のウィンドウに依存している
 	WinCtxRes::ChangeResource(WindowContext::FIRST);
 
 	ImGuiRenderer& imGui = Game::System<ImGuiRenderer>();

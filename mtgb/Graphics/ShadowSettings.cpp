@@ -3,6 +3,12 @@
 #include "Components/Collider/ColliderCP.h"
 #include "Graphics/DirectX11Draw.h"
 #include "ShaderManager.h"
+
+namespace
+{
+
+}
+
 mtgb::ShadowSettings::ShadowSettings()
 	: params {}
 {
@@ -26,7 +32,14 @@ void mtgb::ShadowSettings::SetCB()
 		Game::System<ShaderManager>().GetShader(ShaderType::BOX3_D).GetConstantBuffer("ShadowParam");
 	if (cBuf != nullptr)
 	{
-		cBuf->SetConstantBuffer(params);
+		if (Game::IsEditMode())
+		{
+			cBuf->SetConstantBuffer(ShadowParams::Disabled());
+		}
+		else
+		{
+			cBuf->SetConstantBuffer(params);
+		}
 		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
 		cBuf->BindPS(DirectX11Draw::pContext_.Get());
 	}
@@ -35,5 +48,6 @@ void mtgb::ShadowSettings::SetCB()
 mtgb::ShadowParams::ShadowParams()
 	: casterPos {}
 	, softness { 1.0f }
+	, padding {}
 {
 }
