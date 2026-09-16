@@ -15,6 +15,13 @@ namespace mtgb
 		Vector4 casterPos;
 		float softness;
 		float padding[3];
+		static ShadowParams Disabled()
+		{
+			ShadowParams p;
+			p.softness = 0.0f;
+			p.casterPos = { 0.0f, 0.0f, 0.0f, 0.0f };
+			return p;
+		}
 	};
 	/// <summary>
 	/// 丸影を描画するシステム
