@@ -21,24 +21,27 @@ class Player : public mtgb::GameObject, public IActor
 	void TakeDamage(int _damage) override;
 
   private:
+	float MoveTowards(float _curr, float _target, float _maxDelta);
 	/// <summary>
 	/// プレイヤーの移動方向を取得
 	/// </summary>
 	/// <returns></returns>
 	Vector3 GetMoveDir();
-	void UpdatePosition();
+	void UpdateVelocity();
 	void UpdateRotate();
 	void OnCollisionEnter(EntityId _entityId);
 	void InitializeState();
 	enum class STATE
 	{
 		IDLE,
-		RUN,
+		WALK,
 		JUMP,
 		FALL,
 		DYING,
-		VICTORY
+		VICTORY,
+		RUN
 	};
+	bool TryGetNextStateOnMove(STATE& _state);
 	mtstat::MTStat<STATE> state_;
 	Transform* pTransform_;
 	Collider* pCollider_;
@@ -68,5 +71,10 @@ class Player : public mtgb::GameObject, public IActor
 	// 煙のエフェクトを出す間隔を計る経過時間
 	float walkSmokeElapsedTime_;
 	float jumpHeight_;
-	float moveSpeed_;
+	// 歩くスピード
+	float walkSpeed_;
+	// 走るスピード
+	float dashSpeed_;
+	float acceleration_;
+	bool isRunning_;
 };
