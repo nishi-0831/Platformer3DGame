@@ -19,8 +19,10 @@ class Player : public mtgb::GameObject, public IActor
 	void OnStomped(IActor* _pOther) override;
 	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
+	void AddExternalVelocity(const Vector3& _velocity) override;
 
   private:
+	Vector3 MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta);
 	float MoveTowards(float _curr, float _target, float _maxDelta);
 	/// <summary>
 	/// プレイヤーの移動方向を取得
@@ -70,11 +72,17 @@ class Player : public mtgb::GameObject, public IActor
 	float walkSmokeInterval_;
 	// 煙のエフェクトを出す間隔を計る経過時間
 	float walkSmokeElapsedTime_;
-	float jumpHeight_;
+	float walkJumpHeight_;
+	float runJumpHeight_;
 	// 歩くスピード
 	float walkSpeed_;
 	// 走るスピード
 	float dashSpeed_;
 	float acceleration_;
 	bool isRunning_;
+	float externalDeceleration_;
+	float friction_;
+	Vector3 externalVelocity_;
+	Vector3 movementVelocity_;
+	bool isDashJumping_;
 };

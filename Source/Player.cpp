@@ -28,11 +28,17 @@ Player::Player()
 	, jumpController_ { GetEntityId() }
 	, walkSmokeInterval_ { 0.3f }
 	, walkSmokeElapsedTime_ { 0.0f }
-	, jumpHeight_ { 5.0f }
+	, walkJumpHeight_ { 5.0f }
+	, runJumpHeight_ { 7.5f }
 	, walkSpeed_ { 5.0f }
 	, dashSpeed_ { 10.0f }
 	, acceleration_ { 50.0f }
 	, isRunning_ { false }
+	, externalDeceleration_ { 5.0f }
+	, movementVelocity_ { Vector3::Zero() }
+	, externalVelocity_ { Vector3::Zero() }
+	, friction_ { 30.0f }
+	, isDashJumping_ { false }
 {
 	pRigidBody_->isKinematic_ = false;
 	pRigidBody_->OnCollisionEnter(
@@ -70,19 +76,30 @@ void Player::Update()
 	Game::System<ShadowSettings>().SetCaster(GetEntityId());
 	// オーディオリスナーの位置を指定する
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
-	isRunning_ = InputUtil::GetGamePad(PadCode::L_STICK) || InputUtil::GetKey(KeyCode::LEFT_SHIFT);
+	isRunning_ =
+		(InputUtil::GetGamePad(PadCode::L_STICK) || InputUtil::GetKey(KeyCode::LEFT_SHIFT)) && pRigidBody_->isGround_;
+	if (pRigidBody_->isGround_)
+	{
+		isDashJumping_ = false;
+	}
 	// 力尽きた状態、勝利状態でない場合
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
-		UpdateVelocity();
 		bool jumpBtnPressed = InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE);
 		// ジャンプ処理の更新
 		jumpController_.Update(jumpBtnPressed);
+		bool isDashJump = jumpController_.CanJump() && state_.Current() == STATE::RUN;
 		// ジャンプボタン押下処理
 		if (jumpController_.CanJump())
 		{
-			// ジャンプ開始
-			jumpController_.StartJump(jumpHeight_);
+			jumpController_.StartJump(isDashJump ? runJumpHeight_ : walkJumpHeight_);
+
+			if (isDashJump)
+			{
+				externalVelocity_ += pTransform_->Forward() * (dashSpeed_ - walkSpeed_);
+				isDashJumping_ = true;
+			}
+
 			// ジャンプ時のSE
 			Game::System<Audio>().Play("Jump");
 
@@ -102,8 +119,20 @@ void Player::Update()
 				jumpController_.ReleaseButton();
 			}
 		}
+
+		UpdateVelocity();
 		// 姿勢更新
 		UpdateRotate();
+
+		externalVelocity_ = MoveTowards(externalVelocity_, Vector3::Zero(), externalDeceleration_ * Time::DeltaTimeF());
+		if (pRigidBody_->isGround_)
+		{
+			externalVelocity_	= MoveTowards(externalVelocity_, Vector3::Zero(), friction_ * Time::DeltaTimeF());
+			externalVelocity_.y = 0.0f;
+		}
+		Vector3 finalVelocity = movementVelocity_ + externalVelocity_;
+		finalVelocity.y += jumpController_.GetVelocityY();
+		pRigidBody_->velocity_ = finalVelocity;
 	}
 	// アニメーションのステート更新
 	state_.Update();
@@ -404,6 +433,15 @@ Vector3 Player::GetMoveDir()
 	return Vector3::Normalize(horizontalDir);
 }
 
+Vector3 Player::MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta)
+{
+	return Vector3(
+		MoveTowards(_curr.x, _target.x, _maxDelta),
+		MoveTowards(_curr.y, _target.y, _maxDelta),
+		MoveTowards(_curr.z, _target.z, _maxDelta)
+	);
+}
+
 float Player::MoveTowards(float _curr, float _target, float _maxDelta)
 {
 	if (std::abs(_target - _curr) <= _maxDelta)
@@ -415,7 +453,7 @@ float Player::MoveTowards(float _curr, float _target, float _maxDelta)
 
 void Player::UpdateVelocity()
 {
-	Vector3& velocity = pRigidBody_->velocity_;
+
 	Vector3 moveDir	  = GetMoveDir();
 	float targetSpeed = 0.0f;
 	if (isRunning_)
@@ -427,14 +465,16 @@ void Player::UpdateVelocity()
 		targetSpeed = walkSpeed_;
 	}
 
-	Vector3 movement = moveDir * targetSpeed;
-	velocity.x		 = MoveTowards(velocity.x, movement.x, acceleration_ * Time::DeltaTimeF());
-	velocity.z		 = MoveTowards(velocity.z, movement.z, acceleration_ * Time::DeltaTimeF());
+	Vector3 movement	= moveDir * targetSpeed;
+	movementVelocity_.x = MoveTowards(movementVelocity_.x, movement.x, acceleration_ * Time::DeltaTimeF());
+	movementVelocity_.z = MoveTowards(movementVelocity_.z, movement.z, acceleration_ * Time::DeltaTimeF());
+
+	movementVelocity_.y = 0.0f;
 }
 
 void Player::UpdateRotate()
 {
-	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
+	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0 && isDashJumping_ == false)
 	{
 		pTransform_->rotate = Quaternion::LookRotation(moveDir, Vector3::Up());
 	}
@@ -511,4 +551,9 @@ void Player::TakeDamage(int _damage)
 		},
 		true // firstCall: 即座に処理を呼ぶ
 	);
+}
+
+void Player::AddExternalVelocity(const Vector3& _velocity)
+{
+	externalVelocity_ += _velocity;
 }

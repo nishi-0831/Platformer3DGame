@@ -20,6 +20,11 @@ class IActor
 	/// </summary>
 	/// <param name="_damage">受けるダメージ</param>
 	virtual void TakeDamage(int _damage) = 0;
+	/// <summary>
+	/// 外力を与える
+	/// </summary>
+	/// <param name="_velocity"></param>
+	virtual void AddExternalVelocity(const Vector3& _velocity) {};
 	EntityId GetId()
 	{
 		return id_;
