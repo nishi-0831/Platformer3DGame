@@ -24,11 +24,12 @@ namespace mtgb
 		virtual inline void Update() {};
 		virtual inline void Draw() const {};
 		virtual inline void Start() {};
+		virtual void StartOnEditMode() {};
 		virtual inline void End() {};
 		virtual void ShowImGui();
 
-		nlohmann::json Serialize() const;
-		void Deserialize(const nlohmann::json& _json);
+		virtual nlohmann::json Serialize() const;
+		virtual void Deserialize(const nlohmann::json& _json);
 		/// <summary>
 		/// 名前を設定する
 		/// </summary>

@@ -12,6 +12,7 @@
 #include "Button.h"
 #include "Slider.h"
 #include "RangedAttackEnemy.h"
+#include "RotateDamageBar.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	// ↓コピペ用
@@ -87,4 +88,9 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 	_pGameObjectRegistrar->Register<Slider>(
 		mtgb::SpawnObjectDesc { .category = "UI", .displayName = "Slider", .tooltip = "", .typeName = "Slider" }
 	);
+
+	_pGameObjectRegistrar->Register<RotateDamageBar>(mtgb::SpawnObjectDesc { .category	  = "Gimmick",
+																			 .displayName = "SpikeBar",
+																			 .tooltip	  = "",
+																			 .typeName	  = "RotateDamageBar" });
 }
