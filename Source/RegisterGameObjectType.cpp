@@ -14,6 +14,7 @@
 #include "RangedAttackEnemy.h"
 #include "RotateDamageBar.h"
 #include "MovingSaw.h"
+#include "BeltConveyor.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	// ↓コピペ用
@@ -99,4 +100,9 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 																	   .displayName = "MovingSaw",
 																	   .tooltip		= "",
 																	   .typeName	= "MovingSaw" });
+
+	_pGameObjectRegistrar->Register<BeltConveyor>(mtgb::SpawnObjectDesc { .category	   = "Gimmick",
+																		  .displayName = "BeltConveyor",
+																		  .tooltip	   = "",
+																		  .typeName	   = "BeltConveyor" });
 }

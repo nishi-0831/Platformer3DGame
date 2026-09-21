@@ -14,7 +14,6 @@ cbuffer global : register(b0)
     float g_shuniness;  // ハイライトの強さ
     bool g_hasTexture;  // テクスチャを持っているか
     float2 padding;
-    float4 g_textureScale;
 };
 
 struct VS_OUT

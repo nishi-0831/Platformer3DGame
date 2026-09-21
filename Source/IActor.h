@@ -25,6 +25,7 @@ class IActor
 	/// </summary>
 	/// <param name="_velocity"></param>
 	virtual void AddExternalVelocity(const Vector3& _velocity) {};
+	virtual void SetSurfaceVelocity(const Vector3& _velocity) {};
 	EntityId GetId()
 	{
 		return id_;

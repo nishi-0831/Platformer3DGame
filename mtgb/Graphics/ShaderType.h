@@ -20,6 +20,7 @@ namespace mtgb
 		BOX3_D,
 		SEA,
 		OUTLINE,
+		UV_SCROLL,
 		MAX,
 	};
 } // namespace mtgb

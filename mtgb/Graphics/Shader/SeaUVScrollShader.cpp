@@ -1,4 +1,4 @@
-#include "UVScrollShader.h"
+#include "SeaUVScrollShader.h"
 #include "Graphics/3DCommonConstantBuffer.h"
 #include "Camera/CameraSystem.h"
 #include "Core/Time/GameTime.h"
@@ -7,9 +7,9 @@ namespace
 {
 	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
 }
-void mtgb::UVScrollShader::Initialize(ID3D11Device* _pDevice)
+void mtgb::SeaUVScrollShader::Initialize(ID3D11Device* _pDevice)
 {
-	InitializeCommonGpuResources(_pDevice, L"Shader/UVScroll.hlsl");
+	InitializeCommonGpuResources(_pDevice, L"Shader/SeaUVScroll.hlsl");
 
 	CD3D11_RASTERIZER_DESC cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 		.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
@@ -26,7 +26,12 @@ void mtgb::UVScrollShader::Initialize(ID3D11Device* _pDevice)
 	_pDevice->CreateRasterizerState(&cRasterizerDesc, pRasterizerState_.ReleaseAndGetAddressOf());
 }
 
-void mtgb::UVScrollShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, MeshAsset* _pAsset, int _frame)
+void mtgb::SeaUVScrollShader::Draw(
+	ID3D11DeviceContext* _pCtx,
+	const Transform& _transform,
+	MeshAsset* _pAsset,
+	int _frame
+)
 {
 	using namespace DirectX;
 	DirectX11Draw::SetIsWriteToDepthBuffer(true);
@@ -53,8 +58,13 @@ void mtgb::UVScrollShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tr
 		return;
 	}
 	auto& timeCBuffer = itr->second;
+	TimeBuffer tb {};
+	time_ += Time::DeltaTimeF() * 0.5f;
+	tb.g_time = time_;
+	timeCBuffer.SetConstantBuffer(tb);
 	timeCBuffer.BindVS(_pCtx);
 	timeCBuffer.BindPS(_pCtx);
+	timeCBuffer.ApplyChanges(_pCtx);
 	// カメラシステムへのアクセス用
 	const CameraSystem& CAMERA { Game::System<CameraSystem>() };
 

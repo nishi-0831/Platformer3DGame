@@ -130,7 +130,7 @@ void Player::Update()
 			externalVelocity_	= MoveTowards(externalVelocity_, Vector3::Zero(), friction_ * Time::DeltaTimeF());
 			externalVelocity_.y = 0.0f;
 		}
-		Vector3 finalVelocity = movementVelocity_ + externalVelocity_;
+		Vector3 finalVelocity = movementVelocity_ + externalVelocity_ + surfaceVelocity_;
 		finalVelocity.y += jumpController_.GetVelocityY();
 		pRigidBody_->velocity_ = finalVelocity;
 	}
@@ -363,7 +363,7 @@ bool Player::TryGetNextStateOnMove(STATE& _state)
 		return true;
 	}
 	// 停止しているならIDLEに遷移
-	if (pRigidBody_->velocity_.x == 0.0f && pRigidBody_->velocity_.z == 0.0f)
+	if (movementVelocity_.x == 0.0f && movementVelocity_.z == 0.0f)
 	{
 		_state = STATE::IDLE;
 		return true;
@@ -453,7 +453,6 @@ float Player::MoveTowards(float _curr, float _target, float _maxDelta)
 
 void Player::UpdateVelocity()
 {
-
 	Vector3 moveDir	  = GetMoveDir();
 	float targetSpeed = 0.0f;
 	if (isRunning_)
@@ -556,4 +555,9 @@ void Player::TakeDamage(int _damage)
 void Player::AddExternalVelocity(const Vector3& _velocity)
 {
 	externalVelocity_ += _velocity;
+}
+
+void Player::SetSurfaceVelocity(const Vector3& _velocity)
+{
+	surfaceVelocity_ = _velocity;
 }

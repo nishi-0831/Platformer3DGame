@@ -1,0 +1,88 @@
+#include "BeltConveyor.h"
+#include "ActorManager.h"
+#include <Graphics/ShaderManager.h>
+unsigned int BeltConveyor::generateCounter_ { 0 };
+
+mtgb::BeltConveyor::BeltConveyor()
+	: GameObject()
+	, groundedEntity_ { INVALID_ENTITY }
+	, pTransform_ { &Transform::Get(entityId_) }
+	, pMeshRenderer_ { &MeshRenderer::Get(entityId_) }
+	, pCollider_ { &Collider::Get(entityId_) }
+	, pRigidBody_ { &RigidBody::Get(entityId_) }
+	, pGrounedActor_ { nullptr }
+	, reverse_ { false }
+	, speed_ { 2.0f }
+	, time_ { 0.0f }
+	, scrollDir_ { Vector2::Zero() }
+	, scrollSpeed_ { Vector2::Zero() }
+{
+	pCollider_->colliderType_ = ColliderType::TYPE_AABB;
+	// 型情報に登録された名前を取得
+	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(BeltConveyor));
+	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+
+	// RigidBodyの設定
+	pRigidBody_->OnCollisionEnter(
+		[this](EntityId _id)
+		{
+			OnCollisionEnter(_id);
+		}
+	);
+	pRigidBody_->OnCollisionExit(
+		[this](EntityId _id)
+		{
+			OnCollisionExit(_id);
+		}
+	);
+
+	pMeshRenderer_->meshFileName = "Model/BeltConveyor.fbx";
+	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
+	pMeshRenderer_->layer		 = AllLayer();
+	pMeshRenderer_->shaderType	 = ShaderType::UV_SCROLL;
+
+	scrollDir_.x   = 0.0f;
+	scrollDir_.y   = 1.0f;
+	scrollSpeed_.x = 1.0f;
+	scrollSpeed_.y = 0.5f;
+}
+
+mtgb::BeltConveyor::~BeltConveyor() {}
+
+void mtgb::BeltConveyor::Update()
+{
+	time_ += Time::DeltaTimeF();
+	auto cBuf = Game::System<ShaderManager>().GetShader(ShaderType::UV_SCROLL).GetConstantBuffer("Time");
+	if (cBuf != nullptr)
+	{
+		UVScrollShader::TimeBuffer buf;
+		buf.g_time			= time_;
+		buf.g_sroll_dir		= scrollDir_;
+		buf.g_scroll_speed	= Vector2(scrollSpeed_.x / pTransform_->scale.x, scrollSpeed_.y / pTransform_->scale.z);
+		buf.g_texture_scale = Vector4(1.0f, 1.0f, pTransform_->scale.z, 1.0f);
+		cBuf->SetConstantBuffer(buf);
+		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
+	}
+
+	if (groundedEntity_ != INVALID_ENTITY && pGrounedActor_ != nullptr)
+	{
+		Vector3 externVel = reverse_ ? Vector3::Back() * speed_ : Vector3::Forward() * speed_;
+		pGrounedActor_->SetSurfaceVelocity(externVel);
+	}
+}
+
+void mtgb::BeltConveyor::OnCollisionEnter(EntityId _entityId)
+{
+	groundedEntity_ = _entityId;
+	pGrounedActor_	= Game::System<ActorManager>().GetActor(groundedEntity_);
+}
+
+void mtgb::BeltConveyor::OnCollisionExit(EntityId _entityId)
+{
+	if (pGrounedActor_ != nullptr)
+	{
+		pGrounedActor_->SetSurfaceVelocity(Vector3::Zero());
+	}
+	groundedEntity_ = INVALID_ENTITY;
+	pGrounedActor_	= nullptr;
+}

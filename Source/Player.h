@@ -20,6 +20,7 @@ class Player : public mtgb::GameObject, public IActor
 	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
 	void AddExternalVelocity(const Vector3& _velocity) override;
+	void SetSurfaceVelocity(const Vector3& _velocity) override;
 
   private:
 	Vector3 MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta);
@@ -85,4 +86,5 @@ class Player : public mtgb::GameObject, public IActor
 	Vector3 externalVelocity_;
 	Vector3 movementVelocity_;
 	bool isDashJumping_;
+	Vector3 surfaceVelocity_;
 };
