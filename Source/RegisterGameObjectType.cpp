@@ -13,6 +13,7 @@
 #include "Slider.h"
 #include "RangedAttackEnemy.h"
 #include "RotateDamageBar.h"
+#include "MovingSaw.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	// ↓コピペ用
@@ -93,4 +94,9 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 																			 .displayName = "SpikeBar",
 																			 .tooltip	  = "",
 																			 .typeName	  = "RotateDamageBar" });
+
+	_pGameObjectRegistrar->Register<MovingSaw>(mtgb::SpawnObjectDesc { .category	= "Gimmick",
+																	   .displayName = "MovingSaw",
+																	   .tooltip		= "",
+																	   .typeName	= "MovingSaw" });
 }
