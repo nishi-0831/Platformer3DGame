@@ -28,6 +28,7 @@ namespace mtgb
 		virtual inline void End() {};
 		virtual void ShowImGui();
 
+		virtual void OnPreSave() {};
 		virtual nlohmann::json Serialize() const;
 		virtual void Deserialize(const nlohmann::json& _json);
 		/// <summary>

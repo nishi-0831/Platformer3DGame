@@ -1,7 +1,9 @@
 #pragma once
 #include <mtgb.h>
 #include <stack>
+#include <tuple>
 #include "IActor.h"
+#include "SpinBox.h"
 namespace mtgb
 {
 	class DamageObject : public GameObject, public IActor
@@ -41,6 +43,7 @@ namespace mtgb
 		void StartOnEditMode() override;
 		void AddSpike();
 		void RemoveSpike();
+		void OnPreSave() override;
 		nlohmann::json Serialize() const override;
 		void Deserialize(const nlohmann::json& _json) override;
 
@@ -55,6 +58,12 @@ namespace mtgb
 		int spikeCount_;
 		float spikeRadius_;
 		static unsigned int generateCounter_;
+
+		DictionarySpinBox rotateSpeedSpinBox_;
+		std::string rotateName_;
+
+		SpinBox spikeCountSpinBox_;
+		static constexpr int MAX_SPIKE_COUNT { 10 };
 	};
 
 } // namespace mtgb

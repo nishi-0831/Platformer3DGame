@@ -10,6 +10,8 @@ mtgb::RotateDamageBar::RotateDamageBar()
 	, rotateAngleSec_ { 60.0f }
 	, spikeCount_ { 4 }
 	, spikeRadius_ { 1.0f }
+	, rotateSpeedSpinBox_ { "RotateSpeed", { "Slowly", "Normal", "Fast" }, { 30, 60, 120 }, 1 }
+	, spikeCountSpinBox_ { SpinBox::CreateNumberSpinBox("SpikeCount", 0, MAX_SPIKE_COUNT, 1) }
 {
 	pMeshRenderer_->meshFileName = "Model/SawColumn.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
@@ -25,6 +27,8 @@ mtgb::RotateDamageBar::~RotateDamageBar() {}
 
 void mtgb::RotateDamageBar::Update()
 {
+	rotateName_			= rotateSpeedSpinBox_.GetSpinBox().GetString();
+	rotateAngleSec_		= rotateSpeedSpinBox_.GetCurrValue();
 	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
 	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
@@ -43,6 +47,7 @@ void mtgb::RotateDamageBar::ShowImGui()
 	{
 		RemoveSpike();
 	}
+	rotateSpeedSpinBox_.GetSpinBox().ShowImGui();
 }
 
 void mtgb::RotateDamageBar::Start()
@@ -93,21 +98,27 @@ void mtgb::RotateDamageBar::RemoveSpike()
 	pDamageObjs_.pop();
 }
 
+void mtgb::RotateDamageBar::OnPreSave()
+{
+	rotateName_ = rotateSpeedSpinBox_.GetSpinBox().GetString();
+}
+
 nlohmann::json mtgb::RotateDamageBar::Serialize() const
 {
-	nlohmann::json j	= GameObject::Serialize();
-	j["rotateAngleSec"] = rotateAngleSec_;
-	j["spikeCount"]		= spikeCount_;
-	j["spikeRadius"]	= spikeRadius_;
+	nlohmann::json j = GameObject::Serialize();
+	j["rotateName"]	 = rotateName_;
+	j["spikeCount"]	 = spikeCount_;
+	j["spikeRadius"] = spikeRadius_;
 	return j;
 }
 
 void mtgb::RotateDamageBar::Deserialize(const nlohmann::json& _json)
 {
 	GameObject::Deserialize(_json);
-	rotateAngleSec_ = _json.at("rotateAngleSec").get<float>();
-	spikeCount_		= _json.at("spikeCount").get<int>();
-	spikeRadius_	= _json.at("spikeRadius").get<float>();
+	rotateName_	 = _json.at("rotateName").get<std::string>();
+	spikeCount_	 = _json.at("spikeCount").get<int>();
+	spikeRadius_ = _json.at("spikeRadius").get<float>();
+	rotateSpeedSpinBox_.GetSpinBox().SetString(rotateName_);
 }
 
 mtgb::DamageObject::DamageObject()

@@ -1,7 +1,8 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
-#include <Graphics/Shader/UVScrollShader.h>
+#include "SpinBox.h"
+
 namespace mtgb
 {
 	class BeltConveyor : public GameObject
@@ -11,6 +12,7 @@ namespace mtgb
 		~BeltConveyor();
 
 		void Update() override;
+		void ShowImGui() override;
 
 	  private:
 		void OnCollisionEnter(EntityId _entityId);
@@ -21,12 +23,14 @@ namespace mtgb
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
 		RigidBody* pRigidBody_;
+
 		IActor* pGrounedActor_;
 		bool reverse_;
 		float speed_;
 		static unsigned int generateCounter_;
 		float time_;
 		Vector2 scrollDir_;
-		Vector2 scrollSpeed_;
+		float scrollSpeed_;
+		DictionarySpinBox speedSpinBox_;
 	};
 } // namespace mtgb

@@ -142,7 +142,7 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 
 		if (gameObjTypeRegistry.IsRegistered(mtgb::ExtractClassName(object->GetName())) == false)
 			continue;
-
+		object->OnPreSave();
 		nlohmann::json objJson = object->Serialize();
 		j["GameObject"].push_back(objJson);
 	}
