@@ -212,8 +212,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES MSVC_RUNTIME_LIBRARY ${MSVC_RUN
 ################################################################################
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
     target_include_directories(${PROJECT_NAME} PUBLIC
-        # リリースビルド時のインクルードディレクトリ
-        "$<$<CONFIG:Release>:${CMAKE_CURRENT_SOURCE_DIR}/../../../../../Program Files/Autodesk/FBX/FBX SDK/2020.3.7/include;$ENV{REFL_CPP}>"
         # どのビルド・モードでも共通
         "$ENV{FBX_SDK}/include;"
         "${CMAKE_CURRENT_SOURCE_DIR}/ThirdParty;"
@@ -416,8 +414,13 @@ endif()
 
 option(ENABLE_AUTO_CODE_GEN "Run code generator tool" ON)
 
+get_target_property(MY_INCLUDE_DIRS ${PROJECT_NAME} INCLUDE_DIRECTORIES)
+
 # コード生成ツールを実行するコマンド
-set(GENERATE_SOURCE_CODE_COMMAND "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe> " --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}")
+set(GENERATE_SOURCE_CODE_COMMAND 
+    "$<SHELL_PATH:${CMAKE_CURRENT_SOURCE_DIR}/Tools/ClangSourceGenerator/bin/ClangSourceGenerator.exe>" --config "Tools/ClangSourceGenerator" --projDir "${CMAKE_CURRENT_SOURCE_DIR}" --include "${MY_INCLUDE_DIRS}"
+)
+message(STATUS ${GENERATE_SOURCE_CODE_COMMAND})
 
 add_custom_target(generate_source_code
     COMMAND ${GENERATE_SOURCE_CODE_COMMAND} || exit 0
