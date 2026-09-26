@@ -13,8 +13,6 @@
 struct InterpolatorState
 {
 		float dir_;
-		float elapsed_;
-		float duration_;
 		mtgb::Vector3 startPos_;
 		mtgb::Vector3 endPos_;
 		float speed_;

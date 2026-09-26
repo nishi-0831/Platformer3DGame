@@ -55,14 +55,6 @@ namespace mtgb
 		float dir_;
 
 		[[MT_PROPERTY()]]
-		// 経過時間
-		float elapsed_;
-
-		[[MT_PROPERTY()]]
-		// 補間にかかる時間(秒)
-		float duration_;
-
-		[[MT_PROPERTY()]]
 		Vector3 startPos_;
 
 		[[MT_PROPERTY()]]

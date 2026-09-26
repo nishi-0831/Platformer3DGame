@@ -19,8 +19,6 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	: IComponent(_entityId)
 	, pTransform_ { &Transform::Get(_entityId) }
 	, dir_ { 1.0f }
-	, elapsed_ { 0.0f }
-	, duration_ { 1.0f }
 	, startPos_ { Vector3::Zero() }
 	, endPos_ { Vector3::Zero() }
 	, pStartTransform_ { nullptr }
@@ -32,9 +30,10 @@ mtgb::Interpolator::Interpolator(EntityId _entityId)
 	, progress_ { 0.0f }
 {
 	// 始点、終点のゲームオブジェクト作成
-	GameObject* start = new GameObject();
-	GameObject* end	  = new GameObject();
-
+	GameObject* start	  = new GameObject();
+	GameObject* end		  = new GameObject();
+	start->isInspectable_ = false;
+	end->isInspectable_	  = false;
 	// ゲームオブジェクトをシーンに登録
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(start);
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(end);
@@ -77,8 +76,6 @@ Interpolator& mtgb::Interpolator::operator=(const Interpolator& _other)
 	}
 	IComponent::operator=(_other);
 	this->dir_		  = _other.dir_;
-	this->elapsed_	  = _other.elapsed_;
-	this->duration_	  = _other.duration_;
 	this->startPos_	  = _other.startPos_;
 	this->endPos_	  = _other.endPos_;
 	this->pTransform_ = _other.pTransform_;
@@ -98,9 +95,10 @@ void mtgb::Interpolator::UpdateTransform()
 
 void mtgb::Interpolator::UpdateProgress()
 {
-	speed_	   = static_cast<float>(speedSpinBox_.GetCurrValue());
-	speedName_ = speedSpinBox_.GetSpinBox().GetString();
-
+	speed_		   = static_cast<float>(speedSpinBox_.GetCurrValue());
+	speedName_	   = speedSpinBox_.GetSpinBox().GetString();
+	startPos_	   = pStartTransform_->position;
+	endPos_		   = pEndTransform_->position;
 	float distance = (startPos_ - endPos_).Size();
 	float ratio	   = speed_ / distance;
 
@@ -109,7 +107,6 @@ void mtgb::Interpolator::UpdateProgress()
 	if (progress_ > 1.0f || progress_ < 0.0f)
 	{
 		dir_ *= -1.0f;
-		elapsed_  = std::clamp(elapsed_, 0.0f, duration_);
 		progress_ = std::clamp(progress_, 0.0f, 1.0f);
 	}
 }
@@ -117,7 +114,7 @@ void mtgb::Interpolator::UpdateProgress()
 mtgb::Vector3 mtgb::Interpolator::EvaluatePos()
 {
 	// 始点から終点を進行度で補間
-	return Mathf::Lerp(pStartTransform_->position, pEndTransform_->position, progress_);
+	return Mathf::Lerp(startPos_, endPos_, progress_);
 }
 
 Quaternion mtgb::Interpolator::CalculateRot()
@@ -158,7 +155,6 @@ void mtgb::Interpolator::OnPostRestore()
 
 void mtgb::Interpolator::OnPreSave()
 {
-	// シリアライズ用の変数に始点、終点の座標を代入
 	startPos_  = pStartTransform_->position;
 	endPos_	   = pEndTransform_->position;
 	speedName_ = speedSpinBox_.GetSpinBox().GetString();

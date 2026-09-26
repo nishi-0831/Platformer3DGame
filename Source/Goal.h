@@ -6,6 +6,7 @@ class Goal : public mtgb::GameObject
   public:
 	Goal();
 	~Goal();
+	void Start() override;
 
   private:
 	void OnClear();
