@@ -195,17 +195,20 @@ namespace mtgb
 	{
 		static_assert(std::is_base_of_v<ISystem, T>);
 
-		ISystem* pSystem = new T();
+		T* pSystem = new T();
 		pInstance_->registerOrder_.push_back(typeid(T));
 
 		if constexpr (std::is_base_of_v<IComponentPool, T>)
 		{
-			pInstance_->pComponentPools_.push_back(dynamic_cast<IComponentPool*>(pSystem));
-			pInstance_->componentFactory_.RegisterComponent<typename T::Component>();
+			pInstance_->pComponentPools_.push_back(static_cast<IComponentPool*>(pSystem));
+			if constexpr (IComponentWithMemento<typename T::Component>)
+			{
+				pInstance_->componentFactory_.RegisterComponent<typename T::Component>();
+			}
 		}
 		if constexpr (std::is_base_of_v<IRenderableCP, T>)
 		{
-			pInstance_->pRenderablePools_.push_back(dynamic_cast<IRenderableCP*>(pSystem));
+			pInstance_->pRenderablePools_.push_back(static_cast<IRenderableCP*>(pSystem));
 		}
 
 		pInstance_->pRegisterSystems_.insert({ typeid(T), pSystem });
@@ -260,7 +263,7 @@ namespace mtgb
 			std::is_base_of<ISystem, SystemT>().value &&
 			"ISystemクラスを継承していないクラスのインスタンスは取得できません。"
 		);
-		return *(dynamic_cast<SystemT*>(pSystem));
+		return *(static_cast<SystemT*>(pSystem));
 	}
 	template <typename Func>
 		requires std::is_invocable_v<Func>

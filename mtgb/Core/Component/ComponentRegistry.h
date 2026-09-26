@@ -57,16 +57,16 @@ namespace mtgb
 		/// <param name="_pool"></param>
 		void RegisterComponentPoolType(std::type_index _comp, std::type_index _pool);
 		/// <summary>
-		/// EntityIdに対応するComponentPool内のインデックスを登録解除
+		/// EntityIdに対応するコンポーネント登録解除
 		/// </summary>
 		/// <param name="_entityId"></param>
 		/// <param name="_typeIndex"></param>
-		void UnRegisterComponent(EntityId _entityId, std::type_index _typeIndex);
+		void UnregisterComponent(EntityId _entityId, std::type_index _typeIndex);
 		/// <summary>
 		/// EntityIdに対応するコンポーネントを全て登録解除する
 		/// </summary>
 		/// <param name="_entityId"></param>
-		void ClearEntity(EntityId _entityId);
+		void UnregisterAllComponent(EntityId _entityId);
 		/// <summary>
 		/// EntityIdに対応するComponentPoolのインデックスを全て削除する
 		/// </summary>
@@ -103,6 +103,10 @@ namespace mtgb
 		/// <param name="_entityId"></param>
 		/// <returns></returns>
 		std::optional<std::set<std::type_index>> GetComponentTypes(const nlohmann::json& _json);
+		/// <summary>
+		/// Entityごとのコンポーネント登録を全て解除する
+		/// </summary>
+		void ClearEntityComponentRegistrations();
 
 	  private:
 		// Componentの型情報 → ComponentPoolの型情報（component type_index → pool type_index）

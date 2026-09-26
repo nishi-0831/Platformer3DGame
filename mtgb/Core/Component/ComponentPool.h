@@ -16,9 +16,7 @@ namespace mtgb
 	namespace detail
 	{
 		template <typename T>
-		concept HasRegisterImGui = requires {
-			{ T::RegisterImGui() };
-		};
+		concept HasRegisterImGui = requires { T::RegisterImGui(); };
 	} // namespace detail
 	class Entity;
 
@@ -140,6 +138,7 @@ namespace mtgb
 	{
 		pool_.clear();
 		poolId_.clear();
+		Game::System<ComponentRegistry>().ClearEntityComponentRegistrations();
 	}
 
 	template <typename ComponentT, typename DerivedT>
@@ -305,7 +304,7 @@ namespace mtgb
 				poolId_[i] = INVALID_ENTITY;
 
 				// 登録解除
-				Game::System<ComponentRegistry>().UnRegisterComponent(_entityId, std::type_index(typeid(ComponentT)));
+				Game::System<ComponentRegistry>().UnregisterComponent(_entityId, std::type_index(typeid(ComponentT)));
 
 				pool_[i].Reset();
 				return;
