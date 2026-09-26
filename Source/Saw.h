@@ -10,7 +10,7 @@ namespace mtgb
 		~Saw();
 
 		void Update() override;
-		void Draw() const override;
+		void OnPreDrawScene() const override;
 		void Start() override;
 		void ShowImGui() override;
 

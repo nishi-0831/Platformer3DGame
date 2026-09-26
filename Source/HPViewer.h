@@ -14,8 +14,6 @@ namespace mtgb
 		~HPViewer();
 
 		void Update() override;
-		void Draw() const override;
-		void Start() override;
 
 		void TakeDamage(int _damage);
 

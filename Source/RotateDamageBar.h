@@ -13,7 +13,7 @@ namespace mtgb
 		~DamageObject();
 
 		void Update() override;
-		void Draw() const override;
+		void OnPreDrawScene() const override;
 		void Start() override;
 
 		Transform* pTransform_;
@@ -37,33 +37,30 @@ namespace mtgb
 		~RotateDamageBar();
 
 		void Update() override;
-		void Draw() const override;
+		void OnPreDrawScene() const override;
 		void ShowImGui() override;
 		void Start() override;
 		void StartOnEditMode() override;
 		void AddSpike();
 		void RemoveSpike();
-		void OnPreSave() override;
-		nlohmann::json Serialize() const override;
-		void Deserialize(const nlohmann::json& _json) override;
+		nlohmann::json SerializeProperties() const override;
+		void DeserializeProperties(const nlohmann::json& _json) override;
 
 	  private:
+		void RotateInitialAngle();
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
 
 		std::stack<DamageObject*> pDamageObjs_;
 		// 一秒あたりに回転させる角度
-		float rotateAngleSec_;
-		int spikeCount_;
+		DictionarySpinBox rotationSpeedSpinBox_;
 		float spikeRadius_;
 		static unsigned int generateCounter_;
-
-		DictionarySpinBox rotateSpeedSpinBox_;
-		std::string rotateName_;
-
 		SpinBox spikeCountSpinBox_;
 		static constexpr int MAX_SPIKE_COUNT { 10 };
+		bool reverse_;
+		SpinBox initialRotationAngleSpinBox_;
 	};
 
 } // namespace mtgb

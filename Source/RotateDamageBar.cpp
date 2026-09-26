@@ -7,11 +7,11 @@ mtgb::RotateDamageBar::RotateDamageBar()
 	, pTransform_ { Component<Transform>() }
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pCollider_ { Component<Collider>() }
-	, rotateAngleSec_ { 60.0f }
-	, spikeCount_ { 4 }
 	, spikeRadius_ { 1.0f }
-	, rotateSpeedSpinBox_ { "RotateSpeed", { "Slowly", "Normal", "Fast" }, { 30, 60, 120 }, 1 }
-	, spikeCountSpinBox_ { SpinBox::CreateNumberSpinBox("SpikeCount", 0, MAX_SPIKE_COUNT, 1) }
+	, rotationSpeedSpinBox_ { "RotationSpeed", { "Slowly", "Normal", "Fast" }, { 30, 60, 120 }, 1 }
+	, spikeCountSpinBox_ { SpinBox::CreateNumberSpinBox("SpikeCount", 0, MAX_SPIKE_COUNT, 1, 4) }
+	, reverse_ { false }
+	, initialRotationAngleSpinBox_ { SpinBox::CreateNumberSpinBox("InitialRotationAngle", 0, 360, 45, 0) }
 {
 	pMeshRenderer_->meshFileName = "Model/SawColumn.fbx";
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
@@ -21,43 +21,74 @@ mtgb::RotateDamageBar::RotateDamageBar()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(RotateDamageBar));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+
+	spikeCountSpinBox_.SetOnValueChangedCallback(
+		[this](SpinBox& _spinBox)
+		{
+			int diff		= _spinBox.GetNumber() - pDamageObjs_.size();
+			bool isDecrease = std::signbit(diff);
+			int diffAbs		= std::abs(diff);
+			for (int i = 0; i < diffAbs; i++)
+			{
+				if (isDecrease)
+				{
+					RemoveSpike();
+				}
+				else
+				{
+					AddSpike();
+				}
+			}
+		}
+	);
+
+	initialRotationAngleSpinBox_.SetOnValueChangedCallback(
+		[this](SpinBox& _spinBox)
+		{
+			RotateInitialAngle();
+		}
+	);
 }
 
-mtgb::RotateDamageBar::~RotateDamageBar() {}
-
-void mtgb::RotateDamageBar::Update()
-{
-	rotateName_			= rotateSpeedSpinBox_.GetSpinBox().GetString();
-	rotateAngleSec_		= rotateSpeedSpinBox_.GetCurrValue();
-	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
-	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
-	pTransform_->rotate = rot * pTransform_->rotate;
-}
-
-void mtgb::RotateDamageBar::Draw() const {}
-
-void mtgb::RotateDamageBar::ShowImGui()
-{
-	GameObject::ShowImGui();
-	if (ImGui::Button("Increment Spike"))
-	{
-		AddSpike();
-	}
-	if (ImGui::Button("Decrement Spike"))
-	{
-		RemoveSpike();
-	}
-	rotateSpeedSpinBox_.GetSpinBox().ShowImGui();
-}
-
-void mtgb::RotateDamageBar::Start()
+mtgb::RotateDamageBar::~RotateDamageBar()
 {
 	while (pDamageObjs_.empty() == false)
 	{
 		pDamageObjs_.top()->DestroyMe();
 		pDamageObjs_.pop();
 	}
-	for (int i = 0; i < spikeCount_; i++)
+}
+
+void mtgb::RotateDamageBar::Update()
+{
+	rotationSpeedSpinBox_.Update();
+	float rotationAngleSec = static_cast<float>(rotationSpeedSpinBox_.GetCurrValue());
+	float angleRad		   = DirectX::XMConvertToRadians(rotationAngleSec * Time::DeltaTimeF());
+	Quaternion rot		   = DirectX::XMQuaternionRotationAxis(Vector3::Up(), reverse_ ? -angleRad : angleRad);
+	pTransform_->rotate	   = rot * pTransform_->rotate;
+}
+
+void mtgb::RotateDamageBar::OnPreDrawScene() const {}
+
+void mtgb::RotateDamageBar::ShowImGui()
+{
+	GameObject::ShowImGui();
+	spikeCountSpinBox_.ShowImGui();
+	rotationSpeedSpinBox_.Update();
+	rotationSpeedSpinBox_.GetSpinBox().ShowImGui();
+	initialRotationAngleSpinBox_.ShowImGui();
+	ImGui::Checkbox("Reverse", &reverse_);
+}
+
+void mtgb::RotateDamageBar::Start()
+{
+	RotateInitialAngle();
+	while (pDamageObjs_.empty() == false)
+	{
+		pDamageObjs_.top()->DestroyMe();
+		pDamageObjs_.pop();
+	}
+	for (int i = 0; i < spikeCountSpinBox_.GetNumber(); i++)
 	{
 		AddSpike();
 	}
@@ -65,12 +96,13 @@ void mtgb::RotateDamageBar::Start()
 
 void mtgb::RotateDamageBar::StartOnEditMode()
 {
+	RotateInitialAngle();
 	while (pDamageObjs_.empty() == false)
 	{
 		pDamageObjs_.top()->DestroyMe();
 		pDamageObjs_.pop();
 	}
-	for (int i = 0; i < spikeCount_; i++)
+	for (int i = 0; i < spikeCountSpinBox_.GetNumber(); i++)
 	{
 		AddSpike();
 	}
@@ -98,27 +130,30 @@ void mtgb::RotateDamageBar::RemoveSpike()
 	pDamageObjs_.pop();
 }
 
-void mtgb::RotateDamageBar::OnPreSave()
+nlohmann::json mtgb::RotateDamageBar::SerializeProperties() const
 {
-	rotateName_ = rotateSpeedSpinBox_.GetSpinBox().GetString();
-}
-
-nlohmann::json mtgb::RotateDamageBar::Serialize() const
-{
-	nlohmann::json j = GameObject::Serialize();
-	j["rotateName"]	 = rotateName_;
-	j["spikeCount"]	 = spikeCount_;
-	j["spikeRadius"] = spikeRadius_;
+	nlohmann::json j		  = GameObject::SerializeProperties();
+	j["rotationSpeed"]		  = rotationSpeedSpinBox_.SerializeCurrentSelection();
+	j["spikeCount"]			  = spikeCountSpinBox_.Serialize();
+	j["spikeRadius"]		  = spikeRadius_;
+	j["initialRotationAngle"] = initialRotationAngleSpinBox_.Serialize();
 	return j;
 }
 
-void mtgb::RotateDamageBar::Deserialize(const nlohmann::json& _json)
+void mtgb::RotateDamageBar::DeserializeProperties(const nlohmann::json& _json)
 {
-	GameObject::Deserialize(_json);
-	rotateName_	 = _json.at("rotateName").get<std::string>();
-	spikeCount_	 = _json.at("spikeCount").get<int>();
+	GameObject::DeserializeProperties(_json);
+	rotationSpeedSpinBox_.DeserializeCurrentSelection(_json["rotationSpeed"]);
+	spikeCountSpinBox_.Deserialize(_json.at("spikeCount"));
 	spikeRadius_ = _json.at("spikeRadius").get<float>();
-	rotateSpeedSpinBox_.GetSpinBox().SetString(rotateName_);
+	initialRotationAngleSpinBox_.Deserialize(_json.at("initialRotationAngle"));
+}
+
+void mtgb::RotateDamageBar::RotateInitialAngle()
+{
+	using namespace DirectX;
+	float angleRad		= XMConvertToRadians(static_cast<float>(initialRotationAngleSpinBox_.GetNumber()));
+	pTransform_->rotate = XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 }
 
 mtgb::DamageObject::DamageObject()
@@ -137,7 +172,7 @@ mtgb::DamageObject::~DamageObject() {}
 
 void mtgb::DamageObject::Update() {}
 
-void mtgb::DamageObject::Draw() const {}
+void mtgb::DamageObject::OnPreDrawScene() const {}
 
 void mtgb::DamageObject::Start() {}
 

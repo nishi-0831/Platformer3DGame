@@ -13,7 +13,7 @@ void mtgb::GameObjectCreateCommand::Execute()
 
 void mtgb::GameObjectCreateCommand::Undo()
 {
-	Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(entityId_);
+	Game::System<SceneSystem>().GetActiveScene()->MarkGameObjectPendingDestroy(entityId_);
 }
 
 void mtgb::GameObjectCreateCommand::Redo()
@@ -54,5 +54,5 @@ void mtgb::GameObjectCreateCommand::CreateGameObject()
 
 void mtgb::GameObjectCreateCommand::Deserialize(GameObject* _obj)
 {
-	_obj->Deserialize(json_);
+	_obj->DeserializeProperties(json_);
 }

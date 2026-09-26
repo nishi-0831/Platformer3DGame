@@ -29,7 +29,7 @@ namespace mtgb
 		/// <returns>シーンのポインタ</returns>
 		GameScene* GetActiveScene() const
 		{
-			return GameScene::pInstance_;
+			return pCurrentScene_;
 		}
 
 		void Initialize() override;
@@ -65,6 +65,7 @@ namespace mtgb
 		void ChangeScene();
 
 	  private:
+		GameScene* pCurrentScene_;
 		GameScene* pNextScene_;
 
 		std::queue<std::function<void()>> pendingCallbacks_; // 次のフレームのシーンの更新、描画前に実行するコールバック

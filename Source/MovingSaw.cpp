@@ -18,3 +18,9 @@ void mtgb::MovingSaw::Update()
 	pInterpolator_->UpdateProgress();
 	pTransform_->position = pInterpolator_->EvaluatePos();
 }
+
+void mtgb::MovingSaw::ShowImGui()
+{
+	GameObject::ShowImGui();
+	MTImGui::ShowComponent<Interpolator>(GetEntityId());
+}

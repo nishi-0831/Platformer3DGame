@@ -22,15 +22,18 @@ namespace mtgb
 
 		virtual inline void Initialize() {};
 		virtual inline void Update() {};
-		virtual inline void Draw() const {};
+		virtual inline void OnPreDrawScene() const {};
 		virtual inline void Start() {};
 		virtual void StartOnEditMode() {};
 		virtual inline void End() {};
 		virtual void ShowImGui();
 
 		virtual void OnPreSave() {};
-		virtual nlohmann::json Serialize() const;
-		virtual void Deserialize(const nlohmann::json& _json);
+		virtual void OnPostRestore() {};
+		nlohmann::json Serialize() const;
+		void Deserialize(const nlohmann::json& _json);
+		virtual nlohmann::json SerializeProperties() const;
+		virtual void DeserializeProperties(const nlohmann::json& _json);
 		/// <summary>
 		/// 名前を設定する
 		/// </summary>
@@ -153,6 +156,21 @@ namespace mtgb
 		{
 			isNotCalledStart_ = false;
 		}
+		/// <summary>
+		/// StartOnEditMode関数が呼ばれたか否か
+		/// </summary>
+		/// <returns></returns>
+		inline bool IsNotCalledStartOnEditMode() const
+		{
+			return isNotCalledStartOnEditMode_;
+		}
+		/// <summary>
+		/// StartOnEditMode関数が呼ばれたフラグをオンにする
+		/// </summary>
+		inline void MarkAsCalledStartOnEditMode()
+		{
+			isNotCalledStartOnEditMode_ = false;
+		}
 		struct Status
 		{
 			uint8_t isActive_ : 1;
@@ -166,9 +184,10 @@ namespace mtgb
 		std::string name_;
 
 		Status status_;
-		GameObjectLayerFlag layerFlag_; // レイヤーのフラグ
-		GameObjectTag tag_;				// ゲームオブジェクトのタグ
-		bool isNotCalledStart_;			// Start関数が呼び出されたか
+		GameObjectLayerFlag layerFlag_;	  // レイヤーのフラグ
+		GameObjectTag tag_;				  // ゲームオブジェクトのタグ
+		bool isNotCalledStart_;			  // Start関数が呼び出されたか
+		bool isNotCalledStartOnEditMode_; // StartOnEditMode関数が呼び出されたか
 	};
 
 	template <class ComponentT, typename... Args> inline ComponentT* GameObject::Component(Args&&... _args)

@@ -15,13 +15,6 @@ namespace mtgb
 
 	class GameScene
 	{
-		friend class SceneSystem;
-		friend class RenderSystem;
-		friend class Game;
-
-	  private:
-		static GameScene* pInstance_;
-
 	  public:
 		GameScene();
 		virtual ~GameScene();
@@ -78,22 +71,27 @@ namespace mtgb
 		/// <returns>存在しないならnullptr</returns>
 		GameObject* GetGameObject(EntityId _entityId) const;
 		/// <summary>
-		/// 指定されたEntityIdのオブジェクトを破棄
+		/// 指定されたEntityIdのオブジェクトを破棄対象として予約
 		/// </summary>
 		/// <param name="_entityId"></param>
-		void DestroyGameObject(EntityId _entityId);
+		void MarkGameObjectPendingDestroy(EntityId _entityId);
 
 		/// <summary>
 		/// シーン内のゲームオブジェクトをすべてシリアライズする
 		/// </summary>
 		/// <returns>シリアライズしたデータ</returns>
 		nlohmann::json SerializeGameObjects() const;
-
-	  protected:
+		/// <summary>
+		/// 破棄対象として予約されたオブジェクトを削除する
+		/// </summary>
+		void DestroyMarkedGameObjects();
 		virtual void Initialize();
-		virtual void Update();
+		void Update();
 		virtual void Draw() const;
 		virtual void End();
+
+		virtual void UpdateScene();
+		void OnPreDrawGameObjects();
 
 	  private:
 		std::list<GameObject*> pGameObjects_; // シーンに登場するゲームオブジェクト

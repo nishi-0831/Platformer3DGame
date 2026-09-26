@@ -68,7 +68,7 @@ void TitleScene::Initialize()
 	CreatePanel();
 }
 
-void TitleScene::Update()
+void TitleScene::UpdateScene()
 {
 	panelManager_.UpdatePanel();
 }

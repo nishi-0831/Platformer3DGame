@@ -16,28 +16,31 @@ namespace mtgb
 		~CircularSaw();
 
 		void Update() override;
-		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
 		void StartOnEditMode() override;
+		nlohmann::json SerializeProperties() const override;
+		void DeserializeProperties(const nlohmann::json& _json) override;
 
 	  private:
+		void RotateInitialAngle();
 		void CreateSaw();
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
 
 		// 自身からのこぎりまでの柱
-
 		Transform* pPillarTransform_;
 		MeshRenderer* pPillarMeshRenderer_;
 
 		// のこぎり
 		Saw* pSaw_;
-		// のこぎりとの距離
-		float sawOffset_;
 		// 一秒あたりにのこぎりを回転させる角度
-		float rotateAngleSec_;
+		DictionarySpinBox rotationSpeedSpinBox_;
+		bool reverse_;
+		SpinBox initialRotationAngleSpinBox_;
+		// のこぎりとの距離
+		SpinBox sawOffsetSpinBox_;
 		static unsigned int generateCounter_;
 	};
 

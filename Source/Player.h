@@ -12,7 +12,6 @@ class Player : public mtgb::GameObject, public IActor
 	~Player();
 
 	void Update() override;
-	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
 	// IActor を介して継承されました

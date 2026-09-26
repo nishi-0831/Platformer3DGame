@@ -24,7 +24,3 @@ void mtgb::SkySphere::Update()
 	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;
 }
-
-void mtgb::SkySphere::Draw() const {}
-
-void mtgb::SkySphere::Start() {}

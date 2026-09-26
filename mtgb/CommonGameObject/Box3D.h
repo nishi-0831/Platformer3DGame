@@ -10,7 +10,6 @@ namespace mtgb
 		~Box3D();
 
 		void Update() override;
-		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
 

@@ -29,7 +29,7 @@ void mtgb::Saw::Update()
 	Game::System<Audio>().SetEmitter(GetEntityId(), "Saw", audioSourceHandle_);
 }
 
-void mtgb::Saw::Draw() const {}
+void mtgb::Saw::OnPreDrawScene() const {}
 
 void mtgb::Saw::Start()
 {

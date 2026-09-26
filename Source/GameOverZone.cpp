@@ -22,8 +22,6 @@ GameOverZone::GameOverZone()
 
 GameOverZone::~GameOverZone() {}
 
-void GameOverZone::Update() {}
-
 void GameOverZone::Start()
 {
 	pTransform_ = Component<Transform>();
@@ -57,5 +55,3 @@ void GameOverZone::Start()
 		}
 	);
 }
-
-void GameOverZone::Draw() const {}

@@ -6,24 +6,27 @@
 #include "GameObject/GameObjectTypeRegistry.h"
 #include "EventManager.h"
 #include "Editor/Command/SelectionCommand.h"
+#include "EntityManager.h"
 mtgb::GameScene::GameScene() {}
 
 mtgb::GameScene::~GameScene()
 {
-	for (auto& pGameObject : pGameObjects_)
+	for (auto itr = pGameObjects_.begin(); itr != pGameObjects_.end();)
 	{
-		Game::RemoveEntityAllComponent(pGameObject->GetEntityId());
-		pGameObject->DestroyMe(); // 削除フラグを立てておく
+		Game::RemoveEntityAllComponent((*itr)->GetEntityId());
+		(*itr)->DestroyMe();
+		SAFE_DELETE(*itr);
+		itr = pGameObjects_.erase(itr);
+		Game::System<EntityManager>().DecrementCounter();
 	}
-	SAFE_CLEAR_CONTAINER_DELETE(pGameObjects_);
 }
 
 void mtgb::GameScene::RegisterGameObject(GameObject* _pGameObject)
 {
-	for (GameObject* pObj : pGameObjects_)
+	for (GameObject* obj : pGameObjects_)
 	{
 		// 既に登録済みの場合は何もしない
-		if (pObj->GetEntityId() == _pGameObject->GetEntityId())
+		if (obj->GetEntityId() == _pGameObject->GetEntityId())
 			return;
 	}
 	pGameObjects_.push_back(_pGameObject);
@@ -37,32 +40,69 @@ mtgb::CameraHandleInScene mtgb::GameScene::RegisterCameraGameObject(GameObject* 
 
 void mtgb::GameScene::Initialize() {}
 
-void mtgb::GameScene::Update() {}
+void mtgb::GameScene::Update()
+{
+	if (Game::IsEditMode() == false)
+	{
+		// 更新処理
+		UpdateScene();
+		for (auto obj : pGameObjects_)
+		{
+			if (obj->IsNotCalledStart())
+			{
+				obj->Start();
+				obj->MarkAsCalledStart();
+			}
+			obj->Update();
+		}
+	}
+	else
+	{
+		for (auto obj : pGameObjects_)
+		{
+			if (obj->IsNotCalledStartOnEditMode())
+			{
+				obj->StartOnEditMode();
+				obj->MarkAsCalledStartOnEditMode();
+			}
+		}
+	}
+}
 
 void mtgb::GameScene::Draw() const {}
 
 void mtgb::GameScene::End() {}
 
+void mtgb::GameScene::UpdateScene() {}
+
+void mtgb::GameScene::OnPreDrawGameObjects()
+{
+	for (auto obj : pGameObjects_)
+	{
+		obj->OnPreDrawScene();
+	}
+}
+
 mtgb::GameObject* mtgb::GameScene::GetGameObject(std::string_view _name) const
 {
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetName() != _name)
+		if (obj->GetName() != _name)
 		{
 			continue;
 		}
-		return object;
+		return obj;
 	}
 	return nullptr;
 }
 
 mtgb::GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
 {
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetTag() == _tag)
+		if (obj->GetTag() == _tag)
 		{
-			return object;
+			return obj;
 		}
 	}
 	return nullptr;
@@ -71,26 +111,26 @@ mtgb::GameObject* mtgb::GameScene::GetGameObject(GameObjectTag _tag) const
 void mtgb::GameScene::GetGameObjects(std::string_view _name, std::vector<GameObject*>* _pFoundGameObjects) const
 {
 	_pFoundGameObjects->clear();
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetName() != _name)
+		if (obj->GetName() != _name)
 		{
 			continue;
 		}
-		_pFoundGameObjects->push_back(object);
+		_pFoundGameObjects->push_back(obj);
 	}
 }
 
 void mtgb::GameScene::GetGameObjects(GameObjectTag _tag, std::vector<GameObject*>* _pFoundGameObjects) const
 {
 	_pFoundGameObjects->clear();
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetTag() != _tag)
+		if (obj->GetTag() != _tag)
 		{
 			continue;
 		}
-		_pFoundGameObjects->push_back(object);
+		_pFoundGameObjects->push_back(obj);
 	}
 }
 
@@ -101,30 +141,30 @@ void mtgb::GameScene::GetAllGameObjects(std::list<GameObject*>* _gameObjects)
 
 mtgb::GameObject* mtgb::GameScene::GetGameObject(EntityId _entityId) const
 {
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetEntityId() != _entityId)
+		if (obj->GetEntityId() != _entityId)
 		{
 			continue;
 		}
-		return object;
+		return obj;
 	}
 
 	return nullptr;
 }
 
-void mtgb::GameScene::DestroyGameObject(EntityId _entityId)
+void mtgb::GameScene::MarkGameObjectPendingDestroy(EntityId _entityId)
 {
 	if (_entityId == INVALID_ENTITY)
 		return;
 
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (object->GetEntityId() != _entityId)
+		if (obj->GetEntityId() != _entityId)
 		{
 			continue;
 		}
-		object->DestroyMe();
+		obj->DestroyMe();
 	}
 }
 
@@ -133,20 +173,37 @@ nlohmann::json mtgb::GameScene::SerializeGameObjects() const
 	nlohmann::json j;
 	// 配列として初期化
 	j["GameObject"] = nlohmann::json::array();
-	for (auto& object : pGameObjects_)
+	for (auto obj : pGameObjects_)
 	{
-		if (!object)
+		if (!obj)
 			continue;
 
 		GameObjectTypeRegistry& gameObjTypeRegistry = Game::System<GameObjectTypeRegistry>();
 
-		if (gameObjTypeRegistry.IsRegistered(mtgb::ExtractClassName(object->GetName())) == false)
+		if (gameObjTypeRegistry.IsRegistered(mtgb::ExtractClassName(obj->GetName())) == false)
 			continue;
-		object->OnPreSave();
-		nlohmann::json objJson = object->Serialize();
+		obj->OnPreSave();
+		nlohmann::json objJson = obj->Serialize();
 		j["GameObject"].push_back(objJson);
 	}
 	return j;
 }
 
-mtgb::GameScene* mtgb::GameScene::pInstance_ { nullptr };
+void mtgb::GameScene::DestroyMarkedGameObjects()
+{
+	// 削除処理
+	for (auto itr = pGameObjects_.begin(); itr != pGameObjects_.end();)
+	{
+		if ((*itr)->IsToDestroy())
+		{
+			Game::RemoveEntityAllComponent((*itr)->GetEntityId());
+			SAFE_DELETE(*itr);
+			itr = pGameObjects_.erase(itr);
+			Game::System<EntityManager>().DecrementCounter();
+		}
+		else
+		{
+			itr++;
+		}
+	}
+}

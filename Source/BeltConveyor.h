@@ -10,11 +10,14 @@ namespace mtgb
 	  public:
 		BeltConveyor();
 		~BeltConveyor();
-
 		void Update() override;
 		void ShowImGui() override;
 
+		nlohmann::json SerializeProperties() const override;
+		void DeserializeProperties(const nlohmann::json& _json) override;
+
 	  private:
+		void SetConstantBuffer() const;
 		void OnCollisionEnter(EntityId _entityId);
 		void OnCollisionExit(EntityId _entityId);
 		// 自身に接地しているEntityのId
@@ -26,7 +29,6 @@ namespace mtgb
 
 		IActor* pGrounedActor_;
 		bool reverse_;
-		float speed_;
 		static unsigned int generateCounter_;
 		float time_;
 		Vector2 scrollDir_;

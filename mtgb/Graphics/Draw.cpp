@@ -44,6 +44,7 @@ void mtgb::Draw::RenderUI(GameObjectLayerFlag _layer)
 	{
 		if (element->CanRender() && element->GetUIParams().layerFlag.Has(_layer))
 		{
+			element->OnPreRender();
 			element->Render();
 		}
 	}

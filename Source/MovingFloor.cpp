@@ -54,8 +54,8 @@ void MovingFloor::Update()
 
 void MovingFloor::ShowImGui()
 {
-	MTImGui::ShowComponents(Entity::entityId_);
-	ImGui::Text("EntityId:%lld", Entity::entityId_);
+	GameObject::ShowImGui();
+	MTImGui::ShowComponent<Interpolator>(GetEntityId());
 }
 
 void MovingFloor::OnCollisionEnter(EntityId _entityId)

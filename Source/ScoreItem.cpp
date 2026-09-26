@@ -56,5 +56,3 @@ ScoreItem::~ScoreItem() {}
 void ScoreItem::Update() {}
 
 void ScoreItem::Start() {}
-
-void ScoreItem::Draw() const {}

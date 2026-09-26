@@ -11,8 +11,10 @@ mtgb::CircularSaw::CircularSaw()
 	, pPillarMeshRenderer_ { nullptr }
 	, pSaw_ { nullptr }
 	, pCollider_ { Component<Collider>() }
-	, sawOffset_ { 5.0f }
-	, rotateAngleSec_ { 45.0f }
+	, rotationSpeedSpinBox_ { "RotationSpeed", { "Slowly", "Normal", "Fast" }, { 30, 60, 120 }, 1 }
+	, reverse_ { false }
+	, initialRotationAngleSpinBox_ { SpinBox::CreateNumberSpinBox("InitialRotationAngle", 0, 360, 45, 0) }
+	, sawOffsetSpinBox_ { SpinBox::CreateNumberSpinBox("Offset", 1, 10, 1, 5) }
 {
 	pTransform_->position.z = -5.0f;
 
@@ -24,6 +26,26 @@ mtgb::CircularSaw::CircularSaw()
 	// 型情報に登録された名前を取得
 	std::string typeName = Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(CircularSaw));
 	name_				 = std::format("{} ({})", typeName, generateCounter_++);
+
+	initialRotationAngleSpinBox_.SetOnValueChangedCallback(
+		[this](SpinBox& _spinBox)
+		{
+			RotateInitialAngle();
+		}
+	);
+
+	sawOffsetSpinBox_.SetOnValueChangedCallback(
+		[this](SpinBox& _spinBox)
+		{
+			/// ノコギリをオフセット分ずらして配置
+			Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
+			float sawOffset			= static_cast<float>(sawOffsetSpinBox_.GetNumber());
+
+			sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset;
+			// 回転の原点からノコギリまで支柱を伸ばす
+			pPillarTransform_->scale.z = sawOffset;
+		}
+	);
 }
 
 mtgb::CircularSaw::~CircularSaw()
@@ -33,21 +55,29 @@ mtgb::CircularSaw::~CircularSaw()
 	{
 		pSaw_->DestroyMe();
 	}
+	GameObject* pillar = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(pPillarTransform_->GetEntityId());
+	if (pillar)
+	{
+		pillar->DestroyMe();
+	}
 }
 
 void mtgb::CircularSaw::Update()
 {
-	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
-	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
-	pTransform_->rotate = rot * pTransform_->rotate;
+	rotationSpeedSpinBox_.Update();
+	float rotateAngleSec = static_cast<float>(rotationSpeedSpinBox_.GetCurrValue());
+	float angleRad		 = DirectX::XMConvertToRadians(rotateAngleSec * Time::DeltaTimeF());
+	Quaternion rot		 = DirectX::XMQuaternionRotationAxis(Vector3::Up(), reverse_ ? -angleRad : angleRad);
+	pTransform_->rotate	 = rot * pTransform_->rotate;
 }
-
-void mtgb::CircularSaw::Draw() const {}
-
 void mtgb::CircularSaw::ShowImGui()
 {
 	GameObject::ShowImGui();
-	ImGui::InputFloat("RotateAngleSec", &rotateAngleSec_);
+	rotationSpeedSpinBox_.Update();
+	rotationSpeedSpinBox_.GetSpinBox().ShowImGui();
+	sawOffsetSpinBox_.ShowImGui();
+	initialRotationAngleSpinBox_.ShowImGui();
+	ImGui::Checkbox("Reverse", &reverse_);
 }
 
 void mtgb::CircularSaw::Start()
@@ -60,21 +90,59 @@ void mtgb::CircularSaw::StartOnEditMode()
 	CreateSaw();
 }
 
+nlohmann::json mtgb::CircularSaw::SerializeProperties() const
+{
+	nlohmann::json j		  = GameObject::SerializeProperties();
+	j["rotationSpeed"]		  = rotationSpeedSpinBox_.SerializeCurrentSelection();
+	j["reverse"]			  = reverse_;
+	j["initialRotationAngle"] = initialRotationAngleSpinBox_.Serialize();
+	j["sawOffset"]			  = sawOffsetSpinBox_.Serialize();
+	return j;
+}
+
+void mtgb::CircularSaw::DeserializeProperties(const nlohmann::json& _json)
+{
+	GameObject::DeserializeProperties(_json);
+	if (_json.contains("rotationSpeed"))
+	{
+		rotationSpeedSpinBox_.DeserializeCurrentSelection(_json.at("rotationSpeed"));
+	}
+	reverse_ = _json.value("reverse", false);
+	if (_json.contains("initialRotationAngle"))
+	{
+		initialRotationAngleSpinBox_.Deserialize(_json.at("initialRotationAngle"));
+	}
+	if (_json.contains("sawOffset"))
+	{
+		sawOffsetSpinBox_.Deserialize(_json.at("sawOffset"));
+	}
+}
+
+void mtgb::CircularSaw::RotateInitialAngle()
+{
+	using namespace DirectX;
+	float angleRad		= XMConvertToRadians(static_cast<float>(initialRotationAngleSpinBox_.GetNumber()));
+	pTransform_->rotate = XMQuaternionRotationAxis(Vector3::Up(), angleRad);
+}
+
 void mtgb::CircularSaw::CreateSaw()
 {
 	pTransform_->Compute();
 
 	// ノコギリを作成
 	pSaw_					= Instantiate<Saw>();
+	pSaw_->isInspectable_	= false;
 	Transform& sawTransform = Transform::Get(pSaw_->GetEntityId());
 	// ノコギリをオフセット分ずらして配置
-	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset_;
+	float sawOffset		  = static_cast<float>(sawOffsetSpinBox_.GetNumber());
+	sawTransform.position = pTransform_->position + pTransform_->Forward() * sawOffset;
 	// 子にする
 	sawTransform.SetParent(GetEntityId());
 
 	// 支柱を作成
 	GameObject* pPillerObject = new GameObject();
 	Game::System<SceneSystem>().GetActiveScene()->RegisterGameObject(pPillerObject);
+	pPillerObject->isInspectable_	   = false;
 	EntityId pillerId				   = pPillerObject->GetEntityId();
 	pPillarMeshRenderer_			   = &(MeshRenderer::Get(pillerId));
 	pPillarMeshRenderer_->meshFileName = "Model/SawPillar.fbx";
@@ -83,9 +151,11 @@ void mtgb::CircularSaw::CreateSaw()
 	pPillarTransform_->SetParent(GetEntityId());
 	pPillarTransform_->position = pTransform_->position;
 	// 回転の原点からノコギリまで支柱を伸ばす
-	pPillarTransform_->scale.z = sawOffset_;
+	pPillarTransform_->scale.z = sawOffset;
 
 	// 回転の原点からノコギリの方向を向かせる
 	Vector3 toSawDir		  = Vector3::Normalize(sawTransform.position - pTransform_->position);
 	pPillarTransform_->rotate = Quaternion::LookRotation(toSawDir, pTransform_->Up());
+
+	RotateInitialAngle();
 }

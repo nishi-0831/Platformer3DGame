@@ -9,10 +9,6 @@ namespace mtgb
 		SerializableGameObject();
 		~SerializableGameObject();
 
-		void Update() override;
-		void Draw() const override;
-		void Start() override;
-
 	  private:
 		static unsigned int generateCounter_;
 	};

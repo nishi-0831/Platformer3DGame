@@ -9,7 +9,7 @@ class SampleScene : public mtgb::GameScene
 	~SampleScene();
 
 	void Initialize() override;
-	void Update() override;
+	void UpdateScene() override;
 	void Draw() const override;
 	void End() override;
 

@@ -7,10 +7,6 @@ class Goal : public mtgb::GameObject
 	Goal();
 	~Goal();
 
-	void Update() override;
-	void Start() override;
-	void Draw() const override;
-
   private:
 	void OnClear();
 	Transform* pTransform_;

@@ -70,8 +70,6 @@ void RangedAttackEnemy::Update()
 	state_.Update();
 }
 
-void RangedAttackEnemy::Draw() const {}
-
 void RangedAttackEnemy::Start()
 {
 	// TagがPlayerのGameObjectを探す

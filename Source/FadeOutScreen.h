@@ -12,8 +12,6 @@ class FadeOutScreen : public mtgb::GameObject
 	~FadeOutScreen();
 
 	void Update() override;
-	void Draw() const override;
-	void Start() override;
 	/// <summary>
 	/// フェードアウトを開始する
 	/// </summary>

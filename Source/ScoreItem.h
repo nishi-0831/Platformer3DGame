@@ -9,7 +9,6 @@ class ScoreItem : public mtgb::GameObject
 
 	void Update() override;
 	void Start() override;
-	void Draw() const override;
 
   private:
 	Transform* pTransform_;

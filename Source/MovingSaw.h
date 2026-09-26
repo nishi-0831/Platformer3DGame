@@ -10,6 +10,7 @@ namespace mtgb
 		~MovingSaw();
 
 		void Update() override;
+		void ShowImGui() override;
 
 	  private:
 		Interpolator* pInterpolator_;

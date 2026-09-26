@@ -76,8 +76,6 @@ void PatrolChargerEnemy::Update()
 	state_.Update();
 }
 
-void PatrolChargerEnemy::Draw() const {}
-
 void PatrolChargerEnemy::Start()
 {
 	// TagがPlayerのGameObjectを探す
@@ -95,6 +93,7 @@ void PatrolChargerEnemy::Start()
 void PatrolChargerEnemy::ShowImGui()
 {
 	GameObject::ShowImGui();
+	MTImGui::ShowComponent<Interpolator>(GetEntityId());
 	if (state_.Current() == STATE::PATROL)
 	{
 		ImGui::Text("STATE::PATROL");

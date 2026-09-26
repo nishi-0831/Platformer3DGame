@@ -371,8 +371,6 @@ bool Player::TryGetNextStateOnMove(STATE& _state)
 	return false;
 }
 
-void Player::Draw() const {}
-
 void Player::Start()
 {
 	// ステート更新処理の初期化

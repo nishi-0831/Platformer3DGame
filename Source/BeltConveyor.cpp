@@ -14,7 +14,6 @@ mtgb::BeltConveyor::BeltConveyor()
 	, pRigidBody_ { &RigidBody::Get(entityId_) }
 	, pGrounedActor_ { nullptr }
 	, reverse_ { false }
-	, speed_ { 2.0f }
 	, time_ { 0.0f }
 	, scrollDir_ { Vector2::Zero() }
 	, scrollSpeed_ { 1.0f }
@@ -43,6 +42,12 @@ mtgb::BeltConveyor::BeltConveyor()
 	pMeshRenderer_->meshHandle	 = Fbx::Load(pMeshRenderer_->meshFileName);
 	pMeshRenderer_->layer		 = AllLayer();
 	pMeshRenderer_->shaderType	 = ShaderType::UV_SCROLL;
+	pMeshRenderer_->SetOnPreRenderCallback(
+		[this]()
+		{
+			SetConstantBuffer();
+		}
+	);
 
 	scrollDir_.x = 0.0f;
 	scrollDir_.y = 1.0f;
@@ -52,30 +57,50 @@ mtgb::BeltConveyor::~BeltConveyor() {}
 
 void mtgb::BeltConveyor::Update()
 {
-	speed_ = static_cast<int>(speedSpinBox_.GetCurrValue());
+	speedSpinBox_.Update();
 	time_ += Time::DeltaTimeF();
-	auto cBuf = Game::System<ShaderManager>().GetShader(ShaderType::UV_SCROLL).GetConstantBuffer("Time");
-	if (cBuf != nullptr)
-	{
-		UVScrollShader::TimeBuffer buf;
-		buf.g_time			= time_;
-		buf.g_sroll_dir		= scrollDir_;
-		buf.g_scroll_speed	= Vector2(0.0f, scrollSpeed_ * speed_ / pTransform_->scale.z);
-		buf.g_texture_scale = Vector4(1.0f, 1.0f, pTransform_->scale.z, 1.0f);
-		cBuf->SetConstantBuffer(buf);
-		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
-	}
 
 	if (groundedEntity_ != INVALID_ENTITY && pGrounedActor_ != nullptr)
 	{
-		Vector3 externVel = reverse_ ? Vector3::Back() * speed_ : Vector3::Forward() * speed_;
+		Vector3 externVel = reverse_ ? Vector3::Back() * speedSpinBox_.GetCurrValue()
+									 : Vector3::Forward() * speedSpinBox_.GetCurrValue();
 		pGrounedActor_->SetSurfaceVelocity(externVel);
 	}
 }
 
 void mtgb::BeltConveyor::ShowImGui()
 {
+	GameObject::ShowImGui();
+	speedSpinBox_.Update();
 	speedSpinBox_.GetSpinBox().ShowImGui();
+}
+
+nlohmann::json mtgb::BeltConveyor::SerializeProperties() const
+{
+	nlohmann::json j = GameObject::SerializeProperties();
+	j["speed"]		 = speedSpinBox_.SerializeCurrentSelection();
+	return j;
+}
+
+void mtgb::BeltConveyor::DeserializeProperties(const nlohmann::json& _json)
+{
+	GameObject::DeserializeProperties(_json);
+	speedSpinBox_.DeserializeCurrentSelection(_json["speed"]);
+}
+
+void mtgb::BeltConveyor::SetConstantBuffer() const
+{
+	auto cBuf = Game::System<ShaderManager>().GetShader(ShaderType::UV_SCROLL).GetConstantBuffer("Time");
+	if (cBuf != nullptr)
+	{
+		UVScrollShader::TimeBuffer buf;
+		buf.g_time			= time_;
+		buf.g_sroll_dir		= scrollDir_;
+		buf.g_scroll_speed	= Vector2(0.0f, scrollSpeed_ * speedSpinBox_.GetCurrValue() / pTransform_->scale.z);
+		buf.g_texture_scale = Vector4(1.0f, 1.0f, pTransform_->scale.z, 1.0f);
+		cBuf->SetConstantBuffer(buf);
+		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
+	}
 }
 
 void mtgb::BeltConveyor::OnCollisionEnter(EntityId _entityId)
