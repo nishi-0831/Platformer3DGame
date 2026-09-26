@@ -1,13 +1,22 @@
+#pragma once
 #include <string>
 #include <vector>
 #include <concepts>
 #include <unordered_map>
+#include <nlohmann/json.hpp>
+
 namespace mtgb
 {
 	class SpinBox
 	{
 	  public:
-		static SpinBox CreateNumberSpinBox(std::string_view _label, int _min, int _max, int _incrementValue);
+		static SpinBox CreateNumberSpinBox(
+			std::string_view _label,
+			int _min,
+			int _max,
+			int _incrementValue,
+			int _defaultValue
+		);
 		static SpinBox CreateNumberSpinBox(std::string_view _label, const std::vector<int>& _values, int _defaultIndex);
 		static SpinBox CreateStringSpinBox(
 			std::string_view _label,
@@ -30,20 +39,17 @@ namespace mtgb
 			callback_ = std::forward<Func>(_func);
 		}
 
+		nlohmann::json Serialize() const;
+		void Deserialize(const nlohmann::json& _json);
+
 	  private:
-		enum class ValueType
-		{
-			NUMBER,
-			STRING
-		};
-		SpinBox(std::string_view _label, ValueType _valueType, bool _assignedValues);
+		SpinBox(std::string_view _label, bool _assignedValues);
 		bool IsDisabledLeftButton();
 		bool IsDisabledRightButton();
 
 		int min_;
 		int max_;
 		int incrementValue_;
-		ValueType valueType_;
 		std::vector<std::string> values_;
 		std::string currValue_;
 		std::string label_;
@@ -63,11 +69,16 @@ namespace mtgb
 			int _defaultIndex
 		);
 		SpinBox& GetSpinBox();
-		int GetCurrValue();
+		int GetCurrValue() const;
+		void Update();
+
+		nlohmann::json SerializeCurrentSelection() const;
+		void DeserializeCurrentSelection(const nlohmann::json& _json);
 
 	  private:
 		std::unordered_map<std::string, int> nameToValue_;
 		SpinBox spinBox_;
 		int currValue_;
+		std::string currPresetName_;
 	};
 } // namespace mtgb

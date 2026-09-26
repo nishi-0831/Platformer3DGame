@@ -3,7 +3,7 @@
 #include <stack>
 #include <tuple>
 #include "IActor.h"
-#include "SpinBox.h"
+#include "Editor/SpinBox.h"
 namespace mtgb
 {
 	class DamageObject : public GameObject, public IActor

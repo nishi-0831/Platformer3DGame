@@ -17,6 +17,8 @@ struct InterpolatorState
 		float duration_;
 		mtgb::Vector3 startPos_;
 		mtgb::Vector3 endPos_;
+		float speed_;
+		std::string speedName_;
 };
 
 // クラスの前方宣言
@@ -46,8 +48,6 @@ using InterpolatorMemento = mtgb::ComponentMemento<mtgb::Interpolator, Interpola
 	friend void from_json(const nlohmann::json& _j, Interpolator& _target); \
 	\
 	static std::string TypeName(){ return "Interpolator" ;} \
-	/* ImGui表示処理の登録 */ \
-	static void RegisterImGui(); \
 
 #pragma warning(push)
 #pragma warning(disable:4005)

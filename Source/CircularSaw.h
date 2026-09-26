@@ -2,6 +2,8 @@
 #include <mtgb.h>
 #include "IActor.h"
 #include "Saw.h"
+#include "Editor/SpinBox.h"
+
 namespace mtgb
 {
 	/// <summary>

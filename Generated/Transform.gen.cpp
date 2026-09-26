@@ -1,5 +1,5 @@
 // Transform.generated.h
-#include "Components/Transform/Transform.h"
+#include "../mtgb/Components/Transform/Transform.h"
 #include "Editor/MTImGui.h"
 
 
@@ -48,20 +48,20 @@
 		JsonConverter::Deserialize<mtgb::Vector3>(_target.scale, _j,"scale");
 		JsonConverter::Deserialize<mtgb::Quaternion>(_target.rotate, _j,"rotate");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::Transform::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<Transform>([]( Transform* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->parent, "parent");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->position, "position");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->scale, "scale");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
-			});
-		MTImGui::RegisterComponentViewer<Transform>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::Transform::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<Transform>([]( Transform* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->parent, "parent");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->position, "position");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->scale, "scale");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->rotate, "rotate");
+				});
+			MTImGui::RegisterComponentViewer<Transform>();
+		}

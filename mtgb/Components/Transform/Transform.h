@@ -12,7 +12,6 @@
 #include "Transform.generated.h"
 namespace mtgb
 {
-
 	class [[MT_COMPONENT()]] Transform : public IComponent<TransformCP, Transform>, public ISerializableObject
 	{
 	  public:

@@ -1,28 +1,60 @@
 #include "SpinBox.h"
 #include <charconv>
-mtgb::SpinBox::SpinBox(std::string_view _label, ValueType _valueType, bool _assignedValues)
+
+nlohmann::json mtgb::SpinBox::Serialize() const
+{
+	nlohmann::json j;
+	j["currValue"] = currValue_;
+	return j;
+}
+
+void mtgb::SpinBox::Deserialize(const nlohmann::json& _json)
+{
+	std::string value = _json["currValue"].get<std::string>();
+	if (assignedValues_)
+	{
+		SetString(value);
+	}
+	else
+	{
+		currValue_ = value;
+	}
+}
+
+mtgb::SpinBox::SpinBox(std::string_view _label, bool _assignedValues)
 	: min_ { 0 }
 	, max_ { 0 }
 	, incrementValue_ { 0 }
-	, valueType_ { _valueType }
 	, assignedValues_ { _assignedValues }
 	, currValue_ {}
 	, label_ { _label }
+	, currIdx_ { 0 }
 {
 }
 
-SpinBox mtgb::SpinBox::CreateNumberSpinBox(std::string_view _label, int _min, int _max, int _incrementValue)
+mtgb::SpinBox mtgb::SpinBox::CreateNumberSpinBox(
+	std::string_view _label,
+	int _min,
+	int _max,
+	int _incrementValue,
+	int _defaultValue
+)
 {
-	SpinBox spinBox(_label, ValueType::NUMBER, false);
+	SpinBox spinBox(_label, false);
 	spinBox.min_			= _min;
 	spinBox.max_			= _max;
 	spinBox.incrementValue_ = _incrementValue;
+	spinBox.currValue_		= std::to_string(_defaultValue);
 	return spinBox;
 }
 
-SpinBox mtgb::SpinBox::CreateNumberSpinBox(std::string_view _label, const std::vector<int>& _values, int _defaultIndex)
+mtgb::SpinBox mtgb::SpinBox::CreateNumberSpinBox(
+	std::string_view _label,
+	const std::vector<int>& _values,
+	int _defaultIndex
+)
 {
-	SpinBox spinBox(_label, ValueType::NUMBER, true);
+	SpinBox spinBox(_label, true);
 	for (int value : _values)
 	{
 		spinBox.values_.push_back(std::to_string(value));
@@ -40,13 +72,13 @@ SpinBox mtgb::SpinBox::CreateNumberSpinBox(std::string_view _label, const std::v
 	return spinBox;
 }
 
-SpinBox mtgb::SpinBox::CreateStringSpinBox(
+mtgb::SpinBox mtgb::SpinBox::CreateStringSpinBox(
 	std::string_view _label,
 	const std::vector<std::string>& _strings,
 	int _defaultIndex
 )
 {
-	SpinBox spinBox(_label, ValueType::NUMBER, true);
+	SpinBox spinBox(_label, true);
 	spinBox.values_ = _strings;
 	if (_defaultIndex >= 0 && _defaultIndex < spinBox.values_.size())
 	{
@@ -80,7 +112,10 @@ void mtgb::SpinBox::Increment()
 		int newNumber  = std::clamp(currNumber + incrementValue_, min_, max_);
 		currValue_	   = std::to_string(newNumber);
 	}
-	callback_(*this);
+	if (callback_)
+	{
+		callback_(*this);
+	}
 }
 
 void mtgb::SpinBox::Decrement()
@@ -102,7 +137,10 @@ void mtgb::SpinBox::Decrement()
 		int newNumber  = std::clamp(currNumber - incrementValue_, min_, max_);
 		currValue_	   = std::to_string(newNumber);
 	}
-	callback_(*this);
+	if (callback_)
+	{
+		callback_(*this);
+	}
 }
 
 int mtgb::SpinBox::GetNumber()
@@ -137,7 +175,7 @@ void mtgb::SpinBox::ShowImGui()
 	///
 	/// SpinBoxをImGuiで描画する
 	///
-
+	ImGui::PushID(this);
 	// ラベル描画
 	ImGui::Text(label_.c_str());
 	ImGui::SameLine();
@@ -167,6 +205,8 @@ void mtgb::SpinBox::ShowImGui()
 		Increment();
 	}
 	ImGui::EndDisabled();
+
+	ImGui::PopID();
 }
 
 void mtgb::SpinBox::SetNumber(int _number)
@@ -179,7 +219,10 @@ void mtgb::SpinBox::SetNumber(int _number)
 		std::size_t index = std::distance(values_.begin(), itr);
 		currIdx_		  = static_cast<int>(index);
 		currValue_		  = values_[currIdx_];
-		callback_(*this);
+		if (callback_)
+		{
+			callback_(*this);
+		}
 	}
 }
 
@@ -191,7 +234,10 @@ void mtgb::SpinBox::SetString(std::string_view _string)
 		std::size_t index = std::distance(values_.begin(), itr);
 		currIdx_		  = static_cast<int>(index);
 		currValue_		  = values_[currIdx_];
-		callback_(*this);
+		if (callback_)
+		{
+			callback_(*this);
+		}
 	}
 }
 
@@ -231,7 +277,8 @@ mtgb::DictionarySpinBox::DictionarySpinBox(
 	const std::vector<int>& _values,
 	int _defaultIndex
 )
-	: spinBox_ { SpinBox::CreateStringSpinBox(_label, _names, _defaultIndex) }
+	: spinBox_ { mtgb::SpinBox::CreateStringSpinBox(_label, _names, _defaultIndex) }
+	, currValue_ { 0 }
 {
 	massert(_names.size() == _values.size());
 
@@ -240,23 +287,67 @@ mtgb::DictionarySpinBox::DictionarySpinBox(
 		nameToValue_.insert(std::make_pair(_names[i], _values[i]));
 	}
 	spinBox_.SetOnValueChangedCallback(
-		[this](SpinBox& _spinBox)
+		[this](mtgb::SpinBox& _spinBox)
 		{
 			auto itr = nameToValue_.find(_spinBox.GetString());
 			if (itr != nameToValue_.end())
 			{
-				currValue_ = itr->second;
+				currValue_		= itr->second;
+				currPresetName_ = _spinBox.GetString();
 			}
 		}
 	);
+
+	auto itr = nameToValue_.find(spinBox_.GetString());
+	if (itr != nameToValue_.end())
+	{
+		currValue_		= itr->second;
+		currPresetName_ = spinBox_.GetString();
+	}
 }
 
-SpinBox& mtgb::DictionarySpinBox::GetSpinBox()
+mtgb::SpinBox& mtgb::DictionarySpinBox::GetSpinBox()
 {
 	return spinBox_;
 }
 
-int mtgb::DictionarySpinBox::GetCurrValue()
+int mtgb::DictionarySpinBox::GetCurrValue() const
 {
 	return currValue_;
+}
+
+void mtgb::DictionarySpinBox::Update()
+{
+	auto itr = nameToValue_.find(currPresetName_);
+	if (itr != nameToValue_.end())
+	{
+		spinBox_.SetString(currPresetName_);
+		currValue_ = itr->second;
+	}
+}
+
+nlohmann::json mtgb::DictionarySpinBox::SerializeCurrentSelection() const
+{
+	nlohmann::json j;
+	j["currValue"]		= currValue_;
+	j["currPresetName"] = currPresetName_;
+	return j;
+}
+
+void mtgb::DictionarySpinBox::DeserializeCurrentSelection(const nlohmann::json& _json)
+{
+	currPresetName_ = _json.value<std::string>("currPresetName", spinBox_.GetString());
+	if (_json.contains("currValue"))
+	{
+		currValue_ = _json.at("currValue").get<int>();
+	}
+	else
+	{
+		// currValueキーがない場合はspinBox_から値を取得する
+		auto itr = nameToValue_.find(spinBox_.GetString());
+		if (itr != nameToValue_.end())
+		{
+			currValue_ = itr->second;
+		}
+	}
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
-#include "SpinBox.h"
+#include "Editor/SpinBox.h"
 
 namespace mtgb
 {
