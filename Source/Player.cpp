@@ -52,6 +52,7 @@ Player::Player()
 	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS_SKIN;
 	pCollider_->colliderType_	 = ColliderType::TYPE_SPHERE;
 	pCollider_->SetRadius(pTransform_->scale.x);
+	pCollider_->SetCenter(Vector3(0.0f, 0.8f, 0.0f));
 
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 

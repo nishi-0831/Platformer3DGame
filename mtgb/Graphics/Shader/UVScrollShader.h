@@ -16,6 +16,8 @@ namespace mtgb
 			float g_time;
 			Vector3 g_padding;
 			Vector4 g_texture_scale;
+			int g_reverse_uv;
+			Vector3 g_padding_2;
 		};
 		void Initialize(ID3D11Device* _pDevice) override;
 		// IShader を介して継承されました

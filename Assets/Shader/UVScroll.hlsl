@@ -5,8 +5,10 @@ cbuffer Time : register(b1)
     float2 g_scroll_dir;
     float2 g_scroll_speed;
     float g_time;
-    float3 g_time_padding;
+    float3 g_time_padding_01;
     float4 g_texture_scale;
+    bool g_reverse_uv;
+    float3 g_time_padding_02;
 }
 
 struct VS_OUT_UV_SCROLL
@@ -44,8 +46,9 @@ VS_OUT VS(float4 position : POSITION, float4 normal : NORMAL, float2 uv : TEXCOO
     // 法線の絶対値を取得
     float3 absNormal = abs(outData.normal.xyz);
     
-    // UV座標
     outData.uv = uv;
+    
+    // UV座標
     
     return outData;
 }
@@ -76,6 +79,11 @@ float4 PS(VS_OUT input) : SV_Target
         scrolledUV.y += offsetY * scroll_dir.y;
         scrolledUV.y *= g_texture_scale.z;
     
+        if (g_reverse_uv == true)
+        {
+            scrolledUV = float2(1.0 - scrolledUV.x, 1.0 - scrolledUV.y);
+        }
+       
         diffuse = g_texture.Sample(g_sampler, scrolledUV);
     }
     else

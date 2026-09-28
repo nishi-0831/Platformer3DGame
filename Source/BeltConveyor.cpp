@@ -73,12 +73,14 @@ void mtgb::BeltConveyor::ShowImGui()
 	GameObject::ShowImGui();
 	speedSpinBox_.Update();
 	speedSpinBox_.GetSpinBox().ShowImGui();
+	ImGui::Checkbox("Reverse", &reverse_);
 }
 
 nlohmann::json mtgb::BeltConveyor::SerializeProperties() const
 {
 	nlohmann::json j = GameObject::SerializeProperties();
 	j["speed"]		 = speedSpinBox_.SerializeCurrentSelection();
+	j["reverse"]	 = reverse_;
 	return j;
 }
 
@@ -86,6 +88,7 @@ void mtgb::BeltConveyor::DeserializeProperties(const nlohmann::json& _json)
 {
 	GameObject::DeserializeProperties(_json);
 	speedSpinBox_.DeserializeCurrentSelection(_json["speed"]);
+	reverse_ = _json.value("reverse", false);
 }
 
 void mtgb::BeltConveyor::SetConstantBuffer() const
@@ -95,9 +98,18 @@ void mtgb::BeltConveyor::SetConstantBuffer() const
 	{
 		UVScrollShader::TimeBuffer buf;
 		buf.g_time			= time_;
-		buf.g_sroll_dir		= scrollDir_;
 		buf.g_scroll_speed	= Vector2(0.0f, scrollSpeed_ * speedSpinBox_.GetCurrValue() / pTransform_->scale.z);
 		buf.g_texture_scale = Vector4(1.0f, 1.0f, pTransform_->scale.z, 1.0f);
+		buf.g_reverse_uv	= reverse_;
+
+		Vector2 scrollDir = scrollDir_;
+		if (reverse_)
+		{
+			scrollDir.x *= -1.0f;
+			scrollDir.y *= -1.0f;
+		}
+
+		buf.g_sroll_dir = scrollDir;
 		cBuf->SetConstantBuffer(buf);
 		cBuf->ApplyChanges(DirectX11Draw::pContext_.Get());
 	}
