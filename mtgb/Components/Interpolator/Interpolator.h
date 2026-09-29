@@ -6,20 +6,21 @@
 #include "Components/Collider/Collider.h"
 #include "Math/Vector3.h"
 #include "Components/Interpolator/InterpolatorCP.h"
+#include "Editor/SpinBox.h"
 #include "Interpolator.generated.h"
 
 namespace mtgb
 {
 	class InterpolatorCP;
 
-	class [[MT_COMPONENT()]] Interpolator : public IComponent<InterpolatorCP, Interpolator>, public ISerializableObject
+	class [[MT_COMPONENT(NoRegisterImGui)]] Interpolator : public IComponent<InterpolatorCP, Interpolator>,
+														   public ISerializableObject
 	{
 	  public:
 		MT_GENERATED_BODY()
 
 		friend InterpolatorCP;
 		using IComponent::IComponent;
-
 		Interpolator(EntityId _entityId);
 		Interpolator& operator=(const Interpolator& _other);
 		~Interpolator();
@@ -49,36 +50,27 @@ namespace mtgb
 
 	  private:
 		Transform* pTransform_;
-
 		[[MT_PROPERTY()]]
 		// 進行方向
 		float dir_;
 
 		[[MT_PROPERTY()]]
-		// 経過時間
-		float elapsed_;
-
-		[[MT_PROPERTY()]]
-		// 補間にかかる時間(秒)
-		float duration_;
-
-		[[MT_PROPERTY()]]
-		// 始点の座標(シリアライズ用)
 		Vector3 startPos_;
 
 		[[MT_PROPERTY()]]
-		// 終点の座標(シリアライズ用)
 		Vector3 endPos_;
 
-		// TODO:ポインタをシリアライズ
-		// 直接、Transformなどのコンポーネントの状態を保存、復元できるようにすべき
-		// 現状はstartPos_,endPos_のように値型の変数を別に用意している
-
+		float progress_;
 		// 始点、終点のTransform
 		Transform* pStartTransform_;
 		Transform* pEndTransform_;
 		// 始点、終点のコライダー
 		Collider* pStartCollider_;
 		Collider* pEndCollider_;
+		[[MT_PROPERTY()]]
+		float speed_;
+		[[MT_PROPERTY()]]
+		std::string speedName_;
+		DictionarySpinBox speedSpinBox_;
 	};
 } // namespace mtgb

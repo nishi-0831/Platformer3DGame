@@ -45,7 +45,7 @@ using ImageRendererMemento = mtgb::ComponentMemento<mtgb::ImageRenderer, ImageRe
 	friend void from_json(const nlohmann::json& _j, ImageRenderer& _target); \
 	\
 	static std::string TypeName(){ return "ImageRenderer" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

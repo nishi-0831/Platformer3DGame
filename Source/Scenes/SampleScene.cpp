@@ -62,7 +62,7 @@ void SampleScene::Initialize()
 	Game::System<CommandHistoryManager>().ClearAllStack();
 }
 
-void SampleScene::Update()
+void SampleScene::UpdateScene()
 {
 	if (mtgb::InputUtil::GetKeyDown(KeyCode::ESCAPE))
 	{

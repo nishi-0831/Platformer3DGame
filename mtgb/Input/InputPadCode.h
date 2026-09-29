@@ -35,7 +35,7 @@ enum struct PadCode : uint8_t
 	LB		= 4,
 	RB		= 5,
 	BACK	= 6,
-	L_STICK = 6,
+	L_STICK = 10,
 	R_STICK = 7,
 	START	= 9,
 

@@ -27,12 +27,9 @@ mtgb::Box3D::~Box3D() {}
 
 void mtgb::Box3D::Update() {}
 
-void mtgb::Box3D::Draw() const {}
-
 void mtgb::Box3D::ShowImGui()
 {
 	GameObject::ShowImGui();
-	ImGui::Text("EntityId:%lld", Entity::entityId_);
 }
 
 void mtgb::Box3D::Start() {}

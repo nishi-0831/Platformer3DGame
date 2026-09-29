@@ -346,9 +346,24 @@ void mtgb::MTImGui::ShowComponents(EntityId _entityId)
 	if (types.has_value() == false)
 		return;
 
-	for (const auto& typeIdx : (*types).get())
+	for (std::type_index typeIdx : (*types).get())
 	{
 		Instance().componentShowFuncs_[typeIdx](_entityId);
+	}
+}
+
+void mtgb::MTImGui::ShowComponent(EntityId _entityId, std::type_index _typeIdx)
+{
+	if (_entityId == INVALID_ENTITY)
+		return;
+	auto types = Game::System<ComponentRegistry>().GetComponentTypes(_entityId);
+	if (types.has_value() == false)
+		return;
+	auto& typeIdxSet = types.value().get();
+	auto itr		 = typeIdxSet.find(_typeIdx);
+	if (itr != typeIdxSet.end())
+	{
+		Instance().componentShowFuncs_[*itr](_entityId);
 	}
 }
 

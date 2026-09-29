@@ -12,9 +12,3 @@ mtgb::SerializableGameObject::SerializableGameObject()
 }
 
 mtgb::SerializableGameObject::~SerializableGameObject() {}
-
-void mtgb::SerializableGameObject::Update() {}
-
-void mtgb::SerializableGameObject::Draw() const {}
-
-void mtgb::SerializableGameObject::Start() {}

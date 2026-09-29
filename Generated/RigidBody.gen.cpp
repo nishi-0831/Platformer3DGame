@@ -1,5 +1,5 @@
 // RigidBody.generated.h
-#include "Components/RigidBody/RigidBody.h"
+#include "../mtgb/Components/RigidBody/RigidBody.h"
 #include "Editor/MTImGui.h"
 
 
@@ -40,18 +40,18 @@
 		JsonConverter::Deserialize<bool>(_target.useGravity_, _j,"useGravity_");
 		JsonConverter::Deserialize<bool>(_target.isKinematic_, _j,"isKinematic_");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::RigidBody::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<RigidBody>([]( RigidBody* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->useGravity_, "useGravity_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->isKinematic_, "isKinematic_");
-			});
-		MTImGui::RegisterComponentViewer<RigidBody>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::RigidBody::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<RigidBody>([]( RigidBody* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->useGravity_, "useGravity_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->isKinematic_, "isKinematic_");
+				});
+			MTImGui::RegisterComponentViewer<RigidBody>();
+		}

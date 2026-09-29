@@ -99,7 +99,6 @@ void SkinnedMeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _trans
 
 		cb.g_lightDirection = lightDir; // ライトの向き
 		cb.g_isTexture		= (_pAsset->materials[i].pTexture != nullptr);
-		cb.g_textureScale	= Vector4(_transform.scale.x, _transform.scale.y, _transform.scale.z, 0.0f);
 
 		cBuffer.SetConstantBuffer(cb);
 		cBuffer.ApplyChanges(_pCtx);

@@ -65,7 +65,7 @@ void ResultScene::Initialize()
 	pScoreText_->rect_	   = mtgb::RectF { 400, 320, 80, 30 };
 }
 
-void ResultScene::Update()
+void ResultScene::UpdateScene()
 {
 	panelManager_.UpdatePanel();
 }
@@ -76,8 +76,6 @@ void ResultScene::Draw() const
 	std::string scoreText(std::to_string(itemCount));
 	pScoreText_->text_ = scoreText;
 }
-
-void ResultScene::End() {}
 
 void ResultScene::CreatePanel()
 {

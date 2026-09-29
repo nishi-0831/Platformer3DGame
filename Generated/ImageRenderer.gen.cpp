@@ -1,5 +1,5 @@
 // ImageRenderer.generated.h
-#include "Components/ImageRenderer/ImageRenderer.h"
+#include "../mtgb/Components/ImageRenderer/ImageRenderer.h"
 #include "Editor/MTImGui.h"
 
 
@@ -48,20 +48,20 @@
 		JsonConverter::Deserialize<mtgb::UIParams>(_target.uiParams_, _j,"uiParams_");
 		JsonConverter::Deserialize<mtgb::GameObjectLayerFlag>(_target.layer_, _j,"layer_");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::ImageRenderer::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<ImageRenderer>([]( ImageRenderer* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->imageFileName_, "imageFileName_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->drawRect_, "drawRect_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->uiParams_, "uiParams_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer_, "layer_");
-			});
-		MTImGui::RegisterComponentViewer<ImageRenderer>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::ImageRenderer::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<ImageRenderer>([]( ImageRenderer* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->imageFileName_, "imageFileName_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->drawRect_, "drawRect_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->uiParams_, "uiParams_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer_, "layer_");
+				});
+			MTImGui::RegisterComponentViewer<ImageRenderer>();
+		}

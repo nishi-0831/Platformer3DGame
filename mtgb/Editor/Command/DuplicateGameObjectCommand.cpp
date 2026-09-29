@@ -44,6 +44,7 @@ void mtgb::DuplicateGameObjectCommand::Execute()
 	{
 		GameObject* dest	   = gameObjectFactory_.Create(snapshot.typeName);
 		snapshot.destEntityId_ = dest->GetEntityId();
+
 		for (std::type_index componentPoolType : snapshot.componentPoolTypes)
 		{
 			IComponentPool* pComponentPool = Game::GetCP(componentPoolType);
@@ -58,6 +59,22 @@ void mtgb::DuplicateGameObjectCommand::Execute()
 			SaveToMementos(snapshot);
 			snapshot.notSaveMementos = false;
 		}
+
+		// GameObjectとその派生クラスのメンバ変数をコピーする
+
+		GameObject* srcGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(snapshot.entityId);
+
+		// 複製したゲームオブジェクト名を保持。名前はコピーさせない。
+		std::string destObjName = dest->GetName();
+
+		if (srcGameObj != nullptr)
+		{
+			nlohmann::json srcPropertiesJson = srcGameObj->SerializeProperties();
+			dest->DeserializeProperties(srcPropertiesJson);
+
+			// ゲームオブジェクト名を戻す
+			dest->SetName(destObjName);
+		}
 	}
 }
 
@@ -65,24 +82,36 @@ void mtgb::DuplicateGameObjectCommand::Undo()
 {
 	for (auto& snapshot : snapshots_)
 	{
-		Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(snapshot.destEntityId_);
+		Game::System<SceneSystem>().GetActiveScene()->MarkGameObjectPendingDestroy(snapshot.destEntityId_);
 	}
 }
 
 void mtgb::DuplicateGameObjectCommand::Redo()
 {
-	for (size_t i = 0; i < snapshots_.size(); i++)
-	{
-		Game::System<EntityManager>().DecrementCounter();
-	}
 	for (auto& snapshot : snapshots_)
 	{
-		gameObjectFactory_.Create(snapshot.typeName);
+		GameObject* dest = gameObjectFactory_.Create(snapshot.typeName);
 		for (IComponentMemento* memento : snapshot.mementos)
 		{
 			if (memento == nullptr)
 				continue;
 			Game::GetComponentFactory().AddComponentFromMemento(*memento);
+		}
+
+		// GameObjectとその派生クラスのメンバ変数をコピーする
+
+		GameObject* srcGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(snapshot.entityId);
+
+		// 複製したゲームオブジェクト名を保持。名前はコピーさせない。
+		std::string destObjName = dest->GetName();
+
+		if (srcGameObj != nullptr)
+		{
+			nlohmann::json srcPropertiesJson = srcGameObj->SerializeProperties();
+			dest->DeserializeProperties(srcPropertiesJson);
+
+			// ゲームオブジェクト名を戻す
+			dest->SetName(destObjName);
 		}
 	}
 }

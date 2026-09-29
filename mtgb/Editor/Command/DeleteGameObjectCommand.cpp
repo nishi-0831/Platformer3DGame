@@ -12,9 +12,13 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	for (EntityId id : _entityIds)
 	{
 		GameObject* pGameObj = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(id);
-		GameObjectSnapshot snapshot { .entityId = id,
-									  .name		= pGameObj->GetName(),
-									  .typeName = pGameObj->GetClassTypeName() };
+		if (pGameObj == nullptr)
+			continue;
+
+		GameObjectSnapshot snapshot { .entityId		  = id,
+									  .name			  = pGameObj->GetName(),
+									  .typeName		  = pGameObj->GetClassTypeName(),
+									  .propertiesJson = pGameObj->SerializeProperties() };
 
 		std::vector<IComponentMemento*> mementos;
 		// IDに割り当てられているコンポーネントプールの型情報を取得
@@ -48,23 +52,19 @@ void mtgb::DeleteGameObjectCommand::Execute()
 {
 	for (const auto& snapshot : snapshots_)
 	{
-		Game::System<SceneSystem>().GetActiveScene()->DestroyGameObject(snapshot.entityId);
+		Game::System<SceneSystem>().GetActiveScene()->MarkGameObjectPendingDestroy(snapshot.entityId);
 	}
 }
 
 void mtgb::DeleteGameObjectCommand::Undo()
 {
-	for (size_t i = 0; i < snapshots_.size(); i++)
-	{
-		Game::System<EntityManager>().DecrementCounter();
-	}
 	for (const auto& snapshot : snapshots_)
 	{
 		GameObject* pGameObj = gameObjectFactory_.Create(snapshot.typeName);
 		if (pGameObj == nullptr)
 			continue;
 		pGameObj->SetName(snapshot.name);
-
+		pGameObj->DeserializeProperties(snapshot.propertiesJson);
 		for (IComponentMemento* pMemento : snapshot.mementos)
 		{
 			Game::GetComponentFactory().AddComponentFromMemento(*pMemento);

@@ -45,7 +45,7 @@ using MeshRendererMemento = mtgb::ComponentMemento<mtgb::MeshRenderer, MeshRende
 	friend void from_json(const nlohmann::json& _j, MeshRenderer& _target); \
 	\
 	static std::string TypeName(){ return "MeshRenderer" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

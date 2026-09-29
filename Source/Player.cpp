@@ -5,15 +5,13 @@
 #include "ResultScene.h"
 #include "GameEvents.h"
 #include <algorithm>
-
+#include <cmath>
 Player::Player()
-	: GameObject(
-		  GameObjectBuilder()
-			  .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
-			  .SetPosition({ 0, 1, 0 })
-			  .SetTag(GameObjectTag::PLAYER)
-			  .Build()
-	  )
+	: GameObject(GameObjectBuilder()
+					 .SetName(Game::System<GameObjectTypeRegistry>().GetNameFromType(typeid(Player)))
+					 .SetPosition({ 0, 1, 0 })
+					 .SetTag(GameObjectTag::PLAYER)
+					 .Build())
 	, IActor(GetEntityId())
 	, pTransform_ { Component<Transform>() }
 	, pCollider_ { Component<Collider>() }
@@ -30,10 +28,18 @@ Player::Player()
 	, jumpController_ { GetEntityId() }
 	, walkSmokeInterval_ { 0.3f }
 	, walkSmokeElapsedTime_ { 0.0f }
-	, jumpHeight_ { 5.0f }
-	, moveSpeed_ { 5.0f }
+	, walkJumpHeight_ { 5.0f }
+	, runJumpHeight_ { 7.5f }
+	, walkSpeed_ { 5.0f }
+	, dashSpeed_ { 10.0f }
+	, acceleration_ { 50.0f }
+	, isRunning_ { false }
+	, externalDeceleration_ { 5.0f }
+	, movementVelocity_ { Vector3::Zero() }
+	, externalVelocity_ { Vector3::Zero() }
+	, friction_ { 30.0f }
+	, isDashJumping_ { false }
 {
-	// pRigidBody_->useGravity_ = true;
 	pRigidBody_->isKinematic_ = false;
 	pRigidBody_->OnCollisionEnter(
 		[this](EntityId _entityId)
@@ -46,6 +52,7 @@ Player::Player()
 	pMeshRenderer_->shaderType	 = ShaderType::FBX_PARTS_SKIN;
 	pCollider_->colliderType_	 = ColliderType::TYPE_SPHERE;
 	pCollider_->SetRadius(pTransform_->scale.x);
+	pCollider_->SetCenter(Vector3(0.0f, 0.8f, 0.0f));
 
 	CameraHandleInScene hCamera = Game::System<SceneSystem>().GetActiveScene()->RegisterCameraGameObject(pCamera_);
 
@@ -70,20 +77,30 @@ void Player::Update()
 	Game::System<ShadowSettings>().SetCaster(GetEntityId());
 	// オーディオリスナーの位置を指定する
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
-
+	isRunning_ =
+		(InputUtil::GetGamePad(PadCode::L_STICK) || InputUtil::GetKey(KeyCode::LEFT_SHIFT)) && pRigidBody_->isGround_;
+	if (pRigidBody_->isGround_)
+	{
+		isDashJumping_ = false;
+	}
 	// 力尽きた状態、勝利状態でない場合
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
-		// 座標更新
-		UpdatePosition();
 		bool jumpBtnPressed = InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE);
 		// ジャンプ処理の更新
 		jumpController_.Update(jumpBtnPressed);
+		bool isDashJump = jumpController_.CanJump() && state_.Current() == STATE::RUN;
 		// ジャンプボタン押下処理
 		if (jumpController_.CanJump())
 		{
-			// ジャンプ開始
-			jumpController_.StartJump(jumpHeight_);
+			jumpController_.StartJump(isDashJump ? runJumpHeight_ : walkJumpHeight_);
+
+			if (isDashJump)
+			{
+				externalVelocity_ += pTransform_->Forward() * (dashSpeed_ - walkSpeed_);
+				isDashJumping_ = true;
+			}
+
 			// ジャンプ時のSE
 			Game::System<Audio>().Play("Jump");
 
@@ -103,8 +120,20 @@ void Player::Update()
 				jumpController_.ReleaseButton();
 			}
 		}
+
+		UpdateVelocity();
 		// 姿勢更新
 		UpdateRotate();
+
+		externalVelocity_ = MoveTowards(externalVelocity_, Vector3::Zero(), externalDeceleration_ * Time::DeltaTimeF());
+		if (pRigidBody_->isGround_)
+		{
+			externalVelocity_	= MoveTowards(externalVelocity_, Vector3::Zero(), friction_ * Time::DeltaTimeF());
+			externalVelocity_.y = 0.0f;
+		}
+		Vector3 finalVelocity = movementVelocity_ + externalVelocity_ + surfaceVelocity_;
+		finalVelocity.y += jumpController_.GetVelocityY();
+		pRigidBody_->velocity_ = finalVelocity;
 	}
 	// アニメーションのステート更新
 	state_.Update();
@@ -160,8 +189,58 @@ void Player::InitializeState()
 				// 水平方向に移動している場合、走る状態に遷移
 				if (GetMoveDir().Size() != 0)
 				{
-					state_.Change(STATE::RUN);
+					if (isRunning_)
+					{
+						state_.Change(STATE::RUN);
+					}
+					else
+					{
+						state_.Change(STATE::WALK);
+					}
 					return;
+				}
+			}
+		)
+		// WALK状態の処理
+		.OnStart(
+			STATE::WALK,
+			[this]
+			{
+				animController_->PlayAnimation("Walk", true);
+				walkSmokeElapsedTime_ = 0.0f;
+			}
+		)
+		.OnUpdate(
+			STATE::WALK,
+			[this]
+			{
+				STATE nextState;
+				bool needsToTransition = TryGetNextStateOnMove(nextState);
+
+				if (needsToTransition)
+				{
+					state_.Change(nextState);
+					return;
+				}
+				if (isRunning_)
+				{
+					state_.Change(STATE::RUN);
+				}
+
+				// 歩いているときの煙エフェクトを発生させる
+				walkSmokeElapsedTime_ += Time::DeltaTimeF();
+				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
+				{
+					EffectParameters params;
+					// ループなし
+					params.isLoop = false;
+					// エフェクトの発生位置をプレイヤーの座標に設定
+					Matrix4x4 worldMat;
+					pTransform_->GenerateWorldMatrix(&worldMat);
+					params.worldMat = worldMat;
+					Game::System<EffectManager>().Play("WalkSmoke", params);
+
+					walkSmokeElapsedTime_ = 0.0f;
 				}
 			}
 		)
@@ -178,26 +257,20 @@ void Player::InitializeState()
 			STATE::RUN,
 			[this]
 			{
-				// 落下状態に遷移
-				if (jumpController_.IsFalling())
+				STATE nextState;
+				bool needsToTransition = TryGetNextStateOnMove(nextState);
+
+				if (needsToTransition)
 				{
-					state_.Change(STATE::FALL);
+					state_.Change(nextState);
 					return;
 				}
-				// +Y方向に移動している場合、ジャンプ状態に遷移
-				if (pRigidBody_->velocity_.y > 0.0f)
+				if (isRunning_ == false)
 				{
-					state_.Change(STATE::JUMP);
-					return;
-				}
-				// 停止しているならIDLEに遷移
-				if (pRigidBody_->velocity_.x == 0.0f && pRigidBody_->velocity_.z == 0.0f)
-				{
-					state_.Change(STATE::IDLE);
-					return;
+					state_.Change(STATE::WALK);
 				}
 
-				// 歩いているときの煙エフェクトを発生させる
+				// 走っているときの煙エフェクトを発生させる
 				walkSmokeElapsedTime_ += Time::DeltaTimeF();
 				if (walkSmokeElapsedTime_ >= walkSmokeInterval_)
 				{
@@ -276,7 +349,28 @@ void Player::InitializeState()
 		);
 }
 
-void Player::Draw() const {}
+bool Player::TryGetNextStateOnMove(STATE& _state)
+{
+	// 落下状態に遷移
+	if (jumpController_.IsFalling())
+	{
+		_state = STATE::FALL;
+		return true;
+	}
+	// +Y方向に移動している場合、ジャンプ状態に遷移
+	if (pRigidBody_->velocity_.y > 0.0f)
+	{
+		_state = STATE::JUMP;
+		return true;
+	}
+	// 停止しているならIDLEに遷移
+	if (movementVelocity_.x == 0.0f && movementVelocity_.z == 0.0f)
+	{
+		_state = STATE::IDLE;
+		return true;
+	}
+	return false;
+}
 
 void Player::Start()
 {
@@ -338,32 +432,47 @@ Vector3 Player::GetMoveDir()
 	return Vector3::Normalize(horizontalDir);
 }
 
-void Player::UpdatePosition()
+Vector3 Player::MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta)
 {
-	Vector3& velocity = pRigidBody_->velocity_;
+	return Vector3(
+		MoveTowards(_curr.x, _target.x, _maxDelta),
+		MoveTowards(_curr.y, _target.y, _maxDelta),
+		MoveTowards(_curr.z, _target.z, _maxDelta)
+	);
+}
 
-	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
+float Player::MoveTowards(float _curr, float _target, float _maxDelta)
+{
+	if (std::abs(_target - _curr) <= _maxDelta)
 	{
-		Vector3 movement = moveDir * moveSpeed_;
+		return _target;
+	}
+	return _curr + std::copysign(_maxDelta, _target - _curr);
+}
 
-		velocity.x = movement.x;
-		velocity.z = movement.z;
+void Player::UpdateVelocity()
+{
+	Vector3 moveDir	  = GetMoveDir();
+	float targetSpeed = 0.0f;
+	if (isRunning_)
+	{
+		targetSpeed = dashSpeed_;
 	}
 	else
 	{
-		// -------------------------------------------------------
-		// WARNING:
-		// 入力がない場合、XZの速度をゼロにしている!!!!
-		// 入力以外で速度を変える場合は修正!!!!
-		// -------------------------------------------------------
-		velocity.x = 0.0f;
-		velocity.z = 0.0f;
+		targetSpeed = walkSpeed_;
 	}
+
+	Vector3 movement	= moveDir * targetSpeed;
+	movementVelocity_.x = MoveTowards(movementVelocity_.x, movement.x, acceleration_ * Time::DeltaTimeF());
+	movementVelocity_.z = MoveTowards(movementVelocity_.z, movement.z, acceleration_ * Time::DeltaTimeF());
+
+	movementVelocity_.y = 0.0f;
 }
 
 void Player::UpdateRotate()
 {
-	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0)
+	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0 && isDashJumping_ == false)
 	{
 		pTransform_->rotate = Quaternion::LookRotation(moveDir, Vector3::Up());
 	}
@@ -440,4 +549,14 @@ void Player::TakeDamage(int _damage)
 		},
 		true // firstCall: 即座に処理を呼ぶ
 	);
+}
+
+void Player::AddExternalVelocity(const Vector3& _velocity)
+{
+	externalVelocity_ += _velocity;
+}
+
+void Player::SetSurfaceVelocity(const Vector3& _velocity)
+{
+	surfaceVelocity_ = _velocity;
 }

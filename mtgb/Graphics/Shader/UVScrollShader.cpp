@@ -9,7 +9,7 @@ namespace
 }
 void mtgb::UVScrollShader::Initialize(ID3D11Device* _pDevice)
 {
-	InitializeCommonGpuResources(_pDevice, L"Shader/SeaUVScroll.hlsl");
+	InitializeCommonGpuResources(_pDevice, L"Shader/UVScroll.hlsl");
 
 	CD3D11_RASTERIZER_DESC cRasterizerDesc = CD3D11_RASTERIZER_DESC(D3D11_RASTERIZER_DESC {
 		.FillMode			   = D3D11_FILL_SOLID, // 塗りつぶし: solid
@@ -53,13 +53,8 @@ void mtgb::UVScrollShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tr
 		return;
 	}
 	auto& timeCBuffer = itr->second;
-	TimeBuffer tb {};
-	time_ += Time::DeltaTimeF() * 0.5f;
-	tb.g_time = time_;
-	timeCBuffer.SetConstantBuffer(tb);
 	timeCBuffer.BindVS(_pCtx);
 	timeCBuffer.BindPS(_pCtx);
-	timeCBuffer.ApplyChanges(_pCtx);
 	// カメラシステムへのアクセス用
 	const CameraSystem& CAMERA { Game::System<CameraSystem>() };
 
@@ -100,7 +95,6 @@ void mtgb::UVScrollShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tr
 
 		cb.g_lightDirection = lightDir; // ライトの向き
 		cb.g_isTexture		= (_pAsset->materials[i].pTexture != nullptr);
-		cb.g_textureScale	= Vector4(_transform.scale.x, _transform.scale.y, _transform.scale.z, 0.0f);
 
 		cBuffer.SetConstantBuffer(cb);
 		cBuffer.ApplyChanges(_pCtx);

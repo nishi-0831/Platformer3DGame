@@ -1,5 +1,5 @@
 // {{ class_name }}.generated.h
-#include "{{ class_name }}.h"
+#include "{{ parsed_file_relative_path }}"
 #include "Editor/MTImGui.h"
 
 {{ # 名前空間を含む型名を返す }}
@@ -57,20 +57,22 @@ end
 {{- end }}
 		_target.OnPostRestore(); 
 	} 
-	/* ImGui表示処理の登録 */ 
-	void {{fully_qualified_name}}::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
+{{- if (array.contains meta_options "NoRegisterImGui") == false }}
+		/* ImGui表示処理の登録 */ 
+		void {{fully_qualified_name}}::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
 	
-		RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name)
-			{ 
-{{- for member in properties }}
-	{{- if (array.contains member.meta_options "HideInEditor") == false }}
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}");
+			RegisterShowFuncHolder::Set<{{ class_name }}>([]( {{ class_name }}* _target, const char* _name)
+				{ 
+	{{- for member in properties }}
+		{{- if (array.contains member.meta_options "HideInEditor") == false }}
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->{{ member.name }}, "{{ member.name }}");
+		{{- end }}
 	{{- end }}
+				});
+			MTImGui::RegisterComponentViewer<{{ class_name }}>();
+		}
 {{- end }}
-			});
-		MTImGui::RegisterComponentViewer<{{ class_name }}>();
-	}

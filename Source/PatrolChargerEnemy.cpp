@@ -24,7 +24,7 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	, takeDamageNum_ { 1 }
 	, walkAnimSpeed_ { 0.5f }
 	, waitTime_ { 3.0f }
-	, onStompedBounce_ { 5.0f }
+	, onStompedBounce_ { 15.0f }
 {
 	tag_						 = GameObjectTag::ENEMY;
 	pMeshRenderer_->meshFileName = "Model/GolemAnim.fbx";
@@ -76,8 +76,6 @@ void PatrolChargerEnemy::Update()
 	state_.Update();
 }
 
-void PatrolChargerEnemy::Draw() const {}
-
 void PatrolChargerEnemy::Start()
 {
 	// TagがPlayerのGameObjectを探す
@@ -95,6 +93,7 @@ void PatrolChargerEnemy::Start()
 void PatrolChargerEnemy::ShowImGui()
 {
 	GameObject::ShowImGui();
+	MTImGui::ShowComponent<Interpolator>(GetEntityId());
 	if (state_.Current() == STATE::PATROL)
 	{
 		ImGui::Text("STATE::PATROL");
@@ -133,7 +132,8 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		// 踏んだアクターを上に飛ばす
 		EntityId id				  = _pOther->GetId();
 		RigidBody& otherRigidBody = RigidBody::Get(id);
-		otherRigidBody.velocity_.y += onStompedBounce_;
+		Vector3 bounceVelcity	  = Vector3(0.0f, onStompedBounce_, 0.0f);
+		_pOther->AddExternalVelocity(bounceVelcity);
 	}
 
 	state_.Change(STATE::DYING);

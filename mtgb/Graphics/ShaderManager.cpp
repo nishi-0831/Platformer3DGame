@@ -6,6 +6,7 @@
 #include "Graphics/Shader/Debug3DShader.h"
 #include "Graphics/Shader/UVScrollShader.h"
 #include "Graphics/Shader/OutlineShader.h"
+#include "Graphics/Shader/SeaUVScrollShader.h"
 void mtgb::ShaderManager::Initialize()
 {
 	shaders_.fill(nullptr);
@@ -22,11 +23,14 @@ void mtgb::ShaderManager::Initialize()
 	shaders_[static_cast<int8_t>(ShaderType::DEBUG3_D)] = new Debug3DShader();
 	shaders_[static_cast<int8_t>(ShaderType::DEBUG3_D)]->Initialize(DirectX11Draw::pDevice_.Get());
 
-	shaders_[static_cast<int8_t>(ShaderType::SEA)] = new UVScrollShader();
+	shaders_[static_cast<int8_t>(ShaderType::SEA)] = new SeaUVScrollShader();
 	shaders_[static_cast<int8_t>(ShaderType::SEA)]->Initialize(DirectX11Draw::pDevice_.Get());
 
 	shaders_[static_cast<int8_t>(ShaderType::OUTLINE)] = new OutlineShader();
 	shaders_[static_cast<int8_t>(ShaderType::OUTLINE)]->Initialize(DirectX11Draw::pDevice_.Get());
+
+	shaders_[static_cast<int8_t>(ShaderType::UV_SCROLL)] = new UVScrollShader();
+	shaders_[static_cast<int8_t>(ShaderType::UV_SCROLL)]->Initialize(DirectX11Draw::pDevice_.Get());
 }
 
 void mtgb::ShaderManager::Update() {}

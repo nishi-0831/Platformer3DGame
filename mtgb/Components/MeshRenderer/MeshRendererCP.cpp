@@ -20,6 +20,7 @@ void mtgb::MeshRendererCP::RenderLayer(GameObjectLayerFlag _layerFlag) const
 		if (renderer.CanRender() == false || _layerFlag.Has(renderer.GetLayer()) == false)
 			continue;
 
+		renderer.OnPreRender();
 		renderer.Render();
 	}
 }

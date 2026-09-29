@@ -10,8 +10,6 @@ namespace mtgb
 		~SkySphere();
 
 		void Update() override;
-		void Draw() const override;
-		void Start() override;
 
 	  private:
 		Transform* pTransform_;

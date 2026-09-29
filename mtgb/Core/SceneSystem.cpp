@@ -10,14 +10,15 @@
 #include "Core/GameObject/GameObjectGenerator.h"
 
 mtgb::SceneSystem::SceneSystem()
-	: pNextScene_ { nullptr }
+	: pCurrentScene_ { nullptr }
+	, pNextScene_ { nullptr }
 	, onMoveListener_ {}
 {
 }
 
 mtgb::SceneSystem::~SceneSystem()
 {
-	SAFE_DELETE(GameScene::pInstance_);
+	SAFE_DELETE(pCurrentScene_);
 }
 
 void mtgb::SceneSystem::Initialize()
@@ -36,7 +37,7 @@ void mtgb::SceneSystem::Update()
 		ChangeScene();
 	}
 
-	if (GameScene::pInstance_ == nullptr)
+	if (pCurrentScene_ == nullptr)
 	{
 		return; // シーンがないなら回帰
 	}
@@ -57,44 +58,15 @@ void mtgb::SceneSystem::Update()
 	Game::System<Input>().Update();
 	Game::System<WindowContextResourceManager>().Update();
 
-	// 現在のシーン
-	GameScene& currentScene { *GameScene::pInstance_ };
-
-	if (Game::IsEditMode() == false)
-	{
-		// 更新処理
-		currentScene.Update();
-		for (auto&& gameObject : currentScene.pGameObjects_)
-		{
-			if (gameObject->IsNotCalledStart())
-			{
-				gameObject->Start();
-				gameObject->MarkAsCalledStart();
-			}
-			gameObject->Update();
-		}
-	}
+	pCurrentScene_->Update();
 
 	MTImGui::Update();
 
 	// 描画処理
-	Game::System<RenderSystem>().Render(currentScene);
+	Game::System<RenderSystem>().Render(*pCurrentScene_);
 
 	MTImGui::ClearShowQueue();
-	// 削除処理
-	for (auto&& itr = currentScene.pGameObjects_.begin(); itr != currentScene.pGameObjects_.end();)
-	{
-		if ((*itr)->IsToDestroy())
-		{
-			Game::RemoveEntityAllComponent((*itr)->GetEntityId());
-			SAFE_DELETE(*itr);
-			itr = currentScene.pGameObjects_.erase(itr);
-		}
-		else
-		{
-			itr++;
-		}
-	}
+	pCurrentScene_->DestroyMarkedGameObjects();
 }
 
 void mtgb::SceneSystem::ExecutePendingCallbacks()
@@ -118,16 +90,16 @@ void mtgb::SceneSystem::ChangeScene()
 	}
 
 	// もし現在のシーンがあるなら終了処理
-	if (GameScene::pInstance_)
+	if (pCurrentScene_)
 	{
-		GameScene::pInstance_->End();
+		pCurrentScene_->End();
 	}
 
 	// 解放してポインタ変更
-	SAFE_DELETE(GameScene::pInstance_);
-	GameScene::pInstance_ = pNextScene_;
-	pNextScene_			  = nullptr;
+	SAFE_DELETE(pCurrentScene_);
+	pCurrentScene_ = pNextScene_;
+	pNextScene_	   = nullptr;
 
 	// チェンジしたシーンの初期化処理
-	GameScene::pInstance_->Initialize();
+	pCurrentScene_->Initialize();
 }

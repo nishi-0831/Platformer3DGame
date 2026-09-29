@@ -6,11 +6,21 @@
 #include <optional>
 #include "StageID.h"
 #include <nlohmann/json.hpp>
+
+/// <summary>
+/// ステージを管理する
+/// JSONやクリア状況を管理
+/// </summary>
 class StageManager : public ISystem
 {
   public:
 	void Initialize() override;
 	void Update() override;
+	/// <summary>
+	/// ステージのIDに対応するJSONを返す
+	/// </summary>
+	/// <param name="_stageID">ステージのID</param>
+	/// <returns>存在しないならnullopt</returns>
 	std::optional<nlohmann::json> GetStageJson(StageID _stageID);
 	/// <summary>
 	/// ステージのクリア状況を初期化
@@ -44,10 +54,16 @@ class StageManager : public ISystem
 	/// 現在のステージをクリアした状態にする
 	/// </summary>
 	void ClearCurrentStage();
+	/// <summary>
+	/// 現在のステージのIDを返す
+	/// </summary>
+	/// <returns></returns>
 	StageID GetCurrentStage();
 
   private:
+	// 現在のステージのID
 	StageID currStage_;
+	// ステージのIDに対応したJSON
 	std::unordered_map<StageID, nlohmann::json> stageJsons_;
-	std::unordered_map<StageID, bool> stageCleared_; // ステージをクリアしたか
+	std::unordered_map<StageID, bool> stageCleared_; // IDに対応するステージをクリアしたか
 };

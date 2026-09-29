@@ -10,7 +10,6 @@ class RangedAttackEnemy : public mtgb::GameObject, public IActor
 	RangedAttackEnemy();
 	~RangedAttackEnemy();
 	void Update() override;
-	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
 	void OnStomped(IActor* _pOther) override;

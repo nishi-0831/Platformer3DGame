@@ -1,5 +1,5 @@
 // MeshRenderer.generated.h
-#include "Components/MeshRenderer/MeshRenderer.h"
+#include "../mtgb/Components/MeshRenderer/MeshRenderer.h"
 #include "Editor/MTImGui.h"
 
 
@@ -48,19 +48,19 @@
 		JsonConverter::Deserialize<mtgb::GameObjectLayerFlag>(_target.layer, _j,"layer");
 		JsonConverter::Deserialize<mtgb::ShaderType>(_target.shaderType, _j,"shaderType");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::MeshRenderer::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<MeshRenderer>([]( MeshRenderer* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshFileName, "meshFileName");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer, "layer");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType");
-			});
-		MTImGui::RegisterComponentViewer<MeshRenderer>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::MeshRenderer::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<MeshRenderer>([]( MeshRenderer* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->meshFileName, "meshFileName");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->layer, "layer");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->shaderType, "shaderType");
+				});
+			MTImGui::RegisterComponentViewer<MeshRenderer>();
+		}

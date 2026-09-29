@@ -48,7 +48,7 @@ void mtgb::ComponentRegistry::RegisterComponentPoolType(std::type_index _comp, s
 	componentTypeToPoolTypeMap_.emplace(_comp, _pool);
 }
 
-void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, std::type_index _typeIndex)
+void mtgb::ComponentRegistry::UnregisterComponent(mtgb::EntityId _entityId, std::type_index _typeIndex)
 {
 	auto itr = entityComponents_.find(_entityId);
 	if (itr != entityComponents_.end())
@@ -64,7 +64,7 @@ void mtgb::ComponentRegistry::UnRegisterComponent(mtgb::EntityId _entityId, std:
 	}
 }
 
-void mtgb::ComponentRegistry::ClearEntity(mtgb::EntityId _entityId)
+void mtgb::ComponentRegistry::UnregisterAllComponent(mtgb::EntityId _entityId)
 {
 	// 全てのコンポーネントが割り当てられていないという判定にする
 	entityComponents_[_entityId].clear();
@@ -142,4 +142,10 @@ std::optional<std::set<std::type_index>> mtgb::ComponentRegistry::GetComponentTy
 		return std::nullopt;
 
 	return components;
+}
+
+void mtgb::ComponentRegistry::ClearEntityComponentRegistrations()
+{
+	entityComponents_.clear();
+	componentIndices_.clear();
 }
