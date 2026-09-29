@@ -43,7 +43,7 @@ using RigidBodyMemento = mtgb::ComponentMemento<mtgb::RigidBody, RigidBodyState>
 	friend void from_json(const nlohmann::json& _j, RigidBody& _target); \
 	\
 	static std::string TypeName(){ return "RigidBody" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

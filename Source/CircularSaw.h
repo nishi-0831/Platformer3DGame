@@ -1,36 +1,11 @@
 #pragma once
 #include <mtgb.h>
 #include "IActor.h"
+#include "Saw.h"
+#include "Editor/SpinBox.h"
+
 namespace mtgb
 {
-
-	class Saw : public GameObject, public IActor
-	{
-	  public:
-		Saw();
-		~Saw();
-
-		void Update() override;
-		void Draw() const override;
-		void Start() override;
-		void ShowImGui() override;
-
-	  private:
-		Transform* pTransform_;
-		MeshRenderer* pMeshRenderer_;
-		Collider* pCollider_;
-		RigidBody* pRigidBody_;
-		float rotateAngleSec_;
-		float radius_;
-		int takeDamageAmount_;
-		int audioSourceHandle_;
-		// IActor を介して継承されました
-		void OnStomped(IActor* _pOther) override;
-
-		void OnHitSide(IActor* _pOther) override;
-
-		void TakeDamage(int _damage) override;
-	};
 	/// <summary>
 	/// 自身を中心にのこぎりを回転させるゲームオブジェクト
 	/// </summary>
@@ -41,26 +16,31 @@ namespace mtgb
 		~CircularSaw();
 
 		void Update() override;
-		void Draw() const override;
 		void ShowImGui() override;
 		void Start() override;
+		void StartOnEditMode() override;
+		nlohmann::json SerializeProperties() const override;
+		void DeserializeProperties(const nlohmann::json& _json) override;
 
 	  private:
+		void RotateInitialAngle();
+		void CreateSaw();
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
 		Collider* pCollider_;
 
 		// 自身からのこぎりまでの柱
-
 		Transform* pPillarTransform_;
 		MeshRenderer* pPillarMeshRenderer_;
 
 		// のこぎり
 		Saw* pSaw_;
-		// のこぎりとの距離
-		float sawOffset_;
 		// 一秒あたりにのこぎりを回転させる角度
-		float rotateAngleSec_;
+		DictionarySpinBox rotationSpeedSpinBox_;
+		bool reverse_;
+		SpinBox initialRotationAngleSpinBox_;
+		// のこぎりとの距離
+		SpinBox sawOffsetSpinBox_;
 		static unsigned int generateCounter_;
 	};
 

@@ -6,10 +6,7 @@ class GameOverZone : public mtgb::GameObject
   public:
 	GameOverZone();
 	~GameOverZone();
-
-	void Update() override;
 	void Start() override;
-	void Draw() const override;
 
   private:
 	Transform* pTransform_;

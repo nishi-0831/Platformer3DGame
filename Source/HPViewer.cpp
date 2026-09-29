@@ -30,10 +30,6 @@ void mtgb::HPViewer::Update()
 	}
 }
 
-void mtgb::HPViewer::Draw() const {}
-
-void mtgb::HPViewer::Start() {}
-
 void mtgb::HPViewer::TakeDamage(int _damage)
 {
 	if (_damage <= 0)

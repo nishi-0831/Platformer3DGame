@@ -7,6 +7,9 @@ JumpController::JumpController(EntityId _targetId)
 	, isHolding_ { false }
 	, lowJumpGravityMultiplier_ { 5.0f }
 	, minAscentVelocityThreshold_ { 0.1f }
+	, jumpBufferTimer_ { 0.0f }
+	, coyoteTimer_ { 0.0f }
+	, jumpVelocityY_ { 0.0f }
 {
 	pTargetRigidBody_->useGravity_ = false;
 	gravity_					   = RigidBody::GetGravity();
@@ -19,6 +22,12 @@ void JumpController::Update(bool _jumpPressed)
 	if (pTargetRigidBody_->isGround_)
 	{
 		coyoteTimer_ = COYOTE_TIME;
+
+		// 接地中は落下速度が残らないようにする
+		if (jumpVelocityY_ < 0.0f)
+		{
+			jumpVelocityY_ = 0.0f;
+		}
 	}
 	else
 	{
@@ -42,20 +51,19 @@ void JumpController::Update(bool _jumpPressed)
 		}
 	}
 
-	Vector3& velocity = pTargetRigidBody_->velocity_;
-	float g			  = gravity_;
-	if (isHolding_ == false && velocity.y > minAscentVelocityThreshold_)
+	float gravity = gravity_;
+	if (isHolding_ == false && jumpVelocityY_ > minAscentVelocityThreshold_)
 	{
-		g *= lowJumpGravityMultiplier_;
+		gravity *= lowJumpGravityMultiplier_;
 	}
-	velocity += Vector3::Up() * g * Time::DeltaTimeF();
+	jumpVelocityY_ += gravity * Time::DeltaTimeF();
 }
 
 void JumpController::StartJump(float _maxHeight)
 {
-	jumpBufferTimer_			   = 0.0f;
-	isHolding_					   = true;
-	pTargetRigidBody_->velocity_.y = std::sqrt(2.0f * std::abs(gravity_) * _maxHeight);
+	jumpBufferTimer_ = 0.0f;
+	isHolding_		 = true;
+	jumpVelocityY_	 = std::sqrt(2.0f * std::abs(gravity_) * _maxHeight);
 }
 
 void JumpController::ReleaseButton()
@@ -70,7 +78,12 @@ float JumpController::GetJumpBufferRemainTime() const
 
 bool JumpController::IsFalling() const
 {
-	return pTargetRigidBody_->velocity_.y < 0.0f && pTargetRigidBody_->isGround_ == false && coyoteTimer_ == 0.0f;
+	return jumpVelocityY_ < 0.0f && pTargetRigidBody_->isGround_ == false && coyoteTimer_ == 0.0f;
+}
+
+float JumpController::GetVelocityY() const
+{
+	return jumpVelocityY_;
 }
 
 bool JumpController::CanJump() const

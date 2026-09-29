@@ -18,7 +18,7 @@ FadeOutScreen::FadeOutScreen()
 	pImageRenderer_->uiParams_.depth	 = 1;
 	pImageRenderer_->uiParams_.layerFlag = AllLayer();
 
-	Vector2F screenSize					 = Game::System<Screen>().GetSizeF();
+	Vector2F screenSize		   = Game::System<Screen>().GetSizeF();
 	pImageRenderer_->drawRect_ = RectF { Vector2F::Zero(), screenSize };
 	pImageRenderer_->color_.component[static_cast<int32_t>(Color::Component::ALPHA)] = 0;
 }
@@ -50,10 +50,6 @@ void FadeOutScreen::Update()
 		isFinished_ = true;
 	}
 }
-
-void FadeOutScreen::Draw() const {}
-
-void FadeOutScreen::Start() {}
 
 void FadeOutScreen::StartFadeOut()
 {

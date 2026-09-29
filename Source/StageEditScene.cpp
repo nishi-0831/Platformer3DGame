@@ -30,7 +30,7 @@ void StageEditScene::Initialize()
 	}
 }
 
-void StageEditScene::Update() {}
+void StageEditScene::UpdateScene() {}
 
 void StageEditScene::Draw() const {}
 

@@ -1,5 +1,5 @@
 // Collider.generated.h
-#include "Components/Collider/Collider.h"
+#include "../mtgb/Components/Collider/Collider.h"
 #include "Editor/MTImGui.h"
 
 
@@ -60,23 +60,23 @@
 		JsonConverter::Deserialize<float>(_target.radius_, _j,"radius_");
 		JsonConverter::Deserialize<mtgb::Vector3>(_target.extents_, _j,"extents_");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::Collider::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<Collider>([]( Collider* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->colliderType_, "colliderType_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->isStatic_, "isStatic_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->colliderTag_, "colliderTag_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->isTrigger_, "isTrigger_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->center_, "center_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->radius_, "radius_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->extents_, "extents_");
-			});
-		MTImGui::RegisterComponentViewer<Collider>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::Collider::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<Collider>([]( Collider* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->colliderType_, "colliderType_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->isStatic_, "isStatic_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->colliderTag_, "colliderTag_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->isTrigger_, "isTrigger_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->center_, "center_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->radius_, "radius_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->extents_, "extents_");
+				});
+			MTImGui::RegisterComponentViewer<Collider>();
+		}

@@ -1,5 +1,5 @@
 // TextRenderer.generated.h
-#include "Components/TextRenderer/TextRenderer.h"
+#include "../mtgb/Components/TextRenderer/TextRenderer.h"
 #include "Editor/MTImGui.h"
 
 
@@ -52,21 +52,21 @@
 		JsonConverter::Deserialize<int>(_target.fontSize_, _j,"fontSize_");
 		JsonConverter::Deserialize<mtgb::UIParams>(_target.params_, _j,"params_");
 		_target.OnPostRestore(); 
-	} 
-	/* ImGui表示処理の登録 */ 
-	void mtgb::TextRenderer::RegisterImGui() 
-	{ 
-		static bool registered = false; 
-		if (registered) return; 
-		registered = true; 
-	
-		RegisterShowFuncHolder::Set<TextRenderer>([]( TextRenderer* _target, const char* _name)
-			{
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->alignment, "alignment");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->text_, "text_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->rect_, "rect_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->fontSize_, "fontSize_");
-				PropertyDisplayRegistry::Instance().ShowProperty(&_target->params_, "params_");
-			});
-		MTImGui::RegisterComponentViewer<TextRenderer>();
 	}
+		/* ImGui表示処理の登録 */ 
+		void mtgb::TextRenderer::RegisterImGui() 
+		{ 
+			static bool registered = false; 
+			if (registered) return; 
+			registered = true; 
+	
+			RegisterShowFuncHolder::Set<TextRenderer>([]( TextRenderer* _target, const char* _name)
+				{
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->alignment, "alignment");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->text_, "text_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->rect_, "rect_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->fontSize_, "fontSize_");
+					PropertyDisplayRegistry::Instance().ShowProperty(&_target->params_, "params_");
+				});
+			MTImGui::RegisterComponentViewer<TextRenderer>();
+		}

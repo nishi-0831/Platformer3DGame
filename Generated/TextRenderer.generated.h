@@ -46,7 +46,7 @@ using TextRendererMemento = mtgb::ComponentMemento<mtgb::TextRenderer, TextRende
 	friend void from_json(const nlohmann::json& _j, TextRenderer& _target); \
 	\
 	static std::string TypeName(){ return "TextRenderer" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

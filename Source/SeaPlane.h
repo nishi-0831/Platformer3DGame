@@ -7,10 +7,6 @@ class SeaPlane : public GameObject
 	SeaPlane();
 	~SeaPlane();
 
-	void Update() override;
-	void Draw() const override;
-	void Start() override;
-
   private:
 	Transform* pTransform_;
 	MeshRenderer* pMeshRenderer_;

@@ -23,9 +23,3 @@ SeaPlane::SeaPlane()
 }
 
 SeaPlane::~SeaPlane() {}
-
-void SeaPlane::Update() {}
-
-void SeaPlane::Draw() const {}
-
-void SeaPlane::Start() {}

@@ -1,6 +1,5 @@
 #include "Core/Game.h"
 #include "Core/Component/ComponentPool.h"
-// #include "Windows.h"
 #include "Core/Component/IComponentPool.h"
 #include "Core/Entity.h"
 
@@ -32,7 +31,7 @@ void mtgb::Game::Exit()
 
 void mtgb::Game::UpdateFrame()
 {
-	for (auto&& updateSystem : pInstance_->pFrameUpdateSystems_)
+	for (auto updateSystem : pInstance_->pFrameUpdateSystems_)
 	{
 		updateSystem->Update();
 	}
@@ -40,7 +39,7 @@ void mtgb::Game::UpdateFrame()
 
 void mtgb::Game::UpdateFixed()
 {
-	for (auto&& updateSystem : pInstance_->pFixedUpdateSystems_)
+	for (auto updateSystem : pInstance_->pFixedUpdateSystems_)
 	{
 		updateSystem->Update();
 	}
@@ -164,7 +163,7 @@ void mtgb::Game::RunLoopGameCycle()
 {
 	while (true)
 	{
-		for (auto&& updateSystem : pInstance_->pCycleUpdateSystems_)
+		for (auto updateSystem : pInstance_->pCycleUpdateSystems_)
 		{
 			updateSystem->Update();
 		}

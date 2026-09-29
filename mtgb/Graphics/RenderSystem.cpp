@@ -15,8 +15,10 @@ void mtgb::RenderSystem::Update() {}
 
 void mtgb::RenderSystem::Render(GameScene& _scene)
 {
+	_scene.OnPreDrawGameObjects();
 	RenderDirectXWindows(_scene);
 
+	_scene.OnPreDrawGameObjects();
 	RenderImGuiWindows(_scene);
 }
 

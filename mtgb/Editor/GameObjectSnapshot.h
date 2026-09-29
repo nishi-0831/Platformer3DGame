@@ -14,5 +14,6 @@ namespace mtgb
 		std::string name;
 		std::string typeName;
 		std::vector<IComponentMemento*> mementos;
+		nlohmann::json propertiesJson;
 	};
 } // namespace mtgb

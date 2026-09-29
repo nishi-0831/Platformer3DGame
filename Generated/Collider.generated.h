@@ -48,7 +48,7 @@ using ColliderMemento = mtgb::ComponentMemento<mtgb::Collider, ColliderState>;
 	friend void from_json(const nlohmann::json& _j, Collider& _target); \
 	\
 	static std::string TypeName(){ return "Collider" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

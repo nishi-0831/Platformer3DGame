@@ -60,8 +60,10 @@ using {{ class_name }}Memento = mtgb::ComponentMemento<{{ fully_qualified_name }
 	friend void from_json(const nlohmann::json& _j, {{ class_name }}& _target); \
 	\
 	static std::string TypeName(){ return "{{ class_name }}" ;} \
-	/* ImGui表示処理の登録 */ \
+{{- if (array.contains meta_options "NoRegisterImGui") == false }}
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
+{{- end}}
 
 #pragma warning(push)
 #pragma warning(disable:4005)

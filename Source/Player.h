@@ -12,33 +12,38 @@ class Player : public mtgb::GameObject, public IActor
 	~Player();
 
 	void Update() override;
-	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
 	// IActor を介して継承されました
 	void OnStomped(IActor* _pOther) override;
 	void OnHitSide(IActor* _pOther) override;
 	void TakeDamage(int _damage) override;
+	void AddExternalVelocity(const Vector3& _velocity) override;
+	void SetSurfaceVelocity(const Vector3& _velocity) override;
 
   private:
+	Vector3 MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta);
+	float MoveTowards(float _curr, float _target, float _maxDelta);
 	/// <summary>
 	/// プレイヤーの移動方向を取得
 	/// </summary>
 	/// <returns></returns>
 	Vector3 GetMoveDir();
-	void UpdatePosition();
+	void UpdateVelocity();
 	void UpdateRotate();
 	void OnCollisionEnter(EntityId _entityId);
 	void InitializeState();
 	enum class STATE
 	{
 		IDLE,
-		RUN,
+		WALK,
 		JUMP,
 		FALL,
 		DYING,
-		VICTORY
+		VICTORY,
+		RUN
 	};
+	bool TryGetNextStateOnMove(STATE& _state);
 	mtstat::MTStat<STATE> state_;
 	Transform* pTransform_;
 	Collider* pCollider_;
@@ -67,6 +72,18 @@ class Player : public mtgb::GameObject, public IActor
 	float walkSmokeInterval_;
 	// 煙のエフェクトを出す間隔を計る経過時間
 	float walkSmokeElapsedTime_;
-	float jumpHeight_;
-	float moveSpeed_;
+	float walkJumpHeight_;
+	float runJumpHeight_;
+	// 歩くスピード
+	float walkSpeed_;
+	// 走るスピード
+	float dashSpeed_;
+	float acceleration_;
+	bool isRunning_;
+	float externalDeceleration_;
+	float friction_;
+	Vector3 externalVelocity_;
+	Vector3 movementVelocity_;
+	bool isDashJumping_;
+	Vector3 surfaceVelocity_;
 };

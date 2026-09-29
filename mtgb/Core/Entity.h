@@ -3,9 +3,6 @@
 
 namespace mtgb
 {
-	/// <summary>
-	/// ECSのEntity
-	/// </summary>
 	class Entity
 	{
 	  public:

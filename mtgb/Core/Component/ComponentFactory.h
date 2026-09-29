@@ -71,12 +71,7 @@ namespace mtgb
 		creatorsFromMemento_[typeIdx] = [](const IComponentMemento& _memento)
 		{
 			// memento をM型へダウンキャスト
-			const Memento* pMemento = dynamic_cast<const Memento*>(&_memento);
-			if (pMemento == nullptr)
-			{
-				// 必要ならエラー処理
-				return;
-			}
+			const Memento* pMemento = static_cast<const Memento*>(&_memento);
 
 			// Entityに割り当てられているインデックスの取得を試みる
 			auto componentIndex = Game::template System<ComponentRegistry>().GetComponentIndex(

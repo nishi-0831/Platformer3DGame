@@ -12,6 +12,9 @@
 #include "Button.h"
 #include "Slider.h"
 #include "RangedAttackEnemy.h"
+#include "RotateDamageBar.h"
+#include "MovingSaw.h"
+#include "BeltConveyor.h"
 void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegistrar)
 {
 	// ↓コピペ用
@@ -87,4 +90,19 @@ void mtgb::RegisterGameObjectType(mtgb::IGameObjectRegistrar* _pGameObjectRegist
 	_pGameObjectRegistrar->Register<Slider>(
 		mtgb::SpawnObjectDesc { .category = "UI", .displayName = "Slider", .tooltip = "", .typeName = "Slider" }
 	);
+
+	_pGameObjectRegistrar->Register<RotateDamageBar>(mtgb::SpawnObjectDesc { .category	  = "Gimmick",
+																			 .displayName = "SpikeBar",
+																			 .tooltip	  = "",
+																			 .typeName	  = "RotateDamageBar" });
+
+	_pGameObjectRegistrar->Register<MovingSaw>(mtgb::SpawnObjectDesc { .category	= "Gimmick",
+																	   .displayName = "MovingSaw",
+																	   .tooltip		= "",
+																	   .typeName	= "MovingSaw" });
+
+	_pGameObjectRegistrar->Register<BeltConveyor>(mtgb::SpawnObjectDesc { .category	   = "Gimmick",
+																		  .displayName = "BeltConveyor",
+																		  .tooltip	   = "",
+																		  .typeName	   = "BeltConveyor" });
 }

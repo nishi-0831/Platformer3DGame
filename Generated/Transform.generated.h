@@ -45,7 +45,7 @@ using TransformMemento = mtgb::ComponentMemento<mtgb::Transform, TransformState>
 	friend void from_json(const nlohmann::json& _j, Transform& _target); \
 	\
 	static std::string TypeName(){ return "Transform" ;} \
-	/* ImGui表示処理の登録 */ \
+        /* ImGui表示処理の登録 */ \
 	static void RegisterImGui(); \
 
 #pragma warning(push)

@@ -10,7 +10,6 @@ class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 	PatrolChargerEnemy();
 	~PatrolChargerEnemy();
 	void Update() override;
-	void Draw() const override;
 	void Start() override;
 	void ShowImGui() override;
 	void OnStomped(IActor* _pOther) override;

@@ -34,8 +34,6 @@ Goal::~Goal()
 	}
 }
 
-void Goal::Update() {}
-
 void Goal::Start()
 {
 	pTransform_ = Component<Transform>();
@@ -63,8 +61,6 @@ void Goal::Start()
 	params.worldMat = mat;
 	pEffect_		= Game::System<EffectManager>().Play("Treasure", params);
 }
-
-void Goal::Draw() const {}
 
 void Goal::OnClear()
 {

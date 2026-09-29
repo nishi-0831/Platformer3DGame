@@ -140,6 +140,8 @@ namespace mtgb
 		static void ChangeAllWindowOpen();
 		static void ShowLog();
 		static void ShowComponents(EntityId _entityId);
+		static void ShowComponent(EntityId _entityId, std::type_index _typeIdx);
+		template <typename T> static void ShowComponent(EntityId _entityId);
 		template <typename T> static void RegisterComponentViewer();
 
 	  private:
@@ -172,7 +174,6 @@ namespace mtgb
 	template <typename T> inline void MTImGui::TypedShow(T* _target, const std::string& _name, ShowType _show)
 	{
 		using Type = std::remove_pointer_t<std::remove_cvref_t<T>>;
-		// PushShowFunc( [=] {proxy->ShowImGui(std::any(target), name); }, show);
 		DirectShow(
 			[=]()
 			{
@@ -195,6 +196,10 @@ namespace mtgb
 		{
 			Instance().showQueues_[_show].emplace(_name, std::forward<Func>(_func));
 		}
+	}
+	template <typename T> inline void MTImGui::ShowComponent(EntityId _entityId)
+	{
+		ShowComponent(_entityId, typeid(T));
 	}
 	template <typename T> void mtgb::MTImGui::RegisterComponentViewer()
 	{
