@@ -326,53 +326,107 @@ void mtgb::Collider::Push(const Collider& _other)
 {
 	std::optional<Intersection::IntersectInfo> info = std::nullopt;
 
+	// 押し出される側のEntity
 	EntityId sphereTypeEntityId = INVALID_ENTITY;
+	// 押し出す側のEntity
+	EntityId pusherEntityId = INVALID_ENTITY;
 
+	// thisのコライダーの種類
 	switch (colliderType_)
 	{
+		// thisが球
 		case ColliderType::TYPE_SPHERE :
 			switch (_other.colliderType_)
 			{
+				// otherがAABB
 				case ColliderType::TYPE_AABB :
 					info = Intersection::Intersect(computeSphere_, _other.computeBox_);
 					break;
+				// otherがOBB
 				case ColliderType::TYPE_OBB :
 					info = Intersection::Intersect(computeSphere_, _other.computeOBB_);
 					break;
 			}
+			// thisが押し出される、otherが押し出す
 			sphereTypeEntityId = GetEntityId();
+			pusherEntityId	   = _other.GetEntityId();
 			break;
+		// thisがAABB
 		case ColliderType::TYPE_AABB :
 			switch (_other.colliderType_)
 			{
+				// otherが球
 				case ColliderType::TYPE_SPHERE :
 					info = Intersection::Intersect(_other.computeSphere_, computeBox_);
 					break;
 			}
+			// otherが押し出される、thisが押し出す
 			sphereTypeEntityId = _other.GetEntityId();
+			pusherEntityId	   = GetEntityId();
 			break;
+		// thisがOBB
 		case ColliderType::TYPE_OBB :
 			switch (_other.colliderType_)
 			{
+				// otherが球
 				case ColliderType::TYPE_SPHERE :
 					info = Intersection::Intersect(_other.computeSphere_, computeOBB_);
 					break;
 			}
+			// otherが押し出される、thisが押し出す
 			sphereTypeEntityId = _other.GetEntityId();
+			pusherEntityId	   = GetEntityId();
 			break;
 	}
-
-	Transform& transform = Transform::Get(sphereTypeEntityId);
-
+	// 接触処理が呼ばれていない場合、return
 	if (info.has_value() == false)
 		return;
+	// 押し出し側、押し出される側いずれかが無効なEntityIdの場合
+	if (pusherEntityId == INVALID_ENTITY || sphereTypeEntityId == INVALID_ENTITY)
+		return;
 
-	if (info.value().closest.y < transform.position.y)
+	// 押し出される側のTransform、Collider
+	Transform& pushedTransform = Transform::Get(sphereTypeEntityId);
+	Collider& pushedCollider   = Collider::Get(sphereTypeEntityId);
+
+	// 押し出す側のTransform、Collider
+	Collider& pusherCollider   = Collider::Get(pusherEntityId);
+	Transform& pusherTransform = Transform::Get(pusherEntityId);
+
+	// 押し出して座標更新
+	pushedTransform.position += info.value().push;
+
+	// 接地判定をする
+
+	// 押出し側の中心点から+Y方向の面までの距離を取得
+	float radius = 0.0f;
+	// 球体の場合
+	if (pusherCollider.colliderType_ == ColliderType::TYPE_SPHERE)
 	{
+		// 半径を使う
+		radius = pusherCollider.GetRadius();
+	}
+	// AABBまたはOBBの場合
+	else if (pusherCollider.colliderType_ == ColliderType::TYPE_AABB ||
+			 pusherCollider.colliderType_ == ColliderType::TYPE_OBB)
+	{
+		// Y軸の辺を使う
+		radius = pusherCollider.GetExtents().y;
+	}
+
+	// 押出し側(地面)の+Y方向の面の座標を計算する
+	float pusherTopFaceHeight = pusherTransform.position.y + radius;
+	float pushedCenter		  = pushedTransform.position.y + pushedCollider.GetCenter().y;
+	// 押し出される側のコライダーの底を計算
+	float pushedBottom = pushedCenter - pushedCollider.GetRadius();
+
+	// 押し出し側(地面)より押し出される側が上にいる場合
+	if (pusherTopFaceHeight <= pushedBottom)
+	{
+		// 接地時の処理
 		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
 		rigidBody.OnGround();
 	}
-	transform.position += info.value().push;
 }
 
 const DirectX::BoundingSphere& mtgb::Collider::GetBoundingSphere() const
@@ -395,9 +449,6 @@ const DirectX::BoundingOrientedBox& mtgb::Collider::GetOBB() const
 
 void mtgb::Collider::OnPostRestore()
 {
-	// TODO: コンポーネントの復元に依存関係を設定する
-	// 現在Transformよりも先に復元されてしまうためscaleの反映ができず、
-	// 次の更新時になってしまう
 	SetCenter(center_);
 	switch (colliderType_)
 	{

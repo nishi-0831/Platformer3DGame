@@ -399,7 +399,6 @@ mtgb::MeshAsset* mtgb::MeshAsset::LoadFromFbx(FbxNode* _pNode, double _unitScale
 	}
 
 	MeshAsset* asset			 = new MeshAsset();
-	asset->unitScaleFactor		 = _unitScaleFactor;
 	asset->pFbxMesh				 = mesh;
 	asset->pFbxNode				 = _pNode;
 	float fbxToWorld			 = static_cast<float>(1.0 / _unitScaleFactor);
