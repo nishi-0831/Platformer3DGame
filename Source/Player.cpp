@@ -77,8 +77,8 @@ void Player::Update()
 	Game::System<ShadowSettings>().SetCaster(GetEntityId());
 	// オーディオリスナーの位置を指定する
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
-	isRunning_ =
-		(InputUtil::GetGamePad(PadCode::L_STICK) || InputUtil::GetKey(KeyCode::LEFT_SHIFT)) && pRigidBody_->isGround_;
+	isRunning_ = (InputQuery::GetGamePad(PadButton::L_STICK) || InputQuery::GetKey(KeyCode::LEFT_SHIFT)) &&
+				 pRigidBody_->isGround_;
 	if (pRigidBody_->isGround_)
 	{
 		isDashJumping_ = false;
@@ -86,7 +86,7 @@ void Player::Update()
 	// 力尽きた状態、勝利状態でない場合
 	if (state_.Current() != STATE::DYING && state_.Current() != STATE::VICTORY)
 	{
-		bool jumpBtnPressed = InputUtil::GetGamePadDown(PadCode::CROSS) || InputUtil::GetKeyDown(KeyCode::SPACE);
+		bool jumpBtnPressed = InputQuery::GetGamePadDown(PadButton::SOUTH) || InputQuery::GetKeyDown(KeyCode::SPACE);
 		// ジャンプ処理の更新
 		jumpController_.Update(jumpBtnPressed);
 		bool isDashJump = jumpController_.CanJump() && state_.Current() == STATE::RUN;
@@ -113,7 +113,7 @@ void Player::Update()
 			Game::System<EffectManager>().Play("JumpSmoke", params);
 		}
 		// ジャンプボタンを離した処理
-		if (InputUtil::GetGamePadUp(PadCode::CROSS) || InputUtil::GetKeyUp(KeyCode::SPACE))
+		if (InputQuery::GetGamePadUp(PadButton::SOUTH) || InputQuery::GetKeyUp(KeyCode::SPACE))
 		{
 			if (pRigidBody_->IsJumping())
 			{
@@ -399,20 +399,20 @@ void Player::ShowImGui()
 
 Vector3 Player::GetMoveDir()
 {
-	Vector2F axis = InputUtil::GetAxis(StickType::LEFT);
-	if (InputUtil::GetKey(KeyCode::LEFT) || InputUtil::GetKey(KeyCode::A))
+	Vector2F axis = InputQuery::GetAxis(StickType::LEFT);
+	if (InputQuery::GetKey(KeyCode::LEFT) || InputQuery::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::RIGHT) || InputUtil::GetKey(KeyCode::D))
+	if (InputQuery::GetKey(KeyCode::RIGHT) || InputQuery::GetKey(KeyCode::D))
 	{
 		axis.x = 1;
 	}
-	if (InputUtil::GetKey(KeyCode::UP) || InputUtil::GetKey(KeyCode::W))
+	if (InputQuery::GetKey(KeyCode::UP) || InputQuery::GetKey(KeyCode::W))
 	{
 		axis.y = -1;
 	}
-	if (InputUtil::GetKey(KeyCode::DOWN) || InputUtil::GetKey(KeyCode::S))
+	if (InputQuery::GetKey(KeyCode::DOWN) || InputQuery::GetKey(KeyCode::S))
 	{
 		axis.y = 1;
 	}

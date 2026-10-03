@@ -175,36 +175,36 @@ void mtgb::ImGuiEditor::Update()
 	pManipulator_->Update();
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
+		if (InputQuery::GetKey(KeyCode::LEFT_CONTROL))
 		{
-			if (InputUtil::GetKeyDown(KeyCode::Z))
+			if (InputQuery::GetKeyDown(KeyCode::Z))
 			{
 				Game::System<CommandHistoryManager>().UndoCommand();
 			}
-			if (InputUtil::GetKeyDown(KeyCode::Y))
+			if (InputQuery::GetKeyDown(KeyCode::Y))
 			{
 				Game::System<CommandHistoryManager>().RedoCommand();
 			}
-			if (InputUtil::GetKeyDown(KeyCode::S))
+			if (InputQuery::GetKeyDown(KeyCode::S))
 			{
 				SaveMapData();
 			}
-			if (InputUtil::GetKeyDown(KeyCode::O))
+			if (InputQuery::GetKeyDown(KeyCode::O))
 			{
 				LoadMapData();
 			}
-			if (InputUtil::GetKeyDown(KeyCode::D))
+			if (InputQuery::GetKeyDown(KeyCode::D))
 			{
 				DuplicateGameObject();
 			}
-			if (InputUtil::GetKeyDown(KeyCode::F))
+			if (InputQuery::GetKeyDown(KeyCode::F))
 			{
 				// 選択中のゲームオブジェクトが一つの場合のみ接近
 				auto entities = pManipulator_->GetSelectedEntityId();
 				Game::System<ImGuiEditorCamera>().FrameSelected(entities);
 			}
 		}
-		if (InputUtil::GetKeyDown(KeyCode::DELETE))
+		if (InputQuery::GetKeyDown(KeyCode::DELETE))
 		{
 			// マニピュレータが選択しているゲームオブジェクトを削除
 			GameObjectGenerator::Delete(pManipulator_->GetSelectedEntityId());

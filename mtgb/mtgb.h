@@ -3,8 +3,6 @@
 #include "Core/Game.h"
 #include "cmtgb.h"
 
-#pragma region Utilities
-
 #include "Math/Vector3.h"
 #include "Math/Vector2.h"
 #include "Math/Vector2T.h"
@@ -20,10 +18,6 @@
 #include "Math/Mathf.h"
 #include "Collision/Detector/RectDetector.h"
 #include "Components/Interpolator/Interpolator.h"
-
-#pragma endregion
-
-#pragma region Systems
 
 #include "AssetsManager.h"
 #include "Window/Screen.h"
@@ -70,13 +64,10 @@
 #include "Core/GameObject/GameObjectGenerator.h"
 #include "Core/Component/ComponentFactory.h"
 #include "Graphics/ShadowSettings.h"
-#pragma endregion
 
 #include "Core/GameObject/GameObjectBuilder.h"
 #include "Core/GameObject/GameObject.h"
 #include "Camera/ICamera.h"
-
-#pragma region Resource
 
 #include "Window/WindowContext/WindowContextResource.h"
 #include "Window/WindowContext/WindowResource.h"
@@ -87,20 +78,12 @@
 #include "Window/WindowContext/CameraResource.h"
 #include "Input/Input.h"
 
-#pragma endregion
-#pragma region Data
-
-#include "Input/InputData.h"
+#include "Input/InputQuery.h"
 #include "Collision/RectContainsInfo.h"
-//
-#pragma endregion
-
-#pragma region Unname
 
 using mtgb::AudioHandle;
 using mtgb::FBXModelHandle;
 using mtgb::ImageHandle;
-using mtgb::OBJModelHandle;
 
 using mtgb::RectF;
 using mtgb::RectInt;
@@ -113,5 +96,3 @@ using mtgb::Collider;
 using mtgb::GameObject;
 using mtgb::RigidBody;
 using mtgb::Transform;
-
-#pragma endregion

@@ -6,7 +6,7 @@
 #include "ImGui/imgui.h"
 
 #include "Camera/CameraSystem.h"
-#include "Input/InputData.h"
+#include "Input/InputQuery.h"
 #include "EventManager.h"
 #include "Core/Entity.h"
 #include "Command/GuizmoManipulatedEvent.h"
@@ -444,15 +444,15 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 {
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
-		if (InputUtil::GetKeyDown(KeyCode::W))
+		if (InputQuery::GetKeyDown(KeyCode::W))
 		{
 			operation_ = ImGuizmo::TRANSLATE;
 		}
-		if (InputUtil::GetKeyDown(KeyCode::E))
+		if (InputQuery::GetKeyDown(KeyCode::E))
 		{
 			operation_ = ImGuizmo::ROTATE;
 		}
-		if (InputUtil::GetKeyDown(KeyCode::R))
+		if (InputQuery::GetKeyDown(KeyCode::R))
 		{
 			operation_ = ImGuizmo::SCALE;
 		}

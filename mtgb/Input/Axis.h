@@ -8,17 +8,4 @@ namespace mtgb
 		Y,
 		Z
 	};
-
-	enum struct PadAxisCode : uint8_t
-	{
-		LEFT_TRIGGER,
-		RIGHT_TRIGGER,
-		/*LeftStick,
-		RightStick*/
-	};
-
-	enum struct FlightStickAxisCode : uint8_t
-	{
-		SLIDER
-	};
 } // namespace mtgb

@@ -2,7 +2,7 @@
 #include <refl-cpp/refl.hpp>
 #include "Math/Vector3.h"
 #include "Math/Quaternion.h"
-#include "Input/JoystickProxy.h"
+#include "Input/ControllerProxy.h"
 #include "Input/MouseStateProxy.h"
 #include "Editor/PropertyDisplayRegistry.h"
 #include "ShowAttributes.h"
@@ -10,7 +10,6 @@
 #include "Math/Matrix4x4.h"
 #include "Math/RectF.h"
 #include "Graphics/UIParams.h"
-// #include "TypeRegistryImpl.h"
 #include "ShowFunc.h"
 using namespace mtgb;
 REGISTER_TYPE(Quaternion, ShowFunc(QuaternionShow {}))
@@ -29,7 +28,7 @@ REGISTER_END
 REGISTER_TYPE(Matrix4x4, ShowFunc(MatrixShow {}))
 REGISTER_END
 
-REGISTER_TYPE(JoystickProxy)
+REGISTER_TYPE(ControllerProxy)
 REGISTER_FIELD(lX)
 REGISTER_FIELD(lY)
 REGISTER_FIELD(lZ)
@@ -39,8 +38,6 @@ REGISTER_FIELD(lRz)
 REGISTER_FIELD(rglSlider)
 REGISTER_FIELD(rgdwPOV)
 REGISTER_FIELD(rgbButtons)
-REGISTER_FIELD(connectionStatus)
-REGISTER_FIELD(assignmentStatus)
 REGISTER_FIELD(lastErrorMessage)
 REGISTER_FIELD(deviceName)
 REGISTER_FIELD(deviceProductName)

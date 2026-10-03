@@ -2,11 +2,12 @@
 #include "Core/GameObject/GameObject.h"
 #include "Window/WindowContext/WindowContextResourceManager.h"
 #include "Input/Input.h"
+#include "Input/InputQuery.h"
+#include "Time/Timer.h"
 #include "Window/WindowContext/WindowContext.h"
 #include "Window/WindowContext/WindowContextUtil.h"
 #include "Editor/MTImGui.h"
 #include "Graphics/RenderSystem.h"
-#include "Input/InputData.h"
 #include "Core/GameObject/GameObjectGenerator.h"
 
 mtgb::SceneSystem::SceneSystem()
@@ -45,14 +46,14 @@ void mtgb::SceneSystem::Update()
 	// 更新、描画前にコールバック実行
 	ExecutePendingCallbacks();
 
-	if (InputUtil::GetKeyDown(KeyCode::F1))
+	if (InputQuery::GetKeyDown(KeyCode::F1))
 	{
 		MTImGui::ChangeAllWindowOpen();
 	}
 
-	if (InputUtil::GetKeyDown(KeyCode::P))
+	if (InputQuery::GetKeyDown(KeyCode::P))
 	{
-		Game::System<Input>().EnumJoystick();
+		Game::System<Input>().EnumController();
 	}
 	WinCtxRes::ChangeResource(WindowContext::FIRST);
 	Game::System<Input>().Update();

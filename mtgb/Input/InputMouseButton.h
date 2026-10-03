@@ -4,7 +4,7 @@
 /// <summary>
 /// マウスのマウスボタンコード
 /// </summary>
-enum struct MouseCode : uint8_t
+enum struct MouseButton : uint8_t
 {
 	LEFT   = 0x00,
 	RIGHT  = 0x01,

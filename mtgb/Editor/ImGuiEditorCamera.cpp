@@ -40,7 +40,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	, rotateSensitivity_ { 1.0f }
 	, moveSpeed_ { 10.0f }
 	, frameSelectedDistanceScale_ { 1.2f }
-	, mouseDownInWindow_ {false}
+	, mouseDownInWindow_ { false }
 	, dragging_ { false }
 	, dragRect_ {}
 	, rectFrameColor_ { IM_COL32(0, 0, 150, 255) }
@@ -67,7 +67,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::MIDDLE) == false);
+				return (InputQuery::GetMouse(MouseButton::MIDDLE) == false);
 			}
 		);
 
@@ -85,7 +85,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetKey(KeyCode::LEFT_MENU) == false);
+				return (InputQuery::GetKey(KeyCode::LEFT_MENU) == false);
 			}
 		);
 
@@ -103,7 +103,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::TRACK,
 			[]()
 			{
-				return (InputUtil::GetMouse(MouseCode::RIGHT) == false);
+				return (InputQuery::GetMouse(MouseButton::RIGHT) == false);
 			}
 		);
 
@@ -121,14 +121,14 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 				}
 
 				DoTrack();
-				if (InputUtil::GetMouseDown(MouseCode::LEFT))
+				if (InputQuery::GetMouseDown(MouseButton::LEFT))
 				{
 					if (ImGuizmo::IsViewManipulateHovered() == false && ImGuizmo::IsUsing() == false)
 					{
 						SelectGameObject();
 					}
 				}
-				if (InputUtil::GetMouse(MouseCode::LEFT) && InputUtil::GetKey(KeyCode::LEFT_SHIFT) &&
+				if (InputQuery::GetMouse(MouseButton::LEFT) && InputQuery::GetKey(KeyCode::LEFT_SHIFT) &&
 					Game::System<ImGuiEditor>().GetOperation() == ImGuizmo::OPERATION::TRANSLATE && ImGuizmo::IsUsing())
 				{
 					SurfaceSnap();
@@ -142,7 +142,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::PAN,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::RIGHT) && IsMouseInWindow(windowName_.c_str());
+				return InputQuery::GetMouse(MouseButton::RIGHT) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
@@ -150,7 +150,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::ORBIT,
 			[this]()
 			{
-				return InputUtil::GetKey(KeyCode::LEFT_MENU) && IsMouseInWindow(windowName_.c_str());
+				return InputQuery::GetKey(KeyCode::LEFT_MENU) && IsMouseInWindow(windowName_.c_str());
 			}
 		)
 		.RegisterTransition(
@@ -158,7 +158,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 			CameraOperation::DOLLY,
 			[this]()
 			{
-				return InputUtil::GetMouse(MouseCode::MIDDLE) && IsMouseInWindow(windowName_.c_str());
+				return InputQuery::GetMouse(MouseButton::MIDDLE) && IsMouseInWindow(windowName_.c_str());
 			}
 		);
 }
@@ -305,7 +305,7 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 
 void mtgb::ImGuiEditorCamera::DoDolly()
 {
-	Vector3 mouseMove = InputUtil::GetMouseMove();
+	Vector3 mouseMove = InputQuery::GetMouseMove();
 	if (mouseMove.Size() != 0)
 	{
 		// カメラの右、上ベクトル
@@ -322,7 +322,7 @@ void mtgb::ImGuiEditorCamera::DoDolly()
 
 void mtgb::ImGuiEditorCamera::DoPan()
 {
-	Vector3 mouseMove = InputUtil::GetMouseMove();
+	Vector3 mouseMove = InputQuery::GetMouseMove();
 	if (mouseMove.Size() != 0)
 	{
 		// マウス移動量を角度に変換
@@ -341,7 +341,7 @@ void mtgb::ImGuiEditorCamera::DoPan()
 void mtgb::ImGuiEditorCamera::DoTrack()
 {
 	const float TRACK_FACTOR = 0.15f;
-	Vector3 mouseMove = InputUtil::GetMouseMove();
+	Vector3 mouseMove		 = InputQuery::GetMouseMove();
 	if (mouseMove.z != 0.0f)
 	{
 		Vector3 forward = pCameraTransform_->Forward();
@@ -355,7 +355,7 @@ void mtgb::ImGuiEditorCamera::DoTrack()
 		{
 			distance_ *= (1.0f + TRACK_FACTOR);
 		}
-		
+
 		if (distance_ < MIN_DISTANCE_TO_PIVOT)
 		{
 			distance_ = MIN_DISTANCE_TO_PIVOT;
@@ -424,7 +424,7 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	{
 		hasTarget_ = true;
 		mtgb::GameObjectSelectedEvent event { .entityIds = { entityId }, .selectionMode = SelectionMode::REPLACE };
-		if (InputUtil::GetKey(KeyCode::LEFT_CONTROL))
+		if (InputQuery::GetKey(KeyCode::LEFT_CONTROL))
 		{
 			event.selectionMode = SelectionMode::ADD;
 		}
@@ -444,7 +444,7 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 	windowPos_ = ImGui::FindWindowByName(windowName_.c_str())->WorkRect.Min;
 
 	// マウスを押下した瞬間
-	if (InputUtil::GetMouseDown(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()))
+	if (InputQuery::GetMouseDown(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()))
 	{
 		mouseDownInWindow_ = true;
 
@@ -457,7 +457,7 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 	}
 
 	// マウスを押下している、ギズモを操作していない場合
-	if (InputUtil::GetMouse(MouseCode::LEFT) && IsMouseInWindow(windowName_.c_str()) &&
+	if (InputQuery::GetMouse(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()) &&
 		ImGuizmo::IsUsingAny() == false && mouseDownInWindow_)
 	{
 		ImVec2 mousePos = ImGui::GetMousePos();
@@ -494,7 +494,7 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 			ShowType::SCENE_VIEW
 		);
 	}
-	if (InputUtil::GetMouseUp(MouseCode::LEFT) && mouseDownInWindow_)
+	if (InputQuery::GetMouseUp(MouseButton::LEFT) && mouseDownInWindow_)
 	{
 		if (dragging_)
 		{

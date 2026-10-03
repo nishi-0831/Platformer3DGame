@@ -100,13 +100,13 @@ void Slider::SetValue(int _value)
 void Slider::UpdateUI()
 {
 	using namespace mtgb;
-	if (InputUtil::GetKeyDown(KeyCode::LEFT) ||
-		InputUtil::GetStickDown(Axis::X, StickType::LEFT, StickDirection::Negative))
+	if (InputQuery::GetKeyDown(KeyCode::LEFT) ||
+		InputQuery::GetStickDown(Axis::X, StickType::LEFT, StickDirection::Negative))
 	{
 		SlideValue(false);
 	}
-	if (InputUtil::GetKeyDown(KeyCode::RIGHT) ||
-		InputUtil::GetStickDown(Axis::X, StickType::LEFT, StickDirection::Positive))
+	if (InputQuery::GetKeyDown(KeyCode::RIGHT) ||
+		InputQuery::GetStickDown(Axis::X, StickType::LEFT, StickDirection::Positive))
 	{
 		SlideValue(true);
 	}

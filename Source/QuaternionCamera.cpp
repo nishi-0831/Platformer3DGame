@@ -47,14 +47,14 @@ void mtgb::QuaternionCamera::Update()
 
 	UpdateLerpSpeed();
 	Vector3 movement;
-	Vector3 mouseAxis = InputUtil::GetMouseAxis();
+	Vector3 mouseAxis = InputQuery::GetMouseAxis();
 	if (mouseAxis.Size() != 0.0f)
 	{
 		movement.x = mouseAxis.y;
 		movement.y = mouseAxis.x;
 	}
 
-	Vector2F stickAxis = InputUtil::GetAxis(StickType::RIGHT);
+	Vector2F stickAxis = InputQuery::GetAxis(StickType::RIGHT);
 	if (stickAxis.Size() != 0.0f)
 	{
 		movement.x = stickAxis.y;

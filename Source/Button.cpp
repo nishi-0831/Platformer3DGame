@@ -52,7 +52,7 @@ void Button::OnDeselected()
 
 void Button::UpdateUI()
 {
-	if (mtgb::InputUtil::GetKeyDown(KeyCode::ENTER) || mtgb::InputUtil::GetGamePadDown(PadCode::CIRCLE))
+	if (mtgb::InputQuery::GetKeyDown(KeyCode::ENTER) || mtgb::InputQuery::GetGamePadDown(PadButton::EAST))
 	{
 		onPressed_();
 	}

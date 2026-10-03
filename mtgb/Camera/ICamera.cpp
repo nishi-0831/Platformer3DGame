@@ -2,6 +2,7 @@
 #include "Input/InputData.h"
 #include "Core/Time/GameTime.h"
 #include "Components/Transform/Transform.h"
+#include "Input/InputQuery.h"
 mtgb::ICamera::ICamera()
 	: polarAngleRad_ { 0.0f }
 	, azimuthalAngleRad_ { 0.0f }
@@ -65,10 +66,10 @@ void mtgb::ICamera::DoOrbit()
 	switch (inputType_)
 	{
 		case InputType::MOUSE :
-			movement = InputUtil::GetMouseMove();
+			movement = InputQuery::GetMouseMove();
 			break;
 		case InputType::JOYPAD :
-			Vector2F vec2 = InputUtil::GetAxis(StickType::RIGHT);
+			Vector2F vec2 = InputQuery::GetAxis(StickType::RIGHT);
 			movement.x	  = -vec2.x;
 			movement.y	  = vec2.y;
 			break;

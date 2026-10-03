@@ -1,5 +1,5 @@
 #include "PanelManager.h"
-#include <Input/InputData.h>
+#include <Input/InputQuery.h>
 PanelManager::PanelManager()
 	: pCurrPanel_ { nullptr }
 {
@@ -56,13 +56,13 @@ void PanelManager::MoveFocusForward()
 void PanelManager::UpdatePanel()
 {
 	using namespace mtgb;
-	if (InputUtil::GetKeyDown(KeyCode::DOWN) || InputUtil::GetKeyDown(KeyCode::S) ||
-		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
+	if (InputQuery::GetKeyDown(KeyCode::DOWN) || InputQuery::GetKeyDown(KeyCode::S) ||
+		InputQuery::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Positive))
 	{
 		MoveFocusBackward();
 	}
-	if (InputUtil::GetKeyDown(KeyCode::UP) || InputUtil::GetKeyDown(KeyCode::W) ||
-		InputUtil::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
+	if (InputQuery::GetKeyDown(KeyCode::UP) || InputQuery::GetKeyDown(KeyCode::W) ||
+		InputQuery::GetStickDown(mtgb::Axis::Y, StickType::LEFT, StickDirection::Negative))
 	{
 		MoveFocusForward();
 	}

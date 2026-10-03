@@ -74,12 +74,12 @@ void mtgb::MTImGui::Update()
 	DirectShow(
 		[]()
 		{
-			if (ImGui::Button("EnumJoystick"))
+			if (ImGui::Button("EnumController"))
 			{
 				Game::System<SceneSystem>().RegisterPendingCallback(
 					[]()
 					{
-						Game::System<Input>().EnumJoystick();
+						Game::System<Input>().EnumController();
 					}
 				);
 			}

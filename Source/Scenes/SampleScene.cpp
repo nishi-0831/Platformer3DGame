@@ -64,7 +64,7 @@ void SampleScene::Initialize()
 
 void SampleScene::UpdateScene()
 {
-	if (mtgb::InputUtil::GetKeyDown(KeyCode::ESCAPE))
+	if (mtgb::InputQuery::GetKeyDown(KeyCode::ESCAPE))
 	{
 		mtgb::Game::System<mtgb::SceneSystem>().Move<ResultScene>();
 	}

@@ -1,8 +1,8 @@
-#include "JoystickProxy.h"
+#include "ControllerProxy.h"
 #include <iterator>
 #include "Input.h"
 
-mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)
+mtgb::ControllerProxy::ControllerProxy(const DIJOYSTATE& _js)
 	: lX(_js.lX)
 	, lY(_js.lY)
 	, lZ(_js.lZ)
@@ -15,17 +15,16 @@ mtgb::JoystickProxy::JoystickProxy(const DIJOYSTATE& _js)
 	std::copy(std::begin(_js.rgbButtons), std::end(_js.rgbButtons), rgbButtons);
 }
 
-void mtgb::JoystickProxy::UpdateFromInput(GUID _guid)
+void mtgb::ControllerProxy::UpdateFromInput(GUID _guid)
 {
-	Input& input	  = Game::System<Input>();
-	connectionStatus  = input.IsJoystickConnected(_guid) ? "接続中" : "切断";
-	assignmentStatus  = input.IsJoystickAssigned(_guid) ? "割り当て済み" : "未割当";
-	lastErrorMessage  = input.GetJoystickStatusMessage(_guid);
+	Input& input = Game::System<Input>();
+
+	lastErrorMessage  = input.GetControllerStatusMessage(_guid);
 	deviceName		  = input.GetDeviceName(_guid);
 	deviceProductName = input.GetDeviceProductName(_guid);
 }
 
-void mtgb::JoystickProxy::UpdateInputData(const DIJOYSTATE& _js)
+void mtgb::ControllerProxy::UpdateInputData(const DIJOYSTATE& _js)
 {
 	lX	= _js.lX;
 	lY	= _js.lY;

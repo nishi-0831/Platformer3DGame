@@ -5,11 +5,11 @@
 namespace mtgb
 {
 	/// <summary>
-	/// ジョイスティックの入力をImGuiで表示する用
+	/// コントローラーの入力をImGuiで表示する用
 	/// </summary>
-	struct JoystickProxy
+	struct ControllerProxy
 	{
-		JoystickProxy(const DIJOYSTATE& _js);
+		ControllerProxy(const DIJOYSTATE& _js);
 		LONG lX;
 		LONG lY;
 		LONG lZ;
@@ -20,20 +20,11 @@ namespace mtgb
 		DWORD rgdwPOV[4];
 		BYTE rgbButtons[32];
 
-		std::string connectionStatus;
-		std::string assignmentStatus;
 		std::string lastErrorMessage;
 		std::string deviceName;
 		std::string deviceProductName;
-		bool isConnected;
-		bool isAssigned;
 
 		void UpdateFromInput(GUID _guid);
 		void UpdateInputData(const DIJOYSTATE& _js);
-		// JoystickProxy operator=(const DIJOYSTATE& js);
 	};
-
-	// Dual Shockの場合
-	// lRx,lRyが左、右のトリガーボタン
-	// lYは上に倒すと負、下で正、lXは左が負、右が正
 } // namespace mtgb
