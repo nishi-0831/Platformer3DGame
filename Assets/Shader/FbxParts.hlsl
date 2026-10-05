@@ -53,19 +53,19 @@ float4 PS(VS_OUT inData) : SV_Target
     float4 ambient = float4(1,1,1,1);
     
     // 鏡面反射成分 (いったん0に)
-    float4 specuer = float4(0, 0, 0, 0);
+    float4 speculer = float4(0, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
         // 正反射ベクトル
         float4 r = reflect(lightDir, inData.normal);
         // 鏡面反射成分計算
-        specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
+        speculer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
     
     
     // 最終的な色
     //float4 color = diffuse;
-    float4 color = diffuse * shade + diffuse * ambient + specuer;
+    float4 color = diffuse * shade + diffuse * ambient + speculer;
     return color;
 
 }

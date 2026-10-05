@@ -61,15 +61,6 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 				// Wi ・ (P^-1 ・ Δ ・ P)
 				XMMATRIX newWorld = XMMatrixMultiply(originalWorldMatrices_[i], pivotDelta);
 
-				// 親がいる場合の処理
-				if (Transform* parent = transform.GetParent(); parent != nullptr)
-				{
-					Matrix4x4 parentWorld;
-					parent->GenerateWorldMatrix(&parentWorld);
-					XMMATRIX invParent = XMMatrixInverse(nullptr, parentWorld);
-					newWorld		   = XMMatrixMultiply(invParent, newWorld);
-				}
-
 				DirectX::XMVECTOR scale, trans, rot;
 				bool result = DirectX::XMMatrixDecompose(&scale, &transform.rotate.v, &trans, newWorld);
 				massert(result && "XMMatrixDecomposeに失敗 @MTImGui::DrawTransformGuizmo");
