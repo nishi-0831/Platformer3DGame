@@ -18,6 +18,7 @@
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	using namespace DirectX;
+	// 選択オブジェクトがないなら、return
 	if (selectedIds_.empty())
 	{
 		ImGuizmo::Enable(false);
@@ -25,23 +26,32 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 	}
 	ImGuizmo::Enable(true);
 
+	// ImGuiウィンドウの座標
 	ImVec2 pos = ImGui::GetWindowPos();
-	// ギズモ表示
+	// ギズモを描画する矩形範囲を設定
+
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+
+	// 操作前のワールド行列を保存
 	Matrix4x4 prevMat = worldMatrix4x4;
 
+	// トランスフォームギズモを操作。使用された場合、true
 	if (ImGuizmo::Manipulate(viewMat_, projMat_, operation_, mode_, worldMat_))
 	{
 		DirectX::XMMATRIX mat = XMLoadFloat4x4(reinterpret_cast<XMFLOAT4X4*>(worldMat_));
+		// 操作モードがスケールの場合、他モードとは別の計算をする
 		if (operation_ == ImGuizmo::OPERATION::SCALE)
 		{
+			// 操作されたワールド行列を分解
 			XMVECTOR scale, trans, rot;
 			XMMatrixDecompose(&scale, &rot, &trans, mat);
+
 			for (int i = 0; i < selectedIds_.size(); i++)
 			{
 				Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
-				transform.scale		 = XMVectorMultiply(preManipulationScales_[i], scale);
+				// 操作前のスケールに対して、変化量をかける
+				transform.scale = XMVectorMultiply(preManipulationScales_[i], scale);
 			}
 		}
 		else
@@ -80,12 +90,15 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 		return;
 	}
 	ImGuizmo::Enable(true);
+	// ImGuiウィンドウの座標
 	ImVec2 pos = ImGui::GetWindowPos();
-	// ギズモ表示
+	// ギズモを描画する矩形範囲を設定
 	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
 	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
 
+	// ImGuiウィンドウのサイズ
 	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+
 	ImVec2 viewGizmoPos(pos.x + displaySize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
 
 	float ident[16];
@@ -101,11 +114,15 @@ void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 		viewGizmoSize_,
 		IM_COL32(40, 40, 40, 255)
 	);
+	// ビューギズモを使用しているなら
 	if (ImGuizmo::IsUsingViewManipulate())
 	{
+		// ビュー行列の値をもとに、カメラの視点を操作する
+
 		viewMatrix4x4_		 = XMLoadFloat4x4(reinterpret_cast<XMFLOAT4X4*>(viewMat_));
 		XMMATRIX worldMatrix = XMMatrixInverse(nullptr, viewMatrix4x4_);
 
+		// ワールド行列を分解した行列の入れ物
 		XMVECTOR outScale;
 		XMVECTOR outRot;
 		XMVECTOR outPosition;
@@ -127,19 +144,21 @@ void mtgb::ImGuizmoManipulator::DrawSelectedObject(ShaderType _shaderType)
 {
 	for (EntityId id : selectedIds_)
 	{
+		// 描画に必要なコンポーネントを取得する
+
+		// MeshRendererコンポーネントを取得
 		MeshRenderer* pMeshRenderer = nullptr;
 		Game::System<MeshRendererCP>().TryGet(pMeshRenderer, id);
 		if (pMeshRenderer == nullptr)
-		{
 			continue;
-		}
+
+		// Transformコンポーネントを取得
 		Transform* pTransform = nullptr;
 		Game::System<TransformCP>().TryGet(pTransform, id);
-
 		if (pTransform == nullptr)
-		{
 			continue;
-		}
+
+		// 描画
 		Game::System<Fbx>().Draw(pMeshRenderer->GetMesh(), *pTransform, 0, _shaderType);
 	}
 }
@@ -236,16 +255,6 @@ void mtgb::ImGuizmoManipulator::CalculateGizmoMatrix()
 	memcpy(projMat_, &float4x4_, sizeof(projMat_));
 }
 
-void mtgb::ImGuizmoManipulator::CalculateOriginalScale()
-{
-	preManipulationScales_.clear();
-	for (size_t i = 0; i < selectedIds_.size(); i++)
-	{
-		Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
-		preManipulationScales_.push_back(transform.scale);
-	}
-}
-
 mtgb::ImGuizmoManipulator::ImGuizmoManipulator()
 	: ImGuiShowable("Manipulator", ShowType::SCENE_VIEW, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL)
 	, operation_ { ImGuizmo::TRANSLATE }
@@ -268,18 +277,22 @@ void mtgb::ImGuizmoManipulator::Initialize()
 
 void mtgb::ImGuizmoManipulator::Update()
 {
+	// トランスフォームギズモのXYZ軸の矢印が反転しないようにする
 	ImGuizmo::AllowAxisFlip(false);
+	// トランスフォームギズモのサイズを指定
 	ImGuizmo::SetGizmoSizeClipSpace(clipSpaceGizmoSize_);
-
+	// トランスフォームのモードを更新
 	UpdateOperationMode();
-	UpdateManipulator();
+	// ギズモの
+	UpdateGizmoManipulationState();
 }
 
 void mtgb::ImGuizmoManipulator::ShowImGui()
 {
-	// ImGuizmoの操作モードを指定
+	// ギズモ描画に使う行列を計算
 	CalculateGizmoMatrix();
 
+	// ギズモを描画
 	DrawTransformGizmo();
 	DrawViewGizmo();
 
@@ -297,29 +310,24 @@ void mtgb::ImGuizmoManipulator::ShowImGui()
 	{
 		operation_ = ImGuizmo::SCALE;
 	}
-
-	if (ImGui::RadioButton("Local", mode_ == ImGuizmo::LOCAL))
-	{
-		mode_ = ImGuizmo::LOCAL;
-	}
-	ImGui::SameLine();
-	if (ImGui::RadioButton("World", mode_ == ImGuizmo::WORLD))
-	{
-		mode_ = ImGuizmo::WORLD;
-	}
 }
 
 void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, SelectionMode _mode)
 {
+	// 選択オブジェクトが空の場合、「何も選択しない」として、選択全解除
 	if (_entityIds.empty())
 	{
 		DeselectAll();
 		return;
 	}
 
+	// ImGuizmoを使用中にする
 	ImGuizmo::Enable(true);
+
+	// 選択モードが「追加」の場合
 	if (_mode == SelectionMode::ADD)
 	{
+		// 既存の選択オブジェクトに追加する
 		for (auto id : _entityIds)
 		{
 			if (selectedIndex_.contains(id) == false)
@@ -329,10 +337,14 @@ void mtgb::ImGuizmoManipulator::Select(std::span<const EntityId> _entityIds, Sel
 			}
 		}
 	}
+	// 選択モードが「置き換え」の場合
 	else if (_mode == SelectionMode::REPLACE)
 	{
+		// 既存の選択オブジェクトを選択解除
 		selectedIds_.clear();
 		selectedIndex_.clear();
+
+		// 新たに選択オブジェクトとする
 		for (auto id : _entityIds)
 		{
 			selectedIndex_[id] = selectedIds_.size();
@@ -348,9 +360,14 @@ void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 		// 選択中のEntityIdを除去する
 		if (selectedIndex_.contains(id))
 		{
-			size_t selectedEntityIdx = selectedIndex_[id];
-			EntityId backEntityId	 = selectedIds_.back();
+			// swap and pop をする
 
+			// 選択中のEntityIdへのインデックス
+			size_t selectedEntityIdx = selectedIndex_[id];
+			// 選択オブジェクト配列の最後尾のEntityId
+			EntityId backEntityId = selectedIds_.back();
+
+			// 末尾の要素と削除したい要素をswapして、末尾を削除
 			std::swap(selectedIds_[selectedIndex_[id]], selectedIds_.back());
 			selectedIds_.pop_back();
 			selectedIndex_.erase(id);
@@ -376,22 +393,26 @@ ImGuizmo::OPERATION mtgb::ImGuizmoManipulator::GetOperation()
 
 void mtgb::ImGuizmoManipulator::DrawSelectedObjectOutline()
 {
+	// 深度ステンシルバッファに、選択オブジェクトの深度を書き込む
 	DirectX11Draw::SetIsWriteToRenderTarget(false);
 	DirectX11Draw::SetStencilMode(StencilMode::WriteSelected);
 	DrawSelectedObject(ShaderType::FBX_PARTS);
 
+	// アウトラインを描画していく
 	DirectX11Draw::SetIsWriteToRenderTarget(true);
 	DirectX11Draw::SetStencilMode(StencilMode::DrawOutline);
 	DrawSelectedObject(ShaderType::OUTLINE);
 
+	// 深度ステンシルステートをもとに戻す
 	DirectX11Draw::SetStencilMode(StencilMode::DEFAULT);
 }
 
-void mtgb::ImGuizmoManipulator::UpdateManipulator()
+void mtgb::ImGuizmoManipulator::UpdateGizmoManipulationState()
 {
 	isUsing_ = ImGuizmo::IsUsing();
 	if (isUsing_ == false)
 	{
+		// 選択オブジェクトの操作前のスケールを記録しておく
 		preManipulationScales_.clear();
 		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
@@ -402,8 +423,13 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 	// ギズモを使用 (動かしていなくても長押しを使用状態とみなす)
 	if (wasUsing_ == false && isUsing_ == true)
 	{
+		// 前回のギズモ操作前に保存したデータを削除(新たにギズモの使用を始めるので、前回のは不要)
+		// メメント削除
 		SAFE_CLEAR_CONTAINER_DELETE(transformMementos_);
+		// 操作前のスケール削除
 		preManipulationScales_.clear();
+
+		// 新たにメメント作成、スケール記録
 		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
 			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
@@ -416,12 +442,16 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 	// ギズモの使用を終了
 	if (wasUsing_ == true && isUsing_ == false)
 	{
+		// ギズモ操作コマンドを生成する
+
 		std::vector<TransformMemento*> currTransformMementos;
+		// 選択オブジェクトごとにメメント作成
 		for (size_t i = 0; i < selectedIds_.size(); i++)
 		{
 			Transform& transform = Game::System<TransformCP>().Get(selectedIds_[i]);
 			currTransformMementos.push_back(transform.SaveToMemento());
 		}
+		// コマンドを作って、実行
 		GuizmoManipulateCommand* cmd = new GuizmoManipulateCommand(transformMementos_, currTransformMementos);
 		Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 
@@ -433,6 +463,7 @@ void mtgb::ImGuizmoManipulator::UpdateManipulator()
 
 void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 {
+	// ImGuiウィンドウにフォーカスされているとき
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
 		if (InputQuery::GetKeyDown(KeyCode::W))
@@ -452,12 +483,14 @@ void mtgb::ImGuizmoManipulator::UpdateOperationMode()
 
 void mtgb::ImGuizmoManipulator::GenerateSelectedCommand(const GameObjectSelectedEvent& _event)
 {
+	// ゲームオブジェクト選択イベントのデータを使って、実際に選択コマンドを生成
 	SelectionCommand* cmd = new SelectionCommand(_event.entityIds, _event.selectionMode, *this);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }
 
 void mtgb::ImGuizmoManipulator::GenerateDeselectedCommand(const GameObjectDeselectedEvent& _event)
 {
+	// ゲームオブジェクト選択解除イベントのデータを使って、実際に選択解除コマンドを生成
 	DeselectionCommand* cmd = new DeselectionCommand(_event.entityIds, *this);
 	Game::System<CommandHistoryManager>().ExecuteCommand(cmd);
 }

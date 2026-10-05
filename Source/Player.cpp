@@ -399,7 +399,10 @@ void Player::ShowImGui()
 
 Vector3 Player::GetMoveDir()
 {
+	// 左スティックの入力を取得
 	Vector2F axis = InputQuery::GetAxis(StickType::LEFT);
+
+	// キーボード入力も取得
 	if (InputQuery::GetKey(KeyCode::LEFT) || InputQuery::GetKey(KeyCode::A))
 	{
 		axis.x = -1;
@@ -416,6 +419,7 @@ Vector3 Player::GetMoveDir()
 	{
 		axis.y = 1;
 	}
+	// 入力がない場合は、移動しない
 	if (axis.Size() == 0)
 		return Vector3::Zero();
 
@@ -434,6 +438,7 @@ Vector3 Player::GetMoveDir()
 
 Vector3 Player::MoveTowards(const Vector3& _curr, const Vector3& _target, float _maxDelta)
 {
+	// xyz、すべてにMoveTowardsを適用
 	return Vector3(
 		MoveTowards(_curr.x, _target.x, _maxDelta),
 		MoveTowards(_curr.y, _target.y, _maxDelta),
@@ -443,10 +448,13 @@ Vector3 Player::MoveTowards(const Vector3& _curr, const Vector3& _target, float 
 
 float Player::MoveTowards(float _curr, float _target, float _maxDelta)
 {
+	// 現在と目的の値の差が、移動量より少ないなら
 	if (std::abs(_target - _curr) <= _maxDelta)
 	{
+		// 目的値をそのまま返す
 		return _target;
 	}
+	// 目的の値へ近づける。現在の値の方が小さいなら正方向、大きいなら負方向
 	return _curr + std::copysign(_maxDelta, _target - _curr);
 }
 
@@ -454,6 +462,7 @@ void Player::UpdateVelocity()
 {
 	Vector3 moveDir	  = GetMoveDir();
 	float targetSpeed = 0.0f;
+	// 走っているか否かで速度を変更
 	if (isRunning_)
 	{
 		targetSpeed = dashSpeed_;
@@ -462,16 +471,20 @@ void Player::UpdateVelocity()
 	{
 		targetSpeed = walkSpeed_;
 	}
-
-	Vector3 movement	= moveDir * targetSpeed;
+	// 移動量
+	Vector3 movement = moveDir * targetSpeed;
+	// 移動速度を緩やかに変更
+	// x成分を変更
 	movementVelocity_.x = MoveTowards(movementVelocity_.x, movement.x, acceleration_ * Time::DeltaTimeF());
+	// z成分を変更
 	movementVelocity_.z = MoveTowards(movementVelocity_.z, movement.z, acceleration_ * Time::DeltaTimeF());
-
+	// y成分は0のまま
 	movementVelocity_.y = 0.0f;
 }
 
 void Player::UpdateRotate()
 {
+	// 移動方向に向かせる。ダッシュジャンプ中は向きを変えない
 	if (Vector3 moveDir = GetMoveDir(); moveDir.Size() != 0 && isDashJumping_ == false)
 	{
 		pTransform_->rotate = Quaternion::LookRotation(moveDir, Vector3::Up());
