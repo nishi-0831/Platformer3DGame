@@ -294,7 +294,7 @@ float mtgb::InputQuery::GetAxis(Axis _axis, StickType _stickType, WindowContext 
 				}
 				else if (input.gamePadType_ == GamePadType::XBOX)
 				{
-					value = -static_cast<float>(input.joyStateCurrent_.lRy);
+					value = static_cast<float>(input.joyStateCurrent_.lRy);
 				}
 				else
 				{
