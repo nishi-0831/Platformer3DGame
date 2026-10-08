@@ -23,7 +23,6 @@ namespace mtgb
 
 	  private:
 		int takeDamageAmount_;
-		// IActor を介して継承されました
 		void OnStomped(IActor* _pOther) override;
 
 		void OnHitSide(IActor* _pOther) override;
@@ -41,12 +40,21 @@ namespace mtgb
 		void ShowImGui() override;
 		void Start() override;
 		void StartOnEditMode() override;
-		void AddSpike();
-		void RemoveSpike();
+		/// <summary>
+		/// ダメージオブジェクトを一つ作成
+		/// </summary>
+		void AddDamageObject();
+		/// <summary>
+		/// ダメージオブジェクトを一つ削除
+		/// </summary>
+		void RemoveDamageObject();
 		nlohmann::json SerializeProperties() const override;
 		void DeserializeProperties(const nlohmann::json& _json) override;
 
 	  private:
+		/// <summary>
+		/// 初期値だけ、回転する。プレイシーン開始時に呼ぶ用
+		/// </summary>
 		void RotateInitialAngle();
 		Transform* pTransform_;
 		MeshRenderer* pMeshRenderer_;
@@ -55,11 +63,15 @@ namespace mtgb
 		std::stack<DamageObject*> pDamageObjs_;
 		// 一秒あたりに回転させる角度
 		DictionarySpinBox rotationSpeedSpinBox_;
-		float spikeRadius_;
+		// ダメージオブジェクトの半径。コライダーが球であること前提
+		float damageObjRadius_;
 		static unsigned int generateCounter_;
-		SpinBox spikeCountSpinBox_;
-		static constexpr int MAX_SPIKE_COUNT { 10 };
+		// ダメージオブジェクトの個数のスピンボックス
+		SpinBox damageObjCountSpinBox_;
+		static constexpr int MAX_DAMAGE_OBJ_COUNT { 10 };
+		// 回転が負方向か否か
 		bool reverse_;
+		// プレイシーン開始時の初期回転角度
 		SpinBox initialRotationAngleSpinBox_;
 	};
 

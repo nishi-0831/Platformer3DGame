@@ -37,7 +37,9 @@ namespace mtgb
 		Saw* pSaw_;
 		// 一秒あたりにのこぎりを回転させる角度
 		DictionarySpinBox rotationSpeedSpinBox_;
+		// 回転が負方向か否か
 		bool reverse_;
+		// プレイシーン開始時の初期回転角度
 		SpinBox initialRotationAngleSpinBox_;
 		// のこぎりとの距離
 		SpinBox sawOffsetSpinBox_;

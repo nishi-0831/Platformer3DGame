@@ -22,6 +22,9 @@ mtgb::Saw::~Saw() {}
 
 void mtgb::Saw::Update()
 {
+	// 丸影を落とす位置を指定する
+	Game::System<ShadowSettings>().AddCaster(GetEntityId(), radius_);
+
 	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec_ * Time::DeltaTimeF());
 	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), angleRad);
 	pTransform_->rotate = rot * pTransform_->rotate;

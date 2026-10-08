@@ -71,7 +71,7 @@ void SampleGame::SetupSystems()
 	Game::Set<ImGuiEditorCamera>(SystemUpdateType::FRAME);
 	Game::Set<ImGuiEditor>(SystemUpdateType::FRAME);
 	Game::Set<EffectManager>(SystemUpdateType::FRAME);
-	Game::Set<ShadowSettings>(SystemUpdateType::DONT_CALL_ME);
+	Game::Set<ShadowSettings>(SystemUpdateType::FRAME);
 	Game::Set<ShaderManager>(SystemUpdateType::DONT_CALL_ME);
 
 	Game::Set<ActorManager>(SystemUpdateType::DONT_CALL_ME);

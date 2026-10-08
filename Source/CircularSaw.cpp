@@ -50,11 +50,14 @@ mtgb::CircularSaw::CircularSaw()
 
 mtgb::CircularSaw::~CircularSaw()
 {
+	// SEを停止
 	Game::System<Audio>().Stop("Saw");
 	if (pSaw_)
 	{
 		pSaw_->DestroyMe();
 	}
+
+	// 自身からのこぎりまでの柱を削除
 	GameObject* pillar = Game::System<SceneSystem>().GetActiveScene()->GetGameObject(pPillarTransform_->GetEntityId());
 	if (pillar)
 	{
@@ -64,18 +67,27 @@ mtgb::CircularSaw::~CircularSaw()
 
 void mtgb::CircularSaw::Update()
 {
+	// 丸影を落とす位置を指定する
+	Game::System<ShadowSettings>().AddCaster(GetEntityId());
+
+	// 回転速度をスピンボックスから受け取る
 	rotationSpeedSpinBox_.Update();
 	float rotateAngleSec = static_cast<float>(rotationSpeedSpinBox_.GetCurrValue());
-	float angleRad		 = DirectX::XMConvertToRadians(rotateAngleSec * Time::DeltaTimeF());
-	Quaternion rot		 = DirectX::XMQuaternionRotationAxis(Vector3::Up(), reverse_ ? -angleRad : angleRad);
-	pTransform_->rotate	 = rot * pTransform_->rotate;
+
+	// 自転して、ノコギリを回転させる
+	float angleRad		= DirectX::XMConvertToRadians(rotateAngleSec * Time::DeltaTimeF());
+	Quaternion rot		= DirectX::XMQuaternionRotationAxis(Vector3::Up(), reverse_ ? -angleRad : angleRad);
+	pTransform_->rotate = rot * pTransform_->rotate;
 }
 void mtgb::CircularSaw::ShowImGui()
 {
 	GameObject::ShowImGui();
+	// 回転速度のスピンボックス表示
 	rotationSpeedSpinBox_.Update();
 	rotationSpeedSpinBox_.GetSpinBox().ShowImGui();
+	// 自身からノコギリまでの距離のスピンボックス表示
 	sawOffsetSpinBox_.ShowImGui();
+	// プレイシーン開始時の回転角度のスピンボックス表示
 	initialRotationAngleSpinBox_.ShowImGui();
 	ImGui::Checkbox("Reverse", &reverse_);
 }

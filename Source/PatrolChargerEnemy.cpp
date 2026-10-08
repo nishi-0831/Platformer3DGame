@@ -64,6 +64,9 @@ PatrolChargerEnemy::~PatrolChargerEnemy() {}
 
 void PatrolChargerEnemy::Update()
 {
+	// 丸影を落とす位置を指定する
+	Game::System<ShadowSettings>().AddCaster(GetEntityId());
+
 	if (pTargetTransform_ == nullptr)
 		return;
 

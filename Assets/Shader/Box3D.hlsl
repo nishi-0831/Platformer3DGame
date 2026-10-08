@@ -1,10 +1,20 @@
 #include "3DCommon.hlsli"
 
+// 受け取るキャスターの最大数
+#define MAX_CASTER_COUNT 128
+
+struct Caster
+{
+    float4 pos;
+    float radius;
+    float3 caster_padding;
+};
+
 cbuffer ShadowParam : register(b1)
 {
-    float4 casterPos;
-    float softness;
-    float3 shadowPadding;
+    Caster casters[MAX_CASTER_COUNT];
+    int casterCount;
+    float3 sp_padding;
 }
 
 struct BOX3D_VS_OUT
@@ -45,7 +55,6 @@ float4 PS(BOX3D_VS_OUT inData) : SV_Target
     // 法線
     inData.normal = normalize(inData.normal);
     
-    // 
     float4 shade = saturate(dot(inData.normal, -lightDir));
     shade.a = 1;
     
@@ -64,26 +73,29 @@ float4 PS(BOX3D_VS_OUT inData) : SV_Target
     float4 ambient = float4(1, 1, 1, 1);
     
     // 鏡面反射成分
-    float4 specuer = float4(0, 0, 0, 0);
+    float4 speculer = float4(0, 0, 0, 0);
     if (g_speculerColor.a != 0)
     {
         float4 r = reflect(lightDir, inData.normal);
-        specuer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
+        speculer = pow(saturate(dot(r, inData.eye)), g_shuniness) * g_speculerColor;
     }
-    
-    // 影
-    float2 casterPosXZ = casterPos.xz;
-    float2 posXZ = inData.positionW.xz;
-    float2 diff = abs(casterPosXZ - posXZ);
-    // 距離の二乗
-    float distSq = dot(diff, diff);
-    
-    float radius = 1.0f;
-    
-    float shadowAlpha = saturate((radius * radius - distSq) * softness);
+    float shadowAlpha = 0.0;
+    for (int i = 0; i < casterCount; i++)
+    {
+        Caster caster = casters[i];
+        float2 diff = abs(caster.pos.xz - inData.positionW.xz);
+        float distSq = dot(diff, diff);
+        float radiusSq = caster.radius * caster.radius;
+        if(radiusSq > 0.0f)
+        {
+            // 距離の二乗を半径の二乗で正規化
+            float casterAlpha = saturate(1.0f - distSq / radiusSq);
+            shadowAlpha = max(casterAlpha, shadowAlpha);
+        }
+    }
     float4 shadowColor = float4(0, 0, 0, shadowAlpha);
-    // 最終的な色
-    float4 color = diffuse * shade + diffuse * ambient + specuer;
+    float4 color = diffuse * shade + diffuse * ambient + speculer;
         
+    // 最終的な色
     return lerp(color,shadowColor,shadowAlpha);
 }

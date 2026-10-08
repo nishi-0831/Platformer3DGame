@@ -24,14 +24,7 @@ namespace mtgb
 		{
 		}
 
-		inline Matrix4x4& operator=(const Matrix4x4& _other)
-		{
-			if (this != &_other)
-			{
-				XMMATRIX::operator=(_other);
-			}
-			return *this;
-		}
+		inline Matrix4x4& operator=(const Matrix4x4& _other) = default;
 
 		inline bool Equals(const Matrix4x4& _other) const
 		{

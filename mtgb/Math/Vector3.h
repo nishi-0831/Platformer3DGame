@@ -11,10 +11,7 @@ namespace mtgb
 			: Vector3 { 0, 0, 0 }
 		{
 		}
-		Vector3(const Vector3& _other)
-			: Vector3 { _other.x, _other.y, _other.z }
-		{
-		}
+		Vector3(const Vector3& _other) = default;
 		Vector3(const DirectX::XMFLOAT3& _other)
 			: Vector3 { _other.x, _other.y, _other.z }
 		{

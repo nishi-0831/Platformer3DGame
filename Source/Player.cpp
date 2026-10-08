@@ -74,7 +74,7 @@ Player::~Player() {}
 void Player::Update()
 {
 	// 丸影を落とす位置を指定する
-	Game::System<ShadowSettings>().SetCaster(GetEntityId());
+	Game::System<ShadowSettings>().AddCaster(GetEntityId());
 	// オーディオリスナーの位置を指定する
 	Game::System<Audio>().SetListenerEntityId(GetEntityId());
 	isRunning_ = (InputQuery::GetGamePad(PadButton::L_STICK) || InputQuery::GetKey(KeyCode::LEFT_SHIFT)) &&

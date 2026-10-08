@@ -53,6 +53,10 @@ ScoreItem::ScoreItem()
 
 ScoreItem::~ScoreItem() {}
 
-void ScoreItem::Update() {}
+void ScoreItem::Update()
+{
+	// 丸影を落とす位置を指定する
+	Game::System<ShadowSettings>().AddCaster(GetEntityId());
+}
 
 void ScoreItem::Start() {}

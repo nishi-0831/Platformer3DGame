@@ -5,6 +5,8 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
+#include <span>
+#include <concepts>
 #include "Utility/StringComparators.h"
 
 #pragma comment(lib, "d3dcompiler.lib")
@@ -70,6 +72,15 @@ class ReflectiveConstantBuffer
 	/// <returns>設定に成功: true、失敗: false</returns>
 	template <typename T> bool SetConstantBuffer(const T& _data);
 	/// <summary>
+	/// バッファ内の変数に配列を設定する
+	/// 不足してるデータは0埋めされる
+	/// </summary>
+	/// <typeparam name="T"></typeparam>
+	/// <param name="_name"></param>
+	/// <param name="_data"></param>
+	/// <returns></returns>
+	template <typename T> bool SetVariableArray(std::string_view _name, std::span<const T> _data);
+	/// <summary>
 	/// レジスタ番号を返す
 	/// </summary>
 	/// <returns></returns>
@@ -92,6 +103,12 @@ class ReflectiveConstantBuffer
 
 template <typename T> inline bool ReflectiveConstantBuffer::SetVariable(std::string_view _name, const T& _data)
 {
+	if constexpr (std::is_trivially_copyable_v<T> == false)
+	{
+		static_assert(false, "Tがtrivially copyable ではありません");
+		return false;
+	}
+
 	auto itr = variableMap_.find(_name);
 	if (itr == variableMap_.end())
 	{
@@ -100,7 +117,7 @@ template <typename T> inline bool ReflectiveConstantBuffer::SetVariable(std::str
 
 	const ShaderVariableInfo& info = itr->second;
 
-	if (sizeof(T) == info.size)
+	if (sizeof(T) != info.size)
 	{
 		return false;
 	}
@@ -112,6 +129,12 @@ template <typename T> inline bool ReflectiveConstantBuffer::SetVariable(std::str
 
 template <typename T> inline bool ReflectiveConstantBuffer::SetConstantBuffer(const T& _data)
 {
+	if constexpr (std::is_trivially_copyable_v<T> == false)
+	{
+		static_assert(false, "Tがtrivially copyable ではありません");
+		return false;
+	}
+
 	size_t dataSize = sizeof(T);
 	if (dataSize != bufferSize_)
 	{
@@ -119,6 +142,37 @@ template <typename T> inline bool ReflectiveConstantBuffer::SetConstantBuffer(co
 	}
 
 	std::memcpy(localBuffer_.data(), &_data, sizeof(T));
+
+	return true;
+}
+
+template <typename T>
+inline bool ReflectiveConstantBuffer::SetVariableArray(std::string_view _name, std::span<const T> _data)
+{
+	if constexpr (std::is_trivially_copyable_v<T> == false)
+	{
+		static_assert(false, "Tがtrivially copyable ではありません");
+		return false;
+	}
+
+	auto itr = variableMap_.find(_name);
+	if (itr == variableMap_.end())
+	{
+		return false;
+	}
+
+	const ShaderVariableInfo& info = itr->second;
+	if (_data.size_bytes() > info.size)
+	{
+		return false;
+	}
+
+	std::memset(localBuffer_.data() + info.offset, 0, info.size);
+
+	if (_data.size_bytes() > 0)
+	{
+		std::memcpy(localBuffer_.data() + info.offset, _data.data(), _data.size_bytes());
+	}
 
 	return true;
 }

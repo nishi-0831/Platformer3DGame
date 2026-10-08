@@ -5,24 +5,12 @@
 #include "Core/Entity.h"
 #include <d3d11.h>
 #include <wrl/client.h>
+#include <vector>
 using Microsoft::WRL::ComPtr;
 
 namespace mtgb
 {
-	struct ShadowParams
-	{
-		ShadowParams();
-		Vector4 casterPos;
-		float softness;
-		float padding[3];
-		static ShadowParams Disabled()
-		{
-			ShadowParams p;
-			p.softness = 0.0f;
-			p.casterPos = { 0.0f, 0.0f, 0.0f, 0.0f };
-			return p;
-		}
-	};
+
 	/// <summary>
 	/// 丸影を描画するシステム
 	/// </summary>
@@ -30,13 +18,42 @@ namespace mtgb
 	{
 	  public:
 		ShadowSettings();
-		// ISystem を介して継承されました
 		void Initialize() override;
 		void Update() override;
-		void SetCaster(EntityId _id);
+		void AddCaster(EntityId _id, float _radius = 1.0f);
 		void SetCB();
 
 	  private:
-		ShadowParams params;
+		/// 丸影描画用の構造体 ///
+
+		/// <summary>
+		/// オブジェクトが影を落とすためのパラメータ
+		/// </summary>
+		struct Caster
+		{
+			Caster(const Vector4& _pos, float _radius);
+			Vector4 pos;
+			float radius;
+			Vector3 padding;
+		};
+		/// <summary>
+		/// シェーダーに渡す構造体。
+		/// シーン全体の影のパラメータを渡す
+		/// </summary>
+		struct ShadowParam
+		{
+			/// <summary>
+			/// 無効な影のパラメータを返す。
+			/// 影を描画しない場合に使う
+			/// </summary>
+			/// <returns></returns>
+			static ShadowParam Disabled();
+			std::vector<Caster> casters;
+			int casterCount;
+			Vector3 padding;
+		};
+
+		// シェーダーに渡す影パラメータ
+		ShadowParam shadowParams_;
 	};
 } // namespace mtgb
