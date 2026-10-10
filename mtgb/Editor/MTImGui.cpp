@@ -414,6 +414,7 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 
 	if (_showType == ShowType::SCENE_VIEW)
 	{
+		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
 		imGui.Begin(
 			GetName(ShowType::SCENE_VIEW),
 			&state.isOpen,
@@ -421,7 +422,7 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 		);
 
 		imGui.RenderSceneView();
-		imGui.SetDrawList();
+		imGui.SetImGuizmoDrawList();
 	}
 	else
 	{
@@ -431,6 +432,10 @@ void mtgb::MTImGui::ShowWindow(ShowType _showType)
 	ExecuteShowQueue(_showType);
 
 	imGui.End();
+	if (_showType == ShowType::SCENE_VIEW)
+	{
+		ImGui::PopStyleVar();
+	}
 }
 void mtgb::MTImGui::ExecuteShowQueue(ShowType _show)
 {

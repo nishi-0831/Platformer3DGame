@@ -1,19 +1,21 @@
 #include "ImGuiRenderer.h"
 #include "Core/Game.h"
+#include "MTImGui.h"
 #include "Graphics/DirectX11Draw.h"
 #include "Graphics/DirectX11Manager.h"
 #include "Window/WindowContext/WindowContext.h"
 #include "Window/WindowContext/WindowContextUtil.h"
 #include "ImGui/imgui_impl_win32.h"
 #include "ImGui/imgui_impl_dx11.h"
+#include "ImGui/imgui_internal.h"
 #include "Window/Screen.h"
 #include "Editor/ImGuiUtil.h"
 #include <filesystem>
 
 namespace fs = std::filesystem;
 mtgb::ImGuiRenderer::ImGuiRenderer()
-	: winWidth_ { 800 }
-	, winHeight_ { 600 }
+	: sceneViewWidth_ { 800 }
+	, sceneViewHeight_ { 600 }
 	, pRenderTargetView_ { nullptr }
 	, pSRV_ { nullptr }
 	, pSRVTexture_ { nullptr }
@@ -21,16 +23,13 @@ mtgb::ImGuiRenderer::ImGuiRenderer()
 	, pDepthStencil_ { nullptr }
 	, pDepthStencilView_ { nullptr }
 	, viewport_ {}
+	, sceneViewPos_ {}
 {
 }
 mtgb::ImGuiRenderer::~ImGuiRenderer() {}
 
 void mtgb::ImGuiRenderer::Initialize()
 {
-	Vector2Int size = Game::System<Screen>().GetSize();
-	winWidth_		= static_cast<UINT>(size.x);
-	winHeight_		= static_cast<UINT>(size.y);
-
 	IMGUI_CHECKVERSION();
 
 	ImGui::CreateContext();
@@ -72,7 +71,15 @@ void mtgb::ImGuiRenderer::Initialize()
 	);
 }
 
-void mtgb::ImGuiRenderer::Update() {}
+void mtgb::ImGuiRenderer::Update()
+{
+	ImGuiWindow* window = ImGui::FindWindowByName(MTImGui::GetName(ShowType::SCENE_VIEW));
+	if (window != nullptr)
+	{
+		sceneViewPos_.x = window->Pos.x;
+		sceneViewPos_.y = window->Pos.y + window->TitleBarHeight;
+	}
+}
 
 void mtgb::ImGuiRenderer::BeginFrame()
 {
@@ -103,12 +110,11 @@ void mtgb::ImGuiRenderer::Begin(const char* _str, bool* _isOpen, WindowFlags _fl
 	ImGui::Begin(_str, _isOpen, flags);
 }
 
-void mtgb::ImGuiRenderer::SetImGuizmoRenderTargetView()
+void mtgb::ImGuiRenderer::SetSceneViewRTVAndViewport()
 {
 	Game::System<DirectX11Manager>().ChangeRenderTargets(pRenderTargetView_, pDepthStencilView_);
+	Game::System<DirectX11Manager>().ChangeViewport(viewport_);
 }
-
-void mtgb::ImGuiRenderer::Draw() {}
 
 void mtgb::ImGuiRenderer::EndFrame()
 {
@@ -122,14 +128,15 @@ void mtgb::ImGuiRenderer::EndFrame()
 	}
 }
 
-void mtgb::ImGuiRenderer::SetDrawList()
+void mtgb::ImGuiRenderer::SetImGuizmoDrawList()
 {
 	ImGuizmo::SetDrawlist(ImGui::GetWindowDrawList());
 }
 
 void mtgb::ImGuiRenderer::RenderSceneView()
 {
-	ImGui::Image((void*)pSRV_.Get(), ImVec2(static_cast<float>(winWidth_), static_cast<float>(winHeight_)));
+	ImGui::SetCursorPos(ImVec2(0.0f, ImGui::GetCurrentWindow()->TitleBarHeight));
+	ImGui::Image((void*)pSRV_.Get(), ImVec2(static_cast<float>(sceneViewWidth_), static_cast<float>(sceneViewHeight_)));
 }
 
 void mtgb::ImGuiRenderer::End()
@@ -166,13 +173,13 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 	ComPtr<ID3D11DeviceContext> context = mtgb::DirectX11Draw::pContext_;
 
 	Game::System<DirectX11Manager>().CreateViewport(
-		{ static_cast<int>(winWidth_), static_cast<int>(winHeight_) },
+		{ static_cast<int>(sceneViewWidth_), static_cast<int>(sceneViewHeight_) },
 		viewport_
 	);
 
 	// RTV用テクスチャ作成
-	D3D11_TEXTURE2D_DESC desc { .Width		= winWidth_,
-								.Height		= winHeight_,
+	D3D11_TEXTURE2D_DESC desc { .Width		= sceneViewWidth_,
+								.Height		= sceneViewHeight_,
 								.MipLevels	= 1,
 								.ArraySize	= 1,
 								.Format		= DXGI_FORMAT_R8G8B8A8_UNORM,
@@ -191,7 +198,7 @@ void mtgb::ImGuiRenderer::CreateD3DResources()
 
 	// 深度ステンシルと深度ステンシルビューを作成
 	Game::System<DirectX11Manager>().CreateDepthStencilAndDepthStencilView(
-		Vector2Int(static_cast<int>(winWidth_), static_cast<int>(winHeight_)),
+		Vector2Int(static_cast<int>(sceneViewWidth_), static_cast<int>(sceneViewHeight_)),
 		pTexture_.GetAddressOf(),
 		pDepthStencilView_.ReleaseAndGetAddressOf()
 	);

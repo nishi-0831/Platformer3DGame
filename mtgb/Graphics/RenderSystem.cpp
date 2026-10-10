@@ -64,7 +64,7 @@ void mtgb::RenderSystem::RenderImGuiWindows(GameScene& _scene)
 	MTImGui::ShowLog();
 
 	//// RenderTargetViewをImGui用に切り替え
-	imGui.SetImGuizmoRenderTargetView();
+	imGui.SetSceneViewRTVAndViewport();
 
 	DirectX11Draw::Begin();
 	Game::System<ImGuiEditorCamera>().SetCamera();

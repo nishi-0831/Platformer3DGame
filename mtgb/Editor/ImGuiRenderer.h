@@ -7,6 +7,7 @@
 #include "Core/ISystem.h"
 #include "Editor/ImGuizmoManipulator.h"
 #include "Editor/ImGuiEditorCamera.h"
+#include "Math/Vector2.h"
 using Microsoft::WRL::ComPtr;
 struct ID3D11RenderTargetView;
 struct ID3D11ShaderResourceView;
@@ -54,17 +55,19 @@ namespace mtgb
 		/// ImGuiのウィンドウを終了
 		/// </summary>
 		void End();
-		void Draw();
 		/// <summary>
 		/// ImGuiのフレームを終了
 		/// </summary>
 		void EndFrame();
-		void SetDrawList();
+		/// <summary>
+		/// ImGuizmoのDrawList(ギズモの図形描画コマンドのリスト)を、現在アクティブなImGuiウィンドウのDrawListに設定する
+		/// </summary>
+		void SetImGuizmoDrawList();
 
 		/// <summary>
-		/// ImGuizmoウィンドウを描画するためにRTVをセット
+		/// シーンビュー用のRTV、ビューポートをセット
 		/// </summary>
-		void SetImGuizmoRenderTargetView();
+		void SetSceneViewRTVAndViewport();
 		/// <summary>
 		/// シーンビューを描画
 		/// </summary>
@@ -81,15 +84,28 @@ namespace mtgb
 		/// <param name="height">新しい高さ</param>
 		void OnResize(UINT _width, UINT _height);
 
+		/// <summary>
+		/// シーンビューのビューポートを返す
+		/// </summary>
+		/// <returns></returns>
 		D3D11_VIEWPORT GetViewport()
 		{
 			return viewport_;
 		}
+		Vector2 GetSceneViewPos()
+		{
+			return sceneViewPos_;
+		}
 
 	  private:
+		/// <summary>
+		/// シーンビューの描画に使用するリソースを作成
+		/// </summary>
 		void CreateD3DResources();
-		UINT winWidth_, winHeight_;
-
+		// シーンビューの幅、高さ
+		UINT sceneViewWidth_, sceneViewHeight_;
+		// シーンビューの座標
+		Vector2 sceneViewPos_;
 		// シーンビューの描画に使用するオブジェクト
 
 		ComPtr<ID3D11RenderTargetView> pRenderTargetView_;

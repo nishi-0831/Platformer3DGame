@@ -33,6 +33,12 @@ namespace
 {
 	const mtgb::Vector3 INIT_POS { 0, 15, -23 };
 	const mtgb::Vector3 INIT_ANGLE { 0.25, 0, 0 };
+
+	bool UsingImGuizmo()
+	{
+		// トランスフォームギズモ、ビューギズモのいずれかが使われているか?
+		return ImGuizmo::IsUsingAny() || ImGuizmo::IsUsingViewManipulate();
+	}
 } // namespace
 mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 	: ImGuiShowable { "EditorCamera", ShowType::EDITOR, INVALID_ENTITY, ImGuiShowable::Scope::GLOBAL }
@@ -123,7 +129,7 @@ mtgb::ImGuiEditorCamera::ImGuiEditorCamera()
 				DoTrack();
 				if (InputQuery::GetMouseDown(MouseButton::LEFT))
 				{
-					if (ImGuizmo::IsViewManipulateHovered() == false && ImGuizmo::IsUsing() == false)
+					if (UsingImGuizmo() == false)
 					{
 						SelectGameObject();
 					}
@@ -176,14 +182,19 @@ void mtgb::ImGuiEditorCamera::ShowImGui()
 	ImGui::InputFloat("AngleX", &polarAngleRad_);
 	ImGui::InputFloat("distance", &distance_);
 	ImGui::InputFloat("AngleY", &azimuthalAngleRad_);
-	float deltaTime = Time::DeltaTimeF();
-	ImGui::InputFloat("DeltaTime", &deltaTime);
 	ImGui::Checkbox("drag", &dragging_);
 
 	const char* statName = ShowState(sCameraOperation_.Current());
 	ImGui::LabelText("State", "%s", statName);
 	Vector3 euler = QuatToEuler(pCameraTransform_->rotate);
 	PropertyDisplayRegistry::Instance().ShowProperty(&euler, "euler");
+
+	ImVec2 mousePos = ImGui::GetMousePos();
+	auto window		= ImGui::GetCurrentWindow();
+	ImRect workRect = window->WorkRect;
+	ImVec2 workPos	= workRect.Min;
+	ImGui::Text("mousePos (%f,%f)", mousePos.x, mousePos.y);
+	ImGui::Text("workRectMin (%f,%f)", workPos.x, workPos.y);
 }
 
 void mtgb::ImGuiEditorCamera::Initialize() {}
@@ -195,8 +206,10 @@ void mtgb::ImGuiEditorCamera::SetCamera()
 
 void mtgb::ImGuiEditorCamera::Update()
 {
+	// ImGuiウィンドウがアクティブな場合
 	if (ImGui::IsWindowFocused(ImGuiFocusedFlags_AnyWindow))
 	{
+		// カメラを動かす
 		sCameraOperation_.Update();
 		CameraOperation operation;
 		if (sCameraOperation_.TryGetNextState(operation))
@@ -204,11 +217,17 @@ void mtgb::ImGuiEditorCamera::Update()
 			sCameraOperation_.Change(operation);
 		}
 	}
+
+	// カメラの姿勢を、球面座標系の値に変換していく
+
 	if (pCameraTransform_ == nullptr)
 		return;
+
+	// カメラの正面方向を計算
 	DirectX::XMVECTOR forward		= DirectX::XMVectorSet(0.0f, 0.0f, 1.0f, 0.0f);
 	DirectX::XMVECTOR rotatedVector = DirectX::XMVector3Rotate(forward, pCameraTransform_->rotate);
 
+	// 球面座標系に変換
 	Mathf::SphericalCoord coord = Mathf::CartesianToSpherical(DirectX::XMVector4Normalize(rotatedVector));
 	polarAngleRad_				= coord.theta;
 	azimuthalAngleRad_			= coord.phi;
@@ -253,19 +272,21 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 		if (pCollider == nullptr)
 			continue;
 
-		Vector3 pos = Game::System<TransformCP>().Get(id).position;
+		// バウンディングボックスを作成
+
+		// 球の場合
 		if (pCollider->colliderType_ == ColliderType::TYPE_SPHERE)
 		{
 			BoundingBox aabb;
 			BoundingBox::CreateFromSphere(aabb, pCollider->GetBoundingSphere());
-			aabb.Center = aabb.Center;
-		}
-		else if (pCollider->colliderType_ == ColliderType::TYPE_AABB)
-		{
-			BoundingBox aabb = pCollider->GetAABB();
-			aabb.Center		 = aabb.Center;
 			aabbs.push_back(aabb);
 		}
+		// AABBの場合
+		else if (pCollider->colliderType_ == ColliderType::TYPE_AABB)
+		{
+			aabbs.push_back(pCollider->GetAABB());
+		}
+		// OBBの場合
 		else if (pCollider->colliderType_ == ColliderType::TYPE_OBB)
 		{
 			BoundingOrientedBox obb = pCollider->GetOBB();
@@ -273,25 +294,28 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 			aabbs.push_back(aabb);
 		}
 	}
-	BoundingBox mergedAABB;
+
+	// バウンディングボックスの個数が0の場合、return
 	if (aabbs.empty())
 		return;
 
-	mergedAABB = aabbs.front();
+	// マージ結果を入れるバウンディングボックス
+	BoundingBox mergedAABB;
 
+	// 全ての選択バウンディングボックスをマージ
+	mergedAABB = aabbs.front();
 	for (int i = 1; i < aabbs.size(); i++)
 	{
 		BoundingBox::CreateMerged(mergedAABB, mergedAABB, aabbs[i]);
 	}
 
-	float fovRad = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
+	// カメラの位置を計算していく
 
-	float radius = 0.0f;
-
+	// AABBのXYZ軸の中から一番大きな値を基準に計算していく
 	Vector3 extents = mergedAABB.Extents;
-	// 一番大きな値を半径とする
-	radius = (std::max)({ extents.x, extents.y, extents.z });
+	float radius	= (std::max)({ extents.x, extents.y, extents.z });
 	// 対象を画面に収めるために必要な距離を計算
+	float fovRad	   = DirectX::XMConvertToRadians(Game::System<CameraSystem>().GetFov());
 	float baseDistance = radius / std::sinf(fovRad / 2.0f);
 	// 倍率をかけた最終的なカメラ距離
 	float distance = baseDistance * frameSelectedDistanceScale_;
@@ -299,8 +323,9 @@ void mtgb::ImGuiEditorCamera::FrameSelected(std::span<EntityId> _ids)
 	// カメラの位置を設定
 	Vector3 center				= mergedAABB.Center;
 	pCameraTransform_->position = center + pCameraTransform_->Back() * distance;
-	pivotPos_					= center;
-	distance_					= distance;
+	// ピボットの位置、ピボットまでの距離
+	pivotPos_ = center;
+	distance_ = distance;
 }
 
 void mtgb::ImGuiEditorCamera::DoDolly()
@@ -394,20 +419,15 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 	Game::System<CameraSystem>().GetProjMatrix(&proj);
 	Game::System<CameraSystem>().GetViewMatrix(&view);
 
-	ImGuiWindow* window = ImGui::FindWindowByName(windowName_.c_str());
+	Vector2 sceneViewPos = Game::System<ImGuiRenderer>().GetSceneViewPos();
 
-	if (window == nullptr)
-		return;
-
-	ImRect workRect = window->WorkRect;
-	ImVec2 workPos	= workRect.Min;
 	ImGuiUtil::GetMouseRay(
 		origin,
 		end,
 		proj,
 		view,
 		Game::System<ImGuiRenderer>().GetViewport(),
-		{ workPos.x, workPos.y }
+		{ sceneViewPos.x, sceneViewPos.y }
 	);
 
 	vec = end - origin;
@@ -441,10 +461,12 @@ void mtgb::ImGuiEditorCamera::SelectGameObject()
 
 void mtgb::ImGuiEditorCamera::ProcessDrag()
 {
-	windowPos_ = ImGui::FindWindowByName(windowName_.c_str())->WorkRect.Min;
+	Vector2 sceneViewPos = Game::System<ImGuiRenderer>().GetSceneViewPos();
+	windowPos_.x		 = sceneViewPos.x;
+	windowPos_.y		 = sceneViewPos.y;
 
 	// マウスを押下した瞬間
-	if (InputQuery::GetMouseDown(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()))
+	if (InputQuery::GetMouseDown(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()) && UsingImGuizmo() == false)
 	{
 		mouseDownInWindow_ = true;
 
@@ -457,8 +479,8 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 	}
 
 	// マウスを押下している、ギズモを操作していない場合
-	if (InputQuery::GetMouse(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()) &&
-		ImGuizmo::IsUsingAny() == false && mouseDownInWindow_)
+	if (InputQuery::GetMouse(MouseButton::LEFT) && IsMouseInWindow(windowName_.c_str()) && UsingImGuizmo() == false &&
+		mouseDownInWindow_)
 	{
 		ImVec2 mousePos = ImGui::GetMousePos();
 		Vector2F mousePosInSceneView { mousePos.x - windowPos_.x, mousePos.y - windowPos_.y };
@@ -494,12 +516,16 @@ void mtgb::ImGuiEditorCamera::ProcessDrag()
 			ShowType::SCENE_VIEW
 		);
 	}
-	if (InputQuery::GetMouseUp(MouseButton::LEFT) && mouseDownInWindow_)
+
+	// マウスを離したとき
+	if (InputQuery::GetMouseUp(MouseButton::LEFT) && UsingImGuizmo() == false && mouseDownInWindow_)
 	{
+		// ドラッグしているなら、範囲選択
 		if (dragging_)
 		{
 			RectSelect();
 		}
+		// 範囲選択の状態をリセット
 		dragging_		   = false;
 		mouseDownInWindow_ = false;
 	}
@@ -513,9 +539,10 @@ void mtgb::ImGuiEditorCamera::RectSelect()
 	Vector2F windowPosVec2 = Vector2F(windowPos_.x, windowPos_.y);
 	Vector2F begin		   = dragRect_.GetBegin();
 	Vector2F end		   = dragRect_.GetEnd();
+	auto viewport		   = Game::System<ImGuiRenderer>().GetViewport();
 	const Vector2Int SCREEN_SIZE { Game::System<Screen>().GetSize() };
-	float viewW = static_cast<float>(SCREEN_SIZE.x);
-	float viewH = static_cast<float>(SCREEN_SIZE.y);
+	float viewW = viewport.Width;
+	float viewH = viewport.Height;
 
 	// 選択範囲(スクリーン座標)をNDCに変換する
 	float x0 = 2.0f * (begin.x / viewW) - 1.0f;
@@ -570,60 +597,66 @@ void mtgb::ImGuiEditorCamera::RectSelect()
 			containsEntityIds.push_back(id);
 		}
 	}
+
+	// ゲームオブジェクト選択イベントを呼び出す
 	mtgb::GameObjectSelectedEvent event { .entityIds = containsEntityIds, .selectionMode = selectionMode_ };
 	Game::System<EventManager>().GetEvent<mtgb::GameObjectSelectedEvent>().Invoke(event);
 }
 
 void mtgb::ImGuiEditorCamera::SurfaceSnap()
 {
+	// 選択オブジェクトの数が一つでないなら、return
 	auto selectedEntityIds = Game::System<ImGuiEditor>().GetSelectedEntityId();
 	if (selectedEntityIds.size() != 1)
 	{
 		return;
 	}
-	EntityId selectedEntityId = selectedEntityIds[0];
-	Vector3 origin, end, vec;
+
+	// プロジェクション行列、ビュー行列を取得
 	Matrix4x4 proj, view;
 	Game::System<CameraSystem>().GetProjMatrix(&proj);
 	Game::System<CameraSystem>().GetViewMatrix(&view);
 
-	ImGuiWindow* window = ImGui::FindWindowByName(windowName_.c_str());
-
-	if (window == nullptr)
-		return;
-
-	ImRect workRect = window->WorkRect;
-	ImVec2 workPos	= workRect.Min;
+	// クリックした位置からレイを作成
+	Vector2 sceneViewPos = Game::System<ImGuiRenderer>().GetSceneViewPos();
+	Vector3 origin, end;
 	ImGuiUtil::GetMouseRay(
 		origin,
 		end,
 		proj,
 		view,
 		Game::System<ImGuiRenderer>().GetViewport(),
-		{ workPos.x, workPos.y }
+		{ sceneViewPos.x, sceneViewPos.y }
 	);
 
-	vec = end - origin;
-
-	// vec.Normalize()の結果を別変数に保存して、元の長さを保持
-	Vector3 direction = vec.Normalize();
+	Vector3 direction = (end - origin).Normalize();
 
 	const CameraSystem& camera = Game::System<CameraSystem>();
-	float distance			   = camera.GetFar() - camera.GetNear();
+	// レイの距離
+	float distance = camera.GetFar() - camera.GetNear();
 
+	// 選択オブジェクトを除いた全オブジェクトに対してレイキャスト
+	EntityId selectedEntityId = selectedEntityIds[0];
 	Intersection::RaycastInfo info;
 	EntityId entityId =
 		Game::System<ColliderCP>()
 			.RayCastHitAll(origin, direction, distance, &info, ColliderTag::GAME_OBJECT, selectedEntityId);
 	if (entityId != INVALID_ENTITY)
 	{
+		// スナップしていく
+
+		// 選択オブジェクトのTransform、Collider
 		Transform& selectedTransform = Game::System<TransformCP>().Get(selectedEntityId);
 		Collider& selectedCollider	 = Game::System<ColliderCP>().Get(selectedEntityId);
 
 		float pushDistance = 0.0f;
-		Vector3 n		   = info.normal;
+		// レイに触れたオブジェクトの法線
+		Vector3 n = info.normal;
 
 		ColliderType type = selectedCollider.colliderType_;
+
+		// 選択オブジェクトのコライダーの種類に応じて、押し出し距離を計算
+
 		// 球の場合
 		if (type == ColliderType::TYPE_SPHERE)
 		{

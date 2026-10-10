@@ -15,6 +15,7 @@
 #include "Graphics/DirectX11Draw.h"
 #include "Graphics/Model/Fbx.h"
 #include "Components/MeshRenderer/MeshRenderer.h"
+#include "ImGuiRenderer.h"
 void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 {
 	using namespace DirectX;
@@ -26,12 +27,13 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 	}
 	ImGuizmo::Enable(true);
 
-	// ImGuiウィンドウの座標
-	ImVec2 pos = ImGui::GetWindowPos();
+	// シーンビューの座標
+	Vector2 pos = Game::System<ImGuiRenderer>().GetSceneViewPos();
+	// シーンビューのビューポート
+	auto viewport = Game::System<ImGuiRenderer>().GetViewport();
 	// ギズモを描画する矩形範囲を設定
 
-	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
-	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImGuizmo::SetRect(pos.x, pos.y, viewport.Width, viewport.Height);
 
 	// 操作前のワールド行列を保存
 	Matrix4x4 prevMat = worldMatrix4x4;
@@ -84,22 +86,19 @@ void mtgb::ImGuizmoManipulator::DrawTransformGizmo()
 void mtgb::ImGuizmoManipulator::DrawViewGizmo()
 {
 	using namespace DirectX;
-	if (selectedIds_.empty())
-	{
-		ImGuizmo::Enable(false);
-		return;
-	}
 	ImGuizmo::Enable(true);
-	// ImGuiウィンドウの座標
-	ImVec2 pos = ImGui::GetWindowPos();
+
+	// シーンビューの座標
+	Vector2 pos = Game::System<ImGuiRenderer>().GetSceneViewPos();
+	// シーンビューのビューポート
+	auto viewport = Game::System<ImGuiRenderer>().GetViewport();
 	// ギズモを描画する矩形範囲を設定
-	float tabBarHeight = ImGui::GetCurrentWindow()->TitleBarHeight;
-	ImGuizmo::SetRect(pos.x, pos.y + tabBarHeight, ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	ImGuizmo::SetRect(pos.x, pos.y, viewport.Width, viewport.Height);
 
-	// ImGuiウィンドウのサイズ
-	ImVec2 displaySize(ImGui::GetIO().DisplaySize.x, ImGui::GetIO().DisplaySize.y);
+	// シーンビューのサイズのサイズ
+	ImVec2 sceneViewSize(viewport.Width, viewport.Height);
 
-	ImVec2 viewGizmoPos(pos.x + displaySize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
+	ImVec2 viewGizmoPos(pos.x + sceneViewSize.x - viewGizmoSize_.x, pos.y + viewGizmoSize_.y);
 
 	float ident[16];
 
