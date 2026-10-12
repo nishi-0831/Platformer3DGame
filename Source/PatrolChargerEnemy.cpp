@@ -12,7 +12,6 @@ PatrolChargerEnemy::PatrolChargerEnemy()
 	, pMeshRenderer_ { Component<MeshRenderer>() }
 	, pCollider_ { Component<Collider>() }
 	, pTargetTransform_ { nullptr }
-	, foundFOV_ { 45.0f }
 	, foundDistance_ { 5.0f }
 	, pInterpolator_ { Component<Interpolator>() }
 	, targetEntityId_ { INVALID_ENTITY }
@@ -116,6 +115,7 @@ void PatrolChargerEnemy::ShowImGui()
 	{
 		ImGui::Text("STATE::RETURN_TO_PATROL");
 	}
+	ImGui::Text("%i", audioSourceHandle_);
 }
 
 void PatrolChargerEnemy::OnStomped(IActor* _pOther)
@@ -140,9 +140,10 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		RigidBody& otherRigidBody = RigidBody::Get(id);
 		Vector3 bounceVelcity	  = Vector3(0.0f, onStompedBounce_, 0.0f);
 		_pOther->AddExternalVelocity(bounceVelcity);
-	}
 
-	state_.Change(STATE::DYING);
+		pCollider_->isTrigger_ = true;
+		state_.Change(STATE::DYING);
+	}
 }
 
 void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
@@ -159,7 +160,11 @@ void PatrolChargerEnemy::OnHitSide(IActor* _pOther)
 
 void PatrolChargerEnemy::TakeDamage(int _damage)
 {
-	state_.Change(STATE::DYING);
+	if (state_.Current() != STATE::DYING)
+	{
+		state_.Change(STATE::DYING);
+		pRigidBody_->isKinematic_ = true;
+	}
 }
 
 void PatrolChargerEnemy::InitializeState()
@@ -264,7 +269,7 @@ void PatrolChargerEnemy::Patrol()
 	pTransform_->position = pInterpolator_->EvaluatePos();
 	pTransform_->rotate	  = pInterpolator_->CalculateRot();
 
-	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
+	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->position;
 	if (toTarget.Size() <= foundDistance_)
 	{
 		// 一定時間待機してから突進状態に遷移
@@ -336,29 +341,6 @@ void PatrolChargerEnemy::Dying()
 	}
 }
 
-bool PatrolChargerEnemy::Search()
-{
-	Vector3 toTarget = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
-
-	// 正面方向とターゲットの内積を計算
-	float dotProduct =
-		DirectX::XMVectorGetX(DirectX::XMVector3Dot(pTransform_->Forward(), Vector3::Normalize(toTarget)));
-	// 角度を算出(ラジアン)
-	float angleRadian = std::acosf(std::clamp(dotProduct, -1.0f, 1.0f));
-	// degreeに直す
-	float angleDegree = DirectX::XMConvertToDegrees(angleRadian);
-
-	// 発見したと判定する角度、距離かどうか
-	if (angleDegree <= foundFOV_ && toTarget.Size() <= foundDistance_)
-	{
-		// 発見
-		// Quaternion targetRotation{ Quaternion::LookRotation(Vector3::Normalize(toTarget),pTransform_->Up()) };
-		// state_.Change(STATE::CHARGE);
-		return true;
-	}
-	return false;
-}
-
 void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 {
 	// ボーンの名前を取得
@@ -376,12 +358,14 @@ void PatrolChargerEnemy::OnFootstepRun(const AnimationEvent& _event)
 	// 煙のエフェクトを再生
 	Game::System<EffectManager>().Play("WalkSmoke", params);
 
+	Game::System<Audio>().Stop("FootstepMonsterRun", audioSourceHandle_);
 	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterRun");
 	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterRun", audioSourceHandle_);
 }
 
 void PatrolChargerEnemy::OnFootstepWalk(const AnimationEvent& _event)
 {
+	Game::System<Audio>().Stop("FootstepMonsterWalk", audioSourceHandle_);
 	audioSourceHandle_ = Game::System<Audio>().Play("FootstepMonsterWalk");
 	Game::System<Audio>().SetEmitter(GetEntityId(), "FootstepMonsterWalk", audioSourceHandle_);
 }

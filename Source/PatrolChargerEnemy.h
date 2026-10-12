@@ -26,8 +26,6 @@ class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 
 	// 捜索対象のTransform
 	Transform* pTargetTransform_;
-	// 発見と判定する角度
-	float foundFOV_;
 	// 発見と判定する距離
 	float foundDistance_;
 	// 巡回に使う
@@ -55,7 +53,6 @@ class PatrolChargerEnemy : public mtgb::GameObject, public IActor
 	void Wait();
 	void ReturnToPatrol();
 	void Dying();
-	bool Search();
 	mtstat::MTStat<STATE> state_;
 
 	// ------巡回状態------

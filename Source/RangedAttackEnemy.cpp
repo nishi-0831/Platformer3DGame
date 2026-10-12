@@ -117,16 +117,20 @@ void RangedAttackEnemy::OnStomped(IActor* _pOther)
 		EntityId id			  = _pOther->GetId();
 		Vector3 bounceVelcity = Vector3(0.0f, onStompedBounce_, 0.0f);
 		_pOther->AddExternalVelocity(bounceVelcity);
-	}
 
-	state_.Change(STATE::DYING);
+		pCollider_->isTrigger_ = true;
+		state_.Change(STATE::DYING);
+	}
 }
 
 void RangedAttackEnemy::OnHitSide(IActor* _pOther) {}
 
 void RangedAttackEnemy::TakeDamage(int _damage)
 {
-	state_.Change(STATE::DYING);
+	if (state_.Current() != STATE::DYING)
+	{
+		state_.Change(STATE::DYING);
+	}
 }
 
 void RangedAttackEnemy::Wait()
