@@ -48,6 +48,17 @@ mtgb::DeleteGameObjectCommand::DeleteGameObjectCommand(
 	}
 }
 
+mtgb::DeleteGameObjectCommand::~DeleteGameObjectCommand()
+{
+	for (auto& snapshot : snapshots_)
+	{
+		for (IComponentMemento* memento : snapshot.mementos)
+		{
+			SAFE_DELETE(memento);
+		}
+	}
+}
+
 void mtgb::DeleteGameObjectCommand::Execute()
 {
 	for (const auto& snapshot : snapshots_)

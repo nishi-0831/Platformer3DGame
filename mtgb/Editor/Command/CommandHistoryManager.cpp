@@ -69,6 +69,7 @@ void CommandHistoryManager::UndoCommand()
 		assert(
 			false && " コマンドをまとめている最中のUndoは許可されていません。 CancellGroupCommand() を呼んでください "
 		);
+		return;
 	}
 
 	inner_->UndoCommand();
@@ -91,6 +92,7 @@ void CommandHistoryManager::ClearAllStack()
 {
 	SAFE_DELETE(pGroupCommand_);
 	inner_->ClearAllStack();
+	isGrouping_ = false;
 }
 
 void CommandHistoryManager::ClearRedoStack() {}

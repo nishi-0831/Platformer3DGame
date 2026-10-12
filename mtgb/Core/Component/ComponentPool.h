@@ -290,7 +290,7 @@ namespace mtgb
 		}
 
 		// 何かしら追加されたなら見つかっている
-		return _pComponents->size() >= 0;
+		return _pComponents->size() > 0;
 	}
 
 	template <typename ComponentT, typename DerivedT>

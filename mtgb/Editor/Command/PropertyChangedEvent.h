@@ -11,7 +11,7 @@ namespace mtgb
 	{
 	  public:
 		PropertyChangeCommand(IComponentMemento* _pPrevMemento, IComponentMemento* _pMemento);
-
+		~PropertyChangeCommand();
 		void Execute() override;
 		void Undo() override;
 		std::string Name() const override;

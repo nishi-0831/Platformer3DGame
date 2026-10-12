@@ -6,6 +6,12 @@ mtgb::PropertyChangeCommand::PropertyChangeCommand(IComponentMemento* _pPrevMeme
 {
 }
 
+mtgb::PropertyChangeCommand::~PropertyChangeCommand()
+{
+	SAFE_DELETE(pPrevMemento_);
+	SAFE_DELETE(pMemento_);
+}
+
 void mtgb::PropertyChangeCommand::Execute()
 {
 	Game::GetComponentFactory().AddComponentFromMemento(*pMemento_);
