@@ -67,6 +67,7 @@ void PatrolChargerEnemy::Update()
 	// 丸影を落とす位置を指定する
 	Game::System<ShadowSettings>().AddCaster(GetEntityId());
 
+	// 攻撃対象のTransformがない場合
 	if (pTargetTransform_ == nullptr)
 		return;
 
@@ -76,6 +77,8 @@ void PatrolChargerEnemy::Update()
 		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
 		pMeshRenderer_->SetAnimStack(animController_->GetCurrentAnimStack());
 	}
+
+	// 状態を更新して、行動させる
 	state_.Update();
 }
 

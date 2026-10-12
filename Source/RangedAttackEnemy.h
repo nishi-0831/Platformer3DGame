@@ -41,7 +41,8 @@ class RangedAttackEnemy : public mtgb::GameObject, public IActor
 	// 弾速
 	float bulletSpeed_;
 	std::optional<FbxAnimationController> animController_;
-
+	// 倒れるアニメーションの再生速度
+	float dyingAnimSpeed_;
 	enum class STATE
 	{
 		WAIT,	// その場で待機

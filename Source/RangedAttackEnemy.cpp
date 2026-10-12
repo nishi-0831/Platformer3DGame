@@ -13,6 +13,7 @@ RangedAttackEnemy::RangedAttackEnemy()
 	, foundDistance_ { 10.0f }
 	, attackTimer_ { 5.0f }
 	, bulletSpeed_ { 3.0f }
+	, dyingAnimSpeed_ { 1.5f }
 	, onStompedBounce_ { 5.0f }
 {
 	tag_						 = GameObjectTag::ENEMY;
@@ -59,14 +60,21 @@ RangedAttackEnemy::~RangedAttackEnemy()
 
 void RangedAttackEnemy::Update()
 {
+	// 丸影を落とす位置を指定する
+	Game::System<ShadowSettings>().AddCaster(GetEntityId());
+
+	// 攻撃対象のTransformがない場合
 	if (pTargetTransform_ == nullptr)
 		return;
 
+	// アニメーションの更新
 	if (animController_.has_value())
 	{
 		animController_->UpdateFrame();
 		pMeshRenderer_->SetFrame(animController_->GetCurrentFrame());
 	}
+
+	// 状態を更新して、行動させる
 	state_.Update();
 }
 
@@ -83,7 +91,10 @@ void RangedAttackEnemy::Start()
 	pTargetTransform_ = &Transform::Get(targetGameObj->GetEntityId());
 }
 
-void RangedAttackEnemy::ShowImGui() {}
+void RangedAttackEnemy::ShowImGui()
+{
+	ImGui::Text("%i", animController_->GetCurrentFrame());
+}
 
 void RangedAttackEnemy::OnStomped(IActor* _pOther)
 {
@@ -103,9 +114,9 @@ void RangedAttackEnemy::OnStomped(IActor* _pOther)
 		Game::System<Audio>().Play("Stomp");
 
 		// 踏んだアクターを上に飛ばす
-		EntityId id				  = _pOther->GetId();
-		RigidBody& otherRigidBody = RigidBody::Get(id);
-		otherRigidBody.velocity_.y += onStompedBounce_;
+		EntityId id			  = _pOther->GetId();
+		Vector3 bounceVelcity = Vector3(0.0f, onStompedBounce_, 0.0f);
+		_pOther->AddExternalVelocity(bounceVelcity);
 	}
 
 	state_.Change(STATE::DYING);
@@ -181,6 +192,7 @@ void RangedAttackEnemy::Shot()
 	Vector3 toTarget						 = pTargetTransform_->GetWorldPosition() - pTransform_->GetWorldPosition();
 	pRigidBody->velocity_					 = Vector3::Normalize(toTarget) * bulletSpeed_;
 	bullet->Component<Transform>()->position = pTransform_->GetWorldPosition();
+	bullet->Component<Transform>()->Compute();
 
 	// チャージ時間を初期化して、チャージ状態に戻る
 	elapsedTime_ = 0.0f;
@@ -246,6 +258,7 @@ void RangedAttackEnemy::InitializeState()
 			STATE::DYING,
 			[this]
 			{
+				animController_->SetAnimationSpeed(dyingAnimSpeed_);
 				animController_->PlayAnimation("Dying", false);
 				DestroyEnergyChargeEffect();
 			}
@@ -255,6 +268,13 @@ void RangedAttackEnemy::InitializeState()
 			[this]
 			{
 				Dying();
+			}
+		)
+		.OnEnd(
+			STATE::DYING,
+			[this]
+			{
+				animController_->SetAnimationSpeed(1.0f);
 			}
 		);
 

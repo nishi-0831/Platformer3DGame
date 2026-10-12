@@ -178,8 +178,9 @@ void mtgb::FbxAnimationController::CheckEvents()
 {
 	for (const AnimationEvent& event : events_)
 	{
+		int currentFrameInt = static_cast<int>(currentFrame_);
 		// 現在のフレームが、イベント対象のフレームの範囲内か
-		if (currentFrame_ >= event.startFrame && currentFrame_ <= event.endFrame)
+		if (currentFrameInt >= event.startFrame && currentFrameInt <= event.endFrame)
 		{
 			// イベント名に該当するコールバック関数を取得
 			auto [first, last] = eventCallbackMap_.equal_range(event.eventName);
