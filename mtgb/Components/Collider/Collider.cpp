@@ -420,8 +420,11 @@ void mtgb::Collider::Push(const Collider& _other)
 	// 押し出される側のコライダーの底を計算
 	float pushedBottom = pushedCenter - pushedCollider.GetRadius();
 
+	// 接地判定の許容誤差。わずかなめり込みは許容する
+	constexpr float groundContactTolerance = 0.001f;
+
 	// 押し出し側(地面)より押し出される側が上にいる場合
-	if (pusherTopFaceHeight <= pushedBottom)
+	if (pusherTopFaceHeight <= pushedBottom + groundContactTolerance)
 	{
 		// 接地時の処理
 		RigidBody& rigidBody = RigidBody::Get(sphereTypeEntityId);
