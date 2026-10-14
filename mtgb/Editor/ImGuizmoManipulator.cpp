@@ -282,7 +282,6 @@ void mtgb::ImGuizmoManipulator::Update()
 	ImGuizmo::SetGizmoSizeClipSpace(clipSpaceGizmoSize_);
 	// トランスフォームのモードを更新
 	UpdateOperationMode();
-	// ギズモの
 	UpdateGizmoManipulationState();
 }
 
@@ -359,6 +358,14 @@ void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 		// 選択中のEntityIdを除去する
 		if (selectedIndex_.contains(id))
 		{
+			// 選択中のEntityIdが一つの場合、すべて選択解除
+			if (selectedIds_.size() == 1)
+			{
+				selectedIds_.clear();
+				selectedIndex_.clear();
+				return;
+			}
+
 			// swap and pop をする
 
 			// 選択中のEntityIdへのインデックス
@@ -367,7 +374,7 @@ void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 			EntityId backEntityId = selectedIds_.back();
 
 			// 末尾の要素と削除したい要素をswapして、末尾を削除
-			std::swap(selectedIds_[selectedIndex_[id]], selectedIds_.back());
+			std::swap(selectedIds_[selectedEntityIdx], selectedIds_.back());
 			selectedIds_.pop_back();
 			selectedIndex_.erase(id);
 			selectedIndex_[backEntityId] = selectedEntityIdx;
@@ -378,6 +385,7 @@ void mtgb::ImGuizmoManipulator::Deselect(std::span<const EntityId> _entityIds)
 void mtgb::ImGuizmoManipulator::DeselectAll()
 {
 	selectedIds_.clear();
+	selectedIndex_.clear();
 }
 
 std::span<mtgb::EntityId> mtgb::ImGuizmoManipulator::GetSelectedEntityId()

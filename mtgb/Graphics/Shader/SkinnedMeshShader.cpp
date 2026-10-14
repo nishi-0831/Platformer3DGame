@@ -37,25 +37,25 @@ void SkinnedMeshShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _trans
 	_pCtx->IASetVertexBuffers(0, 1, _pAsset->pVertexBuffer.GetAddressOf(), &stride, &offset);
 
 	// 使用するコンスタントバッファをシェーダに伝える
-	auto itr = cBufferMap_.find("global");
-	if (itr == cBufferMap_.end())
+	auto globalCBufferItr = cBufferMap_.find("global");
+	if (globalCBufferItr == cBufferMap_.end())
 	{
 		assert(false);
 		return;
 	}
-	auto& cBuffer = itr->second;
+	auto& cBuffer = globalCBufferItr->second;
 	cBuffer.BindVS(_pCtx);
 	cBuffer.BindPS(_pCtx);
 
 	if (_pAsset->hasSkinnedMesh)
 	{
-		auto itr = cBufferMap_.find("BoneMatrices");
-		if (itr == cBufferMap_.end())
+		auto boneCBufferItr = cBufferMap_.find("BoneMatrices");
+		if (boneCBufferItr == cBufferMap_.end())
 		{
 			assert(false);
 			return;
 		}
-		auto& boneCBuffer = itr->second;
+		auto& boneCBuffer = boneCBufferItr->second;
 		boneCBuffer.BindVS(_pCtx);
 		SetBoneMatrix(_pCtx, _pAsset, _frame); // ボーン行列
 	}

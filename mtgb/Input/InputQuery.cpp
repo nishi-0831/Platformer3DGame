@@ -354,7 +354,7 @@ mtgb::Vector3 mtgb::InputQuery::GetMouseAxis(WindowContext _context)
 {
 	const InputData& input = GetInput(_context);
 	float value			   = 0.0f;
-	return mtgb::Vector3 { input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lX),
-						   input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lY),
-						   input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lZ) };
+	return mtgb::Vector3 { static_cast<float>(input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lX)),
+						   static_cast<float>(input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lY)),
+						   static_cast<float>(input.config_.NormalizeMouseMovement(input.mouseStateCurrent_.lZ)) };
 }

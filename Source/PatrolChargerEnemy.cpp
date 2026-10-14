@@ -136,9 +136,7 @@ void PatrolChargerEnemy::OnStomped(IActor* _pOther)
 		Game::System<Audio>().Play("Stomp");
 
 		// 踏んだアクターを上に飛ばす
-		EntityId id				  = _pOther->GetId();
-		RigidBody& otherRigidBody = RigidBody::Get(id);
-		Vector3 bounceVelcity	  = Vector3(0.0f, onStompedBounce_, 0.0f);
+		Vector3 bounceVelcity = Vector3(0.0f, onStompedBounce_, 0.0f);
 		_pOther->AddExternalVelocity(bounceVelcity);
 
 		pCollider_->isTrigger_ = true;
