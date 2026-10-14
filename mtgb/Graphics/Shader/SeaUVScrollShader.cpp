@@ -2,11 +2,8 @@
 #include "Graphics/3DCommonConstantBuffer.h"
 #include "Camera/CameraSystem.h"
 #include "Core/Time/GameTime.h"
+#include "Graphics/Light.h"
 
-namespace
-{
-	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
-}
 void mtgb::SeaUVScrollShader::Initialize(ID3D11Device* _pDevice)
 {
 	InitializeCommonGpuResources(_pDevice, L"Shader/SeaUVScroll.hlsl");
@@ -103,7 +100,7 @@ void mtgb::SeaUVScrollShader::Draw(
 		cb.g_shininess		   = _pAsset->materials[i].shininess;
 		CAMERA.GetPosition(&cb.g_cameraPosition);
 
-		cb.g_lightDirection = lightDir; // ライトの向き
+		cb.g_lightDirection = Light::GetDir(); // ライトの向き
 		cb.g_isTexture		= (_pAsset->materials[i].pTexture != nullptr);
 
 		cBuffer.SetConstantBuffer(cb);

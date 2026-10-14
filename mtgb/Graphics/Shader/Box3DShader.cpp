@@ -1,11 +1,7 @@
 #include "Box3DShader.h"
 #include "Camera/CameraSystem.h"
 #include "Graphics/3DCommonConstantBuffer.h"
-
-namespace
-{
-	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
-}
+#include "Graphics/Light.h"
 
 void Box3DShader::Initialize(ID3D11Device* _pDevice)
 {
@@ -84,7 +80,7 @@ void Box3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _transform, 
 		cb.g_shininess		   = _pAsset->materials[i].shininess;
 		CAMERA.GetPosition(&cb.g_cameraPosition);
 
-		cb.g_lightDirection = lightDir; // ライトの向き
+		cb.g_lightDirection = Light::GetDir(); // ライトの向き
 		cb.g_isTexture		= (_pAsset->materials[i].pTexture != nullptr);
 
 		cBuffer.SetConstantBuffer(cb);

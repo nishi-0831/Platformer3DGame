@@ -1,10 +1,8 @@
 #include "Debug3DShader.h"
 #include "Camera/CameraSystem.h"
 #include "Graphics/3DCommonConstantBuffer.h"
-namespace
-{
-	mtgb::Vector4 lightDir { 0, 1, 1, 0 };
-}
+#include "Graphics/Light.h"
+
 void mtgb::Debug3DShader::Initialize(ID3D11Device* _pDevice)
 {
 	InitializeCommonGpuResources(_pDevice, L"Shader/Debug3D.hlsl");
@@ -81,7 +79,7 @@ void mtgb::Debug3DShader::Draw(ID3D11DeviceContext* _pCtx, const Transform& _tra
 		cb.g_shininess		   = _pAsset->materials[i].shininess;
 		CAMERA.GetPosition(&cb.g_cameraPosition);
 
-		cb.g_lightDirection = lightDir; // ライトの向き
+		cb.g_lightDirection = Light::GetDir(); // ライトの向き
 		cb.g_isTexture		= (_pAsset->materials[i].pTexture != nullptr);
 
 		cBuffer.SetConstantBuffer(cb);
